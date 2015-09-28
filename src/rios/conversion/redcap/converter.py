@@ -12,7 +12,8 @@ import collections
 import csv
 import json
 import re
-import rios.conversion.rios as rios
+import rios.conversion.csv as Csv
+import rios.conversion.classes as Rios
 import sys
 import os
 
@@ -39,32 +40,7 @@ RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
 # \1 => function name
 RE_function = re.compile(r'([\w_]+\()')
 
-class CsvConverter(object):
-    def __init__(self, fname):
-        self.fname = fname
-        self.attributes = []
-        self.reader = None
-
-    def __iter__(self):
-        if not self.reader:
-            self.reader = self.get_reader(self.fname)
-        if not self.attributes:
-            self.attributes = [self.get_name(c) for c in self.reader.next()]
-        for row in self.reader:
-            yield self.get_row(row)
-
-    def get_name(self, name):
-        return name
-        
-    @staticmethod
-    def get_reader(fname):
-        fi = open(fname, 'r') if isinstance(fname, str) else fname
-        return csv.reader(fi)
-
-    def get_row(self, row):
-        return row
-
-class Csv2OrderedDict(CsvConverter):
+class Csv2OrderedDict(Csv.CsvConverter):
     def get_name(self, name):
         return RE_strip_outer_underbars.sub(
                 r'\1',
@@ -127,17 +103,17 @@ class Converter(object):
         """process the csv input and create output files.
         ``fname`` is a filename, file, (or anything accepted by csv.reader)
         """
-        self.instrument = rios.Instrument(
+        self.instrument = Rios.Instrument(
                 id=self.id,
                 version=self.version,
                 title=self.title)
-        self.calculations = rios.CalculationSetObject(
-                instrument=rios.InstrumentReferenceObject(self.instrument),
+        self.calculations = Rios.CalculationSetObject(
+                instrument=Rios.InstrumentReferenceObject(self.instrument),
                 )
-        self.form = rios.WebForm(
-                instrument=rios.InstrumentReferenceObject(self.instrument),
+        self.form = Rios.WebForm(
+                instrument=Rios.InstrumentReferenceObject(self.instrument),
                 defaultLocalization=self.localization,
-                title=rios.LocalizedStringObject(
+                title=Rios.LocalizedStringObject(
                         {self.localization: self.title}),
                 )
                 
@@ -149,7 +125,7 @@ class Converter(object):
             page_name = od['form_name']
             if self.page_name != page_name:
                 self.page_name = page_name
-                self.form.add_page(rios.PageObject(id=page_name))
+                self.form.add_page(Rios.PageObject(id=page_name))
                 
             matrix_group_name = od.get('matrix_group_name', '')
             if matrix_group_name:
