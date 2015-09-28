@@ -40,6 +40,26 @@ RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
 # \1 => function name
 RE_function = re.compile(r'([\w_]+\()')
 
+FUNCTION_TO_PYTHON = {
+        'min': 'min',
+        'max': 'max',
+        'mean': 'rios.conversion.redcap.math.mean',
+        'median': 'rios.conversion.redcap.math.median',
+        'sum': 'rios.conversion.redcap.math.sum_',
+        'stdev': 'rios.conversion.redcap.math.stdev',
+
+        'round': 'round',
+        'roundup': 'rios.conversion.redcap.math.roundup',
+        'rounddown': 'rios.conversion.redcap.math.rounddown',
+        'sqrt': 'math.sqrt',
+        'abs': 'abs',
+        'datediff': 'rios.conversion.redcap.math.datediff',
+        }
+        
+RE_funcs = {
+        k: re.compile(r'(%s\()' % k) 
+        for k in FUNCTION_TO_PYTHON.keys()}
+
 class Csv2OrderedDict(Csv.CsvConverter):
     def get_name(self, name):
         return RE_strip_outer_underbars.sub(
@@ -51,6 +71,9 @@ class Csv2OrderedDict(Csv.CsvConverter):
 
 class Csv2RedCapOrderedDict(Csv2OrderedDict):
     def get_name(self, name):
+        """REDCap has several names for the 'choices' field
+        but they all begin with 'choices'
+        """
         x = super(Csv2RedCapOrderedDict, self).get_name(name)
         if x.startswith('choices'):
           x = 'choices_or_calculations'
@@ -163,7 +186,8 @@ class Converter(object):
         """
         s = RE_database_ref.sub(r'assessment["\1"]["\2"]', calc)
         s = RE_variable_ref.sub(r'assessment["\1"]', s)
-        s = RE_function.sub(r'prism.conversion.redcap.math.\1', s)
+        for name, pattern in RE_funcs.items():
+            s = pattern.sub(FUNCTION_TO_PYTHON[name], s)
         return s
         
     def convert_text_type(self, text_type):
