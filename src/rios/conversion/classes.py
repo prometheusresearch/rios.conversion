@@ -81,18 +81,30 @@ class FieldObject(DefinitionSpecification):
             ('identifiable', False),
             ])
 
+class EnumerationCollectionObject(DefinitionSpecification):
+    pass
+
+class BoundConstraintObject(DefinitionSpecification):
+    props = collections.OrderedDict([
+            #('min', None),
+            #('max', None),
+            ])
+
 class TypeObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('base', ''),
-            ('range', {}),
-            ('length', {}),
+            ('range', BoundConstraintObject()),
+            ('length', BoundConstraintObject()),
             ('pattern', ''),
-            ('enumerations', {}),
+            ('enumerations', EnumerationCollectionObject()),
             ('record', []),
             ('columns', []),
             ('rows', []),
             ])
-
+    def add_enumeration(self, name, description=''):
+        self.props['enumerations'][name] = EnumerationObject(
+                description=description)
+    
 class ColumnObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('id', ''),
@@ -108,15 +120,6 @@ class RowObject(DefinitionSpecification):
             ('description', ''),
             ('required', False),
             ])
-
-class BoundConstraintObject(DefinitionSpecification):
-    props = collections.OrderedDict([
-            ('min', None),
-            ('max', None),
-            ])
-
-class EnumerationCollectionObject(DefinitionSpecification):
-    pass
 
 class EnumerationObject(DefinitionSpecification):
     props = collections.OrderedDict([
@@ -170,8 +173,13 @@ class PageObject(DefinitionSpecification):
             ('elements', []),
             ])
     def add_element(self, element_object):
-        assert isinstance(element_object, ElementObject), element_object
-        self.props['elements'].append(element_object)
+        element_list = (
+                element_object 
+                if isinstance(element_object, list) 
+                else [element_object])
+        for element in element_list:
+            assert isinstance(element, ElementObject), element
+            self.props['elements'].append(element)
 
 class ElementObject(DefinitionSpecification):
     props = collections.OrderedDict([
@@ -193,7 +201,12 @@ class QuestionObject(DefinitionSpecification):
             ('widget', {}),
             ('events', []),
             ])
-
+    def add_enumeration(self, descriptor_object):
+        assert isinstance(
+                descriptor_object, 
+                DescriptorObject), descriptor_object
+        self.props['enumerations'].append(descriptor_object)
+        
 class DescriptorObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('id', ''),
