@@ -126,20 +126,20 @@ class EnumerationObject(DefinitionSpecification):
             ('description', ''),
             ])
 
-class CalculationSetObject(DefinitionSpecification):
-    props = collections.OrderedDict([
-            ('instrument', {}),
-            ('calculations', []),
-            ])
-    def add(self, calc_object):
-        assert isinstance(calc_object, rios.CalculationObject), calc_object
-        self.props['calculations'].append(calc_object)
-
 class InstrumentReferenceObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('id', ''),
             ('version', ''),
             ])
+
+class CalculationSetObject(DefinitionSpecification):
+    props = collections.OrderedDict([
+            ('instrument', InstrumentReferenceObject()),
+            ('calculations', []),
+            ])
+    def add(self, calc_object):
+        assert isinstance(calc_object, CalculationObject), calc_object
+        self.props['calculations'].append(calc_object)
 
 class CalculationObject(DefinitionSpecification):
     props = collections.OrderedDict([

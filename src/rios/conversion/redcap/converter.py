@@ -148,37 +148,7 @@ class Converter(object):
         for od in Csv2RedCapOrderedDict(fname):
             if 'form_name' not in od:
                 continue
-            page_name = od['form_name']
-            if self.page_name != page_name:
-                self.page_name = page_name
-                self.page = Rios.PageObject(id=page_name)
-                self.form.add_page(self.page)
-                
-            matrix_group_name = od.get('matrix_group_name', '')
-            if matrix_group_name:
-                if self.matrix_group_name != matrix_group_name:
-                    # Start a new matrix.
-                    self.matrix_group_name = matrix_group_name
-                    field = self.make_matrix_field(od)
-                    self.matrix_rows = field['type']['rows']
-                else:
-                    # Append row to existing matrix.
-                    self.matrix_rows.append({
-                            'id': od['variable_field_name'],
-                            'description': od['field_label'],
-                            'required': bool(od['required_field']),
-                            })
-                    field = {}       
-            else:
-                self.matrix_group_name = ''
-                field = self.make_field(od)
-            if field:
-                self.instrument.add_field(field)    
-
-            elements = self.make_elements(od)
-            if elements:
-                self.page.add_element(elements)
-                
+            self.process_od(od)                
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
@@ -235,9 +205,14 @@ class Converter(object):
                 'kind': kind,
                 }
 
-    def get_choices(self, od):
+    def get_choices_internal(self, od):
         return {
-                RE_strip_integer_comma.sub(r'\1', x.strip()): None 
+                x.strip().split(',')[0]: None
+                for x in od['choices_or_calculations'].split('|') }
+                
+    def get_choices_external(self, od):
+        return {
+                RE_strip_integer_comma.sub(r'\1', x.strip()): None
                 for x in od['choices_or_calculations'].split('|')
                 }  
 
@@ -262,59 +237,48 @@ class Converter(object):
         elif field_type == 'notes':
             return 'text'
         elif field_type in ['dropdown', 'radio']:
-            return {
-                    'base': 'enumeration',
-                    'enumerations': self.get_choices(od),
-                    }
+            return Rios.TypeObject(
+                    base='enumeration',
+                    enumerations=self.get_choices_internal(od), )
         elif field_type in ['checkbox', ]:
-            return {
-                    'base': 'enumerationSet',
-                    'enumerations': self.get_choices(od),
-                    }
+            return Rios.TypeObject(
+                    base='enumerationSet',
+                    enumerations=self.get_choices_internal(od), )
         elif field_type == 'calc':
             form_name = od['form_name']
             field_name = od['variable_field_name']
             if not self.calculations:
-                self.calculations = {
-                        'instrument': {
-                                'id': self.instrument['id'],
-                                'version': self.instrument['version'],
-                                },
-                        'calculations': []
-                        }
+                self.calculations = Rios.CalculationSetObject(
+                        instrument=Rios.InstrumentReferenceObject(
+                                **self.instrument), )
             calc = self.convert_calc(od['choices_or_calculations'])
-            self.calculations['calculations'].append({
-                    'id': field_name,
-                    'description': od['field_label'],
-                    'type': 'float',
-                    'method': 'python',
-                    'options': {'expression': calc},
+            self.calculations['calculations'].append(Rios.CalculationObject(
+                    id=field_name,
+                    description=od['field_label'],
+                    type='float',
+                    method='python',
+                    options={'expression': calc},
                     })
             assert field_name not in self.calculation_variables
             self.calculation_variables.add(field_name)
             return None
         elif field_type == 'slider':
-            return {
-                    'base': 'float',
-                    'range': {'min': 0, 'max': 100}
-                    }
+            return Rios.TypeObject(
+                    base='float',
+                    range=Rios.BoundConstraintObject(min=0.0, max=100.0), )
         elif field_type == 'truefalse':
-            return {
-                    'base': 'boolean',
-                    'enumerations': Rios.EnumerationCollectionObject(
-                            'True'=Rios.EnumerationObject(description="True"),
-                            'False'=Rios.EnumerationObject(description="False"),
-                            )}
+            return Rios.TypeObject(
+                    base='boolean',
+                    enumerations=Rios.EnumerationCollectionObject(
+                            yes=Rios.EnumerationObject(description="True"),
+                            no=Rios.EnumerationObject(description="False"),
+                            ), )
         elif field_type == 'yesno':
-            return {
-                    'base': 'boolean',
-                    'enumerations': Rios.EnumerationCollectionObject(
-                            'True'=Rios.EnumerationObject(description="Yes"),
-                            'False'=Rios.EnumerationObject(description="No"),
-                            )}
-              
-        elif field_type in ['truefalse', 'yesno']:
-            return 'boolean'
+            return Rios.TypeObject(
+                    base='boolean',
+                    enumerations=Rios.EnumerationCollectionObject(
+                            yes=Rios.EnumerationObject(description="Yes"),
+                            no=Rios.EnumerationObject(description="No"), ))
         else:
             return None
 
@@ -337,7 +301,7 @@ class Converter(object):
         return elements 
 
     def make_field(self, od):
-        field = {}
+        field = Rios.FieldObject()
         field_type = self.get_type(od)
         if field_type:
             field['id'] = od['variable_field_name']
@@ -350,7 +314,7 @@ class Converter(object):
         return field
         
     def make_matrix_field(self, od):
-        field = {}
+        field = Rios.FieldObject()
         # Construct a unique name for this matrix
         field['id'] = 'matrix_%02d' * self.matrix_id
         self.matrix_id += 1
@@ -399,6 +363,38 @@ class Converter(object):
         question['widget'] = self.make_widget(od)
 
         return question
+
+    def process_od(self, od)
+        page_name = od['form_name']
+        if self.page_name != page_name:
+            self.page_name = page_name
+            self.page = Rios.PageObject(id=page_name)
+            self.form.add_page(self.page)
+            
+        matrix_group_name = od.get('matrix_group_name', '')
+        if matrix_group_name:
+            if self.matrix_group_name != matrix_group_name:
+                # Start a new matrix.
+                self.matrix_group_name = matrix_group_name
+                field = self.make_matrix_field(od)
+                self.matrix_rows = field['type']['rows']
+            else:
+                # Append row to existing matrix.
+                self.matrix_rows.append({
+                        'id': od['variable_field_name'],
+                        'description': od['field_label'],
+                        'required': bool(od['required_field']),
+                        })
+                field = {}       
+        else:
+            self.matrix_group_name = ''
+            field = self.make_field(od)
+        if field:
+            self.instrument.add_field(field)    
+
+        elements = self.make_elements(od)
+        if elements:
+            self.page.add_element(elements)
         
 if __name__ == '__main__':
     Converter()
