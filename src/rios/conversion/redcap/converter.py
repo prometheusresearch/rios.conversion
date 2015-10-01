@@ -24,10 +24,6 @@ RE_non_alphanumeric = re.compile(r'\W+')
 # result available as: \1
 RE_strip_outer_underbars = re.compile(r'^_*(.*[^_])_*$')
 
-# Remove leading integer comma.
-# result available as: \1
-RE_strip_integer_comma = re.compile('\d+,\s*(.*)')
-
 # Find database reference:  [table_name][field_name]
 # \1 => table_name, \2 => field_name
 RE_database_ref = re.compile(r'\[([\w_]+)\]\[([\w_]+)\]')
@@ -51,8 +47,7 @@ FUNCTION_TO_PYTHON = {
         'median': 'rios.conversion.redcap.math.median',
         'sum': 'rios.conversion.redcap.math.sum_',
         'stdev': 'rios.conversion.redcap.math.stdev',
-
-        'round': 'round',
+        'round': 'rios.conversion.redcap.math.round_',
         'roundup': 'rios.conversion.redcap.math.roundup',
         'rounddown': 'rios.conversion.redcap.math.rounddown',
         'sqrt': 'math.sqrt',
@@ -91,7 +86,7 @@ class Converter(object):
         self.version = args.version
         self.title = args.title
         self.localization = args.localization
-        self.matrix_id = 0
+        self.matrix_id = MatrixId()
         self(args.infile)
         
     def _get_args(self):
@@ -213,14 +208,22 @@ class Converter(object):
                 'kind': kind, }
 
     def get_choices_internal(self, od):
+        """ returns EnumerationCollectionObject
+        Expecting: choices_or_calculations to be pipe separated list 
+        of (comma delimited) tuples: internal, external
+        """
         return Rios.EnumerationCollectionObject(**{
                 x.strip().split(',')[0]: None
                 for x in od['choices_or_calculations'].split('|') })
                 
     def get_choices_external(self, od):
+        """ returns array of DescriptorObject
+        Expecting: choices_or_calculations to be pipe separated list 
+        of (comma delimited) tuples: internal, external
+        """
         return [
                 Rios.DescriptorObject(
-                        id=RE_strip_integer_comma.sub(r'\1', x.strip()),
+                        id=','.join(x.strip().split(',')[1:]),
                         text='', )
                 for x in od['choices_or_calculations'].split('|') ]
 
@@ -405,8 +408,8 @@ class Converter(object):
         field = Rios.FieldObject()
         field_type = self.get_type(od)
         # Construct a unique name for this matrix
-        field['id'] = 'matrix_%02d' * self.matrix_id
-        self.matrix_id += 1
+        self.matrix_id.next()
+        field['id'] = str(self.matrix_id)
         field['description'] = od.get('section_header', '')
         field['type'] = Rios.TypeObject(base='matrix', )
         # Append the only column (a checkbox or radiobutton)
@@ -423,29 +426,6 @@ class Converter(object):
                 description=od['field_label'],
                 required=bool(od['required_field']), ))
         return field
-
-    def make_question(self, od):
-        question = Rios.QuestionObject(fieldId=od['variable_field_name'])
-        question['text'] = self.localized_string_object(od['field_label'])
-        question['help'] = self.localized_string_object(od['field_note'])
-        field_type = od['field_type']
-        if field_type == 'truefalse':
-            question.add_enumeration(Rios.DescriptorObject(
-                    id=True,
-                    text=self.localized_string_object("True"),))
-            question.add_enumeration(Rios.DescriptorObject(
-                    id=False,
-                    text=self.localized_string_object("False"),))
-        elif field_type == 'yesno':
-            question.add_enumeration(Rios.DescriptorObject(
-                    id=True,
-                    text=self.localized_string_object("Yes"),))
-            question.add_enumeration(Rios.DescriptorObject(
-                    id=False,
-                    text=self.localized_string_object("No"),))
-        question['widget'] = self.make_widget(od)
-
-        return question
 
     def process_od(self, od)
         page_name = od['form_name']
@@ -465,6 +445,14 @@ class Converter(object):
                 self.matrix_group_name = matrix_group_name
                 field = self.make_matrix_field(od)
                 self.field_type = field['type']
+                self.question.add_question(Rios.QuestionObject(
+                        fieldId=od['variable_field_name'],
+                        text=self.localized_string_object(od['field_label']),
+                        enumerations=self.get_choices_external(od), ))
+                self.question.add_row(Rios.DescriptorObject(
+                        id=str(self.matrix_id),
+                        text=self.localized_string_object(od['field_label']),
+                        ))
             else:
                 # Append row to existing matrix.
                 self.field_type.add_row(Rios.RowObject(
@@ -472,12 +460,26 @@ class Converter(object):
                         description=od['field_label'],
                         required=bool(od['required_field']), ))
                 field = {}       
+                self.question.add_row(Rios.DescriptorObject(
+                        id=str(self.matrix_id),
+                        text=self.localized_string_object(od['field_label']),
+                        ))
         else:
             self.matrix_group_name = ''
             self.field_type = None
             field = self.make_field(od)
         if field:
             self.instrument.add_field(field)    
+
+class MatrixId(object):
+    def __init__(self, start=0):
+        self.matrix_id = start
+    
+    def __str__(self):
+        return 'matrix_%02d' % self.matrix_id
+    
+    def next(self):
+        self.matrix_id += 1 
 
 if __name__ == '__main__':
     Converter()

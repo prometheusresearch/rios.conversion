@@ -234,9 +234,20 @@ class QuestionObject(DefinitionSpecification):
                 DescriptorObject), descriptor_object
         self.props['enumerations'].append(descriptor_object)
 
-    #def add_question(
-    #def add_row(
-    # def add_event(
+    def add_question(self, question_object):
+        assert isinstance(question_object, QuestionObject), question_object
+        self.props['questions'].append(question_object)
+        
+    def add_row(self, descriptor_object):
+        assert isinstance(
+                descriptor_object, 
+                DescriptorObject), descriptor_object
+        self.props['rows'].append(descriptor_object)
+        
+    def add_event(self, event_object):
+        assert isinstance(event_object, EventObject), event_object
+        self.props['events'].append(event_object)
+        
 
     def set_widget(self, widget):
         assert isinstance(widget, WidgetConfigurationObject), widget
@@ -245,9 +256,9 @@ class QuestionObject(DefinitionSpecification):
 class DescriptorObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('id', ''),
-            ('text', {}),
-            ('audio', {}),
-            ('help', {}),
+            ('text', LocalizedStringObject()),
+            ('audio', AudioSourceObject()),
+            ('help', LocalizedStringObject()),
             ])
 
 class EventObject(DefinitionSpecification):

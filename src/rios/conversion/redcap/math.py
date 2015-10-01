@@ -46,25 +46,29 @@ def median(*data):
     else:
         return None
 
+def round_(number, decimal_places):
+    x = math.pow(10, decimal_places)
+    return round(x * number) / x
+    
 def rounddown(number, decimal_places):
-    rounded = round(number, decimal_places)
+    rounded = round_(number, decimal_places)
     if rounded <= number:
         return rounded
     else:
         x = 0.5
         for i in range(decimal_places):
             x /= 10.0
-        return round(number - x, decimal_places)
+        return round_(number - x, decimal_places)
 
 def roundup(number, decimal_places):
-    rounded = round(number, decimal_places)
+    rounded = round_(number, decimal_places)
     if rounded >= number:
         return rounded
     else:
         x = 0.5
         for i in range(decimal_places):
             x /= 10.0
-        return round(number + x, decimal_places)
+        return round_(number + x, decimal_places)
 
 def stdev(*data):
     """Calculates the population standard deviation."""
