@@ -252,7 +252,7 @@ class Converter(object):
                         instrument=Rios.InstrumentReferenceObject(
                                 **self.instrument), )
             calc = self.convert_calc(od['choices_or_calculations'])
-            self.calculations['calculations'].append(Rios.CalculationObject(
+            self.calculations.add(Rios.CalculationObject(
                     id=field_name,
                     description=od['field_label'],
                     type='float',

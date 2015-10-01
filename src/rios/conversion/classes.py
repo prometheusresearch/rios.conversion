@@ -1,5 +1,9 @@
 """
 RIOS objects are all implemented as subclasses of OrderedDict.
+
+A dict would suffice, but the OrderedDict output matches the order 
+of the Rios on-line documentation at
+http://rios.readthedocs.org/en/latest/index.html 
 """
 import collections
 
@@ -85,6 +89,8 @@ class EnumerationCollectionObject(DefinitionSpecification):
     pass
 
 class BoundConstraintObject(DefinitionSpecification):
+    """Must have at least one of ['max', 'min']
+    """
     props = collections.OrderedDict([
             #('min', None),
             #('max', None),
