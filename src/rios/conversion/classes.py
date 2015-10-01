@@ -57,7 +57,8 @@ class AudioSourceObject(DefinitionSpecification):
     pass
 
 class EnumerationCollectionObject(DefinitionSpecification):
-    pass
+    def add(self, name, description=''):
+        self['name'] = EnumerationObject(description=description))
 
 class LocalizedStringObject(DefinitionSpecification):
     pass
@@ -121,8 +122,7 @@ class TypeObject(DefinitionSpecification):
         self.props['columns'].append(column_object)
         
     def add_enumeration(self, name, description=''):
-        self.props['enumerations'][name] = EnumerationObject(
-                description=description)
+        self.props['enumerations'].add(name, description)
 
     def add_field(self, field_object):
         assert isinstance(field_object, FieldObject), field_object
