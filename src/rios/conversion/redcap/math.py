@@ -47,7 +47,7 @@ def median(*data):
         return None
 
 def round_(number, decimal_places):
-    x = math.pow(10, decimal_places)
+    x = 10.0 ** decimal_places
     return round(x * number) / x
     
 def rounddown(number, decimal_places):
