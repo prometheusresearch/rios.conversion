@@ -152,7 +152,7 @@ class Converter(object):
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
-    
+
     def convert_calc(self, calc):
         """convert RedCap expression into Python
 
@@ -184,6 +184,14 @@ class Converter(object):
         else:
             return 'text'
 
+    def convert_value(self, value, text_type):
+        if text_type == 'integer':
+            return int(value)
+        elif text_type == 'float':
+            return float(value)
+        else:
+            return value
+
     def create_calculation_file(self):
         if self.calculations:
             with open(self.filename('c'), 'w') as fo:
@@ -202,49 +210,42 @@ class Converter(object):
     def filename(self, kind):
         return '%(prefix)s.%(kind)s.json' % {
                 'prefix':self.prefix,
-                'kind': kind,
-                }
+                'kind': kind, }
 
     def get_choices_internal(self, od):
-        return {
+        return Rios.EnumerationCollectionObject(**{
                 x.strip().split(',')[0]: None
-                for x in od['choices_or_calculations'].split('|') }
+                for x in od['choices_or_calculations'].split('|') })
                 
     def get_choices_external(self, od):
-        return {
-                RE_strip_integer_comma.sub(r'\1', x.strip()): None
-                for x in od['choices_or_calculations'].split('|')
-                }  
+        return [
+                Rios.DescriptorObject(
+                        id=RE_strip_integer_comma.sub(r'\1', x.strip()),
+                        text='', )
+                for x in od['choices_or_calculations'].split('|') ]
 
     def get_type(self, od):
-        field_type = od['field_type']
-        if field_type == 'text':
-            val_min = od['text_validation_min']
-            val_max = od['text_validation_max']
-            text_type = self.convert_text_type(
-                    od['text_validation_type_or_show_slider_number'])
-            if val_min or val_max:
-                bound_constraint = Rios.BoundConstraintObject()
-                if val_min:
-                    bound_constraint['min'] = val_min
-                if val_max:
-                    bound_constraint['max'] = val_max
-                return Rios.TypeObject(
-                        base=text_type, 
-                        range=bound_constraint)
+        """returns the computed instrument field type.
+        Also has side effects.
+        - can initialize self.calculations.
+        - can append a calculation.
+        - updates self.question: 
+            enumerations, questions, rows, widget, events
+        """
+        def get_widget(type):
+            return Rios.WidgetConfigurationObject(type=type)
+
+        def get_widget_type(text_type):
+            if text_type == 'text':
+                return 'inputText'
+            elif text_type in ['integer', 'float']:
+                return 'inputNumber'
+            elif text_type == 'dateTime':
+                return 'dateTimePicker'
             else:
-                return text_type 
-        elif field_type == 'notes':
-            return 'text'
-        elif field_type in ['dropdown', 'radio']:
-            return Rios.TypeObject(
-                    base='enumeration',
-                    enumerations=self.get_choices_internal(od), )
-        elif field_type in ['checkbox', ]:
-            return Rios.TypeObject(
-                    base='enumerationSet',
-                    enumerations=self.get_choices_internal(od), )
-        elif field_type == 'calc':
+                raise ValueError, ('unexpected text type', text_type)
+                 
+        def process_calc():
             form_name = od['form_name']
             field_name = od['variable_field_name']
             if not self.calculations:
@@ -261,24 +262,110 @@ class Converter(object):
                     })
             assert field_name not in self.calculation_variables
             self.calculation_variables.add(field_name)
-            return None
-        elif field_type == 'slider':
+            return None # not an instrument field
+
+        def process_checkbox():
+            self.question.set_widget(get_widget(type='checkGroup'))
+            self.question['enumerations'] = self.get_choices_external(od)
+            return Rios.TypeObject(
+                    base='enumerationSet',
+                    enumerations=self.get_choices_internal(od), )
+
+        def process_dropdown():
+            self.question.set_widget(get_widget(type='dropDown'))
+            self.question['enumerations'] = self.get_choices_external(od)
+            return Rios.TypeObject(
+                    base='enumeration',
+                    enumerations=self.get_choices_internal(od), )
+
+        def process_notes():
+            self.question.set_widget(get_widget(type='textArea'))
+            return 'text'
+
+        def process_radio():
+            self.question.set_widget(get_widget(type='radioGroup'))
+            self.question['enumerations'] = self.get_choices_external(od)
+            return Rios.TypeObject(
+                    base='enumeration',
+                    enumerations=self.get_choices_internal(od), )
+
+        def process_text():
+            val_min = od['text_validation_min']
+            val_max = od['text_validation_max']
+            text_type = self.convert_text_type(
+                    od['text_validation_type_or_show_slider_number'])
+            self.question.set_widget(get_widget(
+                    type=get_widget_type(text_type)))
+            if val_min or val_max:
+                bound_constraint = Rios.BoundConstraintObject()
+                if val_min:
+                    bound_constraint['min'] = self.convert_value(
+                            val_min, 
+                            text_type)
+                if val_max:
+                    bound_constraint['max'] = self.convert_value(
+                            val_max, 
+                            text_type)
+                return Rios.TypeObject(
+                        base=text_type, 
+                        range=bound_constraint)
+            else:
+                return text_type 
+
+        def process_slider():
+            self.question.set_widget(get_widget(type='inputNumber'))
             return Rios.TypeObject(
                     base='float',
                     range=Rios.BoundConstraintObject(min=0.0, max=100.0), )
-        elif field_type == 'truefalse':
+
+        def process_truefalse():        
+            self.question.set_widget(get_widget(type='radioGroup'))
+            self.question.add_enumeration(Rios.DescriptorObject(
+                    id="True",
+                    text=self.localized_string_object("True"),))
+            self.question.add_enumeration(Rios.DescriptorObject(
+                    id="False",
+                    text=self.localized_string_object("False"),))
             return Rios.TypeObject(
                     base='boolean',
                     enumerations=Rios.EnumerationCollectionObject(
                             yes=Rios.EnumerationObject(description="True"),
                             no=Rios.EnumerationObject(description="False"),
                             ), )
-        elif field_type == 'yesno':
+
+        def process_yesno():
+            self.question.set_widget(get_widget(type='radioGroup'))
+            self.question.add_enumeration(Rios.DescriptorObject(
+                    id="Yes",
+                    text=self.localized_string_object("Yes"),))
+            self.question.add_enumeration(Rios.DescriptorObject(
+                    id="No",
+                    text=self.localized_string_object("No"),))
             return Rios.TypeObject(
                     base='boolean',
                     enumerations=Rios.EnumerationCollectionObject(
                             yes=Rios.EnumerationObject(description="Yes"),
                             no=Rios.EnumerationObject(description="No"), ))
+
+        field_type = od['field_type']
+        if field_type == 'text':
+            return process_text()
+        elif field_type == 'notes':
+            return process_notes()
+        elif field_type == 'dropdown':
+            return process_dropdown()
+        elif field_type == 'radio':
+            return process_radio()
+        elif field_type == 'checkbox':
+            return process_checkbox()
+        elif field_type == 'calc':
+            return process_calc()
+        elif field_type == 'slider':
+            return process_slider()
+        elif field_type == 'truefalse':
+            return process_truefalse()
+        elif field_type == 'yesno':
+            return process_yesno()
         else:
             return None
 
@@ -297,7 +384,10 @@ class Converter(object):
             element = Rios.ElementObject()
             elements.append(element)
         element['type'] = 'question'
-        element['options'] = self.make_question(od)
+        element['options'] = Rios.QuestionObject(
+                fieldId=od['variable_field_name'],
+                text=self.localized_string_object(od['field_label']),
+                help=self.localized_string_object(od['field_note']), )
         return elements 
 
     def make_field(self, od):
@@ -308,37 +398,30 @@ class Converter(object):
             field['description'] = od['field_label']
             field['type'] = field_type
             field['required'] = bool(od['required_field'])
-            field['annotation'] = None
-            field['explanation'] = None
             field['identifiable'] = bool(od['identifier'])
         return field
         
     def make_matrix_field(self, od):
         field = Rios.FieldObject()
+        field_type = self.get_type(od)
         # Construct a unique name for this matrix
         field['id'] = 'matrix_%02d' * self.matrix_id
         self.matrix_id += 1
         field['description'] = od.get('section_header', '')
-        field['type'] = {
-                'base': 'matrix',
-                'columns': [],
-                'rows': [],
-                }
+        field['type'] = Rios.TypeObject(base='matrix', )
         # Append the only column (a checkbox or radiobutton)
         # Use the matrix_group_name as the id.
-        field['type']['columns'].append({
-                'id': od['matrix_group_name'],
-                'description': od['field_label'],
-                'type': self.get_type(od),
-                'required': bool(od['required_field']),
-                'identifiable': bool(od['identifier']),
-                })
+        field['type'].add_column(Rios.ColumnObject(
+                id=od['matrix_group_name'],
+                description=od['field_label'],
+                type=field_type,
+                required=bool(od['required_field']),
+                identifiable=bool(od['identifier']), ))
         # Append the first row.
-        field['type']['rows'].append({
-                'id': od['variable_field_name'],
-                'description': od['field_label'],
-                'required': bool(od['required_field']),
-                })
+        field['type'].add_row(Rios.RowObject(
+                id=od['variable_field_name'],
+                description=od['field_label'],
+                required=bool(od['required_field']), ))
         return field
 
     def make_question(self, od):
@@ -371,31 +454,31 @@ class Converter(object):
             self.page = Rios.PageObject(id=page_name)
             self.form.add_page(self.page)
             
+        elements = self.make_elements(od)
+        self.page.add_element(elements)
+        self.question = elements[-1]['options']
+                
         matrix_group_name = od.get('matrix_group_name', '')
         if matrix_group_name:
             if self.matrix_group_name != matrix_group_name:
                 # Start a new matrix.
                 self.matrix_group_name = matrix_group_name
                 field = self.make_matrix_field(od)
-                self.matrix_rows = field['type']['rows']
+                self.field_type = field['type']
             else:
                 # Append row to existing matrix.
-                self.matrix_rows.append({
-                        'id': od['variable_field_name'],
-                        'description': od['field_label'],
-                        'required': bool(od['required_field']),
-                        })
+                self.field_type.add_row(Rios.RowObject(
+                        id=od['variable_field_name'],
+                        description=od['field_label'],
+                        required=bool(od['required_field']), ))
                 field = {}       
         else:
             self.matrix_group_name = ''
+            self.field_type = None
             field = self.make_field(od)
         if field:
             self.instrument.add_field(field)    
 
-        elements = self.make_elements(od)
-        if elements:
-            self.page.add_element(elements)
-        
 if __name__ == '__main__':
     Converter()
 

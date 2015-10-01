@@ -53,6 +53,18 @@ class DefinitionSpecification(collections.OrderedDict):
                 for k, v in kwargs.items() 
                 if not self.props or k in self.props})
 
+class AudioSourceObject(DefinitionSpecification):
+    pass
+
+class EnumerationCollectionObject(DefinitionSpecification):
+    pass
+
+class LocalizedStringObject(DefinitionSpecification):
+    pass
+
+class ParameterCollectionObject(DefinitionSpecification):
+    pass
+
 class TypeCollectionObject(DefinitionSpecification):
     pass
 
@@ -85,9 +97,6 @@ class FieldObject(DefinitionSpecification):
             ('identifiable', False),
             ])
 
-class EnumerationCollectionObject(DefinitionSpecification):
-    pass
-
 class BoundConstraintObject(DefinitionSpecification):
     """Must have at least one of ['max', 'min']
     """
@@ -107,10 +116,22 @@ class TypeObject(DefinitionSpecification):
             ('columns', []),
             ('rows', []),
             ])
+    def add_column(self, column_object):
+        assert isinstance(column_object, ColumnObject), column_object
+        self.props['columns'].append(column_object)
+        
     def add_enumeration(self, name, description=''):
         self.props['enumerations'][name] = EnumerationObject(
                 description=description)
-    
+
+    def add_field(self, field_object):
+        assert isinstance(field_object, FieldObject), field_object
+        self.props['record'].append(field_object)
+
+    def add_row(self, row_object):
+        assert isinstance(row_object, RowObject), row_object
+        self.props['rows'].append(row_object)
+
 class ColumnObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('id', ''),
@@ -197,14 +218,14 @@ class ElementObject(DefinitionSpecification):
 class QuestionObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('fieldId', ''),
-            ('text', {}),
-            ('audio', {}),
-            ('help', {}),
-            ('error', {}),
+            ('text', LocalizedStringObject()),
+            ('audio', AudioSourceObject()),
+            ('help', LocalizedStringObject()),
+            ('error', LocalizedStringObject()),
             ('enumerations', []),
             ('questions', []),
             ('rows', []),
-            ('widget', {}),
+            ('widget', WidgetConfigurationObject()),
             ('events', []),
             ])
     def add_enumeration(self, descriptor_object):
@@ -212,6 +233,14 @@ class QuestionObject(DefinitionSpecification):
                 descriptor_object, 
                 DescriptorObject), descriptor_object
         self.props['enumerations'].append(descriptor_object)
+
+    #def add_question(
+    #def add_row(
+    # def add_event(
+
+    def set_widget(self, widget):
+        assert isinstance(widget, WidgetConfigurationObject), widget
+        self.props['widget'] = widget
         
 class DescriptorObject(DefinitionSpecification):
     props = collections.OrderedDict([
@@ -235,17 +264,9 @@ class WidgetConfigurationObject(DefinitionSpecification):
             ('options', {}),
             ])
 
-class AudioSourceObject(DefinitionSpecification):
-    pass
-
-class ParameterCollectionObject(DefinitionSpecification):
-    pass
-
 class ParameterObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('type', ''),
             ])
 
-class LocalizedStringObject(DefinitionSpecification):
-    pass
 
