@@ -1,8 +1,11 @@
+import collections
+import csv
+
 __all__ = (
-    "CsvConverter",
+    "CsvReader",
     )
     
-class CsvConverter(object):
+class CsvReader(object):
     """This object reads `fname`, a csv file, and can iterate over the rows.
      
     usage:
@@ -17,15 +20,11 @@ class CsvConverter(object):
     These are converted to "canonical" form by get_name() 
     and stored in the self.attributes list.
 
-    Subsequent rows are converted to "canonical" form by get_row().
-    
-    Overwrite these methods to implement "canonical":
+    Subsequent rows are converted to OrderedDicts based on self.attributes
+    by get_row().
     
     - get_name(name): returns the "canonical" name.
       The default returns name unchanged.
-      
-    - get_row(row): returns a "canonical" row.
-      The default returns row unchanged.                
     """
     def __init__(self, fname):
         self.fname = fname
@@ -49,5 +48,5 @@ class CsvConverter(object):
         return csv.reader(fi)
 
     def get_row(self, row):
-        return row
+        return collections.OrderedDict(zip(self.attributes, row))
 

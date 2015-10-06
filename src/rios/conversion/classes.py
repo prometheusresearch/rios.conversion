@@ -58,7 +58,7 @@ class AudioSourceObject(DefinitionSpecification):
 
 class EnumerationCollectionObject(DefinitionSpecification):
     def add(self, name, description=''):
-        self['name'] = EnumerationObject(description=description))
+        self['name'] = EnumerationObject(description=description)
 
 class LocalizedStringObject(DefinitionSpecification):
     pass
@@ -215,6 +215,12 @@ class ElementObject(DefinitionSpecification):
             ('tags', []),
             ])
 
+class WidgetConfigurationObject(DefinitionSpecification):
+    props = collections.OrderedDict([
+            ('type', ''),
+            ('options', {}),
+            ])
+
 class QuestionObject(DefinitionSpecification):
     props = collections.OrderedDict([
             ('fieldId', ''),
@@ -266,12 +272,6 @@ class EventObject(DefinitionSpecification):
             ('trigger', ''),
             ('action', ''),
             ('targets', []),
-            ('options', {}),
-            ])
-
-class WidgetConfigurationObject(DefinitionSpecification):
-    props = collections.OrderedDict([
-            ('type', ''),
             ('options', {}),
             ])
 

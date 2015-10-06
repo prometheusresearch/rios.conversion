@@ -8,11 +8,10 @@ stored in files:
 """
 
 import argparse
-import collections
 import csv
 import json
 import re
-import rios.conversion.csv as Csv
+import rios.conversion.csv_reader
 import rios.conversion.classes as Rios
 import sys
 import os
@@ -59,21 +58,18 @@ RE_funcs = {
         k: re.compile(r'(%s\()' % k) 
         for k in FUNCTION_TO_PYTHON.keys()}
 
-class Csv2OrderedDict(Csv.CsvConverter):
+class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
     def get_name(self, name):
-        return RE_strip_outer_underbars.sub(
+        """ Return canonical name.
+        - replace non-alphanumeric with underbars.
+        - strip leading and trailing underbars.
+        - ensure 'choices' field is 'choices_or_calculations' 
+          (REDCap has several names for the 'choices' field
+          but they all begin with 'choices')
+        """
+        x = RE_strip_outer_underbars.sub(
                 r'\1',
                 RE_non_alphanumeric.sub('_', name.strip().lower()))
-
-    def get_row(self, row):
-        return collections.OrderedDict(zip(self.attributes, row))
-
-class Csv2RedCapOrderedDict(Csv2OrderedDict):
-    def get_name(self, name):
-        """REDCap has several names for the 'choices' field
-        but they all begin with 'choices'
-        """
-        x = super(Csv2RedCapOrderedDict, self).get_name(name)
         if x.startswith('choices'):
           x = 'choices_or_calculations'
         return x
@@ -88,6 +84,7 @@ class Converter(object):
         self.localization = args.localization
         self.matrix_id = MatrixId()
         self(args.infile)
+        sys.exit(0)
         
     def _get_args(self):
         parser = argparse.ArgumentParser(
@@ -122,7 +119,7 @@ class Converter(object):
         return parser.parse_args()
     
     def __call__(self, fname):
-        """process the csv input and create output files.
+        """process the csv input, and create output files.
         ``fname`` is a filename, file, (or anything accepted by csv.reader)
         """
         self.instrument = Rios.Instrument(
@@ -140,7 +137,7 @@ class Converter(object):
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        for od in Csv2RedCapOrderedDict(fname):
+        for od in Csv2OrderedDict(fname):
             if 'form_name' not in od:
                 continue
             self.process_od(od)                
@@ -158,12 +155,13 @@ class Converter(object):
         - convert caret to pow
         """
         s = RE_database_ref.sub(r'assessment["\1"]["\2"]', calc)
-        s = RE_variable_ref.sub(
-                r'%s["\1"]' % (
-                        'calculations' 
-                        if variable in self.variables 
-                        else 'assessment'),
-                s)
+        variables = RE_variable_ref.findall(s)
+        s = RE_variable_ref.sub(r'calculations["\1"]', s)
+        for var in variables:
+            if var not in self.calculation_variables:
+                s = s.replace(
+                        'calculations["%s"]' % var, 
+                        'assessment["%s"]' % var)
         for name, pattern in RE_funcs.items():
             s = pattern.sub(FUNCTION_TO_PYTHON[name], s)
         s = RE_carat_function.sub(r'math.pow(\1, \2)', s)
@@ -261,8 +259,7 @@ class Converter(object):
                     description=od['field_label'],
                     type='float',
                     method='python',
-                    options={'expression': calc},
-                    })
+                    options={'expression': calc}, ))
             assert field_name not in self.calculation_variables
             self.calculation_variables.add(field_name)
             return None # not an instrument field
@@ -427,7 +424,7 @@ class Converter(object):
                 required=bool(od['required_field']), ))
         return field
 
-    def process_od(self, od)
+    def process_od(self, od):
         page_name = od['form_name']
         if self.page_name != page_name:
             self.page_name = page_name
