@@ -31,10 +31,6 @@ RE_database_ref = re.compile(r'\[([\w_]+)\]\[([\w_]+)\]')
 # \1 => variable name
 RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
 
-# Find function call
-# \1 => function name
-RE_function = re.compile(r'([\w_]+\()')
-
 # Find carat function: (base)^(exponent)
 # \1 => base, \2 => exponent
 RE_carat_function = re.compile(r'\((.+)\)^\((.+)\)')
@@ -53,9 +49,10 @@ FUNCTION_TO_PYTHON = {
         'abs': 'abs',
         'datediff': 'rios.conversion.redcap.math.datediff',
         }
-        
+
+# dict of function name: pattern which finds "name("
 RE_funcs = {
-        k: re.compile(r'(%s\()' % k) 
+        k: re.compile(r'%s\(' % k) 
         for k in FUNCTION_TO_PYTHON.keys()}
 
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
@@ -163,7 +160,8 @@ class Converter(object):
                         'calculations["%s"]' % var, 
                         'assessment["%s"]' % var)
         for name, pattern in RE_funcs.items():
-            s = pattern.sub(FUNCTION_TO_PYTHON[name], s)
+            # the matched pattern includes the '('
+            s = pattern.sub('%s(' % FUNCTION_TO_PYTHON[name], s)
         s = RE_carat_function.sub(r'math.pow(\1, \2)', s)
         return s
         
