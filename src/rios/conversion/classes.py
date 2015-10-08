@@ -36,6 +36,9 @@ __all__ = (
 
 class DefinitionSpecification(collections.OrderedDict):
     props = collections.OrderedDict()
+    """
+    props == {(key, type), ...}
+    """
     def __init__(self, props={}, **kwargs):
         """
         if ``self.props`` has items, filter out any keys
@@ -43,7 +46,7 @@ class DefinitionSpecification(collections.OrderedDict):
         otherwise initialize from props and/or kwargs.
         """
         super(DefinitionSpecification, self).__init__()
-        self.update(self.props)
+        self.update({k: v() for k, v in self.props.items()})
         self.update({
                 k: v 
                 for k, v in props.items()  
@@ -52,6 +55,24 @@ class DefinitionSpecification(collections.OrderedDict):
                 k: v 
                 for k, v in kwargs.items() 
                 if not self.props or k in self.props})
+
+    def clean(self):
+        """Removes "empty" items from self.
+        items whose values are empty arrays, dicts, and strings
+        are deleted.
+        """
+        for k, v in self.items():
+            if v not in [False, 0, 0.0, None]:
+                if bool(v):
+                    if isinstance(v, DefinitionSpecification):
+                        v.clean()
+                    elif isinstance(v, list):
+                        v = [x for x in v if x.clean()]
+                    if not bool(v):
+                        del self[k]
+                else:
+                    del self[k]
+        return self
 
 class AudioSourceObject(DefinitionSpecification):
     pass
@@ -71,31 +92,32 @@ class TypeCollectionObject(DefinitionSpecification):
 
 class Instrument(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('version', ''),
-            ('title', ''),
-            ('description', ''),
-            ('types', TypeCollectionObject()),
-            ('record', []),
+            ('id', str),
+            ('version', str),
+            ('title', str),
+            ('description', str),
+            ('types', TypeCollectionObject),
+            ('record', list),
             ])
     def add_field(self, field_object):
         assert isinstance(field_object, FieldObject), field_object
-        self.props['record'].append(field_object)
-    
+        if field_object['id']:
+            self['record'].append(field_object)
+        
     def add_type(self, type_name, type_object):
         assert isinstance(type_name, str), type_name
         assert isinstance(type_object, TypeObject), type_object
-        self.props['types'][type_name] = type_object
+        self['types'][type_name] = type_object
 
 class FieldObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('description', ''),
-            ('type', ''),
-            ('required', False),
-            ('annotation', ''),
-            ('explanation', ''),
-            ('identifiable', False),
+            ('id', str),
+            ('description', str),
+            ('type', str),
+            ('required', bool),
+            ('annotation', str),
+            ('explanation', str),
+            ('identifiable', bool),
             ])
 
 class BoundConstraintObject(DefinitionSpecification):
@@ -108,97 +130,98 @@ class BoundConstraintObject(DefinitionSpecification):
 
 class TypeObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('base', ''),
-            ('range', BoundConstraintObject()),
-            ('length', BoundConstraintObject()),
-            ('pattern', ''),
-            ('enumerations', EnumerationCollectionObject()),
-            ('record', []),
-            ('columns', []),
-            ('rows', []),
+            ('base', str),
+            ('range', BoundConstraintObject),
+            ('length', BoundConstraintObject),
+            ('pattern', str),
+            ('enumerations', EnumerationCollectionObject),
+            ('record', list),
+            ('columns', list),
+            ('rows', list),
             ])
     def add_column(self, column_object):
         assert isinstance(column_object, ColumnObject), column_object
-        self.props['columns'].append(column_object)
+        self['columns'].append(column_object)
         
     def add_enumeration(self, name, description=''):
-        self.props['enumerations'].add(name, description)
+        self['enumerations'].add(name, description)
 
     def add_field(self, field_object):
         assert isinstance(field_object, FieldObject), field_object
-        self.props['record'].append(field_object)
+        self['record'].append(field_object)
 
     def add_row(self, row_object):
         assert isinstance(row_object, RowObject), row_object
-        self.props['rows'].append(row_object)
+        self['rows'].append(row_object)
 
 class ColumnObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('description', ''),
-            ('type', ''),
-            ('required', False),
-            ('identifiable', False),
+            ('id', str),
+            ('description', str),
+            ('type', str),
+            ('required', bool),
+            ('identifiable', bool),
             ])
 
 class RowObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('description', ''),
-            ('required', False),
+            ('id', str),
+            ('description', str),
+            ('required', bool),
             ])
 
 class EnumerationObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('description', ''),
+            ('description', str),
             ])
 
 class InstrumentReferenceObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('version', ''),
+            ('id', str),
+            ('version', str),
             ])
 
 class CalculationSetObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('instrument', InstrumentReferenceObject()),
-            ('calculations', []),
+            ('instrument', InstrumentReferenceObject),
+            ('calculations', list),
             ])
     def add(self, calc_object):
         assert isinstance(calc_object, CalculationObject), calc_object
-        self.props['calculations'].append(calc_object)
+        self['calculations'].append(calc_object)
 
 class CalculationObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('description', ''),
-            ('type', ''),
-            ('method', ''),
-            ('options', {}),
+            ('id', str),
+            ('description', str),
+            ('type', str),
+            ('method', str),
+            ('options', DefinitionSpecification),
             ])
 
 class WebForm(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('instrument', InstrumentReferenceObject()),
-            ('defaultLocalization', ''),
-            ('title', ''),
-            ('pages', []),
-            ('parameters', {}),
+            ('instrument', InstrumentReferenceObject),
+            ('defaultLocalization', str),
+            ('title', str),
+            ('pages', list),
+            ('parameters', DefinitionSpecification),
             ])
     def add_page(self, page_object):
         assert isinstance(page_object, PageObject), page_object
-        self.props['pages'].append(page_object)
+        self['pages'].append(page_object)
         
     def add_parameter(self, parameter_name, parameter_object):
         assert isinstance(parameter_name, str), parameter_name
         assert isinstance(parameter_object, ParameterObject), parameter_object
-        self.props['parameters'][parameter_name] = parameter_object
+        self['parameters'][parameter_name] = parameter_object
 
 class PageObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('elements', []),
+            ('id', str),
+            ('elements', list),
             ])
+
     def add_element(self, element_object):
         element_list = (
                 element_object 
@@ -206,78 +229,76 @@ class PageObject(DefinitionSpecification):
                 else [element_object])
         for element in element_list:
             assert isinstance(element, ElementObject), element
-            self.props['elements'].append(element)
+            self['elements'].append(element)
 
 class ElementObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('type', ''),
-            ('options', {}),
-            ('tags', []),
+            ('type', str),
+            ('options', DefinitionSpecification),
+            ('tags', list),
             ])
 
 class WidgetConfigurationObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('type', ''),
-            ('options', {}),
+            ('type', str),
+            ('options', DefinitionSpecification),
             ])
 
 class QuestionObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('fieldId', ''),
-            ('text', LocalizedStringObject()),
-            ('audio', AudioSourceObject()),
-            ('help', LocalizedStringObject()),
-            ('error', LocalizedStringObject()),
-            ('enumerations', []),
-            ('questions', []),
-            ('rows', []),
-            ('widget', WidgetConfigurationObject()),
-            ('events', []),
+            ('fieldId', str),
+            ('text', LocalizedStringObject),
+            ('audio', AudioSourceObject),
+            ('help', LocalizedStringObject),
+            ('error', LocalizedStringObject),
+            ('enumerations', list),
+            ('questions', list),
+            ('rows', list),
+            ('widget', WidgetConfigurationObject),
+            ('events', list),
             ])
     def add_enumeration(self, descriptor_object):
         assert isinstance(
                 descriptor_object, 
                 DescriptorObject), descriptor_object
-        self.props['enumerations'].append(descriptor_object)
+        self['enumerations'].append(descriptor_object)
 
     def add_question(self, question_object):
         assert isinstance(question_object, QuestionObject), question_object
-        self.props['questions'].append(question_object)
+        self['questions'].append(question_object)
         
     def add_row(self, descriptor_object):
         assert isinstance(
                 descriptor_object, 
                 DescriptorObject), descriptor_object
-        self.props['rows'].append(descriptor_object)
+        self['rows'].append(descriptor_object)
         
     def add_event(self, event_object):
         assert isinstance(event_object, EventObject), event_object
-        self.props['events'].append(event_object)
-        
+        self['events'].append(event_object)
 
     def set_widget(self, widget):
         assert isinstance(widget, WidgetConfigurationObject), widget
-        self.props['widget'] = widget
+        self['widget'] = widget
         
 class DescriptorObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('id', ''),
-            ('text', LocalizedStringObject()),
-            ('audio', AudioSourceObject()),
-            ('help', LocalizedStringObject()),
+            ('id', str),
+            ('text', LocalizedStringObject),
+            ('audio', AudioSourceObject),
+            ('help', LocalizedStringObject),
             ])
 
 class EventObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('trigger', ''),
-            ('action', ''),
-            ('targets', []),
-            ('options', {}),
+            ('trigger', str),
+            ('action', str),
+            ('targets', list),
+            ('options', DefinitionSpecification),
             ])
 
 class ParameterObject(DefinitionSpecification):
     props = collections.OrderedDict([
-            ('type', ''),
+            ('type', str),
             ])
-
 

@@ -186,17 +186,17 @@ class Converter(object):
     def create_calculation_file(self):
         if self.calculations:
             with open(self.filename('c'), 'w') as fo:
-                json.dump(self.calculations, fo)
+                json.dump(self.calculations.clean(), fo)
 
     def create_instrument_file(self):
         if self.instrument:
             with open(self.filename('i'), 'w') as fo:
-                json.dump(self.instrument, fo)
+                json.dump(self.instrument.clean(), fo)
         
     def create_form_file(self):
         if self.form:
             with open(self.filename('f'), 'w') as fo:
-                json.dump(self.form, fo)
+                json.dump(self.form.clean(), fo)
 
     def filename(self, kind):
         return '%(prefix)s.%(kind)s.json' % {
@@ -209,7 +209,7 @@ class Converter(object):
         of (comma delimited) tuples: internal, external
         """
         return Rios.EnumerationCollectionObject(**{
-                x.strip().split(',')[0]: None
+                x.strip().split(',')[0].lower(): None
                 for x in od['choices_or_calculations'].split('|') })
                 
     def get_choices_external(self, od):
@@ -219,8 +219,9 @@ class Converter(object):
         """
         return [
                 Rios.DescriptorObject(
-                        id=','.join(x.strip().split(',')[1:]),
-                        text='', )
+                        id=od['variable_field_name'],
+                        text=self.localized_string_object(
+                                ','.join(x.strip().split(',')[1:])),)
                 for x in od['choices_or_calculations'].split('|') ]
 
     def get_type(self, od):
@@ -314,7 +315,9 @@ class Converter(object):
             self.question.set_widget(get_widget(type='inputNumber'))
             return Rios.TypeObject(
                     base='float',
-                    range=Rios.BoundConstraintObject(min=0.0, max=100.0), )
+                    range=Rios.BoundConstraintObject(
+                            min=0.0, 
+                            max=100.0), )
 
         def process_truefalse():        
             self.question.set_widget(get_widget(type='radioGroup'))
@@ -343,7 +346,8 @@ class Converter(object):
                     base='boolean',
                     enumerations=Rios.EnumerationCollectionObject(
                             yes=Rios.EnumerationObject(description="Yes"),
-                            no=Rios.EnumerationObject(description="No"), ))
+                            no=Rios.EnumerationObject(description="No"), 
+                            ), )
 
         field_type = od['field_type']
         if field_type == 'text':
@@ -454,7 +458,7 @@ class Converter(object):
                         id=od['variable_field_name'],
                         description=od['field_label'],
                         required=bool(od['required_field']), ))
-                field = {}       
+                field = Rios.FieldObject()      
                 self.question.add_row(Rios.DescriptorObject(
                         id=str(self.matrix_id),
                         text=self.localized_string_object(od['field_label']),
@@ -463,8 +467,7 @@ class Converter(object):
             self.matrix_group_name = ''
             self.field_type = None
             field = self.make_field(od)
-        if field:
-            self.instrument.add_field(field)    
+        self.instrument.add_field(field) 
 
 class MatrixId(object):
     def __init__(self, start=0):
