@@ -203,7 +203,19 @@ class Converter(object):
                 'prefix':self.prefix,
                 'kind': kind, }
 
-    def get_choices_internal(self, od):
+    def get_choices_form(self, od):
+        """ returns array of DescriptorObject
+        Expecting: choices_or_calculations to be pipe separated list 
+        of (comma delimited) tuples: internal, external
+        """
+        return [
+                Rios.DescriptorObject(
+                        id=x.strip().split(',')[0].lower(),
+                        text=self.localized_string_object(
+                                ','.join(x.strip().split(',')[1:])),)
+                for x in od['choices_or_calculations'].split('|') ]
+
+    def get_choices_instrument(self, od):
         """ returns EnumerationCollectionObject
         Expecting: choices_or_calculations to be pipe separated list 
         of (comma delimited) tuples: internal, external
@@ -212,18 +224,6 @@ class Converter(object):
                 x.strip().split(',')[0].lower(): None
                 for x in od['choices_or_calculations'].split('|') })
                 
-    def get_choices_external(self, od):
-        """ returns array of DescriptorObject
-        Expecting: choices_or_calculations to be pipe separated list 
-        of (comma delimited) tuples: internal, external
-        """
-        return [
-                Rios.DescriptorObject(
-                        id=od['variable_field_name'],
-                        text=self.localized_string_object(
-                                ','.join(x.strip().split(',')[1:])),)
-                for x in od['choices_or_calculations'].split('|') ]
-
     def get_type(self, od):
         """returns the computed instrument field type.
         Also has side effects.
@@ -245,7 +245,7 @@ class Converter(object):
             else:
                 raise ValueError, ('unexpected text type', text_type)
                  
-        def process_calc():
+        def process_calculation():
             form_name = od['form_name']
             field_name = od['variable_field_name']
             if not self.calculations:
@@ -265,17 +265,17 @@ class Converter(object):
 
         def process_checkbox():
             self.question.set_widget(get_widget(type='checkGroup'))
-            self.question['enumerations'] = self.get_choices_external(od)
+            self.question['enumerations'] = self.get_choices_form(od)
             return Rios.TypeObject(
                     base='enumerationSet',
-                    enumerations=self.get_choices_internal(od), )
+                    enumerations=self.get_choices_instrument(od), )
 
         def process_dropdown():
             self.question.set_widget(get_widget(type='dropDown'))
-            self.question['enumerations'] = self.get_choices_external(od)
+            self.question['enumerations'] = self.get_choices_form(od)
             return Rios.TypeObject(
                     base='enumeration',
-                    enumerations=self.get_choices_internal(od), )
+                    enumerations=self.get_choices_instrument(od), )
 
         def process_notes():
             self.question.set_widget(get_widget(type='textArea'))
@@ -283,10 +283,10 @@ class Converter(object):
 
         def process_radio():
             self.question.set_widget(get_widget(type='radioGroup'))
-            self.question['enumerations'] = self.get_choices_external(od)
+            self.question['enumerations'] = self.get_choices_form(od)
             return Rios.TypeObject(
                     base='enumeration',
-                    enumerations=self.get_choices_internal(od), )
+                    enumerations=self.get_choices_instrument(od), )
 
         def process_text():
             val_min = od['text_validation_min']
@@ -361,7 +361,7 @@ class Converter(object):
         elif field_type == 'checkbox':
             return process_checkbox()
         elif field_type == 'calc':
-            return process_calc()
+            return process_calculation()
         elif field_type == 'slider':
             return process_slider()
         elif field_type == 'truefalse':
@@ -385,11 +385,14 @@ class Converter(object):
                     self.localized_string_object(section_header)}
             element = Rios.ElementObject()
             elements.append(element)
-        element['type'] = 'question'
-        element['options'] = Rios.QuestionObject(
-                fieldId=od['variable_field_name'],
-                text=self.localized_string_object(od['field_label']),
-                help=self.localized_string_object(od['field_note']), )
+        if od['field_type'] == 'calc':
+            del elements[-1] # not a form field.
+        else:
+            element['type'] = 'question'
+            element['options'] = Rios.QuestionObject(
+                    fieldId=od['variable_field_name'],
+                    text=self.localized_string_object(od['field_label']),
+                    help=self.localized_string_object(od['field_note']), )
         return elements 
 
     def make_field(self, od):
@@ -435,7 +438,8 @@ class Converter(object):
             
         elements = self.make_elements(od)
         self.page.add_element(elements)
-        self.question = elements[-1]['options']
+        if elements and elements[-1]['type'] == 'question':
+            self.question = elements[-1]['options']
                 
         matrix_group_name = od.get('matrix_group_name', '')
         if matrix_group_name:
@@ -447,7 +451,7 @@ class Converter(object):
                 self.question.add_question(Rios.QuestionObject(
                         fieldId=od['variable_field_name'],
                         text=self.localized_string_object(od['field_label']),
-                        enumerations=self.get_choices_external(od), ))
+                        enumerations=self.get_choices_form(od), ))
                 self.question.add_row(Rios.DescriptorObject(
                         id=str(self.matrix_id),
                         text=self.localized_string_object(od['field_label']),
