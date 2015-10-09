@@ -174,6 +174,10 @@ class Converter(object):
         else:
             return 'text'
 
+    def convert_trigger(self, trigger):
+        return 'rios.conversion.redcap.math.not_(%s)' % (
+                self.convert_calc(trigger))
+        
     def convert_value(self, value, text_type):
         if text_type == 'integer':
             return int(value)
@@ -440,7 +444,7 @@ class Converter(object):
         if elements and elements[-1]['type'] == 'question':
             self.question = elements[-1]['options']
 
-        if od['branching_logic_show_field_only_if_']:
+        if od.get('branching_logic_show_field_only_if_', False):
             self.question.add_event(Rios.EventObject(
                     trigger=self.convert_trigger(
                             od['branching_logic_show_field_only_if_']),
