@@ -30,7 +30,7 @@ setup(
     namespace_packages=['rios'],
     entry_points={
         'console_scripts': [
-            'redcap-rios = rios.conversion.redcap.converter:Converter',
+            'redcap-rios = rios.conversion.redcap.converter:main',
         ]
     },
     install_requires=[

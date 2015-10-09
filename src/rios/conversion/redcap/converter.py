@@ -81,7 +81,6 @@ class Converter(object):
         self.localization = args.localization
         self.matrix_id = MatrixId()
         self(args.infile)
-        sys.exit(0)
         
     def _get_args(self):
         parser = argparse.ArgumentParser(
@@ -440,7 +439,13 @@ class Converter(object):
         self.page.add_element(elements)
         if elements and elements[-1]['type'] == 'question':
             self.question = elements[-1]['options']
-                
+
+        if od['branching_logic_show_field_only_if_']:
+            self.question.add_event(Rios.EventObject(
+                    trigger=self.convert_trigger(
+                            od['branching_logic_show_field_only_if_']),
+                    action='disable', ))
+
         matrix_group_name = od.get('matrix_group_name', '')
         if matrix_group_name:
             if self.matrix_group_name != matrix_group_name:
@@ -483,6 +488,7 @@ class MatrixId(object):
     def next(self):
         self.matrix_id += 1 
 
-if __name__ == '__main__':
+def main():
     Converter()
+    sys.exit(0)
 
