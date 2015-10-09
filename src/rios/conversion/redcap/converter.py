@@ -55,6 +55,16 @@ RE_funcs = {
         k: re.compile(r'%s\(' % k) 
         for k in FUNCTION_TO_PYTHON.keys()}
 
+OPERATOR_TO_PYTHON = [
+        # = (but not !=, <= or >=) to ==
+        (r'([^!<>])=', r'\1=='),
+
+        # <> to !=
+        (r'<>', r'!='),
+        ]
+
+RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_PYTHON]
+                
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
     def get_name(self, name):
         """ Return canonical name.
@@ -175,8 +185,10 @@ class Converter(object):
             return 'text'
 
     def convert_trigger(self, trigger):
-        return 'rios.conversion.redcap.math.not_(%s)' % (
-                self.convert_calc(trigger))
+        s = self.convert_calc(trigger)
+        for pattern, replacement in RE_ops:
+            s = pattern.sub(replacement, s)
+        return 'rios.conversion.redcap.math.not_(%s)' % s
         
     def convert_value(self, value, text_type):
         if text_type == 'integer':
@@ -444,10 +456,10 @@ class Converter(object):
         if elements and elements[-1]['type'] == 'question':
             self.question = elements[-1]['options']
 
-        if od.get('branching_logic_show_field_only_if_', False):
+        if od['branching_logic_show_field_only_if']:
             self.question.add_event(Rios.EventObject(
                     trigger=self.convert_trigger(
-                            od['branching_logic_show_field_only_if_']),
+                            od['branching_logic_show_field_only_if']),
                     action='disable', ))
 
         matrix_group_name = od.get('matrix_group_name', '')
