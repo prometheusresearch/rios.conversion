@@ -124,8 +124,8 @@ class BoundConstraintObject(DefinitionSpecification):
     """Must have at least one of ['max', 'min']
     """
     props = collections.OrderedDict([
-            #('min', None),
-            #('max', None),
+            ('min', str),
+            ('max', str),
             ])
 
 class TypeObject(DefinitionSpecification):
