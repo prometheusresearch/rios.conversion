@@ -1,10 +1,9 @@
 """
-Converts a redcap csv file into a series of json blobs
-stored in files:
+Converts a redcap csv file into a series of output files
 
-    - %(prefix)s.i.json   rios instrument
-    - %(prefix)s.c.json   rios calculation
-    - %(prefix)s.f.json   rios web form
+    - <prefix>_i.<format>   rios instrument
+    - <prefix>_c.<format>   rios calculation
+    - <prefix>_f.<format>   rios web form
 """
 
 import argparse
@@ -91,6 +90,7 @@ class Converter(object):
         self.version = args.version
         self.title = args.title
         self.localization = args.localization
+        self.format = args.format
         self.matrix_id = MatrixId()
         self(args.infile)
         
@@ -100,30 +100,37 @@ class Converter(object):
                 formatter_class=argparse.RawTextHelpFormatter,
                 description=__doc__)
         parser.add_argument(
-                '--infile',
-                required=True,
-                type=argparse.FileType('r'),            
-                help="The csv input file to process.  Use '-' for stdin.")
-        parser.add_argument(
-                '--prefix',
-                required=True,
-                help='The prefix for the output files')
+                '--format',
+                default='yaml',
+                choices=['yaml', 'json'],
+                help='The format for the output files.  '
+                        'The default is "yaml".')
         parser.add_argument(
                 '--id',
                 required=True,
                 help='The instrument id to output.')
         parser.add_argument(
-                '--version',
+                '--infile',
                 required=True,
-                help='The instrument version to output.')
+                type=argparse.FileType('r'),            
+                help="The csv input file to process.  Use '-' for stdin.")
+        parser.add_argument(
+                '--localization',
+                default='en',
+                help='The default localization for the web form.  '
+                        'The default is "en"')
+        parser.add_argument(
+                '--prefix',
+                required=True,
+                help='The prefix for the output files')
         parser.add_argument(
                 '--title',
                 required=True,
                 help='The instrument title to output.')
         parser.add_argument(
-                '--localization',
-                default='en',
-                help='The default localization for the web form.')
+                '--version',
+                required=True,
+                help='The instrument version to output.')
         return parser.parse_args()
     
     def __call__(self, fname):
@@ -200,32 +207,32 @@ class Converter(object):
         else:
             return value
 
+    def create__file(self, kind, obj):
+        if obj:
+            obj.clean()
+            with open(self.filename(kind), 'w') as fo:
+                if self.format == 'json':
+                    json.dump(obj, fo, indent=1)
+                elif self.format == 'yaml':
+                    yaml.safe_dump(
+                            json.loads(json.dumps(obj)), 
+                            fo, 
+                            default_flow_style=False)
+
     def create_calculation_file(self):
-        if self.calculations:
-            with open(self.filename('c'), 'w') as fo:
-                json.dump(self.calculations.clean(), fo, indent=1)
-            with open(self.filename('c', 'yaml'), 'w') as fo:
-                yaml.dump(self.calculations, fo)
+        self.create__file('c', self.calculations)
 
     def create_instrument_file(self):
-        if self.instrument:
-            with open(self.filename('i'), 'w') as fo:
-                json.dump(self.instrument.clean(), fo, indent=1)
-            with open(self.filename('i', 'yaml'), 'w') as fo:
-                yaml.dump(self.instrument, fo)
+        self.create__file('i', self.instrument)
         
     def create_form_file(self):
-        if self.form:
-            with open(self.filename('f'), 'w') as fo:
-                json.dump(self.form.clean(), fo, indent=1)
-            with open(self.filename('f', 'yaml'), 'w') as fo:
-                yaml.dump(self.form, fo)
+        self.create__file('f', self.form)
 
-    def filename(self, kind, extension='json'):
+    def filename(self, kind):
         return '%(prefix)s_%(kind)s.%(extension)s' % {
                 'prefix':self.prefix,
                 'kind': kind, 
-                'extension': extension, }
+                'extension': self.format, }
 
     def get_choices_form(self, od):
         """ returns array of DescriptorObject
