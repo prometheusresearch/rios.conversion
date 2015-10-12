@@ -15,6 +15,7 @@ import rios.conversion.csv_reader
 import rios.conversion.classes as Rios
 import sys
 import os
+import yaml
 
 # Consecutive non-alpha chars.
 RE_non_alphanumeric = re.compile(r'\W+')
@@ -202,22 +203,29 @@ class Converter(object):
     def create_calculation_file(self):
         if self.calculations:
             with open(self.filename('c'), 'w') as fo:
-                json.dump(self.calculations.clean(), fo)
+                json.dump(self.calculations.clean(), fo, indent=1)
+            with open(self.filename('c', 'yaml'), 'w') as fo:
+                yaml.dump(self.calculations, fo)
 
     def create_instrument_file(self):
         if self.instrument:
             with open(self.filename('i'), 'w') as fo:
-                json.dump(self.instrument.clean(), fo)
+                json.dump(self.instrument.clean(), fo, indent=1)
+            with open(self.filename('c', 'yaml'), 'w') as fo:
+                yaml.dump(self.instrument, fo)
         
     def create_form_file(self):
         if self.form:
             with open(self.filename('f'), 'w') as fo:
-                json.dump(self.form.clean(), fo)
+                json.dump(self.form.clean(), fo, indent=1)
+            with open(self.filename('c', 'yaml'), 'w') as fo:
+                yaml.dump(self.form, fo)
 
-    def filename(self, kind):
-        return '%(prefix)s.%(kind)s.json' % {
+    def filename(self, kind, extension='.json'):
+        return '%(prefix)s_%(kind)s.%(extension)s' % {
                 'prefix':self.prefix,
-                'kind': kind, }
+                'kind': kind, 
+                'extension': extension, }
 
     def get_choices_form(self, od):
         """ returns array of DescriptorObject
