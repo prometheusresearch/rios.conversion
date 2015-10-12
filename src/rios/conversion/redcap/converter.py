@@ -73,6 +73,7 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
         - ensure 'choices' field is 'choices_or_calculations' 
           (REDCap has several names for the 'choices' field
           but they all begin with 'choices')
+        - convert to lowercase.
         """
         x = RE_strip_outer_underbars.sub(
                 r'\1',
