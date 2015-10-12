@@ -303,6 +303,14 @@ class Converter(object):
                     base='enumeration',
                     enumerations=self.get_choices_instrument(od), )
 
+        def process_slider():
+            self.question.set_widget(get_widget(type='inputNumber'))
+            return Rios.TypeObject(
+                    base='float',
+                    range=Rios.BoundConstraintObject(
+                            min=0.0, 
+                            max=100.0), )
+
         def process_text():
             val_min = od['text_validation_min']
             val_max = od['text_validation_max']
@@ -325,14 +333,6 @@ class Converter(object):
                         range=bound_constraint)
             else:
                 return text_type 
-
-        def process_slider():
-            self.question.set_widget(get_widget(type='inputNumber'))
-            return Rios.TypeObject(
-                    base='float',
-                    range=Rios.BoundConstraintObject(
-                            min=0.0, 
-                            max=100.0), )
 
         def process_truefalse():        
             self.question.set_widget(get_widget(type='radioGroup'))
