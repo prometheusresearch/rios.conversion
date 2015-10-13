@@ -39,32 +39,32 @@ class Converter(object):
                 choices=['yaml', 'json'],
                 help='The format and extension for the output files.  '
                         'The default is "yaml".')
-#        parser.add_argument(
-#                '--id',
-#                required=True,
-#                help='The instrument id to output.')
+        parser.add_argument(
+                '--id',
+                required=True,
+                help='The instrument id to output.')
         parser.add_argument(
                 '--infile',
                 required=True,
                 type=argparse.FileType('r'),            
                 help="The qsf input file to process.  Use '-' for stdin.")
-#        parser.add_argument(
-#                '--localization',
-#                default='en',
-#                help='The default localization for the web form.  '
-#                        'The default is "en"')
+        parser.add_argument(
+                '--localization',
+                default='en',
+                help='The default localization for the web form.  '
+                        'The default is "en"')
         parser.add_argument(
                 '--prefix',
                 required=True,
                 help='The prefix for the output files')
-#        parser.add_argument(
-#                '--title',
-#                required=True,
-#                help='The instrument title to output.')
-#        parser.add_argument(
-#                '--version',
-#                required=True,
-#                help='The instrument version to output.')
+        parser.add_argument(
+                '--title',
+                required=True,
+                help='The instrument title to output.')
+        parser.add_argument(
+                '--version',
+                required=True,
+                help='The instrument version to output.')
         return parser.parse_args()
     
     def __call__(self, fname):
@@ -92,7 +92,7 @@ class Converter(object):
 
     def create__file(self, kind, obj):
         if obj:
-            obj.clean()
+            #obj.clean()
             with open(self.filename(kind), 'w') as fo:
                 if self.format == 'json':
                     json.dump(obj, fo, indent=1)
