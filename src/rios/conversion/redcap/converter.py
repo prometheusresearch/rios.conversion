@@ -105,7 +105,7 @@ class Converter(object):
                 '--format',
                 default='yaml',
                 choices=['yaml', 'json'],
-                help='The format for the output files.  '
+                help='The format and extension for the output files.  '
                         'The default is "yaml".')
         parser.add_argument(
                 '--id',
