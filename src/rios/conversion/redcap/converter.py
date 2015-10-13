@@ -1,9 +1,12 @@
 """
 Converts a redcap csv file into a series of output files
 
-    - <prefix>_i.<format>   rios instrument
-    - <prefix>_c.<format>   rios calculation
-    - <prefix>_f.<format>   rios web form
+    - <prefix>_c.<format> RIOS calculation
+    - <prefix>_i.<format> RIOS instrument
+    - <prefix>_f.<format> RIOS web form
+
+The RIOS calculation file is only created when there are 
+calculation fields in the input.
 """
 
 import argparse
@@ -56,10 +59,10 @@ RE_funcs = {
         for k in FUNCTION_TO_PYTHON.keys()}
 
 OPERATOR_TO_PYTHON = [
-        # = (but not !=, <= or >=) to ==
+        # convert "=" (but not "!=", "<=". or ">=") to "=="
         (r'([^!<>])=', r'\1=='),
 
-        # <> to !=
+        # convert "<>" to "!="
         (r'<>', r'!='),
         ]
 
@@ -219,7 +222,8 @@ class Converter(object):
                             default_flow_style=False)
 
     def create_calculation_file(self):
-        self.create__file('c', self.calculations)
+        if self.calculations.get('calculations', False):
+            self.create__file('c', self.calculations)
 
     def create_instrument_file(self):
         self.create__file('i', self.instrument)
@@ -438,7 +442,6 @@ class Converter(object):
         
     def make_matrix_field(self, od):
         field = Rios.FieldObject()
-        field_type = self.get_type(od)
         field['id'] = od['matrix_group_name']
         field['description'] = od.get('section_header', '')
         field['type'] = Rios.TypeObject(base='matrix', )
@@ -479,7 +482,7 @@ class Converter(object):
                 self.field_type.add_column(Rios.ColumnObject(
                         id=od['field_type'],
                         description=od['field_label'],
-                        type=field_type,
+                        type=self.get_type(od),
                         required=bool(od['required_field']),
                         identifiable=bool(od['identifier']), ))
                 # Append the first row.
