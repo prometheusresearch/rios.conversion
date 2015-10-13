@@ -112,8 +112,7 @@ class Instrument(DefinitionSpecification):
             ])
     def add_field(self, field_object):
         assert isinstance(field_object, FieldObject), field_object
-        if field_object['id']:
-            self['record'].append(field_object)
+        self['record'].append(field_object)
         
     def add_type(self, type_name, type_object):
         assert isinstance(type_name, str), type_name

@@ -91,7 +91,6 @@ class Converter(object):
         self.title = args.title
         self.localization = args.localization
         self.format = args.format
-        self.matrix_id = MatrixId()
         self(args.infile)
         
     def _get_args(self):
@@ -440,24 +439,9 @@ class Converter(object):
     def make_matrix_field(self, od):
         field = Rios.FieldObject()
         field_type = self.get_type(od)
-        # Construct a unique name for this matrix
-        self.matrix_id.next()
-        field['id'] = str(self.matrix_id)
+        field['id'] = od['matrix_group_name']
         field['description'] = od.get('section_header', '')
         field['type'] = Rios.TypeObject(base='matrix', )
-        # Append the only column (a checkbox or radiobutton)
-        # Use the matrix_group_name as the id.
-        field['type'].add_column(Rios.ColumnObject(
-                id=od['matrix_group_name'],
-                description=od['field_label'],
-                type=field_type,
-                required=bool(od['required_field']),
-                identifiable=bool(od['identifier']), ))
-        # Append the first row.
-        field['type'].add_row(Rios.RowObject(
-                id=od['variable_field_name'],
-                description=od['field_label'],
-                required=bool(od['required_field']), ))
         return field
 
     def process_od(self, od):
@@ -478,6 +462,11 @@ class Converter(object):
                             od['branching_logic_show_field_only_if']),
                     action='disable', ))
 
+        """ assessment[m][r][c]
+        m = matrix_group_name
+        r = variable_field_name
+        c = field_type
+        """
         matrix_group_name = od.get('matrix_group_name', '')
         if matrix_group_name:
             if self.matrix_group_name != matrix_group_name:
@@ -485,12 +474,27 @@ class Converter(object):
                 self.matrix_group_name = matrix_group_name
                 field = self.make_matrix_field(od)
                 self.field_type = field['type']
+                # Append the only column.
+                # Use the field_type (checkbox or radiobutton) as the id.
+                self.field_type.add_column(Rios.ColumnObject(
+                        id=od['field_type'],
+                        description=od['field_label'],
+                        type=field_type,
+                        required=bool(od['required_field']),
+                        identifiable=bool(od['identifier']), ))
+                # Append the first row.
+                self.field_type.add_row(Rios.RowObject(
+                        id=od['variable_field_name'],
+                        description=od['field_label'],
+                        required=bool(od['required_field']), ))
+                # add the column to the form
                 self.question.add_question(Rios.QuestionObject(
                         fieldId=od['variable_field_name'],
                         text=self.localized_string_object(od['field_label']),
                         enumerations=self.get_choices_form(od), ))
+                # add the row to the form
                 self.question.add_row(Rios.DescriptorObject(
-                        id=str(self.matrix_id),
+                        id=od['variable_field_name'],
                         text=self.localized_string_object(od['field_label']),
                         ))
             else:
@@ -499,26 +503,19 @@ class Converter(object):
                         id=od['variable_field_name'],
                         description=od['field_label'],
                         required=bool(od['required_field']), ))
-                field = Rios.FieldObject()      
+                field = Rios.FieldObject()
+                # add the row to the form      
                 self.question.add_row(Rios.DescriptorObject(
-                        id=str(self.matrix_id),
+                        id=od['variable_field_name'],
                         text=self.localized_string_object(od['field_label']),
                         ))
         else:
             self.matrix_group_name = ''
             self.field_type = None
             field = self.make_field(od)
-        self.instrument.add_field(field) 
 
-class MatrixId(object):
-    def __init__(self, start=0):
-        self.matrix_id = start
-    
-    def __str__(self):
-        return 'matrix_%02d' % self.matrix_id
-    
-    def next(self):
-        self.matrix_id += 1 
+        if field['id']:
+            self.instrument.add_field(field) 
 
 def main():
     Converter()
