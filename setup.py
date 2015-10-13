@@ -31,6 +31,7 @@ setup(
     entry_points={
         'console_scripts': [
             'redcap-rios = rios.conversion.redcap.converter:main',
+            'qualtrics-rios = rios.conversion.qualtrics.converter:main',
         ]
     },
     install_requires=[
