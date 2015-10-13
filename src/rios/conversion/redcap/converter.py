@@ -47,7 +47,7 @@ FUNCTION_TO_PYTHON = {
         'rounddown': 'rios.conversion.redcap.math.rounddown',
         'sqrt': 'math.sqrt',
         'abs': 'abs',
-        'datediff': 'rios.conversion.redcap.math.datediff',
+        'datediff': 'rios.conversion.redcap.date.datediff',
         }
 
 # dict of function name: pattern which finds "name("
