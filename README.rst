@@ -9,9 +9,26 @@ into `RIOS`_ data structures.
 .. _`Python`: https://www.python.org
 .. _`RIOS`: https://rios.readthedocs.org
 
-The following input formats are supported.
+The following executables have been developed.
 
-- REDCap Data Dictionaries in csv format.
+- redcap-rios
+
+  Converts a REDCap Data Dictionary in csv format to 
+  a RIOS Instrument, Form, and CalculationSet 
+  in JSON or YAML format.
+  
+  Run the help command to see the available options and
+  required arguments::
+
+    redcap-rios --help
+
+
+Installation
+============
+
+::
+
+    pip install rios.conversion
 
 
 Contributing
