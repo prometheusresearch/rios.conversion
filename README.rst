@@ -9,19 +9,29 @@ into `RIOS`_ data structures.
 .. _`Python`: https://www.python.org
 .. _`RIOS`: https://rios.readthedocs.org
 
-The following executables have been developed.
+Conversion programs.
 
 - redcap-rios
 
   Converts a REDCap Data Dictionary in csv format to 
   a RIOS Instrument, Form, and CalculationSet 
   in JSON or YAML format.
+
+  The instrument id, version, and title must be provided as 
+  arguments on the command line as they are not in the csv file.
   
-  Run the help command to see the available options and
-  required arguments::
+- qualtrics-rios
 
-    redcap-rios --help
+  Converts a Qualtrics qsf file to a RIOS Instrument and Form
+  in JSON or YAML format.
 
+  The instrument version must be provided on the command line
+  as it is not in the qsf file.
+  
+Run the help command to see the available options and
+required arguments::
+
+  redcap-rios --help
 
 Installation
 ============
