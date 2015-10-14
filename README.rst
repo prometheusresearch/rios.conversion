@@ -9,7 +9,7 @@ into `RIOS`_ data structures.
 .. _`Python`: https://www.python.org
 .. _`RIOS`: https://rios.readthedocs.org
 
-Conversion programs.
+The following command line programs have been implemented.
 
 - redcap-rios
 
@@ -28,10 +28,10 @@ Conversion programs.
   The instrument version must be provided on the command line
   as it is not in the qsf file.
   
-Run each command's help to see its 
+Run each program's help to see its 
 required arguments and available options::
 
-  <command> --help
+  <program> --help
 
 Installation
 ============
