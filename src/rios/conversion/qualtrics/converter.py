@@ -21,11 +21,9 @@ class Converter(object):
     def __init__(self):
         args = self._get_args()
         self.prefix = args.prefix
-        self.id = args.id
         self.version = args.version
-        self.title = args.title
-        self.localization = args.localization
         self.format = args.format
+        self.page_name = PageName()
         self(args.infile)
         
     def _get_args(self):
@@ -40,27 +38,14 @@ class Converter(object):
                 help='The format and extension for the output files.  '
                         'The default is "yaml".')
         parser.add_argument(
-                '--id',
-                required=True,
-                help='The instrument id to output.')
-        parser.add_argument(
                 '--infile',
                 required=True,
                 type=argparse.FileType('r'),            
                 help="The qsf input file to process.  Use '-' for stdin.")
         parser.add_argument(
-                '--localization',
-                default='en',
-                help='The default localization for the web form.  '
-                        'The default is "en"')
-        parser.add_argument(
                 '--prefix',
                 required=True,
                 help='The prefix for the output files')
-        parser.add_argument(
-                '--title',
-                required=True,
-                help='The instrument title to output.')
         parser.add_argument(
                 '--version',
                 required=True,
@@ -71,28 +56,36 @@ class Converter(object):
         """process the qsf input, and create output files.
         ``fname`` is an open file object.
         """
+        self.qualtrics = self.get_qualtrics(json.load(fname))
+        self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
-                id=self.id,
+                id='urn:' + self.qualtrics['id'],
                 version=self.version,
-                title=self.title)
+                title=self.qualtrics['title'],
+                description=self.qualtrics['description'])
         self.calculations = Rios.CalculationSetObject(
                 instrument=Rios.InstrumentReferenceObject(self.instrument),
                 )
         self.form = Rios.WebForm(
                 instrument=Rios.InstrumentReferenceObject(self.instrument),
                 defaultLocalization=self.localization,
-                title=self.localized_string_object(self.title),
+                title=self.localized_string_object(self.instrument['title']),
                 )
-        self.calculation_variables = set()
-        self.instrument = Rios.DefinitionSpecification()
-        self.instrument.update(json.load(fname))
+
+        self.start_page()
+        questions = self.qualtrics['questions']
+        for element in self.qualtrics['block_elements']:
+            if element['Type'] == 'Page Break':
+                self.start_page()
+            elif element['Type'] == 'Question':
+                self.process_question(questions[element['QuestionID']])
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
 
     def create__file(self, kind, obj):
         if obj:
-            #obj.clean()
+            obj.clean()
             with open(self.filename(kind), 'w') as fo:
                 if self.format == 'json':
                     json.dump(obj, fo, indent=1)
@@ -118,8 +111,80 @@ class Converter(object):
                 'kind': kind, 
                 'extension': self.format, }
 
+    def get_qualtrics(self, raw):
+        """ Extract all the useful info from the raw qualtrics object
+        into a dict and return it.
+        """
+        survey_entry = raw['SurveyEntry']
+        qualtrics = {
+                'description':    survey_entry['SurveyDescription'],
+                'id':             survey_entry['SurveyID'],
+                'localization':   survey_entry['SurveyLanguage'].lower(),
+                'title':          survey_entry['SurveyName'],
+                'block_elements': [],
+                'questions':      {}, # QuestionID: payload (dict)
+                }
+        questions = qualtrics['questions']
+        block_elements = qualtrics['block_elements']
+        for survey_element in raw['SurveyElements']:
+            element = survey_element['Element']
+            if element == 'BL':
+                """ Element: BL
+                Payload is either a list of Block or a dict of Block.
+                Sets ``block_elements`` to the first non-empty BlockElements.
+                """
+                payload = survey_element['Payload']
+                if isinstance(payload, dict):
+                    payload = payload.values()
+                for block in payload:
+                    if block['BlockElements']:
+                        block_elements.extend(block['BlockElements'])
+                        break
+            elif element == 'SQ':
+                payload = survey_element['Payload']
+                questions[payload['QuestionID']] = payload
+        return qualtrics
+        
     def localized_string_object(self, string):
         return Rios.LocalizedStringObject({self.localization: string})
+
+    def make_element(self, q):
+        element = Rios.ElementObject()
+        element['type'] = 'question'
+        element['options'] = Rios.QuestionObject(
+                fieldId=q['DataExportTag'],
+                text=self.localized_string_object(q['QuestionText']),)
+        return element
+        
+    def make_field(self, question):
+        field = Rios.FieldObject()
+        field['id'] = question['DataExportTag']
+        field['description'] = question['QuestionDescription']
+        field['type'] = 'text'
+        field['required'] = False
+        field['identifiable'] = False
+        return field
+        
+    def process_question(self, question):
+        #add to instrument
+        field = self.make_field(question)
+        self.instrument.add_field(field) 
+         
+        #add to form
+        element = self.make_element(question)
+        self.page.add_element(element)
+        
+    def start_page(self):
+        self.page = Rios.PageObject(id=self.page_name.next())
+        self.form.add_page(self.page)
+    
+class PageName(object):
+    def __init__(self, start=0):
+        self.page_id = start
+    
+    def next(self):
+        self.page_id += 1 
+        return 'Page_%02d' % self.page_id
 
 def main():
     Converter()
