@@ -28,10 +28,10 @@ Conversion programs.
   The instrument version must be provided on the command line
   as it is not in the qsf file.
   
-Run the help command to see the available options and
-required arguments::
+Run each command's help to see its 
+required arguments and available options::
 
-  redcap-rios --help
+  <command> --help
 
 Installation
 ============
