@@ -115,18 +115,18 @@ class Converter(object):
         """ Returns an array of tuples: (id, choice)
         """
         choices = question.get('Choices', [])
-        order = map(str, question.get('ChoiceOrder', []))
+        order = question.get('ChoiceOrder', [])
         if choices:
             if isinstance(choices, dict):
                 if order:
-                    choices = [(x, choices[x]) for x in order]
+                    choices = [(x, choices[str(x)]) for x in order]
                 else:
                     choices = [i for i in enumerate(choices.values())]
             elif isinstance(choices, list):
                 choices = [i for i in enumerate(choices)]
             else:
                 raise ValueError, ('not dict or list', choices, question)
-            choices = [(i, c['Display']) for i, c in choices]
+            choices = [(str(i).lower(), c['Display']) for i, c in choices]
         return choices
             
     def get_qualtrics(self, raw):
@@ -180,7 +180,7 @@ class Converter(object):
         element = Rios.ElementObject()
         element['type'] = 'question'
         element['options'] = Rios.QuestionObject(
-                fieldId=question['DataExportTag'],
+                fieldId=question['DataExportTag'].lower(),
                 text=self.localized_string_object(question['QuestionText']),)
         if self.choices:        
             question_object = element['options']
@@ -192,7 +192,7 @@ class Converter(object):
         
     def make_field(self, question):
         field = Rios.FieldObject()
-        field['id'] = question['DataExportTag']
+        field['id'] = question['DataExportTag'].lower()
         field['description'] = question['QuestionDescription']
         field['type'] = self.get_type(question)
         field['required'] = False
@@ -219,7 +219,7 @@ class PageName(object):
     
     def next(self):
         self.page_id += 1 
-        return 'Page_%02d' % self.page_id
+        return 'page_%02d' % self.page_id
 
 def main():
     Converter()
