@@ -111,6 +111,24 @@ class Converter(object):
                 'kind': kind, 
                 'extension': self.format, }
 
+    def get_choices(self, question):
+        """ Returns an array of tuples: (id, choice)
+        """
+        choices = question.get('Choices', [])
+        order = map(str, question.get('ChoiceOrder', []))
+        if choices:
+            if isinstance(choices, dict):
+                if order:
+                    choices = [(x, choices[x]) for x in order]
+                else:
+                    choices = [i for i in enumerate(choices.values())]
+            elif isinstance(choices, list):
+                choices = [i for i in enumerate(choices)]
+            else:
+                raise ValueError, ('not dict or list', choices, question)
+            choices = [(i, c['Display']) for i, c in choices]
+        return choices
+            
     def get_qualtrics(self, raw):
         """ Extract all the useful info from the raw qualtrics object
         into a dict and return it.
@@ -145,27 +163,44 @@ class Converter(object):
                 questions[payload['QuestionID']] = payload
         return qualtrics
         
+    def get_type(self, question):
+        if self.choices:
+            return Rios.TypeObject(
+                    base='enumeration',
+                    enumerations=Rios.EnumerationCollectionObject(**{
+                            str(i): None
+                            for i, c in self.choices}), )
+        else:
+            return 'text'
+
     def localized_string_object(self, string):
         return Rios.LocalizedStringObject({self.localization: string})
 
-    def make_element(self, q):
+    def make_element(self, question):
         element = Rios.ElementObject()
         element['type'] = 'question'
         element['options'] = Rios.QuestionObject(
-                fieldId=q['DataExportTag'],
-                text=self.localized_string_object(q['QuestionText']),)
+                fieldId=question['DataExportTag'],
+                text=self.localized_string_object(question['QuestionText']),)
+        if self.choices:        
+            question_object = element['options']
+            for id_, choice in self.choices:
+                question_object.add_enumeration(Rios.DescriptorObject(
+                    id=id_,
+                    text=self.localized_string_object(choice),))
         return element
         
     def make_field(self, question):
         field = Rios.FieldObject()
         field['id'] = question['DataExportTag']
         field['description'] = question['QuestionDescription']
-        field['type'] = 'text'
+        field['type'] = self.get_type(question)
         field['required'] = False
         field['identifiable'] = False
         return field
         
     def process_question(self, question):
+        self.choices = self.get_choices(question)
         #add to instrument
         field = self.make_field(question)
         self.instrument.add_field(field) 
