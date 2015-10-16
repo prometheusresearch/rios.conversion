@@ -533,7 +533,8 @@ class Converter(object):
             self.matrix = None
             self.field_type = None
             # Add the question to the form
-            self.page.add_element(elements[-1])
+            if elements:
+                self.page.add_element(elements[-1])
             field = self.make_field(od)
 
         if field['id']:
