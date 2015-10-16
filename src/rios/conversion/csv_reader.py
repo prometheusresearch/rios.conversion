@@ -10,8 +10,9 @@ class CsvReader(object):
      
     usage:
     
-        for row in CsvConverter(fname):
-            process(row)
+        for row in CsvReader(fname):
+            assert isinstance(row, OrderedDict)
+            ... process the row
 
     fname is either the filename, or an open file object, or any object 
     suitable for csv.reader.
@@ -20,8 +21,8 @@ class CsvReader(object):
     These are converted to "canonical" form by get_name() 
     and stored in the self.attributes list.
 
-    Subsequent rows are converted to OrderedDicts based on self.attributes
-    by get_row().
+    Subsequent rows are converted by get_row()
+    into OrderedDicts based on the keys in self.attributes.
     
     - get_name(name): returns the "canonical" name.
       The default returns name unchanged.
