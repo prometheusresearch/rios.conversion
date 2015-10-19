@@ -15,21 +15,12 @@ import pkg_resources
 import re
 import rios.conversion.classes as Rios
 import sys
-import os
 import yaml
 
 class Converter(object):
     def __init__(self):
-        args = self._get_args()
-        self.prefix = args.prefix
-        self.instrument_version = args.instrument_version
-        self.format = args.format
         self.page_name = PageName()
-        self(args.infile)
-        
-    def _get_args(self):
-        parser = argparse.ArgumentParser(
-                prog=os.path.basename(sys.argv[0]),
+        self.parser = argparse.ArgumentParser(
                 formatter_class=argparse.RawTextHelpFormatter,
                 description=__doc__)
         try:
@@ -37,37 +28,48 @@ class Converter(object):
                 pkg_resources.get_distribution('rios.conversion').version
         except pkg_resources.DistributionNotFound:
             self_version = 'UNKNOWN'
-        parser.add_argument(
+        self.parser.add_argument(
                 '-v',
                 '--version',
                 action='version',
                 version='%(prog)s ' + self_version, )
-        parser.add_argument(
+        self.parser.add_argument(
                 '--format',
                 default='yaml',
                 choices=['yaml', 'json'],
                 help='The format and extension for the output files.  '
                         'The default is "yaml".')
-        parser.add_argument(
+        self.parser.add_argument(
                 '--infile',
                 required=True,
                 type=argparse.FileType('r'),            
                 help="The qsf input file to process.  Use '-' for stdin.")
-        parser.add_argument(
+        self.parser.add_argument(
                 '--instrument-version',
                 required=True,
                 help='The instrument version to output.')
-        parser.add_argument(
+        self.parser.add_argument(
                 '--prefix',
                 required=True,
                 help='The prefix for the output files')
-        return parser.parse_args()
     
-    def __call__(self, fname):
+    def __call__(self, argv=None, stdout=None, stderr=None):
         """process the qsf input, and create output files.
         ``fname`` is an open file object.
         """
-        self.qualtrics = self.get_qualtrics(json.load(fname))
+        self.stdout = stdout or sys.stdout
+        self.stderr = stderr or sys.stderr
+
+        try:
+            args = self.parser.parse_args(argv)
+        except SystemExit as exc:
+            return exc
+
+        self.prefix = args.prefix
+        self.instrument_version = args.instrument_version
+        self.format = args.format
+
+        self.qualtrics = self.get_qualtrics(json.load(args.infile))
         self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
                 id='urn:' + self.qualtrics['id'],
@@ -93,6 +95,7 @@ class Converter(object):
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
+        sys.exit(0)
 
     def create__file(self, kind, obj):
         if obj:
@@ -232,7 +235,5 @@ class PageName(object):
         self.page_id += 1 
         return 'page_%02d' % self.page_id
 
-def main():
-    Converter()
-    sys.exit(0)
+main = Converter()
 

@@ -17,7 +17,6 @@ import re
 import rios.conversion.csv_reader
 import rios.conversion.classes as Rios
 import sys
-import os
 import yaml
 
 # Consecutive non-alpha chars.
@@ -88,70 +87,70 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
         
 class Converter(object):
     def __init__(self):
-        args = self._get_args()
+        self.parser = argparse.ArgumentParser(
+                formatter_class=argparse.RawTextHelpFormatter,
+                description=__doc__)
+        try:
+            self_version = \
+                pkg_resources.get_distribution('rios.conversion').version
+        except pkg_resources.DistributionNotFound:
+            self_version = 'UNKNOWN'
+        self.parser.add_argument(
+                '-v',
+                '--version',
+                action='version',
+                version='%(prog)s ' + self_version, )
+        self.parser.add_argument(
+                '--format',
+                default='yaml',
+                choices=['yaml', 'json'],
+                help='The format and extension for the output files.  '
+                        'The default is "yaml".')
+        self.parser.add_argument(
+                '--id',
+                required=True,
+                help='The instrument id to output.')
+        self.parser.add_argument(
+                '--infile',
+                required=True,
+                type=argparse.FileType('r'),            
+                help="The csv input file to process.  Use '-' for stdin.")
+        self.parser.add_argument(
+                '--instrument-version',
+                required=True,
+                help='The instrument version to output.')
+        self.parser.add_argument(
+                '--localization',
+                default='en',
+                help='The default localization for the web form.  '
+                        'The default is "en"')
+        self.parser.add_argument(
+                '--prefix',
+                required=True,
+                help='The prefix for the output files')
+        self.parser.add_argument(
+                '--title',
+                required=True,
+                help='The instrument title to output.')
+    
+    def __call__(self, argv=None, stdout=None, stderr=None):
+        """process the csv input, and create output files.
+        """
+        self.stdout = stdout or sys.stdout
+        self.stderr = stderr or sys.stderr
+
+        try:
+            args = self.parser.parse_args(argv)
+        except SystemExit as exc:
+            return exc
+
         self.prefix = args.prefix
         self.id = args.id
         self.instrument_version = args.instrument_version
         self.title = args.title
         self.localization = args.localization
         self.format = args.format
-        self(args.infile)
         
-    def _get_args(self):
-        prog=os.path.basename(sys.argv[0])
-        parser = argparse.ArgumentParser(
-                prog=prog,
-                formatter_class=argparse.RawTextHelpFormatter,
-                description=__doc__)
-
-        try:
-            self_version = \
-                pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:
-            self_version = 'UNKNOWN'
-        parser.add_argument(
-                '-v',
-                '--version',
-                action='version',
-                version='%(prog)s ' + self_version, )
-        parser.add_argument(
-                '--format',
-                default='yaml',
-                choices=['yaml', 'json'],
-                help='The format and extension for the output files.  '
-                        'The default is "yaml".')
-        parser.add_argument(
-                '--id',
-                required=True,
-                help='The instrument id to output.')
-        parser.add_argument(
-                '--infile',
-                required=True,
-                type=argparse.FileType('r'),            
-                help="The csv input file to process.  Use '-' for stdin.")
-        parser.add_argument(
-                '--instrument-version',
-                required=True,
-                help='The instrument version to output.')
-        parser.add_argument(
-                '--localization',
-                default='en',
-                help='The default localization for the web form.  '
-                        'The default is "en"')
-        parser.add_argument(
-                '--prefix',
-                required=True,
-                help='The prefix for the output files')
-        parser.add_argument(
-                '--title',
-                required=True,
-                help='The instrument title to output.')
-        return parser.parse_args()
-    
-    def __call__(self, fname):
-        """process the csv input, and create output files.
-        ``fname`` is a filename, file, (or anything accepted by csv.reader)
-        """
         self.instrument = Rios.Instrument(
                 id=self.id,
                 version=self.instrument_version,
@@ -167,14 +166,15 @@ class Converter(object):
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        for od in Csv2OrderedDict(fname):
+        for od in Csv2OrderedDict(args.infile):
             if 'form_name' not in od:
                 continue
             self.process_od(od)                
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
-
+        sys.exit(0)
+        
     def convert_calc(self, calc):
         """convert RedCap expression into Python
 
@@ -553,7 +553,5 @@ class Converter(object):
         if field['id']:
             self.instrument.add_field(field) 
 
-def main():
-    Converter()
-    sys.exit(0)
+main = Converter()
 
