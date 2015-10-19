@@ -25,6 +25,22 @@ tests:
 - sh: redcap-rios --version
   stdout: |
     redcap-rios 0.2.0
+- sh: qualtrics-rios --help
+  stdout: "usage: qualtrics-rios [-h] [-v] [--format {yaml,json}] --infile INFILE\n
+    \                     --instrument-version INSTRUMENT_VERSION --prefix PREFIX\n\nConverts
+    a Qualtrics qsf file into a series of output files\n\n    - <prefix>_c.<format>
+    RIOS calculation\n    - <prefix>_i.<format> RIOS instrument\n    - <prefix>_f.<format>
+    RIOS web form\n\nThe RIOS calculation file is only created when there are \ncalculation
+    fields in the input.\n\noptional arguments:\n  -h, --help            show this
+    help message and exit\n  -v, --version         show program's version number and
+    exit\n  --format {yaml,json}  The format and extension for the output files.  The
+    default is \"yaml\".\n  --infile INFILE       The qsf input file to process.  Use
+    '-' for stdin.\n  --instrument-version INSTRUMENT_VERSION\n                        The
+    instrument version to output.\n  --prefix PREFIX       The prefix for the output
+    files\n"
+- sh: qualtrics-rios --version
+  stdout: |
+    qualtrics-rios 0.2.0
 - sh: redcap-rios --title test_redcap_1 --id urn:redcap_1 --instrument-version 1.0
     --infile ./test/redcap_1.csv --prefix ./test/sandbox/test_redcap_1
   stdout: ''

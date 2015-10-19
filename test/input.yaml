@@ -9,6 +9,8 @@ tests:
   # Check boilerplate commands
   - sh: redcap-rios --help
   - sh: redcap-rios --version
+  - sh: qualtrics-rios --help
+  - sh: qualtrics-rios --version
 
   # redcap_1  fields, with calculations and skip logic
   - sh: !
