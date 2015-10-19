@@ -11,6 +11,7 @@ calculation fields in the input.
 
 import argparse
 import json
+import pkg_resources
 import re
 import rios.conversion.classes as Rios
 import sys
@@ -21,7 +22,7 @@ class Converter(object):
     def __init__(self):
         args = self._get_args()
         self.prefix = args.prefix
-        self.version = args.version
+        self.instrument_version = args.instrument_version
         self.format = args.format
         self.page_name = PageName()
         self(args.infile)
@@ -31,6 +32,16 @@ class Converter(object):
                 prog=os.path.basename(sys.argv[0]),
                 formatter_class=argparse.RawTextHelpFormatter,
                 description=__doc__)
+        try:
+            self_version = \
+                pkg_resources.get_distribution('rios.conversion').version
+        except pkg_resources.DistributionNotFound:
+            self_version = 'UNKNOWN'
+        parser.add_argument(
+                '-v',
+                '--version',
+                action='version',
+                version='%(prog)s ' + self_version, )
         parser.add_argument(
                 '--format',
                 default='yaml',
@@ -43,13 +54,13 @@ class Converter(object):
                 type=argparse.FileType('r'),            
                 help="The qsf input file to process.  Use '-' for stdin.")
         parser.add_argument(
+                '--instrument-version',
+                required=True,
+                help='The instrument version to output.')
+        parser.add_argument(
                 '--prefix',
                 required=True,
                 help='The prefix for the output files')
-        parser.add_argument(
-                '--version',
-                required=True,
-                help='The instrument version to output.')
         return parser.parse_args()
     
     def __call__(self, fname):
@@ -60,7 +71,7 @@ class Converter(object):
         self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
                 id='urn:' + self.qualtrics['id'],
-                version=self.version,
+                version=self.instrument_version,
                 title=self.qualtrics['title'],
                 description=self.qualtrics['description'])
         self.calculations = Rios.CalculationSetObject(

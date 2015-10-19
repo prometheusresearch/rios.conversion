@@ -12,6 +12,7 @@ calculation fields in the input.
 import argparse
 import csv
 import json
+import pkg_resources
 import re
 import rios.conversion.csv_reader
 import rios.conversion.classes as Rios
@@ -90,17 +91,29 @@ class Converter(object):
         args = self._get_args()
         self.prefix = args.prefix
         self.id = args.id
-        self.version = args.version
+        self.instrument_version = args.instrument_version
         self.title = args.title
         self.localization = args.localization
         self.format = args.format
         self(args.infile)
         
     def _get_args(self):
+        prog=os.path.basename(sys.argv[0])
         parser = argparse.ArgumentParser(
-                prog=os.path.basename(sys.argv[0]),
+                prog=prog,
                 formatter_class=argparse.RawTextHelpFormatter,
                 description=__doc__)
+
+        try:
+            self_version = \
+                pkg_resources.get_distribution('rios.conversion').version
+        except pkg_resources.DistributionNotFound:
+            self_version = 'UNKNOWN'
+        parser.add_argument(
+                '-v',
+                '--version',
+                action='version',
+                version='%(prog)s ' + self_version, )
         parser.add_argument(
                 '--format',
                 default='yaml',
@@ -117,6 +130,10 @@ class Converter(object):
                 type=argparse.FileType('r'),            
                 help="The csv input file to process.  Use '-' for stdin.")
         parser.add_argument(
+                '--instrument-version',
+                required=True,
+                help='The instrument version to output.')
+        parser.add_argument(
                 '--localization',
                 default='en',
                 help='The default localization for the web form.  '
@@ -129,10 +146,6 @@ class Converter(object):
                 '--title',
                 required=True,
                 help='The instrument title to output.')
-        parser.add_argument(
-                '--version',
-                required=True,
-                help='The instrument version to output.')
         return parser.parse_args()
     
     def __call__(self, fname):
@@ -141,7 +154,7 @@ class Converter(object):
         """
         self.instrument = Rios.Instrument(
                 id=self.id,
-                version=self.version,
+                version=self.instrument_version,
                 title=self.title)
         self.calculations = Rios.CalculationSetObject(
                 instrument=Rios.InstrumentReferenceObject(self.instrument),
