@@ -1,0 +1,31 @@
+title: RIOS.CONVERSION
+tests:
+  - sh: pip install --quiet rios.core
+    ignore: true
+
+  - rmdir: ./test/sandbox
+  - mkdir: ./test/sandbox
+  
+  # Check boilerplate commands
+  - sh: redcap-rios --help
+  - sh: redcap-rios --version
+
+  - sh: redcap-rios --title test_redcap_1
+                    --instrument-version 1.0 
+                    --infile ./test/redcap_1.csv
+                    --prefix ./test/sandbox/test_redcap_1
+  -sh: cat ./test/sandbox/test_redcap_1_c.yaml
+  -sh: cat ./test/sandbox/test_redcap_1_f.yaml
+  -sh: cat ./test/sandbox/test_redcap_1_i.yaml
+  
+  - sh: redcap-rios --title test_redcap_1
+                    --instrument-version 1.0 
+                    --infile ./test/redcap_1.csv
+                    --prefix ./test/sandbox/test_redcap_1
+                    --format json 
+  - sh: rios-validate instrument ./test/sandbox/test_redcap_1_i.json
+  - sh: rios-validate form
+                    --instrument ./test/sandbox/test_redcap_1_i.json
+                    ./test/sandbox/test_redcap_1_f.json
+                    
+  
