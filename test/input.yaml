@@ -10,22 +10,96 @@ tests:
   - sh: redcap-rios --help
   - sh: redcap-rios --version
 
-  - sh: redcap-rios --title test_redcap_1
-                    --instrument-version 1.0 
-                    --infile ./test/redcap_1.csv
-                    --prefix ./test/sandbox/test_redcap_1
-  -sh: cat ./test/sandbox/test_redcap_1_c.yaml
-  -sh: cat ./test/sandbox/test_redcap_1_f.yaml
-  -sh: cat ./test/sandbox/test_redcap_1_i.yaml
-  
-  - sh: redcap-rios --title test_redcap_1
-                    --instrument-version 1.0 
-                    --infile ./test/redcap_1.csv
-                    --prefix ./test/sandbox/test_redcap_1
-                    --format json 
+  # redcap_1  fields, with calculations and skip logic
+  - sh: !
+        redcap-rios 
+            --title test_redcap_1
+            --id urn:redcap_1
+            --instrument-version 1.0 
+            --infile ./test/redcap_1.csv
+            --prefix ./test/sandbox/test_redcap_1
+  - sh: cat ./test/sandbox/test_redcap_1_c.yaml
+  - sh: cat ./test/sandbox/test_redcap_1_f.yaml
+  - sh: cat ./test/sandbox/test_redcap_1_i.yaml
+
+  - sh: !
+        redcap-rios 
+            --title test_redcap_1
+            --id urn:redcap_1
+            --instrument-version 1.0 
+            --infile ./test/redcap_1.csv
+            --prefix ./test/sandbox/test_redcap_1
+            --format json 
   - sh: rios-validate instrument ./test/sandbox/test_redcap_1_i.json
-  - sh: rios-validate form
-                    --instrument ./test/sandbox/test_redcap_1_i.json
-                    ./test/sandbox/test_redcap_1_f.json
+  - sh: !
+        rios-validate 
+            --instrument ./test/sandbox/test_redcap_1_i.json
+            form ./test/sandbox/test_redcap_1_f.json
                     
-  
+  # redcap_matrix_1   simple form with one matrix
+  - sh: !
+        redcap-rios 
+            --title test_redcap_matrix_1
+            --id urn:redcap_matrix_1
+            --instrument-version 1.0 
+            --infile ./test/redcap_matrix_1.csv
+            --prefix ./test/sandbox/test_redcap_matrix_1
+  - sh: cat ./test/sandbox/test_redcap_matrix_1_f.yaml
+  - sh: cat ./test/sandbox/test_redcap_matrix_1_i.yaml
+
+  - sh: !
+        redcap-rios 
+            --title test_redcap_matrix_1
+            --id urn:redcap_matrix_1
+            --instrument-version 1.0 
+            --infile ./test/redcap_1.csv
+            --prefix ./test/sandbox/test_redcap_matrix_1
+            --format json 
+  - sh: rios-validate instrument ./test/sandbox/test_redcap_matrix_1_i.json
+  - sh: !
+        rios-validate 
+            --instrument ./test/sandbox/test_redcap_matrix_1_i.json
+            form ./test/sandbox/test_redcap_matrix_1_f.json
+
+  # qualtrics_1
+  - sh: !
+        qualtrics-rios 
+            --instrument-version 1.0 
+            --infile ./test/qualtrics_1.qsf
+            --prefix ./test/sandbox/test_qualtrics_1
+  - sh: cat ./test/sandbox/test_qualtrics_1_f.yaml
+  - sh: cat ./test/sandbox/test_qualtrics_1_i.yaml
+
+  - sh: !
+        qualtrics-rios 
+            --instrument-version 1.0 
+            --infile ./test/qualtrics_1.qsf
+            --prefix ./test/sandbox/test_qualtrics_1
+            --format json 
+  - sh: rios-validate instrument ./test/sandbox/test_qualtrics_1_i.json
+  - sh: !
+        rios-validate 
+            --instrument ./test/sandbox/test_qualtrics_1_i.json
+            form ./test/sandbox/test_qualtrics_1_f.json
+
+  # qualtrics_2
+  - sh: !
+        qualtrics-rios 
+            --instrument-version 1.0 
+            --infile ./test/qualtrics_2.qsf
+            --prefix ./test/sandbox/test_qualtrics_2
+  - sh: cat ./test/sandbox/test_qualtrics_2_f.yaml
+  - sh: cat ./test/sandbox/test_qualtrics_2_i.yaml
+
+  - sh: !
+        qualtrics-rios 
+            --instrument-version 1.0 
+            --infile ./test/qualtrics_2.qsf
+            --prefix ./test/sandbox/test_qualtrics_2
+            --format json 
+  - sh: rios-validate instrument ./test/sandbox/test_qualtrics_2_i.json
+  - sh: !
+        rios-validate 
+            --instrument ./test/sandbox/test_qualtrics_2_i.json
+            form ./test/sandbox/test_qualtrics_2_f.json
+
