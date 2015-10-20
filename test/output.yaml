@@ -191,7 +191,7 @@ tests:
               en: ' Yes'
           events:
           - action: disable
-            trigger: rios.conversion.redcap.math.not_(assessment["sex"] == "0")
+            trigger: '!(assessment["sex"] = "0")'
           fieldId: given_birth
           text:
             en: Has the subject given birth before?
@@ -201,8 +201,7 @@ tests:
       - options:
           events:
           - action: disable
-            trigger: rios.conversion.redcap.math.not_(assessment["sex"] == "0" and assessment["given_birth"]
-              == "1")
+            trigger: '!(assessment["sex"] = "0" and assessment["given_birth"] = "1")'
           fieldId: num_children
           text:
             en: How many times has the subject given birth?
@@ -751,23 +750,22 @@ tests:
     \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Yes\"\n
     \       }, \n        \"id\": \"1\"\n       }\n      ], \n      \"fieldId\": \"given_birth\",
     \n      \"events\": [\n       {\n        \"action\": \"disable\", \n        \"trigger\":
-    \"rios.conversion.redcap.math.not_(assessment[\\\"sex\\\"] == \\\"0\\\")\"\n       }\n
-    \     ]\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
-    {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n      }, \n      \"text\":
-    {\n       \"en\": \"How many times has the subject given birth?\"\n      }, \n
-    \     \"fieldId\": \"num_children\", \n      \"events\": [\n       {\n        \"action\":
-    \"disable\", \n        \"trigger\": \"rios.conversion.redcap.math.not_(assessment[\\\"sex\\\"]
-    == \\\"0\\\" and assessment[\\\"given_birth\\\"] == \\\"1\\\")\"\n       }\n      ]\n
+    \"!(assessment[\\\"sex\\\"] = \\\"0\\\")\"\n       }\n      ]\n     }\n    },
+    \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputNumber\"\n      }, \n      \"text\": {\n       \"en\":
+    \"How many times has the subject given birth?\"\n      }, \n      \"fieldId\":
+    \"num_children\", \n      \"events\": [\n       {\n        \"action\": \"disable\",
+    \n        \"trigger\": \"!(assessment[\\\"sex\\\"] = \\\"0\\\" and assessment[\\\"given_birth\\\"]
+    = \\\"1\\\")\"\n       }\n      ]\n     }\n    }, \n    {\n     \"type\": \"question\",
+    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"radioGroup\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Ethnicity\"\n      }, \n      \"enumerations\":
+    [\n       {\n        \"text\": {\n         \"en\": \" Hispanic or Latino\"\n        },
+    \n        \"id\": \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" NOT Hispanic or Latino\"\n        }, \n        \"id\": \"1\"\n       }, \n
+    \      {\n        \"text\": {\n         \"en\": \" Unknown / Not Reported\"\n
+    \       }, \n        \"id\": \"2\"\n       }\n      ], \n      \"fieldId\": \"ethnicity\"\n
     \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
-    {\n       \"type\": \"radioGroup\"\n      }, \n      \"text\": {\n       \"en\":
-    \"Ethnicity\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\":
-    {\n         \"en\": \" Hispanic or Latino\"\n        }, \n        \"id\": \"0\"\n
-    \      }, \n       {\n        \"text\": {\n         \"en\": \" NOT Hispanic or
-    Latino\"\n        }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\":
-    {\n         \"en\": \" Unknown / Not Reported\"\n        }, \n        \"id\":
-    \"2\"\n       }\n      ], \n      \"fieldId\": \"ethnicity\"\n     }\n    }, \n
-    \   {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n
-    \      \"type\": \"checkGroup\"\n      }, \n      \"text\": {\n       \"en\":
+    {\n       \"type\": \"checkGroup\"\n      }, \n      \"text\": {\n       \"en\":
     \"Race\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\": {\n
     \        \"en\": \" American Indian/Alaska Native\"\n        }, \n        \"id\":
     \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Asian\"\n

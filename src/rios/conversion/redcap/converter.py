@@ -57,15 +57,12 @@ RE_funcs = {
         k: re.compile(r'%s\(' % k)
         for k in FUNCTION_TO_PYTHON.keys()}
 
-OPERATOR_TO_PYTHON = [
-        # convert "=" (but not "!=", "<=". or ">=") to "=="
-        (r'([^!<>])=', r'\1=='),
-
+OPERATOR_TO_REXL = [
         # convert "<>" to "!="
         (r'<>', r'!='),
         ]
 
-RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_PYTHON]
+RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_REXL]
 
 
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
@@ -213,7 +210,7 @@ class Converter(object):
         s = self.convert_calc(trigger)
         for pattern, replacement in RE_ops:
             s = pattern.sub(replacement, s)
-        return 'rios.conversion.redcap.math.not_(%s)' % s
+        return '!(%s)' % s
 
     def convert_value(self, value, text_type):
         if text_type == 'integer':

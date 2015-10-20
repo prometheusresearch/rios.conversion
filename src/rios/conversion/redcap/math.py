@@ -19,10 +19,6 @@ def median(*data):
         return None
 
 
-def not_(value):
-    return not value
-
-
 def round_(number, decimal_places):
     x = 10.0 ** decimal_places
     return round(x * number) / x
