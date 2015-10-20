@@ -3,6 +3,12 @@ tests:
   - sh: pip install --quiet rios.core
     ignore: true
 
+  - sh: pip install --quiet flake8
+    ignore: true
+
+  # check Python source syntax and style
+  - sh: flake8 ./src
+  
   - rmdir: ./test/sandbox
   - mkdir: ./test/sandbox
   

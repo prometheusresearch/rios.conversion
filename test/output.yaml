@@ -6,38 +6,62 @@ suite: rios.conversion
 tests:
 - sh: pip install --quiet rios.core
   stdout: ''
+- sh: pip install --quiet flake8
+  stdout: ''
+- sh: flake8 ./src
+  stdout: ''
 - sh: redcap-rios --help
-  stdout: "usage: redcap-rios [-h] [-v] [--format {yaml,json}] --id ID --infile INFILE\n
-    \                  --instrument-version INSTRUMENT_VERSION\n                   [--localization
-    LOCALIZATION] --prefix PREFIX --title TITLE\n\nConverts a redcap csv file into
-    a series of output files\n\n    - <prefix>_c.<format> RIOS calculation\n    -
-    <prefix>_i.<format> RIOS instrument\n    - <prefix>_f.<format> RIOS web form\n\nThe
-    RIOS calculation file is only created when there are \ncalculation fields in the
-    input.\n\noptional arguments:\n  -h, --help            show this help message
-    and exit\n  -v, --version         show program's version number and exit\n  --format
-    {yaml,json}  The format and extension for the output files.  The default is \"yaml\".\n
-    \ --id ID               The instrument id to output.\n  --infile INFILE       The
-    csv input file to process.  Use '-' for stdin.\n  --instrument-version INSTRUMENT_VERSION\n
-    \                       The instrument version to output.\n  --localization LOCALIZATION\n
-    \                       The default localization for the web form.  The default
-    is \"en\"\n  --prefix PREFIX       The prefix for the output files\n  --title
-    TITLE         The instrument title to output.\n"
+  stdout: |
+    usage: redcap-rios [-h] [-v] [--format {yaml,json}] --id ID --infile INFILE
+                       --instrument-version INSTRUMENT_VERSION
+                       [--localization LOCALIZATION] --prefix PREFIX --title TITLE
+
+    Converts a redcap csv file into a series of output files
+
+        - <prefix>_c.<format> RIOS calculation
+        - <prefix>_i.<format> RIOS instrument
+        - <prefix>_f.<format> RIOS web form
+
+    The RIOS calculation file is only created when there are
+    calculation fields in the input.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -v, --version         show program's version number and exit
+      --format {yaml,json}  The format and extension for the output files.  The default is "yaml".
+      --id ID               The instrument id to output.
+      --infile INFILE       The csv input file to process.  Use '-' for stdin.
+      --instrument-version INSTRUMENT_VERSION
+                            The instrument version to output.
+      --localization LOCALIZATION
+                            The default localization for the web form.  The default is "en"
+      --prefix PREFIX       The prefix for the output files
+      --title TITLE         The instrument title to output.
 - sh: redcap-rios --version
   stdout: |
     redcap-rios 0.2.0
 - sh: qualtrics-rios --help
-  stdout: "usage: qualtrics-rios [-h] [-v] [--format {yaml,json}] --infile INFILE\n
-    \                     --instrument-version INSTRUMENT_VERSION --prefix PREFIX\n\nConverts
-    a Qualtrics qsf file into a series of output files\n\n    - <prefix>_c.<format>
-    RIOS calculation\n    - <prefix>_i.<format> RIOS instrument\n    - <prefix>_f.<format>
-    RIOS web form\n\nThe RIOS calculation file is only created when there are \ncalculation
-    fields in the input.\n\noptional arguments:\n  -h, --help            show this
-    help message and exit\n  -v, --version         show program's version number and
-    exit\n  --format {yaml,json}  The format and extension for the output files.  The
-    default is \"yaml\".\n  --infile INFILE       The qsf input file to process.  Use
-    '-' for stdin.\n  --instrument-version INSTRUMENT_VERSION\n                        The
-    instrument version to output.\n  --prefix PREFIX       The prefix for the output
-    files\n"
+  stdout: |
+    usage: qualtrics-rios [-h] [-v] [--format {yaml,json}] --infile INFILE
+                          --instrument-version INSTRUMENT_VERSION --prefix PREFIX
+
+    Converts a Qualtrics qsf file into a series of output files
+
+        - <prefix>_c.<format> RIOS calculation
+        - <prefix>_i.<format> RIOS instrument
+        - <prefix>_f.<format> RIOS web form
+
+    The RIOS calculation file is only created when there are
+    calculation fields in the input.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -v, --version         show program's version number and exit
+      --format {yaml,json}  The format and extension for the output files.  The default is "yaml".
+      --infile INFILE       The qsf input file to process.  Use '-' for stdin.
+      --instrument-version INSTRUMENT_VERSION
+                            The instrument version to output.
+      --prefix PREFIX       The prefix for the output files
 - sh: qualtrics-rios --version
   stdout: |
     qualtrics-rios 0.2.0
