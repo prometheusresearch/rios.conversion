@@ -71,6 +71,7 @@ RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_PYTHON]
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
     def get_name(self, name):
         """ Return canonical name.
+
         - replace non-alphanumeric with underbars.
         - strip leading and trailing underbars.
         - ensure 'choices' field is 'choices_or_calculations'
@@ -135,8 +136,7 @@ class Converter(object):
                 help='The instrument title to output.')
 
     def __call__(self, argv=None, stdout=None, stderr=None):
-        """process the csv input, and create output files.
-        """
+        """process the csv input, and create output files. """
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
@@ -253,6 +253,7 @@ class Converter(object):
 
     def get_choices_form(self, od):
         """ returns array of DescriptorObject
+
         Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
         """
@@ -265,6 +266,7 @@ class Converter(object):
 
     def get_choices_instrument(self, od):
         """ returns EnumerationCollectionObject
+
         Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
         """
@@ -274,6 +276,7 @@ class Converter(object):
 
     def get_type(self, od, side_effects=True):
         """returns the computed instrument field type.
+
         Also has side effects when side_effects is True.
         - can initialize self.calculations.
         - can append a calculation.

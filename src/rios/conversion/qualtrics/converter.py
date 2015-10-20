@@ -54,9 +54,7 @@ class Converter(object):
                 help='The prefix for the output files')
 
     def __call__(self, argv=None, stdout=None, stderr=None):
-        """process the qsf input, and create output files.
-        ``fname`` is an open file object.
-        """
+        """process the qsf input, and create output files. """
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
@@ -144,9 +142,7 @@ class Converter(object):
         return choices
 
     def get_qualtrics(self, raw):
-        """ Extract all the useful info from the raw qualtrics object
-        into a dict and return it.
-        """
+        """ Extract info from the raw qualtrics object and return a dict. """
         survey_entry = raw['SurveyEntry']
         qualtrics = {
                 'description':    survey_entry['SurveyDescription'],
