@@ -38,11 +38,18 @@ tests:
             --infile ./test/redcap_1.csv
             --prefix ./test/sandbox/test_redcap_1
             --format json 
+  - sh: cat ./test/sandbox/test_redcap_1_c.json
+  - sh: cat ./test/sandbox/test_redcap_1_f.json
+  - sh: cat ./test/sandbox/test_redcap_1_i.json
   - sh: rios-validate instrument ./test/sandbox/test_redcap_1_i.json
   - sh: !
         rios-validate 
             --instrument ./test/sandbox/test_redcap_1_i.json
             form ./test/sandbox/test_redcap_1_f.json
+  - sh: !
+        rios-validate 
+            --instrument ./test/sandbox/test_redcap_1_i.json
+            calculationset ./test/sandbox/test_redcap_1_c.json
                     
   # redcap_matrix_1   simple form with one matrix
   - sh: !

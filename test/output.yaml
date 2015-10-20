@@ -698,10 +698,274 @@ tests:
 - sh: redcap-rios --title test_redcap_1 --id urn:redcap_1 --instrument-version 1.0
     --infile ./test/redcap_1.csv --prefix ./test/sandbox/test_redcap_1 --format json
   stdout: ''
+- sh: cat ./test/sandbox/test_redcap_1_c.json
+  stdout: "{\n \"instrument\": {\n  \"version\": \"1.0\", \n  \"id\": \"urn:redcap_1\"\n
+    }, \n \"calculations\": [\n  {\n   \"method\": \"python\", \n   \"options\": {\n
+    \   \"expression\": \"rios.conversion.redcap.math.round_(rios.conversion.redcap.date.datediff(assessment[\\\"dob\\\"],'today','y'),0)\"\n
+    \  }, \n   \"type\": \"float\", \n   \"id\": \"age\", \n   \"description\": \"Age
+    (years)\"\n  }, \n  {\n   \"method\": \"python\", \n   \"options\": {\n    \"expression\":
+    \"rios.conversion.redcap.math.round_((calculations[\\\"age\\\"]*10000)/((assessment[\\\"height\\\"])^(2)),1)\"\n
+    \  }, \n   \"type\": \"float\", \n   \"id\": \"bmi\", \n   \"description\": \"BMI\"\n
+    \ }\n ]\n}"
+- sh: cat ./test/sandbox/test_redcap_1_f.json
+  stdout: "{\n \"instrument\": {\n  \"version\": \"1.0\", \n  \"id\": \"urn:redcap_1\"\n
+    }, \n \"defaultLocalization\": \"en\", \n \"pages\": [\n  {\n   \"elements\":
+    [\n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputText\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Study ID\"\n      }, \n      \"fieldId\": \"study_id\"\n     }\n    }, \n    {\n
+    \    \"type\": \"header\", \n     \"options\": {\n      \"text\": {\n       \"en\":
+    \"Demographic Characteristics\"\n      }\n     }\n    }, \n    {\n     \"type\":
+    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dateTimePicker\"\n
+    \     }, \n      \"help\": {\n       \"en\": \"YYYY-MM-DD\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Date subject signed consent\"\n      }, \n      \"fieldId\":
+    \"date_enrolled\"\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"inputText\"\n      }, \n      \"text\":
+    {\n       \"en\": \"First Name\"\n      }, \n      \"fieldId\": \"first_name\"\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputText\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Last Name\"\n      }, \n      \"fieldId\": \"last_name\"\n     }\n    }, \n
+    \   {\n     \"type\": \"header\", \n     \"options\": {\n      \"text\": {\n       \"en\":
+    \"Contact Information\"\n      }\n     }\n    }, \n    {\n     \"type\": \"question\",
+    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"textArea\"\n      },
+    \n      \"text\": {\n       \"en\": \"Street, City, State, ZIP\"\n      }, \n
+    \     \"fieldId\": \"address\"\n     }\n    }, \n    {\n     \"type\": \"question\",
+    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"inputText\"\n      },
+    \n      \"help\": {\n       \"en\": \"Include Area Code\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Phone number\"\n      }, \n      \"fieldId\": \"telephone_1\"\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputText\"\n      }, \n      \"help\": {\n       \"en\":
+    \"Include Area Code\"\n      }, \n      \"text\": {\n       \"en\": \"Second phone
+    number\"\n      }, \n      \"fieldId\": \"telephone_2\"\n     }\n    }, \n    {\n
+    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
+    \"inputText\"\n      }, \n      \"text\": {\n       \"en\": \"E-mail\"\n      },
+    \n      \"fieldId\": \"email\"\n     }\n    }, \n    {\n     \"type\": \"question\",
+    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      },
+    \n      \"text\": {\n       \"en\": \"Gender\"\n      }, \n      \"enumerations\":
+    [\n       {\n        \"text\": {\n         \"en\": \" Female\"\n        }, \n
+    \       \"id\": \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Male\"\n        }, \n        \"id\": \"1\"\n       }\n      ], \n      \"fieldId\":
+    \"sex\"\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Has the subject given birth before?\"\n      }, \n      \"enumerations\":
+    [\n       {\n        \"text\": {\n         \"en\": \" No\"\n        }, \n        \"id\":
+    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Yes\"\n
+    \       }, \n        \"id\": \"1\"\n       }\n      ], \n      \"fieldId\": \"given_birth\",
+    \n      \"events\": [\n       {\n        \"action\": \"disable\", \n        \"trigger\":
+    \"rios.conversion.redcap.math.not_(assessment[\\\"sex\\\"] == \\\"0\\\")\"\n       }\n
+    \     ]\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n      }, \n      \"text\":
+    {\n       \"en\": \"How many times has the subject given birth?\"\n      }, \n
+    \     \"fieldId\": \"num_children\", \n      \"events\": [\n       {\n        \"action\":
+    \"disable\", \n        \"trigger\": \"rios.conversion.redcap.math.not_(assessment[\\\"sex\\\"]
+    == \\\"0\\\" and assessment[\\\"given_birth\\\"] == \\\"1\\\")\"\n       }\n      ]\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"radioGroup\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Ethnicity\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\":
+    {\n         \"en\": \" Hispanic or Latino\"\n        }, \n        \"id\": \"0\"\n
+    \      }, \n       {\n        \"text\": {\n         \"en\": \" NOT Hispanic or
+    Latino\"\n        }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Unknown / Not Reported\"\n        }, \n        \"id\":
+    \"2\"\n       }\n      ], \n      \"fieldId\": \"ethnicity\"\n     }\n    }, \n
+    \   {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n
+    \      \"type\": \"checkGroup\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Race\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\": {\n
+    \        \"en\": \" American Indian/Alaska Native\"\n        }, \n        \"id\":
+    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Asian\"\n
+    \       }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\": {\n
+    \        \"en\": \" Native Hawaiian or Other Pacific Islander\"\n        }, \n
+    \       \"id\": \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Black or African American\"\n        }, \n        \"id\": \"3\"\n       },
+    \n       {\n        \"text\": {\n         \"en\": \" White\"\n        }, \n        \"id\":
+    \"4\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" More Than
+    One Race\"\n        }, \n        \"id\": \"5\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Unknown / Not Reported\"\n        }, \n        \"id\":
+    \"6\"\n       }\n      ], \n      \"fieldId\": \"race\"\n     }\n    }, \n    {\n
+    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
+    \"dateTimePicker\"\n      }, \n      \"help\": {\n       \"en\": \"YYYY-MM-DD\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Date of birth\"\n      }, \n      \"fieldId\":
+    \"dob\"\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n      }, \n      \"help\":
+    {\n       \"en\": \"cm\"\n      }, \n      \"text\": {\n       \"en\": \"Height
+    (cm)\"\n      }, \n      \"fieldId\": \"height\"\n     }\n    }, \n    {\n     \"type\":
+    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n
+    \     }, \n      \"help\": {\n       \"en\": \"kilograms\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Weight (kilograms)\"\n      }, \n      \"fieldId\": \"weight\"\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputText\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Any comorbid condition\"\n      }, \n      \"fieldId\": \"comorbidities\"\n
+    \    }\n    }\n   ], \n   \"id\": \"demographics\"\n  }, \n  {\n   \"elements\":
+    [\n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Patient has a diagnosis of diabetes mellitus?\"\n      }, \n      \"enumerations\":
+    [\n       {\n        \"text\": {\n         \"en\": \" No\"\n        }, \n        \"id\":
+    \"a\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Yes\"\n
+    \       }, \n        \"id\": \"b\"\n       }\n      ], \n      \"fieldId\": \"diabetes\"\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Type of Diabetes Mellitus\"\n      }, \n      \"enumerations\": [\n       {\n
+    \       \"text\": {\n         \"en\": \" Type 1 insulin-dependent\"\n        },
+    \n        \"id\": \"a\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Type 2 insulin-dependent\"\n        }, \n        \"id\": \"b\"\n       }, \n
+    \      {\n        \"text\": {\n         \"en\": \" Type 2 non insulin-dependent\"\n
+    \       }, \n        \"id\": \"c\"\n       }\n      ], \n      \"fieldId\": \"diabetes_type\"\n
+    \    }\n    }, \n    {\n     \"type\": \"header\", \n     \"options\": {\n      \"text\":
+    {\n       \"en\": \"Dialysis Information\"\n      }\n     }\n    }, \n    {\n
+    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
+    \"dateTimePicker\"\n      }, \n      \"help\": {\n       \"en\": \"DD-MM-YYYYY\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Date of first outpatient dialysis
+    treatment\"\n      }, \n      \"fieldId\": \"dialysis_initiation\"\n     }\n    },
+    \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Type of vascular access\"\n      }, \n      \"enumerations\": [\n       {\n
+    \       \"text\": {\n         \"en\": \" Graft\"\n        }, \n        \"id\":
+    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Fistula\"\n
+    \       }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\": {\n
+    \        \"en\": \" Catheter with maturing graft\"\n        }, \n        \"id\":
+    \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Catheter
+    with maturing fistula\"\n        }, \n        \"id\": \"3\"\n       }\n      ],
+    \n      \"fieldId\": \"access_type\"\n     }\n    }, \n    {\n     \"type\": \"question\",
+    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      },
+    \n      \"text\": {\n       \"en\": \"Location of currently used vascular access\"\n
+    \     }, \n      \"enumerations\": [\n       {\n        \"text\": {\n         \"en\":
+    \" Forearm\"\n        }, \n        \"id\": \"0\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Upper arm\"\n        }, \n        \"id\": \"1\"\n       },
+    \n       {\n        \"text\": {\n         \"en\": \" Internal jugular vein\"\n
+    \       }, \n        \"id\": \"2\"\n       }, \n       {\n        \"text\": {\n
+    \        \"en\": \" Subclavian vein\"\n        }, \n        \"id\": \"3\"\n       },
+    \n       {\n        \"text\": {\n         \"en\": \" Other\"\n        }, \n        \"id\":
+    \"4\"\n       }\n      ], \n      \"fieldId\": \"access_location\"\n     }\n    },
+    \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputText\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Name of dialysis unit\"\n      }, \n      \"fieldId\": \"dialysis_unit_name\"\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"inputText\"\n      }, \n      \"help\": {\n       \"en\":
+    \"Include Area Code\"\n      }, \n      \"text\": {\n       \"en\": \"Phone number\"\n
+    \     }, \n      \"fieldId\": \"dialysis_unit_phone\"\n     }\n    }, \n    {\n
+    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
+    \"radioGroup\"\n      }, \n      \"text\": {\n       \"en\": \"Days of the week
+    patient is dialyzed\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\":
+    {\n         \"en\": \" Monday-Wednesday-Friday\"\n        }, \n        \"id\":
+    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Tuesday-Thursday-Saturday\"\n
+    \       }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\": {\n
+    \        \"en\": \" Other\"\n        }, \n        \"id\": \"2\"\n       }\n      ],
+    \n      \"fieldId\": \"dialysis_schedule_days\"\n     }\n    }, \n    {\n     \"type\":
+    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Shift patient is dialyzed\"\n      },
+    \n      \"enumerations\": [\n       {\n        \"text\": {\n         \"en\": \"
+    First shift\"\n        }, \n        \"id\": \"0\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Second shift\"\n        }, \n        \"id\": \"1\"\n       },
+    \n       {\n        \"text\": {\n         \"en\": \" Third shift\"\n        },
+    \n        \"id\": \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Fourth shift\"\n        }, \n        \"id\": \"3\"\n       }\n      ], \n      \"fieldId\":
+    \"dialysis_schedule_time\"\n     }\n    }, \n    {\n     \"type\": \"question\",
+    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      },
+    \n      \"text\": {\n       \"en\": \"Etiology of ESRD\"\n      }, \n      \"enumerations\":
+    [\n       {\n        \"text\": {\n         \"en\": \" Diabetes\"\n        }, \n
+    \       \"id\": \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Hypertension\"\n        }, \n        \"id\": \"1\"\n       }, \n       {\n
+    \       \"text\": {\n         \"en\": \" Glomerulonephritis\"\n        }, \n        \"id\":
+    \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Polycystic
+    Kidney Disease\"\n        }, \n        \"id\": \"3\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Interstitial Nephritis\"\n        }, \n        \"id\":
+    \"4\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Hereditary
+    Nephritis\"\n        }, \n        \"id\": \"5\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Other\"\n        }, \n        \"id\": \"6\"\n       }\n
+    \     ], \n      \"fieldId\": \"etiology_esrd\"\n     }\n    }, \n    {\n     \"type\":
+    \"header\", \n     \"options\": {\n      \"text\": {\n       \"en\": \"General
+    Comments\"\n      }\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"textArea\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Comments\"\n      }, \n      \"fieldId\": \"subject_comments\"\n
+    \    }\n    }\n   ], \n   \"id\": \"dialysis_info\"\n  }\n ], \n \"title\": {\n
+    \ \"en\": \"test_redcap_1\"\n }\n}"
+- sh: cat ./test/sandbox/test_redcap_1_i.json
+  stdout: "{\n \"title\": \"test_redcap_1\", \n \"record\": [\n  {\n   \"description\":
+    \"Study ID\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
+    \"study_id\", \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"Date
+    subject signed consent\", \n   \"identifiable\": false, \n   \"required\": false,
+    \n   \"id\": \"date_enrolled\", \n   \"type\": \"dateTime\"\n  }, \n  {\n   \"description\":
+    \"First Name\", \n   \"identifiable\": true, \n   \"required\": false, \n   \"id\":
+    \"first_name\", \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"Last
+    Name\", \n   \"identifiable\": true, \n   \"required\": false, \n   \"id\": \"last_name\",
+    \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"Street, City, State,
+    ZIP\", \n   \"identifiable\": true, \n   \"required\": false, \n   \"id\": \"address\",
+    \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"Phone number\", \n
+    \  \"identifiable\": true, \n   \"required\": false, \n   \"id\": \"telephone_1\",
+    \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"Second phone number\",
+    \n   \"identifiable\": true, \n   \"required\": false, \n   \"id\": \"telephone_2\",
+    \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"E-mail\", \n   \"identifiable\":
+    true, \n   \"required\": false, \n   \"id\": \"email\", \n   \"type\": \"text\"\n
+    \ }, \n  {\n   \"description\": \"Gender\", \n   \"identifiable\": false, \n   \"required\":
+    true, \n   \"id\": \"sex\", \n   \"type\": {\n    \"enumerations\": {\n     \"1\":
+    null, \n     \"0\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n
+    \ {\n   \"description\": \"Has the subject given birth before?\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"given_birth\", \n   \"type\":
+    {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null\n    }, \n    \"base\":
+    \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"How many times has the
+    subject given birth?\", \n   \"identifiable\": false, \n   \"required\": false,
+    \n   \"id\": \"num_children\", \n   \"type\": {\n    \"range\": {\n     \"min\":
+    0\n    }, \n    \"base\": \"integer\"\n   }\n  }, \n  {\n   \"description\": \"Ethnicity\",
+    \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"ethnicity\",
+    \n   \"type\": {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null,
+    \n     \"2\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n
+    \  \"description\": \"Race\", \n   \"identifiable\": false, \n   \"required\":
+    false, \n   \"id\": \"race\", \n   \"type\": {\n    \"enumerations\": {\n     \"1\":
+    null, \n     \"0\": null, \n     \"3\": null, \n     \"2\": null, \n     \"5\":
+    null, \n     \"4\": null, \n     \"6\": null\n    }, \n    \"base\": \"enumerationSet\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Date of birth\", \n   \"identifiable\":
+    true, \n   \"required\": false, \n   \"id\": \"dob\", \n   \"type\": \"dateTime\"\n
+    \ }, \n  {\n   \"description\": \"Height (cm)\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"height\", \n   \"type\": {\n    \"range\":
+    {\n     \"max\": 215.0, \n     \"min\": 130.0\n    }, \n    \"base\": \"float\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Weight (kilograms)\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"weight\", \n   \"type\": {\n    \"range\":
+    {\n     \"max\": 200, \n     \"min\": 35\n    }, \n    \"base\": \"integer\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Any comorbid condition\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"comorbidities\", \n   \"type\":
+    \"text\"\n  }, \n  {\n   \"description\": \"Patient has a diagnosis of diabetes
+    mellitus?\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
+    \"diabetes\", \n   \"type\": {\n    \"enumerations\": {\n     \"a\": null, \n
+    \    \"b\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\":
+    \"Type of Diabetes Mellitus\", \n   \"identifiable\": false, \n   \"required\":
+    false, \n   \"id\": \"diabetes_type\", \n   \"type\": {\n    \"enumerations\":
+    {\n     \"a\": null, \n     \"c\": null, \n     \"b\": null\n    }, \n    \"base\":
+    \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Date of first outpatient
+    dialysis treatment\", \n   \"identifiable\": false, \n   \"required\": false,
+    \n   \"id\": \"dialysis_initiation\", \n   \"type\": \"dateTime\"\n  }, \n  {\n
+    \  \"description\": \"Type of vascular access\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"access_type\", \n   \"type\": {\n    \"enumerations\":
+    {\n     \"1\": null, \n     \"0\": null, \n     \"3\": null, \n     \"2\": null\n
+    \   }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\":
+    \"Location of currently used vascular access\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"access_location\", \n   \"type\": {\n
+    \   \"enumerations\": {\n     \"1\": null, \n     \"0\": null, \n     \"3\": null,
+    \n     \"2\": null, \n     \"4\": null\n    }, \n    \"base\": \"enumeration\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Name of dialysis unit\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"dialysis_unit_name\", \n   \"type\":
+    \"text\"\n  }, \n  {\n   \"description\": \"Phone number\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"dialysis_unit_phone\", \n   \"type\":
+    \"text\"\n  }, \n  {\n   \"description\": \"Days of the week patient is dialyzed\",
+    \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"dialysis_schedule_days\",
+    \n   \"type\": {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null,
+    \n     \"2\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n
+    \  \"description\": \"Shift patient is dialyzed\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"dialysis_schedule_time\", \n   \"type\":
+    {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null, \n     \"3\":
+    null, \n     \"2\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n
+    \ {\n   \"description\": \"Etiology of ESRD\", \n   \"identifiable\": false, \n
+    \  \"required\": false, \n   \"id\": \"etiology_esrd\", \n   \"type\": {\n    \"enumerations\":
+    {\n     \"1\": null, \n     \"0\": null, \n     \"3\": null, \n     \"2\": null,
+    \n     \"5\": null, \n     \"4\": null, \n     \"6\": null\n    }, \n    \"base\":
+    \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Comments\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"subject_comments\", \n   \"type\":
+    \"text\"\n  }\n ], \n \"version\": \"1.0\", \n \"id\": \"urn:redcap_1\"\n}"
 - sh: rios-validate instrument ./test/sandbox/test_redcap_1_i.json
   stdout: |
     Successful validation.
 - sh: rios-validate --instrument ./test/sandbox/test_redcap_1_i.json form ./test/sandbox/test_redcap_1_f.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/test_redcap_1_i.json calculationset
+    ./test/sandbox/test_redcap_1_c.json
   stdout: |
     Successful validation.
 - sh: redcap-rios --title test_redcap_matrix_1 --id urn:redcap_matrix_1 --instrument-version
