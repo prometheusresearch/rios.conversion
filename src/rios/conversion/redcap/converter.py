@@ -5,12 +5,11 @@ Converts a redcap csv file into a series of output files
     - <prefix>_i.<format> RIOS instrument
     - <prefix>_f.<format> RIOS web form
 
-The RIOS calculation file is only created when there are 
+The RIOS calculation file is only created when there are
 calculation fields in the input.
 """
 
 import argparse
-import csv
 import json
 import pkg_resources
 import re
@@ -55,7 +54,7 @@ FUNCTION_TO_PYTHON = {
 
 # dict of function name: pattern which finds "name("
 RE_funcs = {
-        k: re.compile(r'%s\(' % k) 
+        k: re.compile(r'%s\(' % k)
         for k in FUNCTION_TO_PYTHON.keys()}
 
 OPERATOR_TO_PYTHON = [
@@ -67,13 +66,14 @@ OPERATOR_TO_PYTHON = [
         ]
 
 RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_PYTHON]
-                
+
+
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
     def get_name(self, name):
         """ Return canonical name.
         - replace non-alphanumeric with underbars.
         - strip leading and trailing underbars.
-        - ensure 'choices' field is 'choices_or_calculations' 
+        - ensure 'choices' field is 'choices_or_calculations'
           (REDCap has several names for the 'choices' field
           but they all begin with 'choices')
         - convert to lowercase.
@@ -82,9 +82,10 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
                 r'\1',
                 RE_non_alphanumeric.sub('_', name.strip().lower()))
         if x.startswith('choices'):
-          x = 'choices_or_calculations'
+            x = 'choices_or_calculations'
         return x
-        
+
+
 class Converter(object):
     def __init__(self):
         self.parser = argparse.ArgumentParser(
@@ -113,7 +114,7 @@ class Converter(object):
         self.parser.add_argument(
                 '--infile',
                 required=True,
-                type=argparse.FileType('r'),            
+                type=argparse.FileType('r'),
                 help="The csv input file to process.  Use '-' for stdin.")
         self.parser.add_argument(
                 '--instrument-version',
@@ -132,7 +133,7 @@ class Converter(object):
                 '--title',
                 required=True,
                 help='The instrument title to output.')
-    
+
     def __call__(self, argv=None, stdout=None, stderr=None):
         """process the csv input, and create output files.
         """
@@ -150,7 +151,7 @@ class Converter(object):
         self.title = args.title
         self.localization = args.localization
         self.format = args.format
-        
+
         self.instrument = Rios.Instrument(
                 id=self.id,
                 version=self.instrument_version,
@@ -169,12 +170,12 @@ class Converter(object):
         for od in Csv2OrderedDict(args.infile):
             if 'form_name' not in od:
                 continue
-            self.process_od(od)                
+            self.process_od(od)
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
         sys.exit(0)
-        
+
     def convert_calc(self, calc):
         """convert RedCap expression into Python
 
@@ -190,14 +191,14 @@ class Converter(object):
         for var in variables:
             if var not in self.calculation_variables:
                 s = s.replace(
-                        'calculations["%s"]' % var, 
+                        'calculations["%s"]' % var,
                         'assessment["%s"]' % var)
         for name, pattern in RE_funcs.items():
             # the matched pattern includes the '('
             s = pattern.sub('%s(' % FUNCTION_TO_PYTHON[name], s)
         s = RE_carat_function.sub(r'math.pow(\1, \2)', s)
         return s
-        
+
     def convert_text_type(self, text_type):
         if text_type.startswith('date'):
             return 'dateTime'
@@ -213,7 +214,7 @@ class Converter(object):
         for pattern, replacement in RE_ops:
             s = pattern.sub(replacement, s)
         return 'rios.conversion.redcap.math.not_(%s)' % s
-        
+
     def convert_value(self, value, text_type):
         if text_type == 'integer':
             return int(value)
@@ -230,8 +231,8 @@ class Converter(object):
                     json.dump(obj, fo, indent=1)
                 elif self.format == 'yaml':
                     yaml.safe_dump(
-                            json.loads(json.dumps(obj)), 
-                            fo, 
+                            json.loads(json.dumps(obj)),
+                            fo,
                             default_flow_style=False)
 
     def create_calculation_file(self):
@@ -240,19 +241,19 @@ class Converter(object):
 
     def create_instrument_file(self):
         self.create__file('i', self.instrument)
-        
+
     def create_form_file(self):
         self.create__file('f', self.form)
 
     def filename(self, kind):
         return '%(prefix)s_%(kind)s.%(extension)s' % {
-                'prefix':self.prefix,
-                'kind': kind, 
+                'prefix': self.prefix,
+                'kind': kind,
                 'extension': self.format, }
 
     def get_choices_form(self, od):
         """ returns array of DescriptorObject
-        Expecting: choices_or_calculations to be pipe separated list 
+        Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
         """
         return [
@@ -264,19 +265,19 @@ class Converter(object):
 
     def get_choices_instrument(self, od):
         """ returns EnumerationCollectionObject
-        Expecting: choices_or_calculations to be pipe separated list 
+        Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
         """
         return Rios.EnumerationCollectionObject(**{
                 x.strip().split(',')[0].lower(): None
                 for x in od['choices_or_calculations'].split('|') })
-                
+
     def get_type(self, od, side_effects=True):
         """returns the computed instrument field type.
         Also has side effects when side_effects is True.
         - can initialize self.calculations.
         - can append a calculation.
-        - updates self.question: 
+        - updates self.question:
             enumerations, questions, rows, widget, events
         """
         def get_widget(type):
@@ -290,16 +291,11 @@ class Converter(object):
             elif text_type == 'dateTime':
                 return 'dateTimePicker'
             else:
-                raise ValueError, ('unexpected text type', text_type)
-                 
+                raise ValueError('unexpected text type', text_type)
+
         def process_calculation():
             if side_effects:
-                form_name = od['form_name']
                 field_name = od['variable_field_name']
-                if not self.calculations:
-                    self.calculations = Rios.CalculationSetObject(
-                            instrument=Rios.InstrumentReferenceObject(
-                                    **self.instrument), )
                 calc = self.convert_calc(od['choices_or_calculations'])
                 self.calculations.add(Rios.CalculationObject(
                         id=field_name,
@@ -309,7 +305,7 @@ class Converter(object):
                         options={'expression': calc}, ))
                 assert field_name not in self.calculation_variables
                 self.calculation_variables.add(field_name)
-            return None # not an instrument field
+            return None     # not an instrument field
 
         def process_checkbox():
             if side_effects:
@@ -346,7 +342,7 @@ class Converter(object):
             return Rios.TypeObject(
                     base='float',
                     range=Rios.BoundConstraintObject(
-                            min=0.0, 
+                            min=0.0,
                             max=100.0), )
 
         def process_text():
@@ -361,19 +357,19 @@ class Converter(object):
                 bound_constraint = Rios.BoundConstraintObject()
                 if val_min:
                     bound_constraint['min'] = self.convert_value(
-                            val_min, 
+                            val_min,
                             text_type)
                 if val_max:
                     bound_constraint['max'] = self.convert_value(
-                            val_max, 
+                            val_max,
                             text_type)
                 return Rios.TypeObject(
-                        base=text_type, 
+                        base=text_type,
                         range=bound_constraint)
             else:
-                return text_type 
+                return text_type
 
-        def process_truefalse():        
+        def process_truefalse():
             if side_effects:
                 self.question.set_widget(get_widget(type='radioGroup'))
                 self.question.add_enumeration(Rios.DescriptorObject(
@@ -402,7 +398,7 @@ class Converter(object):
                     base='boolean',
                     enumerations=Rios.EnumerationCollectionObject(
                             yes=Rios.EnumerationObject(description="Yes"),
-                            no=Rios.EnumerationObject(description="No"), 
+                            no=Rios.EnumerationObject(description="No"),
                             ), )
 
         field_type = od['field_type']
@@ -437,19 +433,19 @@ class Converter(object):
         if section_header:
             element['type'] = 'header'
             element['options'] = {
-                    'text': 
+                    'text':
                     self.localized_string_object(section_header)}
             element = Rios.ElementObject()
             elements.append(element)
         if od['field_type'] == 'calc':
-            del elements[-1] # not a form field.
+            del elements[-1]    # not a form field.
         else:
             element['type'] = 'question'
             element['options'] = Rios.QuestionObject(
                     fieldId=od['variable_field_name'],
                     text=self.localized_string_object(od['field_label']),
                     help=self.localized_string_object(od['field_note']), )
-        return elements 
+        return elements
 
     def make_field(self, od):
         field = Rios.FieldObject()
@@ -461,7 +457,7 @@ class Converter(object):
             field['required'] = bool(od['required_field'])
             field['identifiable'] = bool(od['identifier'])
         return field
-        
+
     def make_matrix_field(self, od):
         field = Rios.FieldObject()
         field['id'] = od['matrix_group_name']
@@ -475,7 +471,7 @@ class Converter(object):
             self.page_name = page_name
             self.page = Rios.PageObject(id=page_name)
             self.form.add_page(self.page)
-            
+
         elements = self.make_elements(od)
         # Add any non-questions to form
         self.page.add_element(elements[:-1])
@@ -536,7 +532,7 @@ class Converter(object):
                         description=od['field_label'],
                         required=bool(od['required_field']), ))
                 field = Rios.FieldObject()
-                # add the row to the form      
+                # add the row to the form
                 self.matrix.add_row(Rios.DescriptorObject(
                         id=od['variable_field_name'],
                         text=self.localized_string_object(od['field_label']),
@@ -551,7 +547,6 @@ class Converter(object):
             field = self.make_field(od)
 
         if field['id']:
-            self.instrument.add_field(field) 
+            self.instrument.add_field(field)
 
 main = Converter()
-

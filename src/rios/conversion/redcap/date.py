@@ -1,10 +1,11 @@
 import datetime
 
+
 def datediff(date1, date2, units, date_fmt="ymd"):
     def _datetime(date):
         return datetime.datetime(**dict(zip(
-                [{'y': 'year', 'm': 'month', 'd': 'day'}[x] 
-                        for x in date_fmt], 
+                [{'y': 'year', 'm': 'month', 'd': 'day'}[x]
+                        for x in date_fmt],
                 map(int, date.split('-')) )))
 
     def _timedelta(timedelta):
@@ -23,13 +24,12 @@ def datediff(date1, date2, units, date_fmt="ymd"):
                 return seconds / 60.0
             elif units == 's':
                 return float(seconds)
-            else
-                raise ValueError, units
+            else:
+                raise ValueError(units)
 
     if "today" in [date1, date2]:
         today = datetime.date.today()
     minuend = today if date1 == "today" else _datetime(date1)
     subtrahend = today if date2 == "today" else _datetime(date2)
     difference = minuend - subtrahend
-    return _timedelta(difference)           
-
+    return _timedelta(difference)

@@ -5,17 +5,17 @@ Converts a Qualtrics qsf file into a series of output files
     - <prefix>_i.<format> RIOS instrument
     - <prefix>_f.<format> RIOS web form
 
-The RIOS calculation file is only created when there are 
+The RIOS calculation file is only created when there are
 calculation fields in the input.
 """
 
 import argparse
 import json
 import pkg_resources
-import re
 import rios.conversion.classes as Rios
 import sys
 import yaml
+
 
 class Converter(object):
     def __init__(self):
@@ -42,7 +42,7 @@ class Converter(object):
         self.parser.add_argument(
                 '--infile',
                 required=True,
-                type=argparse.FileType('r'),            
+                type=argparse.FileType('r'),
                 help="The qsf input file to process.  Use '-' for stdin.")
         self.parser.add_argument(
                 '--instrument-version',
@@ -52,7 +52,7 @@ class Converter(object):
                 '--prefix',
                 required=True,
                 help='The prefix for the output files')
-    
+
     def __call__(self, argv=None, stdout=None, stderr=None):
         """process the qsf input, and create output files.
         ``fname`` is an open file object.
@@ -105,8 +105,8 @@ class Converter(object):
                     json.dump(obj, fo, indent=1)
                 elif self.format == 'yaml':
                     yaml.safe_dump(
-                            json.loads(json.dumps(obj)), 
-                            fo, 
+                            json.loads(json.dumps(obj)),
+                            fo,
                             default_flow_style=False)
 
     def create_calculation_file(self):
@@ -115,14 +115,14 @@ class Converter(object):
 
     def create_instrument_file(self):
         self.create__file('i', self.instrument)
-        
+
     def create_form_file(self):
         self.create__file('f', self.form)
 
     def filename(self, kind):
         return '%(prefix)s_%(kind)s.%(extension)s' % {
-                'prefix':self.prefix,
-                'kind': kind, 
+                'prefix': self.prefix,
+                'kind': kind,
                 'extension': self.format, }
 
     def get_choices(self, question):
@@ -139,10 +139,10 @@ class Converter(object):
             elif isinstance(choices, list):
                 choices = [i for i in enumerate(choices)]
             else:
-                raise ValueError, ('not dict or list', choices, question)
+                raise ValueError('not dict or list', choices, question)
             choices = [(str(i).lower(), c['Display']) for i, c in choices]
         return choices
-            
+
     def get_qualtrics(self, raw):
         """ Extract all the useful info from the raw qualtrics object
         into a dict and return it.
@@ -154,7 +154,7 @@ class Converter(object):
                 'localization':   survey_entry['SurveyLanguage'].lower(),
                 'title':          survey_entry['SurveyName'],
                 'block_elements': [],
-                'questions':      {}, # QuestionID: payload (dict)
+                'questions':      {},   # QuestionID: payload (dict)
                 }
         questions = qualtrics['questions']
         block_elements = qualtrics['block_elements']
@@ -176,7 +176,7 @@ class Converter(object):
                 payload = survey_element['Payload']
                 questions[payload['QuestionID']] = payload
         return qualtrics
-        
+
     def get_type(self, question):
         if self.choices:
             return Rios.TypeObject(
@@ -196,14 +196,14 @@ class Converter(object):
         element['options'] = Rios.QuestionObject(
                 fieldId=question['DataExportTag'].lower(),
                 text=self.localized_string_object(question['QuestionText']),)
-        if self.choices:        
+        if self.choices:
             question_object = element['options']
             for id_, choice in self.choices:
                 question_object.add_enumeration(Rios.DescriptorObject(
                     id=id_,
                     text=self.localized_string_object(choice),))
         return element
-        
+
     def make_field(self, question):
         field = Rios.FieldObject()
         field['id'] = question['DataExportTag'].lower()
@@ -212,28 +212,28 @@ class Converter(object):
         field['required'] = False
         field['identifiable'] = False
         return field
-        
+
     def process_question(self, question):
         self.choices = self.get_choices(question)
-        #add to instrument
+        # add to instrument
         field = self.make_field(question)
-        self.instrument.add_field(field) 
-         
-        #add to form
+        self.instrument.add_field(field)
+
+        # add to form
         element = self.make_element(question)
         self.page.add_element(element)
-        
+
     def start_page(self):
         self.page = Rios.PageObject(id=self.page_name.next())
         self.form.add_page(self.page)
-    
+
+
 class PageName(object):
     def __init__(self, start=0):
         self.page_id = start
-    
+
     def next(self):
-        self.page_id += 1 
+        self.page_id += 1
         return 'page_%02d' % self.page_id
 
 main = Converter()
-

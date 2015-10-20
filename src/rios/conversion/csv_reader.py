@@ -4,26 +4,27 @@ import csv
 __all__ = (
     "CsvReader",
     )
-    
+
+
 class CsvReader(object):
     """This object reads `fname`, a csv file, and can iterate over the rows.
-     
+
     usage:
-    
+
         for row in CsvReader(fname):
             assert isinstance(row, OrderedDict)
             ... process the row
 
-    fname is either the filename, or an open file object, or any object 
+    fname is either the filename, or an open file object, or any object
     suitable for csv.reader.
 
-    The first row is expected to be a list of column names. 
-    These are converted to "canonical" form by get_name() 
+    The first row is expected to be a list of column names.
+    These are converted to "canonical" form by get_name()
     and stored in the self.attributes list.
 
     Subsequent rows are converted by get_row()
     into OrderedDicts based on the keys in self.attributes.
-    
+
     - get_name(name): returns the "canonical" name.
       The default returns name unchanged.
     """
@@ -42,7 +43,7 @@ class CsvReader(object):
 
     def get_name(self, name):
         return name
-        
+
     @staticmethod
     def get_reader(fname):
         fi = open(fname, 'r') if isinstance(fname, str) else fname
@@ -50,4 +51,3 @@ class CsvReader(object):
 
     def get_row(self, row):
         return collections.OrderedDict(zip(self.attributes, row))
-
