@@ -25,7 +25,7 @@ tests:
             --id urn:redcap_1
             --instrument-version 1.0 
             --infile ./test/redcap_1.csv
-            --prefix ./test/sandbox/test_redcap_1
+            --outfile-prefix ./test/sandbox/test_redcap_1
   - sh: cat ./test/sandbox/test_redcap_1_c.yaml
   - sh: cat ./test/sandbox/test_redcap_1_f.yaml
   - sh: cat ./test/sandbox/test_redcap_1_i.yaml
@@ -36,7 +36,7 @@ tests:
             --id urn:redcap_1
             --instrument-version 1.0 
             --infile ./test/redcap_1.csv
-            --prefix ./test/sandbox/test_redcap_1
+            --outfile-prefix ./test/sandbox/test_redcap_1
             --format json 
   - sh: cat ./test/sandbox/test_redcap_1_c.json
   - sh: cat ./test/sandbox/test_redcap_1_f.json
@@ -58,7 +58,7 @@ tests:
             --id urn:redcap_matrix_1
             --instrument-version 1.0 
             --infile ./test/redcap_matrix_1.csv
-            --prefix ./test/sandbox/test_redcap_matrix_1
+            --outfile-prefix ./test/sandbox/test_redcap_matrix_1
   - sh: cat ./test/sandbox/test_redcap_matrix_1_f.yaml
   - sh: cat ./test/sandbox/test_redcap_matrix_1_i.yaml
 
@@ -68,7 +68,7 @@ tests:
             --id urn:redcap_matrix_1
             --instrument-version 1.0 
             --infile ./test/redcap_1.csv
-            --prefix ./test/sandbox/test_redcap_matrix_1
+            --outfile-prefix ./test/sandbox/test_redcap_matrix_1
             --format json 
   - sh: rios-validate instrument ./test/sandbox/test_redcap_matrix_1_i.json
   - sh: !
@@ -81,7 +81,7 @@ tests:
         qualtrics-rios 
             --instrument-version 1.0 
             --infile ./test/qualtrics_1.qsf
-            --prefix ./test/sandbox/test_qualtrics_1
+            --outfile-prefix ./test/sandbox/test_qualtrics_1
   - sh: cat ./test/sandbox/test_qualtrics_1_f.yaml
   - sh: cat ./test/sandbox/test_qualtrics_1_i.yaml
 
@@ -89,7 +89,7 @@ tests:
         qualtrics-rios 
             --instrument-version 1.0 
             --infile ./test/qualtrics_1.qsf
-            --prefix ./test/sandbox/test_qualtrics_1
+            --outfile-prefix ./test/sandbox/test_qualtrics_1
             --format json 
   - sh: rios-validate instrument ./test/sandbox/test_qualtrics_1_i.json
   - sh: !
@@ -102,7 +102,7 @@ tests:
         qualtrics-rios 
             --instrument-version 1.0 
             --infile ./test/qualtrics_2.qsf
-            --prefix ./test/sandbox/test_qualtrics_2
+            --outfile-prefix ./test/sandbox/test_qualtrics_2
   - sh: cat ./test/sandbox/test_qualtrics_2_f.yaml
   - sh: cat ./test/sandbox/test_qualtrics_2_i.yaml
 
@@ -110,7 +110,7 @@ tests:
         qualtrics-rios 
             --instrument-version 1.0 
             --infile ./test/qualtrics_2.qsf
-            --prefix ./test/sandbox/test_qualtrics_2
+            --outfile-prefix ./test/sandbox/test_qualtrics_2
             --format json 
   - sh: rios-validate instrument ./test/sandbox/test_qualtrics_2_i.json
   - sh: !

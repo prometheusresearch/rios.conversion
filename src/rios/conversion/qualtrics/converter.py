@@ -1,9 +1,9 @@
 """
 Converts a Qualtrics qsf file into a series of output files
 
-    - <prefix>_c.<format> RIOS calculation
-    - <prefix>_i.<format> RIOS instrument
-    - <prefix>_f.<format> RIOS web form
+    <OUTFILE_PREFIX> _c.<format> RIOS calculation
+    <OUTFILE_PREFIX>_i.<format> RIOS instrument
+    <OUTFILE_PREFIX>_f.<format> RIOS web form
 
 The RIOS calculation file is only created when there are
 calculation fields in the input.
@@ -49,7 +49,7 @@ class Converter(object):
                 required=True,
                 help='The instrument version to output.')
         self.parser.add_argument(
-                '--prefix',
+                '--outfile-prefix',
                 required=True,
                 help='The prefix for the output files')
 
@@ -63,7 +63,7 @@ class Converter(object):
         except SystemExit as exc:
             return exc
 
-        self.prefix = args.prefix
+        self.outfile_prefix = args.outfile_prefix
         self.instrument_version = args.instrument_version
         self.format = args.format
 
@@ -118,8 +118,8 @@ class Converter(object):
         self.create__file('f', self.form)
 
     def filename(self, kind):
-        return '%(prefix)s_%(kind)s.%(extension)s' % {
-                'prefix': self.prefix,
+        return '%(outfile_prefix)s_%(kind)s.%(extension)s' % {
+                'outfile_prefix': self.outfile_prefix,
                 'kind': kind,
                 'extension': self.format, }
 

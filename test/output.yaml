@@ -13,14 +13,14 @@ tests:
 - sh: redcap-rios --help
   stdout: |
     usage: redcap-rios [-h] [-v] [--format {yaml,json}] --id ID --infile INFILE
-                       --instrument-version INSTRUMENT_VERSION
-                       [--localization LOCALIZATION] --prefix PREFIX --title TITLE
+                       --instrument-version INSTRUMENT_VERSION [--localization]
+                       --outfile-prefix OUTFILE_PREFIX --title TITLE
 
     Converts a redcap csv file into a series of output files
 
-        - <prefix>_c.<format> RIOS calculation
-        - <prefix>_i.<format> RIOS instrument
-        - <prefix>_f.<format> RIOS web form
+        <OUTFILE_PREFIX>_c.<format> RIOS calculation
+        <OUTFILE_PREFIX>_i.<format> RIOS instrument
+        <OUTFILE_PREFIX>_f.<format> RIOS web form
 
     The RIOS calculation file is only created when there are
     calculation fields in the input.
@@ -33,9 +33,9 @@ tests:
       --infile INFILE       The csv input file to process.  Use '-' for stdin.
       --instrument-version INSTRUMENT_VERSION
                             The instrument version to output.
-      --localization LOCALIZATION
-                            The default localization for the web form.  The default is "en"
-      --prefix PREFIX       The prefix for the output files
+      --localization        The default localization for the web form.  The default is "en"
+      --outfile-prefix OUTFILE_PREFIX
+                            The prefix for the output files
       --title TITLE         The instrument title to output.
 - sh: redcap-rios --version
   stdout: |
@@ -43,13 +43,14 @@ tests:
 - sh: qualtrics-rios --help
   stdout: |
     usage: qualtrics-rios [-h] [-v] [--format {yaml,json}] --infile INFILE
-                          --instrument-version INSTRUMENT_VERSION --prefix PREFIX
+                          --instrument-version INSTRUMENT_VERSION --outfile-prefix
+                          OUTFILE_PREFIX
 
     Converts a Qualtrics qsf file into a series of output files
 
-        - <prefix>_c.<format> RIOS calculation
-        - <prefix>_i.<format> RIOS instrument
-        - <prefix>_f.<format> RIOS web form
+        <OUTFILE_PREFIX> _c.<format> RIOS calculation
+        <OUTFILE_PREFIX>_i.<format> RIOS instrument
+        <OUTFILE_PREFIX>_f.<format> RIOS web form
 
     The RIOS calculation file is only created when there are
     calculation fields in the input.
@@ -61,10 +62,14 @@ tests:
       --infile INFILE       The qsf input file to process.  Use '-' for stdin.
       --instrument-version INSTRUMENT_VERSION
                             The instrument version to output.
-      --prefix PREFIX       The prefix for the output files
+      --outfile-prefix OUTFILE_PREFIX
+                            The prefix for the output files
 - sh: qualtrics-rios --version
   stdout: |
     qualtrics-rios 0.2.0
+- sh: redcap-rios --title test_redcap_1 --id urn:redcap_1 --instrument-version 1.0
+    --infile ./test/redcap_1.csv --outfile-prefix ./test/sandbox/test_redcap_1
+  stdout: ''
 - sh: redcap-rios --title test_redcap_1 --id urn:redcap_1 --instrument-version 1.0
     --infile ./test/redcap_1.csv --prefix ./test/sandbox/test_redcap_1
   stdout: ''
@@ -695,6 +700,10 @@ tests:
     title: test_redcap_1
     version: '1.0'
 - sh: redcap-rios --title test_redcap_1 --id urn:redcap_1 --instrument-version 1.0
+    --infile ./test/redcap_1.csv --outfile-prefix ./test/sandbox/test_redcap_1 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title test_redcap_1 --id urn:redcap_1 --instrument-version 1.0
     --infile ./test/redcap_1.csv --prefix ./test/sandbox/test_redcap_1 --format json
   stdout: ''
 - sh: cat ./test/sandbox/test_redcap_1_c.json
@@ -967,6 +976,9 @@ tests:
   stdout: |
     Successful validation.
 - sh: redcap-rios --title test_redcap_matrix_1 --id urn:redcap_matrix_1 --instrument-version
+    1.0 --infile ./test/redcap_matrix_1.csv --outfile-prefix ./test/sandbox/test_redcap_matrix_1
+  stdout: ''
+- sh: redcap-rios --title test_redcap_matrix_1 --id urn:redcap_matrix_1 --instrument-version
     1.0 --infile ./test/redcap_matrix_1.csv --prefix ./test/sandbox/test_redcap_matrix_1
   stdout: ''
 - sh: cat ./test/sandbox/test_redcap_matrix_1_f.yaml
@@ -1047,6 +1059,10 @@ tests:
     title: test_redcap_matrix_1
     version: '1.0'
 - sh: redcap-rios --title test_redcap_matrix_1 --id urn:redcap_matrix_1 --instrument-version
+    1.0 --infile ./test/redcap_1.csv --outfile-prefix ./test/sandbox/test_redcap_matrix_1
+    --format json
+  stdout: ''
+- sh: redcap-rios --title test_redcap_matrix_1 --id urn:redcap_matrix_1 --instrument-version
     1.0 --infile ./test/redcap_1.csv --prefix ./test/sandbox/test_redcap_matrix_1
     --format json
   stdout: ''
@@ -1056,6 +1072,9 @@ tests:
 - sh: rios-validate --instrument ./test/sandbox/test_redcap_matrix_1_i.json form ./test/sandbox/test_redcap_matrix_1_f.json
   stdout: |
     Successful validation.
+- sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_1.qsf --outfile-prefix
+    ./test/sandbox/test_qualtrics_1
+  stdout: ''
 - sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_1.qsf --prefix
     ./test/sandbox/test_qualtrics_1
   stdout: ''
@@ -1799,6 +1818,9 @@ tests:
       type: text
     title: Health Status Survey - Copy
     version: '1.0'
+- sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_1.qsf --outfile-prefix
+    ./test/sandbox/test_qualtrics_1 --format json
+  stdout: ''
 - sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_1.qsf --prefix
     ./test/sandbox/test_qualtrics_1 --format json
   stdout: ''
@@ -1808,6 +1830,9 @@ tests:
 - sh: rios-validate --instrument ./test/sandbox/test_qualtrics_1_i.json form ./test/sandbox/test_qualtrics_1_f.json
   stdout: |
     Successful validation.
+- sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_2.qsf --outfile-prefix
+    ./test/sandbox/test_qualtrics_2
+  stdout: ''
 - sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_2.qsf --prefix
     ./test/sandbox/test_qualtrics_2
   stdout: ''
@@ -2093,6 +2118,9 @@ tests:
           '5': null
     title: Neuro-QOL Pediatric Anger Short Form
     version: '1.0'
+- sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_2.qsf --outfile-prefix
+    ./test/sandbox/test_qualtrics_2 --format json
+  stdout: ''
 - sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_2.qsf --prefix
     ./test/sandbox/test_qualtrics_2 --format json
   stdout: ''
