@@ -95,6 +95,9 @@ class Converter(object):
         self.create_form_file()
         sys.exit(0)
 
+    def clean_question(self, text):
+        return text.replace('<br>', '')
+
     def create__file(self, kind, obj):
         if obj:
             obj.clean()
@@ -130,10 +133,13 @@ class Converter(object):
         order = question.get('ChoiceOrder', [])
         if choices:
             if isinstance(choices, dict):
-                if order:
-                    choices = [(x, choices[str(x)]) for x in order]
-                else:
-                    choices = [i for i in enumerate(choices.values())]
+                if not order:
+                    keys = choices.keys()
+                    if all([k.isdigit() for k in keys]):
+                        keys = [int(k) for k in keys]
+                    order = sorted(keys)
+                choices = [(x, choices[str(x)]) for x in order]
+
             elif isinstance(choices, list):
                 choices = [i for i in enumerate(choices)]
             else:
@@ -188,10 +194,20 @@ class Converter(object):
 
     def make_element(self, question):
         element = Rios.ElementObject()
-        element['type'] = 'question'
-        element['options'] = Rios.QuestionObject(
-                fieldId=question['DataExportTag'].lower(),
-                text=self.localized_string_object(question['QuestionText']),)
+        question_type = question['QuestionType']
+        question_text = self.localized_string_object(
+                self.clean_question(
+                        question['QuestionText']))
+        if question_type == 'DB':
+            element['type'] = 'text'
+            element['options'] = {'text': question_text}
+        else:
+            element['type'] = 'question'
+            element['options'] = Rios.QuestionObject(
+                    fieldId=question['DataExportTag'].lower(),
+                    text=self.localized_string_object(
+                            self.clean_question(
+                                    question['QuestionText'])), )
         if self.choices:
             question_object = element['options']
             for id_, choice in self.choices:
@@ -211,13 +227,13 @@ class Converter(object):
 
     def process_question(self, question):
         self.choices = self.get_choices(question)
-        # add to instrument
-        field = self.make_field(question)
-        self.instrument.add_field(field)
-
         # add to form
         element = self.make_element(question)
         self.page.add_element(element)
+        if element['type'] == 'question':
+            # add to instrument
+            field = self.make_field(question)
+            self.instrument.add_field(field)
 
     def start_page(self):
         self.page = Rios.PageObject(id=self.page_name.next())

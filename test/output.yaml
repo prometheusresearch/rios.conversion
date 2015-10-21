@@ -1087,12 +1087,11 @@ tests:
     pages:
     - elements:
       - options:
-          fieldId: q1
           text:
             en: ' We are conducting a brief public opinion survey of persons 55 years
               of age and older regarding health care needs.  This survey is to be completed
               by someone who falls into that age category.'
-        type: question
+        type: text
       id: page_01
     - elements:
       - options:
@@ -1345,37 +1344,36 @@ tests:
       - options:
           fieldId: q15
           text:
-            en: <br>(TAKING MEDICATIONS)  During the past 24 hours, how many different
-              kinds of medication have you taken?
+            en: (TAKING MEDICATIONS)  During the past 24 hours, how many different kinds
+              of medication have you taken?
         type: question
       - options:
           fieldId: q16
           text:
-            en: <br>If you have taken medication in the last 24 hours, how many of the
-              medications you have taken have been prescribed by your physician?
+            en: If you have taken medication in the last 24 hours, how many of the medications
+              you have taken have been prescribed by your physician?
         type: question
       - options:
           enumerations:
-          - id: '0'
-            text:
-              en: Without help (in the right doses at the right time)
           - id: '1'
             text:
-              en: or, are you completely unable to take your own medicines?
+              en: Without help (in the right doses at the right time)
           - id: '2'
             text:
               en: With some help (take medicine if someone prepares it for you and/or
                 reminds you to take it)
+          - id: '3'
+            text:
+              en: or, are you completely unable to take your own medicines?
           fieldId: q17
           text:
             en: ' If you have taken medication in the last 24 hours, do you take your
               medicine:'
         type: question
       - options:
-          fieldId: q18
           text:
             en: ' Let me now ask you some questions about some specific health conditions.'
-        type: question
+        type: text
       - options:
           enumerations:
           - id: '0'
@@ -1412,10 +1410,9 @@ tests:
               pain?'
         type: question
       - options:
-          fieldId: q21
           text:
             en: ' Just a few demographic questions in order to categorize the data:'
-        type: question
+        type: text
       - options:
           enumerations:
           - id: '0'
@@ -1458,7 +1455,7 @@ tests:
       - options:
           fieldId: q24
           text:
-            en: '<br>Number of members residing in your household:'
+            en: 'Number of members residing in your household:'
         type: question
       - options:
           enumerations:
@@ -1530,10 +1527,9 @@ tests:
       id: page_02
     - elements:
       - options:
-          fieldId: q29
           text:
             en: ' Thank you.'
-        type: question
+        type: text
       id: page_03
     title:
       en: Health Status Survey - Copy
@@ -1542,11 +1538,6 @@ tests:
     description: Health Status Survey - Copy
     id: urn:SV_1MMcjvoGWqh8uUZ
     record:
-    - description: We are conducting a brief public opinion
-      id: q1
-      identifiable: false
-      required: false
-      type: text
     - description: First of all, how would you evaluate the
       id: q2
       identifiable: false
@@ -1707,14 +1698,9 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
           '1': null
           '2': null
-    - description: 'Let me now ask you some questions about '
-      id: q18
-      identifiable: false
-      required: false
-      type: text
+          '3': null
     - description: Do you or your spouse experience chronic
       id: q19
       identifiable: false
@@ -1736,11 +1722,6 @@ tests:
           '0': null
           '1': null
           '2': null
-    - description: Just a few demographic questions in orde
-      id: q21
-      identifiable: false
-      required: false
-      type: text
     - description: 'Age category:'
       id: q22
       identifiable: false
@@ -1811,11 +1792,6 @@ tests:
           '1': null
           '2': null
           '3': null
-    - description: Thank you.
-      id: q29
-      identifiable: false
-      required: false
-      type: text
     title: Health Status Survey - Copy
     version: '1.0'
 - sh: qualtrics-rios --instrument-version 1.0 --infile ./test/qualtrics_1.qsf --outfile-prefix
