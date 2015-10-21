@@ -21,10 +21,11 @@ The following command line programs have been implemented.
   arguments on the command line as they are not in the csv file.
 
   WARNING:
+  
   Since RIOS does not allow capital letters in ids,
   the program converts all expressions and internal values to lowercase.
   Expressions are used both in calculations and in skip logic.
-    
+
 - qualtrics-rios
 
   Converts a Qualtrics qsf file to a RIOS Instrument and Form
@@ -33,6 +34,11 @@ The following command line programs have been implemented.
   The instrument version must be provided on the command line
   as it is not in the qsf file.
   
+  WARNING:
+
+  Some questions in some qsf files contain the html markup "<br>".
+  This text is deleted.
+     
 Run each program's help to see its 
 required arguments and available options::
 
