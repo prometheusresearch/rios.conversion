@@ -76,45 +76,45 @@ tests:
             --instrument ./test/sandbox/test_redcap_matrix_1_i.json
             form ./test/sandbox/test_redcap_matrix_1_f.json
 
-  # qualtrics_1
+  # qualtrics_health
   - sh: !
         qualtrics-rios 
             --instrument-version 1.0 
-            --infile ./test/qualtrics_1.qsf
-            --outfile-prefix ./test/sandbox/test_qualtrics_1
-  - sh: cat ./test/sandbox/test_qualtrics_1_f.yaml
-  - sh: cat ./test/sandbox/test_qualtrics_1_i.yaml
+            --infile ./test/qualtrics_health.qsf
+            --outfile-prefix ./test/sandbox/test_qualtrics_health
+  - sh: cat ./test/sandbox/test_qualtrics_health_f.yaml
+  - sh: cat ./test/sandbox/test_qualtrics_health_i.yaml
 
   - sh: !
         qualtrics-rios 
             --instrument-version 1.0 
-            --infile ./test/qualtrics_1.qsf
-            --outfile-prefix ./test/sandbox/test_qualtrics_1
+            --infile ./test/qualtrics_health.qsf
+            --outfile-prefix ./test/sandbox/test_qualtrics_health
             --format json 
-  - sh: rios-validate instrument ./test/sandbox/test_qualtrics_1_i.json
+  - sh: rios-validate instrument ./test/sandbox/test_qualtrics_health_i.json
   - sh: !
         rios-validate 
-            --instrument ./test/sandbox/test_qualtrics_1_i.json
-            form ./test/sandbox/test_qualtrics_1_f.json
+            --instrument ./test/sandbox/test_qualtrics_health_i.json
+            form ./test/sandbox/test_qualtrics_health_f.json
 
-  # qualtrics_2
+  # qualtrics_neuro
   - sh: !
         qualtrics-rios 
             --instrument-version 1.0 
-            --infile ./test/qualtrics_2.qsf
-            --outfile-prefix ./test/sandbox/test_qualtrics_2
-  - sh: cat ./test/sandbox/test_qualtrics_2_f.yaml
-  - sh: cat ./test/sandbox/test_qualtrics_2_i.yaml
+            --infile ./test/qualtrics_neuro.qsf
+            --outfile-prefix ./test/sandbox/test_qualtrics_neuro
+  - sh: cat ./test/sandbox/test_qualtrics_neuro_f.yaml
+  - sh: cat ./test/sandbox/test_qualtrics_neuro_i.yaml
 
   - sh: !
         qualtrics-rios 
             --instrument-version 1.0 
-            --infile ./test/qualtrics_2.qsf
-            --outfile-prefix ./test/sandbox/test_qualtrics_2
+            --infile ./test/qualtrics_neuro.qsf
+            --outfile-prefix ./test/sandbox/test_qualtrics_neuro
             --format json 
-  - sh: rios-validate instrument ./test/sandbox/test_qualtrics_2_i.json
+  - sh: rios-validate instrument ./test/sandbox/test_qualtrics_neuro_i.json
   - sh: !
         rios-validate 
-            --instrument ./test/sandbox/test_qualtrics_2_i.json
-            form ./test/sandbox/test_qualtrics_2_f.json
+            --instrument ./test/sandbox/test_qualtrics_neuro_i.json
+            form ./test/sandbox/test_qualtrics_neuro_f.json
 
