@@ -17,7 +17,7 @@ import sys
 import yaml
 
 
-class Converter(object):
+class ToRios(object):
     def __init__(self):
         self.page_name = PageName()
         self.parser = argparse.ArgumentParser(
@@ -248,4 +248,4 @@ class PageName(object):
         self.page_id += 1
         return 'page_%02d' % self.page_id
 
-main = Converter()
+main = ToRios()

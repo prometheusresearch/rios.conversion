@@ -84,7 +84,7 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
         return x
 
 
-class Converter(object):
+class ToRios(object):
     def __init__(self):
         self.parser = argparse.ArgumentParser(
                 formatter_class=argparse.RawTextHelpFormatter,
@@ -550,4 +550,4 @@ class Converter(object):
         if field['id']:
             self.instrument.add_field(field)
 
-main = Converter()
+main = ToRios()
