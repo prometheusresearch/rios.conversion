@@ -67,7 +67,7 @@ We ask that you please include unit tests and
 any appropriate documentation updates along with your code changes.
 
 The project uses `pbbt`_ for testing.  
-Add tests to test/input.yaml.
+Add new tests to `test/input.yaml`_.
 Run tests::
 
     $ pbbt -T   # train (update output.yaml)
