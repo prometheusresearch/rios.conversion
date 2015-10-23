@@ -44,6 +44,11 @@ required arguments and available options::
 
   <program> --help
 
+See `test/input.yaml`_ for examples of running these programs to convert forms.
+
+.. _`test/input.yaml`: https://bitbucket.org/prometheus/rios.conversion/src/tip/test/input.yaml
+
+
 Installation
 ============
 
@@ -55,17 +60,36 @@ Installation
 Contributing
 ============
 
-Contributions and/or fixes to this package are more than welcome. Please submit
-them by forking this repository and creating a Pull Request that includes your
-changes. We ask that you please include unit tests and any appropriate
-documentation updates along with your code changes.
+Contributions and/or fixes to this package are more than welcome. 
+Please submit them by forking this repository and 
+creating a Pull Request that includes your changes. 
+We ask that you please include unit tests and 
+any appropriate documentation updates along with your code changes.
 
-This project will adhere to the `Semantic Versioning`_ methodology as much as
-possible, so when building dependent projects, please use appropriate version
-restrictions.
+The project uses `pbbt`_ for testing.  
+Add tests to test/input.yaml.
+Run tests::
+
+    $ pbbt -T   # train (update output.yaml)
+    $ pbbt      # test (compare output.yaml to results)   
+
+This project will adhere to the 
+Semantic Versioning methodology as much as possible, 
+so when building dependent projects, 
+please use appropriate version restrictions.
+
+A development environment can be set up to work on this package 
+by doing the following::
+
+    $ virtualenv rios.conversion
+    $ cd rios.conversion
+    $ . bin/activate
+    $ pip install pbbt
+    $ hg clone ssh://hg@bitbucket.org/prometheus/rios.conversion
+    $ pip install -e ./rios.conversion[dev]
 
 .. _`Semantic Versioning`: http://semver.org
-
+.. _`pbbt`: https://pypi.python.org/pypi/pbbt
 
 License/Copyright
 =================
