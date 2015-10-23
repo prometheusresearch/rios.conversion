@@ -48,7 +48,7 @@ def stdev(*data):
     if n < 2:
         return 0.0
     else:
-        m = mean(data)
+        m = mean(*data)
         ss = sum((x - m) ** 2 for x in data)
         pvar = ss / n   # the population variance
         return pvar ** 0.5

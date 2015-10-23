@@ -118,3 +118,5 @@ tests:
             --instrument ./test/sandbox/test_qualtrics_neuro_i.json
             form ./test/sandbox/test_qualtrics_neuro_f.json
 
+  - sh: python ./test/test_date.py
+  - sh: python ./test/test_math.py
