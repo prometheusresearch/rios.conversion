@@ -9,6 +9,27 @@ import rios.conversion.classes as Rios
 import sys
 import yaml
 
+COLUMNS = [
+        "Variable / Field Name",
+        "Form Name",
+        "Section Header",
+        "Field Type",
+        "Field Label",
+        "Choices, Calculations, OR Slider Labels",
+        "Field Note",
+        "Text Validation Type OR Show Slider Number",
+        "Text Validation Min",
+        "Text Validation Max",
+        "Identifier?",
+        "Branching Logic (Show field only if...)",
+        "Required Field?",
+        "Custom Alignment",
+        "Question Number (surveys only)",
+        "Matrix Group Name",
+        "Matrix Ranking?",
+        "Field Annotation",
+        ]
+    
 class FromRios(object):
     def __init__(self):
         self.parser = argparse.ArgumentParser(
@@ -41,6 +62,11 @@ class FromRios(object):
                 type=argparse.FileType('r'),
                 help="The calculationset file to process.  Use '-' for stdin.")
         self.parser.add_argument(
+                '--instrument',
+                required=True,
+                type=argparse.FileType('r'),
+                help="The instrument file to process.  Use '-' for stdin.")
+        self.parser.add_argument(
                 '--form',
                 required=True,
                 type=argparse.FileType('r'),
@@ -64,35 +90,75 @@ class FromRios(object):
         self.outfile = args.outfile
         self.localization = args.localization
         self.format = args.format
-        self.load_input_files(args.form, args.calculationset)
+        self.load_input_files(args.form, args.instrument, args.calculationset)
 
         if self.calculationset:
-            if self.calculationset['instrument'] != self.form['instrument']:
+            instrument = Rios.InstrumentReferenceObject(self.instrument)
+            if (self.calculationset['instrument'] != instrument
+                    or self.form['instrument'] != instrument):
                 self.stderr.write(
                         'FATAL: The form and calculationset '
                         'must reference the same Instrument.\n')
                 sys.exit(1)
 
+        self.rows = [COLUMNS]
+        self.section_header = ''
         for page in self.form['pages']:
             self.start_page(page)
-            for element in self.page['elements']:
+            for element in self.elements:
                 self.process_element(element)
         self.create_csv_file()
         sys.exit(0)
 
     def create_csv_file(self):
         self.outfile.write('%s\n' % self.calculationset)
+        for row in self.rows:
+            self.outfile.write('%s\n' % row)
 
-    def load_input_files(self, form, calculationset):
+    def get_local_text(self, localized_string_object):
+        return localized_string_object.get(self.localization, '')
+        
+    def load_input_files(self, form, instrument, calculationset):
         loader = {'yaml': yaml, 'json': json}[self.format]
         self.form = loader.load(form)
+        self.instrument = loader.load(instrument)
+        self.fields = {f['id']: f for f in self.instrument['record']}
         if calculationset:
             self.calculationset = loader.load(calculationset)
 
     def process_element(self, element):
         print(element['type'], element['options'])
+        type_ = element['type']
+        if type_ == 'header':
+            self.section_header = self.get_local_text(
+                    element['options']['text'])
+        elif type_ == 'question':
+            question = element['options']
+            field_id = question['fieldId']
+            field = self.fields[field_id]
+            self.rows.append([
+                    field_id,
+                    self.form_name,
+                    self.section_header,
+                    'TYPE',
+                    self.get_local_text(question['text']),
+                    'CHOICES',
+                    question.get('help', {}),
+                    'VALTYPE',
+                    "Min",
+                    "Max",
+                    'y' if field['identifiable'] else '',
+                    "Branching",
+                    'y' if field['required'] else ''
+                    '',
+                    '',
+                    "Matrix Group Name",
+                    '',
+                    '', ])
+            self.section_header = ''                        
 
     def start_page(self, page):
-        self.page = page
+        self.form_name = page['id']
+        self.elements = page['elements']
         
 main = FromRios()
