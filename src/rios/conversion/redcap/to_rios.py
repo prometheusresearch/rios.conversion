@@ -165,10 +165,17 @@ class ToRios(object):
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        for od in Csv2OrderedDict(args.infile):
-            if 'form_name' not in od:
-                continue
-            self.process_od(od)
+        reader = Csv2OrderedDict(args.infile)
+        reader.load_attributes()
+        first_field = reader.attributes[0]
+        if first_field == 'variable_field_name':
+            process = self.process_od
+        elif first_field == 'fieldid':
+            process = self.process_od2
+        else:
+            raise ValueError("Input has unknown format", reader.attributes)
+        for od in reader:
+            process(od)
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
@@ -549,5 +556,8 @@ class ToRios(object):
 
         if field['id']:
             self.instrument.add_field(field)
+
+    def process_od2(self, od):
+        raise NotImplementedError
 
 main = ToRios()

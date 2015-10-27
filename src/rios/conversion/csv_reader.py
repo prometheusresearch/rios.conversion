@@ -34,10 +34,8 @@ class CsvReader(object):
         self.reader = None
 
     def __iter__(self):
-        if not self.reader:
-            self.reader = self.get_reader(self.fname)
         if not self.attributes:
-            self.attributes = [self.get_name(c) for c in self.reader.next()]
+            self.load_attributes()
         for row in self.reader:
             yield self.get_row(row)
 
@@ -51,3 +49,11 @@ class CsvReader(object):
 
     def get_row(self, row):
         return collections.OrderedDict(zip(self.attributes, row))
+
+    def load_attributes(self):
+        if not self.reader:
+            self.load_reader()
+        self.attributes = [self.get_name(c) for c in self.reader.next()]
+
+    def load_reader(self):
+        self.reader = self.get_reader(self.fname)

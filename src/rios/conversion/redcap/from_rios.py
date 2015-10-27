@@ -29,7 +29,8 @@ COLUMNS = [
         "Matrix Ranking?",
         "Field Annotation",
         ]
-    
+
+
 class FromRios(object):
     def __init__(self):
         self.parser = argparse.ArgumentParser(
@@ -115,9 +116,22 @@ class FromRios(object):
         for row in self.rows:
             self.outfile.write('%s\n' % row)
 
+    def get_field_type(self, field):
+        non_text = {
+                'float': 'number',
+                'integer': 'integer', }
+        typ = field['type']
+        obj = None
+        if isinstance(typ, dict) and 'base' in typ:
+            obj = typ
+            typ = typ['base']
+        if isinstance(typ, str):
+            return non_text[typ], obj if typ in non_text else 'text', obj
+        raise ValueError('field type not str or TypeObject', field)
+
     def get_local_text(self, localized_string_object):
         return localized_string_object.get(self.localization, '')
-        
+
     def load_input_files(self, form, instrument, calculationset):
         loader = {'yaml': yaml, 'json': json}[self.format]
         self.form = loader.load(form)
@@ -136,29 +150,39 @@ class FromRios(object):
             question = element['options']
             field_id = question['fieldId']
             field = self.fields[field_id]
-            self.rows.append([
-                    field_id,
-                    self.form_name,
-                    self.section_header,
-                    'TYPE',
-                    self.get_local_text(question['text']),
-                    'CHOICES',
-                    question.get('help', {}),
-                    'VALTYPE',
-                    "Min",
-                    "Max",
-                    'y' if field['identifiable'] else '',
-                    "Branching",
-                    'y' if field['required'] else ''
-                    '',
-                    '',
-                    "Matrix Group Name",
-                    '',
-                    '', ])
-            self.section_header = ''                        
+            field_type, field_object = self.get_field_type(field)
+            if field_object:
+                if 'range' in field_object:
+                    min_ = field_object['range'].get('min', '')
+                    max_ = field_object['range'].get('max', '')
+                    min_ = str(min_) if min_ is not '' else ''
+                    max_ = str(max_) if max_ is not '' else ''
+            if 'rows' in question and 'questions' in question:
+                self.rows.extend(self.process_matrix(question))
+            else:
+                self.rows.append([
+                        field_id,
+                        self.form_name,
+                        self.section_header,
+                        field_type,
+                        self.get_local_text(question['text']),
+                        'CHOICES',
+                        question.get('help', {}),
+                        "value_type",
+                        "Min",
+                        "Max",
+                        'y' if field['identifiable'] else '',
+                        "Branching",
+                        'y' if field['required'] else ''
+                        '',
+                        '',
+                        '',
+                        '',
+                        '', ])
+            self.section_header = ''
 
     def start_page(self, page):
         self.form_name = page['id']
         self.elements = page['elements']
-        
+
 main = FromRios()
