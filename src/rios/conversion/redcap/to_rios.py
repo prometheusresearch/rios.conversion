@@ -431,6 +431,27 @@ class ToRios(object):
         else:
             return None
 
+    def get_type2(self, od):
+        data_type = od['data_type']
+        if data_type == 'instruction':
+            return None
+        if self.choices:
+            # is an array of single key dicts.  The values in these dicts are 
+            # only used in the form - not the instrument - so the dicts are 
+            # reduced to single dict of key: None, which is expanded to 
+            # populate the EnumerationCollectionObject.
+            return Rios.TypeObject(
+                    base='text',
+                    enumerations=Rios.EnumerationCollectionObject(**reduce(
+                            lambda a, b: {
+                                    key: None  
+                                    for key in a.keys() + b.keys()},
+                            self.choices)), )
+        else:
+            # So far we've seen data_type in ['date', 'text', 'instruction']
+            # So 'date' and 'text' need no translation: 
+            return data_type
+
     def localized_string_object(self, string):
         return Rios.LocalizedStringObject({self.localization: string})
 
@@ -441,8 +462,7 @@ class ToRios(object):
         if section_header:
             element['type'] = 'header'
             element['options'] = {
-                    'text':
-                    self.localized_string_object(section_header)}
+                    'text': self.localized_string_object(section_header)}
             element = Rios.ElementObject()
             elements.append(element)
         if od['field_type'] == 'calc':
@@ -454,6 +474,36 @@ class ToRios(object):
                     text=self.localized_string_object(od['field_label']),
                     help=self.localized_string_object(od['field_note']), )
         return elements
+
+    def make_element2(self, od):
+        element = Rios.ElementObject()
+        if od['data_type'] == 'instruction':
+            element['type'] = 'text'
+            element['options'] = {
+                    'text': self.localized_string_object(od['text']), }
+        else:
+            element['type'] = 'question'
+            element['options'] = Rios.QuestionObject(
+                    fieldId=od['fieldid'],
+                    text=self.localized_string_object(od['text']),
+                    help=self.localized_string_object(od['help']), )
+            if self.choices:
+                question = element['options']
+                for choice in self.choices:
+                    key, value = choice.items()[0]
+                    question.add_enumeration(Rios.DescriptorObject(
+                            id=key,
+                            text=self.localized_string_object(value), ))
+        return element
+
+    def make_field2(self, od):
+        field = Rios.FieldObject()
+        field_type = self.get_type2(od)
+        if field_type:
+            field['id'] = od['fieldid']
+            field['description'] = od['text']
+            field['type'] = field_type
+        return field
 
     def make_field(self, od):
         field = Rios.FieldObject()
@@ -558,6 +608,24 @@ class ToRios(object):
             self.instrument.add_field(field)
 
     def process_od2(self, od):
-        raise NotImplementedError
+        page_name = od['page']
+        if self.page_name != page_name:
+            self.page_name = page_name
+            self.page = Rios.PageObject(id=page_name)
+            self.form.add_page(self.page)
+
+        if od['enumeration_type'] == 'enumeration':
+            # data_type is a JSON string of a dict which contains 'Choices', 
+            # an array of single key dicts.
+            self.choices = json.loads(od['data_type'])['Choices']
+        else:
+            self.choices = None
+            
+        element = self.make_element2(od)
+        self.page.add_element(element)
+        field = self.make_field2(od)
+        if field['id']:
+            self.instrument.add_field(field)
+
 
 main = ToRios()
