@@ -440,8 +440,9 @@ class ToRios(object):
             # only used in the form - not the instrument - so the dicts are 
             # reduced to single dict of key: None, which is expanded to 
             # populate the EnumerationCollectionObject.
+            # As it turns out, the enumeration_type needs no translation.
             return Rios.TypeObject(
-                    base='text',
+                    base=od['enumeration_type'],
                     enumerations=Rios.EnumerationCollectionObject(**reduce(
                             lambda a, b: {
                                     key: None  
@@ -494,6 +495,10 @@ class ToRios(object):
                     question.add_enumeration(Rios.DescriptorObject(
                             id=key,
                             text=self.localized_string_object(value), ))
+                question.set_widget(Rios.WidgetConfigurationObject(
+                        type='checkGroup' 
+                        if od['enumeration_type'] == 'enumerationSet'
+                        else 'radioGroup'))
         return element
 
     def make_field2(self, od):
@@ -608,16 +613,23 @@ class ToRios(object):
             self.instrument.add_field(field)
 
     def process_od2(self, od):
-        page_name = od['page']
+        page_name = od['page'] if od['page'] else 'page_0'
         if self.page_name != page_name:
             self.page_name = page_name
             self.page = Rios.PageObject(id=page_name)
             self.form.add_page(self.page)
 
         if od['enumeration_type'] == 'enumeration':
-            # data_type is a JSON string of a dict which contains 'Choices', 
-            # an array of single key dicts.
-            self.choices = json.loads(od['data_type'])['Choices']
+            # data_type might be a JSON string of a dict which contains 
+            # 'Choices' or 'choices', an array of single key dicts.
+            try:
+                data_type = json.loads(od['data_type'])
+                self.choices = (
+                        data_type.get('Choices', '') 
+                        or data_type.get('choices', '')
+                        or None )
+            except (ValueError):
+                self.choices = None
         else:
             self.choices = None
             
