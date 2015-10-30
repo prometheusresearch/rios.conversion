@@ -1,0 +1,2178 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type
+date_of_evaluation,Date form is being completed:,date,p1,,,,
+evaluator_name,Your name:,text,p1,,,,
+evaluator_sex,Sex:,"{
+    ""Choices"": [
+        {
+            ""male"": ""Male""
+        },
+        {
+            ""female"": ""Female""
+        }
+    ]
+}",p1,,,,enumeration
+relationship_to_child,Relationship to child:,"{
+    ""Choices"": [
+        {
+            ""mother"": ""Mother""
+        },
+        {
+            ""father"": ""Father""
+        },
+        {
+            ""guardian"": ""Guardian""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",p1,,,,enumeration
+other_relationship,"If other was selected, please specify:",text,p1,,,,
+school_center,School/Center:,text,p1,,,,
+grade_class,Grade/Class:,text,p1,,,,
+other_info,Other Data:,text,p1,,,,
+basc2_instructions,"The items that follow are phrases that describe how children may act. Please read each phrase, and mark the response that describes how this child has behaved recently (in the last several months).  Please mark every item. If you don't know or are unsure of your response to an item, give your best estimate.",instruction,p2,,,,enumeration
+basc2_1,Shares toys or possessions with other children.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_2,Speaks in short phrases that are hard to understand.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_3,Gets colds.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_4,Compliments others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_5,Acts without thinking.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_6,Has a short attention span.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_7,Eats things that are not food.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_8,Seems unaware of others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_9,Has trouble making new friends.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_10,Gets sick.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_11,Sleeps with parents.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_12,Breaks other children's things.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_13,Misses school or daycare because of sickness.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_14,Pouts.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_15,Provides own telephone number when asked.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_16,"Says, ""Nobody likes me.""","{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_17,Acts out of control.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_18,Seeks revenge on others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_19,Congratulates others when good things happen to them.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_20,Worries about what parents think.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_21,Argues when denied own way.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_22,Holds a grudge.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_23,Worries about parents.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_24,Complains about being teased.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_25,Has headaches.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_26,Avoids other children.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_27,Is unable to slow down.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_28,Is fearful.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_29,Recovers quickly after a setback.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_30,Provides full name when asked.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_31,Vomits.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_32,Begins conversations appropriately.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_33,Has poor self-control.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_34,Listens carefully.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_35,"Says, ""I'm afraid I will make a mistake.""","{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_36,Babbles to self.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_37,Is shy with other children.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_38,Complains about health.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_39,Decides what clothing to wear without help.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_40,Calls other children names.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_41,Complains of being cold.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_42,Is easily frustrated.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_43,Communicates clearly.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_44,Is sad.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_45,Interrupts others when they are speaking.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_46,Annoys others on purpose.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_47,Offers help to other children.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_48,Gets very upset when things are lost.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_49,Threatens to hurt others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_50,Whines.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_51,Worries about what other children think.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_52,Cries easily.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_53,Has ear infections.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_54,Makes friends easily.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_55,Cannot wait to take turn.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_56,Is too serious.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_57,Adjusts well to new teachers or caregivers.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_58,Provides home address when asked.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_59,Needs help tying shoes.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_60,"Says ""please"" and ""thank you.""","{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_61,Needs too much supervision.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_62,Pays attention.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_63,Worries about things that cannot be changed.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_64,Bangs head.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_65,Shows fear of strangers.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_66,Makes frequent visits to the doctor.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_67,Needs help putting on clothes.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_68,Hits other children.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_69,Tries new things.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_70,Stares blankly.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_71,Says all letters of the alphabet when asked.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_72,Changes moods quickly.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_73,Acts strangely.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_74,Bullies others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_75,Encourages others to do their best.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_76,Worries.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_77,Loses temper too easily.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_78,Is chosen last by other children for games.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_79,Has a hearing problem.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_80,Listens to directions.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_81,Has fevers.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_82,Is shy with adults.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_83,Is overly active.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_84,Is cruel to animals.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_85,Is easily soothed when angry.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_86,Answers telephone properly.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_87,Needs help using zippers.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_88,Politely asks for help.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_89,Fiddles with things while at meals.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_90,Is easily distracted.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_91,Worries about making mistakes.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_92,Acts confused.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_93,Readily starts up conversations with new people.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_94,Has stomach problems.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_95,Fails to wash hands when needed.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_96,Teases others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_97,Adjusts well to changes in routine.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_98,Shows feelings that do not fit the situation.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_99,Responds appropriately when asked a question.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_100,Is easily upset.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_101,Says things that make no sense.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_102,Needs help bathing self.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_103,Uses appropriate table manners.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_104,Tries to be perfect.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_105,Is clear when telling about personal experiences.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_106,Refuses to join group activities.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_107,Falls down.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_108,Pays attention when being spoken to.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_109,Complains of pain.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_110,Clings to parent in strange surroundings.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_111,Interrupts parents when they are talking on the phone.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_112,Has seizures.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_113,Adjusts well to changes in family plans.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_114,Is able to describe feelings accurately.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_115,Has trouble fastening buttons on clothing.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_116,Volunteers to help with things.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_117,Throws tantrums.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_118,Is easily annoyed by others.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_119,"Says, ""I'm not very good at this.""","{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_120,Chews clothing or blankets.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_121,Wets bed.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_122,Has sore throats.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_123,Has trouble eating with a fork.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_124,Disrupts the play of other children.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_125,Adjusts easily to new surroundings.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_126,Does strange things.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_127,Sets fires.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_128,Is negative about things.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_129,Has toileting accidents.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_130,Needs to be reminded to brush teeth.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_131,Has eye problems.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_132,Is nervous.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_133,Is unclear when presenting ideas.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration
+basc2_134,Quickly joins group activities.,"{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}",p2,,,,enumeration

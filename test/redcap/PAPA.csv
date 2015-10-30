@@ -1,0 +1,46 @@
+fieldID,text,help,error,page,enumeration_type,data_type,repeating_group_name,action,trigger,targets
+papa_inst,Assessment Validity Form,,,p1,,instruction,,,,
+papa_typ,Type of Assessment,,,p1,,text,,,,
+papa_date,Date of Assessment,,,p1,,date,,,,
+papa_id,Subject ID #,,,p1,,integer,,,,
+papa_validity,Please rate the perceived validity of this assessment,,,p1,enumeration,"{
+    ""Choices"": [
+        {
+            ""valid"": ""1: Valid""
+        },
+        {
+            ""questionable"": ""2: Questionable""
+        },
+        {
+            ""invalid"": ""3: Invalid""
+        }
+    ]
+}",,,,
+papa_reasoning,Provide your reasoning for your rating,,,p1,enumeration,"{
+    ""Choices"": [
+        {
+            ""too_many"": ""Caregiver filled out too many questionnaires at once""
+        },
+        {
+            ""in_rush"": ""Caregiver was in a rush""
+        },
+        {
+            ""misunderstood"": ""Caregiver may have misunderstood the question""
+        },
+        {
+            ""more_than_one"": ""Caregiver's report was completed in more than one sitting""
+        },
+        {
+            ""underestimate"": ""Cargiver's answers seem to underestimate child's ability""
+        },
+        {
+            ""overestimate"": ""Caregiver's answers seem to overestimate child's ability""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",,,,
+papa_other,"If Other, please explain:",,,p1,,text,,,,
+papa_rater,Rater's name:,,,p1,,text,,,,
+papa_sig,Rater's signature: ,,,p1,,text,,,,

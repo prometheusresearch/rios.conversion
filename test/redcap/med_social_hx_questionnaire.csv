@@ -1,0 +1,965 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page,action,trigger,target
+medical_desc,Medical: A. Birth History,,,,instruction,,p1,,,
+medical_a1_born_term_prem,A1. Was your child born: ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""at_term"": ""At term""
+        },
+        {
+            ""premature"": ""Premature""
+        }
+    ]
+}",,p1,,,
+medical_a2_gestational_age,A2. What was your baby's gestational age at the time of birth?,weeks,,,integer,,p1,,,
+birth_desc,A. Birth History,,,,instruction,,p1,,,
+medical_a3_occur_labor_delivery,A3. Did any of the following occur during labor or deliver?,select all that apply,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""slow_heart_rate_baby"": ""slowingofthebaby'sheartrate""
+        },
+        {
+            ""um_cord_prolapse_accident"": ""Umbilicalcordprolapse/accident""
+        },
+        {
+            ""um_cord_neckt"": ""Umbilicalcordaroundtheneck""
+        },
+        {
+            ""placental_problems"": ""PlacentalProblems""
+        },
+        {
+            ""maternal_hemorrhage"": ""MaternalHemorrhage""
+        },
+        {
+            ""thick_meconiumt"": ""Thick Meconiumt""
+        },
+        {
+            ""fetal_distress"": ""FetalDistress""
+        },
+        {
+            ""placental_abruptio"": ""PlacentalAbruption""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",,p1,,,
+medical_a3_occur_labor_delivery_plac_probs,"If placental problems, describe:",,,,text,,p1,,,
+medical_a3_occur_labor_delivery_other,"If other, describe:",,,,text,,p1,,,
+medical_a4_delivery_method,A4. How as the baby delivered?,select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""vaginal_unassisted"": ""Vaginal Unassisted""
+        },
+        {
+            ""vaginal_assissted"": ""Vaginal Assisted(ieforceps, vacuum)""
+        },
+        {
+            ""elective_c_section"": ""Elective CesareanSection)""
+        },
+        {
+            ""emergency_c_section"": ""Emergency Cesarean section""
+        }
+    ]
+}",,p1,,,
+medical_a5_apgar_score_1,A5. What was your baby's APGAR score at 1 minute? ,,,,integer,,p1,,,
+medical_a5_apgar_score_5,A5. What was your baby's APGAR score at 5 minutes?,,,,integer,,p1,,,
+medical_a5_apgar_score_10,A5. What was your baby's APGAR score at 10 minutes?,,,,integer,,p1,,,
+medical_a6_baby_weight_birth,A6. What was your baby's weight at birth?,lbs & oz or Kg,,,text,,p1,,,
+medical_a7_baby_length_birth,A7. What was your baby's length at birth?,in or cm,,,text,,p1,,,
+medical_a8_baby_hc_birth,A8. What was your baby's head circumference at birth?,in or cm,,,text,,p1,,,
+medical_a9_require_resuscitation,A9. Did your baby require resuscitation in the delivery room?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p1,,,
+medical_a9_yes_require_resuscitation,"If yes, select all that apply:",,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""oxygen"": ""Oxygen""
+        },
+        {
+            ""bag_mask_vent"": ""Bag and mask ventilation""
+        },
+        {
+            ""chest_comp"": ""Chest compressions""
+        },
+        {
+            ""intubation"": ""Intubation""
+        },
+        {
+            ""medication"": ""Medications""
+        }
+    ]
+}",,p1,,,
+medical_a10_nicu,A10. Did your baby stay in the NICU?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p1,,,
+medical_a10_nicu_duration,"If yes, how long?",days,,,integer,,p1,,,
+medical_a10_nicu_requirements,Did they require any of the following?,select all that apply,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""oxygen"": ""Oxygen""
+        },
+        {
+            ""ventilation"": ""Ventilation""
+        },
+        {
+            ""tube_feedings"": ""Tube Feedings""
+        },
+        {
+            ""blood_transfusion"": ""Blood Transfusions""
+        },
+        {
+            ""medication_low_bp"": ""Medication for low blood pressure""
+        }
+    ]
+}",,p1,,,
+medical_a11_complication_post_birth,A11. Did your baby experience any of the following complications in the hospital after birth?,select all that apply,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""hypoxic"": ""Hypoxic ischemic encephalopathy (HIE)""
+        },
+        {
+            ""periven_leukomal"": ""Periventricular Leukomalacia (PVL)""
+        },
+        {
+            ""brain_bleed"": ""Bleeding in the brain (ie. intracranial hemorrhage (ICH), intraventricular hemorrhage (IVH))""
+        },
+        {
+            ""stroke"": ""Stroke""
+        },
+        {
+            ""seizures"": ""Seizures""
+        },
+        {
+            ""meningitis"": ""Meningitis""
+        },
+        {
+            ""infection"": ""Infection""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",,p1,,,
+medical_a11_complication_post_birth_infection,"If infection, describe:",,,,text,,p1,,,
+medical_a11_complication_post_birth_other,"If other, describe:",,,,text,,p1,,,
+medical_a12_age_left_hosp,A12. How old was your child when they left the hospital after birth?,days,,,integer,,p1,,,
+medical_a13_feeding_probs_nursery_first_month,A13. Did you child have any feeding problems in the nursery or within the first month of life?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p1,,,
+medical_a13_feeding_probs_describe,"If yes, describe:",,,,text,,p1,,,
+med_hist,B. Medical History,,,,instruction,,p2,,,
+medical_b1_serious_illness,B1. Has your child ever had any serious illnesses?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,"[""hide""]","[""medical_b1_serious_illness=='no' | medical_b1_serious_illness==null()""]","[[""medical_b1_serious_illness_describe""]]"
+medical_b1_serious_illness_describe,"If yes, describe:",,,,text,,p2,,,
+medical_b2_child_hospitalized,B2. Has your child ever been hospitalized?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,"[""hide""]","[""medical_b2_child_hospitalized=='no' | medical_b2_child_hospitalized==null()""]","[[""medical_b2_child_hospitalized_describe""]]"
+medical_b2_child_hospitalized_describe,"If yes, describe:",,,,text,,p2,,,
+medical_b3_life_suppor,B3. Has your child ever been on life support?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,"[""hide""]","[""medical_b3_life_suppor=='no' | medical_b3_life_suppor==null()""]","[[""medical_b3_life_suppor_describe""]]"
+medical_b3_life_suppor_describe,"If yes, describe:",,,,text,,p2,,,
+medical_b4_serious_infection,B4. Has your child ever had any serious infections?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,"[""hide""]","[""medical_b4_serious_infection=='no' | medical_b4_serious_infection==null()""]","[[""medical_b4_serious_infection_describe""]]"
+medical_b4_serious_infection_describe,"If yes, describe:",,,,text,,p2,,,
+medical_b5_child_surgery,B5. Has your child ever had surgery?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,"[""hide""]","[""medical_b5_child_surgery=='no' | medical_b5_child_surgery==null()""]","[[""medical_b5_child_surgery_describe""]]"
+medical_b5_child_surgery_describe,"If yes, describe:",,,,text,,p2,,,
+medical_b6_diagnosed,B6. Has your child ever been diagnosed with any of the following? ,select all that apply,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""encephalitis"": ""Encephalitis""
+        },
+        {
+            ""hepatitis"": ""Hepatitis""
+        },
+        {
+            ""hiv_infection"": ""HIV Infection""
+        },
+        {
+            ""hydrocephalus"": ""Hydrocephalus""
+        },
+        {
+            ""inflammatory_bowel_disease"": ""Infammatory Bowel Disease""
+        },
+        {
+            ""meningitis"": ""Meningitis""
+        },
+        {
+            ""other_psychiatric_diag"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        },
+        {
+            ""unexplained_weight_loss"": ""Unexplained Weight Loss""
+        }
+    ]
+}",,p2,,,
+medical_b7_blood_transfusion,B7. Has your child ever had a blood transfusion?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,,,
+medical_b8_immunized,B8. Has your child been immunized?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,,,
+medical_b8_immunized_up_to_date,Are they up to date?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,,,
+medical_b9_other_cond_illness_prevent_participation,B9. Does your child have any other conditions or illnesses that may prevent him/her from being able to participate in the study?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,,,
+medical_b10_treatments,B10. Has your child ever had any of the following treatments?,select all that apply,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""stem_cell_therapy"": ""Stem Cell Therapy""
+        },
+        {
+            ""ivig"": ""IVIG""
+        },
+        {
+            ""steroids"": ""Steroids""
+        },
+        {
+            ""hyperbaric_oxygen"": ""Hyperbaric Oxygen""
+        }
+    ]
+}",,p2,,,
+medical_b11_age_diagnosed,"B11a. At what age, in years and months, was your child diagnosed with autism? Enter years here, and months below. (eg if 3 years 5 months, enter 3 here and 5 for the next question)",enter years,,,integer,,p2,,,
+medical_b11_age_diagnosed,"B11b. At what age, in years and months, was your child diagnosed with autism? (please enter number of months, if not a whole year)",enter months,,,integer,,p2,,,
+medical_b12_medication_currently_taking,B12. Does your child currently take any medications?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,,,
+medical_b12_medications_list,"If yes, please list:",Please include any alternative medications or supplements.,,,text,,p2,,,
+medical_b12_allergies,"B13. Does your child have any allergies (medicine, foods, other)?",,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p2,,,
+medical_b12_allergies_list,"If yes, please list:",,,,text,,p2,,,
+family_history,C. Family History,,,,instruction,,p3,,,
+medical_c1_family_diagnosis,C1. Has anyone in the family ever been diagnosed with any of the following?,(select all that apply and indicate who has that condition),,,instruction,,p3,,,
+medical_c1_family_diagnosis_mother,Mother,,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""autism"": ""Autism""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""other_neurologic"": ""Other Neurologic Disease""
+        },
+        {
+            ""other_psychiatric"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        }
+    ]
+}",,p3,,,
+medical_c1_family_diagnosis_father,Father,,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""autism"": ""Autism""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""other_neurologic"": ""Other Neurologic Disease""
+        },
+        {
+            ""other_psychiatric"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        }
+    ]
+}",,p3,,,
+medical_c1_family_diagnosis_sibling,Sibling,,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""autism"": ""Autism""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""other_neurologic"": ""Other Neurologic Disease""
+        },
+        {
+            ""other_psychiatric"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        }
+    ]
+}",,p3,,,
+medical_c1_family_diagnosis_grandparent,Grandparent,,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""autism"": ""Autism""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""other_neurologic"": ""Other Neurologic Disease""
+        },
+        {
+            ""other_psychiatric"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        }
+    ]
+}",,p3,,,
+medical_c1_family_diagnosis_aunt_uncle,Aunt/Uncle,,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""autism"": ""Autism""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""other_neurologic"": ""Other Neurologic Disease""
+        },
+        {
+            ""other_psychiatric"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        }
+    ]
+}",,p3,,,
+medical_c1_family_diagnosis_cousin,Cousin,,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""anxiety"": ""Anxiety Disorder""
+        },
+        {
+            ""autism"": ""Autism""
+        },
+        {
+            ""bipolar"": ""Bipolar Disorder""
+        },
+        {
+            ""cancer"": ""Cancer""
+        },
+        {
+            ""cerebral_palsy"": ""Cerebral Palsy""
+        },
+        {
+            ""other_neurologic"": ""Other Neurologic Disease""
+        },
+        {
+            ""other_psychiatric"": ""Other Psychiatric Diagnosis""
+        },
+        {
+            ""seizures"": ""Seizures""
+        }
+    ]
+}",,p3,,,
+therapies,D. Therapies/Special Services,,,,instruction,,p4,,,
+medical_d1_services,D1. Has your child ever received any of the following services? (Select all that apply and answer the corresponding questions),Select all that apply,,,instruction,,p4,,,
+medical_d1_pyshical_therapy_age,Physical Therapy: Age Initiated?,years and months,,,text,,p4,,,
+medical_d1_physical_therapy_6_mos,Physical Therapy: Within the last 6 months?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_physical_therapy_current,Physical Therapy: Currently Receiving? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_physical_therapy_current_frequency,Physical Therapy: Current frequency,hours/months,,,text,,p4,,,
+medical_d1_occupational_therapy_age,Occupational Therapy: Age initiated,years and months,,,text,,p4,,,
+medical_d1_occupational_therapy_6_mos,Occupational Therapy: Within the last 6 months?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_occupational_threapy_current,Occupational Therapy: Currently receiving? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_occupational_therapy_current_frequency,Occupational Therapy: Current Frequency,years and months,,,text,,p4,,,
+medical_d1_speech_lang_therapy_age,Speech/Language Therapy: Age initiated,years and months,,,text,,p4,,,
+medical_d1_speech_lang_therapy_6_mos,Speech/Language Therapy: Within the last 6 months?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_speech_lang_therapy_current,Speech/Language Therapy: Currently receiving? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_speech_lang_therapy_current_frequency,Speech/Language Therapy: Current Frequency,years and months,,,text,,p4,,,
+medical_d1_dev_therapy_age,Developmental Therapy: Age initiated,years and months,,,text,,p4,,,
+medical_d1_dev_therapy_6_mos,Developmental Therapy: Within the last 6 months?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_dev_therapy_current,Developmental Therapy: Currently receiving? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_dev_therapy_current_frequency,Developmental Therapy: Current Frequency,years and months,,,text,,p4,,,
+medical_d1_vision_services_age,Vision Services: Age initiated,years and months,,,text,,p4,,,
+medical_d1_vision_services_6_mos,Vision Services: Within the last 6 months?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_vision_services_current,Vision Services: Currently receiving? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_vision_services_current_frequency,Vision Services: Current Frequency,years and months,,,text,,p4,,,
+medical_d1_hearing_services_age,hearing Services: Age initiated,years and months,,,text,,p4,,,
+medical_d1_hearing_services_6_mos,hearing Services: Within the last 6 months?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_hearing_services_current,hearing Services: Currently receiving? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_hearing_services_current_frequency,hearing Services: Current Frequency,years and months,,,text,,p4,,,
+medical_d1_other_age,"Other, specify: Age initiated",years and months,,,text,,p4,,,
+medical_d1_other_6_mos,"Other, specify: Within the last 6 months?",,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_other_current,"Other, specify: Currently receiving? ",,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d1_others_current_frequency,"Other, specify: Current Frequency",years and months,,,text,,p4,,,
+medical_d2_attended_school,D2. Has your child ever attended school?,"If yes, answer the questions below.",,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,"[""hide""]","[""medical_d2_attended_school=='no' | medical_d2_attended_school==null()""]","[[""medical_d2_iep_ifsp_ever"",""medical_d2_special_services_school"",""medical_d2_currently_attending_school"",""medical_d2_currently_attending_school_grade""]]"
+medical_d2_iep_ifsp_ever,Have they ever had an individualized Education Plan (IEP) or Individualized Family Service Plan (IFSP)?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d2_special_services_school,Have they ever received any special services in school?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,,,
+medical_d2_currently_attending_school,Is your child currently attending school?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p4,"[""hide""]","[""medical_d2_currently_attending_school=='no' | medical_d2_currently_attending_school==null()""]","[[""medical_d2_currently_attending_school_grade""]]"
+medical_d2_currently_attending_school_grade,"If yes, what grade?",,,,text,,p4,,,
+background,Social: A. Background,,,,instruction,,p5,,,
+social_a1_birth_date,A1. What is your child's date of birth?,,,,date,,p5,,,
+social_a2_gender,A2. What is your child's gender?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""male"": ""male""
+        },
+        {
+            ""female"": ""Female""
+        }
+    ]
+}",,p5,,,
+social_a3_adopted,A3. Is your child adopted?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p5,,,
+social_a4_race,A4. What is your child's race?,Select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""american_indian_alaska"": ""American Indian/Alaska Native""
+        },
+        {
+            ""asian"": ""Asian""
+        },
+        {
+            ""black_african_amer"": ""Black/African American""
+        },
+        {
+            ""white_caucasian"": ""Caucasian White""
+        },
+        {
+            ""native_hawaii_pacific_islander"": ""Native Hawaiian/Pacific Islander""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",,p5,"[""hide""]","[""social_a4_race!=='other' | social_a4_race==null()""]","[[""social_a4_race_other""]]"
+social_a4_race_other,"If other, please specify:",,,,text,,p5,,,
+social_a5_ethnicity,A5. What is your child's ethnicity?,Select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""hispanic"": ""Hispanic or Latino""
+        },
+        {
+            ""non_hispanic"": ""Not Hispanic or Latino""
+        }
+    ]
+}",,p5,,,
+social_history,Social: B. Social History,,,,instruction,,p6,,,
+social_b1_primary_lang,B1. What is the primary language spoken in your child's home?,select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""english"": ""English""
+        },
+        {
+            ""spanish"": ""Spanish""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b1_primary_lang!=='other' | social_b1_primary_lang==null()""]","[[""social_b1_primary_lang_other""]]"
+social_b1_primary_lang_other,"If other, please specify:",,,,text,,p6,,,
+social_b2_lives_home_child,B2. Who lives in the home with your child?,select all that apply,,enumerationSet,"{
+    ""choices"": [
+        {
+            ""mother"": ""Mother""
+        },
+        {
+            ""father"": ""Father""
+        },
+        {
+            ""grandparents"": ""Grandparent(s)""
+        },
+        { 
+""siblings"": ""Siblings""
+         },
+         { ""other"" : ""Other""
+        }
+    ]
+}
+     ",,p6,"[""hide"", ""hide""]","[""social_b2_lives_home_child!=='other' |  social_b2_lives_home_child==null()"", ""social_b2_lives_home_child!=='sibling' | social_b2_lives_home_child==null()""]","[[""social_b2_lives_home_child_other""], [""social_b2_lives_home_child_sibs_number"",""social_b2_lives_home_child_sibs_age""]]"
+social_b2_lives_home_child_sibs_number,"If siblings, how many?",,,,integer,,p6,,,
+social_b2_lives_home_child_sibs_age,"If siblings, what are their ages?",,,,text,,p6,,,
+social_b2_lives_home_child_other,"If other, Please specify:",,,,text,,p6,,,
+social_b3_marital_status_parents,B3. What is the marital status of the parent(s) with whom the child lives?,select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""single"": ""Single""
+        },
+        {
+            ""married"": ""Married""
+        },
+        {
+            ""divorced"": ""Divorced""
+        },
+        { 
+""separated"": ""Separated""
+         },
+        { 
+""widowed"": ""Widowed""
+         },
+         { ""other"" : ""Other""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b3_marital_status_parents!=='other' | social_b3_marital_status_parents==null()""]","[[""social_b3_marital_status_parents_other""]]"
+social_b3_marital_status_parents_other,"If other, please specify:",,,,text,,p6,,,
+social_b4_education_primary_parent,B4. What is the highest level of education completed by your child's primary parent/caregiver?,select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""less_high_school_diploma_ged"": ""Less than a high school diploma or GED""
+        },
+        {
+            ""high_school_diploma_ged"": ""High school diploma or GED""
+        },
+        {
+            ""partial_college_associates_degree"": ""Partial College or Associate's Degree (AA)""
+        },
+        {
+            ""bachelors_degree"": ""Bachelor's degree (BA/BS)""
+        },
+        {
+            ""masters_degree"": ""Encephalitis""
+        },
+        {
+            ""hepatitis"": ""Master's Degree (MS/MA)""
+        },
+        {
+            ""doctorate_professional_degree"": ""Doctorate or Professional degree after Bachelor's (PhD/MD/JD/DDS)""
+        },
+        {
+            ""other"": ""Other""
+        },
+        {
+            ""unknown"": ""Unknown""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b4_education_primary_parent!=='other' | social_b4_education_primary_parent==null()""]","[[""social_b4_education_primary_parent_other""]]"
+social_b4_education_primary_parent_other,"If other, please specify:",,,,text,,p6,,,
+social_b5_education_other_parent,B5. What is the highest level of education completed by any other parent/caregivers in the home?,select one,,enumeration,"{
+    ""choices"": [
+        {
+            ""less_high_school_diploma_ged"": ""Less than a high school diploma or GED""
+        },
+        {
+            ""high_school_diploma_ged"": ""High school diploma or GED""
+        },
+        {
+            ""partial_college_associates_degree"": ""Partial College or Associate's Degree (AA)""
+        },
+        {
+            ""bachelors_degree"": ""Bachelor's degree (BA/BS)""
+        },
+        {
+            ""masters_degree"": ""Encephalitis""
+        },
+        {
+            ""hepatitis"": ""Master's Degree (MS/MA)""
+        },
+        {
+            ""doctorate_professional_degree"": ""Doctorate or Professional degree after Bachelor's (PhD/MD/JD/DDS)""
+        },
+        {
+            ""other"": ""Other""
+        },
+        {
+            ""unknown"": ""Unknown""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b5_education_other_parent!=='other' | social_b5_education_other_parent==null()""]","[[""social_b5_education_other_parent_other""]]"
+social_b5_education_other_parent_other,"If other, please specify:",,,,text,,p6,,,
+social_b6_current_employed_household_members,B6. Is anyone in the household currently employed (i.e.. Works for pay)?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b6_current_employed_household_members=='no' | social_b6_current_employed_household_members==null()""]","[[""social_b6_current_employed_household_members_full_part"",""social_b6_current_employed_household_members_job_title""]]"
+social_b6_current_employed_household_members_full_part,"If yes, full or part time?",,,enumeration,"{
+    ""choices"": [
+        {
+            ""full_time"": ""Full Time""
+        },
+        {
+            ""part_time"": ""Part Time""
+        }
+    ]
+}",,p6,,,
+social_b6_current_employed_household_members_job_title,"If yes, job title:",,,,text,,p6,,,
+social_b7_current_employed_other_household_members,B7. Is anyone else in the household currently employed?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b7_current_employed_other_household_members=='no' | social_b7_current_employed_other_household_members==null()""]","[[""social_b7_current_employed_other_household_members_full_part"",""social_b7_current_employed_other_household_members_job_title""]]"
+social_b7_current_employed_other_household_members_full_part,"If yes, full or part time?",,,enumeration,"{
+    ""choices"": [
+        {
+            ""full_time"": ""Full Time""
+        },
+        {
+            ""part_time"": ""Part Time""
+        }
+    ]
+}",,p6,,,
+social_b7_current_employed_other_household_members_job_title,"If yes, job title:",,,,text,,p6,,,
+social_b8_household_income,B8. What was your total household income before taxes last year?,Select one,,enumeration,"{ ""choices"" : [
+        {""less_than_30k"" : ""Less than $30,000""},
+        {""between_30k_50k"" : ""$30,001-$50,000""},
+        {""between_50k_100k"" : ""$50,001-$100,000""}, 
+        {""between_100k_200k"" : ""$100,001-$200,000""}, 
+        {""greater_than_200k"" : ""More than $200,001""}        
+    ]
+}",,p6,,,
+social_b9_childs_health_insurance,B9. What is your child's current health insurance? ,Select one,,enumeration,"{ ""choices"" : [
+        {""private_insurance"" : ""Private Insurance (ie. self-purchased or employer provided plan such as BCBS, etc.)""},
+        {""govt_insurance"" : ""Government Insurance (ie. Medicaid, carolina Access, NC Healthy Choice""},
+        {""international_insurance"" : ""International Insurance""}, 
+        {""between_100k_200k"" : ""$100,001-$200,000""}, 
+        {""no_health_insurance"" : ""No health insurance""}        
+    ]
+}",,p6,,,
+social_b10_child_lived_other_country_ever,B10. Has your child ever lived in another country?,,,enumeration,"{
+    ""choices"": [
+        {
+            ""yes"": ""yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6,"[""hide""]","[""social_b10_child_lived_other_country_ever=='no' | social_b10_child_lived_other_country_ever==null()""]","[[""social_b10_child_lived_other_country_ever_where"",""social_b10_child_lived_other_country_ever_when""]]"
+social_b10_child_lived_other_country_ever_where,"If yes, where?",,,,text,,p6,,,
+social_b10_child_lived_other_country_ever_when,"If yes, when?",,,,text,,p6,,,
+social_b11_addt_information,B11. Please use the space below for any additional information you would like us to have regarding your family:,,,,text,,p6,,,

@@ -1,0 +1,1972 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type,action,trigger,targets
+date_filled_out,Today's Date:,date,p1,,,,,,,
+child_initials,Child's Initials:,text,p1,,,,,,,
+child_id,Child's ID:,text,p1,,,,,,,
+child_dob,Child's Date of Birth:,date,p1,,,,,,,
+form_completer,Person completing form (check one):,"{
+    ""Choices"": [
+        {
+            ""0"": ""Mother""
+        },
+        {
+            ""1"": ""Father""
+        },
+        {
+            ""2"": ""Both Parents""
+        },
+        {
+            ""3"": ""Teacher""
+        },
+        {
+            ""4"": ""Other""
+        }
+    ]
+}",p1,,,,enumeration,,,
+form_completer_description,describe:,text,p1,,,,,,,
+sensitive_loud_sounds,"How often does your child react sensitively (startle easily or cover ears) to unexpected or loud sounds (such as a vacuum cleaner, door closing, or siren)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+tune_out_sounds,How often does your child hum or make noises to tune out or avoid other sounds?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+notice_sounds_early,"How often does your child notice sounds in the environment (such as planes, trains, or thunder in the distance) before other people do?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+ignore_loud_noises,How often does your child ignore or tune-out loud noises? (For example: Doesn't react when alarms go off or objects fali to the floor.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+accurate_impersonations,"How often does your child make accurate impersonations of voices? (For example: Copies foreign accents, mimics sports entertainment announcer.)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+perfect_pitch,How often does your child demonstrate perfect musical pitch? (For example: Plays or hums tunes by ear without making mistakes.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+fascinated_sounds,How often does your child seem fascinated with sounds?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+ignores_when_called,How often does your child ignore you when you call his/her name?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+bothered_normal_sounds,"How often does your child seem bothered by everyday sounds (such as a dishwasher, car radio, mixerIblender) that are not bothersome to others?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+distress_converstation,How often does your child show distress (startle easily or cover ears) during loud conversations or singing?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+fascinated_singing,How often does your child seem fascinated with or excited by the sound of other people singing?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+copy_sounds,"How often does your child have the exceptional ability to copy environmental sounds? (For example: Mimics sound of musical toys, fax machine, chimes on clock, mechanical sounds)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+enjoys_music,How often does your child enjoy listening to music?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+trouble_distinguishing_sounds,How often does your child have trouble distinguishing between different types of sounds?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p2,,,,enumeration,,,
+disturbed_light,How often does your child appear to be disturbed by bright lights or sunlight?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+fascinated_reflection_eyes,How often does your child seem fascinated by his/her own reflection in another person's eyes?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+stare_moving_objects,How often does your child stare at lights or objects that spin or move?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+avoid_looking_face,How often does your child avoid looking at your face or avert his/her gaze during social games/play?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+fascinated_water,"How often does your child seem fascinated with or excited by the visual effect of water falling, swirling, or pouring?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+notice_minor_environment_changes,How often does your child notice minor changes in the way the physical environment looks (such as rearranged furniture or objects displaced)?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+fascinated_lights,How often does your child seem fascinated with lights?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+notice_new_objects_slowly,How often does your child seem slow to notice new objects or toys in the room?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+look_new_objects_slowly,How often does your child seem slow to look at objects that are placed or held near him/her?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+notice_minor_appearance_changes,"How often does your child notice minor changes in the visual appearances of other people (such as glasses/no glasses, hat/no hat, haircut)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+use_side_vision,"How often does your child look at objects using side vision, out of the corner of his/her eyes?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+enjoy_videos_tv,How often does your child enjoy watching children's videos or TV programs?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+moves_objects_rapidly,How often does your child watch objects that he/she moves rapidly in front of his/her eyes?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+fascinated_own_reflection,How often does your child seem fascinated with or excited by his/her reflection in shiny surfaces (such as mirrors or sunglasses)?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+look_angles_corners,How often does your child look at angles or corners of objects (such as a table leg)?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+fascinated_flickering,How often does your child seem fascinated with or excited by flickering or scrolling motions on a computer screen or TV?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+ignore_new_person,How often does your child seem to ignore or not notice someone new or different entering the room?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+watch_own_hands,How often does your child watch his/her hands or fingers move or flicker in front of the eyes?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+visually_distracted_easily,How often does your child seem visually distracted by every little thing moving around him/her?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+trouble_distinguishing_visuals,How often does your child have trouble distinguishing between different types of visual sensations?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+enjoy_picture_books,How often does your child enjoy looking at picture books? ,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p3,,,,enumeration,,,
+dislike_held,How often does your child dislike cuddling or being held?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+crave_intense_touch,"How often does your child crave intense or firm touch? (For example: Can't get enough of back scratches, firm hugs, or squeezes.)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+avoid_textures,How often does your child avoid touching certain textures [such as fuzzy or squishy toys) or playing with messy materials (such as sand or lotion)?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+like_air_face,How often does your child like the feeling of air blowing from fans or wind on his/her face?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+trouble_adjusting_temperature,How often does your child have trouble adjusting to the water temperature during bath time?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+crave_tickle,How often does your child crave being tickled?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+dislike_water,How often does your child dislike being in water?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+ignore_touch,How often does your child ignore you or not notice when you tap him/her on the shoulder for attention?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+sensitive_sticky_materials,"How often does your child seem sensitive to or bothered by sticky materials (such as tape, stickers, or band-aids) ?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+fascinated_touch,How often does your child seem fascinated with touch?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+bothered_tags_seams,How often does your child seem bothered by tags or seams on clothing?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+bothered_tight_clothes,"How often does your child seem bothered by tight clothing (such as turtlenecks, elastic, sleeves. or stocking caps)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+find_objects_feel,How often does your child easily find objects (such as coins or candy) in a bag by feel (without looking)?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+distress_grooming,How often does your child show distress during grooming? (For example: Cries or fusses during face washing. hair combing. fingernail cutting. or teeth brushing.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+rub_certain_surfaces,"How often does your child touch or rub certain surfaces or materials (such as grooves, ridges, or very smooth surfaces)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+dislike_touch,How often does your child react negatively or pull away when touched by a person? (For example: Pulls away when head is patted.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+dislike_tickle,How often does your child dislike being tickled?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+slow_react_pain,"How often does your child seem slow to react to pain? (For example: Isn't bothered by bumps. scrapes, cuts. or falls.)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+dislike_haircuts,How often does your child react negatively to haircuts?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+fascinated_texture,"How often does your child seem fascinated with textures of surfaces, objects or clothing fabric?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p4,,,,enumeration,,,
+unaware_extreme_temperatures,How often does your child seem unaware of extreme temperatures? (For example: Doesn't react to hot water or tolerates very cold weather without a coat.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+rub_wet_surfaces,"How often does your child rub wet substances (such as water, lotion, liquid soap, or pudding) on a table top or other smooth surface?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+trouble_distinguishing_touch,How often does your child have trouble distinguishing between different types of touch sensations?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+refuses_new_food,"How often does your child refuse to try new foods or avoid certain tastes, smells, or textures of food?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+smell_objects,How often does your child smell objects or toys during play or other activities?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+sensitive_smell,How often does your child seem sensitive to or bothered by the way people smell?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+items_in_mouth,"How often does your child put objects, toys, or other non-food items in his/her mouth to suck or chew?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+picky_eater,"How often does your child seem to be a ""picky"" eater?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+crave_strong_food,"How often does your child crave foods with a strong taste or flavor (such as spicy, sour, or bitter foods)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+fascinated_taste,How often does your child  seem fascinated with particular tastes?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+notice_smells_early,"How often does your child notice smells before other people do (such as perfume, smoke, or food)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+fascinated_smell,How often does your child seem fascinated with particular smells?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+mouth_hands,"How often does your child mouth, suck, or chew his/her hands or fingers?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+unaware_strong_smells,"How often does your child seem to be unaware of strong or unpleasant smells that most other people notice (such as rotting food, ammonia, or perfume)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+taste_brand_difference,How often does your child taste the difference between different brands of the same food or subtle recipe changes?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+lick_non_food,How often does your child lick non-food objects?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+refuse_unmixed_food,How often does your child refuse to eat food that he/she usually likes if it is mixed with another food?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+gag_certain_smells,How often does your child gag in response to certain smells?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p5,,,,enumeration,,,
+trouble_distinguishing_tastes,"How often does your child have trouble distinguishing between different types of tastes or flavors?
+","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+enjoy_car_rides,How often does your child enjoy long car rides?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+jump_rock_spin_circles,"How often does your child jump up/down, rock back/forth, or spin in circles?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+dizzy_swing,"How often does your child seem uneasy or become dizzy from the movement of a swing, merry-go_round, or rocker?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+seek_rough_play,"How often does your child seek out physical rough-housing play? (For example: Craves wrestling, being tossed in the air, or spun around.)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+enjoy_upside_down,How often does your child enjoy being upside-down?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+flap_arms_excited,"How often does your child flap his/her arms or hands, particularly when excited?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+avoid_moving_surface,"How often does your child avoid riding on escalators, elevators, or other moving surfaces?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+unaware_unstable_surface,How often does your child seem unaware of moving or unstable surfaces?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+dislike_moved_familiar_adult,"How often does your child react negatively to being moved quickly, tipped backwards, or spun around by a familiar adult?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+spin_self,How often does your child spin self around without becoming dizzy?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+unusual_arm_positions,"How often does your child assume unusual postures with his/her hands, fingers, or arms?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+trouble_distinguishing_movement,How often does your child have trouble distinguishing between different types of movement sensations?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+trouble_looking_listening,How often does your child seem to have trouble looking and listening at the same time? (For example: Shuts eyes to listen more closely or blocks out sound to focus on visual task.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+report_numbers_letters_colored,How often does your child report that certain letters or numbers are always seen in a particular color? ,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p6,,,,enumeration,,,
+overwhelmed_high_activity,"How often does your child get overwhelmed in places where there is a lot of activity going on (such as a sports stadium, shopping mall, fast food restaurant or amusement park)?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+report_mixed_senses,"How often does your child report that an event in one sense causes a feeling in a different sense? (For example: Musical notes have colors, or flavors have shapes.)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+confuse_sense_origin,How often does your child seem to confuse which sense something is coming from? (For example: Turns up the volume if something is blocking the view of the TV.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+touch_sensitive_noisy,"How often does your child seem more sensitive to social touch (such as a pat on the back, touch on the arm. or hug) in a noisy environment than in a quiet one?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+dance_particular_music,"How often does your child like to dance to particular music?(For example: Asks for song or music, then dances with it.)","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+increase_background_noise,How often does your child try to increase background noise to improve his/her attention to another activity? (For example: Turns up volume on radio while doing homework or puzzles.),"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+avoid_light_noise,How often does your child avoid playing with toys or novel objects that make a lot of noise and light up at the same time?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+trouble_focusing_sounds,How often does your child have trouble focusing on a conversation or social activity when other sounds are happening in the room at the same time?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+shut_down_overstimulated,"How often does your child seem to ""shut-down"" when there is too much stimulation?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+experience_sensations_differently,"Thinking about your child's behaviors since birth, how often has your child experienced sensations (sound, sight, touch, taste, smell, or movement) differently from other children?","{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p7,,,,enumeration,,,
+experience_sensations_description,DESCRIBE (if applicable):,text,p7,,,,,,,
+age_sensory_differences_noticed,How old was your child when you first noticed any differences in your child's sensory experiences?,text,p7,,,,,,,
+sensory_avoidance_changed,How have your child's sensory avoidances or sensitivities changed over time?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Much Less Avoidant/Sensitive""
+    },
+    {
+      ""1"": ""Somewhat Less Avoidant/Sensitive""
+    },
+    {
+      ""2"": ""Unchanged""
+    },
+    {
+      ""3"": ""Somewhat More Avoidant/Sensitive""
+    },
+    {
+      ""4"": ""Much More Avoidant/Sensitive""
+    }
+  ]
+}",p8,,,,enumeration,,,
+sensory_avoidance_description,DESCRIBE (if changed):,text,p8,,,,,,,
+avoidance_interfere_daily,How often do your child's sensory avoidances or sensitIvities interfere with daily activities?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p8,,,,enumeration,,,
+avoidance_interfere_description,DESCRIBE (if applicable):,text,p8,,,,,,,
+avoidance_comments,"List additional comments about your child's avoidances or sensitivities to sound, sight. touch, smell, taste, or movement (if applicable).",text,p8,,,,,,,
+fascinations_changed,How have your child's sensory fascinations or cravings changed over time?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Much Less Intense""
+    },
+    {
+      ""1"": ""Somewhat Less Intense""
+    },
+    {
+      ""2"": ""Unchanged""
+    },
+    {
+      ""3"": ""Somewhat More Intense""
+    },
+    {
+      ""4"": ""Much More Intense""
+    }
+  ]
+}",p8,,,,enumeration,,,
+fascinations_changed_description,DESCRIBE (if changed):,text,p8,,,,,,,
+fascinations_interfere_daily,How often do your child's sensory fascinations or cravings interfere with daily activities?,"{
+  ""Choices"": [
+    {
+      ""0"": ""Never/ Almost Never""
+    },
+    {
+      ""1"": ""Once in a While""
+    },
+    {
+      ""2"": ""Sometimes""
+    },
+    {
+      ""3"": ""Frequently""
+    },
+    {
+      ""4"": ""Almost Always/ Always""
+    }
+  ]
+}",p8,,,,enumeration,,,
+fascinations_interfere_descriptions,DESCRIBE (if applicable):,text,p8,,,,,,,
+fascination_comments,"List additional comments about your child's fascinations or cravings to sound, sight, touch, smell, taste, or movement (if applicable).",text,p8,,,,,,,

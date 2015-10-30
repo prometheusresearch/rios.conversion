@@ -1,0 +1,277 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
+ed_pre_header,CBU Criteria,,,,instruction,,p1
+ed_pre_cryo_bank,Banked: Autologous CBU stored in a public or private CB bank,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p1
+ed_pre_cryo_bank_comments,Banked: Comments,,,,text,,p1
+ed_pre_cryo_cell_dose,Cell Dose: TNC >= 1 x 10^7 cells/kg,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p1
+ed_pre_cryo_cell_dose_comments,Cell Dose: Comments,,,,text,,p1
+ed_pre_cryo_maternal_id,Maternal ID: Negative (except CMV),,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p1
+ed_pre_cryo_maternal_id_comments,Maternal ID: Comments,,,,text,,p1
+ed_pre_cryo_sterility,Sterility: Negative sterility culture,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p1
+ed_pre_cryo_sterility_comments,Sterility: Comments,,,,text,,p1
+ed_test_header,Test Sample,,,,instruction,,p2
+ed_test_sample_viaibility,CD45 Viability: >= 40%,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p2
+ed_test_sample_viaibility_comments,CD45 Viability: Comments,,,,text,,p2
+ed_test_sample_identity,Identity: Confirmed via HLA typing,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p2
+ed_test_sample_identity_comments,Identity: Comments,,,,text,,p2
+ed_med_header,Participant Criteria ,,,,instruction,,p3
+ed_med_review_age,"Age: >= 24 months, <= 72 months",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_age_comments,Age: Comments,,,,text,,p3
+ed_med_review_medication,Medications: Stable on current meds for >=2 months; Not receiving IVIG or anti-inflammatory meds (except NSAIDs),,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_medication_comments,Medication: Comments,,,,text,,p3
+ed_med_review_genetics,Genetics: No known or pheynotypics evidence of a genetic disease; No metabolic/mitochondrial dysfunction; Fragile X testing performed & negative,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_genetics_comments,Genetics: Comments,,,,text,,p3
+ed_med_review_infections,"Infections: No known HIV, CNS, or uncontrolled infections",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_infections_comments,Infections: Comments,,,,text,,p3
+ed_med_review_seizures,"Seizures: No history of uncontrolled seizures, infantile spasms, Lennox Gastaut, or Dravet syndrome",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_seizures_comments,Seizures: Comments,,,,text,,p3
+ed_med_review_organ_function,"Organ Function: Creatinine <1.5mg/dL; t, bili <1.3mg/dL
+Hgb >= 10, WBC>+ 3.8, plt >+ 150k",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_organ_function_comments,Organ Function: Comments,,,,text,,p3
+ed_med_review_physical_exam,"Physical Exam: No obvious physical dysmorphology;
+No macro (>97%)/microcephaly(<3%)",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_physical_exam_comments,Physical Exam: Comments,,,,text,,p3
+ed_med_review_malignancy,Malignancy: No active malignancy,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_malignancy_comments,Malignancy: Comments,,,,text,,p3
+ed_med_review_prior_therapy,Prior Therapy: No previous cellular therapy,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_prior_therapy_comments,Prior Therapy: Comments,,,,text,,p3
+ed_med_review_travel,Travel: OK to travel,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_travel_comments,Travel: Comments,,,,text,,p3
+ed_med_review_language,Language: English speaking,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_language_comments,Language: Comments,,,,text,,p3
+ed_med_review_consent,Consent: Parent signed main consent,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p3
+ed_med_review_consent_comments,Consent: Comments,,,,text,,p3
+ed_psych_header,Pyschiatric Review,,,,instruction,,p4
+ed_psych_review_diagnosis,"Diagnosis: DSM-5 Diagnosis of Autism Spectrum Disorder based on:
+- ADOS
+- ADI-r
+- DSM-5 checklist",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p4
+ed_psych_review_diagnosis_comments,Diagnosis: Comments,,,,text,,p4
+ed_psych_review_preform_status,Performance Status: IQ >= 35; No significant sensory/motor impairment,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p4
+ed_psych_review_preform_status_comments,Performance Status: Comments,,,,text,,p4
+ed_final_determination,Eligibility Determination Final Determination,,,enumeration,"{ ""Choices"" : [
+        {""eligible"" : ""Eligible""},
+        {""ineligible"" : ""Ineligible""}
+    ]
+}",,p4
+ed_eligibility_header,Eligibility Assessments,,,,instruction,,p5
+ed_eligibility_assessments_med,Medical Assessment,,,enumeration,"{ ""Choices"" : [
+        {""eligible"" : ""Eligible""},
+        {""ineligible"" : ""Ineligible""}
+    ]
+}",,p5
+ed_eligibility_assessments_med_date,Medical Assessment date,,,,text,,p5
+ed_eligibility_assessments_med_comments,Medical Assessment comments,,,,text,,p5
+ed_eligibility_assessments_pysch,Psychiatric Assessment,,,enumeration,"{ ""Choices"" : [
+        {""eligible"" : ""Eligible""},
+        {""ineligible"" : ""Ineligible""}
+    ]
+}",,p5
+ed_eligibility_assessments_pysch_date,Psychiatric Assessment date,,,,text,,p5
+ed_eligibility_assessments_pysch_comments,Psychiatric Assessment comments,,,,text,,p5
+ed_participant_header,Participant Criteria 2,,,,instruction,,p6
+ed_participant_criteria_age,"Age: >= 24 months, <= 72 months",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_age_comments,Age: Comments,,,,text,,p6
+ed_participant_criteria_diagnosis,"Diagnosis: DSM-5 Diagnosis of Autism Spectrum Disorder based on:
+- ADOS
+- ADI-r
+- DSM-5 checklist",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_diagnosis_comments,Diagnosis: Comments,,,,text,,p6
+ed_participant_criteria_preform_status,Performance Status: IQ >= 35; No significant sensory/motor impairment,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_preform_status_comments,Performance Status: Comments,,,,text,,p6
+ed_participant_criteria_medication,Medications: Stable on current meds for >=2 months; Not receiving IVIG or anti-inflammatory meds (except NSAIDs),,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_medication_comments,Medication: Comments,,,,text,,p6
+ed_participant_criteria_genetics,Genetics: No known or pheynotypics evidence of a genetic disease; No metabolic/mitochondrial dysfunction; Fragile X testing performed & negative,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_genetics_comments,Genetics: Comments,,,,text,,p6
+ed_med_review_infections_2,"Infections: No known HIV, CNS, or uncontrolled infections",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_infections_comments,Infections: Comments,,,,text,,p6
+ed_participant_criteria_seizures,"Seizures: No history of uncontrolled seizures, infantile spasms, Lennox Gastaut, or Dravet syndrome",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_seizures_comments,Seizures: Comments,,,,text,,p6
+ed_participant_criteria_organ_function,"Organ Function: Creatinine <1.5mg/dL; t, bili <1.3mg/dL
+Hgb >= 10, WBC>+ 3.8, plt >+ 150k",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_organ_function_comments,Organ Function: Comments,,,,text,,p6
+ed_participant_criteria_physical_exam,"Physical Exam: No obvious physical dysmorphology;
+No macro (>97%)/microcephaly(<3%)",,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_physical_exam_comments,Physical Exam: Comments,,,,text,,p6
+ed_participant_criteria_malignancy,Malignancy: No active malignancy,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_malignancy_comments,Malignancy: Comments,,,,text,,p6
+ed_participant_criteria_prior_therapy,Prior Therapy: No previous cellular therapy,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_prior_therapy_comments,Prior Therapy: Comments,,,,text,,p6
+ed_participant_criteria_travel,Travel: OK to travel,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_travel_comments,Travel: Comments,,,,text,,p6
+ed_participant_criteria_language,Language: English speaking,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_language_comments,Language: Comments,,,,text,,p6
+ed_participant_criteria_consent,Consent: Parent signed main consent,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p6
+ed_participant_criteria_consent_comments,Consent: Comments,,,,text,,p6
+ed_cbu_header,CBU Criteria Pre-Cryopreservation Criteria,,,,instruction,,p7
+ed_cbu_pre_cryo_bank,Banked: Autologous CBU stored in a public or private CB bank,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p7
+ed_cbu_pre_cryo_bank_comments,Banked: Comments,,,,text,,p7
+ed_cbu_pre_cryo_cell_dose,Cell Dose: TNC >= 1 x 10^7 cells/kg,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p7
+ed_cbu_pre_cryo_cell_dose_comments,Cell Dose: Comments,,,,text,,p7
+ed_cbu_pre_cryo_maternal_id,Maternal ID: Negative (except CMV),,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p7
+ed_cbu_pre_cryo_maternal_id_comments,Maternal ID: Comments,,,,text,,p7
+ed_cbu_pre_cryo_sterility,Sterility: Negative sterility culture,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p7
+ed_cbu_pre_cryo_sterility_comments,Sterility: Comments,,,,text,,p7
+ed_cbu_pre_cryo_viaibility,CD45 Viability: >= 40%,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p7
+ed_cbu_pre_cryo_viaibility_comments,CD45 Viability: Comments,,,,text,,p7
+ed_cbu_pre_cryo_identity,Identity: Confirmed via HLA typing,,,enumeration,"{ ""Choices"" : [
+        {""yes"" : ""Yes""},
+        {""no"" : ""No""}
+    ]
+}",,p7
+ed_cbu_pre_cryo_identity_comments,Identity: Comments,,,,text,,p7

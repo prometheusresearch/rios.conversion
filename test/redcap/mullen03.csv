@@ -1,0 +1,1308 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page,action,trigger,targets
+childs_name,Child's Name,,,,text,,p1,,,
+id,ID,,,,integer,,p1,,,
+nickname,Nickname,,,,text,,p1,,,
+boy_girl,Boy or girl? ,,,enumeration,"{
+    ""choices"": [
+        {
+            ""boy"": ""Boy""
+        },
+        {
+            ""girl"": ""Girl""
+        }
+    ]
+}",,p1,,,
+address,Address,,,,text,,p1,,,
+childs_lang,Child's Primary Language,,,,text,,p1,,,
+mothers_name,Mother's Name,,,,text,,p1,,,
+fathers_name,Father's Name,,,,text,,p1,,,
+examiner,Examiner,,,,text,,p1,,,
+school,School,,,,text,,p1,,,
+noweeks,No. Weeks Gestation (G.A),,,,integer,,p1,,,
+info_birthwt,Birth Weight Pounds (lbs),,,,integer,,p1,,,
+info_birth_oz,Birth Weight Ounces (ozs),,,,integer,,p1,,,
+info_apgar1,Apgars 1 min.,,,,text,,p1,,,
+info_apgar5,Apgars 5 min.,,,,text,,p1,,,
+hospital,Hospital,,,,text,,p1,,,
+info_visionprob,Does the child have a known uncorrected vision problem?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+info_hearprob,Does the child have a known uncorrected hearing problem,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+info_phycharac,Personal or physical characteristics that may affect the child's test results,,,,text,,p1,,,
+info_med,Is the child on any medication?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,"[""hide""]","[""info_med!=='yes'""]","[[""info_med_cmt""]]"
+info_med_cmt,Specify medication,,,,text,,p1,,,
+reffered_by,Referred by,,,,text,,p1,,,
+info_refreason,Reason for Referral,,,,text,,p1,,,
+info_cmt,Additional Information/Comments,,,,text,,p1,,,
+testing_date,Testing Date,,,,date,,p1,,,
+birth_date,Birth Date,,,,date,,p1,,,
+chron_age,Chronological age,,,,integer,,p1,,,
+chld_adj_age,Adjusted Age,,,,integer,,p1,,,
+comments_misc,"Miscellaneous comments on study, interview, methodology relevant to this form data",,,,text,,p1,,,
+scl1_instur,Scale 1. Gross Motor,,,,instruction,,p1,,,
+scl1_held,I. Enjoys being held/realigns (Up),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_headrotate,2. Rotates head (P),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_movearm,"3. Moves arms, legs vigorously (S)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_holdshead,"4- Held upright, holds head steady (Up)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_supforearm,5. Supports on forearms (P),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_headsteady,"6. Sits supported, head steady (SSit)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_rollover,7. Rolls over (P to S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_holdfinger,8. Holds on to fingers/pulls self to sit (S to SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_siftwt,"9. Shifts weight, reaches (P)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_standhandheld,"10. Stands with hands held, bounces",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_sit_armfree,11. Sits with arms free (Sir),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_pullself,12. Pulls self to stand (Sit to stand),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_sitting,13. Gets from sitting to hands and knees (Sit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_walkhandheld,14. Walks with one hand held,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_standalone,15. Stands alone (1-2 seconds),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_walkalone,16. Walks alone (4-5 steps),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_throwball,17. Throws a ball underhand,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_stnadbyroll,18. Gets to stand by rolling to side (S to stand),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_stand,"19. Stands, squats, stands",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_walkstairshelp,"20. Walks up stairs with help, nonalternating",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_runstiff,21. Runs stiffly,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_kickball,22. Kicks a 10- to 12-inch ball (2 of 5 trials),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_standonefoot,"23. Stands on one foot, with help",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_walksteps,"24. Walks 4 to 5 steps, one foot on line",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_walkstairsself,"25. Walks up stairs by self, nonalternating",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_jumpbenchtot,"26. Jumps down from bench (Code 1 if jumps with 1 foot, Code 2 if jumps with two feet)",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c2"": ""Two feet""
+        },
+        {
+            ""c1"": ""One Footl""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl1_jumpinplace,"27. Jumps in place, feet together (one jump)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_tiptoe,28- Walks on tiptoes (4-5 steps),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_armbalance,"29. Walks on line, using arms to balance (6-7 steps)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_walkdownstairs,"30. Walks down stairs by self, alternating",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_gettostand,31. Gets to stand/forward to sit (S to stand),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_balanceonefoot,32. Balances on one foot (2-3 seconds),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_turncorner,"33. Runs, turns corner, stops",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_hoptwotimes,34. Hops two times,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_armatside,"35. Walks on line, arms at side (6 steps)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl1_gm_raw_score,Gross Motor Raw Score,,,,integer,,p1,,,
+scl2_instruc,Scale 2 Visual Reception,,,,instruction,,p1,,,
+scl2_fixtotal,1. Fixates on and tracks triangle (S) (Code 1 if fixates; Code 2 if tracks),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Fixates""
+        },
+        {
+            ""c2"": ""Tracks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_trackface,2. Tracks schematic face 90 degrees (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_trackbulleye,3. Tracks moving bull's-eye ISO degrees (PPr),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_localaltballface,4. Localizes alternating red ball and schematic face (PPr),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_stareownhand,5. Stares at own hand (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_localbulleye,6. Localizes bull's-eye near and far (SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_lookdropspoon,7. Looks for dropped spoon (A/V) (SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_pullcord,8. Pulls cord to obtain disc (SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_hiddenring_total,9. Looks for ring hidden under washcloth (Sit) - (Code 1 for partially hidden; Code 2 for full hidden),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Partially hidden""
+        },
+        {
+            ""c2"": ""Fully hidden""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_turncup_sideup,10. Turns cup right-side up,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_assoc_brush,11. Makes object association - Brush,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_assoc_spoon,11. Makes object association - Spoon,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_assoc_cup,11. Makes object association - cup,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_assoc_ball,11. Makes object association - ball,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_assoc_total,11. Makes object association -Total,,,enumeration,"{""Choices"":[{""c1"":""1 (associates one object)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_car_underwashcloth,12. Looks for car under two washcloths,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_showinterest,13. Shows interest in book as hinge,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_attnd_pic,14. Attends to picture (A/V),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_toy_covered,"15. Looks for toy covered, then displaced",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_dicformtotal,"16. Discriminates forms on formboard - Total (Code 1 for circle; Code 2 for circle and square; Code 3 for circle, square and triangle; Code 4 for circle, square, triangle and plus sign)",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Circle""
+        },
+        {
+            ""c3"": ""Circle, square and triangle""
+        },
+        {
+            ""c2"": ""Circle and square""
+        },
+        {
+            ""c4"": ""Circle, square, triangle and plus sign""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_objwithname17a,17A. Matches objects with naming (A/V) (19 months or younger) OR 17B Matches objects without naming (A/V) (20 months or older),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""One object with naming""
+        },
+        {
+            ""c2"": ""Two objects without naming""
+        },
+        {
+            ""c3"": ""Three objects without naming""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl2_match_shoes,17. Matches objects without naming - shoes,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_match_cars,17. Matches objects without naming- cars,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_match_keys,17. Matches objects without naming- keys,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_match_sticks,17. Matches objects without naming- sticks,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_nestcup_three,18. Nests nesting cups - (Code 1 if nests three cups;Code 2 if nests 4 cups),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Nests three cups""
+        },
+        {
+            ""c2"": ""Nests four cups""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_sort_spoonsblock,19. Sorts spoons and blocks by category,(2 each) ,,enumeration,"{""Choices"":[{""c1"":""1 (2 each)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_mtchshape_circle,20. Matches by shape - circles,(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchshape_sq,20. Matches by shape - squares,(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchshape_triangle,20. Matches by shape - triangles,(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchshape_total,20. Matches by shape - total,(2 each) ,,enumeration,"{""Choices"":[{""c1"":""1 (2 each)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_mtchpic_shoe,21. Matches pictures - shoe,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchpic_cup,21. Matches pictures - cup,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchpic_plane,21. Matches pictures - plane,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchpic_total,21. Matches pictures - total,,,enumeration,"{""Choices"":[{""c1"":""1 (matches two pictures)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_mtchsize_largered,"22. Matches by size, color - large red circles",(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchsize_smallred,"22. Matches by size, color - small red circles",(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchsize_largeyellow,"22. Matches by size, color - large yellow circles",(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchsize_smallyellow,"22. Matches by size, color - small yellow circles",(2 each) ,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchsize_total,"22. Matches by size, color - total",(2 each) ,,enumeration,"{""Choices"":[{""c1"":""1 (2 each)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_onepic_memory,23. Memory for one picture,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_spadet1,24. Spatial details I,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_spadet21,25. Spatial details II - 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet22,25. Spatial details II - 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet23,25. Spatial details II - 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet24,25. Spatial details II - 4,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet2total,25. Spatial details II - total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Three spatial details""
+        },
+        {
+            ""c2"": ""Four spatial details""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_objmem_key,26. Memory for objects - Key,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_objmem_ball,26. Memory for objects -  ball,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_objmem_car,26. Memory for objects - car,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_objmem_total,26. Memory for objects - total,,,enumeration,"{""Choices"":[{""c1"":""1 (memory for two objects)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_spapos1,27. Discriminates spatial position - 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spapos2,27. Discriminates spatial position - 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spapos3,27. Discriminates spatial position - 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spapos4,27. Discriminates spatial position - 4,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spapos_total,27. Discriminates spatial position - total,,,enumeration,"{""Choices"":[{""c1"":""1 (discriminates all four spatial positions)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_letmtchl,28. Matches letters - L,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_letmtchc,28. Matches letters - C,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_letmtchn,28. Matches letters - N,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_letmtchb,28. Matches letters - B,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_letmtchh,28. Matches letters - H,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_letmtchp,28. Matches letters - P,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_letmtch_tot,28. Matches letters - total,,,enumeration,"{""Choices"":[{""c1"":""1 (matches all six letters)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_disc_bunny,29. Discriminates left/right - bunny,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_disc_hammer,29. Discriminates left/right - hammer,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_disc_child,29. Discriminates left/right - child,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_disc_wagon,29. Discriminates left/right - wagon,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_disc_total,29. Discriminates left/right - total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Discriminates left/right for one item""
+        },
+        {
+            ""c2"": ""Discriminates left/right for two items""
+        },
+        {
+            ""c3"": ""Discriminates left/right for three items""
+        },
+        {
+            ""c4"": ""Discriminates left/right for four items""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_mtchwordb,"30. Matches letters, words - B",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordt,"30. Matches letters, words - t",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordd,"30. Matches letters, words - d",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordn,"30. Matches letters, words - n",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordrt,"30. Matches letters, words - rt",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordbe,"30. Matches letters, words - be",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordbat,"30. Matches letters, words - bat",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordcoat,"30. Matches letters, words - coat",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordwill,"30. Matches letters, words - will",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_mtchwordtot,"30. Matches letters, words - total",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Matches two""
+        },
+        {
+            ""c2"": ""Matches four""
+        },
+        {
+            ""c3"": ""Matches five""
+        },
+        {
+            ""c4"": ""Matches six""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_threepic_mem_key,31. Memory for three pictures - key,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_threepic_mem_book,31. Memory for three pictures - book,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_threepic_mem_chair,31. Memory for three pictures - chair,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_threepic_mem_tot,31. Memory for three pictures - total,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl2_spadet31,32. Spatial details III - 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet32,32. Spatial details III - 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet33,32. Spatial details III - 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet34,32. Spatial details III - 4,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadet35,32. Spatial details III - 5,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_spadettot,32. Spatial details III - total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Three spatial details""
+        },
+        {
+            ""c2"": ""Four spatial details""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_formmem1,33. Memory for form - 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_formmem2,33. Memory for form - 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_formmem3,33. Memory for form - 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_formmem4,33. Memory for form - 4,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl2_formmemtot,33. Memory for form - total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Memory for two items""
+        },
+        {
+            ""c2"": ""Memory for three items""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl2_vs_raw_score,Visual Reception Raw Score,,,,integer,,p1,,,
+scl3_instruc,Scale 3. Fine Motor,,,,instruction,,p1,,,
+scl3_arm_flexed,1. Arms flexed/hands fisted (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_ring_reflex,2. Holds ring reflexively (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_fist_mouth,3. Brings fist to mouth (P),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_boim,4. Bilateral orientation in midline (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_grasp_reflex,5. Grasp reflex integrated (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_grasp_peg,6. Grasps peg (ulnar palmar) (PPr or SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_grasp_block,7. Reaches for and grasps block (radial palmar grasp) (SSii),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_bangs,"8. Transfers, bangs, drops (SSit)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_grasp_opp,9. Refined grasp/thumb opposition (Sit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_pincer_total,10. Uses pincer grasp (Sit) - (Code 1 for partial pincer;Code 2 for refined pincer) total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Partial pincer""
+        },
+        {
+            ""c2"": ""Refined pincer""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_bang_midline,"11. Bangs in midline, horizontal movement (Sit)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_task3_total,"12. Takes blocks out, puts blocks in - total",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Task 1 (1 block) in or out""
+        },
+        {
+            ""c2"": ""Task 2 (4 blocks) in or out""
+        },
+        {
+            ""c3"": ""Task 3 (7 to 8 blocks) in""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl3_twohand_tgthr,13. Uses two hands together,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_turnpages_several,14. Turns pages in a book - (Code 1 for several at a time; Code 2 for one at a time),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Several at a time""
+        },
+        {
+            ""c2"": ""One at a time""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_crayon_anydirn,15. Imitates crayon lines - Task 1,,,enumeration,"{""Choices"":[{""c1"":""Any direction""},{""c0"":""Fail""},{""c2"":""Vertical line""}]}",,p1,,,
+scl3_crayon_vertical,15. Imitates crayon lines - Task 2,,,enumeration,"{""Choices"":[{""c1"":""Horizontal line""},{""c0"":""Fail""}]}",,p1,,,
+scl3_crayon_total,15. Imitates crayon lines - total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Task 1 any direction OR Task 2 horizontal line""
+        },
+        {
+            ""c2"": ""Task 1 vertical line, OR Task 1 any direction AND Task 2 horizontal line""
+        },
+        {
+            ""c3"": ""Task 1 vertical line AND Task 2 horizontal line""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl3_putpenny_horizontal,"16. Puts pennies in slot, horizontal and vertical - 3 pennies/horizontal",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_putpenny_vertical,"16. Puts pennies in slot, horizontal and vertical - 3 pennies/vertical",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_putpenny_total,"16. Puts pennies in slot, horizontal and vertical - total",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""One task""
+        },
+        {
+            ""c2"": ""Two tasks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_stackblock_total,17. Stacks blocks vertically - total (Code 1 for 3-5 blocks;Code 2 for 6-8 blocks;Code 3 for 9 or more blocks),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""3-5 blocks""
+        },
+        {
+            ""c2"": ""6-8 blocks""
+        },
+        {
+            ""c3"": ""9 or more blocks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl3_fourblock_total,18. Imitates four-block train - (Code 1 for train; Code 2 for train with driver),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Train""
+        },
+        {
+            ""c2"": ""Train with driver""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_screw_nutbolt,"19. Unscrews, screws nut and bolt",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_stringbead,20. Strings beads,,,enumeration,"{""Choices"":[{""c1"":""1 (strings three beads)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_fourblockdrawer,21. Imitates four-block tower,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_copy_circle,"22. Copies circle, circle and line - Circle",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copy_circleline,"22. Copies circle, circle and line - Circle and line",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copy_total,"22. Copies circle, circle and line - total sum tasks",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""One task""
+        },
+        {
+            ""c2"": ""Two tasks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_drawpath_example,23. Draws in path - Example,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl3_drawpath_fig1,23. Draws in path - Figure 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl3_drawpath_fig2,23. Draws in path - Figure 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl3_drawpath_fig3,23. Draws in path - Figure 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl3_drawpath_fig_total,23. Draws in path - Figure Total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Draws two figures""
+        },
+        {
+            ""c2"": ""Draws three figures""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_scissor_total,24. Cuts with scissors - (Code 1 for 1 inch cut; Code 2 for 2 inch cut),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""1-inch cut""
+        },
+        {
+            ""c2"": ""2-inch cut""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_fold_paper,25. Folds paper three times,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""1""
+        },
+        {
+            ""c2"": ""2""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_draw_circle,26. Imitates drawings - circle in circle,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_draw_square,26. Imitates drawings - square,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_draw_diagonal,26. Imitates drawings - left diagonal,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_draw_total,26. Imitates drawings - Total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""One task""
+        },
+        {
+            ""c2"": ""Two tasks""
+        },
+        {
+            ""c3"": ""Three tasks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl3_tocufinger1,27. Touches fingers I,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_tocufinger2,28. Touches fingers II,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_foldpaper_sq,29. Folds paper twice to form square,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl3_copyshape_cross,30. Copies shapes and letters- cross,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copyshape_sq,30. Copies shapes and letters - square,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copyshape_led,30. Copies shapes and letters - LED,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copyshape_tri,30. Copies shapes and letters - triangle,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copyshape_letx,30. Copies shapes and letters - X,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl3_copyshape_total,30. Copies shapes and letters - total,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""One task""
+        },
+        {
+            ""c2"": ""Two tasks""
+        },
+        {
+            ""c3"": ""Three tasks""
+        },
+        {
+            ""c4"": ""Four tasks""
+        },
+        {
+            ""c5"": ""Five tasks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl3_fm_raw_score,Fine Motor Raw Score,,,,integer,,p1,,,
+scl4_instruc,Scale 4. Receptive Language,,,,instruction,,p1,,,
+scl4_react_loud_noise,1. Reacts reflexively to loud noise (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_alter_sound,2. Alerts to sound (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_respn_smile,3. Responds to voice and face by smiling (A/V) (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_coord_turn,4. Coordinates listening and turning fPPr),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_respn_vocal,5. Responds to voice and face by vocalizing (A/V) (PPr or SSit).,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_coor_look,6. Coordinates listening and looking (SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_mirronenjoy_self,7. Enjoys self/mirror interaction (A/V) {SSit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_attnd_word,8. Attends to words and movement (A/V) (SSit or Sit),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_recog_names,"9. Recognizes familiar names, words",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_recog_ownname,10. Recognizes own name,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_inhib_word,11. Understands inhibitory words,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_verbal_input,12. Understands simple verbal input,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_gest_cmmd,13. Understands gesture and commands (A/V),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_identify_obj,14. Identifies objects (A/V),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_givetoy_req,15. Gives toy on verbal request,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_ques1_chair,16. Comprehends questions 1 - Chair,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_ques1_door,16. Comprehends questions 1 - Door,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_ques1_total,16. Comprehends questions 1 -total,,,enumeration,"{""Choices"":[{""c1"":""1 (comprehends one question)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_dirn_block,17. Follows directions - block,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_dirn_car,17. Follows directions - car,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_dirn_total,17. Follows directions - total,,,enumeration,"{""Choices"":[{""c1"":""1 (follows two directions)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_bodypart_eye,18. Recognizes body parts (A/V) - eyes,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart_nose,18. Recognizes body parts (A/V) - nose,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart_mouth,18. Recognizes body parts (A/V) - mouth,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart_ears,18. Recognizes body parts (A/V) - ears,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart_hand,18. Recognizes body parts (A/V) - hands,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart_feet,18. Recognizes body parts (A/V) - feet,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart_hair,18. Recognizes body parts (A/V) - hair,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_bodypart,18. Recognizes body parts (A/V) (Code 1 for 1-3 parts;Code 2 for 4-5 parts; Code 3 for 6-7 parts),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""1 to 3 body parts""
+        },
+        {
+            ""c2"": ""4 or 5 body parts""
+        },
+        {
+            ""c3"": ""6 or 7 body parts""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl4_ques2_cat,19. Comprehends questions II (A/V) - cat,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_ques2_cup,19. Comprehends questions II (A/V) - cup,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_ques2_car,19. Comprehends questions II (A/V) - car,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_ques2_total,19. Comprehends questions II (A/V) - total,,,enumeration,"{""Choices"":[{""c1"":""1 (comprehends one question)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_cmds_ball,20. Follows related commands - ball,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_cmds_box,20. Follows related commands - box,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_cmds_total,20. Follows related commands - total,,,enumeration,"{""Choices"":[{""c1"":""1 (follows one command)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_pic_car,21. Identifies pictures (A/V) - car,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_pic_ball,21. Identifies pictures (A/V) - ball,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_pic_shoe,21. Identifies pictures (A/V) - shoe,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_pic_doll,21. Identifies pictures (A/V) - doll,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_pic_total,21. Identifies pictures (A/V),,,enumeration,"{""Choices"":[{""c1"":""1 (identifies two pictures)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_aware_in,22. Auditory spatial awareness - in,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_aware_under,22. Auditory spatial awareness - under,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_aware_behind,22. Auditory spatial awareness - behind,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_aware_infront,22. Auditory spatial awareness - in front of,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_aware_beside,22. Auditory spatial awareness - beside,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_aware,22. Auditory spatial awareness (Code 1 for 1 position; Code 2 for 2 positions; Code 3 for 3 positions; Code 4 for 4-5 positions),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""1 position""
+        },
+        {
+            ""c2"": ""2 positions""
+        },
+        {
+            ""c3"": ""3 positions""
+        },
+        {
+            ""c4"": ""4 or 5 positions""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl4_actionword_eat,23. Comprehends action words (A/V) - eating,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_actionword_sleep,23. Comprehends action words (A/V) - sleeping,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_actionword_wash,23. Comprehends action words (A/V) - washing,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_actionword_total,23. Comprehends action words (A/V),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Comprehends one word""
+        },
+        {
+            ""c2"": ""Comprehends two to three words""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl4_objfunc_car,24. Identifies object function (A/V) - car,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_objfunc_sci,24. Identifies object function (A/V) - scissors,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_objfunc_spoon,24. Identifies object function (A/V) - spoon,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_objfunc_chair,24. Identifies object function (A/V) - chair,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_objfunc_total,24. Identifies object function (A/V),,,enumeration,"{""Choices"":[{""c1"":""1 (identifies three object functions)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_urcmds_set1,25. Follows two unrelated commands - set 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_urcmds_set2,25. Follows two unrelated commands - set 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_urcmds_total,25. Follows two unrelated commands,,,enumeration,"{""Choices"":[{""c1"":""1 (follows one set)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_size_trial1,26. Size concepts (A/V) - trial 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_size_trial2,26. Size concepts (A/V) - trial 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_size_trial3,26. Size concepts (A/V) - trial 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_size_trial4,26. Size concepts (A/V) - trial 4,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_size_total,26. Size concepts (A/V),,,enumeration,"{""Choices"":[{""c1"":""1 (three trials)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_color_red,27. Identifies colors (A/V) - red,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_green,27. Identifies colors (A/V) - green,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_yellow,27. Identifies colors (A/V) - yellow,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_blue,27. Identifies colors (A/V) - blue,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_orange,27. Identifies colors (A/V) - orange,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_black,27. Identifies colors (A/V) - black,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_brown,27. Identifies colors (A/V) - brown,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_purple,27. Identifies colors (A/V) - purple,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_color_total,27. Identifies colors (A/V),,,enumeration,"{""Choices"":[{""c1"":""1 (identifies four colors)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_lngth_trial1,28. Length concepts (A/V) - trial 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_lngth_trial2,28. Length concepts (A/V) - trial 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_lngth_trial3,28. Length concepts (A/V) - trial 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_lngth_trial4,28. Length concepts (A/V) - trial 4,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_lngth_total,28. Length concepts (A/V),,,enumeration,"{""Choices"":[{""c1"":""1 (three trials)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_comp_same,29. Comparative concepts (A/V) - same,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_notsame,29. Comparative concepts (A/V) - not same,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_most,29. Comparative concepts (A/V) - most,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_least,29. Comparative concepts (A/V) - least,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_first,29. Comparative concepts (A/V) - first,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_last,29. Comparative concepts (A/V) - last,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_second,29. Comparative concepts (A/V) - second,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_middle,29. Comparative concepts (A/V) - middle,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_leftthree,29. Comparative concepts (A/V) - left of three,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_nearest,29. Comparative concepts (A/V) - nearest,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_comp_total,29. Comparative concepts (A/V),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Three concepts""
+        },
+        {
+            ""c2"": ""Four concepts""
+        },
+        {
+            ""c3"": ""Five concepts""
+        },
+        {
+            ""c4"": ""Six concepts""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl4_general_know,30. General knowledge (see flap),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Six items""
+        },
+        {
+            ""c2"": ""Seven items""
+        },
+        {
+            ""c3"": ""Eight items""
+        },
+        {
+            ""c4"": ""Nine items""
+        },
+        {
+            ""c5"": ""Ten items""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl4_general_name,30. General knowledge - name: Response,,,,text,,p1,,,
+scl4_general_namepos,30. General knowledge - name (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_bog,30. General knowledge - boy or girl: Response,,,,text,,p1,,,
+scl4_general_bogpos,30. General knowledge - boy or girl (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_age,30. General knowledge - age: Response,,,,text,,p1,,,
+scl4_general_agepos,30. General knowledge - age (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_eye,30. General knowledge - eye: Response,,,,text,,p1,,,
+scl4_general_eyepos,30. General knowledge - eye (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_wash,30. General knowledge - wash: Response,,,,text,,p1,,,
+scl4_general_washpos,30. General knowledge - wash (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_half,30. General knowledge - half: Response,,,,text,,p1,,,
+scl4_general_halfpos,30. General knowledge - half (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_time,30. General knowledge - time: Response,,,,text,,p1,,,
+scl4_general_timepos,30. General knowledge - time (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_legs,30. General knowledge - legs: Response,,,,text,,p1,,,
+scl4_general_legspos,30. General knowledge - legs (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_money,30. General knowledge - money: Response,,,,text,,p1,,,
+scl4_general_moneypos,30. General knowledge - money (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_ref,30. General knowledge - refrigerator: Response,,,,text,,p1,,,
+scl4_general_refpos,30. General knowledge - refrigerator (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_finger,30. General knowledge - finger: Response,,,,text,,p1,,,
+scl4_general_fingerpos,30. General knowledge - finger (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_general_roof,30. General knowledge - roof: Response,,,,text,,p1,,,
+scl4_general_roofpos,30. General knowledge - roof (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl4_follow_unrelatedcmd,31. Follows three unrelated commands,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl4_concept_six,"32. Has concept of six, eight - 6 blocks",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl4_concept_eight,"32. Has concept of six, eight - 8 blocks",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""}]}",,p1,,,
+scl4_concept_total,"32. Has concept of six, eight (sum tasks)",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""One task""
+        },
+        {
+            ""c2"": ""Two tasks""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl4_identifyt,33. Identifies letters (A/V) - T,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyc,33. Identifies letters (A/V) - C,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyl,33. Identifies letters (A/V) - L,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyo,33. Identifies letters (A/V) - O,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyd,33. Identifies letters (A/V) - D,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyn,33. Identifies letters (A/V) - N,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifys,33. Identifies letters (A/V) - S,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyr,33. Identifies letters (A/V) - R,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyb,33. Identifies letters (A/V) - B,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyg,33. Identifies letters (A/V) - G,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifym,33. Identifies letters (A/V) - M,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyh,33. Identifies letters (A/V) - H,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyx,33. Identifies letters (A/V) - X,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_identifyp,33. Identifies letters (A/V) - P,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl4_total,33. Identifies letters (A/V),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Twelve letters""
+        },
+        {
+            ""c2"": ""Fourteen letters""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl4_rl_raw_score,Receptive Language Raw Score,,,,integer,,p1,,,
+scl5_instruc,Scale 5. Expressive Language,,,,instruction,,p1,,,
+scl5_chew_move,"1. Sucking, swallowing, chewing movements",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_vocalizes,2. Vocalizes (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_happy_sound,3. Smiles and makes happy sounds (S),,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_laughs,"4. Coos, chuckles, or laughs",,,enumeration,"{""Choices"":[{""c1"":""1 (two items)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_make_vocal,"5. Makes vocalizations (such as ah, eh, m)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_sound_play,"6. Plays with sounds (such o, u, ah-goo]",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_babbling,"7. Voluntary babbling (such as ""bu, bu, bu"")",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_consonant_sound,"8. Produces three consonant sounds (such as p, d, k, g, m)",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_twosyll_sound,"9. Vocalizes two-syllable sounds (such as ""dada"" or ""haba"")",,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_lang_game,10. Plays gesture/language game,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_total,11. Says first words (Code 1 for 1 word; Code 2 for 2-7 words; Code 3 for 8 words),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Says 1 word""
+        },
+        {
+            ""c2"": ""Says 2 to 7 words""
+        },
+        {
+            ""c3"": ""Says 8 words""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl5_inflection,12. Jabbers with inflection,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_comb_jargon,13. Combines jargon/gestures,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_comb_word,14. Combines words/gestures,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_nameobj_ball,15. Names objects - ball,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_nameobj_book,15. Names objects - book,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_nameobj_car,15. Names objects - car,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_nameobj_cup,15. Names objects - cup,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_nameobj_key,15. Names objects - key,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_nameobj_knife,15. Names objects - knife,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_nameobj_total,"15. Names objects, total (Code 1 for 1-3 objects;Code 2 for 4-5 objects; Code 3 for 6 objects)",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c999"": ""NA""
+        },
+        {
+            ""c1"": ""Names 1-3 objects""
+        },
+        {
+            ""c2"": ""Names 4-5 objects""
+        },
+        {
+            ""c3"": ""Names 6 objects""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl5_labelpic_ball,16. Labels picture - ball,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_labelpic_dog,16. Labels picture - dog,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_labelpic_baby,16. Labels picture - baby,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_labelpic_total,16. Labels picture,,,enumeration,"{""Choices"":[{""c1"":""1 (labels one picture)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_twoword_phrase,17. Uses two-word phrase,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_picname_tot,18. Picture vocabulary (see flap) (Code 1 for 5-10 pics;Code 2 for 11-14 pics;Code 3 for 15-16 pics; Code 4 for 17 pics; Code 5 for 18 pics),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Names 5-10 pictures""
+        },
+        {
+            ""c2"": ""Names 11-14 pictures""
+        },
+        {
+            ""c3"": ""Names 15-16 pictures""
+        },
+        {
+            ""c4"": ""Names 17 pictures""
+        },
+        {
+            ""c5"": ""Names 18 pictures""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl5_picname_phone,18. Picture vocabulary  - phone: Response,,,,text,,p1,,,
+scl5_picname_phonepos,18. Picture vocabulary  - phone (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_spoon,18. Picture vocabulary  - spoon: Response,,,,text,,p1,,,
+scl5_picname_spoonpos,18. Picture vocabulary  - spoon (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_bed,18. Picture vocabulary  - bed: Response,,,,text,,p1,,,
+scl5_picname_bedpos,18. Picture vocabulary  - bed (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_tele,18. Picture vocabulary  - television: Response,,,,text,,p1,,,
+scl5_picname_telepos,18. Picture vocabulary  - television (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_comb,18. Picture vocabulary  - comb: Response,,,,text,,p1,,,
+scl5_picname_combpos,18. Picture vocabulary  - comb (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_ball,18. Picture vocabulary  - ball: Response,,,,text,,p1,,,
+scl5_picname_ballpos,18. Picture vocabulary  - ball (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_bird,18. Picture vocabulary  - bird: Response,,,,text,,p1,,,
+scl5_picname_birdpos,18. Picture vocabulary  - bird (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_house,18. Picture vocabulary  - house: Response,,,,text,,p1,,,
+scl5_picname_housepos,18. Picture vocabulary  - house (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_hand,18. Picture vocabulary  - hand: Response,,,,text,,p1,,,
+scl5_picname_handpos,18. Picture vocabulary  - hand (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_door,18. Picture vocabulary  - door: Response,,,,text,,p1,,,
+scl5_picname_doorpos,18. Picture vocabulary  - door (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_umb,18. Picture vocabulary  - umbrella: Response,,,,text,,p1,,,
+scl5_picname_umbpos,18. Picture vocabulary  - umbrella (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_purse,18. Picture vocabulary  - purse: Response,,,,text,,p1,,,
+scl5_picname_pursepos,18. Picture vocabulary  - purse (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_clock,18. Picture vocabulary  - clock: Response,,,,text,,p1,,,
+scl5_picname_clockpos,18. Picture vocabulary  - clock (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_flower,18. Picture vocabulary  - flower: Response,,,,text,,p1,,,
+scl5_picname_flowerpos,18. Picture vocabulary  - flower (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_leg,18. Picture vocabulary  - leg: Response,,,,text,,p1,,,
+scl5_picname_legpos,18. Picture vocabulary  - leg (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_leaf,18. Picture vocabulary  - leaf: Response,,,,text,,p1,,,
+scl5_picname_leafpos,18. Picture vocabulary  - leaf (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_chim,18. Picture vocabulary  - chimney: Response,,,,text,,p1,,,
+scl5_picname_chimpos,18. Picture vocabulary  - chimney (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_lad,18. Picture vocabulary  - ladder: Response,,,,text,,p1,,,
+scl5_picname_ladpos,18. Picture vocabulary  - ladder (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_lamp,18. Picture vocabulary  - lamp: Response,,,,text,,p1,,,
+scl5_picname_lamppos,18. Picture vocabulary  - lamp (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_picname_brush,18. Picture vocabulary  - brush: Response,,,,text,,p1,,,
+scl5_picname_brushpos,18. Picture vocabulary  - brush (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_usepronoun,19. Uses pronouns,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_count_total,"20. Counts to two, three, twelve (Code 1 for counts to 2;Code 2 for counts to 3; Code 3 for counts to 12)",,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Counts to 2""
+        },
+        {
+            ""c2"": ""Counts to 3""
+        },
+        {
+            ""c3"": ""Counts to 12""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": "" 9""
+        }
+    ]
+}",,p1,,,
+scl5_repeatnum1,21. Repeats two numbers - 6-2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_repeatnum2,21. Repeats two numbers - 4-7,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_repeatnum_tot,21. Repeats two numbers,,,enumeration,"{""Choices"":[{""c1"":""1 (repeats one set)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_wordsentence,22. Uses three- to four-word sentences,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_anstwoques,23. Answers questions (see flap) - answers two questions,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_ansques_tot,23. Answers questions,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Answers two questions""
+        },
+        {
+            ""c2"": ""Answers three questions""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl5_ansques_thirst,23. Answers questions - thirsty: Response,,,,text,,p1,,,
+scl5_ansques_thirstpos,23. Answers questions - thirsty (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_ansques_hungry,23. Answers questions - hungry: Response,,,,text,,p1,,,
+scl5_ansques_hungrypos,23. Answers questions - hungry (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_ansques_sleep,23. Answers questions - sleepy: Response,,,,text,,p1,,,
+scl5_ansques_sleeppos,23. Answers questions - sleepy (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_analogy,24. Verbal analogies (see flap),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Four items""
+        },
+        {
+            ""c2"": ""Five items""
+        },
+        {
+            ""c3"": ""Six items""
+        },
+        {
+            ""c4"": ""Seven items""
+        },
+        {
+            ""c5"": ""Eight items""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl5_verbal_big,24. Verbal analogies - big: Response,,,,text,,p1,,,
+scl5_verbal_bigpos,24. Verbal analogies - big (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_light,24. Verbal analogies - light: Response,,,,text,,p1,,,
+scl5_verbal_lightpos,24. Verbal analogies - light (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_hot,24. Verbal analogies - hot: Response,,,,text,,p1,,,
+scl5_verbal_hotpos,24. Verbal analogies - hot (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_table,24. Verbal analogies - table: Response,,,,text,,p1,,,
+scl5_verbal_tablepos,24. Verbal analogies - table (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_brkfast,24. Verbal analogies - breakfast: Response,,,,text,,p1,,,
+scl5_verbal_brkfastpos,24. Verbal analogies - breakfast (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_side,24. Verbal analogies - sidewalk: Response,,,,text,,p1,,,
+scl5_verbal_sidepos,24. Verbal analogies - sidewalk (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_awake,24. Verbal analogies - awake: Response,,,,text,,p1,,,
+scl5_verbal_awakepos,24. Verbal analogies - awake (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_hard,24. Verbal analogies - hard: Response,,,,text,,p1,,,
+scl5_verbal_hardpos,24. Verbal analogies - hard (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_ligh,24. Verbal analogies - light: Response,,,,text,,p1,,,
+scl5_verbal_lighpos,24. Verbal analogies - light (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_verbal_wood,24. Verbal analogies - wood: Response,,,,text,,p1,,,
+scl5_verbal_woodpos,24. Verbal analogies - wood (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_sentrepeat11,25. Repeats sentences - sentence 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_sentrepeat12,25. Repeats sentences - sentence 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_sentrepeat_1tot,25. Repeats sentences,,,enumeration,"{""Choices"":[{""c1"":""1 (repeats two sentences)""},{""c0"":""0""},{""c9"":""9""}]}",,p1,,,
+scl5_oral_vocab,26. Oral vocabulary (see flap),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Five items""
+        },
+        {
+            ""c2"": ""Seven items""
+        },
+        {
+            ""c3"": ""Eight items""
+        },
+        {
+            ""c4"": ""Nine items""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl5_oral_hat,26. Oral vocabulary - hat: Response,,,,text,,p1,,,
+scl5_oral_hatpos,26. Oral vocabulary - hat (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_car,26. Oral vocabulary - car: Response,,,,text,,p1,,,
+scl5_oral_carpos,26. Oral vocabulary - car (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_boot,26. Oral vocabulary - boot: Response,,,,text,,p1,,,
+scl5_oral_bootpos,26. Oral vocabulary - boot (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_umb,26. Oral vocabulary - umbrella: Response,,,,text,,p1,,,
+scl5_oral_umbpos,26. Oral vocabulary - umbrella (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_let,26. Oral vocabulary - letter: Response,,,,text,,p1,,,
+scl5_oral_letpos,26. Oral vocabulary - letter (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_ham,26. Oral vocabulary - hammer: Response,,,,text,,p1,,,
+scl5_oral_hampos,26. Oral vocabulary - hammer (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_dime,26. Oral vocabulary - dime: Response,,,,text,,p1,,,
+scl5_oral_dimepos,26. Oral vocabulary - dime (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_bas,26. Oral vocabulary - basket: Response,,,,text,,p1,,,
+scl5_oral_baspos,26. Oral vocabulary - basket (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_candle,26. Oral vocabulary - candle: Response,,,,text,,p1,,,
+scl5_oral_candlepos,26. Oral vocabulary - candle (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_tire,26. Oral vocabulary - tire: Response,,,,text,,p1,,,
+scl5_oral_tirepos,26. Oral vocabulary - tire (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_goat,26. Oral vocabulary - goat: Response,,,,text,,p1,,,
+scl5_oral_goatpos,26. Oral vocabulary - goat (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_glue,26. Oral vocabulary - glue: Response,,,,text,,p1,,,
+scl5_oral_gluepos,26. Oral vocabulary - glue (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_fau,26. Oral vocabulary - faucet: Response,,,,text,,p1,,,
+scl5_oral_faupos,26. Oral vocabulary - faucet (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_oral_canoe,26. Oral vocabulary - canoe: Response,,,,text,,p1,,,
+scl5_oral_canoepos,26. Oral vocabulary - canoe (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_reason,27. Practical reasoning (see flap),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Four items""
+        },
+        {
+            ""c3"": ""Six items""
+        },
+        {
+            ""c2"": ""Five items""
+        },
+        {
+            ""c4"": ""Seven items""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl5_prac_dirty,27. Practical reasoning - dirty: Response,,,,text,,p1,,,
+scl5_prac_dirtypos,27. Practical reasoning - dirty (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_rain,27. Practical reasoning - rain: Response,,,,text,,p1,,,
+scl5_prac_rainpos,27. Practical reasoning - rain (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_street,27. Practical reasoning - street: Response,,,,text,,p1,,,
+scl5_prac_streetpos,27. Practical reasoning - street (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_cut,27. Practical reasoning - cut: Response,,,,text,,p1,,,
+scl5_prac_cutpos,27. Practical reasoning - cut (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_store,27. Practical reasoning - store: Response,,,,text,,p1,,,
+scl5_prac_storepos,27. Practical reasoning - store (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_fire,27. Practical reasoning - fire: Response,,,,text,,p1,,,
+scl5_prac_firepos,27. Practical reasoning - fire (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_dark,27. Practical reasoning - dark: Response,,,,text,,p1,,,
+scl5_prac_darkpos,27. Practical reasoning - dark (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_prac_swim,27. Practical reasoning - swim: Response,,,,text,,p1,,,
+scl5_prac_swimpos,27. Practical reasoning - swim (positive or negative),,,enumeration,"{""Choices"":[{""positive"":""Positive""},{""negative"":""Negative""}]}",,p1,,,
+scl5_sentrepeat21,28. Repeats sentences II - sentence 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_sentrepeat22,28. Repeats sentences II - sentence 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_sentrepeat23,28. Repeats sentences II - sentence 3,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,p1,,,
+scl5_sentrepeat2_tot,28. Repeats sentences II,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""c1"": ""Repeats one sentence""
+        },
+        {
+            ""c2"": ""Repeats two sentences""
+        },
+        {
+            ""c0"": ""Fail""
+        },
+        {
+            ""c9"": ""9""
+        }
+    ]
+}",,p1,,,
+scl5_el_raw_score,Expressive Language Raw Score,,,,integer,,p1,,,
+scoresumm_gm_raw_score,Gross motor - Raw Score,,,,integer,,p1,,,
+scoresumm_gm_t_score,Gross motor - T Score,,,,integer,,p1,,,
+scoresumm_gm_error_band,Gross motor - Band of Error % confidence,,,,integer,,p1,,,
+scoresumm_gm_percent_rank,Gross motor - Percentile Rank,,,,integer,,p1,,,
+scoresumm_gm_desc_cat,"Gross motor - Descriptive Category (1=Very Low, 2=Below Average, 3=Average, 4=Above Average, 5=Very High)",,,enumeration,"{""Choices"":[{""c1"":""Very low""},{""c3"":""Average""},{""c2"":""Below average""},{""c5"":""Very high""},{""c4"":""Above average""}]}",,p1,,,
+scoresumm_gm_age_equiv,Gross motor - Age Equivalent,,,,integer,,p1,,,
+scoresumm_vr_raw_score,Visual Reception - Raw Score,,,,integer,,p1,,,
+scoresumm_vr_t_score,Visual Reception - T Score,,,,integer,,p1,,,
+scoresumm_vr_error_band,Visual Reception - Band of Error % confidence,,,,integer,,p1,,,
+scoresumm_vr_percent_rank,Visual Reception - Percentile Rank,,,,integer,,p1,,,
+scoresumm_vr_desc_cat,"Visual Reception - Descriptive Category
+(1=Very Low, 2=Below Average, 3=Average, 4=Above Average, 5=Very High)",,,enumeration,"{""Choices"":[{""c1"":""Very low""},{""c3"":""Average""},{""c2"":""Below average""},{""c5"":""Very high""},{""c4"":""Above average""}]}",,p1,,,
+scoresumm_vr_age_equiv,Visual Reception - Age Equivalent,,,,integer,,p1,,,
+scoresumm_fm_raw_score,Fine Motor - Raw Score,,,,integer,,p1,,,
+scoresumm_fm_t_score,Fine Motor - T Score,,,,integer,,p1,,,
+scoresumm_fm_error_band,Fine Motor - Band of Error % confidence,,,,integer,,p1,,,
+scoresumm_fm_percent_rank,Fine Motor - Percentile Rank,,,,integer,,p1,,,
+scoresumm_fm_desc_cat,"Fine Motor - Descriptive Category  (1=Very Low, 2=Below Average, 3=Average, 4=Above Average, 5=Very High)",,,enumeration,"{""Choices"":[{""c1"":""Very low""},{""c3"":""Average""},{""c2"":""Below average""},{""c5"":""Very high""},{""c4"":""Above average""}]}",,p1,,,
+scoresumm_fm_age_equiv,Fine Motor - Age Equivalent,,,,integer,,p1,,,
+scoresumm_rl_raw_score,Receptive Language - Raw Score,,,,integer,,p1,,,
+scoresumm_rl_t_score,Receptive Language - T Score,,,,integer,,p1,,,
+scoresumm_rl_error_band,Receptive Language - Band of Error % confidence,,,,integer,,p1,,,
+scoresumm_rl_percent_rank,Receptive Language - Percentile Rank,,,,integer,,p1,,,
+scoresumm_rl_desc_cat,"Receptive Language - Descriptive Category (1=Very Low, 2=Below Average, 3=Average, 4=Above Average, 5=Very High)",,,enumeration,"{""Choices"":[{""c1"":""Very low""},{""c3"":""Average""},{""c2"":""Below average""},{""c5"":""Very high""},{""c4"":""Above average""}]}",,p1,,,
+scoresumm_rl_age_equiv,Receptive Language - Age Equivalent,,,,integer,,p1,,,
+scoresumm_el_raw_score,Expressive Language - Raw Score,,,,integer,,p1,,,
+scoresumm_el_t_score,Expressive Language - T Score,,,,integer,,p1,,,
+scoresumm_el_error_band,Expressive Language - Band of Error % confidence,,,,integer,,p1,,,
+scoresumm_el_percent_rank,Expressive Language - Percentile Rank,,,,integer,,p1,,,
+scoresumm_el_desc_cat,"Expressive Language - Descriptive Category (1=Very Low, 2=Below Average, 3=Average, 4=Above Average, 5=Very High)",,,enumeration,"{""Choices"":[{""c1"":""Very low""},{""c3"":""Average""},{""c2"":""Below average""},{""c5"":""Very high""},{""c4"":""Above average""}]}",,p1,,,
+scoresumm_el_age_equiv,Expressive Language - Age Equivalent,,,,integer,,p1,,,
+scoresumm_cog_tscore,Cognitive T Score Sum,,,,integer,,p1,,,
+scoresumm_elc_std_score,Early Learning Composite - Standard Score,,,,integer,,p1,,,
+scoresumm_elc_error_band,Early Learning Composite - Band of Error _% Confidence,,,,integer,,p1,,,
+scoresumm_elc_percent_rank,Early Learning Composite - Percentile Rank,,,,integer,,p1,,,
+scoresumm_elc_desc_cat,"Early Learning Composite - Descriptive Category (1=Very Low, 2=Below Average, 3=Average, 4=Above Average, 5=Very High)",,,enumeration,"{""Choices"":[{""c1"":""Very low""},{""c3"":""Average""},{""c2"":""Below average""},{""c5"":""Very high""},{""c4"":""Above average""}]}",,p1,,,
+scoresumm_error_band,Score Summary: Band of Error % confidence,,,,integer,,p1,,,
+scoresumm_cmt,Observation,,,,text,,p1,,,
+test_type,Type of event (Pre-Test or Post-Test),,,enumeration,"{""Choices"":[{""pre-test"":""Pre-Test""},{""post-test"":""Post-Test""}]}",,p1,,,
+date_assess,Date of Assessment,,,,date,,p1,,,
+time_assess,Time of Assessment,,,,time,,p1,,,
+subject_id,Subject ID #,,,,integer,,p1,,,
+rate_validity,Please rate the perceived validity of this assessment: ,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""valid"": ""1: Valid""
+        },
+        {
+            ""questiona"": ""2: Questionnable""
+        },
+        {
+            ""invalid"": ""3: Invalid""
+        }
+    ]
+}",,p1,,,
+reason_rate,Provide your reasoning for your rating: ,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""child_sick"": ""Child was sick""
+        },
+        {
+            ""child_hungry"": ""Child was hungry""
+        },
+        {
+            ""tantrum"": ""Child threw a tantrum""
+        },
+        {
+            ""tired"": ""Child was tired""
+        },
+        {
+            ""refused"": ""Child refused to engage""
+        },
+        {
+            ""not_motivated"": ""Child was not motivated""
+        },
+        {
+            ""distractible"": ""Child was easily distractible""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",,p1,"[""hide""]","[""reason_rate!=='other'""]","[[""other_reason""]]"
+other_reason,"Other, specify: ",,,,text,,p1,,,
+raters_name,Rater's name:,,,,text,,p1,,,
+raters_sig,Rater's Signature,,,,text,,p1,,,
+notes_related,Notes Related to CGI Score:,,,,text,,p1,,,

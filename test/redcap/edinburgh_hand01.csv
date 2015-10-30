@@ -1,0 +1,25 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
+handedness_score,"Total Handedness computed by totalling number of responses where right hand is used and those where left hand is used and inputting to the formula: right minus left divided by right plus left. Right = total number of responses on the form where the participant indicated they use their right hand (even if they also use their left hand to do that action, i.e. use both hands) and Left = total number of responses participant indicated left hand for (including actions participant also uses right hand for, i.e. both hands).",,,,instruction,,page_1
+writing,Hand subject uses to do named action: writing,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+drawing,Hand subject uses to do named action: drawing,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+throwing,Hand subject uses to do named action: throwing,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+scissors,Hand subject uses to do named action: scissors,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+comb,Hand subject uses to do named action: comb,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+toothbrush,Hand subject uses to do named action: toothbrush,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+knife_no_fork,Hand subject uses to do named action: knife_no_fork,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+spoon,Hand subject uses to do named action: spoon,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+hammer,Hand subject uses to do named action: hammer,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+screwdriver,Hand subject uses to do named action: screwdriver,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+tennis,Hand subject uses to do named action: tennis,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+knife_with_fork,Hand subject uses to do named action: knife_with_fork,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+baseball_bat,Hand subject uses to do named action: baseball_bat,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+golf_club,Hand subject uses to do named action: golf_club,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+broom,Hand subject uses to do named action: broom,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+rake,Hand subject uses to do named action: rake,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+match,Hand subject uses to do named action: match,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+box,Hand subject uses to do named action: box,,,enumeration,"{""Choices"":[{""spr"":""Strongly Prefer Right""},{""SPL"":""Strongly Prefer Left""},{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+cards,Hand subject uses to do named action: cards,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+needle,Hand subject uses to do named action: needle,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+foot,Hand subject uses to do named action: foot,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+eye,Hand subject uses to do named action: eye,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+turn_on_tap,Hand subject uses to do named action: turn_on_tap,,,enumeration,"{""Choices"":[{""both"":""Both""},{""right"":""Right""},{""left"":""Left""}]}",,page_1

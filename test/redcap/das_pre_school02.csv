@@ -1,0 +1,957 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
+comments_misc,"Miscellaneous comments on study, interview, methodology relevant to this form data",,,,text,,page_1
+bbuilding_ques1,Question 1,,,enumeration,"{""Choices"":[{""c1"":""Child stacks 4-7 blocks""},{""c0"":""Child stacks 0-3 blocks""},{""c2"":""Child stacks 8 blocks""}]}",,page_1
+bbuilding_ques2,Question 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr2,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques3,Question 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr3,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques4,Question 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr4,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques5,Question 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr5,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques6,Question 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr6,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques7,Question 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr7,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques8,Question 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr8,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques9,Question 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr9,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques10,Question 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr10,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques11,Question 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr11,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_ques12,Question 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+bbuilding_rr12,0 = Neither; 1=Reversal; 2=Rotation,,,enumeration,"{""Choices"":[{""c1"":""Reversal""},{""c0"":""Neither""},{""c2"":""Rotation""}]}",,page_1
+bbuilding_raw,Raw Score,,,,integer,,page_1
+bbuilding_ascore,Ability Score,,,,integer,,page_1
+verbc_ques1,1. Show me teddy's eyes.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques2,2. Show me teddy's mouth.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques3,3. Show me teddy's arms.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques4,4. Show me teddy's ears.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques5,5. Show me teddy's legs.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques6,6. Show me teddy's ribbon.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques7,7. Give me the car.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques8,8. Give me the horse.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques9,9. Give me the pencil.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques10,10. Give me the watch.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques11,11. Give me the button.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques12,12. Put the horse in the box.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques13,13. Give me the one we draw with (pencil),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques14,14. Give me the one that shows the time (watch),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques15,"15. Give me all the things that have hair (cats,dog,horse)",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques16,"16. Give me all the things you can wear (watch,button)",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques17,"17. Give me all the animals except the cats (dog,horse)",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques18,"18. Give me all the things that don't eat (pencil,watch,button,car)",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques19,19. Put a tree behind your back.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques20,20. Make the truck move to me.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques21,21. Make a child stand on the bridge.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques22,22. Put the car under the bridge.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques23,23. Make the two children face each other.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques24,"24. When I put down the tree, pick up the car.",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques25,25. Put the tree that is little next to the house that is big.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques26,"26. Before you give me the truck, give me the little house.",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques27,27. Put a house on each side of the car.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques28,"28. While you touch the truck, give me the car.",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques29,29. Put a child between the trees.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques30,30. Put the circle farther away from you than the square.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques31,31. Give me the chips that are blue but not round (blue square and blue triangle),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques32,32. Pick up the circles if they are blue or yellow (blue circle and yellow circle),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques33,33. Give me all the red chips except the square (red circle and red triangle),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques34,"34. Give me not only all the red but also all the round chips (all three red chips, yellow circle and blue circle)",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques35,35. Give me all the chips that are neither yellow nor blue (all three red chips),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_ques36,"36. Give me all the chips that are neither red nor square (blue circle, blue triangle, yellow cirecle and yellow triangle)",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+verbc_raw,Raw Score,,,,integer,,page_1
+verbc_start,Items Administered Start,,,,integer,,page_1
+verbc_stop,Items Administered Stop,,,,integer,,page_1
+verbc_ascore,Ability Score,,,,integer,,page_1
+picsim_resp1,Response to Ques 1,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score1,Score for Ques 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp2,Response to Ques 2,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score2,Score for Ques 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp3,Response to Ques 3,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score3,Score for Ques 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp4,Response to Ques 4,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score4,Score for Ques 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp5,Response to Ques 5,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score5,Score for Ques 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp6,Response to Ques 6,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score6,Score for Ques 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp7,Response to Ques 7,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score7,Score for Ques 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp8,Response to Ques 8,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score8,Score for Ques 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp9,Response to Ques 9,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score9,Score for Ques 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp10,Response to Ques 10,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score10,Score for Ques 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp11,Response to Ques 11,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score11,Score for Ques 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp12,Response to Ques 12,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score12,Score for Ques 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp13,Response to Ques 13,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score13,Score for Ques 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp14,Response to Ques 14,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score14,Score for Ques 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp15,Response to Ques 15,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score15,Score for Ques 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp16,Response to Ques 16,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score16,Score for Ques 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp17,Response to Ques 17,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score17,Score for Ques 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp18,Response to Ques 18,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score18,Score for Ques 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp19,Response to Ques 19,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score19,Score for Ques 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp20,Response to Ques 20,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score20,Score for Ques 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp21,Response to Ques 21,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score21,Score for Ques 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp22,Response to Ques 22,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score22,Score for Ques 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp23,Response to Ques 23,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score23,Score for Ques 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp24,Response to Ques 24,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score24,Score for Ques 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp25,Response to Ques 25,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score25,Score for Ques 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp26,Response to Ques 26,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score26,Score for Ques 26,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp27,Response to Ques 27,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score27,Score for Ques 27,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp28,Response to Ques 28,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score28,Score for Ques 28,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp29,Response to Ques 29,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score29,Score for Ques 29,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp30,Response to Ques 30,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score30,Score for Ques 30,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp31,Response to Ques 31,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score31,Score for Ques 31,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_resp32,Response to Ques 32,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c4"":""4""}]}",,page_1
+picsim_score32,Score for Ques 32,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+picsim_raw,Raw Score,,,,integer,,page_1
+picsim_start,Items Administered Start,,,,integer,,page_1
+picsim_stop,Items Administered Stop,,,,integer,,page_1
+picsim_ascore,Ability Score,,,,integer,,page_1
+nvocab_resp1,1. Paper - Response,,,,text,,page_1
+nvocab_score1,1. Paper - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp2,2. Box - Response,,,,text,,page_1
+nvocab_score2,2. Box - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp3,3. Chair - Response,,,,text,,page_1
+nvocab_score3,3. Chair - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp4,4. Key - Response,,,,text,,page_1
+nvocab_score4,4. Key - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp5,5. Fish - Response,,,,text,,page_1
+nvocab_score5,5. Fish - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp6,6. Scissors - Response,,,,text,,page_1
+nvocab_score6,6. Scissors - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp7,7. Watch - Response,,,,text,,page_1
+nvocab_score7,7. Watch - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp8,8. Window - Response,,,,text,,page_1
+nvocab_score8,8. Window - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp9,9. Sink - Response,,,,text,,page_1
+nvocab_score9,9. Sink - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp10,10. Brush - Response,,,,text,,page_1
+nvocab_score10,10. Brush - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp11,11. Helicopter - Response,,,,text,,page_1
+nvocab_score11,11. Helicopter - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp12,12. Triangle - Response,,,,text,,page_1
+nvocab_score12,12. Triangle - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp13,13. Ring - Response,,,,text,,page_1
+nvocab_score13,13. Ring - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp14,14. Chain - Response,,,,text,,page_1
+nvocab_score14,14. Chain - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp15,15. Shell - Response,,,,text,,page_1
+nvocab_score15,15. Shell - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp16,16. Jar - Response,,,,text,,page_1
+nvocab_score16,16. Jar - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp17,17. Switch - Response,,,,text,,page_1
+nvocab_score17,17. Switch - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp18,18. Volcano - Response,,,,text,,page_1
+nvocab_score18,18. Volcano - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp19,19. Thermometer - Response,,,,text,,page_1
+nvocab_score19,19. Thermometer - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp20,20. Measuring cup - Response,,,,text,,page_1
+nvocab_score20,20. Measuring cup - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp21,21. Igloo - Response,,,,text,,page_1
+nvocab_score21,21. Igloo - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp22,22. Paper Clip - Response,,,,text,,page_1
+nvocab_score22,22. Paper Clip - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp23,23. Anchor - Response,,,,text,,page_1
+nvocab_score23,23. Anchor - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp24,24. Hourglass - Response,,,,text,,page_1
+nvocab_score24,24. Hourglass - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp25,25. Funnel - Response,,,,text,,page_1
+nvocab_score25,25. Funnel - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_resp26,26. Easel - Response,,,,text,,page_1
+nvocab_score26,26. Easel - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nvocab_raw,Raw Score,,,,integer,,page_1
+nvocab_start,Items Administered Start,,,,integer,,page_1
+nvocab_stop,Items Administered Stop,,,,integer,,page_1
+nvocab_ascore,Ability Score,,,,integer,,page_1
+objimm_trial1_resp1,Response to Number 1,,,,text,,page_1
+objimm_trial1_score1,Score to Number 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp2,Response to Number 2,,,,text,,page_1
+objimm_trial1_score2,Score to Number 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp3,Response to Number 3,,,,text,,page_1
+objimm_trial1_score3,Score to Number 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp4,Response to Number 4,,,,text,,page_1
+objimm_trial1_score4,Score to Number 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp5,Response to Number 5,,,,text,,page_1
+objimm_trial1_score5,Score to Number 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp6,Response to Number 6,,,,text,,page_1
+objimm_trial1_score6,Score to Number 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp7,Response to Number 7,,,,text,,page_1
+objimm_trial1_score7,Score to Number 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp8,Response to Number 8,,,,text,,page_1
+objimm_trial1_score8,Score to Number 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp9,Response to Number 9,,,,text,,page_1
+objimm_trial1_score9,Score to Number 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp10,Response to Number 10,,,,text,,page_1
+objimm_trial1_score10,Score to Number 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp11,Response to Number 11,,,,text,,page_1
+objimm_trial1_score11,Score to Number 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp12,Response to Number 12,,,,text,,page_1
+objimm_trial1_score12,Score to Number 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp13,Response to Number 13,,,,text,,page_1
+objimm_trial1_score13,Score to Number 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp14,Response to Number 14,,,,text,,page_1
+objimm_trial1_score14,Score to Number 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp15,Response to Number 15,,,,text,,page_1
+objimm_trial1_score15,Score to Number 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp16,Response to Number 16,,,,text,,page_1
+objimm_trial1_score16,Score to Number 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp17,Response to Number 17,,,,text,,page_1
+objimm_trial1_score17,Score to Number 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp18,Response to Number 18,,,,text,,page_1
+objimm_trial1_score18,Score to Number 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp19,Response to Number 19,,,,text,,page_1
+objimm_trial1_score19,Score to Number 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp20,Response to Number 20,,,,text,,page_1
+objimm_trial1_score20,Score to Number 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp21,Response to Number 21,,,,text,,page_1
+objimm_trial1_score21,Score to Number 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp22,Response to Number 22,,,,text,,page_1
+objimm_trial1_score22,Score to Number 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp23,Response to Number 23,,,,text,,page_1
+objimm_trial1_score23,Score to Number 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp24,Response to Number 24,,,,text,,page_1
+objimm_trial1_score24,Score to Number 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_resp25,Response to Number 25,,,,text,,page_1
+objimm_trial1_score25,Score to Number 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial1_raw,Raw Score for Trial 1,,,,text,,page_1
+objimm_trial2_resp1,Response to Number 1,,,,text,,page_1
+objimm_trial2_score1,Score to Number 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp2,Response to Number 2,,,,text,,page_1
+objimm_trial2_score2,Score to Number 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp3,Response to Number 3,,,,text,,page_1
+objimm_trial2_score3,Score to Number 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp4,Response to Number 4,,,,text,,page_1
+objimm_trial2_score4,Score to Number 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp5,Response to Number 5,,,,text,,page_1
+objimm_trial2_score5,Score to Number 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp6,Response to Number 6,,,,text,,page_1
+objimm_trial2_score6,Score to Number 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp7,Response to Number 7,,,,text,,page_1
+objimm_trial2_score7,Score to Number 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp8,Response to Number 8,,,,text,,page_1
+objimm_trial2_score8,Score to Number 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp9,Response to Number 9,,,,text,,page_1
+objimm_trial2_score9,Score to Number 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp10,Response to Number 10,,,,text,,page_1
+objimm_trial2_score10,Score to Number 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp11,Response to Number 11,,,,text,,page_1
+objimm_trial2_score11,Score to Number 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp12,Response to Number 12,,,,text,,page_1
+objimm_trial2_score12,Score to Number 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp13,Response to Number 13,,,,text,,page_1
+objimm_trial2_score13,Score to Number 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp14,Response to Number 14,,,,text,,page_1
+objimm_trial2_score14,Score to Number 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp15,Response to Number 15,,,,text,,page_1
+objimm_trial2_score15,Score to Number 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp16,Response to Number 16,,,,text,,page_1
+objimm_trial2_score16,Score to Number 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp17,Response to Number 17,,,,text,,page_1
+objimm_trial2_score17,Score to Number 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp18,Response to Number 18,,,,text,,page_1
+objimm_trial2_score18,Score to Number 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp19,Response to Number 19,,,,text,,page_1
+objimm_trial2_score19,Score to Number 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp20,Response to Number 20,,,,text,,page_1
+objimm_trial2_score20,Score to Number 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp21,Response to Number 21,,,,text,,page_1
+objimm_trial2_score21,Score to Number 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp22,Response to Number 22,,,,text,,page_1
+objimm_trial2_score22,Score to Number 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp23,Response to Number 23,,,,text,,page_1
+objimm_trial2_score23,Score to Number 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp24,Response to Number 24,,,,text,,page_1
+objimm_trial2_score24,Score to Number 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_resp25,Response to Number 25,,,,text,,page_1
+objimm_trial2_score25,Score to Number 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial2_raw,Raw Score for Trial 2,,,,text,,page_1
+objimm_trial3_resp1,Response to Number 1,,,,text,,page_1
+objimm_trial3_score1,Score to Number 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp2,Response to Number 2,,,,text,,page_1
+objimm_trial3_score2,Score to Number 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp3,Response to Number 3,,,,text,,page_1
+objimm_trial3_score3,Score to Number 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp4,Response to Number 4,,,,text,,page_1
+objimm_trial3_score4,Score to Number 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp5,Response to Number 5,,,,text,,page_1
+objimm_trial3_score5,Score to Number 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp6,Response to Number 6,,,,text,,page_1
+objimm_trial3_score6,Score to Number 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp7,Response to Number 7,,,,text,,page_1
+objimm_trial3_score7,Score to Number 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp8,Response to Number 8,,,,text,,page_1
+objimm_trial3_score8,Score to Number 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp9,Response to Number 9,,,,text,,page_1
+objimm_trial3_score9,Score to Number 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp10,Response to Number 10,,,,text,,page_1
+objimm_trial3_score10,Score to Number 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp11,Response to Number 11,,,,text,,page_1
+objimm_trial3_score11,Score to Number 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp12,Response to Number 12,,,,text,,page_1
+objimm_trial3_score12,Score to Number 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp13,Response to Number 13,,,,text,,page_1
+objimm_trial3_score13,Score to Number 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp14,Response to Number 14,,,,text,,page_1
+objimm_trial3_score14,Score to Number 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp15,Response to Number 15,,,,text,,page_1
+objimm_trial3_score15,Score to Number 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp16,Response to Number 16,,,,text,,page_1
+objimm_trial3_score16,Score to Number 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp17,Response to Number 17,,,,text,,page_1
+objimm_trial3_score17,Score to Number 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp18,Response to Number 18,,,,text,,page_1
+objimm_trial3_score18,Score to Number 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp19,Response to Number 19,,,,text,,page_1
+objimm_trial3_score19,Score to Number 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp20,Response to Number 20,,,,text,,page_1
+objimm_trial3_score20,Score to Number 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp21,Response to Number 21,,,,text,,page_1
+objimm_trial3_score21,Score to Number 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp22,Response to Number 22,,,,text,,page_1
+objimm_trial3_score22,Score to Number 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp23,Response to Number 23,,,,text,,page_1
+objimm_trial3_score23,Score to Number 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp24,Response to Number 24,,,,text,,page_1
+objimm_trial3_score24,Score to Number 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_resp25,Response to Number 25,,,,text,,page_1
+objimm_trial3_score25,Score to Number 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+objimm_trial3_raw,Raw Score for Trial 3,,,,integer,,page_1
+objimm_totalraw,Immediate Raw Score (Trial 1+Trial 2+Trial 3),,,,integer,,page_1
+objimm_time,Time Test Ended:,,,,integer,,page_1
+pattern_pfaa,Item A. a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_pfab,Item A. b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_pf1a,Pass Fail 1.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt1a,Alt Score 1.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time1a,Time Pattern 1a,,,,text,,page_1
+pattern_pf1b,Pass Fail 1.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt1b,Alt Score 1.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time1b,Time Pattern 1b,,,,text,,page_1
+pattern_score1,Score Pattern 1,,,enumeration,"{""Choices"":[{""c1"":""Correct on second trial""},{""c0"":""Incorrect""},{""c3"":""Correct on first trial""}]}",,page_1
+pattern_pfba,Pass Fail Item B.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_timeba,Time Pattern Ba,,,,text,,page_1
+pattern_pfbb,Pass Fail Item B.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_timebb,Time Pattern Bb,,,,text,,page_1
+pattern_pf2a,Pass Fail 2.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt2a,Alt. Score 2.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time2a,Time Pattern 2a,,,,text,,page_1
+pattern_pf2b,Pass Fail 2.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt2,Alt. Score 2.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time2b,Time Pattern 2b,,,,text,,page_1
+pattern_score2,Score Pattern 2,,,enumeration,"{""Choices"":[{""c1"":""Correct in 1-30 seconds on second trial""},{""c0"":""Incorrect OR correct in 31+ seconds on either trial""},{""c3"":""Correct in 1-8 seconds on first trial""},{""c2"":""Correct in 9-30 seconds on first trial""},{""c4"":""4""}]}",,page_1
+pattern_pf3,Pass Fail Pattern 3,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt3,Alt. Score Pattern 3,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time3,Time Pattern 3,,,,text,,page_1
+pattern_score3,Score Pattern 3,,,enumeration,"{""Choices"":[{""c1"":""Correct in 16-45 seconds""},{""c0"":""Incorrect OR correct in 46+ seconds""},{""c3"":""Correct in 1-9 seconds""},{""c2"":""Correct in 10-15 seconds""},{""c4"":""4""}]}",,page_1
+pattern_pf4a,Pass Fail 4.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt4a,Alt. Score 4.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time4a,Time Pattern 4a,,,,text,,page_1
+pattern_pf4b,Pass Fail 4.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt4b,Alt. Score 4.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time4b,Time Pattern 4b,,,,text,,page_1
+pattern_score4,Score Pattern 4,,,enumeration,"{""Choices"":[{""c1"":""Correct in 1-45 seconds on second trial""},{""c0"":""Incorrect OR correct in 46+ seconds on either trial""},{""c3"":""Correct in 1-15 seconds on first trial""},{""c2"":""Correct in 16-45 seconds on first trial""},{""c4"":""4""}]}",,page_1
+pattern_pf5,Pass Fail 5,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt5,Alt Score 5,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time5,Time Pattern 5,,,,text,,page_1
+pattern_score5,Score Pattern 5,,,enumeration,"{""Choices"":[{""c1"":""Correct in 31-60 seconds""},{""c0"":""Incorrect OR correct in 61+ seconds""},{""c3"":""Correct in 16-20 seconds""},{""c2"":""Correct in 21-30 seconds""},{""c4"":""Correct in 1-15 seconds""}]}",,page_1
+pattern_pf6,Pass Fail Pattern 6,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt6,Alt Score 6,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time6,Time Pattern 6,,,,text,,page_1
+pattern_score6,Score Pattern 6,,,enumeration,"{""Choices"":[{""c1"":""Correct in 31-60 seconds""},{""c0"":""Incorrect OR correct in 61+ seconds""},{""c3"":""Correct in 16-20 seconds""},{""c2"":""Correct in 21-30 seconds""},{""c4"":""Correct in 1-15 seconds""}]}",,page_1
+pattern_pf7,Pass Fail Pattern 7,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt7,Alt Score 7,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time7,Time Pattern 7,,,,text,,page_1
+pattern_score7,Score Pattern 7,,,enumeration,"{""Choices"":[{""c1"":""Correct in 41-60 seconds""},{""c0"":""Incorrect OR correct in 61+ seconds""},{""c3"":""Correct in 16-25 seconds""},{""c2"":""Correct in 26-40 seconds""},{""c4"":""Correct in 1-15 seconds""}]}",,page_1
+pattern_pfca,Pass Fail Pattern C.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_timeca,Time Pattern Ca,,,,text,,page_1
+pattern_pfcb,Pass Fail Pattern C.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_timecb,Time Pattern Cb,,,,text,,page_1
+pattern_pf8a,Pass Fail Pattern 8.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt8a,Alt Score 8.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time8a,Time Pattern 8a,,,,text,,page_1
+pattern_pf8b,Pass Fail Pattern 8.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt8b,Alt Score 8.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time8b,Time Pattern 8b,,,,text,,page_1
+pattern_score8,Score Pattern 8,,,enumeration,"{""Choices"":[{""c1"":""Correct in 1-30 seconds on second trial""},{""c0"":""Incorrect OR correct in 31+ seconds on either trial""},{""c3"":""Correct in 5-8 seconds on first trial""},{""c2"":""Correct in 9-30 seconds on first trial""},{""c4"":""Correct in 1-4 seconds on first trial""}]}",,page_1
+pattern_pf9a,Pass Fail Pattern 9.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt9a,Alt Score 9.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time9a,Time Pattern 9a,,,,text,,page_1
+pattern_pf9b,Pass Fail Pattern 9.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt9b,Alt Score 9.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time9b,Time Pattern 9b,,,,text,,page_1
+pattern_score9,Score Pattern 9,,,enumeration,"{""Choices"":[{""c1"":""Correct in 1-30 seconds on second trial""},{""c0"":""Incorrect OR correct in 31+ seconds on either trial""},{""c3"":""Correct in 5-8 seconds on first trial""},{""c2"":""Correct in 9-30 seconds on first trial""},{""c4"":""Correct in 1-4 seconds on first trial""}]}",,page_1
+pattern_pf10,Pass Fail Pattern 10,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt10,Alt Score Pattern 10,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time10,Time Pattern 10,,,,text,,page_1
+pattern_score10,Score Pattern 10,,,enumeration,"{""Choices"":[{""c1"":""Correct in 13-30 seconds""},{""c0"":""Incorrect OR correct in 31+ seconds""},{""c3"":""Correct in 5-8 seconds""},{""c2"":""Correct in 9-12 seconds""},{""c4"":""Correct in 1-4 seconds""}]}",,page_1
+pattern_pf11,Pass Fail Pattern 11,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt11,Alt Score Pattern 11,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time11,Time Pattern 11,,,,text,,page_1
+pattern_score11,Score Pattern 11,,,enumeration,"{""Choices"":[{""c1"":""Correct in 13-30 seconds""},{""c0"":""Incorrect OR correct in 31+ seconds""},{""c3"":""Correct in 5-8 seconds""},{""c2"":""Correct in 9-12 seconds""},{""c4"":""Correct in 1-4 seconds""}]}",,page_1
+pattern_pf12,Pass Fail Pattern 12,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt12,Alt Score Pattern 12,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time12,Time Pattern 12,,,,text,,page_1
+pattern_score12,Score Pattern 12,,,enumeration,"{""Choices"":[{""c1"":""Correct in 13-45 seconds""},{""c0"":""Incorrect OR correct in 46+ seconds""},{""c3"":""Correct in 5-8 seconds""},{""c2"":""Correct in 9-12 seconds""},{""c4"":""Correct in 1-4 seconds""}]}",,page_1
+pattern_pf13,Pass Fail Pattern 13,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt13,Alt Score Pattern 13,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time13,Time Pattern 13,,,,text,,page_1
+pattern_score13,Score Pattern 13,,,enumeration,"{""Choices"":[{""c1"":""Correct in 13-45 seconds""},{""c0"":""Incorrect OR correct in 46+ seconds""},{""c3"":""Correct in 5-8 seconds""},{""c2"":""Correct in 9-12 seconds""},{""c4"":""Correct in 1-4 seconds""}]}",,page_1
+pattern_pfda,Pass Fail Item D.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_timeda,Time Pattern Da,,,,text,,page_1
+pattern_pfdb,Pass Fail Item D.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_timedb,Time Pattern Db,,,,text,,page_1
+pattern_pf14a,Pass Fail Item 14.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt14a,Alt Score Item 14.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time14a,Time Pattern 14a,,,,text,,page_1
+pattern_pf14b,Pass Fail Item 14.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt14b,Alt Score Item 14.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time14b,Time Pattern 14b,,,,text,,page_1
+pattern_score14,Score Item 14,,,enumeration,"{""Choices"":[{""c1"":""Correct in 1-60 seconds on second trial""},{""c0"":""Incorrect OR correct in 61+ seconds on either trial""},{""c3"":""Correct in 16-22 seconds on first trial""},{""c2"":""Correct in 23-60 seconds on first trial""},{""c5"":""Correct in 1-10 seconds on first trial""},{""c4"":""Correct in 11-15 seconds on first trial""}]}",,page_1
+pattern_pf15a,Pass Fail Item 15.a.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt15a,Alt Score Item 15.a.,,,enumeration,"{""Choices"":[{""c2"":""Passes first trial within time limit""}]}",,page_1
+pattern_time15a,Time Pattern 15a,,,,text,,page_1
+pattern_pf15b,Pass Fail Item 15.b.,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt15b,Alt Score Item 15.b.,,,enumeration,"{""Choices"":[{""c1"":""Passes second trial""},{""c0"":""Failure""}]}",,page_1
+pattern_time15b,Time Pattern 15b,,,,text,,page_1
+pattern_score15,Score Item 15,,,enumeration,"{""Choices"":[{""c1"":""Correct in 1-90 seconds on second trial""},{""c0"":""Incorrect OR correct in 91+ seconds on either trial""},{""c3"":""Correct in 23-40 seconds on first trial""},{""c2"":""Correct in 41-90 seconds on first trial""},{""c5"":""Correct in 1-14 seconds on first trial""},{""c4"":""Correct in 15-22 seconds on first trial""}]}",,page_1
+pattern_pf16,Pass Fail Item 16,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt16,Alt Score Item 16,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time16,Time Pattern 16,,,,text,,page_1
+pattern_score16,Score Item 16,,,enumeration,"{""Choices"":[{""c1"":""Correct in 46-90 seconds""},{""c0"":""Incorrect OR correct in 91+ seconds""},{""c3"":""Correct in 18-25 seconds""},{""c2"":""Correct in 26-45 seconds""},{""c5"":""Correct in 1-12 seconds""},{""c4"":""Correct in 13-17 seconds""}]}",,page_1
+pattern_pf17,Pass Fail Item 17,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt17,Alt Score Item 17,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time17,Time Pattern 17,,,,text,,page_1
+pattern_score17,Score Item 17,,,enumeration,"{""Choices"":[{""c1"":""Correct in 46-90 seconds""},{""c0"":""Incorrect OR correct in 91+ seconds""},{""c3"":""Correct in 18-25 seconds""},{""c2"":""Correct in 26-45 seconds""},{""c5"":""Correct in 1-12 seconds""},{""c4"":""Correct in 13-17 seconds""}]}",,page_1
+pattern_pf18,Pass Fail Item 18,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt18,Alt Score Item 18,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time18,Time Pattern 18,,,,text,,page_1
+pattern_score18,Score Item 18,,,enumeration,"{""Choices"":[{""c1"":""Correct in 46-90 seconds""},{""c0"":""Incorrect OR correct in 91+ seconds""},{""c3"":""Correct in 18-25 seconds""},{""c2"":""Correct in 26-45 seconds""},{""c5"":""Correct in 1-12 seconds""},{""c4"":""Correct in 13-17 seconds""}]}",,page_1
+pattern_pf19,Pass Fail Item 19,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt19,Alt Score Item 19,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time19,Time Pattern 19,,,,text,,page_1
+pattern_score19,Score Item 19,,,enumeration,"{""Choices"":[{""c1"":""Correct in 46-90 seconds""},{""c0"":""Incorrect OR correct in 91+ seconds""},{""c3"":""Correct in 18-25 seconds""},{""c2"":""Correct in 26-45 seconds""},{""c5"":""Correct in 1-12 seconds""},{""c4"":""Correct in 13-17 seconds""}]}",,page_1
+pattern_pf20,Pass Fail Item 20,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt20,Alt Score Item 20,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time20,Time Pattern 20,,,,text,,page_1
+pattern_score20,Score Item 20,,,enumeration,"{""Choices"":[{""c1"":""Correct in 46-90 seconds""},{""c0"":""Incorrect OR correct in 91+ seconds""},{""c3"":""Correct in 18-25 seconds""},{""c2"":""Correct in 26-45 seconds""},{""c5"":""Correct in 1-12 seconds""},{""c4"":""Correct in 13-17 seconds""}]}",,page_1
+pattern_pf21,Pass Fail Item 21,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt21,Alt Score Item 21,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time21,Time Pattern 21,,,,text,,page_1
+pattern_score21,Score Item 21,,,enumeration,"{""Choices"":[{""c1"":""Correct in 81-120 seconds""},{""c0"":""Incorrect OR correct in 121+ seconds""},{""c3"":""Correct in 41-50 seconds""},{""c2"":""Correct in 51-80 seconds""},{""c5"":""Correct in 1-30 seconds""},{""c4"":""Correct in 31-40 seconds""}]}",,page_1
+pattern_pf22,Pass Fail Item 22,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt22,Alt Score Item 22,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time22,Time Pattern 22,,,,text,,page_1
+pattern_score22,Score Item 22,,,enumeration,"{""Choices"":[{""c1"":""Correct in 91-120 seconds""},{""c0"":""Incorrect OR correct in 121+ seconds""},{""c3"":""Correct in 46-60 seconds""},{""c2"":""Correct in 61-90 seconds""},{""c5"":""Correct in 1-30 seconds""},{""c4"":""Correct in 31-45 seconds""}]}",,page_1
+pattern_pf23,Pass Fail Item 23,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt23,Alt Score Item 23,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time23,Time Pattern 23,,,,text,,page_1
+pattern_score23,Score Item 23,,,enumeration,"{""Choices"":[{""c1"":""Correct in 91-120 seconds""},{""c0"":""Incorrect OR correct in 121+ seconds""},{""c3"":""Correct in 46-60 seconds""},{""c2"":""Correct in 61-90 seconds""},{""c5"":""Correct in 1-30 seconds""},{""c4"":""Correct in 31-45 seconds""}]}",,page_1
+pattern_pf24,Pass Fail Item 24,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt24,Alt Score Item 24,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time24,Time Pattern 24,,,,text,,page_1
+pattern_pf25,Pass Fail Item 25,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt25,Alt Score Item 25,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time25,Time Pattern 25,,,,text,,page_1
+pattern_pf26,Pass Fail Item 26,,,enumeration,"{""Choices"":[{""p1"":""Pattern completed correctly within the time limit and without rotation""},{""f1"":""Pattern is incorrect, rotated, or not completed within the time limit""}]}",,page_1
+pattern_alt26,Alt Score Item 26,,,enumeration,"{""Choices"":[{""c0"":""Failure""},{""c2"":""Pass""}]}",,page_1
+pattern_time26,Time Pattern 26,,,,text,,page_1
+pattern_raw,Raw Score,,,,integer,,page_1
+pattern_start,Items Administered Start,,,,integer,,page_1
+pattern_stop,Items Administered Start,,,,integer,,page_1
+pattern_score,Ability Score,,,,integer,,page_1
+pattern_altraw,Alt: Raw Score,,,,integer,,page_1
+pattern_altstart,Alt: Items Administered Start,,,,integer,,page_1
+pattern_altstop,Alt: Items Administered Start,,,,integer,,page_1
+pattern_altscore,Alt: Ability Score,,,,integer,,page_1
+earlynum_score1a,Recites Score (best of two trials),,,enumeration,"{""Choices"":[{""c1"":""Recites 4-6""},{""c0"":""Recites 0-3""},{""c3"":""Recites 10""},{""c2"":""Recites 7-9""}]}",,page_1
+earlynum_score1b,Pointing with Reciting Score (best of two trials),,,enumeration,"{""Choices"":[{""c1"":""Points with reciting 4-6""},{""c0"":""Points with reciting 0-3""},{""c3"":""Points with reciting 10""},{""c2"":""Points with reciting 7-9""}]}",,page_1
+earlynum_resp2,2. 4 Big buckets - Response,,,,text,,page_1
+earlynum_score2,Score to Question 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp3,3. 4 little buckets - Response,,,,text,,page_1
+earlynum_score3,Score to Question 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp4,4. 3 little ladders - Response,,,,text,,page_1
+earlynum_score4,Score to Question 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp5,5. 3 middle sized laders - Response,,,,text,,page_1
+earlynum_score5,Score to Question 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp6,6. 3 big laders - Response,,,,text,,page_1
+earlynum_score6,Score to Question 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp7,7. 3 red lady bugs with 9 dots - Response,,,,text,,page_1
+earlynum_score7,Score to Question 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp8,8. 3 red lady bugs with 4 dots - Response,,,,text,,page_1
+earlynum_score8,Score to Question 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp9,9. 3 red lady bugs with 2 dots - Response,,,,text,,page_1
+earlynum_score9,Score to Question 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp10,10. Five - Response,,,,text,,page_1
+earlynum_score10,Score to Question 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp11,11. Nine - Response,,,,text,,page_1
+earlynum_score11,Score to Question 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp12,12. Points to person with 3 boxes - Response,,,,text,,page_1
+earlynum_score12,Score to Question 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp13,13. (Examiner points to person with no boxes) - Response,,,,text,,page_1
+earlynum_score13,Score to Question 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp14,14. (Examiner points to 5 boxes) - Response,,,,text,,page_1
+earlynum_score14,Score to Question 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp15,15. Points to person with 5 boxes - Response,,,,text,,page_1
+earlynum_score15,Score to Question 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp16,16. (Examiner points to 2 boxes) Points to person with 3 boxes - Response,,,,text,,page_1
+earlynum_score16,Score to Question 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp17,17. (Examiner points to 2 boxes) Points to person with 1 box - Response,,,,text,,page_1
+earlynum_score17,Score to Question 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp18,18. Points to both people with 4 boxes - Response,,,,text,,page_1
+earlynum_score18,Score to Question 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp19,"19. (Examiner points to 2 boxes) Points to fifth person, with 4 boxes - Response",,,,text,,page_1
+earlynum_score19,Score to Question 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp20,20. Points to numeral 2,,,,text,,page_1
+earlynum_score20,Score to Question 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp21,21. Points to numeral 9,,,,text,,page_1
+earlynum_score21,Score to Question 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp22,22. Points to snails and bottles,,,,text,,page_1
+earlynum_score22,Score to Question 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp23,23. Points to numeral 16,,,,text,,page_1
+earlynum_score23,Score to Question 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp24,24. Points to numeral 35,,,,text,,page_1
+earlynum_score24,Score to Question 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp25,25. Sixteen,,,,text,,page_1
+earlynum_score25,Score to Question 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp26,26. Eight,,,,text,,page_1
+earlynum_score26,Score to Question 26,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp27,27. Fifty-three,,,,text,,page_1
+earlynum_score27,Score to Question 27,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_resp28,28. Five,,,,text,,page_1
+earlynum_score28,Score to Question 28,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+earlynum_raw,Raw Score,,,,integer,,page_1
+earlynum_start,Items Administered Start,,,,integer,,page_1
+earlynum_stop,Items Administered Start,,,,integer,,page_1
+earlynum_ascore,Ability Score,,,,integer,,page_1
+rodelay_timestart,Time Delayed Trial Started:,,,,text,,page_1
+rodelay_resp1,Response 1,,,,text,,page_1
+rodelay_score1,Score 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp2,Response 2,,,,text,,page_1
+rodelay_score2,Score 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp3,Response 3,,,,text,,page_1
+rodelay_score3,Score 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp4,Response 4,,,,text,,page_1
+rodelay_score4,Score 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp5,Response 5,,,,text,,page_1
+rodelay_score5,Score 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp6,Response 6,,,,text,,page_1
+rodelay_score6,Score 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp7,Response 7,,,,text,,page_1
+rodelay_score7,Score 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp8,Response 8,,,,text,,page_1
+rodelay_score8,Score 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp9,Response 9,,,,text,,page_1
+rodelay_score9,Score 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp10,Response 10,,,,text,,page_1
+rodelay_score10,Score 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp11,Response 11,,,,text,,page_1
+rodelay_score11,Score 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp12,Response 12,,,,text,,page_1
+rodelay_score12,Score 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp13,Response 13,,,,text,,page_1
+rodelay_score13,Score 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp14,Response 14,,,,text,,page_1
+rodelay_score14,Score 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp15,Response 15,,,,text,,page_1
+rodelay_score15,Score 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp16,Response 16,,,,text,,page_1
+rodelay_score16,Score 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp17,Response 17,,,,text,,page_1
+rodelay_score17,Score 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp18,Response 18,,,,text,,page_1
+rodelay_score18,Score 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp19,Response 19,,,,text,,page_1
+rodelay_score19,Score 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp20,Response 20,,,,text,,page_1
+rodelay_score20,Score 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp21,Response 21,,,,text,,page_1
+rodelay_score21,Score 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp22,Response 22,,,,text,,page_1
+rodelay_score22,Score 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp23,Response 23,,,,text,,page_1
+rodelay_score23,Score 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp24,Response 24,,,,text,,page_1
+rodelay_score24,Score 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_resp25,Response 25,,,,text,,page_1
+rodelay_score25,Score 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rodelay_draw,Delayed Raw Score,,,,integer,,page_1
+rodelay_td,T Score for Delayed Trial,,,,integer,,page_1
+rodelay_iraw,Immediate Raw Score (Trial 1+Trial 2+Trial 3),,,,integer,,page_1
+rodelay_iscore,Ability Score for Immediate Trials,,,,integer,,page_1
+rodelay_ti,T Score for Immediate Trial,,,,integer,,page_1
+copy_pf1,P/F Item 1,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score1,Score Item 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+copy_pf2,P/F Item 2,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score2,Score Item 2,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf3,P/F Item 3,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score3,Score Item 3,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf4,P/F Item 4,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score4,Score Item 4,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf5,P/F Item 5,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score5,Score Item 5,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf6,P/F Item 6,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score6,Score Item 6,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf7,P/F Item 7,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score7,Score Item 7,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf8,P/F Item 8,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score8,Score Item 8,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf9,P/F Item 9,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score9,Score Item 9,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf10,P/F Item 10,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score10,Score Item 10,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf11,P/F Item 11,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score11,Score Item 11,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf12,P/F Item 12,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score12,Score Item 12,,,enumeration,"{""Choices"":[{""c1"":""Partially correct, meets criteria for 1 point""},{""c0"":""Incorrect""},{""c3"":""Correct""},{""c2"":""Partially correct, meets criteria for 2 points""}]}",,page_1
+copy_pf13,P/F Item 13,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score13,Score Item 13,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf14,P/F Item 14,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score14,Score Item 14,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf15,P/F Item 15,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score15,Score Item 15,,,enumeration,"{""Choices"":[{""c1"":""Partially correct, meets criteria for 1 point""},{""c0"":""Incorrect""},{""c3"":""Correct""},{""c2"":""Partially correct, meets criteria for 2 points""}]}",,page_1
+copy_pf16,P/F Item 16,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score16,Score Item 16,,,enumeration,"{""Choices"":[{""c1"":""Partially correct, meets criteria for 1 point""},{""c0"":""Incorrect""},{""c3"":""Correct""},{""c2"":""Partially correct, meets criteria for 2 points""}]}",,page_1
+copy_pf17,P/F Item 17,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score17,Score Item 17,,,enumeration,"{""Choices"":[{""c1"":""Partially correct, meets criteria for 1 point""},{""c0"":""Incorrect""},{""c3"":""Correct""},{""c2"":""Partially correct, meets criteria for 2 points""}]}",,page_1
+copy_pf18,P/F Item 18,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score18,Score Item 18,,,enumeration,"{""Choices"":[{""c1"":""Partially correct, meets criteria for 1 point""},{""c0"":""Incorrect""},{""c3"":""Correct""},{""c2"":""Partially correct, meets criteria for 2 points""}]}",,page_1
+copy_pf19,P/F Item 19,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score19,Score Item 19,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_pf20,P/F Item 20,,,enumeration,"{""Choices"":[{""p1"":""Apparent pass (at least one point)""},{""f1"":""Apparent failure (0 points)""}]}",,page_1
+copy_score20,Score Item 20,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Incorrect""},{""c2"":""Correct""}]}",,page_1
+copy_raw,Raw Score,,,,integer,,page_1
+copy_start,Items Administered Start,,,,integer,,page_1
+copy_stop,Items Administered Start,,,,integer,,page_1
+copy_ascore,Ability Score,,,,integer,,page_1
+matchllf_respa,Response to A,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_resp1,Response to 1,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score1,Score for 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp2,Response to 2,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score2,Score for 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp3,Response to 3,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score3,Score for 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp4,Response to 4,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score4,Score for 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp5,Response to 5,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score5,Score for 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp6,Response to 6,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score6,Score for 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp7,Response to 7,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score7,Score for 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp8,Response to 8,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score8,Score for 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp9,Response to 9,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score9,Score for 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp10,Response to 10,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score10,Score for 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp11,Response to 11,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score11,Score for 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp12,Response to 12,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score12,Score for 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp13,Response to 13,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score13,Score for 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp14,Response to 14,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score14,Score for 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp15,Response to 15,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score15,Score for 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp16,Response to 16,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score16,Score for 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp17,Response to 17,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score17,Score for 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp18,Response to 18,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score18,Score for 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp19,Response to 19,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score19,Score for 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp20,Response to 20,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score20,Score for 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp21,Response to 21,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score21,Score for 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp22,Response to 22,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score22,Score for 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp23,Response to 23,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score23,Score for 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp24,Response to 24,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score24,Score for 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp25,Response to 25,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score25,Score for 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp26,Response to 26,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score26,Score for 26,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_resp27,Response to 27,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c6"":""6""}]}",,page_1
+matchllf_score27,Score for 27,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+matchllf_raw,Raw Score,,,,integer,,page_1
+matchllf_start,Items Administered Start,,,,integer,,page_1
+matchllf_stop,Items Administered Start,,,,integer,,page_1
+matchllf_ascore,Ability Score,,,,integer,,page_1
+rod_response1,Response to Question 1,,,,text,,page_1
+rod_score1,Score to Question 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response2,Response to Question 2,,,,text,,page_1
+rod_score2,Score to Question 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response3,Response to Question 3,,,,text,,page_1
+rod_score3,Score to Question 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response4,Response to Question 4,,,,text,,page_1
+rod_score4,Score to Question 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response5,Response to Question 5,,,,text,,page_1
+rod_score5,Score to Question 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response6,Response to Question 6,,,,text,,page_1
+rod_score6,Score to Question 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response7,Response to Question 7,,,,text,,page_1
+rod_score7,Score to Question 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response8,Response to Question 8,,,,text,,page_1
+rod_score8,Score to Question 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response9,Response to Question 9,,,,text,,page_1
+rod_score9,Score to Question 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response10,Response to Question 10,,,,text,,page_1
+rod_score10,Score to Question 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response11,Response to Question 11,,,,text,,page_1
+rod_score11,Score to Question 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response12,Response to Question 12,,,,text,,page_1
+rod_score12,Score to Question 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response13,Response to Question 13,,,,text,,page_1
+rod_score13,Score to Question 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response14,Response to Question 14,,,,text,,page_1
+rod_score14,Score to Question 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response15,Response to Question 15,,,,text,,page_1
+rod_score15,Score to Question 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response16,Response to Question 16,,,,text,,page_1
+rod_score16,Score to Question 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response17,Response to Question 17,,,,text,,page_1
+rod_score17,Score to Question 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response18,Response to Question 18,,,,text,,page_1
+rod_score18,Score to Question 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response19,Response to Question 19,,,,text,,page_1
+rod_score19,Score to Question 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response20,Response to Question 20,,,,text,,page_1
+rod_score20,Score to Question 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response21,Response to Question 21,,,,text,,page_1
+rod_score21,Score to Question 21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response22,Response to Question 22,,,,text,,page_1
+rod_score22,Score to Question 22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response23,Response to Question 23,,,,text,,page_1
+rod_score23,Score to Question 23,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response24,Response to Question 24,,,,text,,page_1
+rod_score24,Score to Question 24,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response25,Response to Question 25,,,,text,,page_1
+rod_score25,Score to Question 25,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response26,Response to Question 26,,,,text,,page_1
+rod_score26,Score to Question 26,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response27,Response to Question 27,,,,text,,page_1
+rod_score27,Score to Question 27,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response28,Response to Question 28,,,,text,,page_1
+rod_score28,Score to Question 28,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response29,Response to Question 29,,,,text,,page_1
+rod_score29,Score to Question 29,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response30,Response to Question 30,,,,text,,page_1
+rod_score30,Score to Question 30,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response31,Response to Question 31,,,,text,,page_1
+rod_score31,Score to Question 31,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response32,Response to Question 32,,,,text,,page_1
+rod_score32,Score to Question 32,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response33,Response to Question 33,,,,text,,page_1
+rod_score33,Score to Question 33,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response34,Response to Question 34,,,,text,,page_1
+rod_score34,Score to Question 34,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response35,Response to Question 35,,,,text,,page_1
+rod_score35,Score to Question 35,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_response36,Response to Question 36,,,,text,,page_1
+rod_score36,Score to Question 36,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rod_numcorrect,Number Correct,,,,integer,,page_1
+rod_ascore,Ability Score,,,,integer,,page_1
+rop_score1,Score to Question 1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score2,Score to Question 2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score3,Score to Question 3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score4,Score to Question 4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score5,Score to Question 5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score6,Score to Question 6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score7,Score to Question 7,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score8,Score to Question 8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score9,Score to Question 9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score10,Score to Question 10,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score11,Score to Question 11,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score12,Score to Question 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score13,Score to Question 13,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score14,Score to Question 14,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score15,Score to Question 15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score16,Score to Question 16,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score17,Score to Question 17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score18,Score to Question 18,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score19,Score to Question 19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_score20,Score to Question 20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+rop_raw,Raw Score,,,,integer,,page_1
+rop_start,Items Administered Start,,,,integer,,page_1
+rop_stop,Items Administered Start,,,,integer,,page_1
+rop_ascore,Ability Score,,,,integer,,page_1
+sum1_cs_bb_as,Bulding Blocks: Ability Score,,,,text,,page_1
+sum1_cs_bb_gca,Bulding Blocks:GCA,,,,text,,page_1
+sum1_cs_bb_snc,Bulding Blocks:Special Nonverbal Composite,,,,text,,page_1
+sum1_cs_bb_oth,Bulding Blocks:Other,,,,text,,page_1
+sum1_cs_vc_as,Verbal Comprehension: Ability Score,,,,text,,page_1
+sum1_cs_vc_gca,Verbal Comprehension: GCA,,,,text,,page_1
+sum1_cs_vc_vc,Verbal Comprehension: Verbal Cluster,,,,text,,page_1
+sum1_cs_vc_oth,Verbal Comprehension: Other,,,,text,,page_1
+sum1_cs_ps_as,Picture Similarities: Abilty Score,,,,text,,page_1
+sum1_cs_ps_gca,Picture Similarities: GCA,,,,text,,page_1
+sum1_cs_ps_snc,Picture Similarities: Special Nonverbal Composite,,,,text,,page_1
+sum1_cs_ps_nc,Picture Similarities: Nonverbal Cluster,,,,text,,page_1
+sum1_cs_ps_oth,Picture Similarities: Other,,,,text,,page_1
+sum1_cs_nv_as,Naming Vocabulary: Abilty Score,,,,text,,page_1
+sum1_cs_nv_gca,Naming Vocabulary: GCA,,,,text,,page_1
+sum1_cs_nv_vc,Naming Vocabulary: Verbal Cluster,,,,text,,page_1
+sum1_cs_nv_oth,Naming Vocabulary: Other,,,,text,,page_1
+sum1_cs_pc_type,Pattern Construction : Std. or Alt.,,,,text,,page_1
+sum1_cs_pc_as,Pattern Construction : Ability Score,,,,text,,page_1
+sum1_cs_pc_nc,Pattern Construction : Nonverbal Cluster,,,,text,,page_1
+sum1_cs_pc_oth,Pattern Construction : Other,,,,text,,page_1
+sum1_cs_enc_as,Early Number Concepts: Ability Score,,,,text,,page_1
+sum1_cs_enc_upl,Early Number Concepts: Upper Preschool Level,,,,text,,page_1
+sum1_cs_enc_oth,Early Number Concepts: Other,,,,text,,page_1
+sum1_cs_copy_as,Copying: Ability Score,,,,text,,page_1
+sum1_cs_copy_nc,Nonverbal Cluster,,,,text,,page_1
+sum1_cs_copy_oth,Other,,,,text,,page_1
+sum1_sumoft1,Sum of T Scores: LPL-GCA,,,,text,,page_1
+sum1_sumoft2,Sum of T Scores: LPL-SNC,,,,text,,page_1
+sum1_sumoft3,Sum of T Scores: UPL-VC,,,,text,,page_1
+sum1_sumoft4,Sum of T Scores: UPL-NC,,,,text,,page_1
+sum1_sumoft5,Sum of T Scores: UPL,,,,text,,page_1
+sum1_sumoft6,Sum of T Scores: GCA,,,,text,,page_1
+sum1_stdscore1,Standard Score: LPL-GCA,,,,text,,page_1
+sum1_stdscore2,Standard Score: LPL-SNC,,,,text,,page_1
+sum1_stdscore3,Standard Score: UPL-VC,,,,text,,page_1
+sum1_stdscore4,Standard Score: UPL-NC,,,,text,,page_1
+sum1_stdscore5,Standard Score: UPL,,,,text,,page_1
+sum1_stdscore6,Standard Score: GCA,,,,text,,page_1
+sum1_citype90,90% or 95% - 90%,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum1_citype95,90% or 95% - 95%,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum1_cifrom1,CI From ___ to: LPL-GCA,,,,text,,page_1
+sum1_cito1,CI to ____: LPL-GCA,,,,text,,page_1
+sum1_cifrom2,CI From ___ to: LPL-SNC,,,,text,,page_1
+sum1_cito2,CI to ____: LPL-SNC,,,,text,,page_1
+sum1_cifrom3,CI From ___ to: UPL-VC,,,,text,,page_1
+sum1_cito3,CI to ____: UPL-VC,,,,text,,page_1
+sum1_cifrom4,CI From ___ to: UPL-NC,,,,text,,page_1
+sum1_cito4,CI to ____: UPL-NC,,,,text,,page_1
+sum1_cifrom5,CI From ___ to: GCA,,,,text,,page_1
+sum1_cito5,CI to ____: GCA,,,,text,,page_1
+sum1_percent1,Percentile: LPL-GCA,,,,text,,page_1
+sum1_percent2,Percentile: LPL-SNC,,,,text,,page_1
+sum1_percent3,Percentile: UPL-VC,,,,text,,page_1
+sum1_percent4,Percentile: UPL-NC,,,,text,,page_1
+sum1_percent5,Percentile: GCA,,,,text,,page_1
+sum1_ds_mllf1,Matching Letter-Like Forms: Ability Score,,,,text,,page_1
+sum1_ds_mllf2,Matching Letter-Like Forms: T Score,,,,text,,page_1
+sum1_ds_mllf3,Matching Letter-Like Forms: Other,,,,text,,page_1
+sum1_ds_rod1,Recall of Digits: Ability Score,,,,text,,page_1
+sum1_ds_rod2,Recall of Digits: T Score,,,,text,,page_1
+sum1_ds_rod3,Recall of Digits: Other,,,,text,,page_1
+sum1_ds_rooi1,Recall of Objects- Immedate: Ability Score,,,,text,,page_1
+sum1_ds_rooi2,Recall of Objects- Immedate: T Score,,,,text,,page_1
+sum1_ds_rooi3,Recall of Objects- Immedate: Other,,,,text,,page_1
+sum1_ds_rood2,Recall of Objects- Delayed - T Score,,,,text,,page_1
+sum1_ds_rood3,Recall of Objects- Delayed - Other,,,,text,,page_1
+sum1_ds_rop1,Recognition of Pictures: Ability Score,,,,text,,page_1
+sum1_ds_rop2,Recognition of Pictures: T Score,,,,text,,page_1
+sum1_ds_rop3,Recognition of Pictures: Other,,,,text,,page_1
+sum1_ds_oth1_1,Other Test 1: Ability Score,,,,text,,page_1
+sum1_ds_oth1_2,Other Test 1: T Score,,,,text,,page_1
+sum1_ds_oth1_3,Other Test 1: Other,,,,text,,page_1
+sum1_ds_oth2_1,Other Test 2: Ability Score,,,,text,,page_1
+sum1_ds_oth2_2,Other Test 2: T Score,,,,text,,page_1
+sum1_ds_oth2_3,Other Test 2: Other,,,,text,,page_1
+sum1_ds_oth3_1,Other Test 3: Ability Score,,,,text,,page_1
+sum1_ds_oth3_2,Other Test 3: T Score,,,,text,,page_1
+sum1_ds_oth3_3,Other Test 3: Other,,,,text,,page_1
+sum1_meant,Mean Core T,,,,text,,page_1
+sum1_level,Level:,,,enumeration,"{""Choices"":[{""upper"":""Upper""},{""lower"":""Lower""}]}",,page_1
+sum1_tbb,Block Building,,,,text,,page_1
+sum1_tvc,Verbal Comprehension,,,,text,,page_1
+sum1_tnv,Naming Vocabulary,,,,text,,page_1
+sum1_tps,Picture Similarities,,,,text,,page_1
+sum1_tpc,Pattern Construction,,,,text,,page_1
+sum1_tcopy,Copying,,,,text,,page_1
+sum1_tenc,Early Number Concepts,,,,text,,page_1
+sum1_tmllf,Matching Letter-Like Forms,,,,text,,page_1
+sum1_trod,Recall of Digits,,,,text,,page_1
+sum1_trooi,Recall of Objects-Immed.,,,,text,,page_1
+sum1_trop,Recognition of Pictures,,,,text,,page_1
+sum1_toth1,Other Test 1,,,,text,,page_1
+sum1_toth2,Other Test 2,,,,text,,page_1
+sum1_toth3,Other Test 3,,,,text,,page_1
+sum1_tclust_v,Verbal Cluster,,,,text,,page_1
+sum1_tclust_n,Nonverbal Cluster,,,,text,,page_1
+sum1_tclust_gca,GCA or Special Nonverbal Composite,,,,text,,page_1
+sum1_swbb,Block Building - S/W,,,,text,,page_1
+sum1_swvc,Verbal Comprehension - S/W,,,,text,,page_1
+sum1_swnv,Naming Vocabulary - S/W,,,,text,,page_1
+sum1_swps,Picture Similarities - S/W,,,,text,,page_1
+sum1_swpc,Pattern Construction - S/W,,,,text,,page_1
+sum1_swcopy,Copying - S/W,,,,text,,page_1
+sum1_swenc,Early Number Concepts - S/W,,,,text,,page_1
+sum1_swmllf,Matching Letter-Like Forms - S/W,,,,text,,page_1
+sum1_swrod,Recall of Digits - S/W,,,,text,,page_1
+sum1_swrooi,Recall of Objects-Immed. - S/W,,,,text,,page_1
+sum1_swrop,Recognition of Pictures - S/W,,,,text,,page_1
+sum1_swoth1,Other Test 1 - S/W,,,,text,,page_1
+sum1_swoth2,Other Test 2 - S/W,,,,text,,page_1
+sum1_swoth3,Other Test 3 - S/W,,,,text,,page_1
+sum1_swclust_v,Verbal Cluster  - S/W,,,,text,,page_1
+sum1_swclust_n,Nonverbal Cluster - S/W,,,,text,,page_1
+sum2_glass,Does the examinee have glasses or corrective lenses?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_glass2,"If yes, were they worn during testing?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_glass3,Is there a known uncorrected vision problem?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hearing,Does the examinee have a hearing aid?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hearing2,"If yes, was it used during testing?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hearing3,Is there a known uncorrected hearing problem?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hand,Handedness,,,enumeration,"{""Choices"":[{""mixed"":""Mixed""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+sum2_probs,Are there any other personal or physical characteristics or medications that might affect test results?,,,,text,,page_1
+sum2_lang,Dominant language,,,,text,,page_1
+sum2_langhome,Language spoken at home,,,,text,,page_1
+sum2_refreason,Reason for referral,,,,text,,page_1
+sum2_comm,Comments,,,,text,,page_1
+sum2_ce1,"Calm, relaxed <>Anxious, nervous",,,enumeration,"{""Choices"":[{""c1"":""Calm, relaxed""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Anxious, nervous""},{""c4"":""4""}]}",,page_1
+sum2_ce2,Mature<>Immature,,,enumeration,"{""Choices"":[{""c1"":""Mature""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Immature""},{""c4"":""4""}]}",,page_1
+sum2_ce3,"Neat, well groomed <>Unkempt",,,enumeration,"{""Choices"":[{""c1"":""Neat, well groomed""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Unkempt""},{""c4"":""4""}]}",,page_1
+sum2_ce4,Independent <>Fearful of leaving parent/classroom,,,enumeration,"{""Choices"":[{""c1"":""Independent""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Fearful of leaving parent/classroom""},{""c4"":""4""}]}",,page_1
+sum2_ce5,Physically coordinated <>Physically uncoordinated,,,enumeration,"{""Choices"":[{""c1"":""Physically coordinated""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Physically uncoordinated""},{""c4"":""4""}]}",,page_1
+sum2_ce6,Speaks clearly<> Difficult to understand,,,enumeration,"{""Choices"":[{""c1"":""Speaks clearly""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Difficult to understand""},{""c4"":""4""}]}",,page_1
+sum2_ce7,Proficient in English <>Limited English proficiency,,,enumeration,"{""Choices"":[{""c1"":""Proficient in English""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Limited English proficiency""},{""c4"":""4""}]}",,page_1
+sum2_ce8,"Overactive, fidgety<>Lethargic",,,enumeration,"{""Choices"":[{""c1"":""Overactive, fidgety""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Lethargic""},{""c4"":""4""}]}",,page_1
+sum2_cs1,"Optimistic, positive <> Pessimistic, complaining",,,enumeration,"{""Choices"":[{""c1"":""Optimistic, positive""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Pessimistic, complaining""},{""c4"":""4""}]}",,page_1
+sum2_cs2,Persistent in face of difficulty <> Gives up easily,,,enumeration,"{""Choices"":[{""c1"":""Persistent in face of difficulty""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Gives up easily""},{""c4"":""4""}]}",,page_1
+sum2_cs3,Handles failure well <> Becomes upset by failure,,,enumeration,"{""Choices"":[{""c1"":""Handles failure well""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Becomes upset by failure""},{""c4"":""4""}]}",,page_1
+sum2_cs4,Overconfident <> Lacking in confidence,,,enumeration,"{""Choices"":[{""c1"":""Overconfident""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Lacking in confidence""},{""c4"":""4""}]}",,page_1
+sum2_cs5,Unconcerned with details <> Obsessive about minor details,,,enumeration,"{""Choices"":[{""c1"":""Unconcerned with details""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Obsessive about minor details""},{""c4"":""4""}]}",,page_1
+sum2_cs6,Overcritical of own performance<>Uncritically accepts own performance,,,enumeration,"{""Choices"":[{""c1"":""Overcritical of own performance""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Uncritically accepts own performance""},{""c4"":""4""}]}",,page_1
+sum2_aot1,"Attentive, on task <>Distractible, off task",,,enumeration,"{""Choices"":[{""c1"":""Attentive, on task""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Distractible, off task""},{""c4"":""4""}]}",,page_1
+sum2_aot2,Deliberate <> Impulsive,,,enumeration,"{""Choices"":[{""c1"":""Deliberate""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Impulsive""},{""c4"":""4""}]}",,page_1
+sum2_aot3,Highly interested in testing <> Uninterested in testing,,,enumeration,"{""Choices"":[{""c1"":""Highly interested in testing""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Uninterested in testing""},{""c4"":""4""}]}",,page_1
+sum2_aot4,"Methodical <>Haphazard, random",,,enumeration,"{""Choices"":[{""c1"":""Methodical""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Haphazard, random""},{""c4"":""4""}]}",,page_1
+sum2_aot5,Eager to speak <>Reluctant to speak,,,enumeration,"{""Choices"":[{""c1"":""Eager to speek""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Reluctant to speak""},{""c4"":""4""}]}",,page_1
+sum2_aot6,Does not require encouragement<> Requires constant encouragement,,,enumeration,"{""Choices"":[{""c1"":""Does not require encouragement""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Requires constant encouragement""},{""c4"":""4""}]}",,page_1
+sum2_sie1,"Cooperative, friendly <>Uncooperative",,,enumeration,"{""Choices"":[{""c1"":""Cooperative, friendly""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Uncooperative""},{""c4"":""4""}]}",,page_1
+sum2_sie2,"Talkative, outgoing <>Withdrawn, shy",,,enumeration,"{""Choices"":[{""c1"":""Talkative, outgoing""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Withdrawn, shy""},{""c4"":""4""}]}",,page_1
+sum2_sie3,Behaves appropriately <>Behaves inappropriately,,,enumeration,"{""Choices"":[{""c1"":""Behavees appropriately""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Behaves inappropriately""},{""c4"":""4""}]}",,page_1
+sum2_sie4,Easily establishes rapport<> Has difficulty establishing rapport,,,enumeration,"{""Choices"":[{""c1"":""Easily establishes rapport""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Has difficulty establishing rapport""},{""c4"":""4""}]}",,page_1

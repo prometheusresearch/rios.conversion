@@ -1,0 +1,5644 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type,action,trigger,targets
+child_name,Child's Name,text,p1,,,,,,,
+child_birthday,Child's birthday,date,p1,,,,,,,
+date,Date,date,p1,,,,,,,
+child_age,Child's Age,integer,p1,,,,,,,
+relation,Relation to Child,text,p1,,,,,,,
+sex,Sex of Child,"{
+    ""Choices"": [
+        {
+            ""male"": ""Male""
+        },
+        {
+            ""female"": ""Female""
+        }
+    ]
+}",p1,,,,enumeration,,,
+bed_anger,"When told that it was time for bed or a nap, how often did you child react with anger?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+bed_irritable,"When told that it was time for bed or a nap, how often did you child get irritable?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+approached_calm,"When approached by an unfamiliar person In a public space (for example, the grocery store), how often did your child remain calm?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+approached_avoid,"When approached by an unfamiliar person In a public space (for example, the grocery store), how often did your child pull back and avoid the person?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+approached_cling,"When approached by an unfamiliar person In a public space (for example, the grocery store), how often did your child cling to a parent?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+activities_startle,During everyday activities how often did your child startle at loud noises (such as fire engine siren)?,"{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+activities_tap,During everyday activities how often did your child tap or drum with fingers on table or other objects?,"{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+activities_irritated,During everyday activities how often did your child get irritated by scratchy sounds?,"{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+activities_uncomfortable,During everyday activities how often did your child become uncomforable when his/her socks were not aligned properly on his/her feet?,"{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+bump_forget,"After getting a bump or scrape, how often did your child forget about it in a few minutes?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+outdoors_noise,"While playing outdoors, how often did your child like making lots of noise?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+oudoors_quiet,"While playing outdoors, how often did your child enjoy sitting quietly in the sunshine?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+outdoors_climb,"While playing outdoors, how often did your child want to climb to high places (for example, up a tree or on the jungle gym)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+carried_like,"When s/he was carried, how often did your child like to be held?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+carried_push,"When s/he was carried, how often did your child push against you until put down?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+carried_squirm,"When s/he was carried, how often did your child squirm?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+carried_struggle,"When s/he was carried, how often did your child struggle to get away?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+carried_snuggle,"When s/he was carried, how often did your child snuggle up next to you?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p1,,,,enumeration,,,
+task_irriated,"While having trouble completing a task (e.g. building, drawing, dressing), how often did your child get easily irritated?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+task_sad,"While having trouble completing a task (e.g. building, drawing, dressing), how often did your child become sad?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+familiar_engage,"When a familiar child came to your home, how often did your child engage in an activity with the child?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+familiar_seek_out,"When a familiar child came to your home, how often did your child seek out the company of the child?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+choice_think,"When offered a choice of activities, how often did your child stop and think before deciding?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+choice_quickly,"When offered a choice of activities, how often did your child decide what to do very quickly and go after it?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+choice_slow,"When offered a choice of activities, how often did your child seem slow and unhurried about what to do next?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+asked_not_run,"When asked NOT to, how often did your child run around your house or apartment anyway?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+asked_not_touch,"When asked NOT to, how often did your child touch an attractive item (such as an ornament) anyway?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+asked_not_play,"When asked NOT to, how often did your child play with something anyway?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+quiet_time_enjoy,"During daily or evening quiet time with you and your child, how often did your child enjoy just being quietly sung to?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+quiet_time_smile,"During daily or evening quiet time with you and your child, how often did your child smile at the sound of words, as in nursery rhymes?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+quiet_time_talked,"During daily or evening quiet time with you and your child, how often did your child enjoy just being talked to?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+quiet_time_rhythmic,"During daily or evening quiet time with you and your child, how often did your child enjoy rhythmic activities, such as rocking or swaying?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+everyday_distressed,"During everyday activities, how often did your child become distressed when his/her hands were dirty and/or sticky?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+everyday_material,"During everyday activities, how often did your child notice that material was very soft (cotton) or rough (wool)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+everyday_noises,"During everyday activities, how often did your child notice low-pitched noises such as the air-conditioner, heater, or refrigerator running or starting up?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+everyday_blink,"During everyday activities, how often did your child blink a lot?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+everyday_enthusiastic,"During everyday activities, how often did your child get very enthusiastic about the thing s/he was going to do?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+home_fear,"While at home, how often did your child show fear at a loud sound (blender, vacuum cleaner, etc.)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+home_dark,"While at home, how often did your child seem afraid of the dark?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+visiting_interact,"When visiting the home of a familiar adult, such as a relative or friend, how often did your child want to interact with the adult?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+bathing_sit,"While bathing, how often did your child sit quietly?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+bathing_splash,"While bathing, how often did your child splash, kick, or try to jump?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+outdoors_look,"While playing outdoors, how often did your child look immediately when you pointed at something?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+outdoors_chances,"While playing outdoors, how often did your child choose to take chances for the fun and excitement of it?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+outdoors_not_like,"While playing outdoors, how often did your child NOT like going down high slides at the amusement park or playground?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p2,,,,enumeration,,,
+upset_few_minutes,"When s/he was upset, how often did your child change to feeling better within a few minutes?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+upset_soothe,"When s/he was upset, how often did your child soothe only with difficulty?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+upset_longer,"When s/he was upset, how often did your child stay upset for 10 minutes or longer?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+engaged_5_min,"When engaged in play with his/her favorite toy, how often did your child play for 5 minutes or less?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+engaged_10_min,"When engaged in play with his/her favorite toy, how often did your child play for 10 minutes or less?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+engaged_continue,"When engaged in play with his/her favorite toy, how often did your child continue to play WHILE AT THE SAME TIME responding to your remarks or questions?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+approach_watch,"When approaching unfamiliar children playing, how often did your child watch rather than join?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+approach_slowly,"When approaching unfamiliar children playing, how often did your child approach slowly?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+approach_uncomfortable,"When approaching unfamiliar children playing, how often did your child seem uncomfortable?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+everyday_complain,"During everyday activities, how often did your child complain about odors on others, such as perfume?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+everyday_light,"During everyday activities, how often did your child seem to be bothered by bright light?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+everyday_move,"During everyday activities, how often did your child move quickly from one place to another?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+everyday_smoothness,"During everyday activities, how often did your child notice the smoothness or roughness of objects s/he touched?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+everyday_sad,"During everyday activities, how often did your child become sad or blue for no apparent reason?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+interrupted_return,"After having been interrupted, how often did our child return to a previous activity?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+interrupted_difficulty,"After having been interrupted, how often did our child have difficulty returning to the previous activity?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+watching_frightened,"While watching TV or hearing a story, how often did your child seem frightened by ""monster"" characters?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+suggest_respond,"When you suggested an outdoor activity that s/he really likes, how often did your child respond immediately?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+suggest_run,"When you suggested an outdoor activity that s/he really likes, how often did your child run to the door before getting ready?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+visit_excited,"When told that loved adults would visit, how often did your child get very excited?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+visit_happy,"When told that loved adults would visit, how often did your child become very happy?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+bath_relax,"When taking a quiet, warm bath, how often did your child seem to relax and enjoy him/herself?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+could_not_find_angry,"When s/he couldn't find something to play with, how oftne did your child get angry?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+sleep_toss,"During sleep, how often did your child toss about in bed?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+sleep_one_position,"During sleep, how often did your child sleep in one position only?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+quiet_activities_swing,"During quiet activities, such as reading a story, how often did your child swing or tap his/her foot?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+quiet_activities_fiddle,"During quiet activities, such as reading a story, how often did your child fiddle with his/her hair, clothing, etc.?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+quiet_activities_repeated,"During quiet activities, such as reading a story, how often did your child show repeated movements like squinting, hunching up the shoulders, or twitching the facial muscles?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+indoors_rough,"When playing indoors, how often did your child like rough and rowdy games?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+indoors_boisterous,"When playing indoors, how often did your child enjoy playing boisterous games like ""chase""?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+indoors_jumping,"When playing indoors, how often did your child enjoy vigorously jumping on the couch or ed?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p3,,,,enumeration,,,
+new_turn,"In situations where s/he is meeting new people, how often did your child turn away?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+new_quiet,"In situations where s/he is meeting new people, how often did your child become quiet?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+new_comfortable,"In situations where s/he is meeting new people, how often did your child seem comfortable?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+rocked_get_away,"When being gently rocked or hugged, how often did your child seem eager to get away?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+rocked_protesting,"When being gently rocked or hugged, how often did your child make protesting noises?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+new_activity_sidelines,"When encountering a new activity, how often did your child sit on the sidelines and observe before joining in?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+new_activity_involved,"When encountering a new activity, how often did your child get involved immediately?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+visit_familiar_engage,"When visiting the home of a familiar child, how often did your child engage in an activity with the child?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+visit_familiar_seek_out,"When visiting the home of a familiar child, how often did your child seek out the company of the child?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+toy_scream,"When another child took away his/her favorite toy, how often did your child scream with anger?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+toy_not_angry,"When another child took away his/her favorite toy, how often did your child NOT become angry?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+toy_cry,"When another child took away his/her favorite toy, how often did your child sadly cry?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+toy_not_sad,"When another child took away his/her favorite toy, how often did your child NOT react with sadness?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+attention_move,"When engaged in an activity requiring attention, such as building with blocks, how often did your child move quickly to another activity?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+attention_stay,"When engaged in an activity requiring attention, such as building with blocks, how often did your child stay involved for 10 minutes or more?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+attentino_tire,"When engaged in an activity requiring attention, such as building with blocks, how often did your child tire of the activity relatively quickly?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_attention,"During everyday activities, how often did your child pay attention to you right away when you called to him/her?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_loud_noises,"During everyday activities, how often did your child seem to be disturbed by loud sounds?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_forbidden,"During everyday activities, how often did your child stop going after a forbidden object (such as a VCR) when you used a toy to distract her/him","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_small,"During everyday activities, how often did your child notice small things, such as dirt or a stain, on his/her clothes?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+public_elevator,"While in a public place, how often did your child seem uneasy about approaching an elevator or escalator?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+public_animal,"While in a public place, how often did your child cry or show distress when approached by an unfamiliar animal?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+public_vehicles,"While in a public place, how often did your child seem afraid of large, noisy vehicles?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+public_fear,"While in a public place, how often did your child show fear when the caregiver stepped out of sight?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+outdoors_active,"When playing outdoors with other children, how often did your child seem to be one of the most active children?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+outdoors_watch,"When playing outdoors with other children, how often did your child sit quietly and watch?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+quiet_time_cuddled,"During daily or evening quiet time with you and your child, how often did your child want to be cuddled?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_frightened,"During everyday activities, how often did your child seem frightened for no aparent reason?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_irritated,"During everyday activities, how often did your child seem to be irritated by tags in his/her clothes?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_notice_new,"During everyday activities, how often did your child notice when you were wearing new clothing?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everyday_beeping,"During everyday activities, how often did your child react to beeping sounds (such as when the microwave or oven is done cooking)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+everday_repeated,"During everyday activities, how often did your child show repeated movements like squinting, hunching up the shoulders, or twitching the facial muscles?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p4,,,,enumeration,,,
+dressed_squirm,"When being dressed or undressed, how often did your child squirm and try to get away?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+dressed_still,"When being dressed or undressed, how often did your child stay still?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_stop_quickly,"When told ""no,"" how often did your child calm down quickly?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_stop,"When told ""no,"" how often did your child stop the forbidden activity?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_ignore,"When told ""no,"" how often did your child ignore your warning?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_tearful,"When told ""no,"" how often did your child become sadly tearful?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+exciting_calm_down,"Following an exciting activity or event, how often did your child calm down quickly?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+exciting_hard_time,"Following an exciting activity or event, how often did your child have a hard time settling down?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+exciting_blue,"Following an exciting activity or event, how often did your child seem to feel down or blue?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+exciting_tearful,"Following an exciting activity or event, how often did your child become sadly tearful?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+eat_angry,"When given something to eat that s/he didn't like, how often did our child become angry?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+everyday_shift,"During everyday activities, how often did your child seem able to easily shift attention from one activity to another?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+everyday_multitask,"During everyday activities, how often did your child seem able to do more than one thing at a time (such as playing with a toy while watching TV)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+indoors_run,"While playing indoors, how often did your child run through the house?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+indoors_climb,"While playing indoors, how often did your child climb over furniture?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+indoors_not_care,"While playing indoors, how often did your child NOT care for rough and rowdy games?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+indoors_activities,"While playing indoors, how often did your child enjoy activities such as being spun, etc.?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+alone_distracted,"When playing alone, how often did your child become easily distracted?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+alone_5_min,"When playing alone, how often did your child play with a set of objects for 5 minutes or longer at a time?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+alone_scratch,"When playing alone, how often did your child scratch him/herself?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+alone_tear,"When playing alone, how often did your child tear materials close at hand?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+before_exciting_trouble,"Before an exciting event (such as receiving a new toy), how often did your child get so worked up that s/he had trouble sitting still?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+before_exciting_excited,"Before an exciting event (such as receiving a new toy), how often did your child get very excited about getting it?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+before_exciting_calm,"Before an exciting event (such as receiving a new toy), how often did your child remain pretty calm?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+before_exciting_eager,"Before an exciting event (such as receiving a new toy), how often did your child seem eager to have it right away?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_frustrated,"When s/he asked for something and you said ""no,"" how often did your child become frustrated?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_anger,"When s/he asked for something and you said ""no,"" how often did your child protest with anger?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_tantrum,"When s/he asked for something and you said ""no,"" how often did your child have a temper tantrum?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+no_sad,"When s/he asked for something and you said ""no,"" how often did your child become sad?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+outdoors_sight_sounds,"While playing or walking outdoors, how often did your child notice sights or sounds (for example, wind chimes or water sprinklers)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+outdoors_insects,"While playing or walking outdoors, how often did your child notice flying or crawling insects?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p5,,,,enumeration,,,
+toy_grab,"When you gave your child an attractive toy, how often did your child grab the object as soon as it was set down?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+toy_look,"When you gave your child an attractive toy, how often did your child look the object over before touching it?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+desirable_cannot_wait,"When asked to wait for a desirable item (such as ice cream), how often did your child seem unable to wait for as long as 1 minute?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+desirable_anyway,"When asked to wait for a desirable item (such as ice cream), how often did your child go after it anyway?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+desirable_wait,"When asked to wait for a desirable item (such as ice cream), how often did your child wait patiently?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+desirable_cry,"When asked to wait for a desirable item (such as ice cream), how often did your child whimper and cry?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+rocked_smile,"When being gently rocked, how often did your child smile?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+rocked_pleasure,"When being gently rocked, how often did your child make sounds of pleasure?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+visiting_avoid,"When visiting relatives or adult family friends s/he sees infrequently, how often did your child stay back and avoid eye contact?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+visiting_hide,"When visiting relatives or adult family friends s/he sees infrequently, how often did your child hide his/her face?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+visiting_warm_up,"When visiting relatives or adult family friends s/he sees infrequently, how often did your child ""warm up"" to the person within a few minutes?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+remove_sad,"When you removed something s/he should not have been playing with, how often did your child become sad?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+everyday_bothered_sounds,"During everyday activities, how often did your child become bothered by sounds while in noisy environments?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+everyday_bothered_materials,"During everyday activities, how often did your child become bothered by scratchy materials like wool?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+everyday_notice_change,"During everyday activities, how often did your child notice changes in your appearance (such as wet hair, a hat, or jewelry)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+everyday_listen,"During everyday activities, how often did your child appear to listen to even very quiet sounds?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+everyday_energy,"During everyday activities, how often did your child seem full of energy, even in the evening?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+interrupted_return,"When interrupted during a favorite TV show, how often did your child immediately return to watching the TV program?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+interrupted_not_finish,"When interrupted during a favorite TV show, how often did your child NOT finish watching the program?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+lap_pull_away,"When being held on your lap, how often did your child pull away and kick?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+lap_enjoy,"When being held on your lap, how often did your child seem to enjoy him/herself?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+lap_mold,"When being held on your lap, how often did your child mold to your body?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+lap_hugs,"When being held on your lap, how often did your child seek hugs and kisses?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+story_enjoy,"While a story is being read to your child, how often did s/he enjoy listening to the story?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+family_outing_enthusiastic,"When hearing about a future family outing (such as a trip to the playground), how often did your child become very enthusiastic?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+family_outing_look_forward,"When hearing about a future family outing (such as a trip to the playground), how often did your child look forward to it?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+family_outing_calm,"When hearing about a future family outing (such as a trip to the playground), how often did your child remain pretty calm?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+pictures_5_min,"While looking at picture books on his/her own, how often did your child stay interested in the book for 5 minutes or less?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+pictures_10_min,"While looking at picture books on his/her own, how often did your child stay interested in the book for more than 10 minutes at a time?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p6,,,,enumeration,,,
+pictures_distracted,"While looking at picture books on his/her own, how often did your child become easily distracted?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+pictures_enjoy,"While looking at picture books on his/her own, how often did your child enjoy looking at the books?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+long_day_frustrated,"When tired after a long day of activities, how often did your child become easily frustrated?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+familiar_interact,"When a familiar adult, such as a relative or friend, visited your home, how often did your child want to interact with the adult?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+asked_stop,"When asked to do so, how often was your child able to stop an ongoing activity?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+asked_lower,"When asked to do so, how often was your child able to lower his or her voice?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+asked_careful,"When asked to do so, how often was your child able to be careful with something breakable?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+new_not_enter,"When visiting a new place, how often did your child NOT want to enter?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+new_enger,"When visiting a new place, how often did your child go right in?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+show_jump_in,"While you were showing your child how to do something, how often did your child jump into the task before it was fully explained?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+talk_switch_attention,"While you were talking with someone else, how often did your child easily switch attention from speaker to speaker?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+everyday_clothes_tight,"During everyday activities, how often did your child become irritated when his/her clothes were too tight?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+everyday_notice_smells,"During everyday activities, how often did your child notice smells from cooking?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+everday_rock,"During everyday activities, how often did your child rock back and forth while sitting?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+everyday_sirens,"During everyday activities, how often did your child notice sirens from fire trucks or ambulances at a distance?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+criticized_mad,"When you mildly criticized or corrected her/his behavior, how often did your child get mad?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+criticized_hurt,"When you mildly criticized or corrected her/his behavior, how often did your child have hurt feelings?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+upset_cry_3_min,"When s/he was upset, how often did your child cry for more than 3 minutes, even when being  comforted?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+upset_cry_minute,"When s/he was upset, how often did your child cheer up within a minute or two when being comforted?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+upset_soothed,"When s/he was upset, how often did your child become easily soothed?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+busy_another_activity,"When you were busy, how often did your child find another activity to do when asked?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+outdoors_jump_heights,"While playing outdoors, how often did your child want to jump from heights?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+outdoors_slide,"While playing outdoors, how often did your child want to go down the slide in an unusual way (for example, head first)?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+outdoors_pushed,"While playing outdoors, how often did your child enjoy benig pushed fast on a wheeled vehicle?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+oudoors_quietly,"While playing outdoors, how often did your child enjoy sitting down and playing quietly?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+alone_chew,"When playing alone, how often did your child chew his/her lip?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+alone_tongue,"When playing alone, how often did your child stick out his/her tongue when concentrating?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+alone_move_tasks,"When playing alone, how often did your child move from one task or activity to another without completing any?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+alone_trouble_focusing,"When playing alone, how often did your child having trouble focusing on a task without guidance?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p7,,,,enumeration,,,
+present_animated,"When given a wrapped present, how often did your child become extremely animated?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p8,,,,enumeration,,,
+large_gatherings_involved,"When around large gatherings of familiar adults or children, how often did your child want to be involved in a group activity?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p8,,,,enumeration,,,
+large_gatherings_enjoy,"When around large gatherings of familiar adults or children, how often did your child enjoy playing with a number of different people?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p8,,,,enumeration,,,
+share_toys_sad,"When s/he was asked to share his/her toys, how often did your child become sad?","{
+    ""Choices"": [
+        {
+            ""o1"": ""Never""
+        },
+        {
+            ""o2"": ""Very rarely""
+        },
+        {
+            ""o3"": ""Less than half the time""
+        },
+        {
+            ""o4"": ""About half the time""
+        },
+        {
+            ""o5"": ""More than half the time""
+        },
+        {
+            ""o6"": ""Almost Always""
+        },
+        {
+            ""o7"": ""Always""
+        },
+        {
+            ""na"": ""Does not apply""
+        }
+    ]
+}",p8,,,,enumeration,,,

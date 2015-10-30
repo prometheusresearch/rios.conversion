@@ -2100,3 +2100,902 @@ tests:
     (0.3234, 3, 0.323, 0.324, 0.323)
     (0.4234, 3, 0.423, 0.424, 0.423)
     (0.5234, 3, 0.523, 0.524, 0.523)
+- sh: redcap-rios --title ATN_GI --id urn:redcap_ATN_GI --instrument-version 1.0 --infile
+    ./test/redcap/ATN_GI.csv --outfile-prefix ./test/sandbox/redcap/ATN_GI --format
+    json
+  stdout: ''
+- sh: redcap-rios --title ATN_GI --id urn:redcap_ATN_GI --instrument-version 1.0 --infile
+    ./test/redcap/ATN_GI.csv --outfile-prefix ./test/sandbox/redcap/ATN_GI --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ATN_GI_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ATN_GI_i.json form ./test/sandbox/redcap/ATN_GI_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2
+    --id urn:redcap_Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2
+    --instrument-version 1.0 --infile ./test/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2.csv
+    --outfile-prefix ./test/sandbox/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2
+    --format json
+  stdout: ''
+- sh: redcap-rios --title Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2
+    --id urn:redcap_Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2
+    --instrument-version 1.0 --infile ./test/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2.csv
+    --outfile-prefix ./test/sandbox/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2_i.json
+    form ./test/sandbox/redcap/Autism_Diagnostic_Observational_Scale_Second_Edition-_Module_2_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title BASC-2 --id urn:redcap_BASC-2 --instrument-version 1.0 --infile
+    ./test/redcap/BASC-2.csv --outfile-prefix ./test/sandbox/redcap/BASC-2 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title BASC-2 --id urn:redcap_BASC-2 --instrument-version 1.0 --infile
+    ./test/redcap/BASC-2.csv --outfile-prefix ./test/sandbox/redcap/BASC-2 --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/BASC-2_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/BASC-2_i.json form ./test/sandbox/redcap/BASC-2_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title CGI_anchors_duke --id urn:redcap_CGI_anchors_duke --instrument-version
+    1.0 --infile ./test/redcap/CGI_anchors_duke.csv --outfile-prefix ./test/sandbox/redcap/CGI_anchors_duke
+    --format json
+  stdout: ''
+- sh: redcap-rios --title CGI_anchors_duke --id urn:redcap_CGI_anchors_duke --instrument-version
+    1.0 --infile ./test/redcap/CGI_anchors_duke.csv --outfile-prefix ./test/sandbox/redcap/CGI_anchors_duke
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/CGI_anchors_duke_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/CGI_anchors_duke_i.json form
+    ./test/sandbox/redcap/CGI_anchors_duke_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title CGI_improvement_duke --id urn:redcap_CGI_improvement_duke
+    --instrument-version 1.0 --infile ./test/redcap/CGI_improvement_duke.csv --outfile-prefix
+    ./test/sandbox/redcap/CGI_improvement_duke --format json
+  stdout: ''
+- sh: redcap-rios --title CGI_improvement_duke --id urn:redcap_CGI_improvement_duke
+    --instrument-version 1.0 --infile ./test/redcap/CGI_improvement_duke.csv --outfile-prefix
+    ./test/sandbox/redcap/CGI_improvement_duke --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/CGI_improvement_duke_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/CGI_improvement_duke_i.json
+    form ./test/sandbox/redcap/CGI_improvement_duke_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title Contact-Relative --id urn:redcap_Contact-Relative --instrument-version
+    1.0 --infile ./test/redcap/Contact-Relative.csv --outfile-prefix ./test/sandbox/redcap/Contact-Relative
+    --format json
+  stdout: ''
+- sh: redcap-rios --title Contact-Relative --id urn:redcap_Contact-Relative --instrument-version
+    1.0 --infile ./test/redcap/Contact-Relative.csv --outfile-prefix ./test/sandbox/redcap/Contact-Relative
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/Contact-Relative_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/Contact-Relative_i.json form
+    ./test/sandbox/redcap/Contact-Relative_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title DSM_5_Duke --id urn:redcap_DSM_5_Duke --instrument-version
+    1.0 --infile ./test/redcap/DSM_5_Duke.csv --outfile-prefix ./test/sandbox/redcap/DSM_5_Duke
+    --format json
+  stdout: ''
+- sh: redcap-rios --title DSM_5_Duke --id urn:redcap_DSM_5_Duke --instrument-version
+    1.0 --infile ./test/redcap/DSM_5_Duke.csv --outfile-prefix ./test/sandbox/redcap/DSM_5_Duke
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/DSM_5_Duke_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/DSM_5_Duke_i.json form ./test/sandbox/redcap/DSM_5_Duke_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title ECBQ --id urn:redcap_ECBQ --instrument-version 1.0 --infile
+    ./test/redcap/ECBQ.csv --outfile-prefix ./test/sandbox/redcap/ECBQ --format json
+  stdout: ''
+- sh: redcap-rios --title ECBQ --id urn:redcap_ECBQ --instrument-version 1.0 --infile
+    ./test/redcap/ECBQ.csv --outfile-prefix ./test/sandbox/redcap/ECBQ --format yaml
+  stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/ECBQ_i.json || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: interrupted_return
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/ECBQ_i.json form ./test/sandbox/redcap/ECBQ_f.json
+    || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: interrupted_return
+- sh: redcap-rios --title ELEAT --id urn:redcap_ELEAT --instrument-version 1.0 --infile
+    ./test/redcap/ELEAT.csv --outfile-prefix ./test/sandbox/redcap/ELEAT --format
+    json
+  stdout: ''
+- sh: redcap-rios --title ELEAT --id urn:redcap_ELEAT --instrument-version 1.0 --infile
+    ./test/redcap/ELEAT.csv --outfile-prefix ./test/sandbox/redcap/ELEAT --format
+    yaml
+  stdout: ''
+- sh: redcap-rios --title LENA --id urn:redcap_LENA --instrument-version 1.0 --infile
+    ./test/redcap/LENA.csv --outfile-prefix ./test/sandbox/redcap/LENA --format json
+  stdout: ''
+- sh: redcap-rios --title LENA --id urn:redcap_LENA --instrument-version 1.0 --infile
+    ./test/redcap/LENA.csv --outfile-prefix ./test/sandbox/redcap/LENA --format yaml
+  stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/LENA_i.json || true'
+  stdout: |
+    Successful validation.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/LENA_i.json form ./test/sandbox/redcap/LENA_f.json
+    || true'
+  stdout: |
+    FAILED validation.
+    : There are extra fields referenced by questions: lena_unwell, lena_rate
+- sh: rios-validate instrument ./test/sandbox/redcap/LENA_i.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title PAPA --id urn:redcap_PAPA --instrument-version 1.0 --infile
+    ./test/redcap/PAPA.csv --outfile-prefix ./test/sandbox/redcap/PAPA --format json
+  stdout: ''
+- sh: redcap-rios --title PAPA --id urn:redcap_PAPA --instrument-version 1.0 --infile
+    ./test/redcap/PAPA.csv --outfile-prefix ./test/sandbox/redcap/PAPA --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/PAPA_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/PAPA_i.json form ./test/sandbox/redcap/PAPA_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title Permission_to_Contact_Patient --id urn:redcap_Permission_to_Contact_Patient
+    --instrument-version 1.0 --infile ./test/redcap/Permission_to_Contact_Patient.csv
+    --outfile-prefix ./test/sandbox/redcap/Permission_to_Contact_Patient --format
+    json
+  stdout: ''
+- sh: redcap-rios --title Permission_to_Contact_Patient --id urn:redcap_Permission_to_Contact_Patient
+    --instrument-version 1.0 --infile ./test/redcap/Permission_to_Contact_Patient.csv
+    --outfile-prefix ./test/sandbox/redcap/Permission_to_Contact_Patient --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/Permission_to_Contact_Patient_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/Permission_to_Contact_Patient_i.json
+    form ./test/sandbox/redcap/Permission_to_Contact_Patient_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title RBS-R --id urn:redcap_RBS-R --instrument-version 1.0 --infile
+    ./test/redcap/RBS-R.csv --outfile-prefix ./test/sandbox/redcap/RBS-R --format
+    json
+  stdout: ''
+- sh: redcap-rios --title RBS-R --id urn:redcap_RBS-R --instrument-version 1.0 --infile
+    ./test/redcap/RBS-R.csv --outfile-prefix ./test/sandbox/redcap/RBS-R --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/RBS-R_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/RBS-R_i.json form ./test/sandbox/redcap/RBS-R_f.json
+  stdout: |
+    Successful validation.
+- sh: bash -c 'redcap-rios --title SSIS --id urn:redcap_SSIS --instrument-version
+    1.0 --infile ./test/redcap/SSIS.csv --outfile-prefix ./test/sandbox/redcap/SSIS
+    --format json || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+        self.create_form_file()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+        self.create__file('f', self.form)
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 244, in create__file
+        json.dump(obj, fo, indent=1)
+      File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
+        for chunk in iterable:
+      File "/usr/lib/python2.7/json/encoder.py", line 434, in _iterencode
+        for chunk in _iterencode_dict(o, _current_indent_level):
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 332, in _iterencode_list
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 332, in _iterencode_list
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 390, in _iterencode_dict
+        yield _encoder(value)
+    UnicodeDecodeError: 'utf8' codec can't decode byte 0xd2 in position 201: invalid continuation byte
+- sh: bash -c 'redcap-rios --title SSIS --id urn:redcap_SSIS --instrument-version
+    1.0 --infile ./test/redcap/SSIS.csv --outfile-prefix ./test/sandbox/redcap/SSIS
+    --format yaml || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+        self.create_form_file()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+        self.create__file('f', self.form)
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 247, in create__file
+        json.loads(json.dumps(obj)),
+      File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
+        return _default_encoder.encode(obj)
+      File "/usr/lib/python2.7/json/encoder.py", line 207, in encode
+        chunks = self.iterencode(o, _one_shot=True)
+      File "/usr/lib/python2.7/json/encoder.py", line 270, in iterencode
+        return _iterencode(o, 0)
+    UnicodeDecodeError: 'utf8' codec can't decode byte 0xd2 in position 201: invalid continuation byte
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/SSIS_i.json || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: says_nice
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/SSIS_i.json form ./test/sandbox/redcap/SSIS_f.json
+    || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/rios-validate", line 9, in <module>
+        load_entry_point('rios.core==0.6.1', 'console_scripts', 'rios-validate')()
+      File "/home/pwexler/pwexler/rios.core/src/rios/core/scripts.py", line 85, in __call__
+        instrument=args.instrument,
+      File "/home/pwexler/pwexler/rios.core/src/rios/core/validation/__init__.py", line 114, in validate_form
+        form = _get_struct(form)
+      File "/home/pwexler/pwexler/rios.core/src/rios/core/validation/__init__.py", line 32, in _get_struct
+        src = json.load(src, encoding='utf-8')
+      File "/usr/lib/python2.7/json/__init__.py", line 290, in load
+        **kw)
+      File "/usr/lib/python2.7/json/__init__.py", line 351, in loads
+        return cls(encoding=encoding, **kw).decode(s)
+      File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+- sh: redcap-rios --title Vineland-II --id urn:redcap_Vineland-II --instrument-version
+    1.0 --infile ./test/redcap/Vineland-II.csv --outfile-prefix ./test/sandbox/redcap/Vineland-II
+    --format json
+  stdout: ''
+- sh: redcap-rios --title Vineland-II --id urn:redcap_Vineland-II --instrument-version
+    1.0 --infile ./test/redcap/Vineland-II.csv --outfile-prefix ./test/sandbox/redcap/Vineland-II
+    --format yaml
+  stdout: ''
+- sh: redcap-rios --title abc_community02 --id urn:redcap_abc_community02 --instrument-version
+    1.0 --infile ./test/redcap/abc_community02.csv --outfile-prefix ./test/sandbox/redcap/abc_community02
+    --format json
+  stdout: ''
+- sh: redcap-rios --title abc_community02 --id urn:redcap_abc_community02 --instrument-version
+    1.0 --infile ./test/redcap/abc_community02.csv --outfile-prefix ./test/sandbox/redcap/abc_community02
+    --format yaml
+  stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/abc_community02_i.json
+    || true'
+  stdout: |
+    Successful validation.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/abc_community02_i.json
+    form ./test/sandbox/redcap/abc_community02_f.json || true'
+  stdout: |
+    FAILED validation.
+    pages: Page IDs must be unique: page_2
+- sh: rios-validate instrument ./test/sandbox/redcap/abc_community02_i.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title adi_200304 --id urn:redcap_adi_200304 --instrument-version
+    1.0 --infile ./test/redcap/adi_200304.csv --outfile-prefix ./test/sandbox/redcap/adi_200304
+    --format json
+  stdout: ''
+- sh: redcap-rios --title adi_200304 --id urn:redcap_adi_200304 --instrument-version
+    1.0 --infile ./test/redcap/adi_200304.csv --outfile-prefix ./test/sandbox/redcap/adi_200304
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/adi_200304_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/adi_200304_i.json form ./test/sandbox/redcap/adi_200304_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title ados1_201201 --id urn:redcap_ados1_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados1_201201.csv --outfile-prefix ./test/sandbox/redcap/ados1_201201
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ados1_201201 --id urn:redcap_ados1_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados1_201201.csv --outfile-prefix ./test/sandbox/redcap/ados1_201201
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ados1_201201_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ados1_201201_i.json form ./test/sandbox/redcap/ados1_201201_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title ados1_rios --id urn:redcap_ados1_rios --instrument-version
+    1.0 --infile ./test/redcap/ados1_rios.csv --outfile-prefix ./test/sandbox/redcap/ados1_rios
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ados1_rios --id urn:redcap_ados1_rios --instrument-version
+    1.0 --infile ./test/redcap/ados1_rios.csv --outfile-prefix ./test/sandbox/redcap/ados1_rios
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ados1_rios_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ados1_rios_i.json form ./test/sandbox/redcap/ados1_rios_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title ados2_201201 --id urn:redcap_ados2_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados2_201201.csv --outfile-prefix ./test/sandbox/redcap/ados2_201201
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ados2_201201 --id urn:redcap_ados2_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados2_201201.csv --outfile-prefix ./test/sandbox/redcap/ados2_201201
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ados2_201201_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ados2_201201_i.json form ./test/sandbox/redcap/ados2_201201_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title ados3_201201 --id urn:redcap_ados3_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados3_201201.csv --outfile-prefix ./test/sandbox/redcap/ados3_201201
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ados3_201201 --id urn:redcap_ados3_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados3_201201.csv --outfile-prefix ./test/sandbox/redcap/ados3_201201
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ados3_201201_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ados3_201201_i.json form ./test/sandbox/redcap/ados3_201201_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title ados4_201201 --id urn:redcap_ados4_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados4_201201.csv --outfile-prefix ./test/sandbox/redcap/ados4_201201
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ados4_201201 --id urn:redcap_ados4_201201 --instrument-version
+    1.0 --infile ./test/redcap/ados4_201201.csv --outfile-prefix ./test/sandbox/redcap/ados4_201201
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ados4_201201_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ados4_201201_i.json form ./test/sandbox/redcap/ados4_201201_f.json
+  stdout: |
+    Successful validation.
+- sh: bash -c 'redcap-rios --title adost --id urn:redcap_adost --instrument-version
+    1.0 --infile ./test/redcap/adost.csv --outfile-prefix ./test/sandbox/redcap/adost
+    --format json || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+        self.create_form_file()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+        self.create__file('f', self.form)
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 244, in create__file
+        json.dump(obj, fo, indent=1)
+      File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
+        for chunk in iterable:
+      File "/usr/lib/python2.7/json/encoder.py", line 434, in _iterencode
+        for chunk in _iterencode_dict(o, _current_indent_level):
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 332, in _iterencode_list
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 332, in _iterencode_list
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 390, in _iterencode_dict
+        yield _encoder(value)
+    UnicodeDecodeError: 'utf8' codec can't decode byte 0xa9 in position 10: invalid start byte
+- sh: bash -c 'redcap-rios --title adost --id urn:redcap_adost --instrument-version
+    1.0 --infile ./test/redcap/adost.csv --outfile-prefix ./test/sandbox/redcap/adost
+    --format yaml || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+        self.create_form_file()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+        self.create__file('f', self.form)
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 247, in create__file
+        json.loads(json.dumps(obj)),
+      File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
+        return _default_encoder.encode(obj)
+      File "/usr/lib/python2.7/json/encoder.py", line 207, in encode
+        chunks = self.iterencode(o, _one_shot=True)
+      File "/usr/lib/python2.7/json/encoder.py", line 270, in iterencode
+        return _iterencode(o, 0)
+    UnicodeDecodeError: 'utf8' codec can't decode byte 0xa9 in position 10: invalid start byte
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/adost_i.json || true'
+  stdout: |
+    FAILED validation.
+    record.10.type: "u'{"Choices":[{"c0":"Frequent consonant/vowel reduplications (e.g., baba or mamama) or more complex combinations (e.g., bada). "},{"c1":"1 = Frequent single-syllable sounds (must contain consonant, e.g., da) OR occasional consonant/vowel reduplications. "},{"c2":"2 = Occasional single-syllable sounds (must contain consonant). "},{"c3":"3 = No babbling (i.e., only vowel sounds). "},{"c8":"8 = Too much language to code babbling (i.e., code of 0, 1, or 2 on Item Al, \\"Overall Level of Non-Echoed Spoken Language\\")}]}'" is not a valid type identifier
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/adost_i.json form
+    ./test/sandbox/redcap/adost_f.json || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/rios-validate", line 9, in <module>
+        load_entry_point('rios.core==0.6.1', 'console_scripts', 'rios-validate')()
+      File "/home/pwexler/pwexler/rios.core/src/rios/core/scripts.py", line 85, in __call__
+        instrument=args.instrument,
+      File "/home/pwexler/pwexler/rios.core/src/rios/core/validation/__init__.py", line 114, in validate_form
+        form = _get_struct(form)
+      File "/home/pwexler/pwexler/rios.core/src/rios/core/validation/__init__.py", line 32, in _get_struct
+        src = json.load(src, encoding='utf-8')
+      File "/usr/lib/python2.7/json/__init__.py", line 290, in load
+        **kw)
+      File "/usr/lib/python2.7/json/__init__.py", line 351, in loads
+        return cls(encoding=encoding, **kw).decode(s)
+      File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+      File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+        raise ValueError("No JSON object could be decoded")
+    ValueError: No JSON object could be decoded
+- sh: redcap-rios --title ccc201 --id urn:redcap_ccc201 --instrument-version 1.0 --infile
+    ./test/redcap/ccc201.csv --outfile-prefix ./test/sandbox/redcap/ccc201 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title ccc201 --id urn:redcap_ccc201 --instrument-version 1.0 --infile
+    ./test/redcap/ccc201.csv --outfile-prefix ./test/sandbox/redcap/ccc201 --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ccc201_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ccc201_i.json form ./test/sandbox/redcap/ccc201_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title connecting_voices_teaching_practices_survey --id urn:redcap_connecting_voices_teaching_practices_survey
+    --instrument-version 1.0 --infile ./test/redcap/connecting_voices_teaching_practices_survey.csv
+    --outfile-prefix ./test/sandbox/redcap/connecting_voices_teaching_practices_survey
+    --format json
+  stdout: ''
+- sh: redcap-rios --title connecting_voices_teaching_practices_survey --id urn:redcap_connecting_voices_teaching_practices_survey
+    --instrument-version 1.0 --infile ./test/redcap/connecting_voices_teaching_practices_survey.csv
+    --outfile-prefix ./test/sandbox/redcap/connecting_voices_teaching_practices_survey
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/connecting_voices_teaching_practices_survey_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/connecting_voices_teaching_practices_survey_i.json
+    form ./test/sandbox/redcap/connecting_voices_teaching_practices_survey_f.json
+  stdout: |
+    Successful validation.
+- sh: bash -c 'redcap-rios --title consent_type --id urn:redcap_consent_type --instrument-version
+    1.0 --infile ./test/redcap/consent_type.csv --outfile-prefix ./test/sandbox/redcap/consent_type
+    --format json || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 184, in __call__
+        self.reader.attributes)
+    ValueError: ('Input has unknown format', ['code', 'title', 'language', 'expires_in_month'])
+- sh: redcap-rios --title das_pre_school02 --id urn:redcap_das_pre_school02 --instrument-version
+    1.0 --infile ./test/redcap/das_pre_school02.csv --outfile-prefix ./test/sandbox/redcap/das_pre_school02
+    --format json
+  stdout: ''
+- sh: redcap-rios --title das_pre_school02 --id urn:redcap_das_pre_school02 --instrument-version
+    1.0 --infile ./test/redcap/das_pre_school02.csv --outfile-prefix ./test/sandbox/redcap/das_pre_school02
+    --format yaml
+  stdout: ''
+- sh: redcap-rios --title das_school_age_part101 --id urn:redcap_das_school_age_part101
+    --instrument-version 1.0 --infile ./test/redcap/das_school_age_part101.csv --outfile-prefix
+    ./test/sandbox/redcap/das_school_age_part101 --format json
+  stdout: ''
+- sh: redcap-rios --title das_school_age_part101 --id urn:redcap_das_school_age_part101
+    --instrument-version 1.0 --infile ./test/redcap/das_school_age_part101.csv --outfile-prefix
+    ./test/sandbox/redcap/das_school_age_part101 --format yaml
+  stdout: ''
+- sh: redcap-rios --title das_school_age_part201 --id urn:redcap_das_school_age_part201
+    --instrument-version 1.0 --infile ./test/redcap/das_school_age_part201.csv --outfile-prefix
+    ./test/sandbox/redcap/das_school_age_part201 --format json
+  stdout: ''
+- sh: redcap-rios --title das_school_age_part201 --id urn:redcap_das_school_age_part201
+    --instrument-version 1.0 --infile ./test/redcap/das_school_age_part201.csv --outfile-prefix
+    ./test/sandbox/redcap/das_school_age_part201 --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/das_school_age_part201_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/das_school_age_part201_i.json
+    form ./test/sandbox/redcap/das_school_age_part201_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title duke_42_history_questionnaire --id urn:redcap_duke_42_history_questionnaire
+    --instrument-version 1.0 --infile ./test/redcap/duke_42_history_questionnaire.csv
+    --outfile-prefix ./test/sandbox/redcap/duke_42_history_questionnaire --format
+    json
+  stdout: ''
+- sh: redcap-rios --title duke_42_history_questionnaire --id urn:redcap_duke_42_history_questionnaire
+    --instrument-version 1.0 --infile ./test/redcap/duke_42_history_questionnaire.csv
+    --outfile-prefix ./test/sandbox/redcap/duke_42_history_questionnaire --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/duke_42_history_questionnaire_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/duke_42_history_questionnaire_i.json
+    form ./test/sandbox/redcap/duke_42_history_questionnaire_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title dukeabcs_social_communication --id urn:redcap_dukeabcs_social_communication
+    --instrument-version 1.0 --infile ./test/redcap/dukeabcs_social_communication.csv
+    --outfile-prefix ./test/sandbox/redcap/dukeabcs_social_communication --format
+    json
+  stdout: ''
+- sh: redcap-rios --title dukeabcs_social_communication --id urn:redcap_dukeabcs_social_communication
+    --instrument-version 1.0 --infile ./test/redcap/dukeabcs_social_communication.csv
+    --outfile-prefix ./test/sandbox/redcap/dukeabcs_social_communication --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/dukeabcs_social_communication_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/dukeabcs_social_communication_i.json
+    form ./test/sandbox/redcap/dukeabcs_social_communication_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title edinburgh_hand01 --id urn:redcap_edinburgh_hand01 --instrument-version
+    1.0 --infile ./test/redcap/edinburgh_hand01.csv --outfile-prefix ./test/sandbox/redcap/edinburgh_hand01
+    --format json
+  stdout: ''
+- sh: redcap-rios --title edinburgh_hand01 --id urn:redcap_edinburgh_hand01 --instrument-version
+    1.0 --infile ./test/redcap/edinburgh_hand01.csv --outfile-prefix ./test/sandbox/redcap/edinburgh_hand01
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/edinburgh_hand01_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/edinburgh_hand01_i.json form
+    ./test/sandbox/redcap/edinburgh_hand01_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title eeg --id urn:redcap_eeg --instrument-version 1.0 --infile
+    ./test/redcap/eeg.csv --outfile-prefix ./test/sandbox/redcap/eeg --format json
+  stdout: ''
+- sh: redcap-rios --title eeg --id urn:redcap_eeg --instrument-version 1.0 --infile
+    ./test/redcap/eeg.csv --outfile-prefix ./test/sandbox/redcap/eeg --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/eeg_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/eeg_i.json form ./test/sandbox/redcap/eeg_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title eligibiltiy_determination_duke --id urn:redcap_eligibiltiy_determination_duke
+    --instrument-version 1.0 --infile ./test/redcap/eligibiltiy_determination_duke.csv
+    --outfile-prefix ./test/sandbox/redcap/eligibiltiy_determination_duke --format
+    json
+  stdout: ''
+- sh: redcap-rios --title eligibiltiy_determination_duke --id urn:redcap_eligibiltiy_determination_duke
+    --instrument-version 1.0 --infile ./test/redcap/eligibiltiy_determination_duke.csv
+    --outfile-prefix ./test/sandbox/redcap/eligibiltiy_determination_duke --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/eligibiltiy_determination_duke_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/eligibiltiy_determination_duke_i.json
+    form ./test/sandbox/redcap/eligibiltiy_determination_duke_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title eowpvt02r --id urn:redcap_eowpvt02r --instrument-version
+    1.0 --infile ./test/redcap/eowpvt02r.csv --outfile-prefix ./test/sandbox/redcap/eowpvt02r
+    --format json
+  stdout: ''
+- sh: redcap-rios --title eowpvt02r --id urn:redcap_eowpvt02r --instrument-version
+    1.0 --infile ./test/redcap/eowpvt02r.csv --outfile-prefix ./test/sandbox/redcap/eowpvt02r
+    --format yaml
+  stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/eowpvt02r_i.json ||
+    true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: eowpvt_129, eowpvt_128, eowpvt_127, eowpvt_126, eowpvt_125, eowpvt_124, eowpvt_123, eowpvt_122, eowpvt_121, eowpvt_120, eowpvt_94, eowpvt_95, eowpvt_96, eowpvt_97, eowpvt_90, eowpvt_91, eowpvt_92, eowpvt_93, eowpvt_98, eowpvt_99, eowpvt_18, eowpvt_19, eowpvt_14, eowpvt_15, eowpvt_16, eowpvt_17, eowpvt_10, eowpvt_11, eowpvt_12, eowpvt_13, eowpvt_181, eowpvt_cmt, eowpvt_158, eowpvt_159, eowpvt_152, eowpvt_153, eowpvt_150, eowpvt_151, eowpvt_156, eowpvt_157, eowpvt_154, eowpvt_155, eowpvt_69, eowpvt_68, eowpvt_190, eowpvt_61, eowpvt_60, eowpvt_63, eowpvt_62, eowpvt_65, eowpvt_64, eowpvt_67, eowpvt_66, eowpvt_149, eowpvt_148, eowpvt_141, eowpvt_140, eowpvt_143, eowpvt_142, eowpvt_145, eowpvt_144, eowpvt_147, eowpvt_146, eowpvt_78, eowpvt_79, eowpvt_ss, eowpvt_72, eowpvt_73, eowpvt_70, eowpvt_71, eowpvt_76, eowpvt_77, eowpvt_74, eowpvt_75, eowpvt_8, eowpvt_9, eowpvt_6, eowpvt_7, eowpvt_4, eowpvt_5, eowpvt_2, eowpvt_3, eowpvt_1, eowpvt_178, eowpvt_179, eowpvt_174, eowpvt_175, eowpvt_176, eowpvt_177, eowpvt_170, eowpvt_171, eowpvt_172, eowpvt_173, eowpvt_81, eowpvt_ceiling_item, eowpvt_49, eowpvt_48, eowpvt_47, eowpvt_46, eowpvt_45, eowpvt_44, eowpvt_43, eowpvt_42, eowpvt_41, eowpvt_40, eowpvt_163, eowpvt_162, eowpvt_161, eowpvt_160, eowpvt_167, eowpvt_166, eowpvt_165, eowpvt_164, eowpvt_169, eowpvt_168, eowpvt_50, eowpvt_51, eowpvt_52, eowpvt_53, eowpvt_54, eowpvt_55, eowpvt_56, eowpvt_57, eowpvt_58, eowpvt_59, eowpvt_116, eowpvt_117, eowpvt_114, eowpvt_115, eowpvt_112, eowpvt_113, eowpvt_110, eowpvt_111, eowpvt_118, eowpvt_119, eowpvt_25, eowpvt_24, eowpvt_27, eowpvt_26, eowpvt_21, eowpvt_20, eowpvt_23, eowpvt_22, eowpvt_percent, eowpvt_29, eowpvt_28, eowpvt_102, eowpvt_105, eowpvt_104, eowpvt_107, eowpvt_106, eowpvt_101, eowpvt_100, eowpvt_103, eowpvt_raw_scr, eowpvt_109, eowpvt_108, eowpvt_36, eowpvt_37, eowpvt_34, eowpvt_35, eowpvt_32, eowpvt_33, eowpvt_30, eowpvt_31, eowpvt_38, eowpvt_39, eowpvt_138, eowpvt_139, eowpvt_130, eowpvt_131, eowpvt_132, eowpvt_133, eowpvt_134, eowpvt_135, eowpvt_136, eowpvt_137, eowpvt_83, eowpvt_82, eowpvt_edition, eowpvt_80, eowpvt_87, eowpvt_86, eowpvt_85, eowpvt_84, eowpvt_89, eowpvt_88, eowpvt_ae, eowpvt_189, eowpvt_188, eowpvt_185, eowpvt_184, eowpvt_187, eowpvt_186, eowpvt_number_of_errors, eowpvt_180, eowpvt_183, eowpvt_182
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/eowpvt02r_i.json form
+    ./test/sandbox/redcap/eowpvt02r_f.json || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: eowpvt_129, eowpvt_128, eowpvt_127, eowpvt_126, eowpvt_125, eowpvt_124, eowpvt_123, eowpvt_122, eowpvt_121, eowpvt_120, eowpvt_94, eowpvt_95, eowpvt_96, eowpvt_97, eowpvt_90, eowpvt_91, eowpvt_92, eowpvt_93, eowpvt_98, eowpvt_99, eowpvt_18, eowpvt_19, eowpvt_14, eowpvt_15, eowpvt_16, eowpvt_17, eowpvt_10, eowpvt_11, eowpvt_12, eowpvt_13, eowpvt_181, eowpvt_cmt, eowpvt_158, eowpvt_159, eowpvt_152, eowpvt_153, eowpvt_150, eowpvt_151, eowpvt_156, eowpvt_157, eowpvt_154, eowpvt_155, eowpvt_69, eowpvt_68, eowpvt_190, eowpvt_61, eowpvt_60, eowpvt_63, eowpvt_62, eowpvt_65, eowpvt_64, eowpvt_67, eowpvt_66, eowpvt_149, eowpvt_148, eowpvt_141, eowpvt_140, eowpvt_143, eowpvt_142, eowpvt_145, eowpvt_144, eowpvt_147, eowpvt_146, eowpvt_78, eowpvt_79, eowpvt_ss, eowpvt_72, eowpvt_73, eowpvt_70, eowpvt_71, eowpvt_76, eowpvt_77, eowpvt_74, eowpvt_75, eowpvt_8, eowpvt_9, eowpvt_6, eowpvt_7, eowpvt_4, eowpvt_5, eowpvt_2, eowpvt_3, eowpvt_1, eowpvt_178, eowpvt_179, eowpvt_174, eowpvt_175, eowpvt_176, eowpvt_177, eowpvt_170, eowpvt_171, eowpvt_172, eowpvt_173, eowpvt_81, eowpvt_ceiling_item, eowpvt_49, eowpvt_48, eowpvt_47, eowpvt_46, eowpvt_45, eowpvt_44, eowpvt_43, eowpvt_42, eowpvt_41, eowpvt_40, eowpvt_163, eowpvt_162, eowpvt_161, eowpvt_160, eowpvt_167, eowpvt_166, eowpvt_165, eowpvt_164, eowpvt_169, eowpvt_168, eowpvt_50, eowpvt_51, eowpvt_52, eowpvt_53, eowpvt_54, eowpvt_55, eowpvt_56, eowpvt_57, eowpvt_58, eowpvt_59, eowpvt_116, eowpvt_117, eowpvt_114, eowpvt_115, eowpvt_112, eowpvt_113, eowpvt_110, eowpvt_111, eowpvt_118, eowpvt_119, eowpvt_25, eowpvt_24, eowpvt_27, eowpvt_26, eowpvt_21, eowpvt_20, eowpvt_23, eowpvt_22, eowpvt_percent, eowpvt_29, eowpvt_28, eowpvt_102, eowpvt_105, eowpvt_104, eowpvt_107, eowpvt_106, eowpvt_101, eowpvt_100, eowpvt_103, eowpvt_raw_scr, eowpvt_109, eowpvt_108, eowpvt_36, eowpvt_37, eowpvt_34, eowpvt_35, eowpvt_32, eowpvt_33, eowpvt_30, eowpvt_31, eowpvt_38, eowpvt_39, eowpvt_138, eowpvt_139, eowpvt_130, eowpvt_131, eowpvt_132, eowpvt_133, eowpvt_134, eowpvt_135, eowpvt_136, eowpvt_137, eowpvt_83, eowpvt_82, eowpvt_edition, eowpvt_80, eowpvt_87, eowpvt_86, eowpvt_85, eowpvt_84, eowpvt_89, eowpvt_88, eowpvt_ae, eowpvt_189, eowpvt_188, eowpvt_185, eowpvt_184, eowpvt_187, eowpvt_186, eowpvt_number_of_errors, eowpvt_180, eowpvt_183, eowpvt_182
+- sh: redcap-rios --title evt01 --id urn:redcap_evt01 --instrument-version 1.0 --infile
+    ./test/redcap/evt01.csv --outfile-prefix ./test/sandbox/redcap/evt01 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title evt01 --id urn:redcap_evt01 --instrument-version 1.0 --infile
+    ./test/redcap/evt01.csv --outfile-prefix ./test/sandbox/redcap/evt01 --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/evt01_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/evt01_i.json form ./test/sandbox/redcap/evt01_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title grooved_peg02 --id urn:redcap_grooved_peg02 --instrument-version
+    1.0 --infile ./test/redcap/grooved_peg02.csv --outfile-prefix ./test/sandbox/redcap/grooved_peg02
+    --format json
+  stdout: ''
+- sh: redcap-rios --title grooved_peg02 --id urn:redcap_grooved_peg02 --instrument-version
+    1.0 --infile ./test/redcap/grooved_peg02.csv --outfile-prefix ./test/sandbox/redcap/grooved_peg02
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/grooved_peg02_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/grooved_peg02_i.json form ./test/sandbox/redcap/grooved_peg02_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title intervention --id urn:redcap_intervention --instrument-version
+    1.0 --infile ./test/redcap/intervention.csv --outfile-prefix ./test/sandbox/redcap/intervention
+    --format json
+  stdout: ''
+- sh: redcap-rios --title intervention --id urn:redcap_intervention --instrument-version
+    1.0 --infile ./test/redcap/intervention.csv --outfile-prefix ./test/sandbox/redcap/intervention
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/intervention_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/intervention_i.json form ./test/sandbox/redcap/intervention_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title med_social_hx_questionnaire --id urn:redcap_med_social_hx_questionnaire
+    --instrument-version 1.0 --infile ./test/redcap/med_social_hx_questionnaire.csv
+    --outfile-prefix ./test/sandbox/redcap/med_social_hx_questionnaire --format json
+  stdout: ''
+- sh: redcap-rios --title med_social_hx_questionnaire --id urn:redcap_med_social_hx_questionnaire
+    --instrument-version 1.0 --infile ./test/redcap/med_social_hx_questionnaire.csv
+    --outfile-prefix ./test/sandbox/redcap/med_social_hx_questionnaire --format yaml
+  stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/med_social_hx_questionnaire_i.json
+    || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: medical_b11_age_diagnosed
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/med_social_hx_questionnaire_i.json
+    form ./test/sandbox/redcap/med_social_hx_questionnaire_f.json || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: medical_b11_age_diagnosed
+- sh: redcap-rios --title minor_consent --id urn:redcap_minor_consent --instrument-version
+    1.0 --infile ./test/redcap/minor_consent.csv --outfile-prefix ./test/sandbox/redcap/minor_consent
+    --format json
+  stdout: ''
+- sh: redcap-rios --title minor_consent --id urn:redcap_minor_consent --instrument-version
+    1.0 --infile ./test/redcap/minor_consent.csv --outfile-prefix ./test/sandbox/redcap/minor_consent
+    --format yaml
+  stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/minor_consent_i.json
+    || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: parent_date, parent_time
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/minor_consent_i.json
+    form ./test/sandbox/redcap/minor_consent_f.json || true'
+  stdout: |
+    FAILED validation.
+    record: Field IDs must be unique within a record: parent_date, parent_time
+- sh: redcap-rios --title mullen03 --id urn:redcap_mullen03 --instrument-version 1.0
+    --infile ./test/redcap/mullen03.csv --outfile-prefix ./test/sandbox/redcap/mullen03
+    --format json
+  stdout: ''
+- sh: redcap-rios --title mullen03 --id urn:redcap_mullen03 --instrument-version 1.0
+    --infile ./test/redcap/mullen03.csv --outfile-prefix ./test/sandbox/redcap/mullen03
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/mullen03_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/mullen03_i.json form ./test/sandbox/redcap/mullen03_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title pdd_bip01 --id urn:redcap_pdd_bip01 --instrument-version
+    1.0 --infile ./test/redcap/pdd_bip01.csv --outfile-prefix ./test/sandbox/redcap/pdd_bip01
+    --format json
+  stdout: ''
+- sh: redcap-rios --title pdd_bip01 --id urn:redcap_pdd_bip01 --instrument-version
+    1.0 --infile ./test/redcap/pdd_bip01.csv --outfile-prefix ./test/sandbox/redcap/pdd_bip01
+    --format yaml
+  stdout: ''
+- sh: redcap-rios --title ppvt_4a02 --id urn:redcap_ppvt_4a02 --instrument-version
+    1.0 --infile ./test/redcap/ppvt_4a02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4a02
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ppvt_4a02 --id urn:redcap_ppvt_4a02 --instrument-version
+    1.0 --infile ./test/redcap/ppvt_4a02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4a02
+    --format yaml
+  stdout: ''
+- sh: redcap-rios --title ppvt_4b02 --id urn:redcap_ppvt_4b02 --instrument-version
+    1.0 --infile ./test/redcap/ppvt_4b02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4b02
+    --format json
+  stdout: ''
+- sh: redcap-rios --title ppvt_4b02 --id urn:redcap_ppvt_4b02 --instrument-version
+    1.0 --infile ./test/redcap/ppvt_4b02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4b02
+    --format yaml
+  stdout: ''
+- sh: bash -c 'redcap-rios --title psi-4-duke-update --id urn:redcap_psi-4-duke-update
+    --instrument-version 1.0 --infile ./test/redcap/psi-4-duke-update.csv --outfile-prefix
+    ./test/sandbox/redcap/psi-4-duke-update --format json || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 187, in __call__
+        self.create_instrument_file()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 256, in create_instrument_file
+        self.create__file('i', self.instrument)
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 244, in create__file
+        json.dump(obj, fo, indent=1)
+      File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
+        for chunk in iterable:
+      File "/usr/lib/python2.7/json/encoder.py", line 434, in _iterencode
+        for chunk in _iterencode_dict(o, _current_indent_level):
+      File "/usr/lib/python2.7/json/encoder.py", line 408, in _iterencode_dict
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 332, in _iterencode_list
+        for chunk in chunks:
+      File "/usr/lib/python2.7/json/encoder.py", line 390, in _iterencode_dict
+        yield _encoder(value)
+    UnicodeDecodeError: 'utf8' codec can't decode byte 0xa5 in position 81: invalid start byte
+- sh: bash -c 'redcap-rios --title psi-4-duke-update --id urn:redcap_psi-4-duke-update
+    --instrument-version 1.0 --infile ./test/redcap/psi-4-duke-update.csv --outfile-prefix
+    ./test/sandbox/redcap/psi-4-duke-update --format yaml || true'
+  stdout: |
+    Traceback (most recent call last):
+      File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
+        load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 187, in __call__
+        self.create_instrument_file()
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 256, in create_instrument_file
+        self.create__file('i', self.instrument)
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 247, in create__file
+        json.loads(json.dumps(obj)),
+      File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
+        return _default_encoder.encode(obj)
+      File "/usr/lib/python2.7/json/encoder.py", line 207, in encode
+        chunks = self.iterencode(o, _one_shot=True)
+      File "/usr/lib/python2.7/json/encoder.py", line 270, in iterencode
+        return _iterencode(o, 0)
+    UnicodeDecodeError: 'utf8' codec can't decode byte 0xa5 in position 81: invalid start byte
+- sh: redcap-rios --title safety_phone_call --id urn:redcap_safety_phone_call --instrument-version
+    1.0 --infile ./test/redcap/safety_phone_call.csv --outfile-prefix ./test/sandbox/redcap/safety_phone_call
+    --format json
+  stdout: ''
+- sh: redcap-rios --title safety_phone_call --id urn:redcap_safety_phone_call --instrument-version
+    1.0 --infile ./test/redcap/safety_phone_call.csv --outfile-prefix ./test/sandbox/redcap/safety_phone_call
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/safety_phone_call_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/safety_phone_call_i.json form
+    ./test/sandbox/redcap/safety_phone_call_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title sb_503 --id urn:redcap_sb_503 --instrument-version 1.0 --infile
+    ./test/redcap/sb_503.csv --outfile-prefix ./test/sandbox/redcap/sb_503 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title sb_503 --id urn:redcap_sb_503 --instrument-version 1.0 --infile
+    ./test/redcap/sb_503.csv --outfile-prefix ./test/sandbox/redcap/sb_503 --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/sb_503_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/sb_503_i.json form ./test/sandbox/redcap/sb_503_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title sensory_experiences_questionnaire_v3 --id urn:redcap_sensory_experiences_questionnaire_v3
+    --instrument-version 1.0 --infile ./test/redcap/sensory_experiences_questionnaire_v3.csv
+    --outfile-prefix ./test/sandbox/redcap/sensory_experiences_questionnaire_v3 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title sensory_experiences_questionnaire_v3 --id urn:redcap_sensory_experiences_questionnaire_v3
+    --instrument-version 1.0 --infile ./test/redcap/sensory_experiences_questionnaire_v3.csv
+    --outfile-prefix ./test/sandbox/redcap/sensory_experiences_questionnaire_v3 --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/sensory_experiences_questionnaire_v3_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/sensory_experiences_questionnaire_v3_i.json
+    form ./test/sandbox/redcap/sensory_experiences_questionnaire_v3_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title srs02 --id urn:redcap_srs02 --instrument-version 1.0 --infile
+    ./test/redcap/srs02.csv --outfile-prefix ./test/sandbox/redcap/srs02 --format
+    json
+  stdout: ''
+- sh: redcap-rios --title srs02 --id urn:redcap_srs02 --instrument-version 1.0 --infile
+    ./test/redcap/srs02.csv --outfile-prefix ./test/sandbox/redcap/srs02 --format
+    yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/srs02_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/srs02_i.json form ./test/sandbox/redcap/srs02_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title srs_adult03 --id urn:redcap_srs_adult03 --instrument-version
+    1.0 --infile ./test/redcap/srs_adult03.csv --outfile-prefix ./test/sandbox/redcap/srs_adult03
+    --format json
+  stdout: ''
+- sh: redcap-rios --title srs_adult03 --id urn:redcap_srs_adult03 --instrument-version
+    1.0 --infile ./test/redcap/srs_adult03.csv --outfile-prefix ./test/sandbox/redcap/srs_adult03
+    --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/srs_adult03_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/srs_adult03_i.json form ./test/sandbox/redcap/srs_adult03_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title vinelandparent_200503 --id urn:redcap_vinelandparent_200503
+    --instrument-version 1.0 --infile ./test/redcap/vinelandparent_200503.csv --outfile-prefix
+    ./test/sandbox/redcap/vinelandparent_200503 --format json
+  stdout: ''
+- sh: redcap-rios --title vinelandparent_200503 --id urn:redcap_vinelandparent_200503
+    --instrument-version 1.0 --infile ./test/redcap/vinelandparent_200503.csv --outfile-prefix
+    ./test/sandbox/redcap/vinelandparent_200503 --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/vinelandparent_200503_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/vinelandparent_200503_i.json
+    form ./test/sandbox/redcap/vinelandparent_200503_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title vinelandsurvey_200505 --id urn:redcap_vinelandsurvey_200505
+    --instrument-version 1.0 --infile ./test/redcap/vinelandsurvey_200505.csv --outfile-prefix
+    ./test/sandbox/redcap/vinelandsurvey_200505 --format json
+  stdout: ''
+- sh: redcap-rios --title vinelandsurvey_200505 --id urn:redcap_vinelandsurvey_200505
+    --instrument-version 1.0 --infile ./test/redcap/vinelandsurvey_200505.csv --outfile-prefix
+    ./test/sandbox/redcap/vinelandsurvey_200505 --format yaml
+  stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/vinelandsurvey_200505_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/vinelandsurvey_200505_i.json
+    form ./test/sandbox/redcap/vinelandsurvey_200505_f.json
+  stdout: |
+    Successful validation.
+- sh: redcap-rios --title wasi_199903 --id urn:redcap_wasi_199903 --instrument-version
+    1.0 --infile ./test/redcap/wasi_199903.csv --outfile-prefix ./test/sandbox/redcap/wasi_199903
+    --format json
+  stdout: ''
+- sh: redcap-rios --title wasi_199903 --id urn:redcap_wasi_199903 --instrument-version
+    1.0 --infile ./test/redcap/wasi_199903.csv --outfile-prefix ./test/sandbox/redcap/wasi_199903
+    --format yaml
+  stdout: ''
+- sh: redcap-rios --title ./test/redcap/ATN_GI.csv --id urn:redcap_ATN_GI --instrument-version
+    1.0 --infile ./test/redcap/ATN_GI.csv --outfile-prefix ./test/sandbox/redcap/ATN_GI
+    --format json
+  stdout: ''

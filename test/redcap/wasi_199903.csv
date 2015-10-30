@@ -1,0 +1,380 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
+grade_highed,Grade/Highest education,,,enumeration,"{""Choices"":[{""c1"":""Less than 6th grade""},{""c3"":""High school diploma or GED""},{""c2"":""Some high school""},{""c5"":""Associate's degree""},{""c4"":""Some college, no degree""},{""c7"":""Some graduate school""},{""c6"":""Bachelor's degree""},{""c8"":""Master's degree and above""}]}",,page_1
+comments_misc,"Miscellaneous comments on study, interview, methodology relevant to this form data",,,,text,,page_1
+ss_vocabularyrawscore,Vocabulary Raw - Score,,,,integer,,page_1
+ss_vocabularytscoreverbal4,Vocabulary T - Score Verbal - 4 Subtest,,,,float,,page_1
+ss_vocabularytscore2,Vocabulary T - Score - 2 Subtest,,,,float,,page_1
+ss_blockdesignrawscore,Block Design Raw - Score,,,,integer,,page_1
+ss_blockdesigntscoreperf4,Block Design T - Score Performance - 4 Subtest,,,,float,,page_1
+ss_similaritiesrawscore,Similarities Raw - Score,,,enumeration,"{""Choices"":[{""c42"":""42""},{""c48"":""48""},{""c43"":""43""},{""c24"":""24""},{""c25"":""25""},{""c26"":""26""},{""c27"":""27""},{""c20"":""20""},{""c21"":""21""},{""c22"":""22""},{""c23"":""23""},{""c46"":""46""},{""c47"":""47""},{""c44"":""44""},{""c45"":""45""},{""c28"":""28""},{""c29"":""29""},{""c40"":""40""},{""c41"":""41""},{""c1"":""1""},{""c0"":""0""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c7"":""7""},{""c6"":""6""},{""c9"":""9""},{""c8"":""8""},{""c39"":""39""},{""c38"":""38""},{""c11"":""11""},{""c10"":""10""},{""c13"":""13""},{""c12"":""12""},{""c15"":""15""},{""c14"":""14""},{""c17"":""17""},{""c16"":""16""},{""c19"":""19""},{""c18"":""18""},{""c31"":""31""},{""c30"":""30""},{""c37"":""37""},{""c36"":""36""},{""c35"":""35""},{""c34"":""34""},{""c33"":""33""},{""c32"":""32""}]}",,page_1
+ss_similaritiestscoreverbal4,Similarities T - Score Verbal - 4 Subtest,,,,float,,page_1
+ss_matrixreasoningrawscore,Matrix Reasoning Raw - Score,,,enumeration,"{""Choices"":[{""c24"":""24""},{""c25"":""25""},{""c26"":""26""},{""c27"":""27""},{""c20"":""20""},{""c21"":""21""},{""c22"":""22""},{""c23"":""23""},{""c28"":""28""},{""c29"":""29""},{""c1"":""1""},{""c0"":""0""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""},{""c7"":""7""},{""c6"":""6""},{""c9"":""9""},{""c8"":""8""},{""c11"":""11""},{""c10"":""10""},{""c13"":""13""},{""c12"":""12""},{""c15"":""15""},{""c14"":""14""},{""c17"":""17""},{""c16"":""16""},{""c19"":""19""},{""c18"":""18""},{""c31"":""31""},{""c30"":""30""},{""c35"":""35""},{""c34"":""34""},{""c33"":""33""},{""c32"":""32""}]}",,page_1
+ss_matrixreasoningtscoreperf4,Matrix Reasoning T - Score Performance - 4 Subtest,,,,float,,page_1
+ss_matrixreasoningtscore2,Matrix Reasoning T - Score - 2 Subtest,,,,float,,page_1
+sumstscores_verbal4subtest,Verbal - Score - 4 Subtest,,,,float,,page_1
+sumstscores_perf4subtest,Performance - Score - 4 Subtest,,,,float,,page_1
+sumstscores_total4subtest,Total - Score - 4 Subtest,,,,float,,page_1
+sumstscores_total2subtest,Total - Score - 2 Subtest,,,,float,,page_1
+iqscores_verbsumtscores,Verbal Sum of T - Scores,,,,float,,page_1
+iqscores_verbiq,Verbal IQ,,,enumeration,"{""Choices"":[{""c999"":""missing""}]}",,page_1
+iqscores_verbpercentile,Verbal Percentile,,,,float,,page_1
+iqscores_verbconfintervalfrom,Verbal Confidence Interval - From,,,,float,,page_1
+iqscores_verbconfintervalto,Verbal Confidence Interval - To,,,,float,,page_1
+iqscores_perfsumtscores,Performance Sum of T - Scores,,,,float,,page_1
+iqscores_perfiq,Performance IQ,,,enumeration,"{""Choices"":[{""c999"":""missing""}]}",,page_1
+iqscores_perfpercentile,Performance Percentile,,,,float,,page_1
+iqscores_perfconfintervalfrom,Performance Confidence Interval - From,,,,float,,page_1
+iqscores_perfconfintervalto,Performance Confidence Interval - To,,,,float,,page_1
+iqscores_full4sumtscores,Full 4 Sum of T - Scores,,,,float,,page_1
+iqscores_full4iq,Full 4 IQ,,,,float,,page_1
+iqscores_full4percentile,Full 4 Percentile,,,,float,,page_1
+iqscores_full4confintervalfrom,Full 4 Confidence Interval - From,,,,float,,page_1
+iqscores_full4confintervalto,Full 4 Confidence Interval - To,,,,float,,page_1
+iqscores_full4predintwisc90f,Full 4 Prediction Interval WISC-III - 90% - From,,,,float,,page_1
+iqscores_full4predintwisc90t,Full 4 Prediction Interval WISC-III - 90% - To,,,,float,,page_1
+iqscores_full4predintwisc68f,Full 4 Prediction Interval WISC-III - 68% - From,,,,float,,page_1
+iqscores_full4predintwisc68t,Full 4 Prediction Interval WISC-III - 68% - To,,,,float,,page_1
+iqscores_full4predintwais90f,Full 4 Prediction Interval WASI-III - 90% - From,,,,float,,page_1
+iqscores_full4predintwais90t,Full 4 Prediction Interval WASI-III - 90% - To,,,,float,,page_1
+iqscores_full4predintwais68f,Full 4 Prediction Interval WASI-III - 68% - From,,,,float,,page_1
+iqscores_full4predintwais68t,Full 4 Prediction Interval WASI-III - 68% - To,,,,float,,page_1
+iqscores_full2sumtscores,Full 2 Sum of T - Scores,,,,float,,page_1
+iqscores_full2iq,Full 2 IQ,,,,float,,page_1
+iqscores_full2percentile,Full 2 Percentile,,,,float,,page_1
+iqscores_full2confintervalfrom,Full 2 Confidence Interval - From,,,,float,,page_1
+iqscores_full2confintervalto,Full 2 Confidence Interval - To,,,,float,,page_1
+profilesubtest_verbalv,Verbal Vocabulary T Score,,,,integer,,page_1
+profilesubtest_verbals,Verbal Similarities T Score,,,,integer,,page_1
+profilesubtest_performancebd,Performance Block Design T Score,,,,integer,,page_1
+profilesubtest_performancemr,Performance Matrix Reasoning T Score,,,,integer,,page_1
+profileiqscores_viq,VIQ Composite Score (VCI),,,,integer,,page_1
+profileiqscores_piq,PIQ Composite Score (PRI),,,,integer,,page_1
+profileiqscores_fsiq,FSIQ Composite Score,,,,integer,,page_1
+wasi_1999_vocab_1fishresponse,1 Fish - Response,,,,text,,page_1
+vocab_1fishscore,Vocabulary. Fish - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasivoc_2shovelresponse,2 Shovel - Response,,,,text,,page_1
+vocab_2shovelscore,Vocabulary. Shovel - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasi_1999_vocab_3mapresponse,3 Map - Response,,,,text,,page_1
+vocab_3mapscore,3 Map - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasi_1999_vocab_4shellresponse,4 Shell - Response,,,,text,,page_1
+vocab_4shellscore,Vocabulary. Shell - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasi_1999_vocab_5shirtresponse,5 Shirt - Response,,,,text,,page_1
+vocab_5shirtscores,Vocabulary. Shirt - Scores,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasi_1999_vocab_6shoeresponse,6 Shoe - Response,,,,text,,page_1
+vocab_6shoescores,6 Shoe - Scores,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_7flashlightresp,7 Flashlight - Response,,,,text,,page_1
+vocab_7flashlightscore,7 Flashlight - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasi_1999_vocab_8carresponse,8 Car - Response,,,,text,,page_1
+vocab_8carscore,Vocabulary. Car - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasi_1999_vocab_9birdresponse,9 Bird - Response,,,,text,,page_1
+vocab_9birdscore,Vocabulary. Bird - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_10calendarresp,10 Calendar - Response,,,,text,,page_1
+vocab_10calendarscore,Vocabulary. Calendar - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_11numberresp,11 Number - Response,,,,text,,page_1
+vocab_11numberscore,11 Number - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasi_1999_vocab_12bellresponse,12 Bell - Response,,,,text,,page_1
+vocab_12bellscore,Vocabulary. Bell - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_13lunchresponse,13 Lunch - Response,,,,text,,page_1
+vocab_13lunchscore,Vocabulary. Lunch - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_14policeresponse,14 Police - Response,,,,text,,page_1
+vocab_14policescore,14 Police - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_15vacationresp,15 Vacation - Response,,,,text,,page_1
+vocab_15vacationscore,15 Vacation - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasi_1999_vocab_16petresponse,16 Pet - Response,,,,text,,page_1
+vocab_16petscore,Vocabulary. Pet - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_17balloonresponse,17 Balloon - Response,,,,text,,page_1
+vocab_17balloonscore,17 Balloon - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_18transformresp,18 Transform - Response,,,,text,,page_1
+vocab_18transformscore,18 Transform - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_19alligatorresponse,19 Alligator - Response,,,,text,,page_1
+vocab_19alligatorscore,Vocabulary. Alligator - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasi_1999_vocab_20cartresponse,20 Cart - Response,,,,text,,page_1
+vocab_20cartscore,20 Cart - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_21blameresponse,21 Blame - Response,,,,text,,page_1
+vocab_21blamescore,21 Blame - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_22danceresponse,22 Dance - Response,,,,text,,page_1
+vocab_22dancescore,Vocabulary. Dance - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_23purposeresponse,23 Purpose - Response,,,,text,,page_1
+vocab_23purposescore,23 Purpose - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_24entertainresp,24 Entertain - Response,,,,text,,page_1
+vocab_24entertainscore,Vocabulary. Entertain - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_25famousresponse,25 Famous - Response,,,,text,,page_1
+vocab_25famousscore,25 Famous - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_26revealresponse,26 Reveal - Response,,,,text,,page_1
+vocab_26revealscore,Vocabulary. Reveal - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_27decaderesponse,27 Decade - Response,,,,text,,page_1
+vocab_27decadescore,Vocabulary. Decade - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_28traditionresp,28 Tradition - Response,,,,text,,page_1
+vocab_28traditionscore,Vocabulary. Tradition - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_29rejoiceresponse,29 Rejoice - Response,,,,text,,page_1
+vocab_29rejoicescore,29 Rejoice - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_30enthusiasticresp,30 Enthusiastic - Response,,,,text,,page_1
+vocab_30enthusiasticscore,Vocabulary. Enthusiastic - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_31improviseresp,31 Improvise - Response,,,,text,,page_1
+vocab_31improvisescore,Vocabulary. Improvise - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_32impulseresp,32 Impulse - Response,,,,text,,page_1
+vocab_32impulsescore,Vocabulary. Impulse - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_33hasteresponse,33 Haste - Response,,,,text,,page_1
+vocab_33hastescore,Vocabulary. Haste - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_34trendresponse,34 Trend - Response,,,,text,,page_1
+vocab_34trendscore,Vocabulary. Trend - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_35intermittentresp,35 Intermittent - Response,,,,text,,page_1
+vocab_35intermittentscore,35 Intermittent - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_36devoutresponse,36 Devout - Response,,,,text,,page_1
+vocab_36devoutscore,36 Devout - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_37impertinentresp,37 Impertinent - Response,,,,text,,page_1
+vocab_37impertinentscore,37 Impertinent - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_38nicheresponse,38 Niche - Response,,,,text,,page_1
+vocab_38nichescore,38 Niche - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_39presumptuousresp,39 Presumptuous - Response,,,,text,,page_1
+vocab_39presumptuousscore,39 Presumptuous - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_40formidableresp,40 Formidable - Response,,,,text,,page_1
+vocab_40formidablescore,40 Formidable - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_41ruminateresp,41 Ruminate - Response,,,,text,,page_1
+vocab_41ruminatescore,Vocabulary. Ruminate - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasivoc_42panacearesp,42 Panacea - Response,,,,text,,page_1
+vocab_42panaceascore,Vocabulary. Panacea - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+vocab_totalrawscore,Total Raw Score - Vocabulary,,,enumeration,"{""Choices"":[{""max"":""59 for ages 15-90""}]}",,page_1
+wasiblockdes_1_incorrect1,Design 1 - Incorrect Design Trial 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+wasiblockdes_1_incorrect1b,Design 1 - Incorrect Design Trial 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_1a_comp_time,Design 1 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_1_correct_des,Design 1 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_1a_score,Design 1 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct in trial 2""},{""c0"":""Fail""},{""c2"":""Correct in trial 1""}]}",,page_1
+wasiblockdes_2_incorrect1,Design 2 - Incorrect Design Trial 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+wasiblockdes_2_incorrect1b,Design 2 - Incorrect Design Trial 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_2a_comp_time,Design 2 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_2_correct_des,Design 2 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_2a_score,Design 2 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct in trial 2""},{""c0"":""Fail""},{""c2"":""Correct in trial 1""}]}",,page_1
+wasiblockdes_3_incorrect1,Design 3 - Incorrect Design Trial 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+wasiblockdes_3_incorrect1b,Design 3 - Incorrect Design Trial 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_3a_comp_time,Design 3 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_3_correct_des,Design 3 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_3a_score,Design 3 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct in trial 2""},{""c0"":""Fail""},{""c2"":""Correct in trial 1""}]}",,page_1
+wasiblockdes_4_incorrect1,Design 4 - Incorrect Design Trial 1,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+wasiblockdes_4_incorrect1b,Design 4 - Incorrect Design Trial 2,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_4a_comp_time,Design 4 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_4_correct_des,Design 4 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_4a_score,Design 4 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct in trial 2""},{""c0"":""Fail""},{""c2"":""Correct in trial 1""}]}",,page_1
+wasiblockdes_5_incorrect,Design 5 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_5a_comp_time,Design 5 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_5_correct_des,Design 5 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_5a_score,Design 5 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 16-20 seconds""},{""c4"":""Correct in 21-60 seconds""},{""c7"":""Correct in 1-10 seconds""},{""c6"":""Correct in 11-15 seconds""}]}",,page_1
+wasiblockdes_6_incorrect,Design 6 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_6a_comp_time,Design 6 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_6_correct_des,Design 6 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_6a_score,Design 6 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 16-20 seconds""},{""c4"":""Correct in 21-60 seconds""},{""c7"":""Correct in 1-10 seconds""},{""c6"":""Correct in 11-15 seconds""}]}",,page_1
+wasiblockdes_7_incorrect,Design 7 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_7a_comp_time,Design 7 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_7_correct_des,Design 7 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_7a_score,Design 7 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 16-20 seconds""},{""c4"":""Correct in 21-60 seconds""},{""c7"":""Correct in 1-10 seconds""},{""c6"":""Correct in 11-15 seconds""}]}",,page_1
+wasiblockdes_8_incorrect,Design 8 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_8a_comp_time,Design 8 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_8_correct_des,Design 8 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_8a_score,Design 8 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 16-20 seconds""},{""c4"":""Correct in 21-60 seconds""},{""c7"":""Correct in 1-10 seconds""},{""c6"":""Correct in 11-15 seconds""}]}",,page_1
+wasiblockdes_9_incorrect,Design 9 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_9a_comp_time,Design 9 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_9_correct_des,Design 9 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_9a_score,Design 9 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 46-70 seconds""},{""c4"":""Correct in 71-120 seconds""},{""c7"":""Correct in 1-30 seconds""},{""c6"":""Correct in 31-45 seconds""}]}",,page_1
+wasiblockdes_10_incorrect,Design 10 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_10a_comp_time,Design 10 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_10_correct_des,Design 10 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_10a_score,Design 10 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 46-60 seconds""},{""c4"":""Correct in 61-120 seconds""},{""c7"":""Correct in 1-35 seconds""},{""c6"":""Correct in 36-45 seconds""}]}",,page_1
+wasiblockdes_11_incorrect,Design 11 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_11a_comp_time,Design 11 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_11_correct_des,Design 11 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_11a_score,Design 11 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 46-60 seconds""},{""c4"":""Correct in 61-120 seconds""},{""c7"":""Correct in 1-35 seconds""},{""c6"":""Correct in 36-45 seconds""}]}",,page_1
+wasiblockdes_12_incorrect,Design 12 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_12a_comp_time,Design 12 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_12_correct_des,Design 12 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_12a_score,Design 12 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 46-60 seconds""},{""c4"":""Correct in 61-120 seconds""},{""c7"":""Correct in 1-35 seconds""},{""c6"":""Correct in 36-45 seconds""}]}",,page_1
+wasiblockdes_13_incorrect,Design 13 - Incorrect Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_13a_comp_time,Design 13 - Completion Time (in seconds),,,,integer,,page_1
+wasiblockdes_13_correct_des,Design 13 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+blockdesign_13a_score,Design 13 - Score,,,enumeration,"{""Choices"":[{""c0"":""Fail""},{""c5"":""Correct in 81-100 seconds""},{""c4"":""Correct in 101-120 seconds""},{""c7"":""Correct in 1-55 seconds""},{""c6"":""Correct in 56-80 seconds""}]}",,page_1
+blockdesign_totalrawscore_a,Total Raw Score - Block Design,,,enumeration,"{""Choices"":[{""max"":""71 for ages 9-90""}]}",,page_1
+wasisimil_1_four_wheeled_r,1 Four-Wheeled - Response,,,,text,,page_1
+similarities_1_four_wheeled_s,1 Four-Wheeled - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasisimil_2_dining_items_r,2 Dining Items - Response,,,,text,,page_1
+similarities_2_dining_items_s,2 Dining Items - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasisimilarities_3_clothing_r,3 Clothing - Response,,,,text,,page_1
+similarities_3_clothing_s,3 Clothing - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasisimilarities_4_fruits_r,4 Fruits - Response,,,,text,,page_1
+similarities_4_fruits_s,4 Fruits - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+wasisimilarities_5_red_blue_r,5 Red-Blue - Response,,,,text,,page_1
+similarities_5_red_blue_s,5 Red-Blue - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_6_circle_square_r,6 Circle-Square - Response,,,,text,,page_1
+similarities_6_circle_square_s,6 Circle-Square - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_7_grapes_strawb_r,7 Grapes-Strawberries - Response,,,,text,,page_1
+similarities_7_grapes_strawb_s,7 Grapes-Strawberries - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimilarities_8_cow_bear_r,8 Cow-Bear - Response,,,,text,,page_1
+similarities_8_cow_bear_s,Similarities. Cow-Bear - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimilarities_9_plane_bus_r,9 Plane-Bus - Response,,,,text,,page_1
+similarities_9_plane_bus_s,Similarities. Plane-Bus - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_10_shirt_jacket_r,10 Shirt-Jacket - Response,,,,text,,page_1
+similarities_10_shirt_jacket_s,Similarities. Shirt-Jacket - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_11_pen_pencil_r,11 Pen-Pencil - Response,,,,text,,page_1
+similarities_11_pen_pencil_s,Similarities. Pen-Pencil - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_12_bowl_pane_r,12 Bowl-Pane - Response,,,,text,,page_1
+similarities_12_bowl_pane_s,12 Bowl-Pane - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_13_love_hate_r,13 Love-Hate - Response,,,,text,,page_1
+similarities_13_love_hate_s,Similarities. Love-Hate - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_14_tv_newspaper_r,14 TV-Newspaper - Response,,,,text,,page_1
+similarities_14_tv_newspaper_s,14 TV-Newspaper - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_15_smooth_rough_r,15 Smooth-Rough - Response,,,,text,,page_1
+similarities_15_smooth_rough_s,Similarities. Smooth-Rough - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_16_should_ancle_r,16 Shoulder-Ancle - Response,,,,text,,page_1
+similarities_16_should_ancle_s,Similarities. Shoulder-Ankle - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimilarities_17_sit_run_r,17 Sit-Run - Response,,,,text,,page_1
+similarities_17_sit_run_s,17 Sit-Run - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_18_child_adult_r,18 Child-Adult - Response,,,,text,,page_1
+similarities_18_child_adult_s,Similarities. Child-Adult - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_19_steam_cloud_r,19 Steam-Cloud - Response,,,,text,,page_1
+similarities_19_steam_cloud_s,19 Steam-Cloud - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_20_bird_flower_r,20 Bird-Flower - Response,,,,text,,page_1
+similarities_20_bird_flower_s,20 Bird-Flower - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_21_more_less_r,21 More-Less - Response,,,,text,,page_1
+similarities_21_more_less_s,Similarities. More-Less - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_22_photo_song_r,22 Photograph-Song - Response,,,,text,,page_1
+similarities_22_photo_song_s,22 Photograph-Song - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_23_pease_war_r,23 Pease-War - Response,,,,text,,page_1
+similarities_23_pease_war_s,Similarities. Peace-War - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_24_capit_social_r,24 Capitalism-Socialism - Response,,,,text,,page_1
+similarities_24_capit_social_s,24 Capitalism-Socialism - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_25_trad_habit_r,25 Tradition-Habit - Response,,,,text,,page_1
+similarities_25_trad_habit_s,Similarities. Tradition-Habit - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+wasisimil_26_freedom_law_r,26 Freedom-Law - Response,,,,text,,page_1
+similarities_26_freedom_law_s,26 Freedom-Law - Score,,,enumeration,"{""Choices"":[{""c1"":""Partially correct""},{""c0"":""Fail""},{""c2"":""Correct""}]}",,page_1
+similarities_totalrawscore_a,Total Raw Score - Similarities,,,enumeration,"{""Choices"":[{""max"":""45 for ages 9-90""}]}",,page_1
+matrix_a_r,Matrix Reasoning. Item A - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_a_dk,Item A - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_a_s,Item A - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_b_r,Matrix Reasoning. Item B - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_b_dk,Item B - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_b_s,Item B - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_1_r,Item 1 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_1_dk,Item 1 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_1_s,Matrix Reasoning. Item 1 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_2_r,Item 2 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_2_dk,Item 2 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_2_s,Matrix Reasoning. Item 2 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_3_r,Item 3 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_3_dk,Item 3 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_3_s,Matrix Reasoning. Item 3 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_4_r,Item 4 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_4_dk,Item 4 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_4_s,Matrix Reasoning. Item 4 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_5_r,Item 5 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_5_dk,Item 5 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_5_s,Matrix Reasoning. Item 5 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_6_r,Item 6 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_6_dk,Item 6 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_6_s,Matrix Reasoning. Item 6 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_7_r,Item 7 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_7_dk,Item 7 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_7_s,Matrix Reasoning. Item 7 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_8_r,Item 8 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_8_dk,Item 8 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_8_s,Matrix Reasoning. Item 8 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_9_r,Item 9 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_9_dk,Item 9 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_9_s,Matrix Reasoning. Item 9 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_10_r,Item 10 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_10_dk,Item 10 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_10_s,Matrix Reasoning. Item 10 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_11_r,Item 11 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_11_dk,Item 11 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_11_s,Matrix Reasoning. Item 11 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_12_r,Item 12 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_12_dk,Item 12 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_12_s,Matrix Reasoning. Item 12 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_13_r,Item 13 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_13_dk,Item 13 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_13_s,Matrix Reasoning. Item 13 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_14_r,Item 14 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_14_dk,Item 14 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_14_s,Matrix Reasoning. Item 14 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_15_r,Item 15 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_15_dk,Item 15 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_15_s,Matrix Reasoning. Item 15 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_16_r,Item 16 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_16_dk,Item 16 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_16_s,Matrix Reasoning. Item 16 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_17_r,Item 17 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_17_dk,Item 17 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_17_s,Matrix Reasoning. Item 17 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_18_r,Item 18 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_18_dk,Item 18 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_18_s,Matrix Reasoning. Item 18 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_19_r,Item 19 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_19_dk,Item 19 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_19_s,Matrix Reasoning. Item 19 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_20_r,Item 20 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_20_dk,Item 20 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_20_s,Matrix Reasoning. Item 20 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_21_r,Item 21 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_21_dk,Item 21 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_21_s,Matrix Reasoning. Item 21 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_22_r,Item 22 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_22_dk,Item 22 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_22_s,Matrix Reasoning. Item 22 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_23_r,Item 23 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_23_dk,Item 23 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_23_s,Matrix Reasoning. Item 23 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_24_r,Item 24 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_24_dk,Item 24 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_24_s,Matrix Reasoning. Item 24 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_25_r,Item 25 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_25_dk,Item 25 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_25_s,Matrix Reasoning. Item 25 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_26_r,Item 26 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_26_dk,Item 26 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_26_s,Matrix Reasoning. Item 26 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_27_r,Item 27 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_27_dk,Item 27 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_27_s,Matrix Reasoning. Item 27 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_28_r,Item 28 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_28_dk,Item 28 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_28_s,Matrix Reasoning. Item 28 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_29_r,Item 29 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_29_dk,Item 29 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_29_s,Matrix Reasoning. Item 29 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_30_r,Item 30 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_30_dk,Item 30 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_30_s,Matrix Reasoning. Item 30 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_31_r,Item 31 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_31_dk,Item 31 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_31_s,Item 31 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_32_r,Item 32 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_32_dk,Item 32 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_32_s,Item 32 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_33_r,Item 33 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_33_dk,Item 33 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_33_s,Item 33 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_34_r,Item 34 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_34_dk,Item 34 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_34_s,Item 34 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_35_r,Item 35 - Response,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c3"":""3""},{""c2"":""2""},{""c5"":""5""},{""c4"":""4""}]}",,page_1
+wasi_1999_matrix_35_dk,Item 35 - Response is 'Don't Know',,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+matrix_35_s,Item 35 - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Fail""}]}",,page_1
+matrix_totalrawscore,Total Raw Score - Matrix Reasoning,,,enumeration,"{""Choices"":[{""max"":""30 for ages 9-90""}]}",,page_1
+behavobs_referralreason,Reason for Referral/Presenting Complaint(s),,,,text,,page_1
+behavobs_attitude,Attitude Towards Testing,,,,text,,page_1
+behavobs_appearance,Physical Appearance,,,,text,,page_1
+behavobs_attention,Attention,,,,text,,page_1
+behavobs_problems,Visual/Auditory/Motor Problems,,,,text,,page_1
+behavobs_language,Language,,,,text,,page_1
+behavobs_mood,Affect Mood,,,,text,,page_1
+behavobs_behaviors,Unusual Behaviors/Verbalizations,,,,text,,page_1
+behavobs_remarks,Other Remarks,,,,text,,page_1
+blockdesign_1b_comp_time,"Design 1 - Completion Time (in seconds), trial 2",,,,integer,,page_1
+blockdesign_2b_comp_time,"Design 2 - Completion Time (in seconds), trial 2",,,,integer,,page_1
+blockdesign_3b_comp_time,"Design 3 - Completion Time (in seconds), trial 2",,,,integer,,page_1
+blockdesign_4b_comp_time,"Design 4 - Completion Time (in seconds), trial 2",,,,integer,,page_1
+blockdesign_1b_correct_des,Design 1 - Correct Design,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":"" No""}]}",,page_1
+blockdesign_2b_correct_des,"Design 2 - Correct Design, trial 2",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":"" No""}]}",,page_1
+blockdesign_3b_correct_des,"Design 3 - Correct Design, trial 2",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":"" No""}]}",,page_1
+blockdesign_4b_correct_des,"Design 4 - Correct Design, trial 2",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":"" No""}]}",,page_1
+wasi001b,Vocabulary: T Score,,,,integer,,page_1
+wasi002b,Similarities: T Score,,,,integer,,page_1
+wasi003b,Block Design: T Score,,,,integer,,page_1
+wasi004b,Matrix Reasoning: T Score,,,,integer,,page_1

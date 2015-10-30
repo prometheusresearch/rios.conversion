@@ -1,0 +1,6106 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type,action,trigger,targets
+name,Name,text,1,,,,,,,
+telephone,Telephone,integer,1,,,,,,,
+grade_completed,Current or Highest Grade Completed (if applicable),text,1,,,,,,,
+school,School or Other Facility (if applicable),text,1,,,,,,,
+language_spoken,Language Spoken at Home,text,1,,,,,,,
+disabling_conditions,Does the individual have any disabling conditions?,text,1,,,,,,,
+sex,Sex,"{
+    ""Choices"": [
+        {
+            ""0"": ""Female""
+        },
+        {
+            ""1"": ""Male""
+        }
+    ]
+}",1,,,,,,,
+test_date,Test Date,date,1,,,,,,,
+birth_date,Birth Date,date,1,,,,,,,
+chronological_age,Chronological Age,integer,1,,,,,,,
+respondent_name,Respondent Name,text,1,,,,,,,
+respondent_sex,Respondent Sex,"{
+    ""Choices"": [
+        {
+            ""0"": ""Female""
+        },
+        {
+            ""1"": ""Male""
+        }
+    ]
+}",1,,,,,,,
+respondent_relationship,Respondent's Relationship to Individual,text,1,,,,,,,
+respondent_telephone,Respondent Telephone,integer,1,,,,,,,
+turns_eyes,Turn eyes and head towards sound.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+looks_toward_parent,Looks toward parent or caregier when hearing parent's or caregiver's voice,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+responds_to_name,"Responds to his or her name spoken (for example, turns toward speaker, smiles, etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+understand_no,"Demonstrates understanding of the meaning of ""no"", or word or gesture with the same meaning (for example, stops current activity briefly).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+understanding_yes,"Demonstrates understanding of the meaning of ""yes"", or word or gestures with the same meaning (for example, continues activity, smiles, etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+listen_to_story,"Listens to story for at least 5 minutes (that is, remains relatively still and directs attention to the storyteller or reader).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+points_body_parts,"Point to at least three major body parts when asked (for example, nose, mouth, hands, feet, etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+points_common_objects,"Point to common objects in a book or magasize as theya re named (for example, dog, car, cup, key, etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+listent_to_instructions,Listens to instructions.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+follows_instructions,"Follows instructions with one action and one object (for example, ""Bring me the book""; ""Close the door""; etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+points_minor_body_parts,"Parts to at least 5 minor body parts when asked (for example, fingers, elbows, teeth, toes, etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+follows_instructions_two_actions,"Follows instructions with two actions or an action and two objects (for example, ""Bring me the crayons and the paper""; ""Sit down and eat your lunch""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+instructions_if_then,"Follows instructions in ""if-then"" form (for example, ""If you want to pay outside, then put your things away""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+listens_15_minutes,Listens to a story for at least 15 minutes,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+listens_30_minutes,Listens to a story for at least 30 minutes,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+three_part_instructions,"Follows three-part instructions (for example, ""Brush your teeth, get dressed, and make your bed""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+instructions_5_minutes,Follows instructions or directions heard 5 minutes before.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+understand_word_for_word,"Understands sayings that are not meant to be taken word for word (for example, ""Button your lip""; ""Hit the road""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+informational_talk_15_min,Listens to an informational talk for at least 15 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+informational_talk_30_min,Listens to an informational talk for at least 30 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",2,,,,,,,
+cries_fusses,Cries or fusses when hungry or wet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+smiles,Smiles when you smile at him or her.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+sounds_pleasure,"Makees sounds of pleasure (for example, coos, laughs, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+baby_sounds,"Makes nonword baby sounds (that is, babbles).","{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+gesture_caregiver_attention,"Makes sounds or gestures (for example, waves arms) to get parent's or caregiver's attention","{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+gesture_activity,"Makes sounds or gestures (for example, shakes head) if he or she wants an activity to stop or keep going","{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+waves_goodbye,Waves good-bye when another person waves or parent or caregiver tells him or her to wave,"{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+another_name,"Syas ""Da-da,"" ""Ma-ma,"" or another name for parent or caregiver (including parent's or caregiver's first name or nickname).","{
+    ""Choices"": [
+        {
+            ""0"": ""Behavior does not occur""
+        },
+        {
+            ""1"": ""behavior occurs and is a mild problem""
+        },
+        {
+            ""2"": ""behavior occurs and is a moderate problem""
+        },
+        {
+            ""3"": ""behavior occurs and is a severe problem""
+        }
+    ]
+}",3,,,,,,,
+points_object,Points to object he or she wants that is out of reach.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+points_preference,"Points or gestures to indicate preference when offered a choice (for example, ""Do you want this one or that one?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+repeats_common_words,"Repeats or tries to repeat common words immediately upon hearing them 9for example, ball, car, go, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+name_three_objects,"Names at least three objects (for example, bottle, dog, favorite toy, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+one_word_request,"Says one-word requests (for example, up, more, out, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+first_names_nicknames,"uses first names or nicknames of brothers, sisters, or friends, or says their names when asked.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+answer_with_words,Answers or tries to answer with words when asked a question.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+names_10_objects,Names at least 10 objects.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+states_first_name,"States own first name or nickname (for example, Latesha, Little Sister, etc.) when asked.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+phrases_noun_verb,"Uses phrases with a noun and a verb (for example, ""Katie stay""; ""Go home""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+changing_inflection,"Asks questions by changing inflection of words or simple phrases (""Mine?""; ""Me go?""; etc); grammar is not important.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+50_recognizable_words,Says at least 50 recognizable words,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+simple_words_describe,"Uses simple words to describe thing (for example, dirty, pretty, big, loud, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+questions_what_where,"Asks questions beginning with what or where (for example, ""What's that?""; ""Where doggie go?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+negatives_sentences,"Uses negatives in sentences (for example, ""Me no go""; ""I won't drink it""; etc.); grammar is not important.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+experiences_simple_sentences,"Tells about experiences in simple sentences (for example, ""Ginger and I play""; ""Dan read me a book""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+correct_age,Says correct age when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+100_recognizable_words,Says at least 100 recognizable words.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+in_on_under,"Uses in, on, or under in phrases or sentences (for example, ""Ball go under chair""; ""Put it on the table""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+and_phrases,"Uses and in phrases or sentences (for example, ""Mom and Dad""; ""I want ice cream and cake""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+first_last_name,Says first and last name when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+common_colors,"Identifies and names most common colors (that is, red, blue, gree, yellow, orange, purple, brown, and black)","{
+    ""Choices"": [
+        {
+            ""0"": ""0 to 1 color""
+        },
+        {
+            ""1"": ""2 to 5 colors""
+        },
+        {
+            ""2"": ""8 to 8 colors""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+questions_who_why,"Asks questions beginning with who or why (for example, ""Who's that?""; ""Why do I have to go?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+present_tense_verbs,"Uses present tense verbs ending in ing (for example, ""Is singing""; ""Is playing""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+possessives,"Uses possessives in phrases or sentenes (for example, ""That's her book""; ""This is Carlos's ball""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+pronouns,"Uses pronouns in phrases or sentneces; must use correct gender and form of the pronoun, but sentences need not be grammatically correct (for example, ""He done it""; ""They went""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+questions_when,"Asks questions beginning with when (for example, ""When is dinner?""; ""When can we go home?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+past_tense_verbs,"Uses regular past tense vebs (for example, walked, baked, etc.); may use irregular past tense verbs ungrammatically (for example, ""I runned away""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+behing_in_front_of,"Uses behind or in front of  in phrases or sentences (for example, ""I walked in front of her""; ""Terrell is behind you""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+pronounces_clearly,"Pronounces words clearly without sound substitutions (for example, does not say ""wabbit"" for ""rabbit,"" ""Thally"" for ""Sally,"" etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+basic_parts_story,"Tells basic parts of a story, fairy tale, or television show plot; does not need to include great dtail or recount in perfect order.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+month_day_birthday,Says month and day of birthday when asked,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+modulates_voice,"Modulates tone of voice, volume, and rhythm appopriately (for example, does not consistently speak too loudly, too softly, or in a monotone, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+experiences_in_detail,"Tells about experiences in detail (for example, tells who was involved, where activity took place, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+simple_directions,"Gives simple directions (for example, on how to play on how to make something).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never attempts to articular directions""
+        },
+        {
+            ""1"": ""Articulates directions but they are not clear enough to follow""
+        },
+        {
+            ""2"": ""Articulate directions that are clear enough to follow""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+between_phrases,"Uses between in phrases or sentences (for example, ""The ball went between the cars; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+own_telephone,Says own telephone number when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+moves_topic,Easily moves from one topic to another in conversation,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+stays_on_topic,Stays on topic in conversations; does not go off on tangents,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+explains_ideas,"Explains ideas in more than one way (for example, ""This was a good book.  It was exciting and fun to read""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+conversations_10_min,"Has conversations that last 10 minutes (for example, relates experiences, contributes ideas, shares feelings, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+complete_home_address,"Says comlete home address (that is, street or rural route, apartment number, city, and state), with or without zip code, when asked.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+short_term_goal,"Describes short-term goal and what he or she needs to do to reach it (for example, says, ""I want to get an A on my test, so I'm going to study hard""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+complex_directions,"Gives complex directions to others (for example, to a distant location, for recipe with many ingredients or steps, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never attempts to articular directions""
+        },
+        {
+            ""1"": ""Articulates directions but they are not clear enough to follow""
+        },
+        {
+            ""2"": ""Articulate directions that are clear enough to follow""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+long_range_goal,"Describes a realistic long-range goal that can be done in 6 months or more (for example, says, ""I want to buy a bike, so I'll babysit and run errands to earn enough money to buy it""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",3,,,,,,,
+1_or_more_letters,Identifies one or more alphabet letters as letters and distinguishes them from numbers.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+recognizes_name,Recognizes own name in printed form.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+10_letters,Identifies at least 10 printed eltters of the alphabet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+write_correct_orientation,"Prints or writes using correct orientation (for example, in English from left to right; in some languages from right to left or top to bottom).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+copies_first_name,Copies own first name.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+identifies_all_letters,"Identifies all printed letters of the alphabet, upper- and lowercase.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+simple_words,"Prints at least three simple words from example (for example, cat, see, bee, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+name_from_memory,Prints or writes own first and last name from memory.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_10_words,Reads at least 10 words aloud,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+prints_10_words,"Prints at least 10 simple words from memory (for example, hat ball, the, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_simple_stories,"Reads simple stories aloud (that is, stories with sentences of three to five words).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+prints_simple_sentencs,Prints simple sentences of three or four words; may make small errors in spelling or sentence structure.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+20_words_memory,Print more than 20 words from memory; may make small spelling errors.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_second_grade,Reads and understands material of at least second-grade level.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+alphabetical_order,Puts lists of words in alphabetical order.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+simple_correspondence,"Writes simple correspondence at least three sentences long (for example, postcards, thank-you notes, e-mail, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_fourth_grade,Reads and understands material of at least fourth-grade level.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+writes_one_page,"Writes reports, papers, or essay at least one page long; may use computer.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+complete_address,Writes complete mailing and return addresses on letters or packages.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_sixth_grade,Reads and understands material of at least sixth-grade level.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+edits_own_work,"Edits or corrects own written work before handing it in (for example, checks punctuation, spelling, grammar, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+advanced_correspondence,Writes advanced correspondence at least 10 sentences long; may use computer.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_ninth_grade,Reads and understands material of at least ninth-grade level.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+reads_newspaper,Reads at least two newspaper articles weekly (print or electronic version).,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+business_letters,"Writes business letters (for example, requests information, makes complaint, places order, etc.); may use computer.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+opens_mouth,Opens mouth when food is offerend.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+solid_foods,"Eats solid foods (for example, cooked vegetables, chopped meats, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+finger_foods,"Sucks or chews on finger foods (for example, crackers, cookies, toast, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+drinks_cup,Drinks from a cup or glass; may spill.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+sucks_straw,Sucks from straw.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+takes_off_clothing,"Takes off cltohing that opens in the front (for example, a coat or sweater); does not have to unbutton or unzip the clothing.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+pulls_up_clothing,"Pulls up clothing with elastic waistbands (for example, underwear or sweatpants).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+feeds_self,Feeds self with fork; may spill.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+urinates_toilet,Urinates in toilet or potty chair.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+puts_on_clothing,"Puts on clothing that opens in front (for example, a coat or sweater); does not have to zip or button the clothing.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+asks_toilet,Asks to use toilet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+defecates_toilet,Defecates in toilet or potty chair.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+toilet_trained,Is toilet-trained during the day.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Always needs help or has frequent accidents""
+        },
+        {
+            ""1"": ""Needs help, such as with wiping, or has some accidents""
+        },
+        {
+            ""2"": ""Uses toilet without help and without accidents""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+zippers,"Zips zippers that are fastened at the bottom (for example, in pants, on backpacks, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+wipes_nose_tissue,Wipes or blows nose using tissue or handkerchief.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+toilet_trained_night,Is toilet-trained during the night.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Always needs help or has frequent accidents""
+        },
+        {
+            ""1"": ""Needs help, such as with wiping, or has some accidents""
+        },
+        {
+            ""2"": ""Uses toilet without help and without accidents""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+shoes_correct_feet,Puts shoes on correct feet; does not need to tie laces,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+fastens_snaps,Fastens snaps.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+holds_spoon,"Holds spoon, fork, and knife correctly.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+face_soap,Washes and dries face using soap and water.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+brushes_teeth,Brushes teeth.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never brushes wtihout help or without being reminded""
+        },
+        {
+            ""1"": ""Needs help brushing or putting toothpaste on the brush or needs frequent reminders""
+        },
+        {
+            ""2"": ""Brushes teeth without help, including putting toothpaste on the brush and without bbeing told to brush""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+large_buttons,"Buttons large buttons in front, in correct buttonholes.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+covers_cough,Covers mouth and nose when coughing and sneezing.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+small_buttons,"Buttons small buttons in front, in correct buttonholes.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+zippers_not_bottom,"Connects and zips zippers that are not fastened at the bottom (for example, in jackets, sweatshirts, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+faucet_temperature,Turns faucet on and adjusts temperature by adding hot or cold water.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+appropriate_clothing,"Wears appropriate clothing during wet or cold wather (for example, raincoat, boots, sweater, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+bathes_self,Bathes or showers and dries self.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never bathes or showers without help or without reminders""
+        },
+        {
+            ""1"": ""Needs help with any part of bathing or drying or with turning the water on or off""
+        },
+        {
+            ""2"": ""Bathes or showers without help, including turning the water on and off""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+apporpriate_restroom,Finds and uses appropriate public restroom for his or her gender.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+washes_hair,Washes and dries hair (with towle and hair dryer).,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+minor_cuts,"Cares for minor cuts (for example, cleans wounds, puts on bandage, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+takes_medicine,"Takes medicine as directed (that is, follows directions on label).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+take_temperature,Uses thermometer to take own or another's temperature.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+seeks_medical_help,"Seeks medical help in an emergency (for example, recognizes symptons of serious illness or injury, such as shortness of breath, chest pain, uncontrolled bleeding, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no health concern that requires special procedures, diets, or treatments""
+        }
+    ]
+}",4,,,,,,,
+follows_health_procedures,"Follows directions for health procedures, special diet, or medical treatments","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no health concern that requires special procedures, diets, or treatments""
+        }
+    ]
+}",4,,,,,,,
+keeps_track_med,Keeps track of medications (nonprescription and prescription) and refills them as needed,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+makes_appointments,Makes appointments for regular medical and dental checkups.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",4,,,,,,,
+careful_hot,"Is careful around hot objects (for example, the stove or oven, an open fire, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+helps_chores,"Helps with simple household chores (for example, dusts, picks up clothes or toys, feeds pet, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+clears_unbreakable,Clear unbreakable items from own place at table.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+cleans_area,"Cleans up play or work area at end of an activity (for example, finger painting, model building, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+puts_away_possessions,"Puts away personal possessions (for example, toys, books, magazines, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+careful_sharp,"Is careful when using sharp objects (for example, scissors, knives, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+clears_breakable,Clears breakable items from own place at table.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+helps_prepare_foods,"Helps prepare foods that require mixing and cooking (for example, cake or cookie mixes, macaroni and cheese, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+simple_appliances,"Uses simple appliances (for example, a toaster, can opener, bottle opener, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+uses_microwave,"Uses microwave oven for heating, baking, or cooking (that is, sets time and power settings, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no microwave in the home.""
+        }
+    ]
+}",5,,,,,,,
+clears_table,"Clears table completely (for example, scrapes and stacks dishes, throws away disposable items, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+household_products,"Uses household products correctly (for example, laundry detergent, furniture polish, glass cleaner, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+prepares_basic_foods,"Prepares basic foods that do not need mixing but require cooking (for example, rice, soup, vegetables, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+cleans_rooms,Cleans one or more rooms other than own bedroom.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+uses_sharp_knife,Uses sharp knife to prepare food.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+uses_stove_oven,"Uses stove or oven for heaitng, baking, or cooking (that is, turns burners on and off, sets oven temperature, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+prepares_food,"Prepares food from ingredients that require measuring, mixing, and cooking.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+washes_clothing,Washes clothing as needed.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+performs_maintenance,"Performs maintenance tasks as needed (for example, replaces light bulbs, changes vacuum cleaner bag, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+prepares_main_meal,Plans and prepares main meal of the day,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",5,,,,,,,
+understand_telephone,"Demonstrates understanding of function of telephone (for eample, pretends to talk on the phone, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+talk_familiar,Talks to familiar person on telephone.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+uses_tv,"Uses TV or radio without help (for example, turns equipment on, accesses channel or station, selects program, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no TV or radio in the home.""
+        }
+    ]
+}",6,,,,,,,
+counts_10_objects,"Counts at least 10 objects, one by one.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+appropriate_behavior,"Is aware of and demonstrates appropriate behavior while riding in car (for example, keeps seat belt on, refrains from distracting driver etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+understand_money,"Demonstrates understanding of the function of money (for example, says, ""Money is what you need to buy things at the store""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+uses_sidewalk,"Uses sidewalk (where available) or shoulder of road when walking or using wheeled equipment (skates, scooter, tricycle, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+computer_skills,Demonstrates computer skills necessary to play games or start programs with computer turned on; does not need to turn computer on by self.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no computer in the home.""
+        }
+    ]
+}",6,,,,,,,
+summons_person_telephone,Summons to the telephone the person receiving a call or indiactes that the person is not available.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+identifies_coins,"Identifies penny, nickel, dime, and quarter by name when asked; does not need to know the value of coins.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+look_crossing_street,Looks both ways when crossing streets or raods.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+current_day,Says current day of the week when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+understand_privacy,"Demonstrates understanding of right to personal privacy for self and others (for example, while using restroom or changing clothes, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+phone_emergency,Demonstrates knowledge of what phone number to call in an emergency when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+time_clock,Tells time using a digital clock or watch.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+value_money,"States value of penny (1 cent), nickel (5 cents), dime (10 cents), and quarter (25 cents).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+discriminates_bills,"Discriminates between bills of different denominations (for example, refers to $1 bills, $5 bills, etc., in conversation; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+obeys_traffic,Obeys traffic lights and Walk and Don't Walk signs.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+points_date,Points to current or other date on calendar when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+understand_cost,"Demonstrates understanding that some items cost more than others (for example, says, ""I have enough money to buy gum but not a candy bar""; ""Which pencil costs less?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+tells_time_half_hour,"Tells time by the half hour on analog clock (for example, 1:30, 2:00, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+call_others,"Makes telephone calls to others, using standard or cell phone.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+orders_meal,Orders a complete meal in a fast-food restaurant,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; never eaten at a fast-food restaurant.""
+        }
+    ]
+}",6,,,,,,,
+carries_money,"Carries or stores money safely (for example, in wallet, purse, money belt, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+tells_time_5_min,"Tells time by 5-minute segments on analog clock (for example, 1:05, 1:10, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+obeys_curfew,Obeys curfew parent or caregiver sets.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+watches_program,"Watches or listens to programs for information (for example, weather report, news, educational program, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no TV or radio in the home.""
+        }
+    ]
+}",6,,,,,,,
+counts_change,Counts change from a purchase.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+computer_skills_complex,"Demonstrates computer skills necessary to carry out complex tasks (for example, word processing, accessing the internet, installing software, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no computer in the home.""
+        }
+    ]
+}",6,,,,,,,
+quality_price_purchase,Evaluates quality and price when selecting items to purchase.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+obeys_time_limits,"Obeys time limits for breaks (for example, lunch or coffee breaks, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+travels_familiar,"Travels at least 5 to 10 miles to familiar destination (that is, bikes, uses public transportation, drives self).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+understand_complain,Demonstrates understanding of right to complain or report legitimate problems when dissatisfied with services or situations.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+notifies_late,Notifies school or supervisor when he or she will be late or absent.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+uses_savings,"uses savings or checking account responsibly (for example, keeps some money in account, tracks balance carefully, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+travels_unfamiliar,"Travels at least 5 to 10 miles to unfamiliar destination (that is, bikes, uses public transportation, drives self).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+earns_part_time,"Earns money at part-time job (that is, at least 10 hours a week) for 1 year.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+improve_performance,Attempts to improve job performance after receiving constructive crticism from supervisor.,"""{
+    """"Choices"""": [
+        {
+            """"0"""": """"Never""""
+        },
+        {
+            """"1"""": """"Sometimes or Partially""""
+        },
+        {
+            """"2"""": """"Usually""""
+        },
+        {
+            """"3"""": """"Don't Know""""
+        },
+        {
+            """"N/O"""": """"No Opportunity; has not held job.""""
+        }
+    ]
+}""",6,,,,,,,
+manages_money,"Manages own money (for example, pays most or all own expenses, uses checks or money orders for purchases as needed, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+full_time_job,Has held full-time job for  year.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+budgets_expenses,"Budgets for monthly expenses (for example, utilities, rent, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+credit_card,"Applies for and uses personal credit card responsibly (for example, does not exeed credit limit, pays on time, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",6,,,,,,,
+looks_at_face,Looks at face of parents or caregiver.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+watches_someone_moving,"Watches (that is, follows with eyes) someone moving by crib or bed for 5 seconds or more.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+two_or_more_emotions,"Shows two or more emotions (for example, laughs, cries, screams, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+smiles_familiar,Smiles or makes sounds when approached by a familiar person.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+social_contact,"Makes or tries to make social contact (for example, smiles, makes noises, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+reach_familiar,Reaches for familiar person when person holds out arms to him or her.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+preference_certain_people,"Shows preference for certain people and objects (for example, smiles, reaches for or moves toward person or object, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+affection_familiar,"Shows affection for familiar persons (for example, touches, hugs, kisses, cuddles, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+imitate_expression,"Imitates or tries to imitate parent's or caregiver's facial expressions (for example, smiles, frowns, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+look_for_parent,Moves about looking for parent or caregiver or other familiar person nearby.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+interest_children_same_age,"Shows interest in children the same age, other than brother or sisters (for example, watches them, smiles at them, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+simple_movements,"Imitates simple movements (for example, clasps hands, waves good-bye, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+show_happiness,"Uses actions to show happiness or concern for others (for example, hugs, pats arm, holds hands, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+please_others,"Shows desire to please others (for example, shares a snack or toy, tries to help even if not capable, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+friendship_seeking,"Demonstrates friendship-seeking behavior with others the same age (for example, says, ""Do you want to play?"" or takes another child by the hand, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+imitates_complex_actions,"Imitates relatively complex actions as they are being performed by another person (for example, shaving, putting on makeup, hammering nails, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+small_talk,"Answers when familiar adults make small talk (for example, if asked, ""How are you? Says, ""I'm fine""; if told, ""You look nice,"" says, ""Thank you""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+repeats_phrases,"Repeats phrases heard spoken by before by an adults (for example, ""Honey, I'm home""; ""No dessert until you clean your plate""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+express_emotions,"Uses words to express own emotions (for example, ""I'm happy""; ""I'm sacred""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+best_friend,Has best friend or shows preference for certain friends (of either sex) over others.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+imitates_actions_hours,"Imitates relatively complex actions several hours after watching someone else perform them (for example, shaving, putting on makeup, hammering nails, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+express_happiness_for_others,"Uses words to express happiness or concern for others (for example, says, ""Yea! You won"": ""Are you all right?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+acts_person_help,"Acts when another person needs a helping hand (for example, holds door open, picks up dropped items, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+recognizes_likes_dislikes,"Recognizes the likes and dislikes of others (for example, says, ""Chow likes soccer""; ""Susie doesn't eat pizza""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+same_level_emotion,"Shows same level of emotion as others around him or her (for example, does not downplay or overdramatize a situation, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+comfortable_distance,"Keeps comfortable distance between self and others in social situations (for example, does not get too close to another person when talking, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+shared_interests,"Talks with others about shared interests (for example, sports, TV shows, summer plans, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+starts_small_talk,"Starts small talk when meets people he or she knows (for example, says, ""How are you?""; ""What's up?""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+meets_friends,Meets with friends regularly.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+not_embarrassing,Choose not to say embarrassing or mean things or ask rude questions in public.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+reasonable_demands,"Places reasonable demonds on friedship (for example, does not expect to be person's only friend or to have the friend always available, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+others_do_not_know,Understand that others do not know his or her thoughts unless he or she says them.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+personal_things,Is careful when talking about personal things.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+cooperates_activity,"Cooperates with others to plan or be part of an activity (for example, a birthday party, sports event, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+understanding_cues,"Demonstrates understanding of hints or indirect cues in conversation (for example, knows that yawns may mean, ""I'm bored,"" or a quick change of subject may mean, ""I don't want to talk about that ""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+starts_conversations,"Starts conversations by talking about things that interest others (for example, ""Tyrone tells me you like computers""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+group_dates,Goes on group dates.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+single_dates,Goes on single dates.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",7,,,,,,,
+responds_playful,"Responds when parent or caregiver is playful (for example, smiles, laughs, clasps hands, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+interest_where,"Shows interest in where he or she is (for example, looks or moves around, touches objects or people, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+simple_interaction_games,"Plays simple interaction games with others (for example, peekaboo, patty-cake, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+plays_near_child,"Plays near another child, each doing different things.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+play_with_others,"Chooses to play with other children (for example, does not stay on the edge of a group or avoid others).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+cooperatively_one_or_more,Plays cooperatively with one or more children for up to 5 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+cooperatively_more_than_one,Plays cooperatively with more than one child for more than 5 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+play_parent_leaves,Continues playing with another child with little fussing when parent or caregiver leaves.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+shares_toys,Shares toys or possessions when asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+plays_minimal_supervision,Plays with others with minimal supervision,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+common_objects,"Uses common household objects or other objects for make-believe activities (for example, pretends a block is a car, a box is a house, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+protects_self,"Protects self by moving away from those who destroy things or cause injury (for example, those who bite, hit, throw things, pull hair, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+make_believe,"Plays simple make-believe activities with others (for example, play dess-up, pretends to be superheroes, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+seeks_others_play,"Seeks out others for play or companionship (for example, invites others home, goes to another's home, plays with others on the playground, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+takes_turns,Takes turns when asked while playing games or sports.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+informal_games,"Plays informal, outdoor group games (for example, tag, jump rope, catch, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+shares_toys_not_asked,Shares toys or possessions without being asked,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+follows_rules_games,"Follows rules in simple games (relay races, spelling bees, electronic games, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+takes_turns_not_asked,Takes turns without being asked.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+plays_games_chance,"Plays simple card or board game based only on chance (for example, Go Fish, Crazy Eights, Sorry, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+with_friends_supervision,"Goes places with friends during the day with adult supervision (for example, to a shopping mall, park, community center, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+permission_others_objects,Asks permission before using objects belonging to or being used by another,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+refrains_entering_group,Refrains from entering group when nonverbal cues indicate that he or she is not welcome.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+games_score,"Plays simple games that require keeping score (for example, kickball, pickup basketball, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+good_sportsmanship,"Shows good sportsmanship (that is, follows rules, is not overly aggressive, congratulates other team on winning, and does not get mad when losing).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+game_skill,"Plays more than one board, card, or electronic game requiring skill and decision making (for example, Monopoly, Cribbage, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+with_friends_evening_supervision,"Goes places with friends in evening with adult supervision (for example, to a concert, lecture, sporting event, movie, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+follows_rules_complex,"Follows rules in complex games or sports (for example, football, soccer, volleyball, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+goes_with_friends_no_supervision,"Goes places with friends during the day without adult supervision (for example, to a shopping mall, park, community center, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+plans_activities,"Plans fun activities with more than two things to be arranged (for example, a trip to a beach or park that requires planning transportation, food, recreational items, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+with_friends_evening_no_supervision,"Goes places with friends in evening without adult supervision (for example, to a concert, lecture, sporting event, movie, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",8,,,,,,,
+changes_easily,Changes easily from one at-home activity to another.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+thank_you,"Says ""thank you"" when given something.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+changes_behavior,"Changes behavior depending on how well he or she knows another person (for example, acts differently with family member than with stranger, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+chews_mouth_closed,Chews with mouth closed.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+says_please,"Says ""please"" when asking for something.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+ends_conversations,"Ends conversations appropriately (for example, says, ""Good-bye""; ""See you later""; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+cleans_after_meals,Cleans or wipes face and hands during and/or after meals,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+responds_change,"Responds appropriately to reasonable changes in routine (for exmple, refrains from complaining, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+says_sorry,"Says that he or she is sorry for unintended mistakes (for example, bumping into someone, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+no_taunt,"Chooses not to taunt, tease, or bully.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+appropriate_strangers,"Acts appropriately when introduced to strangers (for example, nods, smiles, shakes hands, greets them, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+changes_voice,"Changes voice level depending on location or situation (for examle, in a library, during a movie or play, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+says_sorry_hurt_feelings,Says he or she is sorry after hurting another's feelings.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+refrains_talk_food,Refrains from talking with food in mouth.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+accepts_suggestions,Accepts helpful suggestions or solutions from others.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+controls_anger,"Controls anger or hurt feelings when plans change for reaon(s) that cannot be helped (for example, bad weather, car trouble, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+keeps_secrets,Keeps secrets or confidences for longer than one day.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+sorry_unintentional_mistake,"Says he or she is sorry after making unintentional mistakes or errors in judgment (for example, when unintentionally leaving someone out of a game, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+understand_teasing,Shows understanding that gentle teasing with family and friends can be a form of humor or affection.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+tells_plans,"Tells parent or caregiver about his or her plans (for example, what time he or she is leaving and returning, where he or she is going, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+avoid_dangerous,"Chooses to avoid dangerous or risky activities (for example, jumping off high places, picking up a hitchhiker, driving recklessly, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+controls_anger_not_her_way,"Controls anger or hurt feelings when he or she does not get his or her way (for example, when not allowed to watch television or attend a party; when suggestion is rejected by friend or supervisor; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+follows_through_arrangements,"Follos through with arrangements (for example, if promises to meet someone, meets that person; etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+stops_hurtful_relationships,"Stops or stays away from relationships or situations that are hurtful or dangerous (for example, being bullied or made fun of, being taken advantage of sexually or financially, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+controls_anger_criticism,"Controls anger or hurt feelings due to constructive criticism (for example, correction of misbehavior, discussion of test score or grade, performance reviews, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+keeps_secrets_long,Keeps secrets or confidences for as long as needed.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+thinks_before_decisions,"Thinks about what could happen before making decisions (for example, refrains from acting impulsively, thinks about important information, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+aware_danger,"Is aware of potential danger and uses caution when encountering risky social situations (for example, binge drinking parties, internet chat rooms, personal ads, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+respect_coworkers,"Shows respect for co-workers (for example, does not distract or interrupt others who are working, is on time for meetings, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",9,,,,,,,
+head_erect,Holds head erect for at least 15 seconds when held upright in parent's or caregiver's arms.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+sits_supported,"Sits supported (for example, in a chair, with pillows, etc.) for at least 1 minute.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+sits_without_support,Sits without support for at least 1 minute.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+creeps_floor,Creeps or moves on stomach across floor.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+sits_without_support_10_min,Sits without support for at least 10 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+raises_sitting_position,Riases self to sitting position and sits without support for at least 1 minute.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+crawl_without_stomach,Crawls at least 5 feet on hands and knees without stomach touching floor.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+standing_position,Pulls self to standing position,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+crawl_up_stairs,Crawls up stairs.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+two_steps,Takes at least two steps.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+stands_1_3_min,Stands alone for 1 to 3 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+rolls_ball,Rolls ball while sitting.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+climbs_low,"Climbs on and off low objects (for example, chair, step stool, slide, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+crawls_down_stairs,Crawls down stairs.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+stands_5_min,Stands for at least 5 minutes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+walks_across_room,Walks across room; may be unsteady and fall occasionally.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+throws_ball,Throws ball.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+walks_around,Walks to get around; does not need to hold on to anything.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+climbs_adult_sized,Climbs on and off adult-sized chair.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+runs_no_fall,Runs without falling; may be awkward and uncoordinated.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+walks_up_stairs,Walks up stairs; putting both feet on each step; may use railing.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+kicks_ball,Kicks ball.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+runs_no_fall,Runs without falling.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+walks_down_stairs,"Walks down stairs, facing forward, putting both feet on each step; may use railing.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+jumps_both_feet,Jumps with both feet off floor.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+throws_ball_any_size,Throws ball of any size in specific direction.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+catches_beach_ball,Catches beach ball-sized ball with both hands from a distance of 2 or 3 feet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+walks_up_stairs_alternating,"Walks up stairs, alternating feet; may use railing.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+tricycle_6_feet,Pedals tricycle or other three-wheeled toy for at least 6 feet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never; has vehicle but does not ride it.""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no tricycle or three-wheeled toy.""
+        }
+    ]
+}",10,,,,,,,
+jumps_forward_3_times,Jumps or hos forward at least three times.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+hops_one_foot,Hops on one foot at least once without falling; may hold on to something for balance.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+climbs_high_objects,"Climbs on and off high objects (for example, jungle gym, 4-foot slide ladders, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+walks_down_stairs_alternating,"Walks down stairs, alternating feet; may use railing.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+runs_smoothly_change,"Runs smoothly, with changes in speed and direction.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+rides_bicycle_10_feet,Rides bicycle with training wheels for at least 10 feet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never; has vehicle but does not ride it.""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no bicycle.""
+        }
+    ]
+}",10,,,,,,,
+catches_beach_ball_6_feet,Catches beach ball-sized ball (from at least 6 feet away) with both hands.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+hops_one_foot_ease,Hops on one foot with ease.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+skips_5_feet,Skips at least 5 feet.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+catches_tennis_ball,"Catches tennis or baseball-sized ball (from at least 10 feet away), moving to catch if necessary.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",10,,,,,,,
+bicycle_no_training_wheels,Rides bicycle with no training wheels without falling.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never; has vehicle but does not ride it.""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no bicycle.""
+        }
+    ]
+}",10,,,,,,,
+reaches_toy,Reaches for toy or object.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+picks_small_object,Picks up small objects (no larger than 2 inches on any side); may use both hands.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+moves_one_hand_other,Moves object from one hand to the other.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+squeezes_toy,Squeeze squeaky toy or object.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+picks_small_object_thumb_fingers,Picks up small objects with thumb and fingers,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+removes_object,"Removes object (for example, a block or clothespin) from a container.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+puts_object,"Puts object (for example, a block or clothespin) into a container.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+turns_pages,"Turns pages of board, cloth, or paper book, one at a time.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+stacks_four_blocks,Stacks at least four small blocks or other small objects; stack must not fall.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+opens_doors_turning,Opens doors by turning doorknobs.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+unwraps_objects,"Unwraps small objects (for example, gum or candy).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+simple_puzzle,Completes simple puzzle of at least two pieces or shapes.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+turns_book_pages_one,Turns book or magazine pages one by one.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+twisting_motion,"Uses twisting hand-wrist motion (for example, winds up toy, screws/unscrews lid of jar, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+holds_pencil_proper,Holds pencil in proper position (not with fist) for writing or drawing.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+colors_shapes,Colors simple shapes; may color outside lines.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+3d_structures,"Builds three-dimensional structures (for example, a house, bridge, vehicle, etc.) with at least five small blocks.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+scissors_one_hand,Opens and closes scissors with one hand.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+glues_two_pieces,"Glues or pastes two or more pieces together (for example, for art or science projects, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+uses_tape,"Uses tape to hold things together (for example, torn page, art project, etc.)","{
+    ""Choices"": [
+        {
+            ""0"": ""Does not draw any recognizable forms.""
+        },
+        {
+            ""2"": ""Draws one form.""
+        },
+        {
+            ""3"": ""Draws two or more recognizable forms.""
+        }
+    ]
+}",11,,,,,,,
+recognizable_letters,Makes recognizable letters or numbers.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+draws_circle,Draws circle freehand whiel looking at example.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+scissors_straight_line,Uses scissors ot cut across paper along a straight line.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+draws_simple_shapes,Colors simple shapes; colors inside the lines.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+cuts_simple_shapes,"Cuts out simple shapes (for example, circles, squares, rectangles, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+uses_eraser,Uses eraser without tearing paper.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+draws_square,Draws square freehand while looking at example.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+draws_triangle,Draws triangle freehand while looking at example.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+ties_knot,Ties knot.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+draws_straight_line,Draws straight line using a ruler or straightedge.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+unlocks_bolt,"Unlocks dead-bolt, key, or combination of locks that require twisting.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never.""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no dead-bolt, key, or combination locks in the home.""
+        }
+    ]
+}",11,,,,,,,
+cuts_complex_shapes,"Cuts out complex shapes (for example, stars, animals, alphabet letters, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+uses_keyboard,"Uses keyboard, typewriter, or screen to type name or short words; may look at keys.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never.""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no computer in the home.""
+        }
+    ]
+}",11,,,,,,,
+ties_bow,Ties secure bow,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",11,,,,,,,
+type_10_lines,Uses keyboard to type 10 mines; may look at keys,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never.""
+        },
+        {
+            ""1"": ""Sometimes or Partially""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        },
+        {
+            ""N/O"": ""No Opportunity; no computer in the home.""
+        }
+    ]
+}",11,,,,,,,
+overly_dependent,"Is overly dependent (that is, clings to caregiver, teacher, brother, or sister).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+avoids_others,Avoids others and prefers to be alone.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+eating_difficulties,"Has eating difficulties (for example, eats too fast or too slowly, hoards food, overreats, refuses to eat, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+sleep_difficulties,"Has sleep difficulties (for example, sleepwalks, has frequent nightmares, sleeps significantly more or less than typical for his or her age).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+refuses_school,"Refuses to go to school or word because of fear, feelings of rejection or isolation, etc.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+overly_anxious,Is overly anxious or nervous.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+cries_easily,Cries or laughs too easily.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+poor_eye_contact,"Has poor eye contact (that is, does not look at face or others when speaking or spoken to).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+sad_no_reason,Is sad for no clear reason.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+avoids_social,Avoids social interaction.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+lacks_energy,Lacks energy or interest in life.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",12,,,,,,,
+impulsive,"Is impulsive (that is, acts without thinking).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+temper_tantrums,Has temper tamtrums.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+disobeys,Intentionally disobeys and defies those in authority.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+taunts,"Tauns, teases, or bullies.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+inconsiderate,Is inconsiderate or insensitive to others.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+lies,"Lies, cheats, or steals.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+physically_aggressive,"Is physically aggressive (for example, hits, kicks, bites, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+stubborn,Is stubborn or sullen.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+says_embarrassing,"Says embarrassing things or asks embarrassing questions in public (for example, ""You're fat,"" or ""What's that big red thing on your nose?"").","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+behaves_inappropriately,Behave inappropriately at the urging of others.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",13,,,,,,,
+sucks_thumb,Sucks thumb or fingers.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+wets_bed,Wets bed or must wear diapers at night.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+familiar_strangers,"Acts overly familiar with strangers (for example, holds hands, hugs, sits on lap, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+bites_nails,Bites fingernails.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+tics,"Has tics (that is, involuntary blinking, twitching, head shaking, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+grinds_teeth,Grinds teeth during the day or night.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+hard_attention,Has a hard time paying attention.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+more_active,Is more active or restless than others of same age.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+school_property,"Uses school or work property (for example, telephone, Internet access, office supplies, etc.) for unapproved personal purposes","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+swears,Swears.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+runs_away,"Runs away (that is, is missing for 24 hours or longer).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+truant,Is truant from school or work.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+ignores_others,Ignores or doesn't pay attention to others around him or her.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+uses_money,"Uses money or gift to ""buy"" affection.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+uses_alcohol,Uses alcohol or illegal drugs during the school or work day.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",14,,,,,,,
+sexual_behavior,"Engages in inappropriate sexual behavior (for example, exposes self, masturbates in public, makes improper sexual advances, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+obsessed_objects,"Is obsessed with objects or activities (for example, constantly repeats words or phrases, is preoccupied with mechanical objects, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+thoughts_no_sense,"Expresses thoughts that do not make sense (for example, talks about hearing voices, seems delusional, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+strange_habits,"Has strange habits or ways (for example, makes repetitive noises, odd hand movements, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+prefers_objects,"Consistently prefers objects to people (for example, pays more attention to objects than to people, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+destroys_possessions,Destroys own or another's possessions on purpose.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+bizarre_speech,"Uses bizarre speech (for example, has conversations with self in public, speaks in phrases or sentences that have no meaning, repeats same word or phrase over and over, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+unaware_around,"Is unaware of what is hapenning around him or her (for example, seems to be in a ""fog,"" stares blankly, etc.).","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+unusually_fearful,"Is unusually fearful of ordinary sounds, objects, or situations.","{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+odd_info,Rembers odd information in detail years later.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+chronic_pain,Is unable to complete a normal school or work day because of chronic pain or fatigue,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,
+psychological_symptoms,Is unable to complete a normal school or work day because of psychological symptoms.,"{
+    ""Choices"": [
+        {
+            ""0"": ""Never""
+        },
+        {
+            ""2"": ""Usually""
+        },
+        {
+            ""3"": ""Don't Know""
+        }
+    ]
+}",15,,,,,,,

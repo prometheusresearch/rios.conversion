@@ -1,0 +1,127 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type,action,trigger,targets
+date,Date,date,p1,,,,,,,
+relationship,Respondent's relationship to the child,text,p1,,,,,,,
+subject_id,Subject ID#,integer,p1,,,,,,,
+interviewer,Interviewer,text,p1,,,,,,,
+evaluation,Evaluation,"{
+    ""Choices"": [
+        {
+            ""baseline"": ""Baseline""
+        },
+        {
+            ""three-month"": ""3 month""
+        },
+        {
+            ""six-month"": ""6 month""
+        },
+        {
+            ""nine-month"": ""9 month""
+        },
+        {
+            ""twelve-month"": ""12 month""
+        }
+    ]
+}",p1,,,,enumeration,,,
+type_intervention,Type of Intervention,"{
+    ""Choices"": [
+        {
+            ""o1"": ""ABA/intensive early intervention""
+        },
+        {
+            ""o2"": ""Occupational therapy (OT)""
+        },
+        {
+            ""o3"": ""Physical therapy (PT)""
+        },
+        {
+            ""o4"": ""Speech therapy""
+        },
+        {
+            ""o5"": ""Counseling/psychological services for child""
+        },
+        {
+            ""o6"": ""Play therapy""
+        },
+        {
+            ""o7"": ""Music therapy""
+        },
+        {
+            ""o8"": ""Auditory integration training""
+        },
+        {
+            ""o9"": ""TEACCH""
+        },
+        {
+            ""o10"": ""Greenspan/FT/Dev play therapy (Hamen, RDI)""
+        },
+        {
+            ""o11"": ""SonRise or other location specific training""
+        },
+        {
+            ""o12"": ""Social skills training""
+        },
+        {
+            ""o13"": ""Special education""
+        },
+        {
+            ""o14"": ""Parent-Coaching/Training""
+        },
+        {
+            ""o15"": ""Parent-Child socialization/support""
+        },
+        {
+            ""o16"": ""Parent-Counseling/Psychological services""
+        },
+        {
+            ""o17"": ""Parent-Child Recreation""
+        },
+        {
+            ""o18"": ""Parenting class/seminar""
+        },
+        {
+            ""o19"": ""Recreational Sports/Leisure Activities for child""
+        },
+        {
+            ""o20"": ""Typical class""
+        },
+        {
+            ""o21"": ""Home based program/lesson (not ABA)""
+        },
+        {
+            ""o22"": ""Integrated/Blended class""
+        },
+        {
+            ""o23"": ""Home School""
+        }
+    ]
+}",p1,,,,enumeration,,,
+school,Name of School/Servie Provider,text,p1,,,,,,,
+setting,Setting,text,p1,,,,,,,
+date_began,Date Began,date,p1,,,,,,,
+date_ended,Date Ended,date,p1,,,,,,,
+time_dose,Hr/Wk OR Hr/Event OR Dose,text,p1,,,,,,,
+group_individual,Group or Individual,"{
+    ""Choices"": [
+        {
+            ""group"": ""Group""
+        },
+        {
+            ""individual"": ""Individual""
+        }
+    ]
+}",p1,,,,enumeration,,,
+class_ratio,Class Ratio,integer,p1,,,,,,,
+provider_background,Provider Background,"{
+    ""Choices"": [
+        {
+            ""specialist"": ""Specialist (e.g. Psychologist/SLP/OT)""
+        },
+        {
+            ""para"": ""Paraprofessional (e.g. interventionist)""
+        },
+        {
+            ""untrained"": ""Untrained parent/volunteer""
+        }
+    ]
+}",p1,,,,enumeration,,,
+break,Break (length in weks),integer,p1,,,,,,,

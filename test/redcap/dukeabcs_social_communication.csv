@@ -1,0 +1,48 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type
+assessment_type,Type of Assessment,text,p1,,,,
+assessment_date,Date of Assessment,date,p1,,,,
+perceived_validity_rating,Please rate the perceived validity of this assessment:,"{
+    ""Choices"": [
+        {
+            ""0"": ""Valid""
+        },
+        {
+            ""1"": ""Questionable""
+        },
+        {
+            ""2"": ""Invalid""
+        }
+    ]
+}",p1,,,,enumeration
+perceived_rating_reasoning,Provide your reasoning for your rating :,"{
+    ""Choices"": [
+        {
+            ""0"": ""Child was sick""
+        },
+        {
+            ""1"": ""Child was hungry""
+        },
+        {
+            ""2"": ""Child threw a tantrum""
+        },
+        {
+            ""3"": ""Child was tired""
+        },
+        {
+            ""4"": ""Child refused to engage""
+        },
+        {
+            ""5"": ""Child was not motivated""
+        },
+        {
+            ""6"": ""Child was easily distractible""
+        },
+        {
+            ""7"": ""Other""
+        }
+    ]
+}",p1,,,,enumerationSet
+perceived_rating_reasoning_notes,Other:,text,p1,,,,
+name_rater,Rater's name:,text,p1,,,,
+signature_rater,Rater's signature:,text,p1,,,,
+cgi_score_notes,Notes Related to CGI Score:,text,p1,,,,

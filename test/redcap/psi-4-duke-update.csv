@@ -1,0 +1,1001 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
+psi_4_keeps_trying,"1. When my child wants something, my child usually keeps trying to get it.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_active_exhausts,2. My child is so active that it exhausts me.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_disorganized_distracted,3. My child appears disorganized and is easily distracted.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_diff_concentrating,"4. Compared to most, my child has more difficulty concentrating and paying attention.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_toy_10_mins,5. My child will often stay occupied with a toy for more than 10 minutes.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_wanders_more,6. My child wanders away much more than I expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_more_active,7. My child is much more active than I expected,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_squirms_kicks_dress_bath,8. My child squirms and kicks a great deal when being dressed or bathed.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_distracted_problem,"9. My child is easily distracted, and it is a problem for me.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_rarely_feel_good,10. My child rarely does tings for me that make me feel good.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_likes_wants_close,11. Most times I feel that my child likes me and wants to be close to me.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_do_things_not_appreciated,"12. When I do things for my child, I get the feeling that my efforts are not appreciated very much.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_smiles_less,13. My child smiles at me much less than I expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_child_not_like,14. Sometimes I feel my child doesn't like me and doesn't want to be close to me.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_describe_child,"15. Which statement best describes your child? (Choose from the choices below )
+",,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. almost always likes to play with me""},
+        {""two"" : ""2. sometimes likes to play with me""},
+        {""three"" : ""3. usually doesn't like to play with me.""},
+        {""four"" : ""4. almost never likes to play with me.""}
+    ]
+}",,p1
+psi_4_child_cries_fusses,16.My child cries and fusses: (Choose a response from the choices below.),,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. much less than I had expected.""},
+        {""two"" : ""2. less than I expected.""},
+        {""three"" : ""3. about as much as I expected.""},
+        {""four"" : ""4. much more than I expected.""},
+        {""five"" : ""5. it seems almost constant.""}
+    ]
+}",,p1
+psi_4_cry_fuss_more,17. My child seems to cry or fuss more often than most children.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_emotional_easily_upset,18. My child is very emotional and gets upset easily.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_child_wakes_bad_mood,19. My child generally wakes up in a bad mood.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_moody_easily_upset,20. I feel that my child is very moody and easily upset.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_looks_different,"21. My child looks a little different than expected, and it bothers me at times.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_forgot_younger_childern,"22. In some areas, my child seems to have forgotten past learnings and has gone back to doing things characteristic of younger children.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_not_learn_as_quickly,23. My child doesn't seem to learn as quickly as most children.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p1
+psi_4_doesnt_smile,24. My child doesn't seem to smile as much as most children.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_difficulty_changes,"25. Compared to the average child, my child has a great deal of difficulty in getting used to changes in schedules or changes around the house.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_does_less,26. My child is not able to do as much as I expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_dislikes_cuddling_touching,27. It bothers me that my child does not like to be cuddled or touched very much.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_doubts_parenting,28. I often have doubts about my ability to handle being a parent.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_parenting_harder,29. Being a parent is harder than I thought it would be.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_capable_parent,30. I feel capable and on top of things when I am caring for my child.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_always_hanging,31. My child is always hanging on me.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_strong_reaction,32. My child reacts very strongly when something happens that my child doesn't like.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_babysitter_problem,33. Leaving my child with a babysitter is usually a problem.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_play_no_giggle_laugh,34. When playing my child doesn't often giggle or laugh.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_overreacts_loud_bright,35. My child easily notices and overreacts to loud sounds and bright lights.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_sleep_eat_schedule_hard,36. My child's sleeping or eating schedule was much harder to establish than I expected. ,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_avoids_new_toy,37. My child usually avoids a new toy for a while before beginning to play with it.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_long_time_new_things,38. It takes a long time and it is very hard for my child to get used to new things.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_uncomfortable_strangers,39. My child doesn't seem comfortable when meeting strangers.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p2
+psi_4_upset_child,"40. When upset, my child is: (Choose Response from the choices below.)",,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. easy to calm down""},
+        {""two"" : ""2. harder to calm down than I expected""},
+        {""three"" : ""3. very difficult to calm down""},
+        {""four"" : ""4. nothing I do helps to calm my child""}
+    ]
+}",,p2
+psi_4_child_do_or_stop,41. I have found that getting my child to do something or stop doing something is: (Choose a response from the choices below.),,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. much harder than I expected.""},
+        {""two"" : ""2. somewhat harder than I expected.""},
+        {""three"" : ""3. about as hard as I expected.""},
+        {""four"" : ""4. somewhat easier than I expected.""}, 
+        {""five"" : ""5. much easier than I expected.""}
+    ]
+}",,p2
+psi_4_number_things_bother,"42. Think carefully and count the number of things which your child does that bothers you. For example, dawdles, refuses to listen, overactive, cries, interrupts, fights, whines, etc. (Choose a response from the choices below.)",,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. 1-3""},
+        {""two"" : ""2. 4-5)""},
+        {""three"" : ""3. 6-7""},
+        {""four"" : ""4. 8-9""},
+        {""five"" : ""5. 10+""}
+    ]
+}",,p2
+psi_4_cry_bothers,"43. My child cries often, and it bothers me.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_child_bothers,44. There are some things my child does that really bother me a lot.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_health_probs,45. My child has had more health problems than I expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_child_indepen_hurt_trouble,"46. As my child has grown older and become more independent, I find myself more worried that my child will get hurt or into trouble.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_behave_prob,47. My child's behavior is more of a problem than I expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_child_hard_care,48. My child seems to be much harder to care for than most.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_few_bother,49. My child does a few things which bother me a great deal.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_more_demands,50. My child makes more demands on me than most children.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_decision_help,51. I can't make decisions without help.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_more_probs_raising,52. I have had many more problems raising children than I expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_understand_want_need,53. How easy is it for you understand your child's wants or needs? (Choose a response from the choices below.),,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. very easy""},
+        {""two"" : ""2. easy""},
+        {""three"" : ""3. somewhat easy""},
+        {""four"" : ""4. it is very hard""},
+        {""five"" : ""5. I usually can't figure out what the problem is""}
+    ]
+}",,p3
+psi_4_success_do_not_do_something,54. I feel that I am successful most of the time when I try to get my child to do or not do something,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_hospital_home_care,"55. Since I brought my last child home from the hospital, I find that I am not able to take care of this child as well as I thought I could. I need help.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_not_handle_well,56. I often have the feeling that I cannot handle things very well.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p3
+psi_4_think_parent,"57. When I think about myself as a parent, I believe: (Choose a response from the choices below.)",,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. I can handle anything that happens""},
+        {""two"" : ""2. I can handle most things pretty well""},
+        {""three"" : ""3. sometimes I have doubts, but find that I handle most things without any problems""},
+        {""four"" : ""4. I have some doubts about being able to handle things.""},
+        {""five"" : ""5. I don't think I handle things very well at all.""}
+    ]
+}",,p3
+psi_4_feel_parent,58. I feel that I am: (Choose a response from the choices below.),0,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. a very good parent""},
+        {""two"" : ""2. a better-than-average parent""},
+        {""three"" : ""3. an average parent""},
+        {""four"" : ""4. a person who has some trouble being a parent""},
+        {""five"" : ""5. not very good at being a parent""}
+    ]
+}",,p3
+psi_4_mother_education,"59. What are the highest levels in school or college you and the child's father/mother have completed? 
+Mother:",,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. 1st to 8th grade""},
+        {""two"" : ""2. 9th to 12th grade""},
+        {""three"" : ""3. vocational or some college""},
+        {""four"" : ""4. college graduate""},
+        {""five"" : ""5. graduate or professional school""}
+    ]
+}",,p4
+psi_4_father_education,"60. What are the highest levels in school or college you and the child's father/mother have completed? 
+Father:",,,enumeration,"{ ""Choices"" : [
+        {""one"" : ""1. 1st to 8th grade""},
+        {""two"" : ""2. 9th to 12th grade""},
+        {""three"" : ""3. vocational or some college""},
+        {""four"" : ""4. college graduate""},
+        {""five"" : ""5. graduate or professional school""}
+    ]
+}",,p4
+psi_4_enjoy_parent,61. I enjoy being  a parent,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_parent_longtime_close_child,"62. It takes a long time for parents to develop close, warm feelings for their children.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_parent_not_close_child_expected,"63. I expected to have closer and warmer feelings for my child than I do, and this bothers me.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_bother_mean,64. Sometimes my child does things that bother me just to be mean.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_guilt_feel_child,65. I often feel guilty about the way I feel toward my child.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_not_close,66. My child and I are not as close as I would like.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_too_many_children,67. The number of children I have now is too many.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_life_for_child,68. Most of my life is spent doing things for my child.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_needs_over_life,69. I find myself giving up more of my life to meet my children's needs than I ever expected.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_trapped_parent_responsible,70. I feel trapped by my responsibilities as a parent.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_childs_needs_control,71. I often feel that my child's needs control my life.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_no_new_diff,"72. Since having this child, I have been unable to do new and different things.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_prevents_doing,"73. Since having a child, I feel that I am almost never able to do things I like to do.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_no_alone_time,74. It is hard to find a place in our home when I can go to be by myself.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_parent_type_guilt_bad,"75. When I think about the kind of parent I am, I often feel guilty or bad about myself.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_clothing_unhappy,76. I am unhappy with the last purchase of clothing I made for myself.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_fuss_responsible,"77. When my child misbehaves or fusses too much, I feel responsible, as if I didnニ__ニ_ニ___ニ_ニ_t do something right.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_child_does_wrong_parent_fault,"78. I feel every time my child does something wrong, it is really my fault.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_depressed_parent_responsibilites,79. I often feel depressed and do not have the energy to handle my parenting responsibilities.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p4
+psi_4_bothers_life,80. There are quite a few things that bother me about my life.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_more_depressed_baby,81. I felt sadder and more depressed that I expected after leaving the hospital with my baby.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_guilt_angry_at_child,"82. I wind up feeling guilty when I get angry at my child, and this bothers me.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_child_home_month_depressed,"83. After my child had been home from the hospital for about a month, I noticed that I was feeling more sad and depressed then I had expected.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_not_help_support,"84. Since having my child, my spouse/parenting partner has not given me as much help and support as I expected.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_relationship_probs,85. Having a child has caused more problems than I expected in my relationship with my spouse/parenting partner.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_dont_together,"86. Since having a child, my spouse/parenting partner and I don't do as many things together.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_dont_together_family,"87. Since having a child, my spouse/parenting partner and I don't spend as much time together as a family as I had expected.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_less_sex,"88. Since having my last child, I have less interest in sex with my spouse/parenting partner.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_conflict_child,89. My spouse/parenting partner and I have a lot of conflict over how to raise our children.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_spouse_parent_finance_problems,90. The financial cost of having our child has created problems between me and my spouse/parenting partner.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_alone_without_friends,91. I feel alone and without friends.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_party_not_enjoy_self,"92. When I go to a party, I usually expect not to enjoy myself.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_less_interest_people,93. I am not as interested in people as I used to be.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_people_same_age_company,94. I often have the feeling that other people my own age don't particularly like my company.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_lots_help_child_advice,"95. When I run into a problem taking care of my children, I have a lot of people to whom I can talk to get help or advice.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_see_friends_less,"96. Since having children, I have a lot fewer chances to see my friends and to make new friends.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_poor_health_six_mos,"97. During the past six months, I have been sicker than usual or have had more aches and pains than I normally do.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_feel_good_physically,"98. Physically, I feel good most of the time.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_sleep_problems_tired,"99. I have problems sleeping, and I often feel tired during the day.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_enjoy_less,100. I don't enjoy things as I used to.,,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_sick_often,"101. Since I have my child, I have often been sick.",,,enumeration,"{ ""Choices"" : [
+        {""strongly_agree"" : ""Strongly Agree""},
+        {""agree"" : ""Agree""},
+        {""not_sure"" : ""Not Sure""},
+        {""disagree"" : ""Disagree""},
+       {""strongly_disagree"" : ""Strongly Disagree""}
+    ]
+}",,p5
+psi_4_p6_instruct,"During the last 12 months, have any of the following events occurred in your immediate family? ",,,,instruction,,p6
+psi_4_family_12_mo_divorce,102. Divorce,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_mar_recon,103. Marital Reconciliation,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_marriage,104. Marriage,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_separation,105. Separation,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_preg,106. Pregnancy,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_rel_in_house,107. Other relative moved into household,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_income_increase,108. Income increased substantially (20% or more),,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_debt,109. Went deeply into debt,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_moved,110. Moved to a new location,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_promotion,111. Promotion at work,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_income_decrease,112. Income decreased substantially,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_alc_drug_prob,113. Alcohol or drug problem,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_death_friend,114. death of a close family friend,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_new_job,115. Began a new job,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_new_school,116. Entered new school,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_trouble_superiors_work,117. Trouble with superiors at work,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_lost_job,118. Lost job,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_legal_probs,119. Legal problems,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6
+psi_4_family_12_mo_death_family,120. Death of immediate family member,,,enumeration,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",,p6

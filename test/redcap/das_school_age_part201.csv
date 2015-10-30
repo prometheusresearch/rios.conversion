@@ -1,0 +1,974 @@
+fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
+assess_join_var,Variable used to combine assessments with multiple parts due to the technical limitation of 1000 elements per data structure. Enter the row number of each distinct record.,,,,integer,,page_1
+comments_misc,"Miscellaneous comments on study, interview, methodology relevant to this form data",,,,text,,page_1
+nums_question1,Point to 28,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog1,Point to 28 - Num Recognition,,,,text,,page_1
+nums_question2,Say 100,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog2,Say 100 - Num Recognition,,,,text,,page_1
+nums_question3,Say 40,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog3,Say 40 - Num Recognition,,,,text,,page_1
+nums_question4,Say 12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog4,Say 12 - Num Recognition,,,,text,,page_1
+nums_question5,Say 31,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog5,Say 31 - Num Recognition,,,,text,,page_1
+nums_question6,5,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionadd6,5 - Addition,,,,text,,page_1
+nums_question7,38,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub7,38 - Addition,,,,text,,page_1
+nums_question8,3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult8,3 - Mult.,,,,text,,page_1
+nums_question9,Say 870,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog9,Say 870  - Num Recognition,,,,text,,page_1
+nums_question10,Say 215,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog10,Say 215   - Num Recognition,,,,text,,page_1
+nums_question11,"Say 1,473",,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog11,"Say 1,473 - Num Recognition",,,,text,,page_1
+nums_question12,Point to 594,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionnumrecog12,Point to 594 - Num Recognition,,,,text,,page_1
+nums_question13,12,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub13,12 - Subtraction,,,,text,,page_1
+nums_question14,95,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionadd14,95 - Addition,,,,text,,page_1
+nums_question15,112,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionadd15,112 - Addition,,,,text,,page_1
+nums_question16,8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult16,8 - Mult.,,,,text,,page_1
+nums_question17,6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub17,6 - Subtraction,,,,text,,page_1
+nums_question18,19,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub18,19 - Subtraction,,,,text,,page_1
+nums_question19,36,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult19,36 - Mult.,,,,text,,page_1
+nums_question20,2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv20,2 - Division,,,,text,,page_1
+nums_question21,175,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult21,175 - Mult,,,,text,,page_1
+nums_question22,32,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv22,32 - Division,,,,text,,page_1
+nums_question23,17,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv23,17 - Division,,,,text,,page_1
+nums_question24,102.9,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionadd24,102.9 - Addition,,,,text,,page_1
+nums_questiondec24,102.9 - Decimals,,,,text,,page_1
+nums_question25,1155,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult25,1155 - Mult.,,,,text,,page_1
+nums_question26,4958,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult26,4958 - Mult.,,,,text,,page_1
+nums_question27,6,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv27,6 - Division,,,,text,,page_1
+nums_question28,22,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv28,22 - Division,,,,text,,page_1
+nums_question29,1/3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub29,1/3 - Subtraction,,,,text,,page_1
+nums_questionfrac29,1/3 - Fractions,,,,text,,page_1
+nums_question30,8.91,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub30,8.91 - Subtraction,,,,text,,page_1
+nums_questiondec30,8.91 - Decimals,,,,text,,page_1
+nums_question31,3/8,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionadd31,3/8 - Addition,,,,text,,page_1
+nums_questionfrac31,3/8 - Fractions,,,,text,,page_1
+nums_question32,3/20,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub32,3/20 - Subtraction,,,,text,,page_1
+nums_questionfrac32,3/20 - Fractions,,,,text,,page_1
+nums_question33,3/40,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult33,3/40 - Mult,,,,text,,page_1
+nums_questionfrac33,3/40 - Fractions,,,,text,,page_1
+nums_question34,13/21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionadd34,13/21 Addition,,,,text,,page_1
+nums_questionfrac34,13/21 - Fractions,,,,text,,page_1
+nums_question35,2/6 or 1/3,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult35,2/6 or 1/3  - Mult.,,,,text,,page_1
+nums_questionfrac35,2/6 or 1/3 - Fractions,,,,text,,page_1
+nums_question36,52.1,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv36,52.1 - Division,,,,text,,page_1
+nums_questiondec36,52.1 - Decimals,,,,text,,page_1
+nums_question37,4.94,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult37,4.94 - Mult.,,,,text,,page_1
+nums_questiondec37,4.94 - Decimals,,,,text,,page_1
+nums_question38,16.68,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult38,16.68 - Mult.,,,,text,,page_1
+nums_questiondec38,16.68 - Decimals,,,,text,,page_1
+nums_question39,75 or 75%,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionfrac39,75 or 75% - Fractions,,,,text,,page_1
+nums_questionconv39,75 or 75% - Conversion,,,,text,,page_1
+nums_question40,14/15,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv40,14/15 - Division,,,,text,,page_1
+nums_questionfrac40,14/15 - Fractions,,,,text,,page_1
+nums_question41,2,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv41,2 - Division,,,,text,,page_1
+nums_questionfrac41,2 - Fractions,,,,text,,page_1
+nums_question42,85 or 85%,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv42,85 or 85% - Division,,,,text,,page_1
+nums_questionfrac42,85 or 85% - Fractions,,,,text,,page_1
+nums_questioncdec42,85 or 85% - Decimals,,,,text,,page_1
+nums_questionconv42,85 or 85% - Conversion,,,,text,,page_1
+nums_question43,2.4,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionfrac43,2.4 - Fractions,,,,text,,page_1
+nums_questiondec43,2.4 - Decimals,,,,text,,page_1
+nums_questionconv43,2.4 - Conversion,,,,text,,page_1
+nums_question44,21,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult44,21 - Mult.,,,,text,,page_1
+nums_questiondec44,21 - Decimals,,,,text,,page_1
+nums_questionconv44,21 - Conversion,,,,text,,page_1
+nums_question45,120 or $120,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub45,120 or $120 - Subtraction,,,,text,,page_1
+nums_questionmult45,120 or $120 - Mult,,,,text,,page_1
+nums_questionwprob45,120 or $120 - Word prob,,,,text,,page_1
+nums_question46,20 or 20%,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questiondiv46,20 or 20% - Division,,,,text,,page_1
+nums_questionfrac46,20 or 20% - Fractions,,,,text,,page_1
+nums_questiondec46,20 or 20% - Decimals,,,,text,,page_1
+nums_questionconv46,20 or 20% - Conversion,,,,text,,page_1
+nums_questionwprob46,20 or 20% - Word prob.,,,,text,,page_1
+nums_question47,140 or $140,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionsub47,140 or $140 - Subtraction,,,,text,,page_1
+nums_questionmult47,140 or $140 - Mult.,,,,text,,page_1
+nums_questionfrac47,140 or $140 - Fractions,,,,text,,page_1
+nums_questiondec47,140 or $140 - Decimals,,,,text,,page_1
+nums_questionwprob47,140 or $140 - Word prob.,,,,text,,page_1
+nums_question48,157 or 157 yds.,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+nums_questionmult48,157 or 157 yds. - Mult.,,,,text,,page_1
+nums_questiondec48,157 or 157 yds. - Decimals,,,,text,,page_1
+nums_questionwprob48,157 or 157 yds. - Word prob.,,,,text,,page_1
+nums_raw,Raw Score,,,,integer,,page_1
+nums_start,Item Started at,,,,integer,,page_1
+nums_stop,Item Stopped at,,,,integer,,page_1
+nums_score,Ability Score,,,,integer,,page_1
+spelling_namescore,names,,,enumeration,"{""Choices"":[{""c1"":""1""},{""c0"":""0""},{""c3"":""3""},{""c2"":""2""}]}",,page_1
+spelling_response1,in,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell1,Category - Prespelling,,,,text,,page_1
+spelling_catrudi1,Category - Rudimentary,,,,text,,page_1
+spelling_catsemi1,Category - Semiphonetic,,,,text,,page_1
+spelling_catbasic1,Category - Basic Phonetic,,,,text,,page_1
+spelling_catplau1,Category - Plausible Phonetic,,,,text,,page_1
+spelling_catorder1,Category - Order Error,,,,text,,page_1
+spelling_response2,and,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell2,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi2,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi2,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic2,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau2,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder2,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response3,dog,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell3,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi3,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi3,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic3,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau3,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder3,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response4,we,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell4,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi4,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi4,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic4,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau4,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder4,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response5,big,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell5,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi5,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi5,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic5,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau5,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder5,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response6,my,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell6,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi6,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi6,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic6,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau6,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder6,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response7,bus,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell7,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi7,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi7,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic7,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau7,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder7,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response8,sit,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell8,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi8,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi8,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic8,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau8,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder8,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response9,do,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell9,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi9,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi9,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic9,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau9,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder9,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response10,home,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell10,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi10,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi10,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic10,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau10,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder10,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response11,play,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell11,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi11,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi11,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic11,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau11,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder11,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response12,eat,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell12,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi12,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi12,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic12,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau12,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder12,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response13,old,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell13,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi13,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi13,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic13,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau13,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder13,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response14,that,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell14,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi14,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi14,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic14,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau14,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder14,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response15,was,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell15,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi15,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi15,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic15,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau15,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder15,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response16,back,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell16,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi16,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi16,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic16,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau16,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder16,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response17,are,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell17,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi17,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi17,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic17,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau17,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder17,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response18,come,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell18,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi18,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi18,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic18,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau18,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder18,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response19,blue,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell19,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi19,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi19,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic19,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau19,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder19,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response20,fix,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell20,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi20,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi20,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic20,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau20,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder20,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response21,pie,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell21,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi21,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi21,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic21,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau21,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder21,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response22,of,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell22,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi22,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi22,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic22,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau22,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder22,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response23,down,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell23,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi23,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi23,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic23,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau23,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder23,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response24,well,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell24,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi24,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi24,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic24,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau24,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder24,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response25,new,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell25,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi25,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi25,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic25,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau25,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder25,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response26,walk,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell26,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi26,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi26,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic26,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau26,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder26,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response27,boat,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell27,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi27,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi27,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic27,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau27,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder27,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response28,work,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell28,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi28,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi28,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic28,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau28,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder28,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response29,eight,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell29,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi29,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi29,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic29,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau29,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder29,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response30,word,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell30,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi30,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi30,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic30,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau30,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder30,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response31,know,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell31,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi31,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi31,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic31,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau31,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder31,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response32,morning,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell32,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi32,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi32,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic32,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau32,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder32,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response33,friend,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell33,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi33,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi33,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic33,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau33,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder33,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response34,leave,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell34,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi34,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi34,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic34,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau34,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder34,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response35,catch,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell35,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi35,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi35,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic35,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau35,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder35,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response36,laughing,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell36,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi36,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi36,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic36,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau36,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder36,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response37,square,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell37,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi37,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi37,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic37,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau37,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder37,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response38,worse,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell38,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi38,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi38,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic38,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau38,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder38,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response39,circle,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell39,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi39,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi39,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic39,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau39,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder39,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response40,bridge,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell40,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi40,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi40,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic40,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau40,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder40,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response41,measured,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell41,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi41,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi41,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic41,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau41,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder41,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response42,armies,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell42,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi42,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi42,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic42,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau42,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder42,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response43,search,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell43,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi43,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi43,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic43,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau43,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder43,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response44,condition,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell44,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi44,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi44,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic44,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau44,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder44,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response45,treasure,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell45,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi45,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi45,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic45,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau45,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder45,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response46,caution,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell46,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi46,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi46,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic46,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau46,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder46,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response47,obtain,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell47,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi47,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi47,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic47,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau47,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder47,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response48,quotation,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell48,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi48,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi48,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic48,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau48,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder48,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response49,surround,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell49,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi49,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi49,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic49,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau49,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder49,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response50,magician,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell50,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi50,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi50,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic50,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau50,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder50,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response51,excellent,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell51,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi51,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi51,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic51,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau51,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder51,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response52,ceiling,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell52,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi52,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi52,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic52,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau52,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder52,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response53,beginning,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell53,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi53,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi53,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic53,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau53,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder53,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response54,entirely,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell54,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi54,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi54,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic54,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau54,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder54,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response55,circumnavigate,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell55,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi55,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi55,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic55,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau55,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder55,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response56,occasion,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell56,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi56,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi56,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic56,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau56,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder56,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response57,quarrel,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell57,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi57,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi57,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic57,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau57,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder57,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response58,leopard,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell58,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi58,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi58,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic58,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau58,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder58,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response59,parallel,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell59,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi59,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi59,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic59,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau59,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder59,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response60,committee,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell60,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi60,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi60,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic60,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau60,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder60,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response61,conceited,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell61,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi61,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi61,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic61,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau61,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder61,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response62,pharmacist,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell62,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi62,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi62,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic62,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau62,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder62,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response63,convenient,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell63,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi63,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi63,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic63,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau63,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder63,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response64,physicist,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell64,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi64,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi64,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic64,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau64,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder64,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response65,hypochondriac,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell65,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi65,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi65,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic65,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau65,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder65,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response66,dipossessed,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell66,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi66,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi66,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic66,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau66,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder66,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response67,disseminates,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell67,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi67,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi67,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic67,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau67,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder67,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response68,sesquicentennial,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell68,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi68,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi68,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic668,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau68,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder68,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response69,saccharin,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell69,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi69,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi69,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic69,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau69,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder69,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_response70,ichthyosaurus,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+spelling_catspell70,Category - Prespelling,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catrudi70,Category - Rudimentary,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catsemi70,Category - Semiphonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catbasic70,Category - Basic Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catplau70,Category - Plausible Phonetic,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_catorder70,Category - Order Error,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+spelling_raw,Raw Score,,,,integer,,page_1
+spelling_start,Items Administered Start,,,,integer,,page_1
+spelling_stop,Items Administered Stop,,,,integer,,page_1
+spelling_score,Ability Score,,,,integer,,page_1
+reading_resp1,the (th uh) - Response,,,,text,,page_1
+reading_score1,the (th uh) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp2,you (y oo) - Response,,,,text,,page_1
+reading_score2,you (y oo) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp3,up (u p) - Response,,,,text,,page_1
+reading_score3,up (u p) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp4,at (a t) - Response,,,,text,,page_1
+reading_score4,at (a t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp5,he (h ee) - Response,,,,text,,page_1
+reading_score5,he (h ee) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp6,jump (juh mp) - Response,,,,text,,page_1
+reading_score6,jump (juh mp) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp7,box (b o ks) - Response,,,,text,,page_1
+reading_score7,box (b o ks) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp8,fish (f ish) - Response,,,,text,,page_1
+reading_score8,fish (f ish) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp9,one (w uh n) - Response,,,,text,,page_1
+reading_score9,one (w uh n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp10,cup (kuh p) - Response,,,,text,,page_1
+reading_score10,cup (kuh p) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp11,out (ow t) - Response,,,,text,,page_1
+reading_score11,out (ow t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp12,men (m e n) - Response,,,,text,,page_1
+reading_score12,men (m e n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp13,bird (b ur d) - Response,,,,text,,page_1
+reading_score13,bird (b ur d)  - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp14,lunch (l uh n ch) - Response,,,,text,,page_1
+reading_score14,lunch (l uh n ch) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp15,dig (d ig) - Response,,,,text,,page_1
+reading_score15,dig (d ig) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp16,said (s e d) - Response,,,,text,,page_1
+reading_score16,said (s e d)- Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp17,wood (w-oo-d*) - Response,,,,text,,page_1
+reading_score17,wood (w-oo-d*)- Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp18,water (w au t ur) - Response,,,,text,,page_1
+reading_score18,water (w au t ur)- Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp19,clock (klok) - Response,,,,text,,page_1
+reading_score19,clock (klok)- Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp20,light (l iy t) - Response,,,,text,,page_1
+reading_score20,light (l iy t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp21,ship (sh ip) - Response,,,,text,,page_1
+reading_score21,ship (sh ip) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp22,running (r uh n ing) - Response,,,,text,,page_1
+reading_score22,running (r uh n ing) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp23,ring (r ing) - Response,,,,text,,page_1
+reading_score23,ring (r ing) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp24,mail (m ay l) - Response,,,,text,,page_1
+reading_score24,mail (m ay l) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp25,window (w in doh) - Response,,,,text,,page_1
+reading_score25,window (w in doh) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp26,coat (k oh t) - Response,,,,text,,page_1
+reading_score26,coat (k oh t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp27,heel (h ee l) - Response,,,,text,,page_1
+reading_score27,heel (h ee l) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp28,talk (tau k - Response,,,,text,,page_1
+reading_score28,talk (tau k - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp29,kitchen (k ich uh n) - Response,,,,text,,page_1
+reading_score29,kitchen (k ich uh n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp30,paper (p ay p ur) - Response,,,,text,,page_1
+reading_score30,paper (p ay p ur),,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp31,skin (sk in) - Response,,,,text,,page_1
+reading_score31,skin (sk in) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp32,gate (g ay t) - Response,,,,text,,page_1
+reading_score32,gate (g ay t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp33,brick (br ik) - Response,,,,text,,page_1
+reading_score33,brick (br ik) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp34,thin (th in) - Response,,,,text,,page_1
+reading_score34,thin (th in) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp35,carpet (k ar p uh t) - Response,,,,text,,page_1
+reading_score35,carpet (k ar p uh t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp36,fruit (fr oo t) - Response,,,,text,,page_1
+reading_score36,fruit (fr oo t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp37,knock (n o k) - Response,,,,text,,page_1
+reading_score37,knock (n o k) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp38,oil (oil) - Response,,,,text,,page_1
+reading_score38,oil (oil) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp39,babies (b ay b ee z) - Response,,,,text,,page_1
+reading_score39,babies (b ay b ee z) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp40,climb (kl iy m) - Response,,,,text,,page_1
+reading_score40,climb (kl iy m) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp41,bowl (b oh l) - Response,,,,text,,page_1
+reading_score41,bowl (b oh l) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp42,writing (riy t ing) - Response,,,,text,,page_1
+reading_score42,writing (riy t ing) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp43,early (ur lee) - Response,,,,text,,page_1
+reading_score43,early (ur lee) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp44,piano (pee an oh) - Response,,,,text,,page_1
+reading_score44,piano (pee an oh) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp45,express (ik spres) - Response,,,,text,,page_1
+reading_score45,express (ik spres) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp46,piece (p ee s) - Response,,,,text,,page_1
+reading_score46,piece (p ee s) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp47,guest (g e s t) - Response,,,,text,,page_1
+reading_score47,guest (g e s t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp48,whistle (hwis uhl) - Response,,,,text,,page_1
+reading_score48,whistle (hwis uhl) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp49,lawn (l au n) - Response,,,,text,,page_1
+reading_score49,lawn (l au n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp50,judgement (j uh j m uh nt) - Response,,,,text,,page_1
+reading_score50,judgement (j uh j m uh nt) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp51,supplies (s uh pl iyz) - Response,,,,text,,page_1
+reading_score51,supplies (s uh pl iyz) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp52,shoulder (sh ohl d ur) - Response,,,,text,,page_1
+reading_score52,shoulder (sh ohl d ur) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp53,electric (ilek trik) - Response,,,,text,,page_1
+reading_score53,electric (ilek trik) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp54,tongue (t uh ng) - Response,,,,text,,page_1
+reading_score54,tongue (t uh ng) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp55,avenue (av uh n(y)oo) - Response,,,,text,,page_1
+reading_score55,avenue (av uh n(y)oo) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp56,lawyer (lau yur/loi yur) - Response,,,,text,,page_1
+reading_score56,lawyer (lau yur/loi yur) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp57,wreck (r e k) - Response,,,,text,,page_1
+reading_score57,wreck (r e k) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp58,encounter (in kown tur) - Response,,,,text,,page_1
+reading_score58,encounter (in kown tur) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp59,description (di s kr I p sh uh n) - Response,,,,text,,page_1
+reading_score59,description (di s kr I p sh uh n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp60,international (in t ur n a sh uh n uh l) - Response,,,,text,,page_1
+reading_score60,international (in t ur n a sh uh n uh l) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp61,encourage (in kur ij) - Response,,,,text,,page_1
+reading_score61,encourage (in kur ij) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp62,generation (j e n uh ray sh uh n) - Response,,,,text,,page_1
+reading_score62,generation (j e n uh ray sh uh n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp63,statue (stach yoo) - Response,,,,text,,page_1
+reading_score63,statue (stach yoo) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp64,enormous (I n o r muhs) - Response,,,,text,,page_1
+reading_score64,enormous (I n o r muhs) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp65,cough (k o f) - Response,,,,text,,page_1
+reading_score65,cough (k o f) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp66,audience (au dee  uh n s) - Response,,,,text,,page_1
+reading_score66,audience (au dee  uh n s) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp67,radiant (r ay dee uh nt) - Response,,,,text,,page_1
+reading_score67,radiant (r ay dee uh nt) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp68,dough (d oh) - Response,,,,text,,page_1
+reading_score68,dough (d oh) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp69,trauma (trau m uh) - Response,,,,text,,page_1
+reading_score69,trauma (trau m uh) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp70,obscure (o b sk y oor) - Response,,,,text,,page_1
+reading_score70,obscure (o b sk y oor) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp71,emphasize (e m fuh siyz) - Response,,,,text,,page_1
+reading_score71,emphasize (e m fuh siyz) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp72,tenative (t e n tuh tiv) - Response,,,,text,,page_1
+reading_score72,tenative (t e n tuh tiv) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp73,diplomacy (d uh pl oh m uh s ee) - Response,,,,text,,page_1
+reading_score73,diplomacy (d uh pl oh m uh s ee) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp74,silhouette (sil uh wet) - Response,,,,text,,page_1
+reading_score74,silhouette (sil uh wet) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp75,biosterous (b oi s t uh r uh s) - Response,,,,text,,page_1
+reading_score75,biosterous (b oi s t uh r uh s) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp76,catastrophe (k uh t a s t r uhfee) - Response,,,,text,,page_1
+reading_score76,catastrophe (k uh t a s t r uhfee) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp77,tryannical (t uh r a n I kuhl) - Response,,,,text,,page_1
+reading_score77,tryannical (t uh r a n I kuhl) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp78,reminiscent (rem uh nis uh nt) - Response,,,,text,,page_1
+reading_score78,reminiscent (rem uh nis uh nt) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp79,rheumatism (r oo m uh tiz uhm) - Response,,,,text,,page_1
+reading_score79,rheumatism (r oo m uh tiz uhm) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp80,chaos (kay os) - Response,,,,text,,page_1
+reading_score80,chaos (kay os) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp81,regurgitate ( r ee gur juh t ay t) - Response,,,,text,,page_1
+reading_score81,regurgitate ( r ee gur juh t ay t) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp82,initiate (I nish ee ayt) - Response,,,,text,,page_1
+reading_score82,initiate (I nish ee ayt) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp83,meticulous (m uh tik yuh l uh s) - Response,,,,text,,page_1
+reading_score83,meticulous (m uh tik yuh l uh s) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp84,criterion (kriy tir ee uh n) - Response,,,,text,,page_1
+reading_score84,criterion (kriy tir ee uh n) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp85,archaic (ar kay ik) - Response,,,,text,,page_1
+reading_score85,archaic (ar kay ik) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp86,mnemonic (ni mon ik) - Response,,,,text,,page_1
+reading_score86,mnemonic (ni mon ik) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp87,desultory (des uhl toh r ee) - Response,,,,text,,page_1
+reading_score87,desultory (des uhl toh r ee) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp88,monosyllabic (m o n uh suh la b ik) - Response,,,,text,,page_1
+reading_score88,monosyllabic (m o n uh suh la b ik) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp89,facetious (fuh see shuhs) - Response,,,,text,,page_1
+reading_score89,facetious (fuh see shuhs) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_resp90,tertiary (tur shee air ee/tur shuh ree) - Response,,,,text,,page_1
+reading_score90,tertiary (tur shee air ee/tur shuh ree) - Score,,,enumeration,"{""Choices"":[{""c1"":""Correct""},{""c0"":""Incorrect""}]}",,page_1
+reading_raw,Raw Score,,,,integer,,page_1
+reading_start,Items Administered Start,,,,integer,,page_1
+reading_stop,Items Administered Stop,,,,integer,,page_1
+reading_score,Ability Score,,,,integer,,page_1
+sum1_rod_as,Recall of Designs: Ability Score,,,,text,,page_1
+sum1_rod_spa,Recall of Designs: Spatial,,,,text,,page_1
+sum1_rod_snc,Recall of Designs: Special Nonverbal Composite,,,,text,,page_1
+sum1_rod_oth,Recall of Designs: Other,,,,text,,page_1
+sum1_wd_as,Word Definitions: Ability Score,,,,text,,page_1
+sum1_wd_ver,Word Definitions: Verbal,,,,text,,page_1
+sum1_wd_oth,Word Definitions: Other,,,,text,,page_1
+sum1_pc_type,Pattern Construction: Std or Alt,,,enumeration,"{""Choices"":[{""std"":""Standard""},{""alt"":""Alternative""}]}",,page_1
+sum1_pc_as,Pattern Construction: Ability Score,,,,text,,page_1
+sum1_pc_spa,Pattern Construction: Spatial,,,,text,,page_1
+sum1_pc_snc,Pattern Construction: Special Nonverbal Composite,,,,text,,page_1
+sum1_pc_oth,Pattern Construction: Other,,,,text,,page_1
+sum1_mat_as,Matrices: Ability Score,,,,text,,page_1
+sum1_mat_nr,Matrices: Nonverbal Reasoning,,,,text,,page_1
+sum1_mat_snc,Matrices:Special Nonverbal Composite,,,,text,,page_1
+sum1_mat_oth,Matrices: Other,,,,text,,page_1
+sum1_sim_as,Similarities: Ability Score,,,,text,,page_1
+sum1_sim_ver,Similarities: Verbal,,,,text,,page_1
+sum1_sim_oth,Similarities: Other,,,,text,,page_1
+sum1_sqr_as,Sequential & Quantitative Reasoning: Ability Score,,,,text,,page_1
+sum1_sqr_nv,Sequential & Quantitative Reasoning: Nonverbal Reasoning,,,,text,,page_1
+sum1_sqr_snc,Sequential & Quantitative Reasoning: Special Nonverbal Composite,,,,text,,page_1
+sum1_sqr_oth,Sequential & Quantitative Reasoning: Other,,,,text,,page_1
+sum1_tscore_verb,Sum of T Scores: Verbal,,,,text,,page_1
+sum1_tscore_nr,Sum of T Scores: Nonverbal Reasoning,,,,text,,page_1
+sum1_tscore_spa,Sum of T Scores: Spatial,,,,text,,page_1
+sum1_tscore_gca,Sum of T Scores: GCA,,,,text,,page_1
+sum1_tscore_snc,Sum of T Scores: Special Nonverbal Composite,,,,text,,page_1
+sum1_standardscore1,Standard Scores: Verbal,,,,text,,page_1
+sum1_standardscore2,Standard Scores: Nonverbal Reasoning,,,,text,,page_1
+sum1_standardscore3,Standard Scores: Spatial,,,,text,,page_1
+sum1_standardscore4,Standard Scores: GCA,,,,text,,page_1
+sum1_standardscore5,Standard Scores: Special Nonverbal Composite,,,,text,,page_1
+sum1_citype90,90% or 95% - 90%,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum1_citype95,90% or 95% - 95%,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum1_cistart1,Confidence Interval: Verbal - From,,,,text,,page_1
+sum1_cistart2,Confidence Interval: Nonverbal Reasoning - From,,,,text,,page_1
+sum1_cistart3,Confidence Interval: Spatial - From,,,,text,,page_1
+sum1_cistart4,Confidence Interval: GCA - From,,,,text,,page_1
+sum1_cistart5,Confidence Interval: Special Nonverbal Composite - From,,,,text,,page_1
+sum1_ciend1,Confidence Interval: Verbal - To,,,,text,,page_1
+sum1_ciend2,Confidence Interval: Nonverbal Reasoning - To,,,,text,,page_1
+sum1_ciend3,Confidence Interval: Spatial - To,,,,text,,page_1
+sum1_ciend4,Confidence Interval: GCA - To,,,,text,,page_1
+sum1_ciend5,Confidence Interval: Special Nonverbal Composite - To,,,,text,,page_1
+sum1_percent_v,Percentile: Verbal,,,,text,,page_1
+sum1_percent_nvr,Percentile:Nonverbal Reasoning,,,,text,,page_1
+sum1_percent_s,Percentile:Spatial,,,,text,,page_1
+sum1_percent_gca,Percentile:GCA,,,,text,,page_1
+sum1_percent_snvc,Percentile:Special Nonverbal Composite,,,,text,,page_1
+sum1_diagsub_rod1,Recall of Digits: Ability Score,,,,text,,page_1
+sum1_diagsub_rod2,Recall of Digits: T Score,,,,text,,page_1
+sum1_diagsub_rod3,Recall of Digits: Other,,,,text,,page_1
+sum1_diagsub_rooi1,Recall of Objects-Immediate: Ability Score,,,,text,,page_1
+sum1_diagsub_rooi2,Recall of Objects-Immediate: T Score,,,,text,,page_1
+sum1_diagsub_rooi3,Recall of Objects-Immediate: Other,,,,text,,page_1
+sum1_diagsub_rood2,Recall of Objects-Delayed:T Score,,,,text,,page_1
+sum1_diagsub_rood3,Recall of Objects-Delayed:Other,,,,text,,page_1
+sum1_diagsub_sip1,Speed of Information Processing: Ability Score,,,,text,,page_1
+sum1_diagsub_sip2,Speed of Information Processing:T Score,,,,text,,page_1
+sum1_diagsub_sip3,Speed of Information Processing:Other,,,,text,,page_1
+sum1_diagsub_oth1_1,Test 1:Name of Test,,,,text,,page_1
+sum1_diagsub_oth1_2,Test 1:Ability Score,,,,text,,page_1
+sum1_diagsub_oth1_3,Test 1:T Score,,,,text,,page_1
+sum1_diagsub_oth1_4,Test 1:Other,,,,text,,page_1
+sum1_diagsub_oth2_1,Test 2:Name of Test,,,,text,,page_1
+sum1_diagsub_oth2_2,Test 2:Ability Score,,,,text,,page_1
+sum1_diagsub_oth2_3,Test 2:T Score,,,,text,,page_1
+sum1_diagsub_oth2_4,Test 2:Other,,,,text,,page_1
+sum1_diagsub_oth3_1,Test 3:Name of Test,,,,text,,page_1
+sum1_diagsub_oth3_2,Test 3:Ability Score,,,,text,,page_1
+sum1_diagsub_oth3_3,Test 3:T Score,,,,text,,page_1
+sum1_diagsub_oth3_4,Test 3:Other,,,,text,,page_1
+sum1_achieve_bns1,Basic Number Skills: Abiilty Score,,,,text,,page_1
+sum1_achieve_bns2,Basic Number Skills: Standard  Score,,,,text,,page_1
+sum1_achieve_bns3,Basic Number Skills: Percentile,,,,text,,page_1
+sum1_achieve_bns4,Basic Number Skills: Other,,,,text,,page_1
+sum1_achieve_spe1,Spelling: Ability Score,,,,text,,page_1
+sum1_achieve_spe2,Spelling: Standard  Score,,,,text,,page_1
+sum1_achieve_spe3,Spelling: Percentile,,,,text,,page_1
+sum1_achieve_spe4,Spelling: Other,,,,text,,page_1
+sum1_achieve_wr1,Word Reading: Ability Score,,,,text,,page_1
+sum1_achieve_wr2,Word Reading: Standard  Score,,,,text,,page_1
+sum1_achieve_wr3,Word Reading: Percentile,,,,text,,page_1
+sum1_achieve_wr4,Word Reading: Other,,,,text,,page_1
+sum1_meancoret,Mean Core T,,,,text,,page_1
+sum1_t_wd,T: Word Definitions,,,,text,,page_1
+sum1_t_sim,T: Similarities,,,,text,,page_1
+sum1_t_mat,T: Matrices,,,,text,,page_1
+sum1_t_sqr,T: Seq. & Quant. Reas.,,,,text,,page_1
+sum1_t_rode,T: Recall of Designs,,,,text,,page_1
+sum1_t_pc,T: Pattern Construction,,,,text,,page_1
+sum1_t_rodi,T: Recall of Digits,,,,text,,page_1
+sum1_t_rooim,T: Recall of Obj. - Immed.,,,,text,,page_1
+sum1_t_soip,T: Speed of Info. Proc.,,,,text,,page_1
+sum1_t_oth1,T: Other Test 1,,,,text,,page_1
+sum1_t_oth2,T: Other Test 2,,,,text,,page_1
+sum1_t_oth3,T: Other Test 3,,,,text,,page_1
+sum1_sw_wd,S/W: Word Definitions,,,,text,,page_1
+sum1_sw_sim,S/W: Similarities,,,,text,,page_1
+sum1_sw_mat,S/W: Matrices,,,,text,,page_1
+sum1_sw_sqr,S/W: Seq. & Quant. Reas.,,,,text,,page_1
+sum1_sw_rode,S/W: Recall of Designs,,,,text,,page_1
+sum1_sw_pc,S/W: Pattern Construction,,,,text,,page_1
+sum1_sw_rodi,S/W: Recall of Digits,,,,text,,page_1
+sum1_sw_rooim,S/W: Recall of Obj. - Immed.,,,,text,,page_1
+sum1_sw_soip,S/W: Speed of Info. Proc.,,,,text,,page_1
+sum1_sw_oth1,S/W: Other Test 1,,,,text,,page_1
+sum1_sw_oth2,S/W: Other Test 2,,,,text,,page_1
+sum1_sw_oth3,S/W: Other Test 3,,,,text,,page_1
+sum1_t_ver,T: Verbal,,,,text,,page_1
+sum1_t_nr,T: Nonverbal Reasoning,,,,text,,page_1
+sum1_t_spa,T: Spatial,,,,text,,page_1
+sum1_t_gca,T: GCA or Special Nonverbal Composite,,,,text,,page_1
+sum1_t_bns,T: Basic Number Skills,,,,text,,page_1
+sum1_t_spe,T: Spelling,,,,text,,page_1
+sum1_t_wr,T: Word Reading,,,,text,,page_1
+sum1_sw_ver,S/W: Verbal,,,,text,,page_1
+sum1_sw_nr,S/W: Nonverbal Reasoning,,,,text,,page_1
+sum1_sw_spa,S/W: Spatial,,,,text,,page_1
+sum1_sw_bns,S/W: Basic Number Skills,,,,text,,page_1
+sum1_sw_spe,S/W: Spelling,,,,text,,page_1
+sum1_sw_wr,S/W: Word Reading,,,,text,,page_1
+sum2_glass,Does the examinee have glasses or corrective lenses?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_glass2,"If yes, were they worn during testing?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_glass3,Is there a known uncorrected vision problem?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hearing,Does the examinee have a hearing aid?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hearing2,"If yes, was it used during testing?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hearing3,Is there a known uncorrected hearing problem?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+sum2_hand,Handedness,,,enumeration,"{""Choices"":[{""mixed"":""Mixed""},{""right"":""Right""},{""left"":""Left""}]}",,page_1
+sum2_probs,Are there any other personal or physical characteristics or medications that might affect test results?,,,,text,,page_1
+sum2_lang,Dominant language,,,,text,,page_1
+sum2_langhome,Language spoken at home,,,,text,,page_1
+sum2_refreason,Reason for referral,,,,text,,page_1
+sum2_comm,Comments,,,,text,,page_1
+sum2_ce1,"Calm, relaxed <>Anxious, nervous",,,enumeration,"{""Choices"":[{""c1"":""Calm, relaxed""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Anxious, nervous""},{""c4"":""4""}]}",,page_1
+sum2_ce2,Mature<>Immature,,,enumeration,"{""Choices"":[{""c1"":""Mature""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Immature""},{""c4"":""4""}]}",,page_1
+sum2_ce3,"Neat, well groomed <>Unkempt",,,enumeration,"{""Choices"":[{""c1"":""Neat, well groomed""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Unkempt""},{""c4"":""4""}]}",,page_1
+sum2_ce4,Independent <>Fearful of leaving parent/classroom,,,enumeration,"{""Choices"":[{""c1"":""Independent""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Fearful of leaving parent/classroom""},{""c4"":""4""}]}",,page_1
+sum2_ce5,Physically coordinated <>Physically uncoordinated,,,enumeration,"{""Choices"":[{""c1"":""Physically coordinated""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Physically uncoordinated""},{""c4"":""4""}]}",,page_1
+sum2_ce6,Speaks clearly<> Difficult to understand,,,enumeration,"{""Choices"":[{""c1"":""Speaks clearly""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Difficult to understand""},{""c4"":""4""}]}",,page_1
+sum2_ce7,Proficient in English <>Limited English proficiency,,,enumeration,"{""Choices"":[{""c1"":""Proficient in English""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Limited English proficiency""},{""c4"":""4""}]}",,page_1
+sum2_ce8,"Overactive, fidgety<>Lethargic",,,enumeration,"{""Choices"":[{""c1"":""Overactive, fidgety""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Lethargic""},{""c4"":""4""}]}",,page_1
+sum2_cs1,"Optimistic, positive <> Pessimistic, complaining",,,enumeration,"{""Choices"":[{""c1"":""Optimistic, positive""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Pessimistic, complaining""},{""c4"":""4""}]}",,page_1
+sum2_cs2,Persistent in face of difficulty <> Gives up easily,,,enumeration,"{""Choices"":[{""c1"":""Persistent in face of difficulty""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Gives up easily""},{""c4"":""4""}]}",,page_1
+sum2_cs3,Handles failure well <> Becomes upset by failure,,,enumeration,"{""Choices"":[{""c1"":""Handles failure well""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Becomes upset by failure""},{""c4"":""4""}]}",,page_1
+sum2_cs4,Overconfident <> Lacking in confidence,,,enumeration,"{""Choices"":[{""c1"":""Overconfident""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Lacking in confidence""},{""c4"":""4""}]}",,page_1
+sum2_cs5,Unconcerned with details <> Obsessive about minor details,,,enumeration,"{""Choices"":[{""c1"":""Unconcerned with details""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Obsessive about minor details""},{""c4"":""4""}]}",,page_1
+sum2_cs6,Overcritical of own performance<>Uncritically accepts own performance,,,enumeration,"{""Choices"":[{""c1"":""Overcritical of own performance""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Uncritically accepts own performance""},{""c4"":""4""}]}",,page_1
+sum2_aot1,"Attentive, on task <>Distractible, off task",,,enumeration,"{""Choices"":[{""c1"":""Attentive, on task""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Distractible, off task""},{""c4"":""4""}]}",,page_1
+sum2_aot2,Deliberate <> Impulsive,,,enumeration,"{""Choices"":[{""c1"":""Deliberate""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Impulsive""},{""c4"":""4""}]}",,page_1
+sum2_aot3,Highly interested in testing <> Uninterested in testing,,,enumeration,"{""Choices"":[{""c1"":""Highly interested in testing""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Uninterested in testing""},{""c4"":""4""}]}",,page_1
+sum2_aot4,"Methodical <>Haphazard, random",,,enumeration,"{""Choices"":[{""c1"":""Methodical""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Haphazard, random""},{""c4"":""4""}]}",,page_1
+sum2_aot5,Eager to speak <>Reluctant to speak,,,enumeration,"{""Choices"":[{""c1"":""Eager to speek""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Reluctant to speak""},{""c4"":""4""}]}",,page_1
+sum2_aot6,Does not require encouragement<> Requires constant encouragement,,,enumeration,"{""Choices"":[{""c1"":""Does not require encouragement""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Requires constant encouragement""},{""c4"":""4""}]}",,page_1
+sum2_sie1,"Cooperative, friendly <>Uncooperative",,,enumeration,"{""Choices"":[{""c1"":""Cooperative, friendly""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Uncooperative""},{""c4"":""4""}]}",,page_1
+sum2_sie2,"Talkative, outgoing <>Withdrawn, shy",,,enumeration,"{""Choices"":[{""c1"":""Talkative, outgoing""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Withdrawn, shy""},{""c4"":""4""}]}",,page_1
+sum2_sie3,Behaves appropriately <>Behaves inappropriately,,,enumeration,"{""Choices"":[{""c1"":""Behavees appropriately""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Behaves inappropriately""},{""c4"":""4""}]}",,page_1
+sum2_sie4,Easily establishes rapport<> Has difficulty establishing rapport,,,enumeration,"{""Choices"":[{""c1"":""Easily establishes rapport""},{""c3"":""3""},{""c2"":""2""},{""c5"":""Has difficulty establishing rapport""},{""c4"":""4""}]}",,page_1

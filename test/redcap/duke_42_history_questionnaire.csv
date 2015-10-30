@@ -1,0 +1,262 @@
+fieldID,text,data_type,page,repeating_group_name,help,error,enumeration_type,action,trigger,targets
+child_dob,What is your child's date of birth? ,date,p1,,,,,,,
+child_gender,What is your child's gender?,"{
+    ""Choices"": [
+        {
+            ""male"": ""Male""
+        },
+        {
+            ""female"": ""Female""
+        }
+    ]
+}",p1,,,,enumeration,,,
+child_adopted,Is your child adopted?,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",p1,,,,enumeration,,,
+child_race,What is your child's race? (Select one):,"{
+    ""Choices"": [
+        {
+            ""american-indian"": ""American Indian/Alaska Native""
+        },
+        {
+            ""asian"": ""Asian""
+        },
+        {
+            ""black"": ""Black/African American""
+        },
+        {
+            ""caucasian"": ""Caucasian/White""
+        },
+        {
+            ""native-hawaiian"": ""Native Hawaiian/Pacific Islander""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",p1,,,,enumeration,,,
+child_race_specify,Specify,text,p1,,,,,,,
+child_ethnicity,What is your child's ethnicity? (Select one):,"{
+    ""Choices"": [
+        {
+            ""hispanic"": ""Hispanic or Latino""
+        },
+        {
+            ""not-hispanic"": ""Not Hispanic or Latino""
+        }
+    ]
+}",p1,,,,enumeration,,,
+home_language,What is the primary language spoken in your child's home? (Select one):,"{
+    ""Choices"": [
+        {
+            ""english"": ""English""
+        },
+        {
+            ""spanish"": ""Spanish""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",p1,,,,enumeration,,,
+language_specify,Specify,text,p1,,,,,,,
+home_members,Who lives in the home with your child? (Select all that apply):,"{
+    ""Choices"": [
+        {
+            ""mother"": ""Mother""
+        },
+        {
+            ""father"": ""Father""
+        },
+        {
+            ""grandparents"": ""Grandparent(s)""
+        },
+        {
+            ""sibling"": ""Sibling(s)""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",p1,,,,enumerationSet,,,
+siblings_number,How many?,integer,p1,,,,,,,
+siblings_ages,What are their ages?,text,p1,,,,,,,
+member_other_specify,Specify,text,p1,,,,,,,
+marital_status,What is the marital status of the parent(s) with whom the child lives? (Select one): ,"{
+    ""Choices"": [
+        {
+            ""single"": ""Single""
+        },
+        {
+            ""married"": ""Married""
+        },
+        {
+            ""divorced"": ""Divorced""
+        },
+        {
+            ""separated"": ""Separated""
+        },
+        {
+            ""widowed"": ""Widowed""
+        },
+        {
+            ""other"": ""Other""
+        }
+    ]
+}",p2,,,,enumeration,,,
+marital_specify,Specify,text,p2,,,,,,,
+caregiver_education,What is the highest level of education completed by your child's primary parent/caregiver? (Select one):,"{
+    ""Choices"": [
+        {
+            ""less-ged"": ""Less than a high school diploma or GED""
+        },
+        {
+            ""diploma"": ""High school diploma or GED""
+        },
+        {
+            ""part-college"": ""Partial college or Associate's degree (AA)""
+        },
+        {
+            ""bachelors"": ""Bachelor's degree (BA/BS)""
+        },
+        {
+            ""masters"": ""Master's Degree (MS/MA)""
+        },
+        {
+            ""doctorate"": ""Doctorate or Professional degree after Bachelor's (PhD/MD /JD/DDS)""
+        },   
+        {
+          ""other"": ""Other""
+        },
+        {
+          ""unknown"": ""Unknown""
+        }
+    ]
+}",p2,,,,enumeration,,,
+caregiver_ed_specify,Specify,text,p2,,,,,,,
+any_other_education,What is the highest level of education completed by any other parent/caregivers in the home? (Select one):,"{
+    ""Choices"": [
+        {
+            ""less-ged"": ""Less than a high school diploma or GED""
+        },
+        {
+            ""diploma"": ""High school diploma or GED""
+        },
+        {
+            ""part-college"": ""Partial college or Associate's degree (AA)""
+        },
+        {
+            ""bachelors"": ""Bachelor's degree (BA/BS)""
+        },
+        {
+            ""masters"": ""Master's Degree (MS/MA)""
+        },
+        {
+            ""doctorate"": ""Doctorate or Professional degree after Bachelor's (PhD/MD /JD/DDS)""
+        },   
+        {
+          ""other"": ""Other""
+        },
+        {
+          ""unknown"": ""Unknown""
+        }
+    ]
+}",p2,,,,enumeration,,,
+other_ed_specify,Specify,text,p2,,,,,,,
+person_1_employed,Is anyone in the household currently employed (ie. works for pay)?,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",p3,,,,enumeration,,,
+person_1_time,If Yes:,"{
+    ""Choices"": [
+        {
+            ""full-time"": ""Full-time""
+        },
+        {
+            ""part-time"": ""Part-time""
+        }
+    ]
+}",p3,,,,enumeration,,,
+person_1_title,Job title:,text,p3,,,,,,,
+person_2_employed,Is anyone else in the household currently employed?,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",p3,,,,enumeration,,,
+person_2_time,If Yes:,"{
+    ""Choices"": [
+        {
+            ""full-time"": ""Full-time""
+        },
+        {
+            ""part-time"": ""Part-time""
+        }
+    ]
+}",p3,,,,enumeration,,,
+person_2_title,Job title:,text,p3,,,,,,,
+household_income,What was your total household income before taxes last year? (Select one): ,"{
+    ""Choices"": [
+        {
+            ""less-30k"": ""Less than $30,000""
+        },
+        {
+            ""thirty-fifty"": ""$30,001-50,000""
+        },
+        {
+            ""fifty-hundred"": ""$50,001-100,000""
+        },
+        {
+            ""hundred-twohundred"": ""$100,001-200,000""
+        },
+        {
+            ""more-twohundred"": ""More than $200,001""
+        }
+    ]
+}",p3,,,,enumeration,,,
+childs_insurance,What is your child's current health insurance? (Select one):,"{
+    ""Choices"": [
+        {
+            ""pi"": ""Private insurance (ie. self-purchased or employer provided plan such as BCBS, etc)""
+        },
+        {
+            ""gi"": ""Government insurance (ie. Medicaid, Carolina Access, NC Healthy Choice""
+        },
+        {
+            ""ii"": ""International insurance""
+        },
+        {
+            ""nhi"": ""No health insurance""
+        }
+    ]
+}",p3,,,,enumeration,,,
+child_other_country,Has your child ever lived in another country? ,"{
+    ""Choices"": [
+        {
+            ""yes"": ""Yes""
+        },
+        {
+            ""no"": ""No""
+        }
+    ]
+}",p3,,,,enumeration,,,
+other_country_where,"if so, where?",text,p3,,,,,,,
+other_country_when,When? ,text,p3,,,,,,,
+additional_info,Please use the space below for any additional information you would like us to have regarding your family:,text,p3,,,,,,,
