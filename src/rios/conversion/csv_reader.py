@@ -48,7 +48,9 @@ class CsvReader(object):
         return csv.reader(fi)
 
     def get_row(self, row):
-        return collections.OrderedDict(zip(self.attributes, row))
+        return collections.OrderedDict(zip(
+                self.attributes,
+                [x.strip() for x in row]))
 
     def load_attributes(self):
         if not self.reader:
