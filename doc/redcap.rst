@@ -1,0 +1,121 @@
+****************
+REDCap Converter
+****************
+
+redcap-rios
+===========
+
+Converts a REDCap Data Dictionary in csv format to 
+a RIOS Instrument, Form, and CalculationSet 
+in JSON or YAML format.
+
+The instrument id, version, and title must be provided as 
+arguments on the command line as they are not in the csv file.
+
+Since RIOS does not allow capital letters in ids,
+the program converts all expressions and internal values to lowercase.
+Expressions are used both in calculations and in skip logic.
+
+Sliders are converted to a simple float input field 
+with min=0.0 and max=100.0.  Any slider labels are ignored.
+
+Two input formats are accepted.  The first uses these input fields::
+
+    Variable / Field Name
+    Form Name
+    Section Header
+    Field Type
+    Field Label
+    Choices, Calculations, OR Slider Labels
+    Field Note
+    Text Validation Type OR Show Slider Number
+    Text Validation Min
+    Text Validation Max
+    Identifier?
+    Branching Logic (Show field only if...)
+    Required Field?
+    Custom Alignment
+    Question Number (surveys only)
+    Matrix Group Name
+    Matrix Ranking?
+    Field Annotation
+
+- "Variable / Field Name" is mapped to Field Object id.
+
+- "Form Name" is mapped to the RIOS page ID.
+
+_ When "Section Header" is present, an additional "text" element is included
+  in the form.
+
+- "Field Type" and "Text Validation Type ..." determine the RIOS type.
+
+  "dropdown" and "radio" map to an enumeration, 
+  and "checkbox" maps to an enumeration set.
+
+- "Field Label" is mapped to Question Object text.  
+
+- Various spellings for the Choices / Calculations field have been 
+  encountered, so any field name starting with "Choices" is taken 
+  to be this field.
+
+- "Field Note" is mapped to Question Object help.
+
+- "Text Validation Max and Min" 
+  are mapped to a suitable Bound Constraint Object 
+  as the "range" of an appropriate RIOS Type Object.
+
+- "Identifier?" is mapped to Field Object identifiable.
+
+- REDCap displays a field if its "Branching Logic" expression is True.
+  In RIOS, the field is disabled if the expression is False.
+  Arbitrarily, this converter outputs "disable" instead of "hide" 
+  as the action for this event. 
+
+- "Required Field" is mapped to Field Object required.
+
+- "Matrix Group Name" is mapped to the Field Object id of a matrix field.
+
+- The following fields: 
+  "Custom Alignment", 
+  "Question Number (Show field only if...)", 
+  "Matrix Ranking?", 
+  and "Field Annotation" 
+  are completely ignored.
+ 
+The second format uses these input fields::
+
+    fieldID
+    text
+    help
+    error
+    enumeration_type
+    data_type
+    repeating_group_name
+    page
+
+rios-redcap
+===========
+
+Converts a RIOS Instrument and Form to a REDCap Data Dictionary 
+in csv format.
+
+The first format is used for output because it supports calculations,
+branching logic, and matrices, as well as the "required" and "identifiable"
+field attributes.
+
+Expressions
+===========
+
+REDCap expressions support a collection of math and date functions.
+Some of these functions are available directly from Python, some 
+are in the Python math library, and the rest are in rios.conversion.
+
+If your expressions reference these functions then include 
+rios.conversion as dependency for your project.
+
+Matrices
+========
+
+REDCap matrices of R rows by C columns 
+become a RIOS matrix of R rows by 1 column.
+The single column is an enumeration (or enumeration set) of C values.

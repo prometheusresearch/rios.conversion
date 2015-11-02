@@ -4,7 +4,7 @@ RIOS.CONVERSION Overview
 
 RIOS.CONVERSION is a `Python`_ package that supports 
 converting instruments in various formats 
-into `RIOS`_ data structures.
+to and from `RIOS`_ data structures.
 
 .. _`Python`: https://www.python.org
 .. _`RIOS`: https://rios.readthedocs.org
@@ -17,38 +17,48 @@ The following command line programs have been implemented.
   a RIOS Instrument, Form, and CalculationSet 
   in JSON or YAML format.
 
-  The instrument id, version, and title must be provided as 
-  arguments on the command line as they are not in the csv file.
+- rios-redcap
 
-  WARNING:
+  Converts a RIOS Instrument and Form to a REDCap Data Dictionary 
+  in csv format.
   
-  Since RIOS does not allow capital letters in ids,
-  the program converts all expressions and internal values to lowercase.
-  Expressions are used both in calculations and in skip logic.
-
 - qualtrics-rios
 
   Converts a Qualtrics qsf file to a RIOS Instrument and Form
   in JSON or YAML format.
 
-  The instrument version must be provided on the command line
-  as it is not in the qsf file.
-  
-  WARNING:
-
-  Some questions in some qsf files contain the html markup "<br>".
-  This text is deleted.
-     
 Run each program's help to see its 
 required arguments and available options::
 
   <program> --help
 
-See `test/input.yaml`_ for examples of running these programs to convert forms.
+See `test/input.yaml`_ for examples of running these programs.
 
 .. _`test/input.yaml`: https://bitbucket.org/prometheus/rios.conversion/src/tip/test/input.yaml
 
+While the conversion of most questions is straight forward 
+the conversion of actions and events is more complex because 
+these systems model these things differently.
 
+Expressions are used for "calculated fields" and "skip logic".  
+A "calculated field" is a read-only field which evaluates its expression
+and displays the result.  The expression may reference other input fields
+or other calculated fields on the form.  
+Furthermore a field may be disabled or hidden (i.e. skipped) 
+if a given expression is true.
+
+The expressions use field IDs to reference other fields and RIOS restricts the 
+range of values for an `Identifier`_.
+
+These programs attempt to convert input IDs to valid RIOS Identifiers by 
+converting to lowercase, converting sequences of non-alphanumeric 
+characters to underbar, and removing leading and trailing underbars.  
+The input expressions are also converted to lowercase in a naive attempt 
+to preserve the semantics.
+
+
+.. _`Identifier`: https://rios.readthedocs.org/en/latest/instrument_specification.html#id15
+ 
 Installation
 ============
 

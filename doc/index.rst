@@ -7,6 +7,8 @@ Contents:
    :maxdepth: 2
 
    overview
+   redcap
+   qualtrics
    changes
    license
 
