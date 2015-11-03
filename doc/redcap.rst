@@ -12,6 +12,11 @@ in JSON or YAML format.
 The instrument id, version, and title must be provided as 
 arguments on the command line as they are not in the csv file.
 
+The program creates or overwrites its output files.
+As for CalculationSet, if there are no calculations in the input, 
+no CalculationSet file will be created, 
+and if it already existed it will be deleted.
+ 
 Since RIOS does not allow capital letters in ids,
 the program converts all expressions and internal values to lowercase.
 Expressions are used both in calculations and in skip logic.
@@ -93,6 +98,16 @@ The second format uses these input fields::
     repeating_group_name
     page
 
+During development, numerous forms in this format were encountered 
+which had enumerations of a single entry.  
+RIOS rejects such enumerations because 
+they do not make much sense for a dropdown menu or radio button.  
+However, instead of rejecting these forms outright, as a convenience,
+the converter appends the following "default" choice to the enumeration::
+
+    {'c999': 'N/A'}
+
+ 
 rios-redcap
 ===========
 
