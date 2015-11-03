@@ -444,7 +444,8 @@ class ToRios(object):
         if data_type == 'instruction':
             return None
         if self.choices:
-            # is an array of single key dicts.  The values in these dicts are
+            # self.choices is an array of single key dicts.  
+            # The values in these dicts are
             # only used in the form - not the instrument - so the dicts are
             # reduced to single dict of key: None, which is expanded to
             # populate the EnumerationCollectionObject.
@@ -640,6 +641,10 @@ class ToRios(object):
                         data_type.get('Choices', False)
                         or data_type.get('choices', False)
                         or None )
+                # What a world.  Now we sort the array
+                # because we want key order not array order.  go figure.
+                if self.choices:
+                    self.choices.sort()
             except (ValueError):
                 self.choices = None
         else:
