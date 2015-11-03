@@ -7,6 +7,9 @@ Converts a redcap csv file into a series of output files
 
 The RIOS calculation file is only created when there are
 calculation fields in the input.
+However if there are no calculation fields
+and the calculation file already exists,
+it will be deleted.
 """
 #
 """
@@ -17,6 +20,7 @@ in the hopes of obtaining a valid RIOS ID.
 
 import argparse
 import json
+import os
 import pkg_resources
 import re
 import rios.conversion.csv_reader
@@ -237,9 +241,9 @@ class ToRios(object):
             return value
 
     def create__file(self, kind, obj):
-        if obj:
-            obj.clean()
-            with open(self.filename(kind), 'w') as fo:
+        with open(self.filename(kind), 'w') as fo:
+            if obj:
+                obj.clean()
                 if self.format == 'json':
                     json.dump(obj, fo, indent=1)
                 elif self.format == 'yaml':
@@ -251,6 +255,10 @@ class ToRios(object):
     def create_calculation_file(self):
         if self.calculations.get('calculations', False):
             self.create__file('c', self.calculations)
+        else:
+            filename = self.filename('c')
+            if os.access(filename, os.F_OK):
+                os.remove(filename)
 
     def create_instrument_file(self):
         self.create__file('i', self.instrument)
@@ -444,7 +452,7 @@ class ToRios(object):
         if data_type == 'instruction':
             return None
         if self.choices:
-            # self.choices is an array of single key dicts.  
+            # self.choices is an array of single key dicts.
             # The values in these dicts are
             # only used in the form - not the instrument - so the dicts are
             # reduced to single dict of key: None, which is expanded to
@@ -645,6 +653,8 @@ class ToRios(object):
                 # because we want key order not array order.  go figure.
                 if self.choices:
                     self.choices.sort()
+                    if len(self.choices) == 1:
+                        self.choices.append({'c999': 'N/A'})
             except (ValueError):
                 self.choices = None
         else:

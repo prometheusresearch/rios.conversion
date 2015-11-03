@@ -1,41 +1,41 @@
 fieldID,text,help,error,enumeration_type,data_type,repeating_group_name,page
 pdchildname,Child's Name,,,,text,,page_1
 pddob,Date of Birth,,,,date,,page_1
-gender,Gender,,,enumeration,"{""Choices"":[{""m"":""Male""},{""f"":""Female""},{""t"":""Transgender""}]}",,
-pdethnicity_race,Ethnicity/Race,,,,text,,
-pdclient_id,Client ID,,,,text,,
-pda,A. Rater's Name,,,,text,,
-pdb,B. Rater's Relationship to Child,,,,text,,
-pdc1,C1. Did mother have pregnancy problems with this child?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdc2,"C2. If yes, describe:",,,,text,,
-pdd1,D1. Were there any birth complications or health problems in mother of child after birth?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdd2,"D2. if yes, describe:",,,,text,,
-pde,E. Birth order ,"(e.g., first born, second born):",,,text,,
-pdf,F Birth weight,,,,text,,
-pdg1,G1. Age first sat:,,,,text,,
-pdg2,G2. Age first crawled:,,,,text,,
-pdg3,G3. Age first walked: ,,,,text,,
-pdg4,G4. Age of first word: ,,,,text,,
-pdg5,G5. Age of first 2-word phrase:,,,,text,,
-pdh1,H1. Age problems were first noted:,,,,text,,
-pdh2,H2. What problems were of concern?,,,,text,,
-pdi1,I1. Did child ever lose skills?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdi2,"I2. If yes, describe skills lost and ages:",,,,text,,
-pdj1,J1. Has child had a hearing test?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdj2,"J2. If yes, what were the results:",,,,text,,
-pdk1,"K1. does child have any problems with seeing, hearing, or motor skills?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdk2,"K2. If yes, describe:",,,,text,,
-pdl,"L. Describe the child's overall health (e.g., skin conditions, frequent ear infections, unusual reaction to immunizations):",,,,text,,
-pdm,"M. Describe any neurological impairments (e.g., seizures, cerebral palsy, traumatic brain injury, brain tumors, encephalitis):",,,,text,,
-pdn1,N1. is this child taking any medications?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdn2,"N2. If yes, describe:",,,,text,,
-pdo1,"O1. Is the child one of a multiple birth (e.g. twins, triplets)?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdo2,O2. If yes:,,,enumeration,"{""Choices"":[{""identical"":""Identical""},{""fraternal"":""Fraternal""}]}",,
-pdo3,O3. Describe:,,,,text,,
-pdp1,"P1. Is there a history of medical, language, learning, or psychiatric problems in mother, father, or extended family?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdp2,"P2. If yes, describe:",,,,text,,
-pdq1,"Q1. Is there a history of medical, language, learning, or psychiatric problems in sibling(s)?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,
-pdq2,"Q2. if yes, describe:",,,,text,,
+gender,Gender,,,enumeration,"{""Choices"":[{""m"":""Male""},{""f"":""Female""},{""t"":""Transgender""}]}",,page_1
+pdethnicity_race,Ethnicity/Race,,,,text,,page_1
+pdclient_id,Client ID,,,,text,,page_1
+pda,A. Rater's Name,,,,text,,page_1
+pdb,B. Rater's Relationship to Child,,,,text,,page_1
+pdc1,C1. Did mother have pregnancy problems with this child?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdc2,"C2. If yes, describe:",,,,text,,page_1
+pdd1,D1. Were there any birth complications or health problems in mother of child after birth?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdd2,"D2. if yes, describe:",,,,text,,page_1
+pde,E. Birth order ,"(e.g., first born, second born):",,,text,,page_1
+pdf,F Birth weight,,,,text,,page_1
+pdg1,G1. Age first sat:,,,,text,,page_1
+pdg2,G2. Age first crawled:,,,,text,,page_1
+pdg3,G3. Age first walked: ,,,,text,,page_1
+pdg4,G4. Age of first word: ,,,,text,,page_1
+pdg5,G5. Age of first 2-word phrase:,,,,text,,page_1
+pdh1,H1. Age problems were first noted:,,,,text,,page_1
+pdh2,H2. What problems were of concern?,,,,text,,page_1
+pdi1,I1. Did child ever lose skills?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdi2,"I2. If yes, describe skills lost and ages:",,,,text,,page_1
+pdj1,J1. Has child had a hearing test?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdj2,"J2. If yes, what were the results:",,,,text,,page_1
+pdk1,"K1. does child have any problems with seeing, hearing, or motor skills?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdk2,"K2. If yes, describe:",,,,text,,page_1
+pdl,"L. Describe the child's overall health (e.g., skin conditions, frequent ear infections, unusual reaction to immunizations):",,,,text,,page_1
+pdm,"M. Describe any neurological impairments (e.g., seizures, cerebral palsy, traumatic brain injury, brain tumors, encephalitis):",,,,text,,page_1
+pdn1,N1. is this child taking any medications?,,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdn2,"N2. If yes, describe:",,,,text,,page_1
+pdo1,"O1. Is the child one of a multiple birth (e.g. twins, triplets)?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdo2,O2. If yes:,,,enumeration,"{""Choices"":[{""identical"":""Identical""},{""fraternal"":""Fraternal""}]}",,page_1
+pdo3,O3. Describe:,,,,text,,page_1
+pdp1,"P1. Is there a history of medical, language, learning, or psychiatric problems in mother, father, or extended family?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdp2,"P2. If yes, describe:",,,,text,,page_1
+pdq1,"Q1. Is there a history of medical, language, learning, or psychiatric problems in sibling(s)?",,,enumeration,"{""Choices"":[{""yes"":""Yes""},{""no"":""No""}]}",,page_1
+pdq2,"Q2. if yes, describe:",,,,text,,page_1
 pdprat,PDDBI Respondent,,,enumeration,"{""Choices"":[{""c1"":""Mother""},{""c3"":""Other primary caregiver""},{""c2"":""Father""},{""c4"":""Other""}]}",,page_1
 pdprato,(specify if 3 or 4),,,,text,,page_1
 pdp001,Stares at or looks out of sides of eyes at his/her own image in mirror,,,enumeration,"{""Choices"":[{""c1"":""Rarely shows behavior""},{""c0"":""Does not show behavior""},{""c3"":""Usually/Typically shows the behavior""},{""c2"":""Sometimes/Partially shows the behavior""},{""c4"":""Don't understand""},{""c9"":""Missing/Blank""}]}",,page_1

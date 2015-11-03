@@ -24,6 +24,9 @@ tests:
 
     The RIOS calculation file is only created when there are
     calculation fields in the input.
+    However if there are no calculation fields
+    and the calculation file already exists,
+    it will be deleted.
 
     optional arguments:
       -h, --help            show this help message and exit
@@ -2296,11 +2299,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 244, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 248, in create__file
         json.dump(obj, fo, indent=1)
       File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
         for chunk in iterable:
@@ -2328,11 +2331,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 247, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
         json.loads(json.dumps(obj)),
       File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
         return _default_encoder.encode(obj)
@@ -2485,11 +2488,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 244, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 248, in create__file
         json.dump(obj, fo, indent=1)
       File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
         for chunk in iterable:
@@ -2517,11 +2520,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 189, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 259, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 247, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
         json.loads(json.dumps(obj)),
       File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
         return _default_encoder.encode(obj)
@@ -2593,7 +2596,7 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 184, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 188, in __call__
         self.reader.attributes)
     ValueError: ('Input has unknown format', ['code', 'title', 'language', 'expires_in_month'])
 - sh: redcap-rios --title das_pre_school02 --id urn:redcap_das_pre_school02 --instrument-version
@@ -2604,6 +2607,13 @@ tests:
     1.0 --infile ./test/redcap/das_pre_school02.csv --outfile-prefix ./test/sandbox/redcap/das_pre_school02
     --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/das_pre_school02_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/das_pre_school02_i.json form
+    ./test/sandbox/redcap/das_pre_school02_f.json
+  stdout: |
+    Successful validation.
 - sh: redcap-rios --title das_school_age_part101 --id urn:redcap_das_school_age_part101
     --instrument-version 1.0 --infile ./test/redcap/das_school_age_part101.csv --outfile-prefix
     ./test/sandbox/redcap/das_school_age_part101 --format json
@@ -2612,6 +2622,13 @@ tests:
     --instrument-version 1.0 --infile ./test/redcap/das_school_age_part101.csv --outfile-prefix
     ./test/sandbox/redcap/das_school_age_part101 --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/das_school_age_part101_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/das_school_age_part101_i.json
+    form ./test/sandbox/redcap/das_school_age_part101_f.json
+  stdout: |
+    Successful validation.
 - sh: redcap-rios --title das_school_age_part201 --id urn:redcap_das_school_age_part201
     --instrument-version 1.0 --infile ./test/redcap/das_school_age_part201.csv --outfile-prefix
     ./test/sandbox/redcap/das_school_age_part201 --format json
@@ -2823,6 +2840,12 @@ tests:
     1.0 --infile ./test/redcap/pdd_bip01.csv --outfile-prefix ./test/sandbox/redcap/pdd_bip01
     --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/pdd_bip01_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/pdd_bip01_i.json form ./test/sandbox/redcap/pdd_bip01_f.json
+  stdout: |
+    Successful validation.
 - sh: redcap-rios --title ppvt_4a02 --id urn:redcap_ppvt_4a02 --instrument-version
     1.0 --infile ./test/redcap/ppvt_4a02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4a02
     --format json
@@ -2831,6 +2854,12 @@ tests:
     1.0 --infile ./test/redcap/ppvt_4a02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4a02
     --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ppvt_4a02_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ppvt_4a02_i.json form ./test/sandbox/redcap/ppvt_4a02_f.json
+  stdout: |
+    Successful validation.
 - sh: redcap-rios --title ppvt_4b02 --id urn:redcap_ppvt_4b02 --instrument-version
     1.0 --infile ./test/redcap/ppvt_4b02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4b02
     --format json
@@ -2839,6 +2868,12 @@ tests:
     1.0 --infile ./test/redcap/ppvt_4b02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4b02
     --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/ppvt_4b02_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/ppvt_4b02_i.json form ./test/sandbox/redcap/ppvt_4b02_f.json
+  stdout: |
+    Successful validation.
 - sh: bash -c 'redcap-rios --title psi-4-duke-update --id urn:redcap_psi-4-duke-update
     --instrument-version 1.0 --infile ./test/redcap/psi-4-duke-update.csv --outfile-prefix
     ./test/sandbox/redcap/psi-4-duke-update --format json || true'
@@ -2846,11 +2881,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 187, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 191, in __call__
         self.create_instrument_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 256, in create_instrument_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 264, in create_instrument_file
         self.create__file('i', self.instrument)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 244, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 248, in create__file
         json.dump(obj, fo, indent=1)
       File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
         for chunk in iterable:
@@ -2870,11 +2905,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 187, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 191, in __call__
         self.create_instrument_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 256, in create_instrument_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 264, in create_instrument_file
         self.create__file('i', self.instrument)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 247, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
         json.loads(json.dumps(obj)),
       File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
         return _default_encoder.encode(obj)
@@ -2995,6 +3030,12 @@ tests:
     1.0 --infile ./test/redcap/wasi_199903.csv --outfile-prefix ./test/sandbox/redcap/wasi_199903
     --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/wasi_199903_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/wasi_199903_i.json form ./test/sandbox/redcap/wasi_199903_f.json
+  stdout: |
+    Successful validation.
 - sh: redcap-rios --title ./test/redcap/ATN_GI.csv --id urn:redcap_ATN_GI --instrument-version
     1.0 --infile ./test/redcap/ATN_GI.csv --outfile-prefix ./test/sandbox/redcap/ATN_GI
     --format json
