@@ -44,7 +44,7 @@ Two input formats are accepted.  The first uses these input fields::
 
 - "Form Name" is mapped to the RIOS page ID.
 
-_ When "Section Header" is present, an additional "text" element is included
+- When "Section Header" is present, an additional "text" element is included
   in the form.
 
 - "Field Type" and "Text Validation Type ..." determine the RIOS type.
