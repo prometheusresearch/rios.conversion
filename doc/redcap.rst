@@ -45,48 +45,38 @@ Two input formats are accepted.  The first uses these input fields::
     Matrix Ranking?
     Field Annotation
 
-- "Variable / Field Name" is mapped to Field Object id.
-
-- "Form Name" is mapped to the RIOS page ID.
-
-- When "Section Header" is present, an additional "text" element is included
+- **Variable / Field Name** is mapped to Field Object id.
+- **Form Name** is mapped to the RIOS page ID.
+- When **Section Header** is present, an additional "text" element is included
   in the form.
-
-- "Field Type" and "Text Validation Type ..." determine the RIOS type.
-
+- **Field Type** and **Text Validation Type ...** determine the RIOS type.
   "dropdown" and "radio" map to an enumeration, 
   and "checkbox" maps to an enumeration set.
-
-- "Field Label" is mapped to Question Object text.  
-
+- **Field Label** is mapped to Question Object text.  
 - Various spellings for the Choices / Calculations field have been 
   encountered, so any field name starting with "Choices" is taken 
   to be this field.
-
-- "Field Note" is mapped to Question Object help.
-
-- "Text Validation Max and Min" 
+- **Field Note** is mapped to Question Object help.
+- **Text Validation Max and Min** 
   are mapped to a suitable Bound Constraint Object 
   as the "range" of an appropriate RIOS Type Object.
-
-- "Identifier?" is mapped to Field Object identifiable.
-
+- **Identifier?** is mapped to Field Object identifiable.
 - REDCap displays a field if its "Branching Logic" expression is True.
   In RIOS, the field is disabled if the expression is False.
   Arbitrarily, this converter outputs "disable" instead of "hide" 
   as the action for this event. 
-
-- "Required Field" is mapped to Field Object required.
-
-- "Matrix Group Name" is mapped to the Field Object id of a matrix field.
-
+- **Required Field** is mapped to Field Object required.
+- **Matrix Group Name** is mapped to the Field Object id of a matrix field.
 - The following fields: 
-  "Custom Alignment", 
-  "Question Number (Show field only if...)", 
-  "Matrix Ranking?", 
-  and "Field Annotation" 
+  **Custom Alignment**, 
+  **Question Number (Show field only if...)**, 
+  **Matrix Ranking?**, 
+  and **Field Annotation** 
   are completely ignored.
- 
+
+Entries with the same **Form Name** or **Matrix Group Name** 
+must appear consecutively. 
+
 The second format uses these input fields::
 
     fieldID
@@ -98,14 +88,27 @@ The second format uses these input fields::
     repeating_group_name
     page
 
-During development, numerous forms in this format were encountered 
-which had enumerations of a single entry.  
-RIOS rejects such enumerations because 
-they do not make much sense for a dropdown menu or radio button.  
-However, instead of rejecting these forms outright, as a convenience,
-the converter appends the following "default" choice to the enumeration::
+- **fieldID** is mapped to Field Object id.
+- **text** is mapped to Question Object text.
+- **help** is mapped to Question Object help.
+- **enumeration_type** selects "enumeration" or "enumerationSet".
+- **data_type** determines the RIOS type.
+- **repeating_group_name** is ignored.
+- **page** is mapped to the RIOS page id.  
+  As a convenience, 
+  "page_0" is assigned if this field is left blank.
 
-    {'c999': 'N/A'}
+Entries with the same **page** must appear consecutively.
+  
+..
+  During development, numerous forms in this format were encountered 
+  which had enumerations of a single entry.  
+  RIOS rejects such enumerations because 
+  they do not make much sense for a dropdown menu or radio button.  
+  However, instead of rejecting these forms outright, as a convenience,
+  the converter appends the following "default" choice to the enumeration::
+
+      {'c999': 'N/A'}
 
  
 rios-redcap
@@ -121,12 +124,35 @@ field attributes.
 Expressions
 ===========
 
-REDCap expressions support a collection of math and date functions.
-Some of these functions are available directly from Python, some 
-are in the Python math library, and the rest are in rios.conversion.
+Expressions are converted to lowercase and to `PEXL`_.
 
-If your expressions reference these functions then include 
-rios.conversion as dependency for your project.
+So for example in REDCap::
+
+    SUM([A], [B], [C]) <> 1
+
+is converted to RIOS as::
+
+    rios.conversion.math.sum_(assessment["a"], assessment["b"], assessment["c"]) != 1
+
+REDCap expressions support a collection of math and date functions.
+
+``min``, ``max``, and ``abs`` are available directly in Python, 
+``sqrt`` is in the Python math library, 
+and the following have implementations in rios.conversion::
+
+    datediff
+    mean
+    median
+    round
+    rounddown
+    roundup
+    stdev
+    sum
+    
+If your expressions reference any of these functions then include 
+rios.conversion as a dependency for your project.
+
+.. _PEXL: https://bitbucket.org/rexdb/rex.expression-provisional#rst-header-features-supported
 
 Matrices
 ========

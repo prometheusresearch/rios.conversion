@@ -77,20 +77,23 @@ RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_REXL]
 
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
     def get_name(self, name):
-        """ Return canonical name.
+        """ Return canonical name, a valid RIOS Identifier.
 
         - replace (one or more) non-alphanumeric with underbar.
         - strip leading and trailing underbars.
+        - convert to lowercase.
         - ensure 'choices' field is 'choices_or_calculations'
           (REDCap has several names for the 'choices' field
-          but they all begin with 'choices')
-        - convert to lowercase.
+          but they all begin with 'choices' and contain 'calc')
+        - if the name begins with a digit, then prepend "id_"
         """
         x = RE_strip_outer_underbars.sub(
                 r'\1',
                 RE_non_alphanumeric.sub('_', name.strip().lower()))
-        if x.startswith('choices'):
+        if x.startswith('choices') and 'calc' in x:
             x = 'choices_or_calculations'
+        if x and x[0].isdigit():
+            x = 'id_' + x
         return x
 
 
@@ -280,7 +283,7 @@ class ToRios(object):
         """
         return [
                 Rios.DescriptorObject(
-                        id=x.strip().split(',')[0].lower(),
+                        id=self.reader.get_name(x.strip().split(',')[0]),
                         text=self.localized_string_object(
                                 ','.join(x.strip().split(',')[1:])),)
                 for x in od['choices_or_calculations'].split('|') ]
@@ -292,7 +295,7 @@ class ToRios(object):
         of (comma delimited) tuples: internal, external
         """
         return Rios.EnumerationCollectionObject(**{
-                x.strip().split(',')[0].lower(): None
+                self.reader.get_name(x.strip().split(',')[0]): None
                 for x in od['choices_or_calculations'].split('|') })
 
     def get_type(self, od, side_effects=True):
@@ -652,9 +655,13 @@ class ToRios(object):
                 # What a world.  Now we sort the array
                 # because we want key order not array order.  go figure.
                 if self.choices:
+                    self.choices = [
+                            {self.reader.get_name(k): v}
+                            for c in self.choices
+                            for k, v in c.items() ]
                     self.choices.sort()
-                    if len(self.choices) == 1:
-                        self.choices.append({'c999': 'N/A'})
+#                    if len(self.choices) == 1:
+#                        self.choices.append({'c999': 'N/A'})
             except (ValueError):
                 self.choices = None
         else:

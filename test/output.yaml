@@ -171,10 +171,10 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' Female'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Male'
           fieldId: sex
@@ -185,10 +185,10 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' No'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Yes'
           events:
@@ -212,13 +212,13 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' Hispanic or Latino'
-          - id: '1'
+          - id: id_1
             text:
               en: ' NOT Hispanic or Latino'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Unknown / Not Reported'
           fieldId: ethnicity
@@ -229,25 +229,25 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' American Indian/Alaska Native'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Asian'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Native Hawaiian or Other Pacific Islander'
-          - id: '3'
+          - id: id_3
             text:
               en: ' Black or African American'
-          - id: '4'
+          - id: id_4
             text:
               en: ' White'
-          - id: '5'
+          - id: id_5
             text:
               en: ' More Than One Race'
-          - id: '6'
+          - id: id_6
             text:
               en: ' Unknown / Not Reported'
           fieldId: race
@@ -338,16 +338,16 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' Graft'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Fistula'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Catheter with maturing graft'
-          - id: '3'
+          - id: id_3
             text:
               en: ' Catheter with maturing fistula'
           fieldId: access_type
@@ -358,19 +358,19 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' Forearm'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Upper arm'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Internal jugular vein'
-          - id: '3'
+          - id: id_3
             text:
               en: ' Subclavian vein'
-          - id: '4'
+          - id: id_4
             text:
               en: ' Other'
           fieldId: access_location
@@ -397,13 +397,13 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' Monday-Wednesday-Friday'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Tuesday-Thursday-Saturday'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Other'
           fieldId: dialysis_schedule_days
@@ -414,16 +414,16 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' First shift'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Second shift'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Third shift'
-          - id: '3'
+          - id: id_3
             text:
               en: ' Fourth shift'
           fieldId: dialysis_schedule_time
@@ -434,25 +434,25 @@ tests:
         type: question
       - options:
           enumerations:
-          - id: '0'
+          - id: id_0
             text:
               en: ' Diabetes'
-          - id: '1'
+          - id: id_1
             text:
               en: ' Hypertension'
-          - id: '2'
+          - id: id_2
             text:
               en: ' Glomerulonephritis'
-          - id: '3'
+          - id: id_3
             text:
               en: ' Polycystic Kidney Disease'
-          - id: '4'
+          - id: id_4
             text:
               en: ' Interstitial Nephritis'
-          - id: '5'
+          - id: id_5
             text:
               en: ' Hereditary Nephritis'
-          - id: '6'
+          - id: id_6
             text:
               en: ' Other'
           fieldId: etiology_esrd
@@ -526,8 +526,8 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
+          id_0: null
+          id_1: null
     - description: Has the subject given birth before?
       id: given_birth
       identifiable: false
@@ -535,8 +535,8 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
+          id_0: null
+          id_1: null
     - description: How many times has the subject given birth?
       id: num_children
       identifiable: false
@@ -552,9 +552,9 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
-          '2': null
+          id_0: null
+          id_1: null
+          id_2: null
     - description: Race
       id: race
       identifiable: false
@@ -562,13 +562,13 @@ tests:
       type:
         base: enumerationSet
         enumerations:
-          '0': null
-          '1': null
-          '2': null
-          '3': null
-          '4': null
-          '5': null
-          '6': null
+          id_0: null
+          id_1: null
+          id_2: null
+          id_3: null
+          id_4: null
+          id_5: null
+          id_6: null
     - description: Date of birth
       id: dob
       identifiable: true
@@ -628,10 +628,10 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
-          '2': null
-          '3': null
+          id_0: null
+          id_1: null
+          id_2: null
+          id_3: null
     - description: Location of currently used vascular access
       id: access_location
       identifiable: false
@@ -639,11 +639,11 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
-          '2': null
-          '3': null
-          '4': null
+          id_0: null
+          id_1: null
+          id_2: null
+          id_3: null
+          id_4: null
     - description: Name of dialysis unit
       id: dialysis_unit_name
       identifiable: false
@@ -661,9 +661,9 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
-          '2': null
+          id_0: null
+          id_1: null
+          id_2: null
     - description: Shift patient is dialyzed
       id: dialysis_schedule_time
       identifiable: false
@@ -671,10 +671,10 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
-          '2': null
-          '3': null
+          id_0: null
+          id_1: null
+          id_2: null
+          id_3: null
     - description: Etiology of ESRD
       id: etiology_esrd
       identifiable: false
@@ -682,13 +682,13 @@ tests:
       type:
         base: enumeration
         enumerations:
-          '0': null
-          '1': null
-          '2': null
-          '3': null
-          '4': null
-          '5': null
-          '6': null
+          id_0: null
+          id_1: null
+          id_2: null
+          id_3: null
+          id_4: null
+          id_5: null
+          id_6: null
     - description: Comments
       id: subject_comments
       identifiable: false
@@ -744,98 +744,100 @@ tests:
     \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      },
     \n      \"text\": {\n       \"en\": \"Gender\"\n      }, \n      \"enumerations\":
     [\n       {\n        \"text\": {\n         \"en\": \" Female\"\n        }, \n
-    \       \"id\": \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
-    \" Male\"\n        }, \n        \"id\": \"1\"\n       }\n      ], \n      \"fieldId\":
+    \       \"id\": \"id_0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Male\"\n        }, \n        \"id\": \"id_1\"\n       }\n      ], \n      \"fieldId\":
     \"sex\"\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
     {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      }, \n      \"text\":
     {\n       \"en\": \"Has the subject given birth before?\"\n      }, \n      \"enumerations\":
     [\n       {\n        \"text\": {\n         \"en\": \" No\"\n        }, \n        \"id\":
-    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Yes\"\n
-    \       }, \n        \"id\": \"1\"\n       }\n      ], \n      \"fieldId\": \"given_birth\",
-    \n      \"events\": [\n       {\n        \"action\": \"disable\", \n        \"trigger\":
-    \"!(assessment[\\\"sex\\\"] = \\\"0\\\")\"\n       }\n      ]\n     }\n    },
+    \"id_0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Yes\"\n
+    \       }, \n        \"id\": \"id_1\"\n       }\n      ], \n      \"fieldId\":
+    \"given_birth\", \n      \"events\": [\n       {\n        \"action\": \"disable\",
+    \n        \"trigger\": \"!(assessment[\\\"sex\\\"] = \\\"0\\\")\"\n       }\n
+    \     ]\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n      }, \n      \"text\":
+    {\n       \"en\": \"How many times has the subject given birth?\"\n      }, \n
+    \     \"fieldId\": \"num_children\", \n      \"events\": [\n       {\n        \"action\":
+    \"disable\", \n        \"trigger\": \"!(assessment[\\\"sex\\\"] = \\\"0\\\" and
+    assessment[\\\"given_birth\\\"] = \\\"1\\\")\"\n       }\n      ]\n     }\n    },
     \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
-    {\n       \"type\": \"inputNumber\"\n      }, \n      \"text\": {\n       \"en\":
-    \"How many times has the subject given birth?\"\n      }, \n      \"fieldId\":
-    \"num_children\", \n      \"events\": [\n       {\n        \"action\": \"disable\",
-    \n        \"trigger\": \"!(assessment[\\\"sex\\\"] = \\\"0\\\" and assessment[\\\"given_birth\\\"]
-    = \\\"1\\\")\"\n       }\n      ]\n     }\n    }, \n    {\n     \"type\": \"question\",
-    \n     \"options\": {\n      \"widget\": {\n       \"type\": \"radioGroup\"\n
-    \     }, \n      \"text\": {\n       \"en\": \"Ethnicity\"\n      }, \n      \"enumerations\":
-    [\n       {\n        \"text\": {\n         \"en\": \" Hispanic or Latino\"\n        },
-    \n        \"id\": \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
-    \" NOT Hispanic or Latino\"\n        }, \n        \"id\": \"1\"\n       }, \n
-    \      {\n        \"text\": {\n         \"en\": \" Unknown / Not Reported\"\n
-    \       }, \n        \"id\": \"2\"\n       }\n      ], \n      \"fieldId\": \"ethnicity\"\n
-    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"radioGroup\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Ethnicity\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\":
+    {\n         \"en\": \" Hispanic or Latino\"\n        }, \n        \"id\": \"id_0\"\n
+    \      }, \n       {\n        \"text\": {\n         \"en\": \" NOT Hispanic or
+    Latino\"\n        }, \n        \"id\": \"id_1\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Unknown / Not Reported\"\n        }, \n        \"id\":
+    \"id_2\"\n       }\n      ], \n      \"fieldId\": \"ethnicity\"\n     }\n    },
+    \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
     {\n       \"type\": \"checkGroup\"\n      }, \n      \"text\": {\n       \"en\":
     \"Race\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\": {\n
     \        \"en\": \" American Indian/Alaska Native\"\n        }, \n        \"id\":
-    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Asian\"\n
-    \       }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\": {\n
-    \        \"en\": \" Native Hawaiian or Other Pacific Islander\"\n        }, \n
-    \       \"id\": \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\":
-    \" Black or African American\"\n        }, \n        \"id\": \"3\"\n       },
+    \"id_0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Asian\"\n
+    \       }, \n        \"id\": \"id_1\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Native Hawaiian or Other Pacific Islander\"\n        },
+    \n        \"id\": \"id_2\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Black or African American\"\n        }, \n        \"id\": \"id_3\"\n       },
     \n       {\n        \"text\": {\n         \"en\": \" White\"\n        }, \n        \"id\":
-    \"4\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" More Than
-    One Race\"\n        }, \n        \"id\": \"5\"\n       }, \n       {\n        \"text\":
-    {\n         \"en\": \" Unknown / Not Reported\"\n        }, \n        \"id\":
-    \"6\"\n       }\n      ], \n      \"fieldId\": \"race\"\n     }\n    }, \n    {\n
-    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
-    \"dateTimePicker\"\n      }, \n      \"help\": {\n       \"en\": \"YYYY-MM-DD\"\n
-    \     }, \n      \"text\": {\n       \"en\": \"Date of birth\"\n      }, \n      \"fieldId\":
-    \"dob\"\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
-    {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n      }, \n      \"help\":
-    {\n       \"en\": \"cm\"\n      }, \n      \"text\": {\n       \"en\": \"Height
-    (cm)\"\n      }, \n      \"fieldId\": \"height\"\n     }\n    }, \n    {\n     \"type\":
+    \"id_4\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" More
+    Than One Race\"\n        }, \n        \"id\": \"id_5\"\n       }, \n       {\n
+    \       \"text\": {\n         \"en\": \" Unknown / Not Reported\"\n        },
+    \n        \"id\": \"id_6\"\n       }\n      ], \n      \"fieldId\": \"race\"\n
+    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"dateTimePicker\"\n      }, \n      \"help\": {\n       \"en\":
+    \"YYYY-MM-DD\"\n      }, \n      \"text\": {\n       \"en\": \"Date of birth\"\n
+    \     }, \n      \"fieldId\": \"dob\"\n     }\n    }, \n    {\n     \"type\":
     \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"inputNumber\"\n
-    \     }, \n      \"help\": {\n       \"en\": \"kilograms\"\n      }, \n      \"text\":
-    {\n       \"en\": \"Weight (kilograms)\"\n      }, \n      \"fieldId\": \"weight\"\n
+    \     }, \n      \"help\": {\n       \"en\": \"cm\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Height (cm)\"\n      }, \n      \"fieldId\": \"height\"\n
     \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
-    {\n       \"type\": \"inputText\"\n      }, \n      \"text\": {\n       \"en\":
-    \"Any comorbid condition\"\n      }, \n      \"fieldId\": \"comorbidities\"\n
-    \    }\n    }\n   ], \n   \"id\": \"demographics\"\n  }, \n  {\n   \"elements\":
-    [\n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
-    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
-    \"Patient has a diagnosis of diabetes mellitus?\"\n      }, \n      \"enumerations\":
-    [\n       {\n        \"text\": {\n         \"en\": \" No\"\n        }, \n        \"id\":
-    \"a\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Yes\"\n
-    \       }, \n        \"id\": \"b\"\n       }\n      ], \n      \"fieldId\": \"diabetes\"\n
-    \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
-    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
-    \"Type of Diabetes Mellitus\"\n      }, \n      \"enumerations\": [\n       {\n
-    \       \"text\": {\n         \"en\": \" Type 1 insulin-dependent\"\n        },
-    \n        \"id\": \"a\"\n       }, \n       {\n        \"text\": {\n         \"en\":
-    \" Type 2 insulin-dependent\"\n        }, \n        \"id\": \"b\"\n       }, \n
-    \      {\n        \"text\": {\n         \"en\": \" Type 2 non insulin-dependent\"\n
-    \       }, \n        \"id\": \"c\"\n       }\n      ], \n      \"fieldId\": \"diabetes_type\"\n
-    \    }\n    }, \n    {\n     \"type\": \"header\", \n     \"options\": {\n      \"text\":
-    {\n       \"en\": \"Dialysis Information\"\n      }\n     }\n    }, \n    {\n
-    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
-    \"dateTimePicker\"\n      }, \n      \"help\": {\n       \"en\": \"DD-MM-YYYYY\"\n
-    \     }, \n      \"text\": {\n       \"en\": \"Date of first outpatient dialysis
-    treatment\"\n      }, \n      \"fieldId\": \"dialysis_initiation\"\n     }\n    },
-    \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
-    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
-    \"Type of vascular access\"\n      }, \n      \"enumerations\": [\n       {\n
-    \       \"text\": {\n         \"en\": \" Graft\"\n        }, \n        \"id\":
-    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Fistula\"\n
-    \       }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\": {\n
-    \        \"en\": \" Catheter with maturing graft\"\n        }, \n        \"id\":
-    \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Catheter
-    with maturing fistula\"\n        }, \n        \"id\": \"3\"\n       }\n      ],
-    \n      \"fieldId\": \"access_type\"\n     }\n    }, \n    {\n     \"type\": \"question\",
+    {\n       \"type\": \"inputNumber\"\n      }, \n      \"help\": {\n       \"en\":
+    \"kilograms\"\n      }, \n      \"text\": {\n       \"en\": \"Weight (kilograms)\"\n
+    \     }, \n      \"fieldId\": \"weight\"\n     }\n    }, \n    {\n     \"type\":
+    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"inputText\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Any comorbid condition\"\n      },
+    \n      \"fieldId\": \"comorbidities\"\n     }\n    }\n   ], \n   \"id\": \"demographics\"\n
+    \ }, \n  {\n   \"elements\": [\n    {\n     \"type\": \"question\", \n     \"options\":
+    {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Patient has a diagnosis of diabetes mellitus?\"\n      },
+    \n      \"enumerations\": [\n       {\n        \"text\": {\n         \"en\": \"
+    No\"\n        }, \n        \"id\": \"a\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Yes\"\n        }, \n        \"id\": \"b\"\n       }\n      ],
+    \n      \"fieldId\": \"diabetes\"\n     }\n    }, \n    {\n     \"type\": \"question\",
     \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      },
-    \n      \"text\": {\n       \"en\": \"Location of currently used vascular access\"\n
-    \     }, \n      \"enumerations\": [\n       {\n        \"text\": {\n         \"en\":
-    \" Forearm\"\n        }, \n        \"id\": \"0\"\n       }, \n       {\n        \"text\":
-    {\n         \"en\": \" Upper arm\"\n        }, \n        \"id\": \"1\"\n       },
-    \n       {\n        \"text\": {\n         \"en\": \" Internal jugular vein\"\n
-    \       }, \n        \"id\": \"2\"\n       }, \n       {\n        \"text\": {\n
-    \        \"en\": \" Subclavian vein\"\n        }, \n        \"id\": \"3\"\n       },
-    \n       {\n        \"text\": {\n         \"en\": \" Other\"\n        }, \n        \"id\":
-    \"4\"\n       }\n      ], \n      \"fieldId\": \"access_location\"\n     }\n    },
+    \n      \"text\": {\n       \"en\": \"Type of Diabetes Mellitus\"\n      }, \n
+    \     \"enumerations\": [\n       {\n        \"text\": {\n         \"en\": \"
+    Type 1 insulin-dependent\"\n        }, \n        \"id\": \"a\"\n       }, \n       {\n
+    \       \"text\": {\n         \"en\": \" Type 2 insulin-dependent\"\n        },
+    \n        \"id\": \"b\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Type 2 non insulin-dependent\"\n        }, \n        \"id\": \"c\"\n       }\n
+    \     ], \n      \"fieldId\": \"diabetes_type\"\n     }\n    }, \n    {\n     \"type\":
+    \"header\", \n     \"options\": {\n      \"text\": {\n       \"en\": \"Dialysis
+    Information\"\n      }\n     }\n    }, \n    {\n     \"type\": \"question\", \n
+    \    \"options\": {\n      \"widget\": {\n       \"type\": \"dateTimePicker\"\n
+    \     }, \n      \"help\": {\n       \"en\": \"DD-MM-YYYYY\"\n      }, \n      \"text\":
+    {\n       \"en\": \"Date of first outpatient dialysis treatment\"\n      }, \n
+    \     \"fieldId\": \"dialysis_initiation\"\n     }\n    }, \n    {\n     \"type\":
+    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Type of vascular access\"\n      },
+    \n      \"enumerations\": [\n       {\n        \"text\": {\n         \"en\": \"
+    Graft\"\n        }, \n        \"id\": \"id_0\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Fistula\"\n        }, \n        \"id\": \"id_1\"\n       },
+    \n       {\n        \"text\": {\n         \"en\": \" Catheter with maturing graft\"\n
+    \       }, \n        \"id\": \"id_2\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Catheter with maturing fistula\"\n        }, \n        \"id\":
+    \"id_3\"\n       }\n      ], \n      \"fieldId\": \"access_type\"\n     }\n    },
     \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
+    {\n       \"type\": \"dropDown\"\n      }, \n      \"text\": {\n       \"en\":
+    \"Location of currently used vascular access\"\n      }, \n      \"enumerations\":
+    [\n       {\n        \"text\": {\n         \"en\": \" Forearm\"\n        }, \n
+    \       \"id\": \"id_0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Upper arm\"\n        }, \n        \"id\": \"id_1\"\n       }, \n       {\n
+    \       \"text\": {\n         \"en\": \" Internal jugular vein\"\n        }, \n
+    \       \"id\": \"id_2\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Subclavian vein\"\n        }, \n        \"id\": \"id_3\"\n       }, \n       {\n
+    \       \"text\": {\n         \"en\": \" Other\"\n        }, \n        \"id\":
+    \"id_4\"\n       }\n      ], \n      \"fieldId\": \"access_location\"\n     }\n
+    \   }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
     {\n       \"type\": \"inputText\"\n      }, \n      \"text\": {\n       \"en\":
     \"Name of dialysis unit\"\n      }, \n      \"fieldId\": \"dialysis_unit_name\"\n
     \    }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\": {\n      \"widget\":
@@ -846,38 +848,39 @@ tests:
     \"radioGroup\"\n      }, \n      \"text\": {\n       \"en\": \"Days of the week
     patient is dialyzed\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\":
     {\n         \"en\": \" Monday-Wednesday-Friday\"\n        }, \n        \"id\":
-    \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Tuesday-Thursday-Saturday\"\n
-    \       }, \n        \"id\": \"1\"\n       }, \n       {\n        \"text\": {\n
-    \        \"en\": \" Other\"\n        }, \n        \"id\": \"2\"\n       }\n      ],
-    \n      \"fieldId\": \"dialysis_schedule_days\"\n     }\n    }, \n    {\n     \"type\":
-    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n
-    \     }, \n      \"text\": {\n       \"en\": \"Shift patient is dialyzed\"\n      },
-    \n      \"enumerations\": [\n       {\n        \"text\": {\n         \"en\": \"
-    First shift\"\n        }, \n        \"id\": \"0\"\n       }, \n       {\n        \"text\":
-    {\n         \"en\": \" Second shift\"\n        }, \n        \"id\": \"1\"\n       },
-    \n       {\n        \"text\": {\n         \"en\": \" Third shift\"\n        },
-    \n        \"id\": \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\":
-    \" Fourth shift\"\n        }, \n        \"id\": \"3\"\n       }\n      ], \n      \"fieldId\":
+    \"id_0\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Tuesday-Thursday-Saturday\"\n
+    \       }, \n        \"id\": \"id_1\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Other\"\n        }, \n        \"id\": \"id_2\"\n       }\n
+    \     ], \n      \"fieldId\": \"dialysis_schedule_days\"\n     }\n    }, \n    {\n
+    \    \"type\": \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\":
+    \"dropDown\"\n      }, \n      \"text\": {\n       \"en\": \"Shift patient is
+    dialyzed\"\n      }, \n      \"enumerations\": [\n       {\n        \"text\":
+    {\n         \"en\": \" First shift\"\n        }, \n        \"id\": \"id_0\"\n
+    \      }, \n       {\n        \"text\": {\n         \"en\": \" Second shift\"\n
+    \       }, \n        \"id\": \"id_1\"\n       }, \n       {\n        \"text\":
+    {\n         \"en\": \" Third shift\"\n        }, \n        \"id\": \"id_2\"\n
+    \      }, \n       {\n        \"text\": {\n         \"en\": \" Fourth shift\"\n
+    \       }, \n        \"id\": \"id_3\"\n       }\n      ], \n      \"fieldId\":
     \"dialysis_schedule_time\"\n     }\n    }, \n    {\n     \"type\": \"question\",
     \n     \"options\": {\n      \"widget\": {\n       \"type\": \"dropDown\"\n      },
     \n      \"text\": {\n       \"en\": \"Etiology of ESRD\"\n      }, \n      \"enumerations\":
     [\n       {\n        \"text\": {\n         \"en\": \" Diabetes\"\n        }, \n
-    \       \"id\": \"0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
-    \" Hypertension\"\n        }, \n        \"id\": \"1\"\n       }, \n       {\n
+    \       \"id\": \"id_0\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Hypertension\"\n        }, \n        \"id\": \"id_1\"\n       }, \n       {\n
     \       \"text\": {\n         \"en\": \" Glomerulonephritis\"\n        }, \n        \"id\":
-    \"2\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Polycystic
-    Kidney Disease\"\n        }, \n        \"id\": \"3\"\n       }, \n       {\n        \"text\":
-    {\n         \"en\": \" Interstitial Nephritis\"\n        }, \n        \"id\":
-    \"4\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Hereditary
-    Nephritis\"\n        }, \n        \"id\": \"5\"\n       }, \n       {\n        \"text\":
-    {\n         \"en\": \" Other\"\n        }, \n        \"id\": \"6\"\n       }\n
-    \     ], \n      \"fieldId\": \"etiology_esrd\"\n     }\n    }, \n    {\n     \"type\":
-    \"header\", \n     \"options\": {\n      \"text\": {\n       \"en\": \"General
-    Comments\"\n      }\n     }\n    }, \n    {\n     \"type\": \"question\", \n     \"options\":
-    {\n      \"widget\": {\n       \"type\": \"textArea\"\n      }, \n      \"text\":
-    {\n       \"en\": \"Comments\"\n      }, \n      \"fieldId\": \"subject_comments\"\n
-    \    }\n    }\n   ], \n   \"id\": \"dialysis_info\"\n  }\n ], \n \"title\": {\n
-    \ \"en\": \"test_redcap_1\"\n }\n}"
+    \"id_2\"\n       }, \n       {\n        \"text\": {\n         \"en\": \" Polycystic
+    Kidney Disease\"\n        }, \n        \"id\": \"id_3\"\n       }, \n       {\n
+    \       \"text\": {\n         \"en\": \" Interstitial Nephritis\"\n        },
+    \n        \"id\": \"id_4\"\n       }, \n       {\n        \"text\": {\n         \"en\":
+    \" Hereditary Nephritis\"\n        }, \n        \"id\": \"id_5\"\n       }, \n
+    \      {\n        \"text\": {\n         \"en\": \" Other\"\n        }, \n        \"id\":
+    \"id_6\"\n       }\n      ], \n      \"fieldId\": \"etiology_esrd\"\n     }\n
+    \   }, \n    {\n     \"type\": \"header\", \n     \"options\": {\n      \"text\":
+    {\n       \"en\": \"General Comments\"\n      }\n     }\n    }, \n    {\n     \"type\":
+    \"question\", \n     \"options\": {\n      \"widget\": {\n       \"type\": \"textArea\"\n
+    \     }, \n      \"text\": {\n       \"en\": \"Comments\"\n      }, \n      \"fieldId\":
+    \"subject_comments\"\n     }\n    }\n   ], \n   \"id\": \"dialysis_info\"\n  }\n
+    ], \n \"title\": {\n  \"en\": \"test_redcap_1\"\n }\n}"
 - sh: cat ./test/sandbox/test_redcap_1_i.json
   stdout: "{\n \"title\": \"test_redcap_1\", \n \"record\": [\n  {\n   \"description\":
     \"Study ID\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
@@ -896,69 +899,70 @@ tests:
     \n   \"type\": \"text\"\n  }, \n  {\n   \"description\": \"E-mail\", \n   \"identifiable\":
     true, \n   \"required\": false, \n   \"id\": \"email\", \n   \"type\": \"text\"\n
     \ }, \n  {\n   \"description\": \"Gender\", \n   \"identifiable\": false, \n   \"required\":
-    true, \n   \"id\": \"sex\", \n   \"type\": {\n    \"enumerations\": {\n     \"1\":
-    null, \n     \"0\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n
-    \ {\n   \"description\": \"Has the subject given birth before?\", \n   \"identifiable\":
+    true, \n   \"id\": \"sex\", \n   \"type\": {\n    \"enumerations\": {\n     \"id_0\":
+    null, \n     \"id_1\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  },
+    \n  {\n   \"description\": \"Has the subject given birth before?\", \n   \"identifiable\":
     false, \n   \"required\": false, \n   \"id\": \"given_birth\", \n   \"type\":
-    {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null\n    }, \n    \"base\":
-    \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"How many times has the
-    subject given birth?\", \n   \"identifiable\": false, \n   \"required\": false,
-    \n   \"id\": \"num_children\", \n   \"type\": {\n    \"range\": {\n     \"min\":
+    {\n    \"enumerations\": {\n     \"id_0\": null, \n     \"id_1\": null\n    },
+    \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"How many
+    times has the subject given birth?\", \n   \"identifiable\": false, \n   \"required\":
+    false, \n   \"id\": \"num_children\", \n   \"type\": {\n    \"range\": {\n     \"min\":
     0\n    }, \n    \"base\": \"integer\"\n   }\n  }, \n  {\n   \"description\": \"Ethnicity\",
     \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"ethnicity\",
-    \n   \"type\": {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null,
-    \n     \"2\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n
-    \  \"description\": \"Race\", \n   \"identifiable\": false, \n   \"required\":
-    false, \n   \"id\": \"race\", \n   \"type\": {\n    \"enumerations\": {\n     \"1\":
-    null, \n     \"0\": null, \n     \"3\": null, \n     \"2\": null, \n     \"5\":
-    null, \n     \"4\": null, \n     \"6\": null\n    }, \n    \"base\": \"enumerationSet\"\n
-    \  }\n  }, \n  {\n   \"description\": \"Date of birth\", \n   \"identifiable\":
-    true, \n   \"required\": false, \n   \"id\": \"dob\", \n   \"type\": \"dateTime\"\n
-    \ }, \n  {\n   \"description\": \"Height (cm)\", \n   \"identifiable\": false,
-    \n   \"required\": false, \n   \"id\": \"height\", \n   \"type\": {\n    \"range\":
-    {\n     \"max\": 215.0, \n     \"min\": 130.0\n    }, \n    \"base\": \"float\"\n
-    \  }\n  }, \n  {\n   \"description\": \"Weight (kilograms)\", \n   \"identifiable\":
-    false, \n   \"required\": false, \n   \"id\": \"weight\", \n   \"type\": {\n    \"range\":
-    {\n     \"max\": 200, \n     \"min\": 35\n    }, \n    \"base\": \"integer\"\n
-    \  }\n  }, \n  {\n   \"description\": \"Any comorbid condition\", \n   \"identifiable\":
-    false, \n   \"required\": false, \n   \"id\": \"comorbidities\", \n   \"type\":
-    \"text\"\n  }, \n  {\n   \"description\": \"Patient has a diagnosis of diabetes
-    mellitus?\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
-    \"diabetes\", \n   \"type\": {\n    \"enumerations\": {\n     \"a\": null, \n
-    \    \"b\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\":
-    \"Type of Diabetes Mellitus\", \n   \"identifiable\": false, \n   \"required\":
-    false, \n   \"id\": \"diabetes_type\", \n   \"type\": {\n    \"enumerations\":
-    {\n     \"a\": null, \n     \"c\": null, \n     \"b\": null\n    }, \n    \"base\":
-    \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Date of first outpatient
-    dialysis treatment\", \n   \"identifiable\": false, \n   \"required\": false,
-    \n   \"id\": \"dialysis_initiation\", \n   \"type\": \"dateTime\"\n  }, \n  {\n
-    \  \"description\": \"Type of vascular access\", \n   \"identifiable\": false,
-    \n   \"required\": false, \n   \"id\": \"access_type\", \n   \"type\": {\n    \"enumerations\":
-    {\n     \"1\": null, \n     \"0\": null, \n     \"3\": null, \n     \"2\": null\n
-    \   }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\":
-    \"Location of currently used vascular access\", \n   \"identifiable\": false,
-    \n   \"required\": false, \n   \"id\": \"access_location\", \n   \"type\": {\n
-    \   \"enumerations\": {\n     \"1\": null, \n     \"0\": null, \n     \"3\": null,
-    \n     \"2\": null, \n     \"4\": null\n    }, \n    \"base\": \"enumeration\"\n
-    \  }\n  }, \n  {\n   \"description\": \"Name of dialysis unit\", \n   \"identifiable\":
-    false, \n   \"required\": false, \n   \"id\": \"dialysis_unit_name\", \n   \"type\":
-    \"text\"\n  }, \n  {\n   \"description\": \"Phone number\", \n   \"identifiable\":
-    false, \n   \"required\": false, \n   \"id\": \"dialysis_unit_phone\", \n   \"type\":
-    \"text\"\n  }, \n  {\n   \"description\": \"Days of the week patient is dialyzed\",
-    \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"dialysis_schedule_days\",
-    \n   \"type\": {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null,
-    \n     \"2\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n
-    \  \"description\": \"Shift patient is dialyzed\", \n   \"identifiable\": false,
-    \n   \"required\": false, \n   \"id\": \"dialysis_schedule_time\", \n   \"type\":
-    {\n    \"enumerations\": {\n     \"1\": null, \n     \"0\": null, \n     \"3\":
-    null, \n     \"2\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n
-    \ {\n   \"description\": \"Etiology of ESRD\", \n   \"identifiable\": false, \n
-    \  \"required\": false, \n   \"id\": \"etiology_esrd\", \n   \"type\": {\n    \"enumerations\":
-    {\n     \"1\": null, \n     \"0\": null, \n     \"3\": null, \n     \"2\": null,
-    \n     \"5\": null, \n     \"4\": null, \n     \"6\": null\n    }, \n    \"base\":
-    \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Comments\", \n   \"identifiable\":
-    false, \n   \"required\": false, \n   \"id\": \"subject_comments\", \n   \"type\":
-    \"text\"\n  }\n ], \n \"version\": \"1.0\", \n \"id\": \"urn:redcap_1\"\n}"
+    \n   \"type\": {\n    \"enumerations\": {\n     \"id_2\": null, \n     \"id_0\":
+    null, \n     \"id_1\": null\n    }, \n    \"base\": \"enumeration\"\n   }\n  },
+    \n  {\n   \"description\": \"Race\", \n   \"identifiable\": false, \n   \"required\":
+    false, \n   \"id\": \"race\", \n   \"type\": {\n    \"enumerations\": {\n     \"id_2\":
+    null, \n     \"id_3\": null, \n     \"id_0\": null, \n     \"id_1\": null, \n
+    \    \"id_6\": null, \n     \"id_4\": null, \n     \"id_5\": null\n    }, \n    \"base\":
+    \"enumerationSet\"\n   }\n  }, \n  {\n   \"description\": \"Date of birth\", \n
+    \  \"identifiable\": true, \n   \"required\": false, \n   \"id\": \"dob\", \n
+    \  \"type\": \"dateTime\"\n  }, \n  {\n   \"description\": \"Height (cm)\", \n
+    \  \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"height\",
+    \n   \"type\": {\n    \"range\": {\n     \"max\": 215.0, \n     \"min\": 130.0\n
+    \   }, \n    \"base\": \"float\"\n   }\n  }, \n  {\n   \"description\": \"Weight
+    (kilograms)\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
+    \"weight\", \n   \"type\": {\n    \"range\": {\n     \"max\": 200, \n     \"min\":
+    35\n    }, \n    \"base\": \"integer\"\n   }\n  }, \n  {\n   \"description\":
+    \"Any comorbid condition\", \n   \"identifiable\": false, \n   \"required\": false,
+    \n   \"id\": \"comorbidities\", \n   \"type\": \"text\"\n  }, \n  {\n   \"description\":
+    \"Patient has a diagnosis of diabetes mellitus?\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"diabetes\", \n   \"type\": {\n    \"enumerations\":
+    {\n     \"a\": null, \n     \"b\": null\n    }, \n    \"base\": \"enumeration\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Type of Diabetes Mellitus\", \n   \"identifiable\":
+    false, \n   \"required\": false, \n   \"id\": \"diabetes_type\", \n   \"type\":
+    {\n    \"enumerations\": {\n     \"a\": null, \n     \"c\": null, \n     \"b\":
+    null\n    }, \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\":
+    \"Date of first outpatient dialysis treatment\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"dialysis_initiation\", \n   \"type\":
+    \"dateTime\"\n  }, \n  {\n   \"description\": \"Type of vascular access\", \n
+    \  \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"access_type\",
+    \n   \"type\": {\n    \"enumerations\": {\n     \"id_2\": null, \n     \"id_3\":
+    null, \n     \"id_0\": null, \n     \"id_1\": null\n    }, \n    \"base\": \"enumeration\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Location of currently used vascular access\",
+    \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\": \"access_location\",
+    \n   \"type\": {\n    \"enumerations\": {\n     \"id_2\": null, \n     \"id_3\":
+    null, \n     \"id_0\": null, \n     \"id_1\": null, \n     \"id_4\": null\n    },
+    \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Name
+    of dialysis unit\", \n   \"identifiable\": false, \n   \"required\": false, \n
+    \  \"id\": \"dialysis_unit_name\", \n   \"type\": \"text\"\n  }, \n  {\n   \"description\":
+    \"Phone number\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
+    \"dialysis_unit_phone\", \n   \"type\": \"text\"\n  }, \n  {\n   \"description\":
+    \"Days of the week patient is dialyzed\", \n   \"identifiable\": false, \n   \"required\":
+    false, \n   \"id\": \"dialysis_schedule_days\", \n   \"type\": {\n    \"enumerations\":
+    {\n     \"id_2\": null, \n     \"id_0\": null, \n     \"id_1\": null\n    }, \n
+    \   \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Shift patient
+    is dialyzed\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
+    \"dialysis_schedule_time\", \n   \"type\": {\n    \"enumerations\": {\n     \"id_2\":
+    null, \n     \"id_3\": null, \n     \"id_0\": null, \n     \"id_1\": null\n    },
+    \n    \"base\": \"enumeration\"\n   }\n  }, \n  {\n   \"description\": \"Etiology
+    of ESRD\", \n   \"identifiable\": false, \n   \"required\": false, \n   \"id\":
+    \"etiology_esrd\", \n   \"type\": {\n    \"enumerations\": {\n     \"id_2\": null,
+    \n     \"id_3\": null, \n     \"id_0\": null, \n     \"id_1\": null, \n     \"id_6\":
+    null, \n     \"id_4\": null, \n     \"id_5\": null\n    }, \n    \"base\": \"enumeration\"\n
+    \  }\n  }, \n  {\n   \"description\": \"Comments\", \n   \"identifiable\": false,
+    \n   \"required\": false, \n   \"id\": \"subject_comments\", \n   \"type\": \"text\"\n
+    \ }\n ], \n \"version\": \"1.0\", \n \"id\": \"urn:redcap_1\"\n}"
 - sh: rios-validate instrument ./test/sandbox/test_redcap_1_i.json
   stdout: |
     Successful validation.
@@ -988,13 +992,13 @@ tests:
           fieldId: matrixranking
           questions:
           - enumerations:
-            - id: '1'
+            - id: id_1
               text:
                 en: ' column1'
-            - id: '2'
+            - id: id_2
               text:
                 en: ' column2'
-            - id: '3'
+            - id: id_3
               text:
                 en: ' column3'
             fieldId: radio
@@ -1034,9 +1038,9 @@ tests:
           type:
             base: enumeration
             enumerations:
-              '1': null
-              '2': null
-              '3': null
+              id_1: null
+              id_2: null
+              id_3: null
         rows:
         - description: MatrixRow1
           id: matrixrow1
@@ -2299,11 +2303,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 196, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 270, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 248, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
         json.dump(obj, fo, indent=1)
       File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
         for chunk in iterable:
@@ -2331,11 +2335,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 196, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 270, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 254, in create__file
         json.loads(json.dumps(obj)),
       File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
         return _default_encoder.encode(obj)
@@ -2377,6 +2381,12 @@ tests:
     1.0 --infile ./test/redcap/Vineland-II.csv --outfile-prefix ./test/sandbox/redcap/Vineland-II
     --format yaml
   stdout: ''
+- sh: rios-validate instrument ./test/sandbox/redcap/Vineland-II_i.json
+  stdout: |
+    Successful validation.
+- sh: rios-validate --instrument ./test/sandbox/redcap/Vineland-II_i.json form ./test/sandbox/redcap/Vineland-II_f.json
+  stdout: |
+    Successful validation.
 - sh: redcap-rios --title abc_community02 --id urn:redcap_abc_community02 --instrument-version
     1.0 --infile ./test/redcap/abc_community02.csv --outfile-prefix ./test/sandbox/redcap/abc_community02
     --format json
@@ -2385,6 +2395,13 @@ tests:
     1.0 --infile ./test/redcap/abc_community02.csv --outfile-prefix ./test/sandbox/redcap/abc_community02
     --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/abc_community02_i.json'
+  stdout: |
+    Successful validation.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/abc_community02_i.json
+    form ./test/sandbox/redcap/abc_community02_f.json'
+  stdout: |
+    Successful validation.
 - sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/abc_community02_i.json
     || true'
   stdout: |
@@ -2488,11 +2505,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 196, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 270, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 248, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
         json.dump(obj, fo, indent=1)
       File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
         for chunk in iterable:
@@ -2520,11 +2537,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 193, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 196, in __call__
         self.create_form_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_form_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 270, in create_form_file
         self.create__file('f', self.form)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 254, in create__file
         json.loads(json.dumps(obj)),
       File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
         return _default_encoder.encode(obj)
@@ -2596,7 +2613,7 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 188, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 191, in __call__
         self.reader.attributes)
     ValueError: ('Input has unknown format', ['code', 'title', 'language', 'expires_in_month'])
 - sh: redcap-rios --title das_pre_school02 --id urn:redcap_das_pre_school02 --instrument-version
@@ -2607,6 +2624,28 @@ tests:
     1.0 --infile ./test/redcap/das_pre_school02.csv --outfile-prefix ./test/sandbox/redcap/das_pre_school02
     --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/das_pre_school02_i.json
+    || true'
+  stdout: |
+    FAILED validation.
+    record.359.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.434.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.348.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.370.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.427.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.400.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.393.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/das_pre_school02_i.json
+    form ./test/sandbox/redcap/das_pre_school02_f.json || true'
+  stdout: |
+    FAILED validation.
+    record.359.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.434.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.348.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.370.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.427.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.400.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.393.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
 - sh: rios-validate instrument ./test/sandbox/redcap/das_pre_school02_i.json
   stdout: |
     Successful validation.
@@ -2622,6 +2661,28 @@ tests:
     --instrument-version 1.0 --infile ./test/redcap/das_school_age_part101.csv --outfile-prefix
     ./test/sandbox/redcap/das_school_age_part101 --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/das_school_age_part101_i.json
+    || true'
+  stdout: |
+    FAILED validation.
+    record.339.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.316.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.294.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.346.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.380.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.305.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.373.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/das_school_age_part101_i.json
+    form ./test/sandbox/redcap/das_school_age_part101_f.json || true'
+  stdout: |
+    FAILED validation.
+    record.339.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.316.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.294.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.346.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.380.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.305.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
+    record.373.type.enumerations: "Passes first trial within time limit" is not a mapping type: Does not implement dict-like functionality.
 - sh: rios-validate instrument ./test/sandbox/redcap/das_school_age_part101_i.json
   stdout: |
     Successful validation.
@@ -2840,6 +2901,340 @@ tests:
     1.0 --infile ./test/redcap/pdd_bip01.csv --outfile-prefix ./test/sandbox/redcap/pdd_bip01
     --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/pdd_bip01_i.json ||
+    true'
+  stdout: |
+    FAILED validation.
+    record.320.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.253.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.241.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.267.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.229.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.245.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.330.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.348.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.235.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.338.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.236.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.285.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.301.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.326.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.378.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.324.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.293.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.281.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.247.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.332.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.274.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.240.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.295.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.269.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.302.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.273.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.244.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.346.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.260.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.357.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.309.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.261.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.316.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.287.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.299.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.337.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.363.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.382.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.328.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.263.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.365.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.250.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.264.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.238.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.259.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.322.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.258.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.234.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.350.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.377.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.303.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.352.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.369.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.310.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.361.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.385.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.355.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.252.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.266.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.270.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.239.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.272.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.358.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.256.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.283.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.371.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.331.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.237.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.308.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.367.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.296.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.300.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.288.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.232.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.336.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.379.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.345.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.372.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.292.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.321.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.343.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.231.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.380.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.305.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.265.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.313.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.257.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.373.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.277.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.329.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.276.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.374.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.251.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.366.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.294.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.317.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.356.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.233.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.334.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.368.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.347.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.362.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.248.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.333.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.230.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.312.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.306.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.255.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.278.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.349.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.387.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.386.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.341.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.242.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.339.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.383.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.364.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.319.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.353.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.307.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.280.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.291.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.275.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.384.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.286.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.227.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.315.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.271.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.228.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.279.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.311.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.246.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.388.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.327.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.290.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.297.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.340.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.359.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.318.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.390.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.325.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.289.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.370.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.282.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.344.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.262.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.354.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.391.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.243.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.381.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.304.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.389.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.323.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.360.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.351.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.284.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.268.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.342.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.314.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.335.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.298.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.254.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.249.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/pdd_bip01_i.json form
+    ./test/sandbox/redcap/pdd_bip01_f.json || true'
+  stdout: |
+    FAILED validation.
+    record.320.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.253.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.241.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.267.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.229.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.245.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.330.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.348.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.235.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.338.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.236.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.285.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.301.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.326.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.378.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.324.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.293.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.281.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.247.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.332.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.274.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.240.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.295.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.269.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.302.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.273.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.244.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.346.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.260.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.357.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.309.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.261.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.316.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.287.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.299.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.337.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.363.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.382.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.328.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.263.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.365.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.250.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.264.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.238.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.259.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.322.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.258.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.234.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.350.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.377.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.303.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.352.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.369.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.310.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.361.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.385.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.355.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.252.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.266.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.270.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.239.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.272.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.358.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.256.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.283.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.371.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.331.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.237.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.308.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.367.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.296.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.300.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.288.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.232.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.336.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.379.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.345.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.372.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.292.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.321.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.343.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.231.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.380.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.305.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.265.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.313.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.257.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.373.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.277.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.329.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.276.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.374.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.251.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.366.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.294.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.317.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.356.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.233.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.334.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.368.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.347.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.362.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.248.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.333.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.230.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.312.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.306.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.255.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.278.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.349.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.387.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.386.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.341.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.242.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.339.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.383.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.364.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.319.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.353.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.307.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.280.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.291.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.275.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.384.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.286.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.227.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.315.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.271.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.228.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.279.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.311.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.246.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.388.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.327.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.290.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.297.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.340.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.359.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.318.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.390.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.325.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.289.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.370.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.282.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.344.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.262.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.354.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.391.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.243.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.381.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.304.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.389.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.323.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.360.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.351.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.284.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.268.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.342.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.314.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.335.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.298.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.254.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
+    record.249.type.enumerations: "Missing value" is not a mapping type: Does not implement dict-like functionality.
 - sh: rios-validate instrument ./test/sandbox/redcap/pdd_bip01_i.json
   stdout: |
     Successful validation.
@@ -2854,6 +3249,20 @@ tests:
     1.0 --infile ./test/redcap/ppvt_4a02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4a02
     --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/ppvt_4a02_i.json ||
+    true'
+  stdout: |
+    FAILED validation.
+    record.9.type.enumerations: "<20" is not a mapping type: Does not implement dict-like functionality.
+    record.18.type.enumerations: "<24" is not a mapping type: Does not implement dict-like functionality.
+    record.14.type.enumerations: "<.01" is not a mapping type: Does not implement dict-like functionality.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/ppvt_4a02_i.json form
+    ./test/sandbox/redcap/ppvt_4a02_f.json || true'
+  stdout: |
+    FAILED validation.
+    record.9.type.enumerations: "<20" is not a mapping type: Does not implement dict-like functionality.
+    record.18.type.enumerations: "<24" is not a mapping type: Does not implement dict-like functionality.
+    record.14.type.enumerations: "<.01" is not a mapping type: Does not implement dict-like functionality.
 - sh: rios-validate instrument ./test/sandbox/redcap/ppvt_4a02_i.json
   stdout: |
     Successful validation.
@@ -2868,6 +3277,20 @@ tests:
     1.0 --infile ./test/redcap/ppvt_4b02.csv --outfile-prefix ./test/sandbox/redcap/ppvt_4b02
     --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/ppvt_4b02_i.json ||
+    true'
+  stdout: |
+    FAILED validation.
+    record.9.type.enumerations: "<20" is not a mapping type: Does not implement dict-like functionality.
+    record.18.type.enumerations: "<24" is not a mapping type: Does not implement dict-like functionality.
+    record.14.type.enumerations: "<.01" is not a mapping type: Does not implement dict-like functionality.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/ppvt_4b02_i.json form
+    ./test/sandbox/redcap/ppvt_4b02_f.json || true'
+  stdout: |
+    FAILED validation.
+    record.9.type.enumerations: "<20" is not a mapping type: Does not implement dict-like functionality.
+    record.18.type.enumerations: "<24" is not a mapping type: Does not implement dict-like functionality.
+    record.14.type.enumerations: "<.01" is not a mapping type: Does not implement dict-like functionality.
 - sh: rios-validate instrument ./test/sandbox/redcap/ppvt_4b02_i.json
   stdout: |
     Successful validation.
@@ -2881,11 +3304,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 191, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 194, in __call__
         self.create_instrument_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 264, in create_instrument_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_instrument_file
         self.create__file('i', self.instrument)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 248, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
         json.dump(obj, fo, indent=1)
       File "/usr/lib/python2.7/json/__init__.py", line 189, in dump
         for chunk in iterable:
@@ -2905,11 +3328,11 @@ tests:
     Traceback (most recent call last):
       File "/home/pwexler/rios.conversion_ve/bin/redcap-rios", line 9, in <module>
         load_entry_point('rios.conversion==0.2.0', 'console_scripts', 'redcap-rios')()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 191, in __call__
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 194, in __call__
         self.create_instrument_file()
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 264, in create_instrument_file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 267, in create_instrument_file
         self.create__file('i', self.instrument)
-      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 251, in create__file
+      File "/home/pwexler/rios.conversion/src/rios/conversion/redcap/to_rios.py", line 254, in create__file
         json.loads(json.dumps(obj)),
       File "/usr/lib/python2.7/json/__init__.py", line 243, in dumps
         return _default_encoder.encode(obj)
@@ -3030,6 +3453,26 @@ tests:
     1.0 --infile ./test/redcap/wasi_199903.csv --outfile-prefix ./test/sandbox/redcap/wasi_199903
     --format yaml
   stdout: ''
+- sh: bash -c 'rios-validate instrument ./test/sandbox/redcap/wasi_199903_i.json ||
+    true'
+  stdout: |
+    FAILED validation.
+    record.135.type.enumerations: "59 for ages 15-90" is not a mapping type: Does not implement dict-like functionality.
+    record.192.type.enumerations: "71 for ages 9-90" is not a mapping type: Does not implement dict-like functionality.
+    record.17.type.enumerations: "missing" is not a mapping type: Does not implement dict-like functionality.
+    record.22.type.enumerations: "missing" is not a mapping type: Does not implement dict-like functionality.
+    record.245.type.enumerations: "45 for ages 9-90" is not a mapping type: Does not implement dict-like functionality.
+    record.357.type.enumerations: "30 for ages 9-90" is not a mapping type: Does not implement dict-like functionality.
+- sh: bash -c 'rios-validate --instrument ./test/sandbox/redcap/wasi_199903_i.json
+    form ./test/sandbox/redcap/wasi_199903_f.json || true'
+  stdout: |
+    FAILED validation.
+    record.135.type.enumerations: "59 for ages 15-90" is not a mapping type: Does not implement dict-like functionality.
+    record.192.type.enumerations: "71 for ages 9-90" is not a mapping type: Does not implement dict-like functionality.
+    record.17.type.enumerations: "missing" is not a mapping type: Does not implement dict-like functionality.
+    record.22.type.enumerations: "missing" is not a mapping type: Does not implement dict-like functionality.
+    record.245.type.enumerations: "45 for ages 9-90" is not a mapping type: Does not implement dict-like functionality.
+    record.357.type.enumerations: "30 for ages 9-90" is not a mapping type: Does not implement dict-like functionality.
 - sh: rios-validate instrument ./test/sandbox/redcap/wasi_199903_i.json
   stdout: |
     Successful validation.
