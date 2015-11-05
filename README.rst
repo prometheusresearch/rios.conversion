@@ -1,13 +1,10 @@
-************************
-RIOS.CONVERSION Overview
-************************
+********
+Overview
+********
 
 RIOS.CONVERSION is a `Python`_ package that supports 
 converting instruments in various formats 
 to and from `RIOS`_ data structures.
-
-.. _`Python`: https://www.python.org
-.. _`RIOS`: https://rios.readthedocs.org
 
 The following command line programs have been implemented.
 
@@ -19,8 +16,8 @@ The following command line programs have been implemented.
 
 - rios-redcap
 
-  Converts a RIOS Instrument and Form to a REDCap Data Dictionary 
-  in csv format.
+  Converts a RIOS Instrument, Form, and CalculationSet 
+  to a REDCap Data Dictionary in csv format.
   
 - qualtrics-rios
 
@@ -34,31 +31,24 @@ required arguments and available options::
 
 See `test/input.yaml`_ for examples of running these programs.
 
-.. _`test/input.yaml`: https://bitbucket.org/prometheus/rios.conversion/src/tip/test/input.yaml
-
 While the conversion of most questions is straight forward 
 the conversion of actions and events is more complex because 
-these systems model these things differently.
+different systems model these things differently.
 
 Expressions are used for "calculated fields" and "skip logic".  
 A "calculated field" is a read-only field which evaluates its expression
 and displays the result.  The expression may reference other input fields
-or other calculated fields on the form.  
+or other calculated fields on the form by field ID.  
 Furthermore a field may be disabled or hidden (i.e. skipped) 
 if a given expression is true.
 
-The expressions use field IDs to reference other fields and RIOS restricts the 
-range of values for an `Identifier`_.
-
-These programs attempt to convert input IDs to valid RIOS Identifiers by 
-converting to lowercase, converting sequences of non-alphanumeric 
+These programs attempt to convert all input IDs to valid `RIOS Identifiers`_
+by converting to lowercase, converting sequences of non-alphanumeric 
 characters to underbar, and removing leading and trailing underbars.  
 The input expressions are also converted to lowercase in a naive attempt 
 to preserve the semantics.
 
 
-.. _`Identifier`: https://rios.readthedocs.org/en/latest/instrument_specification.html#id15
- 
 Installation
 ============
 
@@ -98,8 +88,6 @@ by doing the following::
     $ hg clone ssh://hg@bitbucket.org/prometheus/rios.conversion
     $ pip install -e ./rios.conversion[dev]
 
-.. _`Semantic Versioning`: http://semver.org
-.. _`pbbt`: https://pypi.python.org/pypi/pbbt
 
 License/Copyright
 =================
@@ -108,3 +96,11 @@ This project is licensed under the GNU Affero General Public License, version
 3. See the accompanying ``LICENSE.rst`` file for details.
 
 Copyright (c) 2015, Prometheus Research, LLC
+
+.. _pbbt: https://pypi.python.org/pypi/pbbt
+.. _Python: https://www.python.org
+.. _RIOS: https://rios.readthedocs.org
+.. _RIOS Identifiers: https://rios.readthedocs.org/en/latest/instrument_specification.html#identifier
+.. _Semantic Versioning: http://semver.org
+.. _test/input.yaml: https://bitbucket.org/prometheus/rios.conversion/src/tip/test/input.yaml
+

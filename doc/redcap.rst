@@ -17,9 +17,14 @@ As for CalculationSet, if there are no calculations in the input,
 no CalculationSet file will be created, 
 and if it already existed it will be deleted.
  
-Since RIOS does not allow capital letters in ids,
-the program converts all expressions and internal values to lowercase.
-Expressions are used both in calculations and in skip logic.
+Since there are restrictions on `RIOS Identifiers`_,
+the program converts all internal values to valid identifiers.
+See ``help(rios.conversion.redcap.to_rios.Csv2OrderedDict.get_name)``
+for details.  
+This mangling of the input identifiers may break expressions 
+or cause other errors so it is **strongly** recommended 
+to begin with valid RIOS identifiers for all page, form, matrix, and 
+field names, as well as all internal enumeration values.
 
 Sliders are converted to a simple float input field 
 with min=0.0 and max=100.0.  Any slider labels are ignored.
@@ -54,8 +59,15 @@ Two input formats are accepted.  The first uses these input fields::
   and "checkbox" maps to an enumeration set.
 - **Field Label** is mapped to Question Object text.  
 - Various spellings for the Choices / Calculations field have been 
-  encountered, so any field name starting with "Choices" is taken 
-  to be this field.
+  encountered, so any field name starting with "Choices" 
+  and containing "Calc" is taken to be this field.
+
+  When this field contains choices it is a pipe delimited string 
+  of comma seperated tuples:  id, value.  
+  The value is what is displayed to the user, 
+  and the id is what is stored in the database 
+  when the user selects the value.
+   
 - **Field Note** is mapped to Question Object help.
 - **Text Validation Max and Min** 
   are mapped to a suitable Bound Constraint Object 
@@ -93,6 +105,13 @@ The second format uses these input fields::
 - **help** is mapped to Question Object help.
 - **enumeration_type** selects "enumeration" or "enumerationSet".
 - **data_type** determines the RIOS type.
+  When enumeration_type is set, this field contains a JSON string 
+  which encodes an object whose "Choices" attribute 
+  is an array of single item dictionaries.  For each (key, value) item,
+  the key is the identifier and the value is displayed to the user.
+
+  The array of choices will be presented to the user 
+  in order of dictionary key.
 - **repeating_group_name** is ignored.
 - **page** is mapped to the RIOS page id.  
   As a convenience, 
@@ -126,13 +145,15 @@ Expressions
 
 Expressions are converted to lowercase and to `PEXL`_.
 
-So for example in REDCap::
+So for example in REDCap 
+suppose A and B are form fields 
+and C is a calculation field::
 
     SUM([A], [B], [C]) <> 1
 
 is converted to RIOS as::
 
-    rios.conversion.math.sum_(assessment["a"], assessment["b"], assessment["c"]) != 1
+    rios.conversion.math.sum_(assessment["a"], assessment["b"], calculations["c"]) != 1
 
 REDCap expressions support a collection of math and date functions.
 
@@ -152,11 +173,13 @@ and the following have implementations in rios.conversion::
 If your expressions reference any of these functions then include 
 rios.conversion as a dependency for your project.
 
-.. _PEXL: https://bitbucket.org/rexdb/rex.expression-provisional#rst-header-features-supported
-
 Matrices
 ========
 
 REDCap matrices of R rows by C columns 
 become a RIOS matrix of R rows by 1 column.
 The single column is an enumeration (or enumeration set) of C values.
+
+.. _PEXL: https://bitbucket.org/rexdb/rex.expression-provisional#rst-header-features-supported
+.. _RIOS Identifiers: https://rios.readthedocs.org/en/latest/instrument_specification.html#identifier
+
