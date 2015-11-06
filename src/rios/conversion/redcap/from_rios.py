@@ -3,9 +3,11 @@ Converts RIOS form (and calculationset) files into a REDCap csv file.
 """
 
 import argparse
+import csv
 import json
 import pkg_resources
 import rios.conversion.classes as Rios
+import rios.core.validation.instrument as RI
 import sys
 import yaml
 
@@ -59,20 +61,24 @@ class FromRios(object):
                 help='The language to extract from the RIOS form.  '
                         'The default is "en"')
         self.parser.add_argument(
+                '-c',
                 '--calculationset',
                 type=argparse.FileType('r'),
                 help="The calculationset file to process.  Use '-' for stdin.")
         self.parser.add_argument(
+                '-i',
                 '--instrument',
                 required=True,
                 type=argparse.FileType('r'),
                 help="The instrument file to process.  Use '-' for stdin.")
         self.parser.add_argument(
+                '-f',
                 '--form',
                 required=True,
                 type=argparse.FileType('r'),
                 help="The form file to process.  Use '-' for stdin.")
         self.parser.add_argument(
+                '-o',
                 '--outfile',
                 required=True,
                 type=argparse.FileType('w'),
@@ -92,15 +98,23 @@ class FromRios(object):
         self.localization = args.localization
         self.format = args.format
         self.load_input_files(args.form, args.instrument, args.calculationset)
+        self.types = self.instrument.get('types', {})
 
-        if self.calculationset:
-            instrument = Rios.InstrumentReferenceObject(self.instrument)
-            if (self.calculationset['instrument'] != instrument
-                    or self.form['instrument'] != instrument):
-                self.stderr.write(
-                        'FATAL: The form and calculationset '
-                        'must reference the same Instrument.\n')
-                sys.exit(1)
+        instrument = Rios.InstrumentReferenceObject(self.instrument)
+        if self.form['instrument'] != instrument:
+            self.stderr.write(
+                    'FATAL: Form and Instrument do not match: '
+                    '%s != %s.\n' % (self.form['instrument'], instrument))
+            sys.exit(1)
+
+        if (self.calculationset
+                    and self.calculationset['instrument'] != instrument):
+            self.stderr.write(
+                    'FATAL: Calculationset and Instrument do not match: '
+                    '%s != %s.\n' % (
+                            self.calculationset['instrument'], 
+                            instrument))
+            sys.exit(1)
 
         self.rows = [COLUMNS]
         self.section_header = ''
@@ -112,16 +126,34 @@ class FromRios(object):
         sys.exit(0)
 
     def create_csv_file(self):
-        self.outfile.write('%s\n' % self.calculationset)
-        for row in self.rows:
-            self.outfile.write('%s\n' % row)
+        csv_writer = csv.writer(self.outfile)
+        csv_writer.writerows(self.rows)
 
+#        if self.calculationset:
+#            self.outfile.write('%s\n' % self.calculationset)
+
+    def get_choices(self, ary):
+        return ' | '.join(['%s, %s' % (
+                d['id'], 
+                self.get_local_text(d['text'])) for d in ary])
+        
     def get_field_type(self, field):
+        """ Returns field_type and valid_type given Field Object
+        """
         non_text = {
                 'float': 'number',
                 'integer': 'integer', }
         typ = field['type']
-        obj = None
+
+        if isinstance(typ, str):
+            if typ in self.types:
+                typ = self.types[typ]
+            else:
+                return typ
+        else:
+            typ = typ['base']    
+       
+            
         if isinstance(typ, dict) and 'base' in typ:
             obj = typ
             typ = typ['base']
@@ -137,49 +169,86 @@ class FromRios(object):
         self.form = loader.load(form)
         self.instrument = loader.load(instrument)
         self.fields = {f['id']: f for f in self.instrument['record']}
-        if calculationset:
-            self.calculationset = loader.load(calculationset)
+        self.calculationset = (
+                loader.load(calculationset) 
+                if calculationset 
+                else {})
 
     def process_element(self, element):
-        print(element['type'], element['options'])
         type_ = element['type']
-        if type_ == 'header':
-            self.section_header = self.get_local_text(
-                    element['options']['text'])
+        options = element['options']
+        if type_ in ['header', 'text']:
+            self.process_header(options)
         elif type_ == 'question':
-            question = element['options']
+            self.process_question(options)
+
+    def process_header(self, header):
+        self.section_header = self.get_local_text(header['text'])
+
+    def process_matrix(self, question):
+        raise NotImplementedError
+
+    def process_question(self, question):
+        def get_choices():
+            return (
+                    self.get_choices(question['enumerations'])
+                    if 'enumerations' in question
+                    else '')
+
+        def get_range(type_object):
+            r = type_object.get('range', {})
+            min_value = str(r.get('min', ''))
+            max_value = str(r.get('max', ''))
+            return min_value, max_value
+            
+        def get_type_tuple(base):
+            widget_type = question.get('widget', {}).get('type', '')
+            if base == 'float':
+                return 'text', 'number'
+            elif base == 'integer':
+                return 'text', 'integer'
+            elif base == 'text':
+                return {'textArea': 'notes'}.get(widget_type, 'text'), ''
+            elif base == 'enumeration':
+                enums = {'radioGroup': 'radio', 'dropDown': 'dropdown'}
+                return enums.get(widget_type, 'dropdown'), ''
+            elif base == 'enumerationSet':
+                return 'checkbox', ''
+            else:
+                 return 'text', ''            
+         
+        branching = ''
+        if 'rows' in question and 'questions' in question:
+            self.rows.extend(self.process_matrix(question))
+        else:
             field_id = question['fieldId']
             field = self.fields[field_id]
-            field_type, field_object = self.get_field_type(field)
-            if field_object:
-                if 'range' in field_object:
-                    min_ = field_object['range'].get('min', '')
-                    max_ = field_object['range'].get('max', '')
-                    min_ = str(min_) if min_ is not '' else ''
-                    max_ = str(max_) if max_ is not '' else ''
-            if 'rows' in question and 'questions' in question:
-                self.rows.extend(self.process_matrix(question))
-            else:
-                self.rows.append([
-                        field_id,
-                        self.form_name,
-                        self.section_header,
-                        field_type,
-                        self.get_local_text(question['text']),
-                        'CHOICES',
-                        question.get('help', {}),
-                        "value_type",
-                        "Min",
-                        "Max",
-                        'y' if field['identifiable'] else '',
-                        "Branching",
-                        'y' if field['required'] else ''
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', ])
-            self.section_header = ''
+            type_object = RI.get_full_type_definition(
+                    self.instrument, 
+                    field['type'])
+            base = type_object['base']
+            field_type, valid_type = get_type_tuple(base)
+            min_value, max_value = get_range(type_object)            
+            self.rows.append([
+                    field_id,
+                    self.form_name,
+                    self.section_header,
+                    field_type,
+                    self.get_local_text(question['text']),
+                    get_choices(),
+                    question.get('help', ''),
+                    valid_type,
+                    min_value,
+                    max_value,
+                    'y' if field['identifiable'] else '',
+                    branching,
+                    'y' if field['required'] else ''
+                    '',
+                    '',
+                    '',
+                    '',
+                    '', ])
+        self.section_header = ''
 
     def start_page(self, page):
         self.form_name = page['id']
