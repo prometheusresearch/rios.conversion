@@ -25,3 +25,5 @@ for x in dn:
     print(x, p, r, u, d)
     assert r == d
     assert u > d
+print('median []', M.median())
+print('stdev []', M.stdev())
