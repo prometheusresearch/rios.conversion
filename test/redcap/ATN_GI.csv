@@ -1016,7 +1016,7 @@ atn_lost,"In the last 3 months, has your child lost weight or had trouble gainin
         }
     ]
 }",,,,
-atn_missed,"In the last 3 months, did your child miss activities because of��_",,,p8,,instruction,,,,
+atn_missed,"In the last 3 months, did your child miss activities because of pain and/or discomfort?",,,p8,,instruction,,,,
 atn_pain,Pain and/or discomfort? ,,,p8,enumeration,"{
     ""Choices"": [
         {

@@ -112,7 +112,7 @@ class FromRios(object):
             self.stderr.write(
                     'FATAL: Calculationset and Instrument do not match: '
                     '%s != %s.\n' % (
-                            self.calculationset['instrument'], 
+                            self.calculationset['instrument'],
                             instrument))
             sys.exit(1)
 
@@ -132,34 +132,10 @@ class FromRios(object):
 #        if self.calculationset:
 #            self.outfile.write('%s\n' % self.calculationset)
 
-    def get_choices(self, ary):
+    def get_choices(self, array):
         return ' | '.join(['%s, %s' % (
-                d['id'], 
-                self.get_local_text(d['text'])) for d in ary])
-        
-    def get_field_type(self, field):
-        """ Returns field_type and valid_type given Field Object
-        """
-        non_text = {
-                'float': 'number',
-                'integer': 'integer', }
-        typ = field['type']
-
-        if isinstance(typ, str):
-            if typ in self.types:
-                typ = self.types[typ]
-            else:
-                return typ
-        else:
-            typ = typ['base']    
-       
-            
-        if isinstance(typ, dict) and 'base' in typ:
-            obj = typ
-            typ = typ['base']
-        if isinstance(typ, str):
-            return non_text[typ], obj if typ in non_text else 'text', obj
-        raise ValueError('field type not str or TypeObject', field)
+                d['id'],
+                self.get_local_text(d['text'])) for d in array])
 
     def get_local_text(self, localized_string_object):
         return localized_string_object.get(self.localization, '')
@@ -170,8 +146,8 @@ class FromRios(object):
         self.instrument = loader.load(instrument)
         self.fields = {f['id']: f for f in self.instrument['record']}
         self.calculationset = (
-                loader.load(calculationset) 
-                if calculationset 
+                loader.load(calculationset)
+                if calculationset
                 else {})
 
     def process_element(self, element):
@@ -200,7 +176,7 @@ class FromRios(object):
             min_value = str(r.get('min', ''))
             max_value = str(r.get('max', ''))
             return min_value, max_value
-            
+
         def get_type_tuple(base):
             widget_type = question.get('widget', {}).get('type', '')
             if base == 'float':
@@ -215,8 +191,8 @@ class FromRios(object):
             elif base == 'enumerationSet':
                 return 'checkbox', ''
             else:
-                 return 'text', ''            
-         
+                return 'text', ''
+
         branching = ''
         if 'rows' in question and 'questions' in question:
             self.rows.extend(self.process_matrix(question))
@@ -224,11 +200,11 @@ class FromRios(object):
             field_id = question['fieldId']
             field = self.fields[field_id]
             type_object = RI.get_full_type_definition(
-                    self.instrument, 
+                    self.instrument,
                     field['type'])
             base = type_object['base']
             field_type, valid_type = get_type_tuple(base)
-            min_value, max_value = get_range(type_object)            
+            min_value, max_value = get_range(type_object)
             self.rows.append([
                     field_id,
                     self.form_name,
