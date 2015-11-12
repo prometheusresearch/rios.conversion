@@ -29,18 +29,23 @@ required arguments and available options::
 
   <program> --help
 
-See `test/input.yaml`_ for examples of running these programs.
-
 While the conversion of most questions is straight forward 
 the conversion of actions and events is more complex because 
 different systems model these things differently.
 
-Expressions are used for "calculated fields" and "skip logic".  
-A "calculated field" is a read-only field which evaluates its expression
-and displays the result.  The expression may reference other input fields
+For example a RIOS calculation is an expression applied to an assessment,
+independently of the data collection, while a REDCap "calculated field" 
+is a read-only field which evaluates its expression and displays the result
+during data collection.
+
+In all systems expressions are used for "calculated fields" and "skip logic".  
+
+The expression may reference other input fields
 or other calculated fields on the form by field ID.  
 Furthermore a field may be disabled or hidden (i.e. skipped) 
 if a given expression is true.
+
+**WARNING**
 
 These programs attempt to convert all input IDs to valid `RIOS Identifiers`_
 by converting to lowercase, converting sequences of non-alphanumeric 
@@ -66,12 +71,8 @@ creating a Pull Request that includes your changes.
 We ask that you please include unit tests and 
 any appropriate documentation updates along with your code changes.
 
-The project uses `pbbt`_ for testing.  
-Add new tests to `test/input.yaml`_.
-Run tests::
-
-    $ pbbt -T   # train (update output.yaml)
-    $ pbbt      # test (compare output.yaml to results)   
+The project uses `pbbt`_, `prospector`_, and `nose`_ for testing.  
+Add new tests to `tests/`_.
 
 This project will adhere to the 
 Semantic Versioning methodology as much as possible, 
@@ -97,10 +98,12 @@ This project is licensed under the GNU Affero General Public License, version
 
 Copyright (c) 2015, Prometheus Research, LLC
 
+.. _nose: https://nose.readthedocs.org/en/latest/
 .. _pbbt: https://pypi.python.org/pypi/pbbt
+.. _prospector: https://prospector.readthedocs.org/en/master/
 .. _Python: https://www.python.org
 .. _RIOS: https://rios.readthedocs.org
 .. _RIOS Identifiers: https://rios.readthedocs.org/en/latest/instrument_specification.html#identifier
 .. _Semantic Versioning: http://semver.org
-.. _test/input.yaml: https://bitbucket.org/prometheus/rios.conversion/src/tip/test/input.yaml
+.. _tests/: https://bitbucket.org/prometheus/rios.conversion/src/tip/tests/
 
