@@ -1,0 +1,143 @@
+fieldID,text,enumeration_type,data_type,page,repeating_group_name,help,error
+instruction,Please complete this form with with participant's information,,instruction,p1,,,
+perm_date,Date,,date,p1,,,
+perm_registry_id,Registry ID:,,text,p1,,(Please enter ID as XXXX-X),
+perm_patient_last_name,Last Name,,text,p1,,,
+perm_patient_first_name,First Name,,text,p1,,,
+perm_patient_middle_name,Middle Name,,text,p1,,,
+perm_patient_preferred_name,Preferred Name,,text,p1,,,
+perm_patient_gender,Patient's Gender,enumeration,"{
+   ""Choices"": [
+    {
+      ""male"": ""Male""
+    },
+    {
+      ""female"": ""Female""
+    }  ]
+}",p1,,,
+perm_patient_saddress,Participant's  Address,,instruction,p1,,,
+perm_patient_po,Street or P.O. Box,,text,p1,,,
+perm_patient_unit_description,Unit (if Applicable),,text,p1,,,
+perm_patient_city,City,,text,p1,,,
+perm_patient_state,State,,text,p1,,,
+perm_patient_county,County,,text,p1,,,
+perm_patient_zip_code,Zip Code,,integer,p1,,,
+perm_patient_country,Country,,text,p1,,,
+perm_patient_birth_date,Participant's Birth Date,,integer,p1,,,
+perm_patient_birth_city,Participant's City of Birth,,text,p1,,,
+perm_patient_birth_state,Participant's State of Birth,,text,p1,,,
+perm_patient_birth_country,Participant's Country of Birth,,text,p1,,,
+perm_patient_preferred_method_contact,Preferred Method of Contact,enumeration,"{
+    ""Choices"": [
+        {
+            ""home"": ""Home Phone Number""
+        },
+        {
+            ""cell"": ""Cell Phone Number""
+        },
+        {
+            ""alt_phone"": ""Alternate Phone Number""
+        },
+        {
+            ""email"": ""Email""
+        }
+    ]
+}",p1,,,
+perm_patient_email,Email Address,,text,p1,,,
+perm_patient_home_number,Home Phone Number,,integer,p1,,,
+perm_message_home_number,Leave a message at home phone number?,,boolean,p1,,,
+perm_patient_cell_number, Cell Phone Number,,integer,p1,,,
+perm_message_cell_number,Leave a message at cell phone number?,,boolean,p1,,,
+perm_patient_alternate_num,Alternate Phone Number,,integer,p1,,,
+perm_message_alternate_number,Leave a message at alternate phone number?,,boolean,p1,,,
+perm_your_name,Your Name (If you are Not the Participant),,instruction,p1,,,
+perm_first_name_not_patient,First Name ,,text,p2,,,
+perm_last_name_not_patient,Last Name ,,text,p2,,,
+perm_additional_contact_method,Additional Contact Method (Optional),,text,p2,,,
+perm_degree_spoken_language,Participant's Degree of Spoken Language,enumeration,"{
+  ""Choices"": [
+    {
+      ""nonverbal"": ""Nonverbal""
+    },
+    {
+      ""simple"": ""Single Words/Simple Phrases""
+    },
+    {
+      ""complex"": ""Complex Speech""
+    }
+  ]
+}",p2,,,
+perm_select_primary_language,Primary Language Spoken in Home,enumeration,"{
+   ""Choices"": [
+    {
+      ""english"": ""English""
+    },
+    {
+      ""spanish"": ""Spanish""
+    },
+    {
+      ""other"": ""Other""
+    }
+  ]
+}",p2,,,
+perm_other_primary_language,Specify Other:,,text,p2,,,
+perm_ethnicity,Ethnicity,enumeration,"{
+   ""Choices"": [
+    {
+      ""latino"": ""Hispanic or Latino""
+    },
+    {
+      ""not_latino"": ""Not Hispanic or Latino""
+    }
+  ]
+}",p2,,,
+perm_select_race,Race,enumeration,"{
+   ""Choices"": [
+    {
+      ""nat_amer"": ""American Native or Alaskan Native""
+    },
+    {
+      ""asian"": ""Asian""
+    },
+    {
+      ""black"": ""Black or African American""
+    },
+    {
+      ""pacific"": ""Native Hawaiian or Pacific Islander""
+    },
+    {
+      ""white"": ""White/Caucasian""
+    },
+    {
+      ""other"": ""Other""
+    }
+  ]
+}",p2,,,
+perm_other_race,Specify Other:,,text,p2,,,
+perm_development_concerns,Current Concerns About Development,,text,p2,,,
+perm_diagnosis_inst,Diagnosis,,instruction,p2,,,
+perm_dx_autism,"Autism Spectrum Disorder (Autism, PDD-NOS, Asperger Syndrome)",,boolean,p2,,,
+perm_dx_fragile_x,Fragile X,,boolean,p2,,,
+perm_dx_other_genetic,Other Known Genetic Disorder,,boolean,p2,,,
+perm_specify_other_genetic_dx,Specify Other:,,text,p2,,,
+perm_dx_adhd,ADHD,,boolean,p2,,,
+perm_dx_anxiety,Anxiety,,boolean,p2,,,
+perm_dx_depressive,Depressive Or Other Mood Disorder,,boolean,p2,,,
+perm_specify_other_depressive_dx,Specify Other:,,text,p2,,,
+perm_x_learning_disability,Intellectual Or Learning Disability,,boolean,p2,,,
+perm_specify_other_learning_dx,Specify Other:,,text,p2,,,
+perm_dx_other,Other Diagnosis,,boolean,p2,,,
+perm_specify_other_dx,Specify Other:,,text,p2,,,
+perm_med_cond,Medical Conditions,,instruction,p2,,,
+perm_seizures,Seizures,,boolean,p2,,,
+perm_other_neurological_disorder,"Other Neurological Disorder (i.e., stroke, brain tumor, etc.)",,boolean,p2,,,
+perm_specify_other_neurological_disorder,Specify Other Neurological Disorder:,,text,p2,,,
+perm_hearing_impairment,Hearing Iimpairement,,boolean,p2,,,
+perm_vision_impairment,Vision Impairment,,boolean,p2,,,
+perm_speech_impairment,Speech Impairment,,boolean,p2,,,
+perm_motor_delay,Motor Delay,,boolean,p2,,,
+perm_specify_other_motor_delay,Specify Motor Delay:,,text,p2,,,
+perm_metal_in_body,"Metal In Body (e.g., cochlear implant, insulin/infusion pump, cardiac pacemaker, or other metal clamps, valves, clips, shunts, or catheters)",,boolean,p2,,,
+perm_specify_metal_in_body,Specify Type And Location:,,text,p2,,,
+perm_medic_other,Other,,boolean,p2,,,
+perm_medic_spec_other,Specify Other:,,text,p2,,,

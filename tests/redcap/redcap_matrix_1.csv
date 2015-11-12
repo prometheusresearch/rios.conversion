@@ -1,0 +1,4 @@
+"ï»¿""Variable / Field Name""",Form Name,Section Header,Field Type,Field Label,"Choices, Calculations, OR Slider Labels",Field Note,Text Validation Type OR Show Slider Number,Text Validation Min,Text Validation Max,Identifier?,Branching Logic (Show field only if...),Required Field?,Custom Alignment,Question Number (surveys only),Matrix Group Name,Matrix Ranking?,Field Annotation
+matrixrow1,matrixranking,Matrix Header,radio,MatrixRow1,"1, column1 | 2, column2 | 3, column3",,,,,,,,,,matrixranking,y,
+matrixrow2,matrixranking,,radio,MatrixRow2,"1, column1 | 2, column2 | 3, column3",,,,,,,,,,matrixranking,y,
+matrixrow3,matrixranking,,radio,MatrixRow3,"1, column1 | 2, column2 | 3, column3",,,,,,,,,,matrixranking,y,

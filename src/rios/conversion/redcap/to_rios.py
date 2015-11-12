@@ -194,7 +194,7 @@ class ToRios(object):
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
-        sys.exit(0)
+        return 0
 
     def convert_calc(self, calc):
         """convert RedCap expression into Python
@@ -294,9 +294,11 @@ class ToRios(object):
         Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
         """
-        return Rios.EnumerationCollectionObject(**{
-                self.reader.get_name(x.strip().split(',')[0]): None
-                for x in od['choices_or_calculations'].split('|') })
+        choices_instrument = Rios.EnumerationCollectionObject()
+        for x in od['choices_or_calculations'].split('|'):
+            choices_instrument.add(
+                    self.reader.get_name(x.strip().split(',')[0]))
+        return choices_instrument
 
     def get_type(self, od, side_effects=True):
         """returns the computed instrument field type.
@@ -318,7 +320,7 @@ class ToRios(object):
             elif text_type == 'dateTime':
                 return 'dateTimePicker'
             else:
-                raise ValueError('unexpected text type', text_type)
+                raise ValueError('unexpected text type', text_type, od)
 
         def process_calculation():
             if side_effects:
@@ -405,12 +407,10 @@ class ToRios(object):
                 self.question.add_enumeration(Rios.DescriptorObject(
                         id="False",
                         text=self.localized_string_object("False"),))
-            return Rios.TypeObject(
-                    base='boolean',
-                    enumerations=Rios.EnumerationCollectionObject(
-                            yes=Rios.EnumerationObject(description="True"),
-                            no=Rios.EnumerationObject(description="False"),
-                            ), )
+            type_object = Rios.TypeObject(base='boolean', )
+            type_object.add_enumeration('yes', description='True')
+            type_object.add_enumeration('no', description='False')
+            return type_object
 
         def process_yesno():
             if side_effects:
@@ -421,12 +421,10 @@ class ToRios(object):
                 self.question.add_enumeration(Rios.DescriptorObject(
                         id="No",
                         text=self.localized_string_object("No"),))
-            return Rios.TypeObject(
-                    base='boolean',
-                    enumerations=Rios.EnumerationCollectionObject(
-                            yes=Rios.EnumerationObject(description="Yes"),
-                            no=Rios.EnumerationObject(description="No"),
-                            ), )
+            type_object = Rios.TypeObject(base='boolean', )
+            type_object.add_enumeration('yes', description='Yes')
+            type_object.add_enumeration('no', description='No')
+            return type_object
 
         field_type = od['field_type']
         if field_type == 'text':
@@ -448,7 +446,7 @@ class ToRios(object):
         elif field_type == 'yesno':
             return process_yesno()
         else:
-            return None
+            raise ValueError('Unknown field_type', od)
 
     def get_type2(self, od):
         data_type = od['data_type']
@@ -457,17 +455,11 @@ class ToRios(object):
         if self.choices:
             # self.choices is an array of single key dicts.
             # The values in these dicts are
-            # only used in the form - not the instrument - so the dicts are
-            # reduced to single dict of key: None, which is expanded to
-            # populate the EnumerationCollectionObject.
-            # As it turns out, the enumeration_type needs no translation.
-            return Rios.TypeObject(
-                    base=od['enumeration_type'],
-                    enumerations=Rios.EnumerationCollectionObject(**reduce(
-                            lambda a, b: {
-                                    self.reader.get_name(key): None
-                                    for key in a.keys() + b.keys()},
-                            self.choices)), )
+            # only used in the form - not the instrument
+            type_object = Rios.TypeObject(base=od['enumeration_type'], )
+            for choice in self.choices:
+                type_object.add_enumeration(choice.keys()[0])
+            return type_object
         else:
             # So far we've seen data_type in ['date', 'text', 'instruction']
             # So 'date' and 'text' need no translation:
@@ -660,10 +652,8 @@ class ToRios(object):
                             for c in self.choices
                             for k, v in c.items() ]
                     self.choices.sort()
-#                    if len(self.choices) == 1:
-#                        self.choices.append({'c999': 'N/A'})
             except (ValueError):
-                self.choices = None
+                raise ValueError('unable to load data_type as JSON: %s' % od)
         else:
             self.choices = None
 
@@ -674,4 +664,5 @@ class ToRios(object):
             self.instrument.add_field(field)
 
 
-main = ToRios()
+def main(argv=None, stdout=None, stderr=None):
+    sys.exit(ToRios()(argv, stdout, stderr))

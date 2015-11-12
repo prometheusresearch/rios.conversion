@@ -93,7 +93,7 @@ class ToRios(object):
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
-        sys.exit(0)
+        return 0
 
     def clean_question(self, text):
         return text.replace('<br>', '')
@@ -181,11 +181,10 @@ class ToRios(object):
 
     def get_type(self, question):
         if self.choices:
-            return Rios.TypeObject(
-                    base='enumeration',
-                    enumerations=Rios.EnumerationCollectionObject(**{
-                            str(i): None
-                            for i, c in self.choices}), )
+            type_object = Rios.TypeObject(base='enumeration', )
+            for id_, choice in self.choices:
+                type_object.add_enumeration(str(id_))
+            return type_object
         else:
             return 'text'
 
@@ -248,4 +247,6 @@ class PageName(object):
         self.page_id += 1
         return 'page_%02d' % self.page_id
 
-main = ToRios()
+
+def main(argv=None, stdout=None, stderr=None):
+    sys.exit(ToRios()(argv, stdout, stderr))

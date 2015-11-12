@@ -93,7 +93,10 @@ class AudioSourceObject(DefinitionSpecification):
 
 class EnumerationCollectionObject(DefinitionSpecification):
     def add(self, name, description=''):
-        self['name'] = EnumerationObject(description=description)
+        self['name'] = (
+                EnumerationObject(description=description)
+                if description
+                else None)
 
 
 class LocalizedStringObject(DefinitionSpecification):

@@ -105,7 +105,7 @@ class FromRios(object):
             self.stderr.write(
                     'FATAL: Form and Instrument do not match: '
                     '%s != %s.\n' % (self.form['instrument'], instrument))
-            sys.exit(1)
+            return 1
 
         if (self.calculationset
                     and self.calculationset['instrument'] != instrument):
@@ -114,7 +114,7 @@ class FromRios(object):
                     '%s != %s.\n' % (
                             self.calculationset['instrument'],
                             instrument))
-            sys.exit(1)
+            return 1
 
         self.rows = [COLUMNS]
         self.section_header = ''
@@ -123,7 +123,7 @@ class FromRios(object):
             for element in self.elements:
                 self.process_element(element)
         self.create_csv_file()
-        sys.exit(0)
+        return 0
 
     def create_csv_file(self):
         csv_writer = csv.writer(self.outfile)
@@ -162,7 +162,8 @@ class FromRios(object):
         self.section_header = self.get_local_text(header['text'])
 
     def process_matrix(self, question):
-        raise NotImplementedError
+        return []
+#        raise NotImplementedError
 
     def process_question(self, question):
         def get_choices():
@@ -212,7 +213,7 @@ class FromRios(object):
                     field_type,
                     self.get_local_text(question['text']),
                     get_choices(),
-                    question.get('help', ''),
+                    self.get_local_text(question.get('help', {})),
                     valid_type,
                     min_value,
                     max_value,
@@ -230,4 +231,6 @@ class FromRios(object):
         self.form_name = page['id']
         self.elements = page['elements']
 
-main = FromRios()
+
+def main(argv=None, stdout=None, stderr=None):
+    sys.exit(FromRios()(argv, stdout, stderr))

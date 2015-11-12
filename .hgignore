@@ -7,4 +7,5 @@ syntax: glob
 build
 dist
 *.v.*
-test/sandbox
+tests/sandbox
+.coverage

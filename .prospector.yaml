@@ -1,0 +1,33 @@
+strictness: veryhigh
+doc-warnings: true
+test-warnings: false
+
+ignore-patterns:
+  - ^docs/source/conf\.py$
+
+pep8:
+  disable:
+    - W391
+
+pylint:
+  disable:
+    - wildcard-import
+    - star-args
+    - missing-docstring
+    - no-self-use
+  enable:
+    - fixme
+  options:
+    min-public-methods: 1
+    max-parents: 10
+
+pyflakes:
+  disable:
+    - F403
+
+pyroma:
+  run: true
+
+pep257:
+  run: false
+

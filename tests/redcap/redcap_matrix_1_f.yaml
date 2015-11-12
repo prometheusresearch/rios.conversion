@@ -1,0 +1,42 @@
+defaultLocalization: en
+instrument:
+  id: urn:redcap_matrix_1
+  version: '1.0'
+pages:
+- elements:
+  - options:
+      text:
+        en: Matrix Header
+    type: header
+  - options:
+      fieldId: matrixranking
+      questions:
+      - enumerations:
+        - id: id_1
+          text:
+            en: ' column1'
+        - id: id_2
+          text:
+            en: ' column2'
+        - id: id_3
+          text:
+            en: ' column3'
+        fieldId: radio
+        text:
+          en: MatrixRow1
+      rows:
+      - id: matrixrow1
+        text:
+          en: MatrixRow1
+      - id: matrixrow2
+        text:
+          en: MatrixRow2
+      - id: matrixrow3
+        text:
+          en: MatrixRow3
+      text:
+        en: MatrixRow1
+    type: question
+  id: matrixranking
+title:
+  en: redcap_matrix_1
