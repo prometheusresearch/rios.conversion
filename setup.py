@@ -37,7 +37,7 @@ setup(
     },
     install_requires=[
         'pyyaml',
-        #'rios.core>=0.6.0,<1',
+        'rios.core>=0.6.0,<1',
     ],
     extras_require={
         'dev': [
