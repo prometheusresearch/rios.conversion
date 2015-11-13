@@ -129,7 +129,7 @@ class FromRios(object):
         converted = rexl.replace('!=', '<>')
         # finish this ...
         return converted
-    
+
     def create_csv_file(self):
         csv_writer = csv.writer(self.outfile)
         csv_writer.writerows(self.rows)
@@ -175,7 +175,7 @@ class FromRios(object):
         def get_expression():
             expression = calculation['options']['expression']
             if calculation['method'] == 'python':
-                expression = self.convert_python_expression(expression)
+                expression = self.convert_rexl_expression(expression)
             return expression
 
         self.rows.append([
@@ -199,12 +199,16 @@ class FromRios(object):
         self.section_header = self.get_local_text(header['text'])
 
     def process_matrix(self, question):
-        if len(question['questions']) > 1:
-            self.warning(
-                    'REDCap matrices support only one question.'
-                    ' Question ignored: %s' % question['fieldId'])
-            return
-        column = question['questions'][0]
+        questions = question['questions']
+        if isinstance(questions, list):
+            if len(questions) > 1:
+                self.warning(
+                        'REDCap matrices support only one question.'
+                        ' Question ignored: %s' % question['fieldId'])
+                return
+            column = questions[0]
+        else:
+            column = questions
         if 'enumerations' not in column:
             self.warning(
                     'REDCap matrix column must be an enumeration.'
@@ -259,7 +263,7 @@ class FromRios(object):
                     question['events'][0]['trigger']
                     if 'events' in question and question['events']
                     else '' )
-                           
+
         branching = self.convert_rexl_expression(get_trigger())
         if 'rows' in question and 'questions' in question:
             self.process_matrix(question)
@@ -299,6 +303,7 @@ class FromRios(object):
 
     def warning(self, message):
         self.stderr.write('WARNING: %s\n' % message)
-        
+
+
 def main(argv=None, stdout=None, stderr=None):
     sys.exit(FromRios()(argv, stdout, stderr))
