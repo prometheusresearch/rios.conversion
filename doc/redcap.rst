@@ -140,6 +140,10 @@ The first format is used for output because it supports calculations,
 branching logic, and matrices, as well as the "required" and "identifiable"
 field attributes.
 
+RIOS calculations are associated with an assessment and are not 
+directly connected to a form.  Consequently all of the calculations 
+are appended to the last page of the REDCap Data Dictionary.
+
 Expressions
 ===========
 
