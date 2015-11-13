@@ -14,13 +14,13 @@ pages:
       - enumerations:
         - id: id_1
           text:
-            en: ' column1'
+            en: column1
         - id: id_2
           text:
-            en: ' column2'
+            en: column2
         - id: id_3
           text:
-            en: ' column3'
+            en: column3
         fieldId: radio
         text:
           en: MatrixRow1

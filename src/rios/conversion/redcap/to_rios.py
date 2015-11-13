@@ -285,7 +285,7 @@ class ToRios(object):
                 Rios.DescriptorObject(
                         id=self.reader.get_name(x.strip().split(',')[0]),
                         text=self.localized_string_object(
-                                ','.join(x.strip().split(',')[1:])),)
+                                ','.join(x.strip().split(',')[1:]).strip()),)
                 for x in od['choices_or_calculations'].split('|') ]
 
     def get_choices_instrument(self, od):

@@ -125,12 +125,17 @@ class FromRios(object):
         self.create_csv_file()
         return 0
 
+    def convert_rexl_expression(self, rexl):
+        converted = rexl.replace('!=', '<>')
+        # finish this ...
+        return converted
+    
     def create_csv_file(self):
         csv_writer = csv.writer(self.outfile)
         csv_writer.writerows(self.rows)
-
-#        if self.calculationset:
-#            self.outfile.write('%s\n' % self.calculationset)
+        if self.calculationset:
+            for calculation in self.calculationset['calculations']:
+                self.process_calculation(calculation)
 
     def get_choices(self, array):
         return ' | '.join(['%s, %s' % (
@@ -139,6 +144,22 @@ class FromRios(object):
 
     def get_local_text(self, localized_string_object):
         return localized_string_object.get(self.localization, '')
+
+    def get_type_tuple(self, base, question):
+        widget_type = question.get('widget', {}).get('type', '')
+        if base == 'float':
+            return 'text', 'number'
+        elif base == 'integer':
+            return 'text', 'integer'
+        elif base == 'text':
+            return {'textArea': 'notes'}.get(widget_type, 'text'), ''
+        elif base == 'enumeration':
+            enums = {'radioGroup': 'radio', 'dropDown': 'dropdown'}
+            return enums.get(widget_type, 'dropdown'), ''
+        elif base == 'enumerationSet':
+            return 'checkbox', ''
+        else:
+            return 'text', ''
 
     def load_input_files(self, form, instrument, calculationset):
         loader = {'yaml': yaml, 'json': json}[self.format]
@@ -149,6 +170,22 @@ class FromRios(object):
                 loader.load(calculationset)
                 if calculationset
                 else {})
+
+    def process_calculation(self, calculation):
+        def get_expression():
+            expression = calculation['options']['expression']
+            if calculation['method'] == 'python':
+                expression = self.convert_python_expression(expression)
+            return expression
+
+        self.rows.append([
+                calculation['id'],
+                'calculations',
+                '',
+                'calc',
+                calculation['description'],
+                get_expression(),
+                '', '', '', '', '', '', '', '', '', '', '', '', ])
 
     def process_element(self, element):
         type_ = element['type']
@@ -162,8 +199,47 @@ class FromRios(object):
         self.section_header = self.get_local_text(header['text'])
 
     def process_matrix(self, question):
-        return []
-#        raise NotImplementedError
+        if len(question['questions']) > 1:
+            self.warning(
+                    'REDCap matrices support only one question.'
+                    ' Question ignored: %s' % question['fieldId'])
+            return
+        column = question['questions'][0]
+        if 'enumerations' not in column:
+            self.warning(
+                    'REDCap matrix column must be an enumeration.'
+                    '  Question ignored: %s' % question['fieldId'])
+            return
+        choices = self.get_choices(column['enumerations'])
+        section_header = self.section_header
+        matrix_group_name = question['fieldId']
+        field = self.fields[matrix_group_name]
+        type_object = RI.get_full_type_definition(
+                self.instrument,
+                field['type'])
+        base = type_object['base']
+        field_type, valid_type = self.get_type_tuple(base, question)
+        for row in question['rows']:
+            self.rows.append([
+                    row['id'],
+                    self.form_name,
+                    section_header,
+                    field_type,
+                    self.get_local_text(row['text']),
+                    choices,
+                    self.get_local_text(row.get('help', {})),
+                    valid_type,
+                    '',
+                    '',
+                    'y' if field['identifiable'] else '',
+                    '',
+                    'y' if field['required'] else ''
+                    '',
+                    '',
+                    matrix_group_name,
+                    'y',
+                    '', ])
+            section_header = ''
 
     def process_question(self, question):
         def get_choices():
@@ -178,25 +254,15 @@ class FromRios(object):
             max_value = str(r.get('max', ''))
             return min_value, max_value
 
-        def get_type_tuple(base):
-            widget_type = question.get('widget', {}).get('type', '')
-            if base == 'float':
-                return 'text', 'number'
-            elif base == 'integer':
-                return 'text', 'integer'
-            elif base == 'text':
-                return {'textArea': 'notes'}.get(widget_type, 'text'), ''
-            elif base == 'enumeration':
-                enums = {'radioGroup': 'radio', 'dropDown': 'dropdown'}
-                return enums.get(widget_type, 'dropdown'), ''
-            elif base == 'enumerationSet':
-                return 'checkbox', ''
-            else:
-                return 'text', ''
-
-        branching = ''
+        def get_trigger():
+            return (
+                    question['events'][0]['trigger']
+                    if 'events' in question and question['events']
+                    else '' )
+                           
+        branching = self.convert_rexl_expression(get_trigger())
         if 'rows' in question and 'questions' in question:
-            self.rows.extend(self.process_matrix(question))
+            self.process_matrix(question)
         else:
             field_id = question['fieldId']
             field = self.fields[field_id]
@@ -204,7 +270,7 @@ class FromRios(object):
                     self.instrument,
                     field['type'])
             base = type_object['base']
-            field_type, valid_type = get_type_tuple(base)
+            field_type, valid_type = self.get_type_tuple(base, question)
             min_value, max_value = get_range(type_object)
             self.rows.append([
                     field_id,
@@ -231,6 +297,8 @@ class FromRios(object):
         self.form_name = page['id']
         self.elements = page['elements']
 
-
+    def warning(self, message):
+        self.stderr.write('WARNING: %s\n' % message)
+        
 def main(argv=None, stdout=None, stderr=None):
     sys.exit(FromRios()(argv, stdout, stderr))
