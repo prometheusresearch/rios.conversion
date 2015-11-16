@@ -47,6 +47,7 @@ RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
 # \1 => base, \2 => exponent
 RE_carat_function = re.compile(r'\((.+)\)^\((.+)\)')
 
+# dict: each item => REDCap name: rios.conversion name
 FUNCTION_TO_PYTHON = {
         'min': 'min',
         'max': 'max',
@@ -67,12 +68,13 @@ RE_funcs = {
         k: re.compile(r'\b%s\(' % k)
         for k in FUNCTION_TO_PYTHON.keys()}
 
+# Array of tuples: (REDCap operator, rios.conversion operator)
 OPERATOR_TO_REXL = [
-        # convert "<>" to "!="
         (r'<>', r'!='),
         ]
 
-RE_ops = [(re.compile(pat), repl) for pat, repl in OPERATOR_TO_REXL]
+# array of (regex pattern, replacement)
+RE_ops = [(re.compile(redcap), rexl) for redcap, rexl in OPERATOR_TO_REXL]
 
 
 class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):

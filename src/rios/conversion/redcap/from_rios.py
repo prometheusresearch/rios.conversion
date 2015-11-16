@@ -36,14 +36,16 @@ COLUMNS = [
         "Field Annotation",
         ]
 
-FUNCTION_TO_REDCAP = {v: k for k, v in FUNCTION_TO_PYTHON.items()}
+# dict: each item => rios.conversion name: REDCap name
+FUNCTION_TO_REDCAP = {rios: red for red, rios in FUNCTION_TO_PYTHON.items()}
 
 # dict of function name: pattern which finds "name("
 RE_funcs = {
         k: re.compile(r'\b%s\(' % k)
         for k in FUNCTION_TO_REDCAP.keys()}
 
-RE_ops = [(re.compile(pat), repl) for repl, pat in OPERATOR_TO_REXL]
+# array of (regex pattern, replacement)
+RE_ops = [(re.compile(rexl), redcap) for redcap, rexl in OPERATOR_TO_REXL]
 
 # Find math.pow function: math.pow(base, exponent)
 # \1 => base, \2 => exponent
