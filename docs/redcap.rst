@@ -133,16 +133,27 @@ Entries with the same **page** must appear consecutively.
 rios-redcap
 ===========
 
-Converts a RIOS Instrument and Form to a REDCap Data Dictionary 
-in csv format.
+Converts a RIOS Instrument, Form, and optional CalculationSet 
+to a REDCap Data Dictionary in csv format.
 
 The first format is used for output because it supports calculations,
 branching logic, and matrices, as well as the "required" and "identifiable"
 field attributes.
 
-RIOS calculations are associated with an assessment and are not 
-directly connected to a form.  Consequently all of the calculations 
-are appended to the last page of the REDCap Data Dictionary.
+Cavaets
+-------
+
+* Function names, variable references, and operators in REXL expressions
+  are converted to REDCap; however the truth value of the REXL expression 
+  used for "Branching Logic" has NOT been negated. 
+  This must be done manually.
+ 
+* RIOS calculations are associated with an assessment and are not 
+  directly connected to a form.  Consequently all of the calculations 
+  are appended to the last page of the REDCap Data Dictionary.
+
+* The only RIOS matrices which can be converted to REDCap have exactly
+  one question column.  This column must be an enumeration or enumerationSet.
 
 Expressions
 ===========

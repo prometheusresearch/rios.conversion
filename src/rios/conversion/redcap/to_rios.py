@@ -64,7 +64,7 @@ FUNCTION_TO_PYTHON = {
 
 # dict of function name: pattern which finds "name("
 RE_funcs = {
-        k: re.compile(r'%s\(' % k)
+        k: re.compile(r'\b%s\(' % k)
         for k in FUNCTION_TO_PYTHON.keys()}
 
 OPERATOR_TO_REXL = [
@@ -199,13 +199,14 @@ class ToRios(object):
     def convert_calc(self, calc):
         """convert RedCap expression into Python
 
-        - convert database reference:  [a][b] => assessment["a"]["b"]
+        - convert database reference:  [a][b] => a["b"]
         - convert assessment variable reference: [a] => assessment["a"]
         - convert calculation variable reference: [c] => calculations["c"]
         - convert redcap function names to python
         - convert caret to pow
+        - convert operators
         """
-        s = RE_database_ref.sub(r'assessment["\1"]["\2"]', calc)
+        s = RE_database_ref.sub(r'\1["\2"]', calc)
         variables = RE_variable_ref.findall(s)
         s = RE_variable_ref.sub(r'calculations["\1"]', s)
         for var in variables:
@@ -217,6 +218,8 @@ class ToRios(object):
             # the matched pattern includes the '('
             s = pattern.sub('%s(' % FUNCTION_TO_PYTHON[name], s)
         s = RE_carat_function.sub(r'math.pow(\1, \2)', s)
+        for pattern, replacement in RE_ops:
+            s = pattern.sub(replacement, s)
         return s
 
     def convert_text_type(self, text_type):
@@ -231,8 +234,6 @@ class ToRios(object):
 
     def convert_trigger(self, trigger):
         s = self.convert_calc(trigger)
-        for pattern, replacement in RE_ops:
-            s = pattern.sub(replacement, s)
         return '!(%s)' % s
 
     def convert_value(self, value, text_type):

@@ -6,10 +6,14 @@ import argparse
 import csv
 import json
 import pkg_resources
+import re
 import rios.conversion.classes as Rios
 import rios.core.validation.instrument as RI
 import sys
 import yaml
+
+from rios.conversion.redcap.to_rios import FUNCTION_TO_PYTHON
+from rios.conversion.redcap.to_rios import OPERATOR_TO_REXL
 
 COLUMNS = [
         "Variable / Field Name",
@@ -31,6 +35,27 @@ COLUMNS = [
         "Matrix Ranking?",
         "Field Annotation",
         ]
+
+FUNCTION_TO_REDCAP = {v: k for k, v in FUNCTION_TO_PYTHON.items()}
+
+# dict of function name: pattern which finds "name("
+RE_funcs = {
+        k: re.compile(r'\b%s\(' % k)
+        for k in FUNCTION_TO_REDCAP.keys()}
+
+RE_ops = [(re.compile(pat), repl) for repl, pat in OPERATOR_TO_REXL]
+
+# Find math.pow function: math.pow(base, exponent)
+# \1 => base, \2 => exponent
+RE_pow_function = re.compile(r'\bmath.pow\(\s*(.+)\s*,\s*(.+)\s*\)')
+
+# Find variable reference: table["field"] or table['field']
+# \1 => table, \2 => quote \3 => field
+RE_variable_reference = re.compile(
+        r'''\b([a-zA-Z][\w_]*)'''
+        r'''\[\s*(["'])'''
+        r'''([^\2]*)'''
+        r'''\2\s*\]''')
 
 
 class FromRios(object):
@@ -126,9 +151,43 @@ class FromRios(object):
         return 0
 
     def convert_rexl_expression(self, rexl):
-        converted = rexl.replace('!=', '<>')
-        # finish this ...
-        return converted
+        """convert REXL expression into REDCap
+
+        - convert operators
+        - convert caret to pow
+        - convert redcap function names to python
+        - convert database reference:  a["b"] => [a][b]
+        - convert assessment variable reference: assessment["a"] => [a]
+        - convert calculation variable reference: calculations["c"] => [c]
+        """
+        s = rexl
+        for pattern, replacement in RE_ops:
+            s = pattern.sub(replacement, s)
+        s = RE_pow_function.sub(r'(\1)^(\2)', s)
+        for name, pattern in RE_funcs.items():
+            # the matched pattern includes the '('
+            s = pattern.sub('%s(' % FUNCTION_TO_REDCAP[name], s)
+        s = self.convert_variables(s)
+        return s
+
+    @staticmethod
+    def convert_variables(s):
+        start = 0
+        answer = ''
+        while 1:
+            match = RE_variable_reference.search(s[start:])
+            if match:
+                table, quote, field = match.groups()
+                if table in ['assessment', 'calculations']:
+                    replacement = '[%s]' % field
+                else:
+                    replacement = '[%s][%s]' % (table, field)
+                answer += s[start: start + match.start()] + replacement
+                start += match.end()
+            else:
+                break
+        answer += s[start:]
+        return answer
 
     def create_csv_file(self):
         csv_writer = csv.writer(self.outfile)
