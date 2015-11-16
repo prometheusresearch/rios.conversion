@@ -2,7 +2,7 @@
 Welcome to the RIOS.CONVERSION documentation
 ============================================
 
-RIOS.CONVERSION is a `Python`_ package that supports 
+`RIOS.CONVERSION`_ is a `Python`_ package that supports 
 converting instruments in various formats 
 to and from `RIOS`_ data structures.
 
@@ -15,7 +15,7 @@ Supported formats:
 .. _`Qualtrics`: http://www.qualtrics.com/
 .. _`REDCap`: http://project-redcap.org/
 .. _`RIOS`: https://rios.readthedocs.org
-
+.. _`RIOS.CONVERSION`: https://bitbucket.org/prometheus/rios.conversion
 
 Overview
 ========
