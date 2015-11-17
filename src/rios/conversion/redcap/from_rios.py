@@ -149,6 +149,9 @@ class FromRios(object):
             self.start_page(page)
             for element in self.elements:
                 self.process_element(element)
+        if self.calculationset:
+            for calculation in self.calculationset['calculations']:
+                self.process_calculation(calculation)
         self.create_csv_file()
         return 0
 
@@ -192,9 +195,6 @@ class FromRios(object):
         return answer
 
     def create_csv_file(self):
-        if self.calculationset:
-            for calculation in self.calculationset['calculations']:
-                self.process_calculation(calculation)
         csv_writer = csv.writer(self.outfile)
         csv_writer.writerows(self.rows)
 
