@@ -26,8 +26,8 @@ class ToRios(object):
         try:
             self_version = \
                 pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:
-            self_version = 'UNKNOWN'
+        except pkg_resources.DistributionNotFound:    # pragma: no cover
+            self_version = 'UNKNOWN'                  # pragma: no cover
         self.parser.add_argument(
                 '-v',
                 '--version',
@@ -143,7 +143,10 @@ class ToRios(object):
             elif isinstance(choices, list):
                 choices = [i for i in enumerate(choices)]
             else:
-                raise ValueError('not dict or list', choices, question)
+                raise ValueError(
+                        'not dict or list',
+                        choices,
+                        question)   # pragma: no cover
             choices = [(str(i).lower(), c['Display']) for i, c in choices]
         return choices
 
@@ -249,4 +252,4 @@ class PageName(object):
 
 
 def main(argv=None, stdout=None, stderr=None):
-    sys.exit(ToRios()(argv, stdout, stderr))
+    sys.exit(ToRios()(argv, stdout, stderr))    # pragma: no cover

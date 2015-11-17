@@ -33,6 +33,7 @@ setup(
             'redcap-rios = rios.conversion.redcap.to_rios:main',
             'rios-redcap = rios.conversion.redcap.from_rios:main',
             'qualtrics-rios = rios.conversion.qualtrics.to_rios:main',
+            'rios-qualtrics = rios.conversion.qualtrics.from_rios:main',
         ]
     },
     install_requires=[

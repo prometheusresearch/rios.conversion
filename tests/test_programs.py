@@ -1,8 +1,9 @@
 import glob
 import os
 from rios.conversion.redcap.to_rios import ToRios as RedcapRios
-from rios.conversion.redcap.from_rios import FromRios as RiosRedcap
+from rios.conversion.redcap.from_rios import RedcapFromRios as RiosRedcap
 from rios.conversion.qualtrics.to_rios import ToRios as QualtricsRios
+from rios.conversion.qualtrics.from_rios import QualtricsFromRios as RiosQualtrics
 
 def flatten(array):
     result = []
@@ -40,6 +41,18 @@ def qualtrics_rios_tst(name):
             ]
     return [test + ['--format', 'json'], test + ['--format', 'yaml']]
 
+def rios_qualtrics_tst(name):
+    calc_filename = './tests/qualtrics/%s_c.yaml' % name
+    test = [
+            '-i', './tests/qualtrics/%s_i.yaml' % name,
+            '-f', './tests/qualtrics/%s_f.yaml' % name,
+            '-o', './tests/sandbox/qualtrics/%s.txt' % name,
+            ]
+    if os.access(calc_filename, os.F_OK):
+            test = ['-c', '%s' % calc_filename] + test
+        
+    return [test]
+      
 def show_tst(cls, test):
     name = str(cls).split("'")[1]
     print('\n%s\n\t%s' % (name, ' '.join(test)))
@@ -56,6 +69,9 @@ def tst_class(cls, tests):
 csv_names = [
         os.path.basename(name)[:-4] 
         for name in glob.glob('./tests/redcap/*.csv') ]
+rios_qualtrics_names = [
+        os.path.basename(name)[:-7] 
+        for name in glob.glob('./tests/qualtrics/*_i.yaml') ]
 rios_redcap_names = [
         os.path.basename(name)[:-7] 
         for name in glob.glob('./tests/redcap/*_i.yaml') ]
@@ -87,9 +103,10 @@ rios_redcap_mismatch_tests = [
 redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
 rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
 qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
-
+rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
 tst_class(RedcapRios, redcap_rios_tests)
 tst_class(RiosRedcap, rios_redcap_tests + rios_redcap_mismatch_tests)
 tst_class(QualtricsRios, qualtrics_rios_tests)
+tst_class(RiosQualtrics, rios_qualtrics_tests)
 
 print('%s: OK' % __file__)

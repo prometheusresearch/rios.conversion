@@ -2,16 +2,12 @@
 Converts RIOS form (and calculationset) files into a REDCap csv file.
 """
 
-import argparse
 import csv
-import json
-import pkg_resources
 import re
-import rios.conversion.classes as Rios
 import rios.core.validation.instrument as RI
 import sys
-import yaml
 
+from rios.conversion.from_rios import FromRios
 from rios.conversion.redcap.to_rios import FUNCTION_TO_PYTHON
 from rios.conversion.redcap.to_rios import OPERATOR_TO_REXL
 
@@ -60,89 +56,11 @@ RE_variable_reference = re.compile(
         r'''\2\s*\]''')
 
 
-class FromRios(object):
-    def __init__(self):
-        self.parser = argparse.ArgumentParser(
-                formatter_class=argparse.RawTextHelpFormatter,
-                description=__doc__)
-        try:
-            self_version = \
-                pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:
-            self_version = 'UNKNOWN'
-        self.parser.add_argument(
-                '-v',
-                '--version',
-                action='version',
-                version='%(prog)s ' + self_version, )
-        self.parser.add_argument(
-                '--format',
-                default='yaml',
-                choices=['yaml', 'json'],
-                help='The format for the input files.  '
-                        'The default is "yaml".')
-        self.parser.add_argument(
-                '--localization',
-                default='en',
-                metavar='',
-                help='The language to extract from the RIOS form.  '
-                        'The default is "en"')
-        self.parser.add_argument(
-                '-c',
-                '--calculationset',
-                type=argparse.FileType('r'),
-                help="The calculationset file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '-i',
-                '--instrument',
-                required=True,
-                type=argparse.FileType('r'),
-                help="The instrument file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '-f',
-                '--form',
-                required=True,
-                type=argparse.FileType('r'),
-                help="The form file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '-o',
-                '--outfile',
-                required=True,
-                type=argparse.FileType('w'),
-                help="The name of the output file.  Use '-' for stdout.")
+class RedcapFromRios(FromRios):
+    description = __doc__
 
-    def __call__(self, argv=None, stdout=None, stderr=None):
+    def call(self):
         """process the csv input, and create output files. """
-        self.stdout = stdout or sys.stdout
-        self.stderr = stderr or sys.stderr
-
-        try:
-            args = self.parser.parse_args(argv)
-        except SystemExit as exc:
-            return exc
-
-        self.outfile = args.outfile
-        self.localization = args.localization
-        self.format = args.format
-        self.load_input_files(args.form, args.instrument, args.calculationset)
-        self.types = self.instrument.get('types', {})
-
-        instrument = Rios.InstrumentReferenceObject(self.instrument)
-        if self.form['instrument'] != instrument:
-            self.stderr.write(
-                    'FATAL: Form and Instrument do not match: '
-                    '%s != %s.\n' % (self.form['instrument'], instrument))
-            return 1
-
-        if (self.calculationset
-                    and self.calculationset['instrument'] != instrument):
-            self.stderr.write(
-                    'FATAL: Calculationset and Instrument do not match: '
-                    '%s != %s.\n' % (
-                            self.calculationset['instrument'],
-                            instrument))
-            return 1
-
         self.rows = [COLUMNS]
         self.section_header = ''
         for page in self.form['pages']:
@@ -203,9 +121,6 @@ class FromRios(object):
                 d['id'],
                 self.get_local_text(d['text'])) for d in array])
 
-    def get_local_text(self, localized_string_object):
-        return localized_string_object.get(self.localization, '')
-
     def get_type_tuple(self, base, question):
         widget_type = question.get('widget', {}).get('type', '')
         if base == 'float':
@@ -221,16 +136,6 @@ class FromRios(object):
             return 'checkbox', ''
         else:
             return 'text', ''
-
-    def load_input_files(self, form, instrument, calculationset):
-        loader = {'yaml': yaml, 'json': json}[self.format]
-        self.form = loader.load(form)
-        self.instrument = loader.load(instrument)
-        self.fields = {f['id']: f for f in self.instrument['record']}
-        self.calculationset = (
-                loader.load(calculationset)
-                if calculationset
-                else {})
 
     def process_calculation(self, calculation):
         def get_expression():
@@ -362,9 +267,6 @@ class FromRios(object):
         self.form_name = page['id']
         self.elements = page['elements']
 
-    def warning(self, message):
-        self.stderr.write('WARNING: %s\n' % message)
-
 
 def main(argv=None, stdout=None, stderr=None):
-    sys.exit(FromRios()(argv, stdout, stderr))
+    sys.exit(RedcapFromRios()(argv, stdout, stderr))    # pragma: no cover

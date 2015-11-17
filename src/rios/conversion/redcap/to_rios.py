@@ -107,8 +107,8 @@ class ToRios(object):
         try:
             self_version = \
                 pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:
-            self_version = 'UNKNOWN'
+        except pkg_resources.DistributionNotFound:    # pragma: no cover
+            self_version = 'UNKNOWN'                  # pragma: no cover
         self.parser.add_argument(
                 '-v',
                 '--version',
@@ -244,7 +244,7 @@ class ToRios(object):
         elif text_type == 'float':
             return float(value)
         else:
-            return value
+            return value    # pragma: no cover
 
     def create__file(self, kind, obj):
         with open(self.filename(kind), 'w') as fo:
@@ -264,7 +264,7 @@ class ToRios(object):
         else:
             filename = self.filename('c')
             if os.access(filename, os.F_OK):
-                os.remove(filename)
+                os.remove(filename)   # pragma: no cover
 
     def create_instrument_file(self):
         self.create__file('i', self.instrument)
@@ -323,7 +323,10 @@ class ToRios(object):
             elif text_type == 'dateTime':
                 return 'dateTimePicker'
             else:
-                raise ValueError('unexpected text type', text_type, od)
+                raise ValueError(
+                        'unexpected text type',
+                        text_type,
+                        od)   # pragma: no cover
 
         def process_calculation():
             if side_effects:
@@ -668,4 +671,4 @@ class ToRios(object):
 
 
 def main(argv=None, stdout=None, stderr=None):
-    sys.exit(ToRios()(argv, stdout, stderr))
+    sys.exit(ToRios()(argv, stdout, stderr))    # pragma: no cover
