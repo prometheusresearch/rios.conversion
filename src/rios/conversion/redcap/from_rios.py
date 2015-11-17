@@ -56,7 +56,7 @@ RE_pow_function = re.compile(r'\bmath.pow\(\s*(.+)\s*,\s*(.+)\s*\)')
 RE_variable_reference = re.compile(
         r'''\b([a-zA-Z][\w_]*)'''
         r'''\[\s*(["'])'''
-        r'''([^\2]*)'''
+        r'''([^\2\]]*)'''
         r'''\2\s*\]''')
 
 
@@ -192,11 +192,11 @@ class FromRios(object):
         return answer
 
     def create_csv_file(self):
-        csv_writer = csv.writer(self.outfile)
-        csv_writer.writerows(self.rows)
         if self.calculationset:
             for calculation in self.calculationset['calculations']:
                 self.process_calculation(calculation)
+        csv_writer = csv.writer(self.outfile)
+        csv_writer.writerows(self.rows)
 
     def get_choices(self, array):
         return ' | '.join(['%s, %s' % (
