@@ -23,13 +23,14 @@ tests:
       "for INSTRUMENT in ./tests/sandbox/*/*_i.json; 
       do 
           echo $INSTRUMENT
+          rios-validate instrument $INSTRUMENT
           NAME=$(basename $INSTRUMENT i.json)
           DIR=$(dirname $INSTRUMENT)
           FORM=$DIR/${NAME}f.json
           echo $FORM
+          rios-validate -i $INSTRUMENT form $FORM
           CALC=$DIR/${NAME}c.json
           ! test -f $CALC || echo $CALC
           ! test -f $CALC || rios-validate -i $INSTRUMENT calculationset $CALC
-          rios-validate -i $INSTRUMENT form $FORM
       done"
 
