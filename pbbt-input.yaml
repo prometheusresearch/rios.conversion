@@ -17,3 +17,19 @@ tests:
   - sh: nosetests --quiet
     ignore: true
 
+  # validate .json output files with rios-validate.
+  - sh: |
+      sh -c \
+      "for INSTRUMENT in ./tests/sandbox/*/*_i.json; 
+      do 
+          echo $INSTRUMENT
+          NAME=$(basename $INSTRUMENT i.json)
+          DIR=$(dirname $INSTRUMENT)
+          FORM=$DIR/${NAME}f.json
+          echo $FORM
+          CALC=$DIR/${NAME}c.json
+          ! test -f $CALC || echo $CALC
+          ! test -f $CALC || rios-validate -i $INSTRUMENT calculationset $CALC
+          rios-validate -i $INSTRUMENT form $FORM
+      done"
+

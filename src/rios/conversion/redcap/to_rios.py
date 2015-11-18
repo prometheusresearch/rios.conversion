@@ -408,26 +408,26 @@ class ToRios(object):
             if side_effects:
                 self.question.set_widget(get_widget(type='radioGroup'))
                 self.question.add_enumeration(Rios.DescriptorObject(
-                        id="True",
+                        id="true",
                         text=self.localized_string_object("True"),))
                 self.question.add_enumeration(Rios.DescriptorObject(
-                        id="False",
+                        id="false",
                         text=self.localized_string_object("False"),))
-            type_object = Rios.TypeObject(base='boolean', )
-            type_object.add_enumeration('yes', description='True')
-            type_object.add_enumeration('no', description='False')
+            type_object = Rios.TypeObject(base='enumeration', )
+            type_object.add_enumeration('true', description='True')
+            type_object.add_enumeration('false', description='False')
             return type_object
 
         def process_yesno():
             if side_effects:
                 self.question.set_widget(get_widget(type='radioGroup'))
                 self.question.add_enumeration(Rios.DescriptorObject(
-                        id="Yes",
+                        id="yes",
                         text=self.localized_string_object("Yes"),))
                 self.question.add_enumeration(Rios.DescriptorObject(
-                        id="No",
+                        id="no",
                         text=self.localized_string_object("No"),))
-            type_object = Rios.TypeObject(base='boolean', )
+            type_object = Rios.TypeObject(base='enumeration', )
             type_object.add_enumeration('yes', description='Yes')
             type_object.add_enumeration('no', description='No')
             return type_object
