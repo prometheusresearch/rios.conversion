@@ -1,3 +1,9 @@
+..
+  To build this documentation from the project base::
+  $ cd docs
+  $ make html
+  Results are in ./build/html/
+
 ============================================
 Welcome to the RIOS.CONVERSION documentation
 ============================================
@@ -21,6 +27,7 @@ Overview
 ========
 
 .. toctree::
+   :maxdepth: 2
 
    overview
    redcap

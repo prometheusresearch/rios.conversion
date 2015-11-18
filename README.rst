@@ -24,6 +24,11 @@ The following command line programs have been implemented.
   Converts a Qualtrics qsf file to a RIOS Instrument and Form
   in JSON or YAML format.
 
+- rios-qualtrics
+
+  Converts a RIOS Instrument, Form, and CalculationSet 
+  to a Qualtrics text file in Simple .TXT format.
+  
 Run each program's help to see its 
 required arguments and available options::
 
@@ -40,18 +45,10 @@ during data collection.
 
 In all systems expressions are used for "calculated fields" and "skip logic".  
 
-The expression may reference other input fields
+An expression may reference other input fields
 or other calculated fields on the form by field ID.  
 Furthermore a field may be disabled or hidden (i.e. skipped) 
 if a given expression is true.
-
-**WARNING**
-
-These programs attempt to convert all input IDs to valid `RIOS Identifiers`_
-by converting to lowercase, converting sequences of non-alphanumeric 
-characters to underbar, and removing leading and trailing underbars.  
-The input expressions are also converted to lowercase in a naive attempt 
-to preserve the semantics.
 
 
 Installation
