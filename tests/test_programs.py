@@ -24,6 +24,7 @@ def redcap_rios_tst(name):
 def rios_redcap_tst(name):
     calc_filename = './tests/redcap/%s_c.yaml' % name
     test = [
+            '--verbose',
             '-i', './tests/redcap/%s_i.yaml' % name,
             '-f', './tests/redcap/%s_f.yaml' % name,
             '-o', './tests/sandbox/redcap/%s.csv' % name,
@@ -44,14 +45,15 @@ def qualtrics_rios_tst(name):
 def rios_qualtrics_tst(name):
     calc_filename = './tests/qualtrics/%s_c.yaml' % name
     test = [
+            '--verbose',
             '-i', './tests/qualtrics/%s_i.yaml' % name,
             '-f', './tests/qualtrics/%s_f.yaml' % name,
             '-o', './tests/sandbox/qualtrics/%s.txt' % name,
             ]
     if os.access(calc_filename, os.F_OK):
-            test = ['-c', '%s' % calc_filename] + test
+            test.extend(['-c', '%s' % calc_filename])
         
-    return [test]
+    return [test, test[1:]]
       
 def show_tst(cls, test):
     name = str(cls).split("'")[1]

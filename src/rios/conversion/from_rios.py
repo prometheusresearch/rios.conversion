@@ -28,6 +28,10 @@ class FromRios(object):
                 action='version',
                 version='%(prog)s ' + self_version, )
         self.parser.add_argument(
+                '--verbose',
+                action='store_true',
+                help='Display warning messages.')
+        self.parser.add_argument(
                 '--format',
                 default='yaml',
                 choices=['yaml', 'json'],
@@ -76,6 +80,7 @@ class FromRios(object):
         self.outfile = args.outfile
         self.localization = args.localization
         self.format = args.format
+        self.verbose = args.verbose
         self.load_input_files(args.form, args.instrument, args.calculationset)
         self.types = self.instrument.get('types', {})
 
@@ -116,4 +121,5 @@ class FromRios(object):
                 else {})
 
     def warning(self, message):
-        self.stderr.write('WARNING: %s\n' % message)
+        if self.verbose:
+            self.stderr.write('WARNING: %s\n' % message)
