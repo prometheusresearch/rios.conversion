@@ -1,3 +1,4 @@
+from rios.conversion.balanced_match import *
 from rios.conversion.classes import *
 from rios.conversion.csv_reader import *
 
@@ -20,6 +21,14 @@ def test_add_type():
     type_object = TypeObject(base='text')
     instrument.add_type('type_name', type_object)
     assert instrument['types']['type_name']['base'] == 'text'
+
+def test_balanced_match():
+    try:
+        balanced_match('x', 0)
+    except ValueError, e:
+        assert True
+    b, e = balanced_match('((a))+1', 0)
+    assert (b, e) == (0, 5)
 
 def test_csv_reader():
     csv_reader = CsvReader('tests/redcap/redcap_1.csv')

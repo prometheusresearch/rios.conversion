@@ -23,6 +23,7 @@ import json
 import os
 import pkg_resources
 import re
+import rios.conversion.balanced_match as balanced_match
 import rios.conversion.csv_reader
 import rios.conversion.classes as Rios
 import sys
@@ -42,10 +43,6 @@ RE_database_ref = re.compile(r'\[([\w_]+)\]\[([\w_]+)\]')
 # Find variable reference
 # \1 => variable name
 RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
-
-# Find carat function: (base)^(exponent)
-# \1 => base, \2 => exponent
-RE_carat_function = re.compile(r'\((.+)\)^\((.+)\)')
 
 # dict: each item => REDCap name: rios.conversion name
 FUNCTION_TO_PYTHON = {
@@ -219,10 +216,25 @@ class ToRios(object):
         for name, pattern in RE_funcs.items():
             # the matched pattern includes the '('
             s = pattern.sub('%s(' % FUNCTION_TO_PYTHON[name], s)
-        s = RE_carat_function.sub(r'math.pow(\1, \2)', s)
+        s = self.convert_carat_function(s)
         for pattern, replacement in RE_ops:
             s = pattern.sub(replacement, s)
         return s
+
+    def convert_carat_function(self, string):
+        answer = ''
+        position = 0
+        carat_pos = string.find(')^(', position)
+        while carat_pos != -1:
+            begin, end = balanced_match.balanced_match(string, carat_pos)
+            answer += string[position: begin]
+            answer += 'math.pow(' + string[begin + 1: end - 1]
+            begin, end = balanced_match.balanced_match(string, carat_pos + 2)
+            answer += ', ' + string[begin + 1: end - 1] + ')'
+            position = end
+            carat_pos = string.find(')^(', position)
+        answer += string[position:]
+        return answer
 
     def convert_text_type(self, text_type):
         if text_type.startswith('date'):

@@ -78,10 +78,10 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' Female'
+          en: Female
       - id: id_1
         text:
-          en: ' Male'
+          en: Male
       fieldId: sex
       text:
         en: Gender
@@ -92,10 +92,10 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' No'
+          en: 'No'
       - id: id_1
         text:
-          en: ' Yes'
+          en: 'Yes'
       events:
       - action: disable
         trigger: '!(assessment["sex"] = "0")'
@@ -119,13 +119,13 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' Hispanic or Latino'
+          en: Hispanic or Latino
       - id: id_1
         text:
-          en: ' NOT Hispanic or Latino'
+          en: NOT Hispanic or Latino
       - id: id_2
         text:
-          en: ' Unknown / Not Reported'
+          en: Unknown / Not Reported
       fieldId: ethnicity
       text:
         en: Ethnicity
@@ -136,25 +136,25 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' American Indian/Alaska Native'
+          en: American Indian/Alaska Native
       - id: id_1
         text:
-          en: ' Asian'
+          en: Asian
       - id: id_2
         text:
-          en: ' Native Hawaiian or Other Pacific Islander'
+          en: Native Hawaiian or Other Pacific Islander
       - id: id_3
         text:
-          en: ' Black or African American'
+          en: Black or African American
       - id: id_4
         text:
-          en: ' White'
+          en: White
       - id: id_5
         text:
-          en: ' More Than One Race'
+          en: More Than One Race
       - id: id_6
         text:
-          en: ' Unknown / Not Reported'
+          en: Unknown / Not Reported
       fieldId: race
       text:
         en: Race
@@ -201,10 +201,10 @@ pages:
       enumerations:
       - id: a
         text:
-          en: ' No'
+          en: 'No'
       - id: b
         text:
-          en: ' Yes'
+          en: 'Yes'
       fieldId: diabetes
       text:
         en: Patient has a diagnosis of diabetes mellitus?
@@ -215,13 +215,13 @@ pages:
       enumerations:
       - id: a
         text:
-          en: ' Type 1 insulin-dependent'
+          en: Type 1 insulin-dependent
       - id: b
         text:
-          en: ' Type 2 insulin-dependent'
+          en: Type 2 insulin-dependent
       - id: c
         text:
-          en: ' Type 2 non insulin-dependent'
+          en: Type 2 non insulin-dependent
       fieldId: diabetes_type
       text:
         en: Type of Diabetes Mellitus
@@ -245,16 +245,16 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' Graft'
+          en: Graft
       - id: id_1
         text:
-          en: ' Fistula'
+          en: Fistula
       - id: id_2
         text:
-          en: ' Catheter with maturing graft'
+          en: Catheter with maturing graft
       - id: id_3
         text:
-          en: ' Catheter with maturing fistula'
+          en: Catheter with maturing fistula
       fieldId: access_type
       text:
         en: Type of vascular access
@@ -265,19 +265,19 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' Forearm'
+          en: Forearm
       - id: id_1
         text:
-          en: ' Upper arm'
+          en: Upper arm
       - id: id_2
         text:
-          en: ' Internal jugular vein'
+          en: Internal jugular vein
       - id: id_3
         text:
-          en: ' Subclavian vein'
+          en: Subclavian vein
       - id: id_4
         text:
-          en: ' Other'
+          en: Other
       fieldId: access_location
       text:
         en: Location of currently used vascular access
@@ -304,13 +304,13 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' Monday-Wednesday-Friday'
+          en: Monday-Wednesday-Friday
       - id: id_1
         text:
-          en: ' Tuesday-Thursday-Saturday'
+          en: Tuesday-Thursday-Saturday
       - id: id_2
         text:
-          en: ' Other'
+          en: Other
       fieldId: dialysis_schedule_days
       text:
         en: Days of the week patient is dialyzed
@@ -321,16 +321,16 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' First shift'
+          en: First shift
       - id: id_1
         text:
-          en: ' Second shift'
+          en: Second shift
       - id: id_2
         text:
-          en: ' Third shift'
+          en: Third shift
       - id: id_3
         text:
-          en: ' Fourth shift'
+          en: Fourth shift
       fieldId: dialysis_schedule_time
       text:
         en: Shift patient is dialyzed
@@ -341,25 +341,25 @@ pages:
       enumerations:
       - id: id_0
         text:
-          en: ' Diabetes'
+          en: Diabetes
       - id: id_1
         text:
-          en: ' Hypertension'
+          en: Hypertension
       - id: id_2
         text:
-          en: ' Glomerulonephritis'
+          en: Glomerulonephritis
       - id: id_3
         text:
-          en: ' Polycystic Kidney Disease'
+          en: Polycystic Kidney Disease
       - id: id_4
         text:
-          en: ' Interstitial Nephritis'
+          en: Interstitial Nephritis
       - id: id_5
         text:
-          en: ' Hereditary Nephritis'
+          en: Hereditary Nephritis
       - id: id_6
         text:
-          en: ' Other'
+          en: Other
       fieldId: etiology_esrd
       text:
         en: Etiology of ESRD
