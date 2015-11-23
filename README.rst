@@ -34,21 +34,17 @@ required arguments and available options::
 
   <program> --help
 
-While the conversion of most questions is straight forward 
-the conversion of actions and events is more complex because 
-different systems model these things differently.
+The question order, text, and associated enumerations, 
+are all converted correctly; however the converted expressions
+used for "calculated fields" and "skip logic", as well as the display
+niceties of section breaks and seperators will most likely require 
+some "tweaking" because the various systems model pages, events and actions 
+differently.
 
 For example a RIOS calculation is an expression applied to an assessment,
-independently of the data collection, while a REDCap "calculated field" 
+independently of the data collection, while a REDCap "calculated field"
 is a read-only field which evaluates its expression and displays the result
 during data collection.
-
-In all systems expressions are used for "calculated fields" and "skip logic".  
-
-An expression may reference other input fields
-or other calculated fields on the form by field ID.  
-Furthermore a field may be disabled or hidden (i.e. skipped) 
-if a given expression is true.
 
 
 Installation
