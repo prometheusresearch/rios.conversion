@@ -1,0 +1,96 @@
+"fieldID","text","enumeration_type","data_type","page","repeating_group_name","help","error"
+"instruction","Please complete this form.",,"instruction","p1",,,
+"date_completed","Date",,"date","p1",,,
+"id","ID",,"text","p1",,"(Please enter ID as XXXX-X)",
+"sex","Sex","enumeration","{
+   ""Choices"": [
+    {
+      ""male"": ""Male""
+    },
+    {
+      ""female"": ""Female""
+    }  ]
+}","p1",,,
+"instruction2","Instruction 2",,"instruction","p1",,,
+"integer","integer",,"integer","p1",,,
+"text2","text2",,"text","p1",,,
+"perm_patient_preferred_method_contact","Preferred Method of Contact","enumeration","{
+    ""Choices"": [
+        {
+            ""home"": ""Home Phone Number""
+        },
+        {
+            ""cell"": ""Cell Phone Number""
+        },
+        {
+            ""alt_phone"": ""Alternate Phone Number""
+        },
+        {
+            ""email"": ""Email""
+        }
+    ]
+}","p1",,,
+"boolean","Boolean?",,"text","p1",,,
+"evaluator_name","Your name:","enumeration","{
+    ""Choices"": [
+        {
+            ""male"": ""Male""
+        },
+        {
+            ""female"": ""Female""
+        }
+    ]
+}","p1",,,
+"evaluator_sex","Sex:",,"instruction","p2",,,"enumeration"
+"instructions","This is sample instruction text.","enumeration","{
+    ""Choices"": [
+        {
+            ""never"": ""Never""
+        },
+        {
+            ""sometimes"": ""Sometimes""
+        },
+        {
+            ""often"": ""Often""
+        },
+        {
+            ""almost-always"": ""Almost always""
+        }
+    ]
+}","p2",,,"enumeration"
+"Question_01","How often do you eat fast food?",,,,,,"enumeration"
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,
+,,,,"p2",,,

@@ -13,5 +13,5 @@ calculations:
       2)),1)
   type: float
 instrument:
-  id: urn:redcap_1
+  id: '1'
   version: '1.0'

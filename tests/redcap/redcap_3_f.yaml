@@ -1,0 +1,162 @@
+defaultLocalization: en
+instrument:
+  id: '1'
+  version: '1.0'
+pages:
+- elements:
+  - options:
+      text:
+        en: Please complete this form.
+    type: text
+  - options:
+      fieldId: date_completed
+      text:
+        en: Date
+    type: question
+  - options:
+      fieldId: id
+      help:
+        en: (Please enter ID as XXXX-X)
+      text:
+        en: ID
+    type: question
+  - options:
+      enumerations:
+      - id: female
+        text:
+          en: Female
+      - id: male
+        text:
+          en: Male
+      fieldId: sex
+      text:
+        en: Sex
+      widget:
+        type: radioGroup
+    type: question
+  - options:
+      text:
+        en: Instruction 2
+    type: text
+  - options:
+      fieldId: integer
+      text:
+        en: integer
+    type: question
+  - options:
+      fieldId: text2
+      text:
+        en: text2
+    type: question
+  - options:
+      enumerations:
+      - id: alt_phone
+        text:
+          en: Alternate Phone Number
+      - id: cell
+        text:
+          en: Cell Phone Number
+      - id: email
+        text:
+          en: Email
+      - id: home
+        text:
+          en: Home Phone Number
+      fieldId: perm_patient_preferred_method_contact
+      text:
+        en: Preferred Method of Contact
+      widget:
+        type: radioGroup
+    type: question
+  - options:
+      fieldId: boolean
+      text:
+        en: Boolean?
+    type: question
+  - options:
+      enumerations:
+      - id: female
+        text:
+          en: Female
+      - id: male
+        text:
+          en: Male
+      fieldId: evaluator_name
+      text:
+        en: 'Your name:'
+      widget:
+        type: radioGroup
+    type: question
+  id: p1
+- elements:
+  - options:
+      text:
+        en: 'Sex:'
+    type: text
+  - options:
+      enumerations:
+      - id: almost_always
+        text:
+          en: Almost always
+      - id: never
+        text:
+          en: Never
+      - id: often
+        text:
+          en: Often
+      - id: sometimes
+        text:
+          en: Sometimes
+      fieldId: instructions
+      text:
+        en: This is sample instruction text.
+      widget:
+        type: radioGroup
+    type: question
+  id: p2
+- elements:
+  - options:
+      fieldId: question_01
+      text:
+        en: How often do you eat fast food?
+    type: question
+  id: page_0
+- elements:
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  - type: question
+  id: p2
+title:
+  en: REDCap3

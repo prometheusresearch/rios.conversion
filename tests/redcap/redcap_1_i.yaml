@@ -1,4 +1,4 @@
-id: urn:redcap_1
+﻿id: '1'
 record:
 - description: Study ID
   id: study_id
@@ -118,102 +118,10 @@ record:
   identifiable: false
   required: false
   type: text
-- description: Patient has a diagnosis of diabetes mellitus?
-  id: diabetes
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      a: null
-      b: null
-- description: Type of Diabetes Mellitus
-  id: diabetes_type
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      a: null
-      b: null
-      c: null
-- description: Date of first outpatient dialysis treatment
-  id: dialysis_initiation
-  identifiable: false
-  required: false
-  type: dateTime
-- description: Type of vascular access
-  id: access_type
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-- description: Location of currently used vascular access
-  id: access_location
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-      id_4: null
-- description: Name of dialysis unit
-  id: dialysis_unit_name
-  identifiable: false
-  required: false
-  type: text
-- description: Phone number
-  id: dialysis_unit_phone
-  identifiable: false
-  required: false
-  type: text
-- description: Days of the week patient is dialyzed
-  id: dialysis_schedule_days
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-- description: Shift patient is dialyzed
-  id: dialysis_schedule_time
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-- description: Etiology of ESRD
-  id: etiology_esrd
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-      id_4: null
-      id_5: null
-      id_6: null
 - description: Comments
   id: subject_comments
   identifiable: false
   required: false
   type: text
-title: redcap_1
+title: REDCap_1
 version: '1.0'

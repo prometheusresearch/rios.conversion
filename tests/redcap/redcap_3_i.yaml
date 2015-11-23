@@ -1,0 +1,69 @@
+id: '1'
+record:
+- description: Date
+  id: date_completed
+  identifiable: false
+  required: false
+  type: date
+- description: ID
+  id: id
+  identifiable: false
+  required: false
+  type: text
+- description: Sex
+  id: sex
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      female: null
+      male: null
+- description: integer
+  id: integer
+  identifiable: false
+  required: false
+  type: integer
+- description: text2
+  id: text2
+  identifiable: false
+  required: false
+  type: text
+- description: Preferred Method of Contact
+  id: perm_patient_preferred_method_contact
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      alt_phone: null
+      cell: null
+      email: null
+      home: null
+- description: Boolean?
+  id: boolean
+  identifiable: false
+  required: false
+  type: text
+- description: 'Your name:'
+  id: evaluator_name
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      female: null
+      male: null
+- description: This is sample instruction text.
+  id: instructions
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      almost_always: null
+      never: null
+      often: null
+      sometimes: null
+title: REDCap3
+version: '1.0'
