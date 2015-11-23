@@ -37,7 +37,7 @@ required arguments and available options::
 The question order, text, and associated enumerations, 
 are all converted correctly; however the converted expressions
 used for "calculated fields" and "skip logic", as well as the display
-niceties of section breaks and seperators will most likely require 
+niceties of section breaks and separators will most likely require 
 some "tweaking" because the various systems model pages, events and actions 
 differently.
 
