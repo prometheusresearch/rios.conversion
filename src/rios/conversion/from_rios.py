@@ -107,16 +107,29 @@ class FromRios(object):
         """
         raise NotImplementedError   # pragma: no cover
 
+    def get_loader(self, file_object):
+        name = file_object.name
+        if name.endswith('.json'):
+            loader = json
+        elif name.endswith('.yaml') or name.endswith('.yml'):
+            loader = yaml
+        else:
+            loader = {'yaml': yaml, 'json': json}[self.format]
+        return loader
+
     def get_local_text(self, localized_string_object):
         return localized_string_object.get(self.localization, '')
 
+    def load_file(self, file_obj):
+        loader = self.get_loader(file_obj)
+        return loader.load(file_obj)
+
     def load_input_files(self, form, instrument, calculationset):
-        loader = {'yaml': yaml, 'json': json}[self.format]
-        self.form = loader.load(form)
-        self.instrument = loader.load(instrument)
+        self.form = self.load_file(form)
+        self.instrument = self.load_file(instrument)
         self.fields = {f['id']: f for f in self.instrument['record']}
         self.calculationset = (
-                loader.load(calculationset)
+                self.load_file(calculationset)
                 if calculationset
                 else {})
 
