@@ -1,20 +1,17 @@
 id: urn:redcap_matrix_1
 record:
 - description: Matrix Header
-  id: matrixranking
+  id: y
   identifiable: false
   required: false
   type:
     base: matrix
     columns:
-    - description: radio
-      id: radio
+    - description: text
+      id: text
       identifiable: false
       required: false
-      type:
-        base: enumeration
-        enumerations:
-          name: null
+      type: text
     rows:
     - description: MatrixRow1
       id: matrixrow1

@@ -34,6 +34,6 @@ def test_csv_reader():
     csv_reader = CsvReader('tests/redcap/redcap_1.csv')
     csv_reader.load_reader()
     rows = [od for od in csv_reader]
-    assert len(rows) == 30, len(rows)
+    assert len(rows) == 20, len(rows)
  
 print('%s: OK' % __file__)

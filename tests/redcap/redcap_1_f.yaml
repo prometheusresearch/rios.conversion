@@ -1,6 +1,6 @@
 defaultLocalization: en
 instrument:
-  id: '1'
+  id: urn:redcap_1
   version: '1.0'
 pages:
 - elements:
@@ -22,7 +22,7 @@ pages:
       text:
         en: Date subject signed consent
       widget:
-        type: dateTimePicker
+        type: inputText
     type: question
   - options:
       fieldId: first_name
@@ -98,7 +98,7 @@ pages:
           en: 'Yes'
       events:
       - action: disable
-        trigger: '!(assessment["sex"] = "0")'
+        trigger: '!(!(assessment["sex"] = "0"))'
       fieldId: given_birth
       text:
         en: Has the subject given birth before?
@@ -108,7 +108,7 @@ pages:
   - options:
       events:
       - action: disable
-        trigger: '!(assessment["sex"] = "0" and assessment["given_birth"] = "1")'
+        trigger: '!(!(assessment["sex"] = "0" and assessment["given_birth"] = "1"))'
       fieldId: num_children
       text:
         en: How many times has the subject given birth?
@@ -168,7 +168,7 @@ pages:
       text:
         en: Date of birth
       widget:
-        type: dateTimePicker
+        type: inputText
     type: question
   - options:
       fieldId: height
@@ -208,6 +208,7 @@ pages:
       widget:
         type: textArea
     type: question
-  id: dialysis_info
+  id: info
+- id: calculations
 title:
-  en: REDCap_1
+  en: redcap_1

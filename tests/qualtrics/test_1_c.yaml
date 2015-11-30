@@ -1,4 +1,4 @@
-calculations:
+tions:
 - description: Age (years)
   id: age
   method: python
@@ -12,5 +12,5 @@ calculations:
     expression: rios.conversion.redcap.math.round_((calculations["age"]*10000)/((assessment["height"])^(2)),1)
   type: float
 instrument:
-  id: urn:redcap_1
+  id: urn:test_1
   version: '1.0'

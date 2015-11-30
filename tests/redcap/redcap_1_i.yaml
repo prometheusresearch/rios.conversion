@@ -1,4 +1,4 @@
-﻿id: '1'
+id: urn:redcap_1
 record:
 - description: Study ID
   id: study_id
@@ -9,7 +9,7 @@ record:
   id: date_enrolled
   identifiable: false
   required: false
-  type: dateTime
+  type: text
 - description: First Name
   id: first_name
   identifiable: true
@@ -94,7 +94,7 @@ record:
   id: dob
   identifiable: true
   required: false
-  type: dateTime
+  type: text
 - description: Height (cm)
   id: height
   identifiable: false
@@ -123,5 +123,5 @@ record:
   identifiable: false
   required: false
   type: text
-title: REDCap_1
+title: redcap_1
 version: '1.0'

@@ -9,7 +9,7 @@ pages:
         en: Matrix Header
     type: header
   - options:
-      fieldId: matrixranking
+      fieldId: y
       questions:
       - enumerations:
         - id: id_1
@@ -21,7 +21,7 @@ pages:
         - id: id_3
           text:
             en: column3
-        fieldId: radio
+        fieldId: text
         text:
           en: MatrixRow1
       rows:

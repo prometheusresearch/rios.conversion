@@ -1,6 +1,6 @@
 defaultLocalization: en
 instrument:
-  id: '1'
+  id: urn:redcap_3
   version: '1.0'
 pages:
 - elements:
@@ -159,4 +159,4 @@ pages:
   - type: question
   id: p2
 title:
-  en: REDCap3
+  en: redcap_3

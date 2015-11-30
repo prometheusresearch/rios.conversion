@@ -17,7 +17,7 @@ def redcap_rios_tst(name):
             '--id', 'urn:%s' % name,
             '--instrument-version', '1.0',
             '--infile', './tests/redcap/%s.csv' % name,
-            '--outfile-prefix', './tests/sandbox/redcap/%s' % name,
+            '--outfile-prefix', './tests/redcap/%s' % name,
             ]
     return [test + ['--format', 'json'], test + ['--format', 'yaml']]
     
@@ -27,7 +27,7 @@ def rios_redcap_tst(name):
             '--verbose',
             '-i', './tests/redcap/%s_i.yaml' % name,
             '-f', './tests/redcap/%s_f.yaml' % name,
-            '-o', './tests/sandbox/redcap/%s.csv' % name,
+            '-o', './tests/redcap/%s.csv' % name,
             ]
     if os.access(calc_filename, os.F_OK):
             test = ['-c', '%s' % calc_filename] + test
@@ -38,7 +38,7 @@ def qualtrics_rios_tst(name):
     test = [
             '--instrument-version', '1.0',
             '--infile', './tests/qualtrics/%s.qsf' % name,
-            '--outfile-prefix', './tests/sandbox/qualtrics/%s' % name,
+            '--outfile-prefix', './tests/qualtrics/%s' % name,
             ]
     return [test + ['--format', 'json'], test + ['--format', 'yaml']]
 
@@ -48,7 +48,7 @@ def rios_qualtrics_tst(name):
             '--verbose',
             '-i', './tests/qualtrics/%s_i.yaml' % name,
             '-f', './tests/qualtrics/%s_f.yaml' % name,
-            '-o', './tests/sandbox/qualtrics/%s.txt' % name,
+            '-o', './tests/qualtrics/%s.txt' % name,
             ]
     if os.access(calc_filename, os.F_OK):
             test.extend(['-c', '%s' % calc_filename])
@@ -94,13 +94,13 @@ rios_redcap_mismatch_tests = [
         '-c', './tests/redcap/redcap_1_c.yaml',
         '-i', './tests/redcap/redcap_matrix_1_i.yaml',
         '-f', './tests/redcap/redcap_matrix_1_f.yaml',
-        '-o', './tests/sandbox/redcap/mismatch_tests.csv',
+        '-o', './tests/redcap/mismatch_tests.csv',
         ],
         [
         '-c', './tests/redcap/redcap_1_c.yaml',
         '-i', './tests/redcap/redcap_matrix_1_i.yaml',
         '-f', './tests/redcap/redcap_1_f.yaml',
-        '-o', './tests/sandbox/redcap/mismatch_tests.csv',
+        '-o', './tests/redcap/mismatch_tests.csv',
         ], ]
 redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
 rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])

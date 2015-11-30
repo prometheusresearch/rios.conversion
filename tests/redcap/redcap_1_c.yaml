@@ -9,9 +9,9 @@ calculations:
   id: bmi
   method: python
   options:
-    expression: rios.conversion.redcap.math.round_((calculations["age"]*10000)/(math.pow(assessment["height"],
-      2)),1)
+    expression: rios.conversion.redcap.math.round_math.pow((calculations["age"]*10000)/((assessment["height"],
+      2)), 1)
   type: float
 instrument:
-  id: '1'
+  id: urn:redcap_1
   version: '1.0'

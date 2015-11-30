@@ -1,37 +1,3 @@
-id: urn:redcap_matrix_1
-record:
-- description: Matrix Header
-  id: matrixranking
-  identifiable: false
-  required: false
-  type:
-    base: matrix
-    columns:
-    - description: radio
-      id: radio
-      identifiable: false
-      required: false
-      type:
-        base: enumeration
-        enumerations:
-          name: null
-    - description: bad radio
-      id: badradio
-      identifiable: false
-      required: false
-      type:
-        base: enumeration
-        enumerations:
-          name: null
-    rows:
-    - description: MatrixRow1
-      id: matrixrow1
-      required: false
-    - description: MatrixRow2
-      id: matrixrow2
-      required: false
-    - description: MatrixRow3
-      id: matrixrow3
-      required: false
-title: redcap_matrix_1
+id: urn:matrix_bad_column_count
+title: matrix_bad_column_count
 version: '1.0'

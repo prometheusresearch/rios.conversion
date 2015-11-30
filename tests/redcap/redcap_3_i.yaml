@@ -1,4 +1,4 @@
-id: '1'
+id: urn:redcap_3
 record:
 - description: Date
   id: date_completed
@@ -65,5 +65,5 @@ record:
       never: null
       often: null
       sometimes: null
-title: REDCap3
+title: redcap_3
 version: '1.0'
