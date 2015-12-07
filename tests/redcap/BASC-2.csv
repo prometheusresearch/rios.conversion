@@ -31,7 +31,7 @@ other_relationship,"If other was selected, please specify:",text,p1,,,,
 school_center,School/Center:,text,p1,,,,
 grade_class,Grade/Class:,text,p1,,,,
 other_info,Other Data:,text,p1,,,,
-basc2_instructions,"The items that follow are phrases that describe how children may act. Please read each phrase, and mark the response that describes how this child has behaved recently (in the last several months).  Please mark every item. If you don't know or are unsure of your response to an item, give your best estimate.",instruction,p2,,,,enumeration
+basc2_instructions,"The items that follow are phrases that describe how children may act. Please read each phrase, and mark the response that describes how this child has behaved recently (in the last several months).  Please mark every item. If you don't know or are unsure of your response to an item, give your best estimate.",instruction,p2,,,,
 basc2_1,Shares toys or possessions with other children.,"{
     ""Choices"": [
         {
