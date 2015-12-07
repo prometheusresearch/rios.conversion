@@ -1,8 +1,8 @@
 import glob
 import os
-from rios.conversion.redcap.to_rios import ToRios as RedcapRios
+from rios.conversion.redcap.to_rios import RedcapToRios as RedcapRios
 from rios.conversion.redcap.from_rios import RedcapFromRios as RiosRedcap
-from rios.conversion.qualtrics.to_rios import ToRios as QualtricsRios
+from rios.conversion.qualtrics.to_rios import QualtricsToRios as QualtricsRios
 from rios.conversion.qualtrics.from_rios import QualtricsFromRios as RiosQualtrics
 
 def flatten(array):

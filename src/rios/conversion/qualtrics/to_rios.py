@@ -13,11 +13,12 @@ import argparse
 import json
 import pkg_resources
 import rios.conversion.classes as Rios
+from rios.conversion.to_rios import ToRios
 import sys
-import yaml
 
 
-class ToRios(object):
+class QualtricsToRios(ToRios):
+
     def __init__(self):
         self.page_name = PageName()
         self.parser = argparse.ArgumentParser(
@@ -98,34 +99,6 @@ class ToRios(object):
     def clean_question(self, text):
         return text.replace('<br>', '')
 
-    def create__file(self, kind, obj):
-        if obj:
-            obj.clean()
-            with open(self.filename(kind), 'w') as fo:
-                if self.format == 'json':
-                    json.dump(obj, fo, indent=1)
-                elif self.format == 'yaml':
-                    yaml.safe_dump(
-                            json.loads(json.dumps(obj)),
-                            fo,
-                            default_flow_style=False)
-
-    def create_calculation_file(self):
-        if self.calculations.get('calculations', False):
-            self.create__file('c', self.calculations)
-
-    def create_instrument_file(self):
-        self.create__file('i', self.instrument)
-
-    def create_form_file(self):
-        self.create__file('f', self.form)
-
-    def filename(self, kind):
-        return '%(outfile_prefix)s_%(kind)s.%(extension)s' % {
-                'outfile_prefix': self.outfile_prefix,
-                'kind': kind,
-                'extension': self.format, }
-
     def get_choices(self, question):
         """ Returns an array of tuples: (id, choice)
         """
@@ -191,9 +164,6 @@ class ToRios(object):
         else:
             return 'text'
 
-    def localized_string_object(self, string):
-        return Rios.LocalizedStringObject({self.localization: string})
-
     def make_element(self, question):
         element = Rios.ElementObject()
         question_type = question['QuestionType']
@@ -252,4 +222,4 @@ class PageName(object):
 
 
 def main(argv=None, stdout=None, stderr=None):
-    sys.exit(ToRios()(argv, stdout, stderr))    # pragma: no cover
+    sys.exit(QualtricsToRios()(argv, stdout, stderr))    # pragma: no cover
