@@ -37,6 +37,10 @@ tests:
     Successful validation.
     ./tests/sandbox/qualtrics/qualtrics_neuro_f.json
     Successful validation.
+    ./tests/sandbox/redcap/BASC-2_i.json
+    Successful validation.
+    ./tests/sandbox/redcap/BASC-2_f.json
+    Successful validation.
     ./tests/sandbox/redcap/Perm_i.json
     Successful validation.
     ./tests/sandbox/redcap/Perm_f.json

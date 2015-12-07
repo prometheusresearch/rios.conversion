@@ -20,14 +20,13 @@ in the hopes of obtaining a valid RIOS ID.
 
 import argparse
 import json
-import os
 import pkg_resources
 import re
 import rios.conversion.balanced_match as balanced_match
 import rios.conversion.csv_reader
 import rios.conversion.classes as Rios
+from rios.conversion.to_rios import ToRios
 import sys
-import yaml
 
 # Consecutive non-alpha chars.
 RE_non_alphanumeric = re.compile(r'\W+')
@@ -96,7 +95,8 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
         return x
 
 
-class ToRios(object):
+class RedcapToRios(ToRios):
+
     def __init__(self):
         self.parser = argparse.ArgumentParser(
                 formatter_class=argparse.RawTextHelpFormatter,
@@ -257,38 +257,6 @@ class ToRios(object):
             return float(value)
         else:
             return value    # pragma: no cover
-
-    def create__file(self, kind, obj):
-        with open(self.filename(kind), 'w') as fo:
-            if obj:
-                obj.clean()
-                if self.format == 'json':
-                    json.dump(obj, fo, indent=1)
-                elif self.format == 'yaml':
-                    yaml.safe_dump(
-                            json.loads(json.dumps(obj)),
-                            fo,
-                            default_flow_style=False)
-
-    def create_calculation_file(self):
-        if self.calculations.get('calculations', False):
-            self.create__file('c', self.calculations)
-        else:
-            filename = self.filename('c')
-            if os.access(filename, os.F_OK):
-                os.remove(filename)   # pragma: no cover
-
-    def create_instrument_file(self):
-        self.create__file('i', self.instrument)
-
-    def create_form_file(self):
-        self.create__file('f', self.form)
-
-    def filename(self, kind):
-        return '%(outfile_prefix)s_%(kind)s.%(extension)s' % {
-                'outfile_prefix': self.outfile_prefix,
-                'kind': kind,
-                'extension': self.format, }
 
     def get_choices_form(self, od):
         """ returns array of DescriptorObject
@@ -482,9 +450,6 @@ class ToRios(object):
             # So far we've seen data_type in ['date', 'text', 'instruction']
             # So 'date' and 'text' need no translation:
             return data_type
-
-    def localized_string_object(self, string):
-        return Rios.LocalizedStringObject({self.localization: string})
 
     def make_elements(self, od):
         element = Rios.ElementObject()
@@ -683,4 +648,4 @@ class ToRios(object):
 
 
 def main(argv=None, stdout=None, stderr=None):
-    sys.exit(ToRios()(argv, stdout, stderr))    # pragma: no cover
+    sys.exit(RedcapToRios()(argv, stdout, stderr))    # pragma: no cover
