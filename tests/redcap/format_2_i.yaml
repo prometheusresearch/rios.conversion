@@ -1,0 +1,56 @@
+id: urn:format_2
+record:
+- description: 'Date form is being completed:'
+  id: date_of_evaluation
+  identifiable: false
+  required: false
+  type: date
+- description: 'Your name:'
+  id: evaluator_name
+  identifiable: false
+  required: false
+  type: text
+- description: 'Sex:'
+  id: evaluator_sex
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      female: null
+      male: null
+- description: 'Relationship to child:'
+  id: relationship_to_child
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      father: null
+      guardian: null
+      mother: null
+      other: null
+- description: Shares toys or possessions with other children.
+  id: basc2_1
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      almost_always: null
+      never: null
+      often: null
+      sometimes: null
+- description: Speaks in short phrases that are hard to understand.
+  id: basc2_2
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      almost_always: null
+      never: null
+      often: null
+      sometimes: null
+title: format_2
+version: '1.0'

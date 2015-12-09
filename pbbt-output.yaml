@@ -33,33 +33,19 @@ tests:
     Successful validation.
     ./tests/sandbox/qualtrics/qualtrics_health_f.json
     Successful validation.
-    ./tests/sandbox/qualtrics/qualtrics_neuro_i.json
+    ./tests/sandbox/redcap/format_1_i.json
     Successful validation.
-    ./tests/sandbox/qualtrics/qualtrics_neuro_f.json
+    ./tests/sandbox/redcap/format_1_f.json
     Successful validation.
-    ./tests/sandbox/redcap/BASC-2_i.json
+    ./tests/sandbox/redcap/format_1_c.json
     Successful validation.
-    ./tests/sandbox/redcap/BASC-2_f.json
+    ./tests/sandbox/redcap/format_2_i.json
     Successful validation.
-    ./tests/sandbox/redcap/Perm_i.json
+    ./tests/sandbox/redcap/format_2_f.json
     Successful validation.
-    ./tests/sandbox/redcap/Perm_f.json
+    ./tests/sandbox/redcap/matrix_1_i.json
     Successful validation.
-    ./tests/sandbox/redcap/redcap_1_i.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_1_f.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_1_c.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_2_i.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_2_f.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_2_c.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_matrix_1_i.json
-    Successful validation.
-    ./tests/sandbox/redcap/redcap_matrix_1_f.json
+    ./tests/sandbox/redcap/matrix_1_f.json
     Successful validation.
 - sh: "sh -c \\\n\"for INSTRUMENT in ./tests/sandbox/*/*_i.json; \ndo \n    echo $INSTRUMENT\n
     \   NAME=$(basename $INSTRUMENT i.json)\n    DIR=$(dirname $INSTRUMENT)\n    FORM=$DIR/${NAME}f.json\n

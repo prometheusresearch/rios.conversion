@@ -1,7 +1,7 @@
 Variable / Field Name,Form Name,Section Header,Field Type,Field Label,Choices OR Calculations,Field Note,Text Validation Type OR Show Slider Number,Text Validation Min,Text Validation Max,Identifier?,Branching Logic (Show field only if...),Required Field?,Custom Alignment,Question Number (surveys only)
 study_id,demographics,,text,Study ID,,,,,,,,,,
 date_enrolled,demographics,Demographic Attributes,text,Date of consent,,YYYY-MM-DD,date_ymd,,,,,,,
-first_name,demographics,,bad,First Name,,,,,,y,,,,
+first_name,demographics,,text,First Name,,,,,,y,,,,
 last_name,demographics,,text,Last Name,,,,,,y,,,,
 address,demographics,Contact Information,notes,"Street, City, State, ZIP",,,,,,y,,,,
 telephone_1,demographics,,text,Phone number,,Include Area Code,phone,,,y,,,,

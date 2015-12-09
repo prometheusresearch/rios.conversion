@@ -91,6 +91,8 @@ class QualtricsToRios(ToRios):
                 self.start_page()
             elif element['Type'] == 'Question':
                 self.process_question(questions[element['QuestionID']])
+            else:
+                raise ValueError("Unknown element Type: %s" % element['Type'])
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()

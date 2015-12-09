@@ -1,0 +1,103 @@
+defaultLocalization: en
+instrument:
+  id: urn:format_2
+  version: '1.0'
+pages:
+- elements:
+  - options:
+      fieldId: date_of_evaluation
+      text:
+        en: 'Date form is being completed:'
+    type: question
+  - options:
+      fieldId: evaluator_name
+      text:
+        en: 'Your name:'
+    type: question
+  - options:
+      enumerations:
+      - id: female
+        text:
+          en: Female
+      - id: male
+        text:
+          en: Male
+      fieldId: evaluator_sex
+      text:
+        en: 'Sex:'
+      widget:
+        type: radioGroup
+    type: question
+  - options:
+      enumerations:
+      - id: father
+        text:
+          en: Father
+      - id: guardian
+        text:
+          en: Guardian
+      - id: mother
+        text:
+          en: Mother
+      - id: other
+        text:
+          en: Other
+      fieldId: relationship_to_child
+      text:
+        en: 'Relationship to child:'
+      widget:
+        type: radioGroup
+    type: question
+  id: p1
+- elements:
+  - options:
+      text:
+        en: The items that follow are phrases that describe how children may act.
+          Please read each phrase, and mark the response that describes how this child
+          has behaved recently (in the last several months).  Please mark every item.
+          If you don't know or are unsure of your response to an item, give your best
+          estimate.
+    type: text
+  - options:
+      enumerations:
+      - id: almost_always
+        text:
+          en: Almost always
+      - id: never
+        text:
+          en: Never
+      - id: often
+        text:
+          en: Often
+      - id: sometimes
+        text:
+          en: Sometimes
+      fieldId: basc2_1
+      text:
+        en: Shares toys or possessions with other children.
+      widget:
+        type: radioGroup
+    type: question
+  - options:
+      enumerations:
+      - id: almost_always
+        text:
+          en: Almost always
+      - id: never
+        text:
+          en: Never
+      - id: often
+        text:
+          en: Often
+      - id: sometimes
+        text:
+          en: Sometimes
+      fieldId: basc2_2
+      text:
+        en: Speaks in short phrases that are hard to understand.
+      widget:
+        type: radioGroup
+    type: question
+  id: p2
+title:
+  en: format_2

@@ -1,11 +1,11 @@
-id: urn:redcap_1
+id: urn:format_1
 record:
 - description: Study ID
   id: study_id
   identifiable: false
   required: false
   type: text
-- description: Date subject signed consent
+- description: Date of consent
   id: date_enrolled
   identifiable: false
   required: false
@@ -87,9 +87,37 @@ record:
       id_1: null
       id_2: null
       id_3: null
-      id_4: null
-      id_5: null
-      id_6: null
+- description: How much slide
+  id: sliderq
+  identifiable: false
+  required: false
+  type:
+    base: float
+    range:
+      max: 100.0
+      min: 0.0
+- description: T or F
+  id: truefalseq
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      'false':
+        description: 'False'
+      'true':
+        description: 'True'
+- description: Y or N
+  id: yesnoq
+  identifiable: false
+  required: false
+  type:
+    base: enumeration
+    enumerations:
+      'no':
+        description: 'No'
+      'yes':
+        description: 'Yes'
 - description: Date of birth
   id: dob
   identifiable: true
@@ -113,37 +141,13 @@ record:
     range:
       max: 200
       min: 35
-- description: Any comorbid condition
-  id: comorbidities
-  identifiable: false
-  required: false
-  type: text
-- description: Patient has a diagnosis of diabetes mellitus?
-  id: diabetes
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      a: null
-      b: null
-- description: Type of Diabetes Mellitus
-  id: diabetes_type
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      a: null
-      b: null
-      c: null
-- description: Date of first outpatient dialysis treatment
-  id: dialysis_initiation
+- description: Date of first treatment
+  id: info
   identifiable: false
   required: false
   type: dateTime
-- description: Type of vascular access
-  id: access_type
+- description: Days of the week patient is tested
+  id: schedule_days
   identifiable: false
   required: false
   type:
@@ -152,68 +156,10 @@ record:
       id_0: null
       id_1: null
       id_2: null
-      id_3: null
-- description: Location of currently used vascular access
-  id: access_location
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-      id_4: null
-- description: Name of dialysis unit
-  id: dialysis_unit_name
-  identifiable: false
-  required: false
-  type: text
-- description: Phone number
-  id: dialysis_unit_phone
-  identifiable: false
-  required: false
-  type: text
-- description: Days of the week patient is dialyzed
-  id: dialysis_schedule_days
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-- description: Shift patient is dialyzed
-  id: dialysis_schedule_time
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-- description: Etiology of ESRD
-  id: etiology_esrd
-  identifiable: false
-  required: false
-  type:
-    base: enumeration
-    enumerations:
-      id_0: null
-      id_1: null
-      id_2: null
-      id_3: null
-      id_4: null
-      id_5: null
-      id_6: null
 - description: Comments
-  id: subject_comments
+  id: comments
   identifiable: false
   required: false
   type: text
-title: redcap_1
+title: format_1
 version: '1.0'

@@ -5,13 +5,13 @@ calculations:
   options:
     expression: rios.conversion.redcap.math.round_(rios.conversion.redcap.date.datediff(assessment["dob"],'today','y'),0)
   type: float
-- description: BMI
-  id: bmi
+- description: AMI
+  id: ami
   method: python
   options:
     expression: rios.conversion.redcap.math.round_((calculations["age"]*10000)/(math.pow(assessment["height"],
       2)),1)
   type: float
 instrument:
-  id: urn:redcap_1
+  id: urn:format_1
   version: '1.0'

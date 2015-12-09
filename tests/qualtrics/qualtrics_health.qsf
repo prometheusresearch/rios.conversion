@@ -176,133 +176,8 @@
                         "styles": {
                             "backgroundColor": null
                         }
-                    },
-                    "borderStyles": {
-                        "selector": ".Skin .CS .horizontalbar table.sliderGrid tr.xlabel th, .Skin .CS .horizontalbar .ylabel, .Skin .CS .horizontalbar table.sliderGrid tr td.value, .Skin .Slider .horizontalbar table.sliderGrid tr.xlabel th, .Skin .BorderColor, .Skin .DarkBorderColor, .Skin .Slider .horizontalbar table.sliderGrid tr td.value, .Skin thead, .Skin .GAP .ChoiceStructure thead th  ",
-                        "styles": {
-                            "borderColor": null
-                        }
-                    },
-                    "choiceStyles": {
-                        "selector": ".Skin .horizontalbar th.ylabel, .Skin .Matrix table td, .Skin .Matrix table th, .Skin .Matrix table thead th, .Skin .Matrix table thead td, .Skin .PGR .DragAndDrop .Items label, .Skin .QuestionBody ul.ChoiceStructure, .Skin .PGR .DragAndDrop .Group ul, .Skin .PGR .DragAndDrop .Group h2, .Skin .PGR .DragAndDrop .Items ul, .Skin .PGR .DragAndDrop .Items h2, .Skin .DD .QuestionBody table.ChoiceStructure, .Skin .PGR .DragAndDrop .NoColumns td.groupsContainerTd div ul, .Skin .PGR .DragAndDrop .NoColumns td.groupsContainerTd div h2, .Skin .SBS thead th, .Skin .SBS td, .Skin .SBS .Answers td, .Skin .SBS .Answers th, .SBS table.ChoiceStructure, .Skin .horizontalbar thead table.LabelDescriptions tr td, .Skin .horizontalbar thead tr td.NotApplicable, .QuestionBody th, .Skin .MC .MAVR label, .Skin .MC .SAVR label, .Skin .SBS thead th, .Skin .SBS td, .Skin .RO .DND ul li, .Skin .reg, .SkinInner .ChoiceStructure, .Skin thead, .Skin .GAP .ChoiceStructure thead th, .Skin .GAP .ChoiceStructure .c4, .Skin .GAP .ChoiceStructure th, .Skin .GAP .ChoiceStructure .WhyText, .SkinInner .ChoiceStructure .LightBG, .Skin .QuestionOuter.Highlight .Inner .reg, .Skin .QuestionOuter.Highlight .Inner .alt, .Skin .QuestionOuter.Highlight .Inner .ReadableAlt       ",
-                        "styles": {
-                            "color": null,
-                            "fontFamily": null,
-                            "fontSize": null,
-                            "fontStyle": null,
-                            "fontWeight": null,
-                            "textDecoration": null
-                        }
-                    },
-                    "customCSS": null,
-                    "errorStyles": {
-                        "selector": ".Skin .ValidationError",
-                        "styles": {
-                            "backgroundColor": null,
-                            "borderColor": null,
-                            "color": null
-                        }
-                    },
-                    "errorStylesBG": {
-                        "selector": ".Skin .HeaderValidationError, .Skin .HeaderValidationError li a",
-                        "styles": {
-                            "backgroundColor": null,
-                            "color": null
-                        }
-                    },
-                    "footerStyles": {
-                        "selector": ".Skin #Footer",
-                        "styles": {
-                            "color": null
-                        }
-                    },
-                    "headerStyles": {
-                        "selector": ".Skin div#Header",
-                        "styles": {
-                            "color": null
-                        }
-                    },
-                    "highlightStyles": {
-                        "selector": ".Skin .QuestionOuter.Highlight .Inner, .Skin .QuestionOuter.Highlight .Inner .reg, .Skin .QuestionOuter.Highlight .Inner .alt, .Skin .QuestionOuter.Highlight .Inner .ReadableAlt",
-                        "styles": {
-                            "backgroundColor": null
-                        }
-                    },
-                    "highlightStylesAlt": {
-                        "selector": ".Skin .QuestionOuter.Highlight .Inner .ReadableAlt, .Skin .QuestionOuter.Highlight .Inner .LightBG",
-                        "styles": {
-                            "backgroundColor": null
-                        }
-                    },
-                    "pageStyles": {
-                        "selector": "#SurveyEngineBody",
-                        "styles": {
-                            "backgroundColor": null
-                        }
-                    },
-                    "questionSeparatorStyles": {
-                        "selector": ".Skin .Separator",
-                        "styles": {
-                            "backgroundColor": null,
-                            "display": null
-                        }
-                    },
-                    "questionStyles": {
-                        "selector": ".Skin .QuestionText",
-                        "styles": {
-                            "color": null,
-                            "fontFamily": null,
-                            "fontSize": null,
-                            "fontStyle": null,
-                            "fontWeight": null,
-                            "textDecoration": null
-                        }
-                    },
-                    "textEntryStyles": {
-                        "selector": ".Skin select, .Skin .InputText",
-                        "styles": {
-                            "color": null
-                        }
-                    },
-                    "textStyles": {
-                        "selector": ".SkinInner",
-                        "styles": {
-                            "color": null,
-                            "fontFamily": null,
-                            "fontSize": null,
-                            "fontStyle": null,
-                            "fontWeight": null,
-                            "textDecoration": null
-                        }
                     }
-                },
-                "ExternalCSS": null,
-                "Footer": "",
-                "Header": "",
-                "HighlightQuestions": "on",
-                "NewScoring": 1,
-                "NextButton": "  >>  ",
-                "PreviousButton": "  <<  ",
-                "ProgressBarDisplay": "None",
-                "QuestionsPerPage": "",
-                "SaveandContinue": "true",
-                "Skin": "Qualtrics",
-                "SkinLibrary": "Qualtrics",
-                "SkinQuestionWidth": 700,
-                "SkinType": "MQ",
-                "SpellChecked": "1",
-                "SurveyCreationDate": "2014-12-15 17:01:57",
-                "SurveyExpiration": "None",
-                "SurveyLanguage": "EN",
-                "SurveyName": null,
-                "SurveyProtection": "PublicSurvey",
-                "SurveyTermination": "DefaultMessage",
-                "footerMid": "",
-                "headerMid": "",
-                "libraryId": "",
-                "nextButtonMid": "",
-                "oldSystemID": "431",
-                "previousButtonMid": ""
+                }
             },
             "PrimaryAttribute": "Survey Options",
             "SecondaryAttribute": null,
@@ -313,14 +188,7 @@
             "Element": "SCO",
             "Payload": {
                 "DefaultScoringCategory": null,
-                "ID": "Scoring",
-                "NextCategoryId": 1,
-                "NextGroupId": 1,
-                "ScoringCategories": [],
-                "ScoringCategoryGroups": [],
-                "ScoringSummaryAfterQuestions": false,
-                "ScoringSummaryAfterSurvey": false,
-                "ScoringSummaryCategory": null
+                "ID": "Scoring"
             },
             "PrimaryAttribute": "Scoring",
             "SecondaryAttribute": null,
@@ -335,23 +203,22 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, are you completely unable to do any housework?"
+                        "Display": "or, are you completely unable to Q8?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q8",
-                "QuestionDescription": "(HOUSEWORK)  Can you do your own housewo",
+                "QuestionDescription": "(Q8)",
                 "QuestionID": "QID17671700",
-                "QuestionText": " (HOUSEWORK)  Can you do your own housework:",
-                "QuestionText_Unsafe": " (HOUSEWORK)  Can you do your own housework:",
+                "QuestionText": "Can you Q8:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -365,7 +232,6 @@
                 }
             },
             "PrimaryAttribute": "QID17671700",
-            "SecondaryAttribute": "(HOUSEWORK)  Can you do your own housewo",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -377,23 +243,22 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, are you completely unable to do any laundry at all?"
+                        "Display": "or, are you completely unable to Q11?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q11",
-                "QuestionDescription": "(LAUNDRY)  Can you do your own laundry:",
+                "QuestionDescription": "(11)  Can you 11:",
                 "QuestionID": "QID17671675",
-                "QuestionText": " (LAUNDRY)  Can you do your own laundry:",
-                "QuestionText_Unsafe": " (LAUNDRY)  Can you do your own laundry:",
+                "QuestionText": " (11)  Can you 11:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -407,7 +272,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671675",
-            "SecondaryAttribute": "(LAUNDRY)  Can you do your own laundry:",
+            "SecondaryAttribute": "(11):",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -419,23 +284,23 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, are you completely unable to prepare any meals?"
+                        "Display": "or, are you completely unable to Q10?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q10",
-                "QuestionDescription": "(MEAL PREPARATION)  Can you prepare your",
+                "QuestionDescription": "(your",
                 "QuestionID": "QID17671674",
-                "QuestionText": " (MEAL PREPARATION)  Can you prepare your own meals:",
-                "QuestionText_Unsafe": " (MEAL PREPARATION)  Can you prepare your own meals:",
+                "QuestionText": "Can you 10:",
+                "QuestionText_Unsafe": " (M:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -449,7 +314,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671674",
-            "SecondaryAttribute": "(MEAL PREPARATION)  Can you prepare your",
+            "SecondaryAttribute": "(M",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -461,23 +326,23 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, are you completely unable to handle money?"
+                        "Display": "or, are you completely unable to Q12?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q12",
-                "QuestionDescription": "(MONEY MANAGEMENT)  Can you manage your ",
+                "QuestionDescription": "(12)",
                 "QuestionID": "QID17671676",
-                "QuestionText": " (MONEY MANAGEMENT)  Can you manage your own money:",
-                "QuestionText_Unsafe": " (MONEY MANAGEMENT)  Can you manage your own money:",
+                "QuestionText": " (12)  Can you 12:",
+                "QuestionText_Unsafe": "12:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -491,7 +356,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671676",
-            "SecondaryAttribute": "(MONEY MANAGEMENT)  Can you manage your ",
+            "SecondaryAttribute": "12",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -503,23 +368,23 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help (pick out clothes, dress/undress self)"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, does someone dress and undress you?"
+                        "Display": "or, are you completely unable to Q14?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q14",
-                "QuestionDescription": "(PERSONAL CARE)  Do you dress and undres",
+                "QuestionDescription": "(14)",
                 "QuestionID": "QID17671678",
-                "QuestionText": " (PERSONAL CARE)  Do you dress and undress yourself:",
-                "QuestionText_Unsafe": " (PERSONAL CARE)  Do you dress and undress yourself:",
+                "QuestionText": " (14)  Do you 14:",
+                "QuestionText_Unsafe": " (14:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -533,7 +398,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671678",
-            "SecondaryAttribute": "(PERSONAL CARE)  Do you dress and undres",
+            "SecondaryAttribute": "14",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -545,18 +410,18 @@
                 },
                 "ChoiceOrder": [
                     "1",
-                    "2",
-                    "3"
+                    "c2",
+                    "c3"
                 ],
                 "Choices": {
                     "1": {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
-                    "2": {
-                        "Display": "With some help"
+                    "c2": {
+                        "Display": "With some test"
                     },
-                    "3": {
-                        "Display": "or, does someone do all these types of things for you?"
+                    "c3": {
+                        "Display": "or, are you completely unable to Q13?"
                     }
                 },
                 "Configuration": {
@@ -565,10 +430,10 @@
                 },
                 "DataExportTag": "Q13",
                 "Language": [],
-                "QuestionDescription": "(PERSONAL CARE) Do you take care of your own appearance, things like combing your hair (for men shav...",
+                "QuestionDescription": "(13",
                 "QuestionID": "QID17671677",
-                "QuestionText": " (PERSONAL CARE)  Do you take care of your own appearance, things like combing your hair (for men shaving):",
-                "QuestionText_Unsafe": " (PERSONAL CARE)  Do you take care of your own appearance, things like combing your hair (for men shaving):",
+                "QuestionText": " (13) do you 13:",
+                "QuestionText_Unsafe": "13:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -582,7 +447,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671677",
-            "SecondaryAttribute": "(PERSONAL CARE) Do you take care of your own appearance, things like combing your hair (for men shav",
+            "SecondaryAttribute": "(13",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -594,23 +459,23 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, are you completely unable to do any shopping?"
+                        "Display": "or, are you completely unable to Q9?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q9",
-                "QuestionDescription": "(SHOPPING)  Can you go shopping for groc",
+                "QuestionDescription": "(9",
                 "QuestionID": "QID17671701",
-                "QuestionText": " (SHOPPING)  Can you go shopping for groceries:",
-                "QuestionText_Unsafe": " (SHOPPING)  Can you go shopping for groceries:",
+                "QuestionText": " (9)  Can you 9:",
+                "QuestionText_Unsafe": " (9:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -624,7 +489,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671701",
-            "SecondaryAttribute": "(SHOPPING)  Can you go shopping for groc",
+            "SecondaryAttribute": "(9",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -635,10 +500,10 @@
                     "Type": "TextEntry"
                 },
                 "DataExportTag": "Q15",
-                "QuestionDescription": "(TAKING MEDICATIONS)  During the past 24",
+                "QuestionDescription": "(15",
                 "QuestionID": "QID17671679",
-                "QuestionText": "<br>(TAKING MEDICATIONS)  During the past 24 hours, how many different kinds of medication have you taken?",
-                "QuestionText_Unsafe": "<br>(TAKING MEDICATIONS)  During the past 24 hours, how many different kinds of medication have you taken?",
+                "QuestionText": "<br>(do 15?",
+                "QuestionText_Unsafe": "<br>(15",
                 "QuestionType": "TE",
                 "Randomization": {
                     "Type": "None"
@@ -652,7 +517,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671679",
-            "SecondaryAttribute": "(TAKING MEDICATIONS)  During the past 24",
+            "SecondaryAttribute": "(15",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -664,23 +529,23 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Without help"
+                        "Display": "Without test"
                     },
                     {
-                        "Display": "With some help"
+                        "Display": "With some test"
                     },
                     {
-                        "Display": "or, are you completely unable to travel unless special arrangements are made?"
+                        "Display": "or, are you completely unable to Q7?"
                     }
                 ],
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q7",
-                "QuestionDescription": "(TRANSPORTATION)  What about the followi",
+                "QuestionDescription": "(7",
                 "QuestionID": "QID17671699",
-                "QuestionText": " (TRANSPORTATION)  What about the following specific activities...  Can you get to places out of walking distances:",
-                "QuestionText_Unsafe": " (TRANSPORTATION)  What about the following specific activities...  Can you get to places out of walking distances:",
+                "QuestionText": "can you 7?",
+                "QuestionText_Unsafe": " (7:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -694,7 +559,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671699",
-            "SecondaryAttribute": "(TRANSPORTATION)  What about the followi",
+            "SecondaryAttribute": "(7",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -776,10 +641,10 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Self"
+                        "Display": "Dog"
                     },
                     {
-                        "Display": "Spouse"
+                        "Display": "Cat"
                     },
                     {
                         "Display": "Both"
@@ -792,10 +657,10 @@
                     "VariableCount": 4
                 },
                 "DataExportTag": "Q19",
-                "QuestionDescription": "Do you or your spouse experience chronic",
+                "QuestionDescription": "19",
                 "QuestionID": "QID17671683",
-                "QuestionText": " Do you or your spouse experience chronic pain?  (That is, ongoing or recurring pain)",
-                "QuestionText_Unsafe": " Do you or your spouse experience chronic pain?  (That is, ongoing or recurring pain)",
+                "QuestionText": " Do 19?",
+                "QuestionText_Unsafe": " Do 19",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -809,7 +674,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671683",
-            "SecondaryAttribute": "Do you or your spouse experience chronic",
+            "SecondaryAttribute": "Do 19",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -821,10 +686,10 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Own"
+                        "Display": "Left"
                     },
                     {
-                        "Display": "Rent"
+                        "Display": "Right"
                     },
                     {
                         "Display": "Other"
@@ -834,10 +699,10 @@
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q26",
-                "QuestionDescription": "Do you own or rent your home?",
+                "QuestionDescription": "Do you 26?",
                 "QuestionID": "QID17671691",
-                "QuestionText": " Do you own or rent your home?",
-                "QuestionText_Unsafe": " Do you own or rent your home?",
+                "QuestionText": " Do you 26?",
+                "QuestionText_Unsafe": " Do you 26?",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -851,7 +716,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671691",
-            "SecondaryAttribute": "Do you own or rent your home?",
+            "SecondaryAttribute": "Do you 26?",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -921,10 +786,10 @@
                     "VariableCount": 4
                 },
                 "DataExportTag": "Q2",
-                "QuestionDescription": "First of all, how would you evaluate the",
+                "QuestionDescription": "First 2",
                 "QuestionID": "QID17671684",
-                "QuestionText": " First of all, how would you evaluate the hospitals in your area in their ability to treat health problems related to age?",
-                "QuestionText_Unsafe": " First of all, how would you evaluate the hospitals in your area in their ability to treat health problems related to age?",
+                "QuestionText": " First of all, ?",
+                "QuestionText_Unsafe": " First of all?",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -938,7 +803,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671684",
-            "SecondaryAttribute": "First of all, how would you evaluate the",
+            "SecondaryAttribute": "First of all",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1016,10 +881,10 @@
                     "VariableCount": 5
                 },
                 "DataExportTag": "Q5",
-                "QuestionDescription": "How often does a close friend or relativ",
+                "QuestionDescription": "How often does 5",
                 "QuestionID": "QID17671697",
-                "QuestionText": " How often does a close friend or relative visit you in your home?",
-                "QuestionText_Unsafe": " How often does a close friend or relative visit you in your home?",
+                "QuestionText": " How often does 5?",
+                "QuestionText_Unsafe": " How often does 5?",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1033,7 +898,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671697",
-            "SecondaryAttribute": "How often does a close friend or relativ",
+            "SecondaryAttribute": "How often does 5",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1058,10 +923,10 @@
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q20",
-                "QuestionDescription": "If yes, how are you or your spouse curre",
+                "QuestionDescription": "If 20",
                 "QuestionID": "QID17671685",
-                "QuestionText": " If yes, how are you or your spouse currently being treated for chronic pain?",
-                "QuestionText_Unsafe": " If yes, how are you or your spouse currently being treated for chronic pain?",
+                "QuestionText": " If 20?",
+                "QuestionText_Unsafe": " If 20?",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1075,7 +940,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671685",
-            "SecondaryAttribute": "If yes, how are you or your spouse curre",
+            "SecondaryAttribute": "If 20",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1086,10 +951,10 @@
                     "Type": "TextEntry"
                 },
                 "DataExportTag": "Q16",
-                "QuestionDescription": "If you have taken medication in the last",
+                "QuestionDescription": "If you have q16",
                 "QuestionID": "QID17671680",
-                "QuestionText": "<br>If you have taken medication in the last 24 hours, how many of the medications you have taken have been prescribed by your physician?",
-                "QuestionText_Unsafe": "<br>If you have taken medication in the last 24 hours, how many of the medications you have taken have been prescribed by your physician?",
+                "QuestionText": "<br>If you have q16?",
+                "QuestionText_Unsafe": "<br>If you q16?",
                 "QuestionType": "TE",
                 "Randomization": {
                     "Type": "None"
@@ -1103,7 +968,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671680",
-            "SecondaryAttribute": "If you have taken medication in the last",
+            "SecondaryAttribute": "If you have q16",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1115,23 +980,23 @@
                 },
                 "Choices": {
                     "1": {
-                        "Display": "Without help (in the right doses at the right time)"
+                        "Display": "Without test"
                     },
                     "2": {
-                        "Display": "With some help (take medicine if someone prepares it for you and/or reminds you to take it)"
+                        "Display": "With some test"
                     },
                     "3": {
-                        "Display": "or, are you completely unable to take your own medicines?"
+                        "Display": "or, are you completely unable to Q17?"
                     }
                 },
                 "Configuration": {
                     "VariableCount": 3
                 },
                 "DataExportTag": "Q17",
-                "QuestionDescription": "If you have taken medication in the last",
+                "QuestionDescription": "If you q17",
                 "QuestionID": "QID17671681",
-                "QuestionText": " If you have taken medication in the last 24 hours, do you take your medicine:",
-                "QuestionText_Unsafe": " If you have taken medication in the last 24 hours, do you take your medicine:",
+                "QuestionText": " If you q17:",
+                "QuestionText_Unsafe": " If you have q17:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1145,7 +1010,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671681",
-            "SecondaryAttribute": "If you have taken medication in the last",
+            "SecondaryAttribute": "If you have q17",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1153,16 +1018,16 @@
             "Element": "SQ",
             "Payload": {
                 "DataExportTag": "Q21",
-                "QuestionDescription": "Just a few demographic questions in orde",
+                "QuestionDescription": "Just a few",
                 "QuestionID": "QID17671686",
-                "QuestionText": " Just a few demographic questions in order to categorize the data:",
-                "QuestionText_Unsafe": " Just a few demographic questions in order to categorize the data:",
+                "QuestionText": " Just a few:",
+                "QuestionText_Unsafe": " Just a few:",
                 "QuestionType": "DB",
                 "Selector": "PTB",
                 "SubSelector": null
             },
             "PrimaryAttribute": "QID17671686",
-            "SecondaryAttribute": "Just a few demographic questions in orde",
+            "SecondaryAttribute": "Just a few",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1170,16 +1035,16 @@
             "Element": "SQ",
             "Payload": {
                 "DataExportTag": "Q18",
-                "QuestionDescription": "Let me now ask you some questions about ",
+                "QuestionDescription": "Let me q18",
                 "QuestionID": "QID17671682",
-                "QuestionText": " Let me now ask you some questions about some specific health conditions.",
-                "QuestionText_Unsafe": " Let me now ask you some questions about some specific health conditions.",
+                "QuestionText": " Let me q18",
+                "QuestionText_Unsafe": " Let me q18",
                 "QuestionType": "DB",
                 "Selector": "PTB",
                 "SubSelector": null
             },
             "PrimaryAttribute": "QID17671682",
-            "SecondaryAttribute": "Let me now ask you some questions about ",
+            "SecondaryAttribute": "Let me q18",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1252,19 +1117,19 @@
                 ],
                 "Choices": {
                     "1": {
-                        "Display": "You can perform all physical activities of daily living without assistance.  (Excellent capacity)"
+                        "Display": "You can 1 (Excellent capacity)"
                     },
                     "2": {
-                        "Display": "You can perform all physical activities without assistance but may need some help with the heavy work such as laundry and housekeeping.  (Good capacity)"
+                        "Display": "You can 2 (Good capacity)"
                     },
                     "3": {
-                        "Display": "You regularly require help with certain physical activities and/or heavy work but can get through any single day without help.  (Moderate capacity)"
+                        "Display": "You can 3 (Moderate capacity)"
                     },
                     "4": {
-                        "Display": "You need help each day but not necessarily throughout the day or night.  (Severely impaired capacity)"
+                        "Display": "You 4 (Severely impaired capacity)"
                     },
                     "5": {
-                        "Display": "You need help throughout the day and/or night to carry out the activities of daily living.  (Completely impaired capacity)"
+                        "Display": "You 5 (Completely impaired capacity)"
                     }
                 },
                 "Configuration": {
@@ -1273,10 +1138,10 @@
                 },
                 "DataExportTag": "Q6",
                 "Language": [],
-                "QuestionDescription": "Now, about your ability to perform everyday living activities. Which of the following best describes...",
+                "QuestionDescription": "Now, about q6",
                 "QuestionID": "QID17671698",
-                "QuestionText": " Now, about your ability to perform everyday living activities.  Which of the following best describes your everyday living capacities:",
-                "QuestionText_Unsafe": " Now, about your ability to perform everyday living activities.  Which of the following best describes your everyday living capacities:",
+                "QuestionText": " Now, about q6:",
+                "QuestionText_Unsafe": " Now, about q6:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1290,7 +1155,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671698",
-            "SecondaryAttribute": "Now, about your ability to perform everyday living activities. Which of the following best describes",
+            "SecondaryAttribute": "Now, about q6",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1309,19 +1174,19 @@
                 ],
                 "Choices": {
                     "1": {
-                        "Display": "In good physical health.  (No significant illnesses or disabilities.  Only routine medical care such as annual checkups required.)"
+                        "Display": "Good"
                     },
                     "2": {
-                        "Display": "Mildly physically impaired.  (You have only minor illnesses and/or disabilities which might benefit from medical treatment or corrective measures.)"
+                        "Display": "Mildly"
                     },
                     "3": {
-                        "Display": "Moderately physically impaired.  (You have one or more diseases or disabilities which are either painful or which require substantial medical treatment.)"
+                        "Display": "Moderately"
                     },
                     "4": {
-                        "Display": "Severely physically impaired.  (You have one or more illnesses or disabilities which are either severely painful or life threatening, or which require extensive medical treatment.)"
+                        "Display": "Severely"
                     },
                     "5": {
-                        "Display": "Totally physically impaired.  (Confined to bed and requiring full-time medical assistance or nursing care to maintain vital bodily functions.)"
+                        "Display": "Totally"
                     }
                 },
                 "Configuration": {
@@ -1330,10 +1195,10 @@
                 },
                 "DataExportTag": "Q3",
                 "Language": [],
-                "QuestionDescription": "Now, let's talk about your own personal health. First of all, how would you evaluate your overall he...",
+                "QuestionDescription": "Now, q3",
                 "QuestionID": "QID17671695",
-                "QuestionText": " Now, let's talk about your own personal health.  First of all, how would you evaluate your overall health.  Would you say you are:",
-                "QuestionText_Unsafe": " Now, let's talk about your own personal health.  First of all, how would you evaluate your overall health.  Would you say you are:",
+                "QuestionText": " Now, q3:",
+                "QuestionText_Unsafe": " Now, q3:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1347,7 +1212,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671695",
-            "SecondaryAttribute": "Now, let's talk about your own personal health. First of all, how would you evaluate your overall he",
+            "SecondaryAttribute": "Now, q3",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1358,10 +1223,10 @@
                     "Type": "TextEntry"
                 },
                 "DataExportTag": "Q24",
-                "QuestionDescription": "Number of members residing in your house",
+                "QuestionDescription": "Number of q24",
                 "QuestionID": "QID17671689",
-                "QuestionText": "<br>Number of members residing in your household:",
-                "QuestionText_Unsafe": "<br>Number of members residing in your household:",
+                "QuestionText": "<br>Number of q24:",
+                "QuestionText_Unsafe": "<br>Number of q24:",
                 "QuestionType": "TE",
                 "Randomization": {
                     "Type": "None"
@@ -1375,7 +1240,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671689",
-            "SecondaryAttribute": "Number of members residing in your house",
+            "SecondaryAttribute": "Number of q24",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1400,16 +1265,16 @@
             "Element": "SQ",
             "Payload": {
                 "DataExportTag": "Q1",
-                "QuestionDescription": "We are conducting a brief public opinion",
+                "QuestionDescription": "We are conducting a test",
                 "QuestionID": "QID17671673",
-                "QuestionText": " We are conducting a brief public opinion survey of persons 55 years of age and older regarding health care needs.  This survey is to be completed by someone who falls into that age category.",
-                "QuestionText_Unsafe": " We are conducting a brief public opinion survey of persons 55 years of age and older regarding health care needs.  This survey is to be completed by someone who falls into that age category.",
+                "QuestionText": " We are conducting a test.",
+                "QuestionText_Unsafe": " We are conducting a test.",
                 "QuestionType": "DB",
                 "Selector": "PTB",
                 "SubSelector": null
             },
             "PrimaryAttribute": "QID17671673",
-            "SecondaryAttribute": "We are conducting a brief public opinion",
+            "SecondaryAttribute": "We are conducting a test",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1428,19 +1293,19 @@
                 ],
                 "Choices": {
                     "1": {
-                        "Display": "High degree of social support. (Much support is either given or is available, if needed, from family and friends.)"
+                        "Display": "High"
                     },
                     "2": {
-                        "Display": "Above average degree of social support.  (Given or potentially available from family and friends.)"
+                        "Display": "Above average"
                     },
                     "3": {
-                        "Display": "Average degree of social support from family and friends is given or potentially available."
+                        "Display": "Average"
                     },
                     "4": {
-                        "Display": "Below average degree of social support.  (While some support is available from friends, there is no family member from whom help can be obtained.)"
+                        "Display": "Below average"
                     },
                     "5": {
-                        "Display": "No support or potential support is available from either family or friends."
+                        "Display": "None"
                     }
                 },
                 "Configuration": {
@@ -1449,10 +1314,10 @@
                 },
                 "DataExportTag": "Q4",
                 "Language": [],
-                "QuestionDescription": "What about the amount of social support you receive from your family, friends, and the like. When yo...",
+                "QuestionDescription": "What about q4",
                 "QuestionID": "QID17671696",
-                "QuestionText": " What about the amount of social support you receive from your family, friends, and the like.  When you have the need to talk to someone or go on outings with friends and/or relatives, do you feel there is someone who fulfills these needs?  Would you say you have a:",
-                "QuestionText_Unsafe": " What about the amount of social support you receive from your family, friends, and the like.  When you have the need to talk to someone or go on outings with friends and/or relatives, do you feel there is someone who fulfills these needs?  Would you say you have a:",
+                "QuestionText": " What about q4:",
+                "QuestionText_Unsafe": " What about q4:",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1466,7 +1331,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671696",
-            "SecondaryAttribute": "What about the amount of social support you receive from your family, friends, and the like. When yo",
+            "SecondaryAttribute": "What about q4",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         },
@@ -1478,10 +1343,10 @@
                 },
                 "Choices": [
                     {
-                        "Display": "Live with spouse only"
+                        "Display": "Live only"
                     },
                     {
-                        "Display": "Live with spouse and children"
+                        "Display": "Live"
                     },
                     {
                         "Display": "Live alone"
@@ -1494,10 +1359,10 @@
                     "VariableCount": 4
                 },
                 "DataExportTag": "Q25",
-                "QuestionDescription": "What are your current living arrangement",
+                "QuestionDescription": "What are your q25",
                 "QuestionID": "QID17671690",
-                "QuestionText": " What are your current living arrangements, in terms of who you are living with or who is living with you?",
-                "QuestionText_Unsafe": " What are your current living arrangements, in terms of who you are living with or who is living with you?",
+                "QuestionText": " What are your q25?",
+                "QuestionText_Unsafe": " What are your q25?",
                 "QuestionType": "MC",
                 "Randomization": {
                     "Type": "None"
@@ -1511,7 +1376,7 @@
                 }
             },
             "PrimaryAttribute": "QID17671690",
-            "SecondaryAttribute": "What are your current living arrangement",
+            "SecondaryAttribute": "What are your q25",
             "SurveyID": "SV_1MMcjvoGWqh8uUZ",
             "TertiaryAttribute": null
         }

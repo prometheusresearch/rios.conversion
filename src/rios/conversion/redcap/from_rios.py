@@ -134,6 +134,8 @@ class RedcapFromRios(FromRios):
             return enums.get(widget_type, 'dropdown'), ''
         elif base == 'enumerationSet':
             return 'checkbox', ''
+        elif base == 'matrix':
+            return 'radio', ''
         else:
             return 'text', ''
 

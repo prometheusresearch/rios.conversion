@@ -1,7 +1,7 @@
-id: urn:redcap_matrix_1
+id: urn:matrix_1
 record:
 - description: Matrix Header
-  id: matrixranking
+  id: matrixgroupname
   identifiable: false
   required: false
   type:
@@ -14,7 +14,9 @@ record:
       type:
         base: enumeration
         enumerations:
-          name: null
+          id_1: null
+          id_2: null
+          id_3: null
     rows:
     - description: MatrixRow1
       id: matrixrow1
@@ -25,5 +27,5 @@ record:
     - description: MatrixRow3
       id: matrixrow3
       required: false
-title: redcap_matrix_1
+title: matrix_1
 version: '1.0'

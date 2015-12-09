@@ -1,6 +1,6 @@
 defaultLocalization: en
 instrument:
-  id: urn:redcap_matrix_1
+  id: urn:matrix_1
   version: '1.0'
 pages:
 - elements:
@@ -9,7 +9,7 @@ pages:
         en: Matrix Header
     type: header
   - options:
-      fieldId: matrixranking
+      fieldId: matrixgroupname
       questions:
       - enumerations:
         - id: id_1
@@ -39,4 +39,4 @@ pages:
     type: question
   id: matrixranking
 title:
-  en: redcap_matrix_1
+  en: matrix_1

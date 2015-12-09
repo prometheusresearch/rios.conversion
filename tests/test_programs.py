@@ -82,6 +82,7 @@ qsf_names = [
         for name in glob.glob('./tests/qualtrics/*.qsf') ]
 
 boilerplate_tests = [
+        [],
         ['--help', ],
         ['-h', ],
         ['--version', ],
@@ -91,15 +92,15 @@ print('%s: testing ...' % __file__)
 
 rios_redcap_mismatch_tests = [
         [
-        '-c', './tests/redcap/redcap_1_c.yaml',
-        '-i', './tests/redcap/redcap_matrix_1_i.yaml',
-        '-f', './tests/redcap/redcap_matrix_1_f.yaml',
+        '-c', './tests/redcap/format_1_c.yaml',
+        '-i', './tests/redcap/matrix_1_i.yaml',
+        '-f', './tests/redcap/matrix_1_f.yaml',
         '-o', './tests/sandbox/redcap/mismatch_tests.csv',
         ],
         [
-        '-c', './tests/redcap/redcap_1_c.yaml',
-        '-i', './tests/redcap/redcap_matrix_1_i.yaml',
-        '-f', './tests/redcap/redcap_1_f.yaml',
+        '-c', './tests/redcap/format_1_c.yaml',
+        '-i', './tests/redcap/matrix_1_i.yaml',
+        '-f', './tests/redcap/format_1_f.yaml',
         '-o', './tests/sandbox/redcap/mismatch_tests.csv',
         ], ]
 redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
