@@ -68,7 +68,7 @@ class QualtricsToRios(ToRios):
         self.instrument_version = args.instrument_version
         self.format = args.format
 
-        self.qualtrics = self.get_qualtrics(json.load(args.infile))
+        self.qualtrics = self.get_qualtrics(self.load_infile(args.infile))
         self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
                 id='urn:' + self.qualtrics['id'],
@@ -166,6 +166,12 @@ class QualtricsToRios(ToRios):
         else:
             return 'text'
 
+    def load_infile(self, infile):
+        try:
+            return json.load(infile)
+        except Exception, e:
+            raise ValueError('Unable to load input file as JSON', e)
+        
     def make_element(self, question):
         element = Rios.ElementObject()
         question_type = question['QuestionType']

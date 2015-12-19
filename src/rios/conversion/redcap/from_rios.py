@@ -203,9 +203,9 @@ class RedcapFromRios(FromRios):
                     valid_type,
                     '',
                     '',
-                    'y' if field['identifiable'] else '',
+                    'y' if field.get('identifiable', False) else '',
                     '',
-                    'y' if field['required'] else ''
+                    'y' if field.get('required', False) else '',
                     '',
                     '',
                     matrix_group_name,
@@ -255,9 +255,9 @@ class RedcapFromRios(FromRios):
                     valid_type,
                     min_value,
                     max_value,
-                    'y' if field['identifiable'] else '',
+                    'y' if field.get('identifiable', False) else '',
                     branching,
-                    'y' if field['required'] else ''
+                    'y' if field.get('required', False) else '',
                     '',
                     '',
                     '',
