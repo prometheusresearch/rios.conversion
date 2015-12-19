@@ -40,7 +40,10 @@ def qualtrics_rios_tst(name):
             '--infile', './tests/qualtrics/%s.qsf' % name,
             '--outfile-prefix', './tests/sandbox/qualtrics/%s' % name,
             ]
-    return [test + ['--format', 'json'], test + ['--format', 'yaml']]
+    if name.startswith('bad_'):
+        return [test]
+    else:
+        return [test + ['--format', 'json'], test + ['--format', 'yaml']]
 
 def rios_qualtrics_tst(name):
     calc_filename = './tests/qualtrics/%s_c.yaml' % name

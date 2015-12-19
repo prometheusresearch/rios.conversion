@@ -3,6 +3,14 @@ Change History
 **************
 
 
+0.2.1 (2015-12-19)
+==================
+
+* rios-redcap: fix bug - "identifiable" and "required"
+  are optional attributes.
+* rios-qualtrics: catch json.load and other input errors
+  for better error messages.
+
 0.2.0 (2015-09-28)
 ==================
 

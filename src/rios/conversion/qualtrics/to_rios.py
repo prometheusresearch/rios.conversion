@@ -87,12 +87,21 @@ class QualtricsToRios(ToRios):
         self.start_page()
         questions = self.qualtrics['questions']
         for element in self.qualtrics['block_elements']:
-            if element['Type'] == 'Page Break':
+            element_type = element.get('Type', False)
+            if element_type is False:
+                raise ValueError(
+                        "Block element has no Type: %s" % element)
+            if element_type == 'Page Break':
                 self.start_page()
-            elif element['Type'] == 'Question':
-                self.process_question(questions[element['QuestionID']])
+            elif element_type == 'Question':
+                question = questions.get(element['QuestionID'], False)
+                if question is False:
+                    raise ValueError(
+                            "Block element QuestionID not found: %s" % element)
+                self.process_question(question)
             else:
-                raise ValueError("Unknown element Type: %s" % element['Type'])
+                raise ValueError(
+                        "Block element has unknown Type: %s" % element)
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
@@ -127,35 +136,38 @@ class QualtricsToRios(ToRios):
 
     def get_qualtrics(self, raw):
         """ Extract info from the raw qualtrics object and return a dict. """
-        survey_entry = raw['SurveyEntry']
-        qualtrics = {
-                'description':    survey_entry['SurveyDescription'],
-                'id':             survey_entry['SurveyID'],
-                'localization':   survey_entry['SurveyLanguage'].lower(),
-                'title':          survey_entry['SurveyName'],
-                'block_elements': [],
-                'questions':      {},   # QuestionID: payload (dict)
-                }
-        questions = qualtrics['questions']
-        block_elements = qualtrics['block_elements']
-        for survey_element in raw['SurveyElements']:
-            element = survey_element['Element']
-            if element == 'BL':
-                """ Element: BL
-                Payload is either a list of Block or a dict of Block.
-                Sets ``block_elements`` to the first non-empty BlockElements.
-                """
-                payload = survey_element['Payload']
-                if isinstance(payload, dict):
-                    payload = payload.values()
-                for block in payload:
-                    if block['BlockElements']:
-                        block_elements.extend(block['BlockElements'])
-                        break
-            elif element == 'SQ':
-                payload = survey_element['Payload']
-                questions[payload['QuestionID']] = payload
-        return qualtrics
+        try:
+            survey_entry = raw['SurveyEntry']
+            qualtrics = {
+                    'description':    survey_entry['SurveyDescription'],
+                    'id':             survey_entry['SurveyID'],
+                    'localization':   survey_entry['SurveyLanguage'].lower(),
+                    'title':          survey_entry['SurveyName'],
+                    'block_elements': [],
+                    'questions':      {},   # QuestionID: payload (dict)
+                    }
+            questions = qualtrics['questions']
+            block_elements = qualtrics['block_elements']
+            for survey_element in raw['SurveyElements']:
+                element = survey_element['Element']
+                if element == 'BL':
+                    """ Element: BL
+                    Payload is either a list of Block or a dict of Block.
+                    Sets block_elements to the first non-empty BlockElements.
+                    """
+                    payload = survey_element['Payload']
+                    if isinstance(payload, dict):
+                        payload = payload.values()
+                    for block in payload:
+                        if block['BlockElements']:
+                            block_elements.extend(block['BlockElements'])
+                            break
+                elif element == 'SQ':
+                    payload = survey_element['Payload']
+                    questions[payload['QuestionID']] = payload
+            return qualtrics
+        except Exception, e:
+            raise ValueError('Unable to parse raw qualtrics object', e)
 
     def get_type(self, question):
         if self.choices:
@@ -171,7 +183,7 @@ class QualtricsToRios(ToRios):
             return json.load(infile)
         except Exception, e:
             raise ValueError('Unable to load input file as JSON', e)
-        
+
     def make_element(self, question):
         element = Rios.ElementObject()
         question_type = question['QuestionType']
@@ -206,14 +218,20 @@ class QualtricsToRios(ToRios):
         return field
 
     def process_question(self, question):
-        self.choices = self.get_choices(question)
-        # add to form
-        element = self.make_element(question)
-        self.page.add_element(element)
-        if element['type'] == 'question':
-            # add to instrument
-            field = self.make_field(question)
-            self.instrument.add_field(field)
+        try:
+            self.choices = self.get_choices(question)
+            # add to form
+            element = self.make_element(question)
+            self.page.add_element(element)
+            if element['type'] == 'question':
+                # add to instrument
+                field = self.make_field(question)
+                self.instrument.add_field(field)
+        except Exception, e:
+            raise ValueError(
+                    "Unable to process question",
+                    question,
+                    e)
 
     def start_page(self):
         self.page = Rios.PageObject(id=self.page_name.next())
