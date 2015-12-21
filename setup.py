@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='rios.conversion',
-    version='0.3.0',
+    version='0.3.1',
     description='Module for converting Instruments to and from RIOS',
     long_description=open('README.rst', 'r').read(),
     keywords='rios instrument assessment conversion',
@@ -15,7 +15,7 @@ setup(
     license='Apache Software License 2.0',
     classifiers=[
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU Affero General Public License v3',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.2',
