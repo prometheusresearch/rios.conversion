@@ -6,13 +6,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='rios.conversion',
-    version='0.2.1',
+    version='0.3.0',
     description='Module for converting Instruments to and from RIOS',
     long_description=open('README.rst', 'r').read(),
     keywords='rios instrument assessment conversion',
     author='Prometheus Research, LLC',
     author_email='contact@prometheusresearch.com',
-    license='AGPLv3',
+    license='Apache Software License 2.0',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Affero General Public License v3',

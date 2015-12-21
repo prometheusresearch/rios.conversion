@@ -3,6 +3,12 @@ Change History
 **************
 
 
+0.3.0 (2015-12-21)
+==================
+
+* Switch to Apache Software License 2.0
+  for compatibility with the Open Science Framework.
+
 0.2.1 (2015-12-19)
 ==================
 

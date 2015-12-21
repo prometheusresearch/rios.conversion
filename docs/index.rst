@@ -102,8 +102,8 @@ by doing the following::
 License/Copyright
 =================
 
-This project is licensed under the GNU Affero General Public License, 
-version 3. 
+This project is licensed under the Apache Software License, 
+Version 2.0. 
 
 .. toctree::
    :maxdepth: 1
