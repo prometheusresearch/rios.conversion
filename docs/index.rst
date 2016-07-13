@@ -20,7 +20,7 @@ Supported formats:
 
 .. _`Python`: https://www.python.org
 .. _`Qualtrics`: http://www.qualtrics.com
-.. _`RexDB-based Applications`: https://www.rexdb.org
+.. _`RexDB-based Applications`: http://www.prometheusresearch.com
 .. _`REDCap`: http://project-redcap.org
 .. _`RIOS`: https://rios.readthedocs.org
 .. _`RIOS.CONVERSION`: https://bitbucket.org/prometheus/rios.conversion
