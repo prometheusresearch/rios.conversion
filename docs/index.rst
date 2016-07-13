@@ -16,10 +16,12 @@ Supported formats:
 
 - REDCap_ 
 - Qualtrics_
+- `RexDB-based Applications`_ (already in RIOS format)
 
 .. _`Python`: https://www.python.org
-.. _`Qualtrics`: http://www.qualtrics.com/
-.. _`REDCap`: http://project-redcap.org/
+.. _`Qualtrics`: http://www.qualtrics.com
+.. _`RexDB-based Applications`: https://www.rexdb.org
+.. _`REDCap`: http://project-redcap.org
 .. _`RIOS`: https://rios.readthedocs.org
 .. _`RIOS.CONVERSION`: https://bitbucket.org/prometheus/rios.conversion
 
