@@ -3,6 +3,11 @@ Change History
 **************
 
 
+0.3.2 (2016-xx-xx)
+==================
+
+* Fixes to address some variances in REDCap column names.
+
 0.3.1 (2015-12-21)
 ==================
 
@@ -25,5 +30,5 @@ Change History
 0.2.0 (2015-09-28)
 ==================
 
-* Started from prismh.conversion. 
+* Started from prismh.conversion.
 

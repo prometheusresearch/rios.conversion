@@ -90,6 +90,10 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
                 RE_non_alphanumeric.sub('_', name.strip().lower()))
         if x.startswith('choices') and 'calc' in x:
             x = 'choices_or_calculations'
+        if x.startswith('branching_logic'):
+            x = 'branching_logic'
+        if x not in ('text_validation_min', 'text_validation_max') and x.startswith('text_validation'):
+            x = 'text_validation'
         if x and x[0].isdigit():
             x = 'id_' + x
         return x
@@ -364,7 +368,7 @@ class RedcapToRios(ToRios):
             val_min = od['text_validation_min']
             val_max = od['text_validation_max']
             text_type = self.convert_text_type(
-                    od['text_validation_type_or_show_slider_number'])
+                    od['text_validation'])
             if side_effects:
                 self.question.set_widget(get_widget(
                         type=get_widget_type(text_type)))
@@ -538,10 +542,10 @@ class RedcapToRios(ToRios):
         if elements and elements[-1]['type'] == 'question':
             self.question = elements[-1]['options']
 
-        if od['branching_logic_show_field_only_if']:
+        if od['branching_logic']:
             self.question.add_event(Rios.EventObject(
                     trigger=self.convert_trigger(
-                            od['branching_logic_show_field_only_if']),
+                            od['branching_logic']),
                     action='disable', ))
 
         """ assessment[m][r][c]
