@@ -102,6 +102,7 @@ class QualtricsToRios(ToRios):
             else:
                 raise ValueError(
                         "Block element has unknown Type: %s" % element)
+        self.validate_results()
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()

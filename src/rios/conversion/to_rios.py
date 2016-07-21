@@ -17,6 +17,8 @@ import os
 import rios.conversion.classes as Rios
 import yaml
 
+from rios.core import validation
+
 
 class ToRios(object):
     def create__file(self, kind, obj):
@@ -44,6 +46,23 @@ class ToRios(object):
 
     def create_form_file(self):
         self.create__file('f', self.form)
+
+    def validate_results(self):
+        self.instrument.clean()
+        validation.validate_instrument(self.instrument.as_dict())
+
+        self.form.clean()
+        validation.validate_form(
+            self.form.as_dict(),
+            instrument=self.instrument.as_dict(),
+        )
+
+        if self.calculations.get('calculations', False):
+            self.calculations.clean()
+            validation.validate_calculationset(
+                self.calculations.as_dict(),
+                instrument=self.instrument.as_dict(),
+            )
 
     def filename(self, kind):
         return '%(outfile_prefix)s_%(kind)s.%(extension)s' % {

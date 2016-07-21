@@ -92,7 +92,8 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
             x = 'choices_or_calculations'
         if x.startswith('branching_logic'):
             x = 'branching_logic'
-        if x not in ('text_validation_min', 'text_validation_max') and x.startswith('text_validation'):
+        if x not in ('text_validation_min', 'text_validation_max') \
+                and x.startswith('text_validation'):
             x = 'text_validation'
         if x and x[0].isdigit():
             x = 'id_' + x
@@ -194,6 +195,7 @@ class RedcapToRios(ToRios):
                     self.reader.attributes)
         for od in self.reader:
             process(od)
+        self.validate_results()
         self.create_instrument_file()
         self.create_calculation_file()
         self.create_form_file()
@@ -245,7 +247,7 @@ class RedcapToRios(ToRios):
             return 'dateTime'
         elif text_type == 'integer':
             return 'integer'
-        elif text_type == 'number':
+        elif text_type in ('number', 'numeric'):
             return 'float'
         else:
             return 'text'
@@ -469,8 +471,14 @@ class RedcapToRios(ToRios):
             del elements[-1]    # not a form field.
         else:
             element['type'] = 'question'
+            field_name = self.reader.get_name(od['variable_field_name'])
+            if section_header:
+                field_name = '%s_%s' % (
+                    field_name,
+                    self.reader.get_name(section_header),
+                )
             element['options'] = Rios.QuestionObject(
-                    fieldId=self.reader.get_name(od['variable_field_name']),
+                    fieldId=field_name,
                     text=self.localized_string_object(od['field_label']),
                     help=self.localized_string_object(od['field_note']), )
         return elements
@@ -513,7 +521,13 @@ class RedcapToRios(ToRios):
         field = Rios.FieldObject()
         field_type = self.get_type(od)
         if field_type:
-            field['id'] = self.reader.get_name(od['variable_field_name'])
+            field_name = self.reader.get_name(od['variable_field_name'])
+            if od['section_header']:
+                field_name = '%s_%s' % (
+                    field_name,
+                    self.reader.get_name(od['section_header']),
+                )
+            field['id'] = field_name
             field['description'] = od['field_label']
             field['type'] = field_type
             field['required'] = bool(od['required_field'])

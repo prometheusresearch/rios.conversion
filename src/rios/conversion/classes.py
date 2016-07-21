@@ -86,6 +86,24 @@ class DefinitionSpecification(collections.OrderedDict):
                     del self[k]
         return self
 
+    def as_dict(self):
+        out = dict()
+
+        for key, value in self.items():
+            if isinstance(value, DefinitionSpecification):
+                out[key] = value.as_dict()
+            elif isinstance(value, (list, tuple)):
+                out[key] = []
+                for v in value:
+                    if isinstance(v, DefinitionSpecification):
+                        out[key].append(v.as_dict())
+                    else:
+                        out[key] = v
+            else:
+                out[key] = value
+
+        return out
+
 
 class AudioSourceObject(DefinitionSpecification):
     pass

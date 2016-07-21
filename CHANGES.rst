@@ -3,10 +3,14 @@ Change History
 **************
 
 
-0.3.2 (2016-xx-xx)
+0.4.0 (2016-xx-xx)
 ==================
 
+* Generated RIOS configurations are now validated before writing the files.
 * Fixes to address some variances in REDCap column names.
+* Fixed an issue with field name uniqueness in REDCap->RIOS conversions.
+* Fixed an issue with identifying some numeric types in REDCap->RIOS
+  conversions.
 
 0.3.1 (2015-12-21)
 ==================
