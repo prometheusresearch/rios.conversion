@@ -19,56 +19,20 @@ import sys
 
 class QualtricsToRios(ToRios):
 
-    def __init__(self):
+    def __init__(self, outfile_prefix, instrument_version, format, infile, **kwargs):
         self.page_name = PageName()
-        self.parser = argparse.ArgumentParser(
-                formatter_class=argparse.RawTextHelpFormatter,
-                description=__doc__)
-        try:
-            self_version = \
-                pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:    # pragma: no cover
-            self_version = 'UNKNOWN'                  # pragma: no cover
-        self.parser.add_argument(
-                '-v',
-                '--version',
-                action='version',
-                version='%(prog)s ' + self_version, )
-        self.parser.add_argument(
-                '--format',
-                default='yaml',
-                choices=['yaml', 'json'],
-                help='The format and extension for the output files.  '
-                        'The default is "yaml".')
-        self.parser.add_argument(
-                '--infile',
-                required=True,
-                type=argparse.FileType('r'),
-                help="The qsf input file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '--instrument-version',
-                required=True,
-                help='The instrument version to output.')
-        self.parser.add_argument(
-                '--outfile-prefix',
-                required=True,
-                help='The prefix for the output files')
+
+        self.outfile_prefix = outfile_prefix
+        self.instrument_version = instrument_version
+        self.format = format
+        self.infile = infile
 
     def __call__(self, argv=None, stdout=None, stderr=None):
         """process the qsf input, and create output files. """
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
-        try:
-            args = self.parser.parse_args(argv)
-        except SystemExit as exc:
-            return exc
-
-        self.outfile_prefix = args.outfile_prefix
-        self.instrument_version = args.instrument_version
-        self.format = args.format
-
-        self.qualtrics = self.get_qualtrics(self.load_infile(args.infile))
+        self.qualtrics = self.get_qualtrics(self.load_infile(self.infile))
         self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
                 id='urn:' + self.qualtrics['id'],

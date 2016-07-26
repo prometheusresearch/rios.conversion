@@ -121,17 +121,20 @@ class ConversionScript(object):
             return exc
 
         print type(args)
+        print dir(args)
+        print args.__dict__
         print args
 
         try:
             CONVERTERS[args.spectype](
                 # TODO: alter to contain new arguments (e.g., args.filename)
-                args.outfile_prefix,
-                args.id,
-                args.instrument_version,
-                args.title,
-                args.localization,
-                args.format,
+                #args.outfile_prefix,
+                #args.id,
+                #args.instrument_version,
+                #args.title,
+                #args.localization,
+                #args.format,
+                **args.__dict__
             )
         # TODO: Implement ConversionError
         #except ConversionError as exc:

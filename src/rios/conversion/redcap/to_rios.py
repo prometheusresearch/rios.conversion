@@ -102,7 +102,7 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
 
 class RedcapToRios(ToRios):
 
-    def __init__(self, outfile_prefix, id, instrument_version, title, localization, format):
+    def __init__(self, outfile_prefix, id, instrument_version, title, localization, format, **kwargs):
 
         self.outfile_prefix = outfile_prefix
         self.id = id
