@@ -8,6 +8,10 @@ import pkg_resources
 import sys
 
 
+from .redcap import RedcapToRios, RedcapFromRios 
+from .qualtrics import QualtricsToRios, QualtricsFromRios
+
+
 __all__ = (
     'ConversionScript',
     'convert'
