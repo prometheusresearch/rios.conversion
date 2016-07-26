@@ -21,8 +21,10 @@ __all__ = (
 
 # TODO: Add FromRios conversions
 CONVERTERS = {
-    'redcap': RedcapToRios,
-    'qualtrics': QualtricsToRios
+    'redcap-to-rios': RedcapToRios,
+    'qualtrics-to-rios': QualtricsToRios,
+    'rios-to-redcap': None,
+    'rios-to-qualtrics': None,
 }
 
 
@@ -48,12 +50,12 @@ class ConversionScript(object):
         )
 
         self.parser.add_argument(
-            '-s',
-            '--spectype',
+            '-c',
+            '--convert-type',
             required=True,
             choices=[
-                'redcap',
-                'qualtrics',
+                'redcap-to-rios',
+                'qualtrics-to-rios',
             ],
             help='The type of instrument specification to convert.',
         )
@@ -120,13 +122,8 @@ class ConversionScript(object):
         except SystemExit as exc:
             return exc
 
-        print type(args)
-        print dir(args)
-        print args.__dict__
-        print args
-
         try:
-            CONVERTERS[args.spectype](
+            CONVERTERS[args.convert_type](
                 # TODO: alter to contain new arguments (e.g., args.filename)
                 #args.outfile_prefix,
                 #args.id,
