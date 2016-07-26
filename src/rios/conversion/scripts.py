@@ -23,8 +23,8 @@ __all__ = (
 CONVERTERS = {
     'redcap-to-rios': RedcapToRios,
     'qualtrics-to-rios': QualtricsToRios,
-    'rios-to-redcap': None,
-    'rios-to-qualtrics': None,
+    'rios-to-redcap': RedcapFromRios,
+    'rios-to-qualtrics': QualtricsFromRios,
 }
 
 
@@ -56,6 +56,8 @@ class ConversionScript(object):
             choices=[
                 'redcap-to-rios',
                 'qualtrics-to-rios',
+                'rios-to-redcap',
+                'rios-to-qualtrics',
             ],
             help='The type of instrument specification to convert.',
         )
@@ -113,6 +115,32 @@ class ConversionScript(object):
             required=True,
             help='The instrument title to output.',
         )
+
+        ### TODO: Remove as well? From class 'from_rios'
+        self.parser.add_argument(
+                '--verbose',
+                action='store_true',
+                help='Display warning messages.')
+        self.parser.add_argument(
+                '--calculationset',
+                type=argparse.FileType('r'),
+                help="The calculationset file to process.  Use '-' for stdin.")
+        self.parser.add_argument(
+                '-i',
+                '--instrument',
+                required=True,
+                type=argparse.FileType('r'),
+                help="The instrument file to process.  Use '-' for stdin.")
+        self.parser.add_argument(
+                '--form',
+                required=True,
+                type=argparse.FileType('r'),
+                help="The form file to process.  Use '-' for stdin.")
+        self.parser.add_argument(
+                '--outfile',
+                required=True,
+                type=argparse.FileType('w'),
+                help="The name of the output file.  Use '-' for stdout.")
 
     def __call__(self, argv=None, stdout=sys.stdout):
         self._stdout = stdout
