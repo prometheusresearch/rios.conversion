@@ -101,11 +101,11 @@ class ConversionScript(object):
             ' The default is "en"',
         )
         # TODO: Outfile prefix should be variation of title input
-        #self.parser.add_argument(
-        #    '--outfile-prefix',
-        #    required=True,
-        #    help='The prefix for the output files.',
-        #)
+        self.parser.add_argument(
+            '--outfile-prefix',
+            required=True,
+            help='The prefix for the output files.',
+        )
         self.parser.add_argument(
             '--title',
             required=True,
@@ -113,22 +113,36 @@ class ConversionScript(object):
         )
 
     def __call__(self, argv=None, stdout=sys.stdout):
-        args = self.parser.parse_args(argv)
         self._stdout = stdout
 
         try:
+            args = self.parser.parse_args(argv)
+        except SystemExit as exc:
+            return exc
+
+        print type(args)
+        print args
+
+        try:
             CONVERTERS[args.spectype](
-                args.filename,
-                instrument=args.instrument,
+                # TODO: alter to contain new arguments (e.g., args.filename)
+                args.outfile_prefix,
+                args.id,
+                args.instrument_version,
+                args.title,
+                args.localization,
+                args.format,
             )
+        # TODO: Implement ConversionError
         #except ConversionError as exc:
         except Exception as exc:
             self.out('FAILED conversion.')
-            for source, message in iteritems(exc.asdict()):
-                self.out('%s: %s' % (
-                    source,
-                    message,
-                ))
+            #for source, message in iteritems(exc.asdict()):
+            #    self.out('%s: %s' % (
+            #        source,
+            #        message,
+            #    ))
+            self.out(str(exc))
             return 1
         else:
             self.out('Successful conversion.')

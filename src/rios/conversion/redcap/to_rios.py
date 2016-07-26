@@ -102,70 +102,19 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
 
 class RedcapToRios(ToRios):
 
-    def __init__(self):
-        self.parser = argparse.ArgumentParser(
-                formatter_class=argparse.RawTextHelpFormatter,
-                description=__doc__)
-        try:
-            self_version = \
-                pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:    # pragma: no cover
-            self_version = 'UNKNOWN'                  # pragma: no cover
-        self.parser.add_argument(
-                '-v',
-                '--version',
-                action='version',
-                version='%(prog)s ' + self_version, )
-        self.parser.add_argument(
-                '--format',
-                default='yaml',
-                choices=['yaml', 'json'],
-                help='The format and extension for the output files.  '
-                        'The default is "yaml".')
-        self.parser.add_argument(
-                '--id',
-                required=True,
-                help='The instrument id to output.')
-        self.parser.add_argument(
-                '--infile',
-                required=True,
-                type=argparse.FileType('r'),
-                help="The csv input file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '--instrument-version',
-                required=True,
-                help='The instrument version to output.')
-        self.parser.add_argument(
-                '--localization',
-                default='en',
-                metavar='',
-                help='The default localization for the web form.  '
-                        'The default is "en"')
-        self.parser.add_argument(
-                '--outfile-prefix',
-                required=True,
-                help='The prefix for the output files')
-        self.parser.add_argument(
-                '--title',
-                required=True,
-                help='The instrument title to output.')
+    def __init__(self, outfile_prefix, id, instrument_version, title, localization, format):
+
+        self.outfile_prefix = outfile_prefix
+        self.id = id
+        self.instrument_version = instrument_version
+        self.title = title
+        self.localization = localization
+        self.format = format
 
     def __call__(self, argv=None, stdout=None, stderr=None):
         """process the csv input, and create output files. """
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
-
-        try:
-            args = self.parser.parse_args(argv)
-        except SystemExit as exc:
-            return exc
-
-        self.outfile_prefix = args.outfile_prefix
-        self.id = args.id
-        self.instrument_version = args.instrument_version
-        self.title = args.title
-        self.localization = args.localization
-        self.format = args.format
 
         self.instrument = Rios.Instrument(
                 id=self.id,
