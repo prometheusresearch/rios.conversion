@@ -7,11 +7,6 @@ import argparse
 import pkg_resources
 import sys
 
-from six import iteritems
-
-from .redcap import RedcapToRios, RedcapFromRios 
-from .qualtrics import QualtricsToRios, QualtricsFromRios
-
 
 __all__ = (
     'ConversionScript',
@@ -19,7 +14,6 @@ __all__ = (
 )
 
 
-# TODO: Add FromRios conversions
 CONVERTERS = {
     'redcap-to-rios': RedcapToRios,
     'qualtrics-to-rios': QualtricsToRios,
