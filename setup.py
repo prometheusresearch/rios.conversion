@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='rios.conversion',
-    version='0.4.0',
+    version='0.5.0',
     description='Module for converting Instruments to and from RIOS',
     long_description=open('README.rst', 'r').read(),
     keywords='rios instrument assessment conversion',
