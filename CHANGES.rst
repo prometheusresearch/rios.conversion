@@ -3,7 +3,12 @@ Change History
 **************
 
 
-0.4.0 (2016-xx-xx)
+0.5.0 (2016-xx-xx)
+==================
+
+* Fixed mishandling of REDCap CSVs with unexpected newline characters.
+
+0.4.0 (2016-07-21)
 ==================
 
 * Generated RIOS configurations are now validated before writing the files.
