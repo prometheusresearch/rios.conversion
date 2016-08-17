@@ -30,10 +30,7 @@ setup(
     namespace_packages=['rios'],
     entry_points={
         'console_scripts': [
-            'redcap-rios = rios.conversion.redcap.to_rios:main',
-            'rios-redcap = rios.conversion.redcap.from_rios:main',
-            'qualtrics-rios = rios.conversion.qualtrics.to_rios:main',
-            'rios-qualtrics = rios.conversion.qualtrics.from_rios:main',
+            'rios-convert = rios.conversion.scripts:convert',
         ]
     },
     install_requires=[

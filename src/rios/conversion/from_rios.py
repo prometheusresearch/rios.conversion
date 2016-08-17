@@ -13,75 +13,23 @@ import rios.conversion.classes as Rios
 class FromRios(object):
     description = __doc__
 
-    def __init__(self):
-        self.parser = argparse.ArgumentParser(
-                formatter_class=argparse.RawTextHelpFormatter,
-                description=self.description)
-        try:
-            self_version = \
-                pkg_resources.get_distribution('rios.conversion').version
-        except pkg_resources.DistributionNotFound:    # pragma: no cover
-            self_version = 'UNKNOWN'                  # pragma: no cover
-        self.parser.add_argument(
-                '-v',
-                '--version',
-                action='version',
-                version='%(prog)s ' + self_version, )
-        self.parser.add_argument(
-                '--verbose',
-                action='store_true',
-                help='Display warning messages.')
-        self.parser.add_argument(
-                '--format',
-                default='yaml',
-                choices=['yaml', 'json'],
-                help='The format for the input files.  '
-                        'The default is "yaml".')
-        self.parser.add_argument(
-                '--localization',
-                default='en',
-                metavar='',
-                help='The language to extract from the RIOS form.  '
-                        'The default is "en"')
-        self.parser.add_argument(
-                '-c',
-                '--calculationset',
-                type=argparse.FileType('r'),
-                help="The calculationset file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '-i',
-                '--instrument',
-                required=True,
-                type=argparse.FileType('r'),
-                help="The instrument file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '-f',
-                '--form',
-                required=True,
-                type=argparse.FileType('r'),
-                help="The form file to process.  Use '-' for stdin.")
-        self.parser.add_argument(
-                '-o',
-                '--outfile',
-                required=True,
-                type=argparse.FileType('w'),
-                help="The name of the output file.  Use '-' for stdout.")
+    def __init__(self, outfile, localization, format, verbose, form, instrument, calculationset, **kwargs):
+
+        self.outfile = outfile
+        self.localization = localization
+        self.format = format
+        self.verbose = verbose
+        self.form = form
+        self._instrument = instrument #TODO: There should be a self.instrument defined somewhere, not sure where, and don't want to name-conflict here, so added the preceding _
+        self.calculationset = calculationset
+
 
     def __call__(self, argv=None, stdout=None, stderr=None):
         """process the csv input, and create output files. """
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
-        try:
-            args = self.parser.parse_args(argv)
-        except SystemExit as exc:
-            return exc
-
-        self.outfile = args.outfile
-        self.localization = args.localization
-        self.format = args.format
-        self.verbose = args.verbose
-        self.load_input_files(args.form, args.instrument, args.calculationset)
+        self.load_input_files(self.form, self._instrument, self.calculationset)
         self.types = self.instrument.get('types', {})
 
         instrument = Rios.InstrumentReferenceObject(self.instrument)
