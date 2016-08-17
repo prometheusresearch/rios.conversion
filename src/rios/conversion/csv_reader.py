@@ -1,5 +1,6 @@
 import collections
 import csv
+import re
 
 __all__ = (
     "CsvReader",
@@ -44,8 +45,9 @@ class CsvReader(object):
 
     @staticmethod
     def get_reader(fname):
-        fi = open(fname, 'r') if isinstance(fname, str) else fname
-        return csv.reader(fi)
+        fi = open(fname, 'rU') if isinstance(fname, str) else fname
+        filtered = (re.sub(r'(\r\n)|(\r)', r'', line) for line in fi)
+        return csv.reader(filtered)
 
     def get_row(self, row):
         return collections.OrderedDict(zip(
