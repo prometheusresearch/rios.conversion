@@ -3,10 +3,10 @@ Change History
 **************
 
 
-0.5.0 (2016-xx-xx)
+0.5.0 (2016-08-17)
 ==================
 
-* Fixed mishandling of REDCap CSVs with unexpected newline characters.
+* Fixed handling of REDCap CSVs with unexpected newline characters.
 
 0.4.0 (2016-07-21)
 ==================
