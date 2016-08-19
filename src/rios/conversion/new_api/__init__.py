@@ -3,7 +3,7 @@
 #
 
 
-from rios.conversion.redcap import RedcapToRios, RedcapFromRios 
+from rios.conversion.redcap import RedcapToRios, RedcapFromRios
 from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
 
 
@@ -32,6 +32,7 @@ def redcap_to_rios(instrument, **kwargs):
     converter.convert()
     return converter.export()
 
+
 def qualtrics_to_rios(instrument, **kwargs):
     """
     Converts a Qualtrics configuration into a RIOS configuration.
@@ -48,6 +49,7 @@ def qualtrics_to_rios(instrument, **kwargs):
     converter = QualtricsToRios(instrument, **kwargs)
     converter.convert()
     return converter.export()
+
 
 def rios_to_redcap(instrument, form, calculationset, **kwargs):
     """
@@ -70,6 +72,7 @@ def rios_to_redcap(instrument, form, calculationset, **kwargs):
     converter.convert()
     return converter.export()
 
+
 def rios_to_qualtrics(instrument, form, calculationset, **kwargs):
     """
     Converts a RIOS configuration into a Qualtrics configuration.
@@ -86,4 +89,3 @@ def rios_to_qualtrics(instrument, form, calculationset, **kwargs):
     converter = QualtricsFromRios(instrument, form, calculationset, **kwargs)
     converter.convert()
     return converter.export()
-

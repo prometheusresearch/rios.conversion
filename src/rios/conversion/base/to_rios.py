@@ -14,7 +14,7 @@ it will be deleted.
 
 import json
 import os
-import rios.conversion.classes as Rios
+import rios.conversion.structures as Rios
 import yaml
 
 from rios.core import validation

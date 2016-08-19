@@ -3,5 +3,5 @@
 #
 
 
-from from_rios import FromRios
-from to_rios import ToRios
+from from_rios import FromRios  # noqa:F401
+from to_rios import ToRios  # noqa:F401

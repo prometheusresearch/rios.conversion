@@ -3,9 +3,7 @@
 #
 
 
-import argparse
 import json
-import pkg_resources
 import sys
 import yaml
 import rios.conversion.structures as Rios
@@ -25,7 +23,6 @@ class FromRios(object):
         self.form = form
         self.instrument = instrument
         self.calculationset = calculationset
-
 
     def __call__(self, argv=None, stdout=None, stderr=None):
         """ Process the csv input, and create output files """

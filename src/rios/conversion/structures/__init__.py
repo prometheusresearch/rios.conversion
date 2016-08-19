@@ -3,4 +3,4 @@
 #
 
 
-from rios_structures import *
+from rios_structures import *  # noqa: F401, F403

@@ -4,15 +4,13 @@
 
 
 import sys
-import argparse
 import json
-import pkg_resources
 import re
 import rios.conversion.structures as Rios
 
 
 from rios.conversion.utils import balanced_match, CsvReader
-from rios.conversion.to_rios import ToRios
+from rios.conversion.base import ToRios
 
 
 # Consecutive non-alpha chars.
@@ -62,9 +60,9 @@ RE_ops = [(re.compile(redcap), rexl) for redcap, rexl in OPERATOR_TO_REXL]
 
 class Csv2OrderedDict(CsvReader):
     """
-    RIOS imposes restrictions on the range of strings which can be used for IDs.
-    This program quietly converts input IDs using Csv2OrderedDict.get_name()
-    in the hopes of obtaining a valid RIOS ID.
+    RIOS imposes restrictions on the range of strings which can be used for
+    IDs. This program quietly converts input IDs using
+    Csv2OrderedDict.get_name() in the hopes of obtaining a valid RIOS ID.
     """
 
     def get_name(self, name):
@@ -137,7 +135,7 @@ class RedcapToRios(ToRios):
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        self.reader = Csv2OrderedDict(args.infile)
+        self.reader = Csv2OrderedDict(args.infile)  # noqa: F821
         self.reader.load_attributes()
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
