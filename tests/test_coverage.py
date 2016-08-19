@@ -8,6 +8,18 @@ from rios.conversion.redcap.from_rios import RedcapFromRios
 import collections
 import json, yaml
 
+
+DUMMY_ARGS = {
+    'outfile': None,
+    'localization': None,
+    'format': None,
+    'verbose': None,
+    'form': None,
+    'instrument': None,
+    'calculationset': None,
+}
+
+
 print('%s: testing ...' % __file__)
 
 def test_add_field():
@@ -37,7 +49,7 @@ def test_balanced_match():
     assert (b, e) == (0, 5)
 
 def test_convert_variables():
-    rfr = RedcapFromRios()
+    rfr = RedcapFromRios(**DUMMY_ARGS)
     answer = '[assessment_var] + [calculations_var] + [table][field]'
     assert answer == rfr.convert_variables(
             'assessment["assessment_var"] '
@@ -51,7 +63,7 @@ def test_csv_reader():
     assert len(rows) == 24, len(rows)
  
 def test_loader():
-    from_rios = FromRios()
+    from_rios = FromRios(**DUMMY_ARGS)
     TestFile = collections.namedtuple('TestFile', ['name',])
     yaml_file = TestFile(name='test.yaml')
     json_file = TestFile(name='test.json')

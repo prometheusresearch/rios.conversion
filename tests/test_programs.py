@@ -5,6 +5,29 @@ from rios.conversion.redcap.from_rios import RedcapFromRios as RiosRedcap
 from rios.conversion.qualtrics.to_rios import QualtricsToRios as QualtricsRios
 from rios.conversion.qualtrics.from_rios import QualtricsFromRios as RiosQualtrics
 
+
+DUMMY_ARGS_FROM_RIOS = {
+    'outfile': None,
+    'localization': None,
+    'format': None,
+    'verbose': None,
+    'form': None,
+    'instrument': None,
+    'calculationset': None,
+}
+
+
+DUMMY_ARGS_TO_RIOS = {
+    'outfile_prefix': None,
+    'id': None,
+    'instrument_version': None,
+    'title': None,
+    'localization': None,
+    'format': None,
+    'infile': None,
+}
+
+
 def flatten(array):
     result = []
     for x in array:
@@ -59,13 +82,13 @@ def rios_qualtrics_tst(name):
     return [test, test[1:]]
       
 def show_tst(cls, test):
-    name = str(cls).split("'")[1]
+    name = str(cls)
     print('\n%s\n\t%s' % (name, ' '.join(test)))
 
-def tst_class(cls, tests):
-    program = cls()
+def tst_class(clsinst, tests):
+    program = clsinst
     for test in boilerplate_tests + tests:
-        show_tst(cls, test)
+        show_tst(clsinst.__class__.__name__, test)
         try:
             program(test)
         except Exception, exc:
@@ -110,9 +133,9 @@ redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
 rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
 qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
 rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
-tst_class(RedcapRios, redcap_rios_tests)
-tst_class(RiosRedcap, rios_redcap_tests + rios_redcap_mismatch_tests)
-tst_class(QualtricsRios, qualtrics_rios_tests)
-tst_class(RiosQualtrics, rios_qualtrics_tests)
+tst_class(RedcapRios(**DUMMY_ARGS_TO_RIOS), redcap_rios_tests)
+tst_class(RiosRedcap(**DUMMY_ARGS_FROM_RIOS), rios_redcap_tests + rios_redcap_mismatch_tests)
+tst_class(QualtricsRios(**DUMMY_ARGS_TO_RIOS), qualtrics_rios_tests)
+tst_class(RiosQualtrics(**DUMMY_ARGS_FROM_RIOS), rios_qualtrics_tests)
 
 print('%s: OK' % __file__)
