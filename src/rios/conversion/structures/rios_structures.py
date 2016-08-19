@@ -18,6 +18,7 @@ import collections
 
 __all__ = (
         'DefinitionSpecification',
+
         'Instrument',
         'FieldObject',
         'TypeCollectionObject',
@@ -27,9 +28,11 @@ __all__ = (
         'BoundConstraintObject',
         'EnumerationCollectionObject',
         'EnumerationObject',
+
         'CalculationSetObject',
         'InstrumentReferenceObject',
         'CalculationObject',
+
         'WebForm',
         'PageObject',
         'ElementObject',

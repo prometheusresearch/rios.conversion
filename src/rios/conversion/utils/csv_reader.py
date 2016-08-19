@@ -1,14 +1,21 @@
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+
+
 import collections
 import csv
 import re
 
+
 __all__ = (
     "CsvReader",
-    )
+)
 
 
 class CsvReader(object):
-    """This object reads `fname`, a csv file, and can iterate over the rows.
+    """
+    This object reads `fname`, a csv file, and can iterate over the rows.
 
     usage:
 
@@ -26,9 +33,10 @@ class CsvReader(object):
     Subsequent rows are converted by get_row()
     into OrderedDicts based on the keys in self.attributes.
 
-    - get_name(name): returns the "canonical" name.
+    - get_name(name): returns the "canonical" name (if overriden)
       The default returns name unchanged.
     """
+
     def __init__(self, fname):
         self.fname = fname
         self.attributes = []

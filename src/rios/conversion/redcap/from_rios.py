@@ -1,15 +1,18 @@
-"""
-Converts RIOS form (and calculationset) files into a REDCap csv file.
-"""
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+
 
 import csv
 import re
 import rios.core.validation.instrument as RI
 import sys
 
-from rios.conversion.from_rios import FromRios
+
+from rios.conversion.base import FromRios
 from rios.conversion.redcap.to_rios import FUNCTION_TO_PYTHON
 from rios.conversion.redcap.to_rios import OPERATOR_TO_REXL
+
 
 COLUMNS = [
         "Variable / Field Name",
@@ -57,10 +60,15 @@ RE_variable_reference = re.compile(
 
 
 class RedcapFromRios(FromRios):
+    """
+    Converts RIOS form (and calculationset) files into a REDCap csv file.
+    """
+
     description = __doc__
 
     def call(self):
-        """process the csv input, and create output files. """
+        """ Process the csv input, and create output files """
+
         self.rows = [COLUMNS]
         self.section_header = ''
         for page in self.form['pages']:
@@ -74,7 +82,8 @@ class RedcapFromRios(FromRios):
         return 0
 
     def convert_rexl_expression(self, rexl):
-        """convert REXL expression into REDCap
+        """
+        Convert REXL expression into REDCap expressions
 
         - convert operators
         - convert caret to pow
@@ -83,6 +92,7 @@ class RedcapFromRios(FromRios):
         - convert assessment variable reference: assessment["a"] => [a]
         - convert calculation variable reference: calculations["c"] => [c]
         """
+
         s = rexl
         for pattern, replacement in RE_ops:
             s = pattern.sub(replacement, s)

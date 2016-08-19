@@ -3,6 +3,13 @@ Change History
 **************
 
 
+0.6.0 (2016-xx-xx)
+==================
+
+* Major code overhaul
+* CLI reduced to a single command
+* Implemented new API
+
 0.5.0 (2016-08-17)
 ==================
 

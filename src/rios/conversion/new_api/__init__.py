@@ -3,8 +3,8 @@
 #
 
 
-from .redcap import RedcapToRios, RedcapFromRios 
-from .qualtrics import QualtricsToRios, QualtricsFromRios
+from rios.conversion.redcap import RedcapToRios, RedcapFromRios 
+from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
 
 
 __all__ = (

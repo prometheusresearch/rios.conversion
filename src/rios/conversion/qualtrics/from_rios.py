@@ -1,12 +1,13 @@
-"""
-Converts RIOS instrument, form, and optional calculationset files
-into a text file in Qualtrics Simple .TXT format.
-"""
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
 
-import rios.core.validation.instrument as RI
+
 import sys
+import rios.core.validation.instrument as RI
 
-from rios.conversion.from_rios import FromRios
+
+from rios.conversion.base import FromRios
 
 
 class QuestionNumber:
@@ -19,6 +20,11 @@ class QuestionNumber:
 
 
 class QualtricsFromRios(FromRios):
+    """
+    Converts RIOS instrument, form, and optional calculationset files
+    into a text file in Qualtrics Simple .TXT format.
+    """
+
     description = __doc__
 
     def call(self):

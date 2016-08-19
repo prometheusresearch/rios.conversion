@@ -1,31 +1,35 @@
-"""
-Convert from RIOS.
-"""
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+
+
 import argparse
 import json
 import pkg_resources
 import sys
 import yaml
-
-import rios.conversion.classes as Rios
+import rios.conversion.structures as Rios
 
 
 class FromRios(object):
+
     description = __doc__
 
-    def __init__(self, outfile, localization, format, verbose, form, instrument, calculationset, **kwargs):
+    def __init__(self, outfile, localization, format,
+                 verbose, form, instrument, calculationset, **kwargs):
 
         self.outfile = outfile
         self.localization = localization
         self.format = format
         self.verbose = verbose
         self.form = form
-        self._instrument = instrument #TODO: There should be a self.instrument defined somewhere, not sure where, and don't want to name-conflict here, so added the preceding _
+        self.instrument = instrument
         self.calculationset = calculationset
 
 
     def __call__(self, argv=None, stdout=None, stderr=None):
-        """process the csv input, and create output files. """
+        """ Process the csv input, and create output files """
+
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
