@@ -1,9 +1,9 @@
 """ Specialized tests to insure complete coverage.
 """
-from rios.conversion.balanced_match import *
-from rios.conversion.classes import *
-from rios.conversion.csv_reader import *
-from rios.conversion.from_rios import FromRios
+from rios.conversion.utils.balanced_match import *
+from rios.conversion.structures import *
+from rios.conversion.utils.csv_reader import *
+from rios.conversion.base.from_rios import FromRios
 from rios.conversion.redcap.from_rios import RedcapFromRios
 import collections
 import json, yaml
