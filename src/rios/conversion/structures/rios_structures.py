@@ -1,20 +1,24 @@
-"""
-RIOS objects are all implemented as subclasses of DefinitionSpecification
-which is a subclass of OrderedDict.
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+# RIOS objects are all implemented as subclasses of DefinitionSpecification
+# which is a subclass of OrderedDict.
+#
+# A dict would suffice, but the OrderedDict output matches the order
+# of the Rios on-line documentation at
+# http://rios.readthedocs.org/en/latest/index.html
+#
+# The RIOS objects are instantiated with ALL their attributes however
+# all the "empty" attributes must be removed to pass RIOS validation.
+# DefinitionSpecification.clean() will recurse through the object and
+# remove all the "empty" attributes.
+#
+# Note that clean() does not consider False, 0, 0.0, or None to be empty.
+# Use '', the empty string, to ensure an attribute will be removed.
 
-A dict would suffice, but the OrderedDict output matches the order
-of the Rios on-line documentation at
-http://rios.readthedocs.org/en/latest/index.html
 
-The RIOS objects are instantiated with ALL their attributes however
-all the "empty" attributes must be removed to pass RIOS validation.
-DefinitionSpecification.clean() will recurse through the object and
-remove all the "empty" attributes.
-
-Note that clean() does not consider False, 0, 0.0, or None to be empty.
-Use '', the empty string, to ensure an attribute will be removed.
-"""
 import collections
+
 
 __all__ = (
         'DefinitionSpecification',
