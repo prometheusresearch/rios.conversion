@@ -121,6 +121,7 @@ class RedcapToRios(ToRios):
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
+        # Pre-processing
         self.instrument = Rios.Instrument(
                 id=self.id,
                 version=self.instrument_version,
@@ -138,6 +139,8 @@ class RedcapToRios(ToRios):
         self.page_name = ''
         self.reader = Csv2OrderedDict(self.infile)  # noqa: F821
         self.reader.load_attributes()
+
+        # Determine processor
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
             process = self.process_od
@@ -147,8 +150,12 @@ class RedcapToRios(ToRios):
             raise ValueError(
                     "Input has unknown format",
                     self.reader.attributes)
+
+        # Main processing
         for od in self.reader:
             process(od)
+
+        # Post-processing
         self.validate_results()
         self.create_instrument_file()
         self.create_calculation_file()
