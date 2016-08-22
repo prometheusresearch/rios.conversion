@@ -1,32 +1,17 @@
-"""
-Converts a redcap csv file into a series of output files
-
-    <OUTFILE_PREFIX>_c.<format> RIOS calculation
-    <OUTFILE_PREFIX>_i.<format> RIOS instrument
-    <OUTFILE_PREFIX>_f.<format> RIOS web form
-
-The RIOS calculation file is only created when there are
-calculation fields in the input.
-However if there are no calculation fields
-and the calculation file already exists,
-it will be deleted.
-"""
 #
-"""
-RIOS imposes restrictions on the range of strings which can be used for IDs.
-This program quietly converts input IDs using Csv2OrderedDict.get_name()
-in the hopes of obtaining a valid RIOS ID.
-"""
+# Copyright (c) 2016, Prometheus Research, LLC
+#
 
-import argparse
-import json
-import pkg_resources
-import re
-import rios.conversion.balanced_match as balanced_match
-import rios.conversion.csv_reader
-import rios.conversion.classes as Rios
-from rios.conversion.to_rios import ToRios
+
 import sys
+import json
+import re
+import rios.conversion.structures as Rios
+
+
+from rios.conversion.utils import balanced_match, CsvReader
+from rios.conversion.base import ToRios
+
 
 # Consecutive non-alpha chars.
 RE_non_alphanumeric = re.compile(r'\W+')
@@ -47,16 +32,16 @@ RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
 FUNCTION_TO_PYTHON = {
         'min': 'min',
         'max': 'max',
-        'mean': 'rios.conversion.redcap.math.mean',
-        'median': 'rios.conversion.redcap.math.median',
-        'sum': 'rios.conversion.redcap.math.sum_',
-        'stdev': 'rios.conversion.redcap.math.stdev',
-        'round': 'rios.conversion.redcap.math.round_',
-        'roundup': 'rios.conversion.redcap.math.roundup',
-        'rounddown': 'rios.conversion.redcap.math.rounddown',
+        'mean': 'rios.conversion.redcap.functions.mean',
+        'median': 'rios.conversion.redcap.function.median',
+        'sum': 'rios.conversion.redcap.functions.sum_',
+        'stdev': 'rios.conversion.redcap.functions.stdev',
+        'round': 'rios.conversion.redcap.functions.round_',
+        'roundup': 'rios.conversion.redcap.functions.roundup',
+        'rounddown': 'rios.conversion.redcap.functions.rounddown',
         'sqrt': 'math.sqrt',
         'abs': 'abs',
-        'datediff': 'rios.conversion.redcap.date.datediff',
+        'datediff': 'rios.conversion.redcap.functions.datediff',
         }
 
 # dict of function name: pattern which finds "name("
@@ -73,9 +58,16 @@ OPERATOR_TO_REXL = [
 RE_ops = [(re.compile(redcap), rexl) for redcap, rexl in OPERATOR_TO_REXL]
 
 
-class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
+class Csv2OrderedDict(CsvReader):
+    """
+    RIOS imposes restrictions on the range of strings which can be used for
+    IDs. This program quietly converts input IDs using
+    Csv2OrderedDict.get_name() in the hopes of obtaining a valid RIOS ID.
+    """
+
     def get_name(self, name):
-        """ Return canonical name, a valid RIOS Identifier.
+        """
+        Return canonical name, a valid RIOS Identifier.
 
         - replace (one or more) non-alphanumeric with underbar.
         - strip leading and trailing underbars.
@@ -101,9 +93,22 @@ class Csv2OrderedDict(rios.conversion.csv_reader.CsvReader):
 
 
 class RedcapToRios(ToRios):
+    """
+    Converts a redcap csv file into a series of output files
 
-    def __init__(self, outfile_prefix, id, instrument_version, title, localization, format, **kwargs):
+        <OUTFILE_PREFIX>_c.<format> RIOS calculation
+        <OUTFILE_PREFIX>_i.<format> RIOS instrument
+        <OUTFILE_PREFIX>_f.<format> RIOS web form
 
+    The RIOS calculation file is only created when there are calculation fields
+    in the input. However if there are no calculation fields and the
+    calculation file already exists, it will be deleted.
+    """
+
+    def __init__(self, outfile_prefix, id, instrument_version,
+                 title, localization, format, infile, **kwargs):
+
+        self.infile = infile
         self.outfile_prefix = outfile_prefix
         self.id = id
         self.instrument_version = instrument_version
@@ -131,7 +136,7 @@ class RedcapToRios(ToRios):
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        self.reader = Csv2OrderedDict(args.infile)
+        self.reader = Csv2OrderedDict(self.infile)  # noqa: F821
         self.reader.load_attributes()
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
@@ -151,7 +156,8 @@ class RedcapToRios(ToRios):
         return 0
 
     def convert_calc(self, calc):
-        """convert RedCap expression into Python
+        """
+        Convert RedCap expression into Python
 
         - convert database reference:  [a][b] => a["b"]
         - convert assessment variable reference: [a] => assessment["a"]
@@ -181,10 +187,10 @@ class RedcapToRios(ToRios):
         position = 0
         carat_pos = string.find(')^(', position)
         while carat_pos != -1:
-            begin, end = balanced_match.balanced_match(string, carat_pos)
+            begin, end = balanced_match(string, carat_pos)
             answer += string[position: begin]
             answer += 'math.pow(' + string[begin + 1: end - 1]
-            begin, end = balanced_match.balanced_match(string, carat_pos + 2)
+            begin, end = balanced_match(string, carat_pos + 2)
             answer += ', ' + string[begin + 1: end - 1] + ')'
             position = end
             carat_pos = string.find(')^(', position)
@@ -214,7 +220,8 @@ class RedcapToRios(ToRios):
             return value    # pragma: no cover
 
     def get_choices_form(self, od):
-        """ returns array of DescriptorObject
+        """
+        Returns array of DescriptorObject
 
         Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
@@ -227,7 +234,8 @@ class RedcapToRios(ToRios):
                 for x in od['choices_or_calculations'].split('|') ]
 
     def get_choices_instrument(self, od):
-        """ returns EnumerationCollectionObject
+        """
+        Returns EnumerationCollectionObject
 
         Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
@@ -239,7 +247,8 @@ class RedcapToRios(ToRios):
         return choices_instrument
 
     def get_type(self, od, side_effects=True):
-        """returns the computed instrument field type.
+        """
+        Returns the computed instrument field type.
 
         Also has side effects when side_effects is True.
         - can initialize self.calculations.
@@ -511,11 +520,10 @@ class RedcapToRios(ToRios):
                             od['branching_logic']),
                     action='disable', ))
 
-        """ assessment[m][r][c]
-        m = matrix_group_name
-        r = variable_field_name
-        c = field_type
-        """
+        # assessment[m][r][c]
+        # m = matrix_group_name
+        # r = variable_field_name
+        # c = field_type
         matrix_group_name = self.reader.get_name(
                 od.get('matrix_group_name', ''))
         if matrix_group_name:

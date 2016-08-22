@@ -8,7 +8,7 @@ import pkg_resources
 import sys
 
 
-from .redcap import RedcapToRios, RedcapFromRios 
+from .redcap import RedcapToRios, RedcapFromRios
 from .qualtrics import QualtricsToRios, QualtricsFromRios
 
 
@@ -33,12 +33,12 @@ class ConversionScript(object):
         self._stdout = None
 
         self.parser = argparse.ArgumentParser(
-            description='A tool for converting to or from the RIOS definition.',
+            description='A tool for converting to/from the RIOS definition.',
         )
 
         try:
             version = pkg_resources.get_distribution('rios.conversion').version
-        except pg_resources.DistributionNotFound:
+        except pkg_resources.DistributionNotFound:
             version = 'UNKNOWN'
         self.parser.add_argument(
             '-v',
@@ -77,8 +77,8 @@ class ConversionScript(object):
             ' The default is "yaml".'
         )
 
-
-        ### TODO: Can we get rid of these following arguments (auto generate these)?
+        # TODO: Can we get rid of these following arguments,
+        # auto generate these?
         self.parser.add_argument(
             '--id',
             required=True,
@@ -114,7 +114,7 @@ class ConversionScript(object):
             help='The instrument title to output.',
         )
 
-        ### TODO: Remove as well? From class 'from_rios'
+        # TODO: Remove as well? From class 'from_rios'
         self.parser.add_argument(
                 '--verbose',
                 action='store_true',
@@ -151,24 +151,24 @@ class ConversionScript(object):
         try:
             CONVERTERS[args.convert_type](
                 # TODO: alter to contain new arguments (e.g., args.filename)
-                #args.outfile_prefix,
-                #args.id,
-                #args.instrument_version,
-                #args.title,
-                #args.localization,
-                #args.format,
+                # args.outfile_prefix,
+                # args.id,
+                # args.instrument_version,
+                # args.title,
+                # args.localization,
+                # args.format,
                 # TODO: Can remove this once input args are finalized
                 **args.__dict__
             )
         # TODO: Implement ConversionError
-        #except ConversionError as exc:
+        # except ConversionError as exc:
         except Exception as exc:
             self.out('FAILED conversion.')
-            #for source, message in iteritems(exc.asdict()):
-            #    self.out('%s: %s' % (
-            #        source,
-            #        message,
-            #    ))
+            # for source, message in iteritems(exc.asdict()):
+            #     self.out('%s: %s' % (
+            #         source,
+            #         message,
+            #     ))
             self.out(str(exc))
             return 1
         else:
@@ -179,4 +179,3 @@ class ConversionScript(object):
         self._stdout.write('%s\n' % (message,))
 
 convert = ConversionScript()
-

@@ -20,7 +20,8 @@ tests:
   # validate .json output files with rios-validate.
   - sh: |
       sh -c \
-      "for INSTRUMENT in ./tests/sandbox/*/*_i.json; 
+      "shopt -s nullglob;
+      for INSTRUMENT in ./tests/sandbox/*/*_i.json; 
       do 
           echo $INSTRUMENT
           rios-validate instrument $INSTRUMENT

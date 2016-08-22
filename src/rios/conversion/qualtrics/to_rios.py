@@ -1,25 +1,30 @@
-"""
-Converts a Qualtrics qsf file into a series of output files
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
 
-    <OUTFILE_PREFIX> _c.<format> RIOS calculation
-    <OUTFILE_PREFIX>_i.<format> RIOS instrument
-    <OUTFILE_PREFIX>_f.<format> RIOS web form
 
-The RIOS calculation file is only created when there are
-calculation fields in the input.
-"""
-
-import argparse
 import json
-import pkg_resources
-import rios.conversion.classes as Rios
-from rios.conversion.to_rios import ToRios
 import sys
+import rios.conversion.structures as Rios
+
+
+from rios.conversion.base import ToRios
 
 
 class QualtricsToRios(ToRios):
+    """
+    Converts a Qualtrics qsf file into a series of output files
 
-    def __init__(self, outfile_prefix, instrument_version, format, infile, **kwargs):
+        <OUTFILE_PREFIX> _c.<format> RIOS calculation
+        <OUTFILE_PREFIX>_i.<format> RIOS instrument
+        <OUTFILE_PREFIX>_f.<format> RIOS web form
+
+    The RIOS calculation file is only created when there are
+    calculation fields in the input.
+    """
+
+    def __init__(self, outfile_prefix, instrument_version,
+                 format, infile, **kwargs):
         self.page_name = PageName()
 
         self.outfile_prefix = outfile_prefix
@@ -28,11 +33,16 @@ class QualtricsToRios(ToRios):
         self.infile = infile
 
     def __call__(self, argv=None, stdout=None, stderr=None):
-        """process the qsf input, and create output files. """
+        """ Process the qsf input, and create output files """
+
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
-        self.qualtrics = self.get_qualtrics(self.load_infile(self.infile))
+        self.qualtrics = self.get_qualtrics(
+            self.load_infile(
+                open(self.infile, 'r')
+            )
+        )
         self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
                 id='urn:' + self.qualtrics['id'],

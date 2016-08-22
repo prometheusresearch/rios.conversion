@@ -1,4 +1,4 @@
-import rios.conversion.redcap.date as D
+import rios.conversion.redcap.functions as D
 
 def ndays(year):
     d = ['%02d-01-%04d' % (m, year) for m in range(1,1 + 12)]

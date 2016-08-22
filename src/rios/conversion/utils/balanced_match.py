@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+
+
 PAIRS = ['()', ]
 LEFTS = {p[0]: p[1] for p in PAIRS}
 RIGHTS = {p[1]: p[0] for p in PAIRS}

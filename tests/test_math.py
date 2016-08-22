@@ -1,4 +1,4 @@
-import rios.conversion.redcap.math as M
+import rios.conversion.redcap.functions as M
 
 print('%s: testing ...' % __file__)
 
