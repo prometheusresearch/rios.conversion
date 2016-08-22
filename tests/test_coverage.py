@@ -6,11 +6,11 @@ from rios.conversion.utils.csv_reader import *
 from rios.conversion.base.from_rios import FromRios
 from rios.conversion.redcap.from_rios import RedcapFromRios
 import collections
-import json, yaml
+import json, yaml, os
 
 
 DUMMY_ARGS = {
-    'outfile': None,
+    'outfile': os.path.abspath('./tests/sandbox/dummy_outfile.txt'),
     'localization': None,
     'format': None,
     'verbose': None,
@@ -64,10 +64,9 @@ def test_csv_reader():
  
 def test_loader():
     from_rios = FromRios(**DUMMY_ARGS)
-    TestFile = collections.namedtuple('TestFile', ['name',])
-    yaml_file = TestFile(name='test.yaml')
-    json_file = TestFile(name='test.json')
-    other_file = TestFile(name='test')
+    yaml_file = 'test.yaml'
+    json_file = 'test.json'
+    other_file = 'test'
     from_rios.format = 'json'
     assert from_rios.get_loader(yaml_file) == yaml
     assert from_rios.get_loader(json_file) == json

@@ -38,7 +38,11 @@ class QualtricsToRios(ToRios):
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
-        self.qualtrics = self.get_qualtrics(self.load_infile(self.infile))
+        self.qualtrics = self.get_qualtrics(
+            self.load_infile(
+                open(self.infile, 'r')
+            )
+        )
         self.localization = self.qualtrics['localization']
         self.instrument = Rios.Instrument(
                 id='urn:' + self.qualtrics['id'],
