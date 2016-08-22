@@ -68,7 +68,6 @@ class RedcapFromRios(FromRios):
 
     def call(self):
         """ Process the csv input, and create output files """
-
         self.rows = [COLUMNS]
         self.section_header = ''
         for page in self.form['pages']:

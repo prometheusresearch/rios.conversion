@@ -106,8 +106,9 @@ class RedcapToRios(ToRios):
     """
 
     def __init__(self, outfile_prefix, id, instrument_version,
-                 title, localization, format, **kwargs):
+                 title, localization, format, infile, **kwargs):
 
+        self.infile = infile
         self.outfile_prefix = outfile_prefix
         self.id = id
         self.instrument_version = instrument_version
@@ -135,7 +136,7 @@ class RedcapToRios(ToRios):
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        self.reader = Csv2OrderedDict(args.infile)  # noqa: F821
+        self.reader = Csv2OrderedDict(self.infile)  # noqa: F821
         self.reader.load_attributes()
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
@@ -186,10 +187,10 @@ class RedcapToRios(ToRios):
         position = 0
         carat_pos = string.find(')^(', position)
         while carat_pos != -1:
-            begin, end = balanced_match.balanced_match(string, carat_pos)
+            begin, end = balanced_match(string, carat_pos)
             answer += string[position: begin]
             answer += 'math.pow(' + string[begin + 1: end - 1]
-            begin, end = balanced_match.balanced_match(string, carat_pos + 2)
+            begin, end = balanced_match(string, carat_pos + 2)
             answer += ', ' + string[begin + 1: end - 1] + ')'
             position = end
             carat_pos = string.find(')^(', position)

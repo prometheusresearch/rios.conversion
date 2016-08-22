@@ -22,7 +22,7 @@ tests:
     3, 0.424, 0.424, 0.423)\n(0.5235, 3, 0.524, 0.524, 0.523)\nrounddown\n(0.1234,
     3, 0.123, 0.124, 0.123)\n(0.2234, 3, 0.223, 0.224, 0.223)\n(0.3234, 3, 0.323,
     0.324, 0.323)\n(0.4234, 3, 0.423, 0.424, 0.423)\n(0.5234, 3, 0.523, 0.524, 0.523)\n"
-- sh: "sh -c \\\n\"for INSTRUMENT in ./tests/sandbox/*/*_i.json; \ndo \n    echo $INSTRUMENT\n
+- sh: "sh -c \\\n\"shopt -s nullglob;\nfor INSTRUMENT in ./tests/sandbox/*/*_i.json; \ndo \n    echo $INSTRUMENT\n
     \   rios-validate instrument $INSTRUMENT\n    NAME=$(basename $INSTRUMENT i.json)\n
     \   DIR=$(dirname $INSTRUMENT)\n    FORM=$DIR/${NAME}f.json\n    echo $FORM\n
     \   rios-validate -i $INSTRUMENT form $FORM\n    CALC=$DIR/${NAME}c.json\n    !
@@ -47,7 +47,7 @@ tests:
     Successful validation.
     ./tests/sandbox/redcap/matrix_1_f.json
     Successful validation.
-- sh: "sh -c \\\n\"for INSTRUMENT in ./tests/sandbox/*/*_i.json; \ndo \n    echo $INSTRUMENT\n
+- sh: "sh -c \\\n\"shopt -s nullglob;\nfor INSTRUMENT in ./tests/sandbox/*/*_i.json; \ndo \n    echo $INSTRUMENT\n
     \   NAME=$(basename $INSTRUMENT i.json)\n    DIR=$(dirname $INSTRUMENT)\n    FORM=$DIR/${NAME}f.json\n
     \   echo $FORM\n    CALC=$DIR/${NAME}c.json\n    ! test -f $CALC || echo $CALC\n
     \   ! test -f $CALC || rios-validate -i $INSTRUMENT calculationset $CALC\n    rios-validate

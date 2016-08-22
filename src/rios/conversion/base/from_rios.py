@@ -14,12 +14,15 @@ class FromRios(object):
     description = __doc__
 
     def __init__(self, outfile, localization, format,
-                 verbose, form, instrument, calculationset, **kwargs):
+                 verbose, form, instrument, calculationset):
 
-        self.outfile = outfile
+        self.outfile = open(outfile, 'w')
         self.localization = localization
         self.format = format
         self.verbose = verbose
+
+        # TODO: MAKE THESE OPEN FILES!!!!!
+
         self.form = form
         self.instrument = instrument
         self.calculationset = calculationset
@@ -30,7 +33,7 @@ class FromRios(object):
         self.stdout = stdout or sys.stdout
         self.stderr = stderr or sys.stderr
 
-        self.load_input_files(self.form, self._instrument, self.calculationset)
+        self.load_input_files(self.form, self.instrument, self.calculationset)
         self.types = self.instrument.get('types', {})
 
         instrument = Rios.InstrumentReferenceObject(self.instrument)
@@ -57,7 +60,7 @@ class FromRios(object):
         raise NotImplementedError   # pragma: no cover
 
     def get_loader(self, file_object):
-        name = file_object.name
+        name = file_object
         if name.endswith('.json'):
             loader = json
         elif name.endswith('.yaml') or name.endswith('.yml'):
@@ -71,7 +74,10 @@ class FromRios(object):
 
     def load_file(self, file_obj):
         loader = self.get_loader(file_obj)
-        return loader.load(file_obj)
+        try:
+            return loader.load(open(file_obj, 'r'))
+        except Exception as exc:
+            raise exc
 
     def load_input_files(self, form, instrument, calculationset):
         self.form = self.load_file(form)
