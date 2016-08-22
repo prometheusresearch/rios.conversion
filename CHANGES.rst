@@ -6,9 +6,10 @@ Change History
 0.6.0 (2016-xx-xx)
 ==================
 
-* Major code overhaul
-* CLI reduced to a single command
-* Implemented new API
+* Major code refactor and reorganization
+* Stripped out CLI/argparse command-like interface to conversion classes
+* CLI interface reduced to the single command "rios-convert"
+* Proper implementation of test suite
 
 0.5.0 (2016-08-17)
 ==================
