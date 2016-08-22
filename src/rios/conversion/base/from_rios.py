@@ -20,9 +20,6 @@ class FromRios(object):
         self.localization = localization
         self.format = format
         self.verbose = verbose
-
-        # TODO: MAKE THESE OPEN FILES!!!!!
-
         self.form = form
         self.instrument = instrument
         self.calculationset = calculationset
