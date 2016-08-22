@@ -1,26 +1,30 @@
-"""
-Converts a foreign instrument file into a series of RIOS output files
+#
+# Copyright (c) 2016, Prometheus Reserach, LLC
+#
 
-    <OUTFILE_PREFIX>_c.<format> RIOS calculation
-    <OUTFILE_PREFIX>_i.<format> RIOS instrument
-    <OUTFILE_PREFIX>_f.<format> RIOS web form
-
-The RIOS calculation file is only created when there are
-calculation fields in the input.
-However if there are no calculation fields
-and the calculation file already exists,
-it will be deleted.
-"""
 
 import json
 import os
 import rios.conversion.structures as Rios
 import yaml
 
+
 from rios.core import validation
 
 
 class ToRios(object):
+    """
+    Converts a foreign instrument file into a series of RIOS output files
+
+        <OUTFILE_PREFIX>_c.<format> RIOS calculation
+        <OUTFILE_PREFIX>_i.<format> RIOS instrument
+        <OUTFILE_PREFIX>_f.<format> RIOS web form
+
+    The RIOS calculation file is only created when there are calculation fields
+    in the input. However if there are no calculation fields and the
+    calculation file already exists, it will be deleted.
+    """
+
     def create__file(self, kind, obj):
         with open(self.filename(kind), 'w') as fo:
             if obj:
