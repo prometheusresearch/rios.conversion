@@ -93,55 +93,22 @@ class Csv2OrderedDict(CsvReader):
 
 
 class RedcapToRios(ToRios):
-    """
-    Converts a redcap csv file into a series of output files
+    """ Converts a REDCap CSV file to the RIOS specification format """
 
-        <OUTFILE_PREFIX>_c.<format> RIOS calculation
-        <OUTFILE_PREFIX>_i.<format> RIOS instrument
-        <OUTFILE_PREFIX>_f.<format> RIOS web form
-
-    The RIOS calculation file is only created when there are calculation fields
-    in the input. However if there are no calculation fields and the
-    calculation file already exists, it will be deleted.
-    """
-
-    def __init__(self, outfile_prefix, id, instrument_version,
-                 title, localization, format, infile, **kwargs):
-
-        self.infile = infile
-        self.outfile_prefix = outfile_prefix
-        self.id = id
-        self.instrument_version = instrument_version
-        self.title = title
-        self.localization = localization
-        self.format = format
-
-    def __call__(self, argv=None, stdout=None, stderr=None):
-        """process the csv input, and create output files. """
-        self.stdout = stdout or sys.stdout
-        self.stderr = stderr or sys.stderr
-
+    def __call__(self):
         # Pre-processing
-        self.instrument = Rios.Instrument(
-                id=self.id,
-                version=self.instrument_version,
-                title=self.title)
-        self.calculations = Rios.CalculationSetObject(
-                instrument=Rios.InstrumentReferenceObject(self.instrument),
-                )
-        self.form = Rios.WebForm(
-                instrument=Rios.InstrumentReferenceObject(self.instrument),
-                defaultLocalization=self.localization,
-                title=self.localized_string_object(self.title),
-                )
         self.calculation_variables = set()
         self.matrix_group_name = ''
         self.page_name = ''
-        self.reader = Csv2OrderedDict(self.infile)  # noqa: F821
+        self.reader = Csv2OrderedDict(self.stream)  # noqa: F821
         self.reader.load_attributes()
 
         # Determine processor
         first_field = self.reader.attributes[0]
+        print "0909090909090"
+        print self.stream
+        print first_field
+        print "0909090909090"
         if first_field == 'variable_field_name':
             process = self.process_od
         elif first_field == 'fieldid':
@@ -149,18 +116,15 @@ class RedcapToRios(ToRios):
         else:
             raise ValueError(
                     "Input has unknown format",
-                    self.reader.attributes)
+                    self.reader.attributes
+            )
 
         # Main processing
         for od in self.reader:
             process(od)
 
         # Post-processing
-        self.validate_results()
-        self.create_instrument_file()
-        self.create_calculation_file()
-        self.create_form_file()
-        return 0
+        self.validate()
 
     def convert_calc(self, calc):
         """
@@ -627,7 +591,3 @@ class RedcapToRios(ToRios):
         field = self.make_field2(od)
         if field['id']:
             self.instrument.add_field(field)
-
-
-def main(argv=None, stdout=None, stderr=None):
-    sys.exit(RedcapToRios()(argv, stdout, stderr))    # pragma: no cover

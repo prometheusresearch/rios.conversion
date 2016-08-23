@@ -23,8 +23,7 @@ class QualtricsToRios(ToRios):
     calculation fields in the input.
     """
 
-    def __init__(self, outfile_prefix, instrument_version,
-                 format, infile, **kwargs):
+    def __init__(self, infile, instrument_version, format):
         self.page_name = PageName()
 
         self.outfile_prefix = outfile_prefix
