@@ -47,7 +47,7 @@ class ToRios(object):
         self._form = structures.WebForm(
             instrument=structures.InstrumentReferenceObject(self._instrument),
             defaultLocalization=self.localization,
-            title=self._localized_string_object(self.title),
+            title=localized_string_object(self.localization, self.title),
         )
 
     def __call__(self):
@@ -98,11 +98,12 @@ class ToRios(object):
             'instrument': self.instrument.as_dict(),
             'form': self.form.as_dict(),
         }
-        if self.calculations.get('calculations', False):
+        if self._calculations.get('calculations', False):
             calculations = self.calculations.as_dict()
             return dict(payload, **{'calculationset': calculations})
         else:
             return payload
 
-    def _localized_string_object(self, string):
-        return structures.LocalizedStringObject({self.localization: string})
+
+def localized_string_object(localization, string):
+    return structures.LocalizedStringObject({localization: string})

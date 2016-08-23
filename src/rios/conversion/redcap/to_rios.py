@@ -11,7 +11,7 @@ import rios.conversion.structures as Rios
 
 from rios.core import ValidationError
 from rios.conversion.utils import balanced_match, CsvReader
-from rios.conversion.base import ToRios
+from rios.conversion.base import ToRios, localized_string_object
 from rios.conversion.exception import RedcapFormatError, ConversionValueError
 
 
@@ -99,9 +99,6 @@ class RedcapToRios(ToRios):
 
     def __call__(self):
         # Pre-processing
-        self.calculation_variables = set()
-        self.matrix_group_name = ''
-        self.page_name = ''
         self.reader = Csv2OrderedDict(self.stream)  # noqa: F821
         self.reader.load_attributes()
 
@@ -109,10 +106,10 @@ class RedcapToRios(ToRios):
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
             # Process new CSV format
-            process = self.processor
+            process = Processor(self.reader, self.localization)
         elif first_field == 'fieldid':
             # Process legacy CSV format
-            process = self.legacy_processor
+            process = LegacyProcessor(self.reader, self.localization)
         else:
             raise RedcapFormatError(
                 "Unknown input CSV header format. Got: {}".format(
@@ -131,139 +128,54 @@ class RedcapToRios(ToRios):
                 print "Error on line: " + str(line)
                 print str(exc)
 
+        # Construct insrument, form, and calculationset objects
+        fields, pages, calcs = process.definitions
+        for field in fields:
+            self._instrument.add_field(field)
+        for page in pages:
+            self._form.add_page(page)
+        for calc in calcs:
+            self._calculations.add(calc)
+
         # Post-processing
         try:
             self.validate()
         except ValidationError as exc:
             print "VALIDATION ERROR"
+            raise exc
 
-    def processor(self, od):
-        """ Processes a CSV data row in a REDCap data dictionary """
 
-        page_name = self.reader.get_name(od['form_name'])
-        if self.page_name != page_name:
-            self.page_name = page_name
-            self.page = Rios.PageObject(id=page_name)
-            self._form.add_page(self.page)
+class ProcessorBase(object):
+    """ Abstract base class for processor objects """
 
-        elements = self.make_elements(od)
-        # Add any non-questions to form
-        self.page.add_element(elements[:-1])
+    def __init__(self, reader, localization):
+        self.reader = reader
+        self.localization = localization
+        self.calculation_variables = set()
+        self.matrix_group_name = ''
+        self.page_name = ''
 
-        # last element should be question
-        if elements and elements[-1]['type'] == 'question':
-            self.question = elements[-1]['options']
+        # Objects to construct instruments, forms, and calcsets
+        self._storage = {'i': [], 'f': [], 'c': []}
+        self.fields = []
+        self.pages = []
+        self.calcs = []
 
-        if od['branching_logic']:
-            self.question.add_event(Rios.EventObject(
-                    trigger=self.convert_trigger(
-                            od['branching_logic']),
-                    action='disable', ))
+    @property
+    def definitions(self):
+        return (self.fields, self.pages, self.calcs,)
 
-        # assessment[m][r][c]
-        # m = matrix_group_name
-        # r = variable_field_name
-        # c = field_type
-        matrix_group_name = self.reader.get_name(
-                od.get('matrix_group_name', ''))
-        if matrix_group_name:
-            if self.matrix_group_name != matrix_group_name:
-                # Add the matrix question to form
-                self.page.add_element(elements[-1])
-                # Start a new matrix.
-                self.matrix_group_name = matrix_group_name
-                self.matrix = self.question
-                self.matrix['fieldId'] = matrix_group_name
-                field = self.make_matrix_field(od)
-                self.field_type = field['type']
-                # Append the only column(to instrument).
-                # Use the field_type (checkbox or radiobutton) as the id.
-                self.field_type.add_column(Rios.ColumnObject(
-                        id=self.reader.get_name(od['field_type']),
-                        description=od['field_type'],
-                        type=self.get_type(od, side_effects=False),
-                        required=bool(od['required_field']),
-                        identifiable=bool(od['identifier']), ))
-                # add the column to the form
-                self.matrix.add_question(Rios.QuestionObject(
-                        fieldId=self.reader.get_name(od['field_type']),
-                        text=self._localized_string_object(od['field_label']),
-                        enumerations=self.get_choices_form(od), ))
-                # Append the first row (to instrument).
-                self.field_type.add_row(Rios.RowObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        description=od['field_label'],
-                        required=bool(od['required_field']), ))
-                # add the row to the form.
-                self.matrix.add_row(Rios.DescriptorObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        text=self._localized_string_object(od['field_label']),
-                        ))
-            else:
-                # Append row to existing matrix (to instrument).
-                self.field_type.add_row(Rios.RowObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        description=od['field_label'],
-                        required=bool(od['required_field']), ))
-                field = Rios.FieldObject()
-                # add the row to the form
-                self.matrix.add_row(Rios.DescriptorObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        text=self._localized_string_object(od['field_label']),
-                        ))
-        else:
-            self.matrix_group_name = ''
-            self.matrix = None
-            self.field_type = None
-            # Add the question to the form
-            if elements:
-                self.page.add_element(elements[-1])
-            field = self.make_field(od)
+    def __call__(self, *args, **kwargs):
+        """
+        Processes REDCap data dictionary rows into corresponding RIOS
+        specfication formatted data objects.
 
-        if field['id']:
-            self._instrument.add_field(field)
+        Implementations must override this method.
+        """
 
-    def legacy_processor(self, od):
-        """ Processes a legacy CSV data row in a REDCap data dictionary """
-
-        page_name = (
-                self.reader.get_name(od['page'])
-                if od['page']
-                else 'page_0')
-        if self.page_name != page_name:
-            self.page_name = page_name
-            self.page = Rios.PageObject(id=page_name)
-            self._form.add_page(self.page)
-
-        if od['enumeration_type'] in ('enumeration', 'enumerationSet',):
-            # data_type might be a JSON string of a dict which contains
-            # 'Choices' or 'choices', an array of single key dicts.
-            try:
-                data_type = json.loads(od['data_type'])
-                self.choices = (
-                        data_type.get('Choices', False)
-                        or data_type.get('choices', False)
-                        or None )
-                # What a world.  Now we sort the array
-                # because we want key order not array order.  go figure.
-                if self.choices:
-                    self.choices = [
-                            {self.reader.get_name(k): v}
-                            for c in self.choices
-                            for k, v in c.items() ]
-                    self.choices.sort()
-            except:
-                raise ConversionValueError(
-                    "Unable to parse \"data_type\" field as valid JSON"
-                )
-        else:
-            self.choices = None
-
-        element = self.make_element2(od)
-        self.page.add_element(element)
-        field = self.make_field2(od)
-        if field['id']:
-            self._instrument.add_field(field)
+        raise NotImplementedError(
+            '{}.__call__'.format(self.__class__.__name__)
+        )
 
     def convert_calc(self, calc):
         """
@@ -338,9 +250,12 @@ class RedcapToRios(ToRios):
         """
         return [
                 Rios.DescriptorObject(
-                        id=self.reader.get_name(x.strip().split(',')[0]),
-                        text=self._localized_string_object(
-                                ','.join(x.strip().split(',')[1:]).strip()),)
+                    id=self.reader.get_name(x.strip().split(',')[0]),
+                    text=localized_string_object(
+                            self.localization,
+                            ','.join(x.strip().split(',')[1:]).strip()
+                    ),
+                )
                 for x in od['choices_or_calculations'].split('|') ]
 
     def get_choices_instrument(self, od):
@@ -356,12 +271,141 @@ class RedcapToRios(ToRios):
                     self.reader.get_name(x.strip().split(',')[0]))
         return choices_instrument
 
+
+class Processor(ProcessorBase):
+    """ Processor class for REDCap data dictionaries """
+
+    def __call__(self, od):
+        """ Processes a a REDCap data dictionary CSV row """
+
+        self._storage = {'i': [], 'f': [], 'c': []}
+        try:
+            # Create or alter form page
+            page_name = self.reader.get_name(od['form_name'])
+            if self.page_name != page_name:
+                self.page_name = page_name
+                self.page = Rios.PageObject(id=page_name)
+                self._storage['f'].append(self.page)
+
+            elements = self.make_elements(od)
+            # Add any non-questions to form
+            self.page.add_element(elements[:-1])
+
+            # last element should be question
+            if elements and elements[-1]['type'] == 'question':
+                self.question = elements[-1]['options']
+
+            if od['branching_logic']:
+                self.question.add_event(Rios.EventObject(
+                        trigger=self.convert_trigger(
+                                od['branching_logic']),
+                        action='disable', ))
+
+            # assessment[m][r][c]
+            # m = matrix_group_name
+            # r = variable_field_name
+            # c = field_type
+            matrix_group_name = self.reader.get_name(
+                    od.get('matrix_group_name', '')
+            )
+            if matrix_group_name:
+                if self.matrix_group_name != matrix_group_name:
+                    # Add the matrix question to form
+                    self.page.add_element(elements[-1])
+                    # Start a new matrix.
+                    self.matrix_group_name = matrix_group_name
+                    self.matrix = self.question
+                    self.matrix['fieldId'] = matrix_group_name
+                    field = self.make_matrix_field(od)
+                    self.field_type = field['type']
+                    # Append the only column(to instrument).
+                    # Use the field_type (checkbox or radiobutton) as the id.
+                    self.field_type.add_column(
+                        Rios.ColumnObject(
+                            id=self.reader.get_name(od['field_type']),
+                            description=od['field_type'],
+                            type=self.get_type(od, side_effects=False),
+                            required=bool(od['required_field']),
+                            identifiable=bool(od['identifier']),
+                        )
+                    )
+                    # add the column to the form
+                    self.matrix.add_question(
+                        Rios.QuestionObject(
+                            fieldId=self.reader.get_name(od['field_type']),
+                            text=localized_string_object(
+                                self.localization,
+                                od['field_label']
+                            ),
+                            enumerations=self.get_choices_form(od),
+                        )
+                    )
+                    # Append the first row (to instrument).
+                    self.field_type.add_row(
+                        Rios.RowObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            description=od['field_label'],
+                            required=bool(od['required_field']),
+                        )
+                    )
+                    # add the row to the form.
+                    self.matrix.add_row(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            text=localized_string_object(
+                                self.localization,
+                                od['field_label']
+                            ),
+                        )
+                    )
+                else:
+                    # Append row to existing matrix (to instrument).
+                    self.field_type.add_row(
+                        Rios.RowObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            description=od['field_label'],
+                            required=bool(od['required_field']),
+                        )
+                    )
+                    field = Rios.FieldObject()
+                    # add the row to the form
+                    self.matrix.add_row(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            text=localized_string_object(
+                                self.localization,
+                                od['field_label']
+                            ),
+                        )
+                    )
+            else:
+                self.matrix_group_name = ''
+                self.matrix = None
+                self.field_type = None
+                # Add the question to the form
+                if elements:
+                    self.page.add_element(elements[-1])
+                field = self.make_field(od)
+
+            if field['id']:
+                self._storage['i'].append(field)
+
+        except ConversionValueError as exc:
+            print "EXCEPTION HAS BEEN THROWN"
+            print self._storage
+            raise exc
+        else:
+            # If no exceptions/errors raised, move storage into containers
+            self.fields.extend(self._storage['i'])
+            self.pages.extend(self._storage['f'])
+            self.calcs.extend(self._storage['c'])
+
     def get_type(self, od, side_effects=True):
         """
         Returns the computed instrument field type.
 
         Also has side effects when side_effects is True.
-        - can initialize self._calculations.
+        - can initialize calculations.
         - can append a calculation.
         - updates self.question:
             enumerations, questions, rows, widget, events
@@ -385,12 +429,15 @@ class RedcapToRios(ToRios):
             if side_effects:
                 field_name = self.reader.get_name(od['variable_field_name'])
                 calc = self.convert_calc(od['choices_or_calculations'])
-                self._calculations.add(Rios.CalculationObject(
+                self._storage['c'].append(
+                    Rios.CalculationObject(
                         id=field_name,
                         description=od['field_label'],
                         type='float',
                         method='python',
-                        options={'expression': calc}, ))
+                        options={'expression': calc},
+                    )
+                )
                 assert field_name not in self.calculation_variables
                 self.calculation_variables.add(field_name)
             return None     # not an instrument field
@@ -460,12 +507,24 @@ class RedcapToRios(ToRios):
         def process_truefalse():
             if side_effects:
                 self.question.set_widget(get_widget(type='radioGroup'))
-                self.question.add_enumeration(Rios.DescriptorObject(
+                self.question.add_enumeration(
+                    Rios.DescriptorObject(
                         id="true",
-                        text=self._localized_string_object("True"),))
-                self.question.add_enumeration(Rios.DescriptorObject(
+                        text=localized_string_object(
+                            self.localization,
+                            "True"
+                        ),
+                    )
+                )
+                self.question.add_enumeration(
+                    Rios.DescriptorObject(
                         id="false",
-                        text=self._localized_string_object("False"),))
+                        text=localized_string_object(
+                            self.localization,
+                            "False"
+                        ),
+                    )
+                )
             type_object = Rios.TypeObject(base='enumeration', )
             type_object.add_enumeration('true', description='True')
             type_object.add_enumeration('false', description='False')
@@ -474,12 +533,24 @@ class RedcapToRios(ToRios):
         def process_yesno():
             if side_effects:
                 self.question.set_widget(get_widget(type='radioGroup'))
-                self.question.add_enumeration(Rios.DescriptorObject(
+                self.question.add_enumeration(
+                    Rios.DescriptorObject(
                         id="yes",
-                        text=self._localized_string_object("Yes"),))
-                self.question.add_enumeration(Rios.DescriptorObject(
+                        text=localized_string_object(
+                            self.localization,
+                            "Yes"
+                        ),
+                    )
+                )
+                self.question.add_enumeration(
+                    Rios.DescriptorObject(
                         id="no",
-                        text=self._localized_string_object("No"),))
+                        text=localized_string_object(
+                            self.localization,
+                            "No"
+                        ),
+                    )
+                )
             type_object = Rios.TypeObject(base='enumeration', )
             type_object.add_enumeration('yes', description='Yes')
             type_object.add_enumeration('no', description='No')
@@ -509,23 +580,6 @@ class RedcapToRios(ToRios):
                 'Unknown field_type. Got:', str(field_type)
             )
 
-    def get_type2(self, od):
-        data_type = od['data_type']
-        if data_type == 'instruction':
-            return None
-        if self.choices:
-            # self.choices is an array of single key dicts.
-            # The values in these dicts are
-            # only used in the form - not the instrument
-            type_object = Rios.TypeObject(base=od['enumeration_type'], )
-            for choice in self.choices:
-                type_object.add_enumeration(choice.keys()[0])
-            return type_object
-        else:
-            # So far we've seen data_type in ['date', 'text', 'instruction']
-            # So 'date' and 'text' need no translation:
-            return data_type
-
     def make_elements(self, od):
         element = Rios.ElementObject()
         elements = [element]
@@ -533,7 +587,11 @@ class RedcapToRios(ToRios):
         if section_header:
             element['type'] = 'header'
             element['options'] = {
-                    'text': self._localized_string_object(section_header)}
+                'text': localized_string_object(
+                    self.localization,
+                    section_header
+                )
+            }
             element = Rios.ElementObject()
             elements.append(element)
         if od['field_type'] == 'calc':
@@ -547,44 +605,17 @@ class RedcapToRios(ToRios):
                     self.reader.get_name(section_header),
                 )
             element['options'] = Rios.QuestionObject(
-                    fieldId=field_name,
-                    text=self._localized_string_object(od['field_label']),
-                    help=self._localized_string_object(od['field_note']), )
+                fieldId=field_name,
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+                help=localized_string_object(
+                    self.localization,
+                    od['field_note']
+                ),
+            )
         return elements
-
-    def make_element2(self, od):
-        element = Rios.ElementObject()
-        if od['data_type'] == 'instruction':
-            element['type'] = 'text'
-            element['options'] = {
-                    'text': self._localized_string_object(od['text']), }
-        else:
-            element['type'] = 'question'
-            element['options'] = Rios.QuestionObject(
-                    fieldId=self.reader.get_name(od['fieldid']),
-                    text=self._localized_string_object(od['text']),
-                    help=self._localized_string_object(od['help']), )
-            if self.choices:
-                question = element['options']
-                for choice in self.choices:
-                    key, value = choice.items()[0]
-                    question.add_enumeration(Rios.DescriptorObject(
-                            id=self.reader.get_name(key),
-                            text=self._localized_string_object(value), ))
-                question.set_widget(Rios.WidgetConfigurationObject(
-                        type='checkGroup'
-                        if od['enumeration_type'] == 'enumerationSet'
-                        else 'radioGroup'))
-        return element
-
-    def make_field2(self, od):
-        field = Rios.FieldObject()
-        field_type = self.get_type2(od)
-        if field_type:
-            field['id'] = self.reader.get_name(od['fieldid'])
-            field['description'] = od['text']
-            field['type'] = field_type
-        return field
 
     def make_field(self, od):
         field = Rios.FieldObject()
@@ -608,4 +639,118 @@ class RedcapToRios(ToRios):
         field['id'] = self.reader.get_name(od['matrix_group_name'])
         field['description'] = od.get('section_header', '')
         field['type'] = Rios.TypeObject(base='matrix', )
+        return field
+
+
+class LegacyProcessor(ProcessorBase):
+    """ Processor class for REDCap data dictionaries """
+
+    def __call__(self, od):
+        """ Processes a legacy CSV data row in a REDCap data dictionary """
+
+        page_name = (
+                self.reader.get_name(od['page'])
+                if od['page']
+                else 'page_0')
+        if self.page_name != page_name:
+            self.page_name = page_name
+            self.page = Rios.PageObject(id=page_name)
+            self.pages.append(self.page)
+
+        if od['enumeration_type'] in ('enumeration', 'enumerationSet',):
+            # data_type might be a JSON string of a dict which contains
+            # 'Choices' or 'choices', an array of single key dicts.
+            try:
+                data_type = json.loads(od['data_type'])
+                self.choices = (
+                        data_type.get('Choices', False)
+                        or data_type.get('choices', False)
+                        or None )
+                # What a world.  Now we sort the array
+                # because we want key order not array order.  go figure.
+                if self.choices:
+                    self.choices = [
+                            {self.reader.get_name(k): v}
+                            for c in self.choices
+                            for k, v in c.items() ]
+                    self.choices.sort()
+            except:
+                raise ConversionValueError(
+                    "Unable to parse \"data_type\" field as valid JSON"
+                )
+        else:
+            self.choices = None
+
+        element = self.make_element2(od)
+        self.page.add_element(element)
+        field = self.make_field2(od)
+        if field['id']:
+            self.fields.append(field)
+
+    def get_type2(self, od):
+        data_type = od['data_type']
+        if data_type == 'instruction':
+            return None
+        if self.choices:
+            # self.choices is an array of single key dicts.
+            # The values in these dicts are
+            # only used in the form - not the instrument
+            type_object = Rios.TypeObject(base=od['enumeration_type'], )
+            for choice in self.choices:
+                type_object.add_enumeration(choice.keys()[0])
+            return type_object
+        else:
+            # So far we've seen data_type in ['date', 'text', 'instruction']
+            # So 'date' and 'text' need no translation:
+            return data_type
+
+    def make_element2(self, od):
+        element = Rios.ElementObject()
+        if od['data_type'] == 'instruction':
+            element['type'] = 'text'
+            element['options'] = {
+                'text': localized_string_object(
+                    self.localization,
+                    od['text']
+                ),
+            }
+        else:
+            element['type'] = 'question'
+            element['options'] = Rios.QuestionObject(
+                fieldId=self.reader.get_name(od['fieldid']),
+                text=localized_string_object(
+                    self.localization,
+                    od['text']
+                ),
+                help=localized_string_object(
+                    self.localization,
+                    od['help']
+                ),
+            )
+            if self.choices:
+                question = element['options']
+                for choice in self.choices:
+                    key, value = choice.items()[0]
+                    question.add_enumeration(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(key),
+                            text=localized_string_object(
+                                self.localization,
+                                value
+                            ),
+                        )
+                    )
+                question.set_widget(Rios.WidgetConfigurationObject(
+                        type='checkGroup'
+                        if od['enumeration_type'] == 'enumerationSet'
+                        else 'radioGroup'))
+        return element
+
+    def make_field2(self, od):
+        field = Rios.FieldObject()
+        field_type = self.get_type2(od)
+        if field_type:
+            field['id'] = self.reader.get_name(od['fieldid'])
+            field['description'] = od['text']
+            field['type'] = field_type
         return field

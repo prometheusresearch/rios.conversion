@@ -21,9 +21,6 @@ def redcap_rios_tst(name):
             'description': '',
             'localization': 'en',
     }
-    #test_json = dict({'format': 'json'}, **test_base)
-    #test_yaml = dict({'format': 'yaml'}, **test_base)
-    #return [test_json, test_yaml]
     return [test_base,]
     
 def rios_redcap_tst(name):
