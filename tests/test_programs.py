@@ -98,14 +98,7 @@ def rios_qualtrics_tst(name):
     test_json = dict({'format': 'json'}, **test_base)
     test_yaml = dict({'format': 'yaml'}, **test_base)
     return [test_json, test_yaml]
-        
-#    return [test, test[1:]]
 
-
-        
-
-
-      
 def show_tst(cls, test):
     name = repr(cls)
     print('\n%s\n\t%s' % (name, ' '.join(test)))
@@ -114,14 +107,10 @@ def tst_class(cls, tests):
     for test in tests:
         show_tst(cls, test)
         try:
-            #print "++++"
-            #print test
-            #print "++++"
             program = cls(**test)
-            #print "0000"
             program()
-        except Exception, exc:
-            print(exc)
+        except Exception as exc:
+            print exc
 
 csv_names = [
     os.path.basename(name)[:-4] 

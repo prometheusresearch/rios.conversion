@@ -78,7 +78,7 @@ class ToRios(object):
             self._calculations.clean()
             return self._calculations.as_dict()
         else:
-            return None
+            return dict()
 
     def validate(self):
         validate_instrument(self.instrument)
@@ -86,7 +86,7 @@ class ToRios(object):
             self.form,
             instrument=self.instrument,
         )
-        if self.calculations.get('calculations', False):
+        if self.calculationset.get('calculations', False):
             validate_calculationset(
                 self.calculationset,
                 instrument=self.instrument
