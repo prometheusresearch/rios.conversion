@@ -98,7 +98,7 @@ def rios_qualtrics_tst(name):
 
 def show_tst(cls, test):
     name = repr(cls)
-    print('\n%s\n\t%s' % (name, ' '.join(test)))
+    print('\n%s\n\t%s' % (name, str(test)))
 
 def tst_class(cls, tests):
     for test in tests:
@@ -107,7 +107,8 @@ def tst_class(cls, tests):
             program = cls(**test)
             program()
         except Exception as exc:
-            print exc
+            print str(exc)
+            #raise exc
 
 csv_names = [
     os.path.basename(name)[:-4] 

@@ -18,6 +18,7 @@
 
 
 import collections
+import copy
 
 
 __all__ = (
@@ -72,6 +73,9 @@ class DefinitionSpecification(collections.OrderedDict):
                 k: v
                 for k, v in kwargs.items()
                 if not self.props or k in self.props})
+
+    def __deepcopy__(self, memo):
+        return self.__class__(copy.deepcopy(dict(self)))
 
     def clean(self):
         """Removes "empty" items from self.
