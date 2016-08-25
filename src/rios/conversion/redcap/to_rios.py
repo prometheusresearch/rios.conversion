@@ -1,7 +1,6 @@
 #
 # Copyright (c) 2016, Prometheus Research, LLC
 #
-import sys, traceback
 
 
 import sys
@@ -14,7 +13,13 @@ import rios.conversion.structures as Rios
 from rios.core import ValidationError
 from rios.conversion.utils import balanced_match, CsvReader
 from rios.conversion.base import ToRios, localized_string_object
-from rios.conversion.exception import RedcapFormatError, ConversionValueError
+from rios.conversion.exception import (
+    RedcapFormatError,
+    ConversionValidationError,
+    ConversionValueError,
+    Error,
+    guard,
+)
 
 
 # Consecutive non-alpha chars.
@@ -100,56 +105,72 @@ class RedcapToRios(ToRios):
     """ Converts a REDCap CSV file to the RIOS specification format """
 
     def __call__(self):
-        # Pre-processing
-        self.reader = Csv2OrderedDict(self.stream)  # noqa: F821
-        self.reader.load_attributes()
+        with guard("REDCap instrument conversion failure:",
+                    "Unable to parse CSV"):
+            # Pre-processing
+            self.reader = Csv2OrderedDict(self.stream)  # noqa: F821
+            self.reader.load_attributes()
 
-        # Determine processor
-        first_field = self.reader.attributes[0]
-        if first_field == 'variable_field_name':
-            # Process new CSV format
-            process = Processor(self.reader, self.localization)
-        elif first_field == 'fieldid':
-            # Process legacy CSV format
-            process = LegacyProcessor(self.reader, self.localization)
-        else:
-            raise RedcapFormatError(
-                "Unknown input CSV header format. Got: {}".format(
+            # Determine processor
+            first_field = self.reader.attributes[0]
+            if first_field == 'variable_field_name':
+                # Process new CSV format
+                process = Processor(self.reader, self.localization)
+            elif first_field == 'fieldid':
+                # Process legacy CSV format
+                process = LegacyProcessor(self.reader, self.localization)
+            else:
+                error = RedcapFormatError(
+                    "Unknown input CSV header format. Got:",
                     ", ".join(self.reader.attributes)
                 )
-            )
+                self.critical_error = True
+                raise error
 
-        # Main processing
-        # Each row is an ordered dict
-        # Start=2, because spread sheet programs set header row to 1 and first
-        # data row to 2
-        for line, row in enumerate(self.reader, start=2):
+            # Main processing
+            # Each row is an ordered dict
+            # Start=2, because spread sheet programs set header row to 1 and
+            # first data row to 2
+            for line, row in enumerate(self.reader, start=2):
+                try:
+                    process(row)
+                except Exception as exc:
+                    if isinstance(exc, ConversionValueError):
+                        # TODO: Log line failures
+                        error = Error(
+                            "Error on line: " + str(line) + ". Got:",
+                            str(exc)
+                        )
+                        print error
+                    if isinstance(exc, RedcapFormatError):
+                        error = Error(
+                            "Error on line: " + str(line) + ". Got:",
+                            str(exc)
+                        )
+                        raise error
+
+            # Construct insrument, form, and calculationset objects
+            last_page = process.page
+            fields, pages, calcs = process.definitions
+            for field in fields:
+                self._instrument.add_field(field)
+            for page in pages:
+                self._form.add_page(page)
+            for calc in calcs:
+                self._calculations.add(calc)
+
+            # Post-processing
             try:
-                process(row)
-            except Exception as exc:
-                print "Error on line: " + str(line)
-                print str(exc)
-                #ex_type, ex, tb = sys.exc_info()
-                #traceback.print_tb(tb)
-                #raise exc
-        # Construct insrument, form, and calculationset objects
-        last_page = process.page
-        fields, pages, calcs = process.definitions
-        for field in fields:
-            self._instrument.add_field(field)
-        for page in pages:
-            self._form.add_page(page)
-        self._form.add_page(last_page)
-        for calc in calcs:
-            self._calculations.add(calc)
-        # Post-processing
-        try:
-            self.validate()
-        except ValidationError as exc:
-            print "VALIDATION ERROR"
-            print str(exc)
-        else:
-            print "VALIDATION SUCCESSFUL"
+                self.validate()
+            except ValidationError as exc:
+                error = ConversionValidationError(
+                    'Validation error. Got:',
+                    str(exc)
+                )
+                raise error
+            else:
+                # TODO: Log validation success
+                print "Validation successful"
 
 
 class ProcessorBase(object):
@@ -159,7 +180,7 @@ class ProcessorBase(object):
         self.reader = reader
         self.localization = localization
         self.calculation_variables = set()
-        self.matrix_group_name = ''
+        self.matrix_group_name = None
         self.page_name = None
         self.page = None
 
@@ -171,6 +192,16 @@ class ProcessorBase(object):
 
     @property
     def definitions(self):
+        # Process inclusion of last page
+        last_page = self.page
+        use_last_page = True
+        for page in self.pages:
+            if last_page['id'] == page['id']:
+                use_last_page = False
+        if use_last_page:
+            self.pages.append(last_page)
+
+        # Return definitions
         return (self.fields, self.pages, self.calcs,)
 
     def __call__(self, *args, **kwargs):
@@ -330,6 +361,7 @@ class Processor(ProcessorBase):
         # last element should be question
         if elements and elements[-1]['type'] == 'question':
             self.question = elements[-1]['options']
+            print "QUESTION: ", self.question
 
         if od['branching_logic']:
             self.question.add_event(
@@ -349,77 +381,15 @@ class Processor(ProcessorBase):
             od.get('matrix_group_name', '')
         )
         if matrix_group_name:
+            matrix = copy.deepcopy(self.question)
             if self.matrix_group_name != matrix_group_name:
-                # Add the matrix question to form
-                page.add_element(elements[-1])
-                # Start a new matrix.
                 self.matrix_group_name = matrix_group_name
-                self.matrix = self.question
-                self.matrix['fieldId'] = matrix_group_name
-                field = self.make_matrix_field(od)
-                self.field_type = field['type']
-                # Append the only column(to instrument).
-                # Use the field_type (checkbox or radiobutton) as the id.
-                self.field_type.add_column(
-                    Rios.ColumnObject(
-                        id=self.reader.get_name(od['field_type']),
-                        description=od['field_type'],
-                        type=self.get_type(od, side_effects=False),
-                        required=bool(od['required_field']),
-                        identifiable=bool(od['identifier']),
-                    )
-                )
-                # add the column to the form
-                self.matrix.add_question(
-                    Rios.QuestionObject(
-                        fieldId=self.reader.get_name(od['field_type']),
-                        text=localized_string_object(
-                            self.localization,
-                            od['field_label']
-                        ),
-                        enumerations=self.get_choices_form(od),
-                    )
-                )
-                # Append the first row (to instrument).
-                self.field_type.add_row(
-                    Rios.RowObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        description=od['field_label'],
-                        required=bool(od['required_field']),
-                    )
-                )
-                # add the row to the form.
-                self.matrix.add_row(
-                    Rios.DescriptorObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        text=localized_string_object(
-                            self.localization,
-                            od['field_label']
-                        ),
-                    )
-                )
+
+                self.new_matrix_question_processor(page, matrix)
             else:
-                # Append row to existing matrix (to instrument).
-                self.field_type.add_row(
-                    Rios.RowObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        description=od['field_label'],
-                        required=bool(od['required_field']),
-                    )
-                )
-                field = Rios.FieldObject()
-                # add the row to the form
-                self.matrix.add_row(
-                    Rios.DescriptorObject(
-                        id=self.reader.get_name(od['variable_field_name']),
-                        text=localized_string_object(
-                            self.localization,
-                            od['field_label']
-                        ),
-                    )
-                )
+                self.current_matrix_question_processor(od, matrix)
         else:
-            self.matrix_group_name = ''
+            self.matrix_group_name = None
             self.matrix = None
             self.field_type = None
             # Add the question to the form
@@ -429,6 +399,76 @@ class Processor(ProcessorBase):
 
         if field['id']:
             self._storage['i'].append(field)
+
+    def new_matrix_question_processor(self, matrix, page):
+        print "NEW MATRIX QUESTION"
+        # Add the matrix question to form
+        page.add_element(elements[-1])
+        # Start a new matrix.
+        matrix['fieldId'] = matrix_group_name
+        field = self.make_matrix_field(od)
+        self.field_type = field['type']
+        # Append the only column(to instrument).
+        # Use the field_type (checkbox or radiobutton) as the id.
+        self.field_type.add_column(
+            Rios.ColumnObject(
+                id=self.reader.get_name(od['field_type']),
+                description=od['field_type'],
+                type=self.get_type(od, side_effects=False),
+                required=bool(od['required_field']),
+                identifiable=bool(od['identifier']),
+            )
+        )
+        # add the column to the form
+        matrix.add_question(
+            Rios.QuestionObject(
+                fieldId=self.reader.get_name(od['field_type']),
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+                enumerations=self.get_choices_form(od),
+            )
+        )
+        # Append the first row (to instrument).
+        self.field_type.add_row(
+            Rios.RowObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                description=od['field_label'],
+                required=bool(od['required_field']),
+            )
+        )
+        # add the row to the form.
+        matrix.add_row(
+            Rios.DescriptorObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+            )
+        )
+
+    def current_matrix_question_processor(self, od, matrix):
+            # Append row to existing matrix
+            # -- to instrument
+            self.field_type.add_row(
+                Rios.RowObject(
+                    id=self.reader.get_name(od['variable_field_name']),
+                    description=od['field_label'],
+                    required=bool(od['required_field']),
+                )
+            )
+            # -- to form
+            matrix.add_row(
+                Rios.DescriptorObject(
+                    id=self.reader.get_name(od['variable_field_name']),
+                    text=localized_string_object(
+                        self.localization,
+                        od['field_label']
+                    ),
+                )
+            )
 
     def get_type(self, od, side_effects=True):
         """
@@ -607,7 +647,7 @@ class Processor(ProcessorBase):
             return process_yesno()
         else:
             raise ConversionValueError(
-                'Unknown field_type. Got:', str(field_type)
+                'Unknown Field Type value. Got:', str(field_type)
             )
 
     def make_elements(self, od):
@@ -705,9 +745,11 @@ class LegacyProcessor(ProcessorBase):
                             for k, v in c.items() ]
                     self.choices.sort()
             except:
-                raise ConversionValueError(
-                    "Unable to parse \"data_type\" field as valid JSON"
+                error = RedcapFormatError(
+                    "Unable to parse \"data_type\" field",
+                    "Cannot read JSON formatted text"
                 )
+                raise error
         else:
             self.choices = None
 

@@ -50,6 +50,9 @@ class ToRios(object):
             title=localized_string_object(self.localization, self.title),
         )
 
+        # For complete and total instrument/data dictionary failure
+        self._critical_error = False
+
     def __call__(self):
         """
         Converts the given foreign instrument file into corresponding RIOS
@@ -61,6 +64,16 @@ class ToRios(object):
         raise NotImplementedError(
             '{}.__call__'.format(self.__class__.__name__)
         )
+
+    @property
+    def critical_error(self):
+        return self._critical_error
+
+    @critical_error.setter
+    def critical_error(self, value):
+        if type(value) is not bool:
+            raise ValueError('Critical error must be of type \"bool\"')
+        self._critical_error = value
 
     @property
     def instrument(self):
@@ -81,6 +94,9 @@ class ToRios(object):
             return dict()
 
     def validate(self):
+        #import yaml
+        #print "FORM"
+        #print yaml.dump(self.form)
         validate_instrument(self.instrument)
         validate_form(
             self.form,

@@ -106,31 +106,41 @@ class guard(object):
             exc_value.wrap(self.message, self.payload)
 
 
-class ConversionError(Error):
+class BaseConversionError(Error):
     """ Base class for rios.conversion exceptions """
 
     pass
 
 
-class ConversionValueError(ConversionError):
+class ConversionValueError(BaseConversionError):
     """ Thrown for ValueError exceptions in a conversion implementation """
 
     pass
 
 
-class FormatError(ConversionError):
-    """ Base class for malformed input files """
+class ConversionValidationError(BaseConversionError):
+    """ Thrown for ValidationError exceptions in a conversion implementation """
 
     pass
 
 
-class RedcapFormatError(FormatError):
-    """ Thrown for malformed REDCap data dictionary """
+class ConversionFailureError(Error):
+    """
+    Thrown for complete failure of instrument conversion process.
+
+    Use when a foreign instrument/data dictionary cannot be converted at all.
+    """
 
     pass
 
 
-class QualtricsFormatError(FormatError):
-    """ Thrown for a malformed REDCap data dictionary """
+class RedcapFormatError(ConversionFailureError):
+    """ Thrown for malformed REDCap data dictionary instrument """
+
+    pass
+
+
+class QualtricsFormatError(ConversionFailureError):
+    """ Thrown for a malformed REDCap data dictionary instrument """
 
     pass
