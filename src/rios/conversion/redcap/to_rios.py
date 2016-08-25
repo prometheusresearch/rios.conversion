@@ -180,7 +180,7 @@ class ProcessorBase(object):
         self.reader = reader
         self.localization = localization
         self.calculation_variables = set()
-        self.matrix_group_name = None
+        self.current_matrix_group_name = None
         self.page_name = None
         self.page = None
 
@@ -189,6 +189,10 @@ class ProcessorBase(object):
         self.fields = []
         self.pages = []
         self.calcs = []
+
+        # Objects to construct matrix questions
+        self._matrix_storage = {'m': []}
+        self.matrix = None
 
     @property
     def definitions(self):
@@ -332,7 +336,7 @@ class Processor(ProcessorBase):
             self.page_name = page_name
             page = Rios.PageObject(id=page_name)
             try:
-                self.processor(od, page)
+                self.page_processor(od, page)
             except ConversionValueError as exc:
                 raise exc
             self.page = page
@@ -340,7 +344,7 @@ class Processor(ProcessorBase):
         else:
             page = copy.deepcopy(self.page)
             try:
-                self.processor(od, page)
+                self.page_processor(od, page)
             except ConversionValueError as exc:
                 raise exc
             self.page = page
@@ -350,21 +354,61 @@ class Processor(ProcessorBase):
         #self.pages.extend(self._storage['f'])
         self.calcs.extend(self._storage['c'])
 
-    def processor(self, od, page):
+    def page_processor(self, od, page):
 
         self._storage = {'i': [], 'f': [], 'c': []}
 
         elements = self.make_elements(od)
+
+        section_header = od['section_header']
+        if section_header:
+            header = Rios.ElementObject()
+            header['type'] = 'header'
+            header['options'] = {
+                'text': localized_string_object(
+                    self.localization,
+                    section_header
+                )
+            }
+        else:
+            header = None
+
+        # Check if a calc, and if so, remove, because not a form field/question
+        if od['field_type'] == 'calc':
+            question = None
+        else:
+            question = Rios.ElementObject()
+            question['type'] = 'question'
+            field_name = self.reader.get_name(od['variable_field_name'])
+            if section_header:
+                field_name = '%s_%s' % (
+                    field_name,
+                    self.reader.get_name(section_header),
+                )
+            question['options'] = Rios.QuestionObject(
+                fieldId=field_name,
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+                help=localized_string_object(
+                    self.localization,
+                    od['field_note']
+                ),
+            )
+
         # Add any non-questions to form
-        page.add_element(elements[:-1])
+        if header and not question:
+            page.add_element(section_header)
+        else:
+            self.question_processor(od, page, question)
+            
 
-        # last element should be question
-        if elements and elements[-1]['type'] == 'question':
-            self.question = elements[-1]['options']
-            print "QUESTION: ", self.question
+    def question_processor(self, od, page, question):
 
+        # Add branching logic event
         if od['branching_logic']:
-            self.question.add_event(
+            question.add_event(
                 Rios.EventObject(
                     trigger=self.convert_trigger(
                             od['branching_logic']
@@ -373,41 +417,60 @@ class Processor(ProcessorBase):
                 )
             )
 
-        # assessment[m][r][c]
-        # m = matrix_group_name
-        # r = variable_field_name
-        # c = field_type
+        # Check for a matrix question
         matrix_group_name = self.reader.get_name(
-            od.get('matrix_group_name', '')
+            od.get('matrix_group_name', None)
         )
-        if matrix_group_name:
-            matrix = copy.deepcopy(self.question)
-            if self.matrix_group_name != matrix_group_name:
-                self.matrix_group_name = matrix_group_name
 
-                self.new_matrix_question_processor(page, matrix)
-            else:
-                self.current_matrix_question_processor(od, matrix)
+        if matrix_group_name:
+            # Question is a matrix question
+            # assessment[m][r][c]
+            # m = matrix_group_name
+            # r = variable_field_name
+            # c = field_type
+
+            # Rename for clarity
+            matrix = question
+            try:
+                if self.current_matrix_group_name != matrix_group_name:
+                    # New matrix question
+                    print "NEW MATRIX QUESTION"
+
+                    self.current_matrix_group_name = matrix_group_name
+
+                    # Add the matrix question to form
+                    page.add_element(question)
+
+                    # Start a new matrix.
+                    question['fieldId'] = matrix_group_name
+                    field = self.make_matrix_field(od)
+                    self.field_type = field['type']
+
+                    # Process matrix
+                    self.new_matrix_question_processor(od, page, matrix)
+                else:
+                    # Current matrix question
+                    print "CURRENT MATRIX QUESTION"
+                    self.current_matrix_question_processor(od, matrix)
+            except Exception as exc:
+                print repr(exc)
         else:
+            # Not a matrix question
             self.matrix_group_name = None
             self.matrix = None
             self.field_type = None
-            # Add the question to the form
-            if elements:
-                page.add_element(elements[-1])
-            field = self.make_field(od)
 
+            # Add the question to the form
+            page.add_element(question)
+
+            # Make instrument field
+            field = self.make_instrument_field(od)
+
+        # Store top level instrument field
         if field['id']:
             self._storage['i'].append(field)
 
-    def new_matrix_question_processor(self, matrix, page):
-        print "NEW MATRIX QUESTION"
-        # Add the matrix question to form
-        page.add_element(elements[-1])
-        # Start a new matrix.
-        matrix['fieldId'] = matrix_group_name
-        field = self.make_matrix_field(od)
-        self.field_type = field['type']
+    def new_matrix_question_processor(self, od, page, matrix):
         # Append the only column(to instrument).
         # Use the field_type (checkbox or radiobutton) as the id.
         self.field_type.add_column(
@@ -450,25 +513,25 @@ class Processor(ProcessorBase):
         )
 
     def current_matrix_question_processor(self, od, matrix):
-            # Append row to existing matrix
-            # -- to instrument
-            self.field_type.add_row(
-                Rios.RowObject(
-                    id=self.reader.get_name(od['variable_field_name']),
-                    description=od['field_label'],
-                    required=bool(od['required_field']),
-                )
+        # Append row to existing matrix
+        # -- to instrument
+        self.field_type.add_row(
+            Rios.RowObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                description=od['field_label'],
+                required=bool(od['required_field']),
             )
-            # -- to form
-            matrix.add_row(
-                Rios.DescriptorObject(
-                    id=self.reader.get_name(od['variable_field_name']),
-                    text=localized_string_object(
-                        self.localization,
-                        od['field_label']
-                    ),
-                )
+        )
+        # -- to form
+        matrix.add_row(
+            Rios.DescriptorObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
             )
+        )
 
     def get_type(self, od, side_effects=True):
         """
@@ -662,6 +725,7 @@ class Processor(ProcessorBase):
                     section_header
                 )
             }
+            # Create new element for questions
             element = Rios.ElementObject()
             elements.append(element)
         if od['field_type'] == 'calc':
@@ -687,7 +751,7 @@ class Processor(ProcessorBase):
             )
         return elements
 
-    def make_field(self, od):
+    def make_instrument_field(self, od):
         field = Rios.FieldObject()
         field_type = self.get_type(od)
         if field_type:

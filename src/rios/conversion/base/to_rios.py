@@ -94,9 +94,6 @@ class ToRios(object):
             return dict()
 
     def validate(self):
-        #import yaml
-        #print "FORM"
-        #print yaml.dump(self.form)
         validate_instrument(self.instrument)
         validate_form(
             self.form,
