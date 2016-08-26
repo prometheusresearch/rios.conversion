@@ -14,7 +14,7 @@ class InstrumentCalcStorage(collections.MutableMapping):
     """
     Storage for instrument and calculation objects.
 
-    Object is of default form {'i': [], 'c': []}. The 'i' key corresponds to 
+    Object is of default form {'i': [], 'c': []}. The 'i' key corresponds to
     instrument field objects only of the Instrument class. The 'c' key
     corresponds to calculation objects only of the CalculationObject class.
     This is to ensure that the values are only lists of either instrument field

@@ -26,7 +26,6 @@ class QualtricsToRios(ToRios):
     def __init__(self, infile, instrument_version, format):
         self.page_name = PageName()
 
-        self.outfile_prefix = outfile_prefix
         self.instrument_version = instrument_version
         self.format = format
         self.infile = infile
