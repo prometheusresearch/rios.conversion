@@ -6,6 +6,7 @@
 import json
 import os
 import yaml
+import collections
 
 
 from rios.conversion import structures
@@ -28,6 +29,15 @@ class ToRios(object):
 
     def __init__(self, id, instrument_version, title,
                     localization, description, stream):
+        self.data = collections.OrderedDict()
+        self.page_names = set()
+        # Inserted into self._form
+        self.page_container = dict()
+        # Inserted into self._instrument
+        self.field_container = list()
+        # Inserted into self._calculations
+        #self.calc_container = dict()
+        ######
         self.id = id
         self.instrument_version = instrument_version or DEFAULT_VERSION
         self.title = title
@@ -35,6 +45,7 @@ class ToRios(object):
         self.description = description
         self.stream = stream
 
+        # Generate yet-to-be-configured RIOS definitions
         self._instrument = structures.Instrument(
             id=self.id,
             version=self.instrument_version,
@@ -50,9 +61,6 @@ class ToRios(object):
             title=localized_string_object(self.localization, self.title),
         )
 
-        # For complete and total instrument/data dictionary failure
-        self._critical_error = False
-
     def __call__(self):
         """
         Converts the given foreign instrument file into corresponding RIOS
@@ -64,16 +72,6 @@ class ToRios(object):
         raise NotImplementedError(
             '{}.__call__'.format(self.__class__.__name__)
         )
-
-    @property
-    def critical_error(self):
-        return self._critical_error
-
-    @critical_error.setter
-    def critical_error(self, value):
-        if type(value) is not bool:
-            raise ValueError('Critical error must be of type \"bool\"')
-        self._critical_error = value
 
     @property
     def instrument(self):

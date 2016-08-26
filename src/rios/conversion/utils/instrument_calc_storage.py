@@ -56,7 +56,5 @@ class InstrumentCalcStorage(collections.MutableMapping):
     def __len__(self):
         return len(self.__dict__)
 
-    def clear(self, key):
-        if key not in self.__keys:
-            raise KeyError('Invalid key value')
+    def clear(self):
         self.__dict__.fromkeys(self.__keys, list())
