@@ -7,6 +7,7 @@ import sys
 import json
 import re
 import copy
+import collections
 import rios.conversion.structures as Rios
 
 
@@ -127,7 +128,7 @@ class RedcapToRios(ToRios):
                 self.critical_error = True
                 raise error
 
-            # Main processing
+            # MAIN PROCESSING
             # Each row is an ordered dict
             # Start=2, because spread sheet programs set header row to 1 and
             # first data row to 2
@@ -171,6 +172,45 @@ class RedcapToRios(ToRios):
             else:
                 # TODO: Log validation success
                 print "Validation successful"
+
+class InstrumentFormStorage(collections.MutableMapping):
+    """ Storage for instrument and form objects """
+
+    __default = {'i': list(), 'f': list()}
+    __keys = ('i', 'f',)
+
+    def __init__(self):
+        self.__dict__.update(__default)
+
+    def __setitem__(self, key, value):
+        if key not in self.__keys:
+            raise KeyError('Invalid key value')
+        if not issubclass(value, Rios.DefinitionSpecification):
+            raise ValueError(
+                'Value must be a subclass of DefinitionSpecification'
+            )
+        self.__dict__[key].append(value)
+
+    def __getitem__(self, key):
+        if key not in self.__keys:
+            raise KeyError('Invalid key value')
+        return self.__dict__[key]
+
+    def __delitem__(self, key):
+        if key not in self.__keys:
+            raise KeyError('Invalid key value')
+        del self.__dict__[key]
+
+    def __iter__(self):
+        return iter(self.__dict__)
+
+    def __len__(self):
+        return len(self.__dict__)
+
+    def clear(self, key):
+        if key not in self.__keys:
+            raise KeyError('Invalid key value')
+        self.__dict__.fromkeys(self.__keys, list())
 
 
 class ProcessorBase(object):
@@ -315,14 +355,96 @@ class ProcessorBase(object):
         return choices_instrument
 
 
+class QuestionProcessor(object):
+    """ Processor for questions """
+
+    def __init__(self, od, page, question):
+        self._od = od
+        self._page = page
+        self._question = question
+        self._field_type = None
+
+    def __call__(self, question):
+        pass
+
+    def new_matrix_question_processor(self, od, page, question, field_type):
+        # Append the only column(to instrument).
+        # Use the field_type (checkbox or radiobutton) as the id.
+        field_type.add_column(
+            Rios.ColumnObject(
+                id=self.reader.get_name(od['field_type']),
+                description=od['field_type'],
+                type=self.get_type(od, side_effects=False),
+                required=bool(od['required_field']),
+                identifiable=bool(od['identifier']),
+            )
+        )
+        # add the column to the form
+        matrix.add_question(
+            Rios.QuestionObject(
+                fieldId=self.reader.get_name(od['field_type']),
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+                enumerations=self.get_choices_form(od),
+            )
+        )
+        # Append the first row (to instrument).
+        field_type.add_row(
+            Rios.RowObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                description=od['field_label'],
+                required=bool(od['required_field']),
+            )
+        )
+        # add the row to the form.
+        matrix.add_row(
+            Rios.DescriptorObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+            )
+        )
+
+    def current_matrix_question_processor(self, od, field, question, field_type):
+        # Append row to existing matrix
+        # -- to instrument
+        field_type.add_row(
+            Rios.RowObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                description=od['field_label'],
+                required=bool(od['required_field']),
+            )
+        )
+        # Reset field so field['id'] is None to prevent insertion of field
+        # into instrument definition
+        field = Rios.FieldObject()
+        # -- to form
+        matrix.add_row(
+            Rios.DescriptorObject(
+                id=self.reader.get_name(od['variable_field_name']),
+                text=localized_string_object(
+                    self.localization,
+                    od['field_label']
+                ),
+            )
+        )
+
 class Processor(ProcessorBase):
     """ Processor class for REDCap data dictionaries """
+
+    def __init__(self):
+        super(Processor, self).__init__()
 
     def __call__(self, od,):
         """ Processes a a REDCap data dictionary CSV row """
 
         try:
-            # Create or alter form page
+            # Get page name
+            # -- page names are based on Form Name field
             page_name = self.reader.get_name(od['form_name'])
         except:
             raise RedcapFormatError(
@@ -336,6 +458,7 @@ class Processor(ProcessorBase):
             self.page_name = page_name
             page = Rios.PageObject(id=page_name)
             try:
+                # Process new page
                 self.page_processor(od, page)
             except ConversionValueError as exc:
                 raise exc
@@ -344,6 +467,7 @@ class Processor(ProcessorBase):
         else:
             page = copy.deepcopy(self.page)
             try:
+                # Process current page
                 self.page_processor(od, page)
             except ConversionValueError as exc:
                 raise exc
@@ -354,11 +478,17 @@ class Processor(ProcessorBase):
         #self.pages.extend(self._storage['f'])
         self.calcs.extend(self._storage['c'])
 
+#########
+class PageProcessor(object):
+    """ Processor class for pages """
+
+    
+
     def page_processor(self, od, page):
 
         self._storage = {'i': [], 'f': [], 'c': []}
 
-        elements = self.make_elements(od)
+        #elements = self.make_elements(od)
 
         section_header = od['section_header']
         if section_header:
@@ -397,11 +527,17 @@ class Processor(ProcessorBase):
                 ),
             )
 
-        # Add any non-questions to form
+        # Now that we have a header only OR question and maybe a header, we
+        # either add the header by itself as a section header, or we add a new
+        # question with a possible inner header
         if header and not question:
+            # Add non-questions to form (e.g., headers)
             page.add_element(section_header)
         else:
+            # Process existing questions or process and add new questions to
+            # the form
             self.question_processor(od, page, question)
+            page.add_element(question)
             
 
     def question_processor(self, od, page, question):
@@ -429,8 +565,6 @@ class Processor(ProcessorBase):
             # r = variable_field_name
             # c = field_type
 
-            # Rename for clarity
-            matrix = question
             try:
                 if self.current_matrix_group_name != matrix_group_name:
                     # New matrix question
@@ -438,100 +572,121 @@ class Processor(ProcessorBase):
 
                     self.current_matrix_group_name = matrix_group_name
 
-                    # Add the matrix question to form
+                    # Add the new matrix question to form
                     page.add_element(question)
 
-                    # Start a new matrix.
+                    # Start a new matrix (question) for the form
                     question['fieldId'] = matrix_group_name
-                    field = self.make_matrix_field(od)
-                    self.field_type = field['type']
+
+                    # Create a new matrix question for the instrument
+                    ###field = self.make_matrix_field(od)
+                    field = Rios.FieldObject()
+                    field['id'] = self.reader.get_name(od['matrix_group_name'])
+                    field['description'] = od.get('section_header', '')
+                    field['type'] = Rios.TypeObject(base='matrix', )
+
+                    field_type = field['type']
 
                     # Process matrix
-                    self.new_matrix_question_processor(od, page, matrix)
+                    ####self.new_matrix_question_processor(od, page, question, field_type)
+
+                    # Append the only column(to instrument).
+                    # Use the field_type (checkbox or radiobutton) as the id.
+                    field_type.add_column(
+                        Rios.ColumnObject(
+                            id=self.reader.get_name(od['field_type']),
+                            description=od['field_type'],
+                            type=self.get_type(od, side_effects=False),
+                            required=bool(od['required_field']),
+                            identifiable=bool(od['identifier']),
+                        )
+                    )
+                    # add the column to the form
+                    question.add_question(
+                        Rios.QuestionObject(
+                            fieldId=self.reader.get_name(od['field_type']),
+                            text=localized_string_object(
+                                self.localization,
+                                od['field_label']
+                            ),
+                            enumerations=self.get_choices_form(od),
+                        )
+                    )
+                    # Append the first row (to instrument).
+                    field_type.add_row(
+                        Rios.RowObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            description=od['field_label'],
+                            required=bool(od['required_field']),
+                        )
+                    )
+                    # add the row to the form.
+                    question.add_row(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            text=localized_string_object(
+                                self.localization,
+                                od['field_label']
+                            ),
+                        )
+                    )
                 else:
                     # Current matrix question
                     print "CURRENT MATRIX QUESTION"
-                    self.current_matrix_question_processor(od, matrix)
+                    ###self.current_matrix_question_processor(od, field, question, field_type)
+                    # Append row to existing matrix
+                    # -- to instrument
+                    field_type.add_row(
+                        Rios.RowObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            description=od['field_label'],
+                            required=bool(od['required_field']),
+                        )
+                    )
+                    # Reset field so field['id'] is None to prevent insertion of field
+                    # into instrument definition
+                    field = Rios.FieldObject()
+                    # -- to form
+                    matrix.add_row(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(od['variable_field_name']),
+                            text=localized_string_object(
+                                self.localization,
+                                od['field_label']
+                            ),
+                        )
+                    )
             except Exception as exc:
                 print repr(exc)
         else:
             # Not a matrix question
             self.matrix_group_name = None
             self.matrix = None
-            self.field_type = None
+            field_type = None
 
             # Add the question to the form
             page.add_element(question)
 
             # Make instrument field
             field = self.make_instrument_field(od)
+            #    field = Rios.FieldObject()
+            #    field_type = self.get_type(od)
+            #    if field_type:
+            #        field_name = self.reader.get_name(od['variable_field_name'])
+            #        if od['section_header']:
+            #            field_name = '%s_%s' % (
+            #                field_name,
+            #                self.reader.get_name(od['section_header']),
+            #            )
+            #        field['id'] = field_name
+            #        field['description'] = od['field_label']
+            #        field['type'] = field_type
+            #        field['required'] = bool(od['required_field'])
+            #        field['identifiable'] = bool(od['identifier'])
 
-        # Store top level instrument field
+        # Store instrument question field
         if field['id']:
             self._storage['i'].append(field)
-
-    def new_matrix_question_processor(self, od, page, matrix):
-        # Append the only column(to instrument).
-        # Use the field_type (checkbox or radiobutton) as the id.
-        self.field_type.add_column(
-            Rios.ColumnObject(
-                id=self.reader.get_name(od['field_type']),
-                description=od['field_type'],
-                type=self.get_type(od, side_effects=False),
-                required=bool(od['required_field']),
-                identifiable=bool(od['identifier']),
-            )
-        )
-        # add the column to the form
-        matrix.add_question(
-            Rios.QuestionObject(
-                fieldId=self.reader.get_name(od['field_type']),
-                text=localized_string_object(
-                    self.localization,
-                    od['field_label']
-                ),
-                enumerations=self.get_choices_form(od),
-            )
-        )
-        # Append the first row (to instrument).
-        self.field_type.add_row(
-            Rios.RowObject(
-                id=self.reader.get_name(od['variable_field_name']),
-                description=od['field_label'],
-                required=bool(od['required_field']),
-            )
-        )
-        # add the row to the form.
-        matrix.add_row(
-            Rios.DescriptorObject(
-                id=self.reader.get_name(od['variable_field_name']),
-                text=localized_string_object(
-                    self.localization,
-                    od['field_label']
-                ),
-            )
-        )
-
-    def current_matrix_question_processor(self, od, matrix):
-        # Append row to existing matrix
-        # -- to instrument
-        self.field_type.add_row(
-            Rios.RowObject(
-                id=self.reader.get_name(od['variable_field_name']),
-                description=od['field_label'],
-                required=bool(od['required_field']),
-            )
-        )
-        # -- to form
-        matrix.add_row(
-            Rios.DescriptorObject(
-                id=self.reader.get_name(od['variable_field_name']),
-                text=localized_string_object(
-                    self.localization,
-                    od['field_label']
-                ),
-            )
-        )
 
     def get_type(self, od, side_effects=True):
         """
