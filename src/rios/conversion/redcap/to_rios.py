@@ -180,20 +180,14 @@ class RedcapToRios(ToRios):
                 try:
                     # WHERE THE MAGIC HAPPENS
                     fields, calcs = process(page, row)
-                    print "FIELDS:"
-                    print "     ", fields
-                    print "CALCS:"
-                    print "     ", calcs
-                    #print "PAGE:"
-                    #print "     ", page
-                    #self.field_container.append(
-                    #    field
-                    #    for field in fields
-                    #)
-                    #self.calc_container.update(
-                    #    calc_definition 
-                    #    for calc_definition in calcs
-                    #)
+                    self.field_container.append(
+                        field
+                        for field in fields
+                    )
+                    self.calc_container.update(
+                        calc_definition 
+                        for calc_definition in calcs
+                    )
                 except Exception as exc:
                     traceback.print_exc(sys.exc_info()[0])
                     if isinstance(exc, ConversionValueError):
@@ -383,8 +377,6 @@ class Processor(ProcessorBase):
 
         fields = self._storage['i']
         calcs = self._storage['c']
-
-        self._storage.clear()
 
         return (fields, calcs,)
 
@@ -781,8 +773,8 @@ class Processor(ProcessorBase):
 
         # Process question according to its field type
         field_type = row['field_type']
-        print "INSIDE GET TYPE"
-        print field_type
+        #print "INSIDE GET TYPE"
+        #print field_type
         if field_type == 'text':
             return process_text()
         elif field_type == 'notes':

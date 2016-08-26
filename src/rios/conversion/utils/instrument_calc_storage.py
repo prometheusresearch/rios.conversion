@@ -28,13 +28,9 @@ class InstrumentCalcStorage(collections.MutableMapping):
     }
 
     def __init__(self):
-        self.__dict__ = {}.fromkeys(six.iterkeys(self.__keys), [])
+        self.__dict__ = self.__new_dict()
 
     def __setitem__(self, key, value):
-        print "MAYBE EMPTY????"
-        print "key: ", key
-        print "value: ", value
-        print self.__dict__
         if key not in self.__keys:
             raise KeyError('Invalid key value')
         if not isinstance(value, self.__keys[key]):
@@ -42,14 +38,10 @@ class InstrumentCalcStorage(collections.MutableMapping):
                 'Value must be a subclass of ' + str(self.__keys[key])
             )
         self.__getitem__(key).append(value)
-        print "MAYBE HERE????"
-        print self.__dict__
 
     def __getitem__(self, key):
-        print "getitem key: ", key
         if key not in self.__keys:
             raise KeyError('Invalid key value')
-        print "getitem print: ", self.__dict__[key]
         return self.__dict__[key]
 
     def __delitem__(self, key):
@@ -64,4 +56,7 @@ class InstrumentCalcStorage(collections.MutableMapping):
         return len(self.__dict__)
 
     def clear(self):
-        self.__dict__ = {}.fromkeys(six.iterkeys(self.__keys), [])
+        self.__dict__ = self.__new_dict()
+
+    def __new_dict(self):
+        return dict([(k, list(),) for k in six.iterkeys(self.__keys)])
