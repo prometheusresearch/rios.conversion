@@ -12,7 +12,11 @@ import rios.conversion.structures as Rios
 
 
 from rios.core import ValidationError
-from rios.conversion.utils import balanced_match, CsvReader
+from rios.conversion.utils import (
+    InstrumentCalcStorage,
+    CsvReader,
+    balanced_match,
+)
 from rios.conversion.base import ToRios, localized_string_object
 from rios.conversion.exception import (
     RedcapFormatError,
@@ -173,45 +177,6 @@ class RedcapToRios(ToRios):
                 # TODO: Log validation success
                 print "Validation successful"
 
-class InstrumentFormStorage(collections.MutableMapping):
-    """ Storage for instrument and form objects """
-
-    __default = {'i': list(), 'f': list()}
-    __keys = ('i', 'f',)
-
-    def __init__(self):
-        self.__dict__.update(__default)
-
-    def __setitem__(self, key, value):
-        if key not in self.__keys:
-            raise KeyError('Invalid key value')
-        if not issubclass(value, Rios.DefinitionSpecification):
-            raise ValueError(
-                'Value must be a subclass of DefinitionSpecification'
-            )
-        self.__dict__[key].append(value)
-
-    def __getitem__(self, key):
-        if key not in self.__keys:
-            raise KeyError('Invalid key value')
-        return self.__dict__[key]
-
-    def __delitem__(self, key):
-        if key not in self.__keys:
-            raise KeyError('Invalid key value')
-        del self.__dict__[key]
-
-    def __iter__(self):
-        return iter(self.__dict__)
-
-    def __len__(self):
-        return len(self.__dict__)
-
-    def clear(self, key):
-        if key not in self.__keys:
-            raise KeyError('Invalid key value')
-        self.__dict__.fromkeys(self.__keys, list())
-
 
 class ProcessorBase(object):
     """ Abstract base class for processor objects """
@@ -225,7 +190,7 @@ class ProcessorBase(object):
         self.page = None
 
         # Objects to construct instruments, forms, and calcsets
-        self._storage = {'i': [], 'f': [], 'c': []}
+        self._storage = InstrumentCalcStorage()
         self.fields = []
         self.pages = []
         self.calcs = []
