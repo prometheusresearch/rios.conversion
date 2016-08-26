@@ -27,6 +27,7 @@ class ToRios(object):
                     localization, description, stream):
         self.data = collections.OrderedDict()
         self.page_names = set()
+
         # Inserted into self._form
         self.page_container = dict()
         # Inserted into self._instrument
@@ -34,7 +35,6 @@ class ToRios(object):
         # Inserted into self._calculationset
         self.calc_container = dict()
 
-        ######
         self.id = id
         self.instrument_version = instrument_version or DEFAULT_VERSION
         self.title = title

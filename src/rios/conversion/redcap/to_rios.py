@@ -123,6 +123,7 @@ class RedcapToRios(ToRios):
             elif first_field == 'fieldid':
                 # Process legacy CSV format
                 # process = LegacyProcessor(self.reader, self.localization)
+                # TODO: Implement LegacyProcessor
                 pass
             else:
                 error = RedcapFormatError(
@@ -177,6 +178,7 @@ class RedcapToRios(ToRios):
                     # WHERE THE MAGIC HAPPENS
                     fields, calcs = process(page, row)
 
+                    # Clear processor's internal storage for next line
                     process.clear_storage()
 
                     for field in fields:
@@ -282,7 +284,7 @@ class ProcessorBase(object):
                         'calculations["%s"]' % var,
                         'assessment["%s"]' % var)
         for name, pattern in RE_funcs.items():
-            # the matched pattern includes the '('
+            # The matched pattern includes the '('
             s = pattern.sub('%s(' % FUNCTION_TO_PYTHON[name], s)
         s = self.convert_carat_function(s)
         for pattern, replacement in RE_ops:
