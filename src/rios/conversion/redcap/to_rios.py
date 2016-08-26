@@ -9,6 +9,7 @@ import re
 import copy
 import collections
 import six
+import traceback
 import rios.conversion.structures as Rios
 
 
@@ -73,7 +74,7 @@ OPERATOR_TO_REXL = [
 RE_ops = [(re.compile(redcap), rexl) for redcap, rexl in OPERATOR_TO_REXL]
 
 
-class Csv2OrderedDict(CsvReader):
+class CsvReaderWithGetName(CsvReader):
     """
     RIOS imposes restrictions on the range of strings which can be used for
     IDs. This program quietly converts input IDs using
@@ -92,6 +93,8 @@ class Csv2OrderedDict(CsvReader):
           but they all begin with 'choices' and contain 'calc')
         - if the name begins with a digit, then prepend "id_"
         """
+        if name is None:
+            raise ValueError("Name cannot be None")
         x = RE_strip_outer_underbars.sub(
                 r'\1',
                 RE_non_alphanumeric.sub('_', name.strip().lower()))
@@ -114,7 +117,7 @@ class RedcapToRios(ToRios):
         with guard("REDCap instrument conversion failure:",
                     "Unable to parse CSV"):
             # Pre-processing
-            self.reader = Csv2OrderedDict(self.stream)  # noqa: F821
+            self.reader = CsvReaderWithGetName(self.stream)  # noqa: F821
             self.reader.load_attributes()
 
             # Determine processor
@@ -181,15 +184,18 @@ class RedcapToRios(ToRios):
                     print "     ", fields
                     print "CALCS:"
                     print "     ", calcs
-                    self.field_container.append(
-                        field
-                        for field in fields
-                    )
-                    self.calc_container.update(
-                        calc_definition 
-                        for calc_definition in calcs
-                    )
+                    #print "PAGE:"
+                    #print "     ", page
+                    #self.field_container.append(
+                    #    field
+                    #    for field in fields
+                    #)
+                    #self.calc_container.update(
+                    #    calc_definition 
+                    #    for calc_definition in calcs
+                    #)
                 except Exception as exc:
+                    traceback.print_exc(sys.exc_info()[0])
                     if isinstance(exc, ConversionValueError):
                         # TODO: Log line failures
                         error = Error(
@@ -206,30 +212,29 @@ class RedcapToRios(ToRios):
                     else:
                         raise exc
 
-#            # Construct insrument, form, and calculationset objects
-#            last_page = process.page
-#            fields, pages, calcs = process.definitions
-#            for field in fields:
-#                self._instrument.add_field(field)
-#            for page in pages:
-#                self._form.add_page(page)
-#            for calc in calcs:
-#                self._calculations.add(calc)
-#
-#            # Post-processing
-#            try:
-#                self.validate()
-#            except ValidationError as exc:
-#                error = ConversionValidationError(
-#                    'Validation error. Got:',
-#                    str(exc)
-#                )
-#                raise error
-#            else:
-#                # TODO: Log validation success
-#                print "Validation successful"
-#
-#
+            # Construct insrument and calculationset objects
+            for field in self.field_container:
+                self._instrument.add_field(field)
+            for calc in self.calc_container:
+                self._calculationset.add(calc)
+            # Page container is a dict instead of a list, so iterate over vals
+            for page in six.itervalues(self.page_container):
+                self._form.add_page(page)
+
+            # Post-processing
+            try:
+                self.validate()
+            except ValidationError as exc:
+                error = ConversionValidationError(
+                    'Validation error. Got:',
+                    str(exc)
+                )
+                raise error
+            else:
+                # TODO: Log validation success
+                print "Validation successful"
+
+
 
 class ProcessorBase(object):
     """ Abstract base class for processor objects """
@@ -237,17 +242,20 @@ class ProcessorBase(object):
     def __init__(self, reader, localization):
         self.reader = reader
         self.localization = localization
-        #self.calculation_variables = set()
-        #self.current_matrix_group_name = None
+
+        # Set to hold unique calc variables
+        self.calculation_variables = set()
 
         # Objects to construct instruments, forms, and calcsets
         self._storage = InstrumentCalcStorage()
-        self.fields = []
-        self.calcs = []
 
-        # Objects to construct matrix questions
-        self._matrix_storage = {'m': []}
-        self.matrix = None
+        # Object to store pointer to instrument field object
+        self._field = None
+
+        # Objects to store pointers to matrix construction objects
+        self._current_matrix_group_name = None
+        self._matrix = None
+        self._field_type = None
 
     def __call__(self, *args, **kwargs):
         """
@@ -264,20 +272,6 @@ class ProcessorBase(object):
         raise NotImplementedError(
             '{}.__call__'.format(self.__class__.__name__)
         )
-
-    @property
-    def definitions(self):
-        # Process inclusion of last page
-        last_page = self.page
-        use_last_page = True
-        for page in self.pages:
-            if last_page['id'] == page['id']:
-                use_last_page = False
-        if use_last_page:
-            self.pages.append(last_page)
-
-        # Return definitions
-        return (self.fields, self.pages, self.calcs,)
 
     def convert_calc(self, calc):
         """
@@ -343,7 +337,7 @@ class ProcessorBase(object):
         else:
             return value    # pragma: no cover
 
-    def get_choices_form(self, od):
+    def get_choices_form(self, row):
         """
         Returns array of DescriptorObject
 
@@ -358,9 +352,9 @@ class ProcessorBase(object):
                             ','.join(x.strip().split(',')[1:]).strip()
                     ),
                 )
-                for x in od['choices_or_calculations'].split('|') ]
+                for x in row['choices_or_calculations'].split('|') ]
 
-    def get_choices_instrument(self, od):
+    def get_choices_instrument(self, row):
         """
         Returns EnumerationCollectionObject
 
@@ -368,94 +362,12 @@ class ProcessorBase(object):
         of (comma delimited) tuples: internal, external
         """
         choices_instrument = Rios.EnumerationCollectionObject()
-        for x in od['choices_or_calculations'].split('|'):
+        for x in row['choices_or_calculations'].split('|'):
             choices_instrument.add(
                     self.reader.get_name(x.strip().split(',')[0]))
         return choices_instrument
 
 
-
-
-
-
-#class QuestionProcessor(object):
-#    """ Processor for questions """
-#
-#    def __init__(self, od, page, question):
-#        self._od = od
-#        self._page = page
-#        self._question = question
-#        self._field_type = None
-#
-#    def __call__(self, question):
-#        pass
-#
-#    def new_matrix_question_processor(self, od, page, question, field_type):
-#        # Append the only column(to instrument).
-#        # Use the field_type (checkbox or radiobutton) as the id.
-#        field_type.add_column(
-#            Rios.ColumnObject(
-#                id=self.reader.get_name(od['field_type']),
-#                description=od['field_type'],
-#                type=self.get_type(od, side_effects=False),
-#                required=bool(od['required_field']),
-#                identifiable=bool(od['identifier']),
-#            )
-#        )
-#        # add the column to the form
-#        matrix.add_question(
-#            Rios.QuestionObject(
-#                fieldId=self.reader.get_name(od['field_type']),
-#                text=localized_string_object(
-#                    self.localization,
-#                    od['field_label']
-#                ),
-#                enumerations=self.get_choices_form(od),
-#            )
-#        )
-#        # Append the first row (to instrument).
-#        field_type.add_row(
-#            Rios.RowObject(
-#                id=self.reader.get_name(od['variable_field_name']),
-#                description=od['field_label'],
-#                required=bool(od['required_field']),
-#            )
-#        )
-#        # add the row to the form.
-#        matrix.add_row(
-#            Rios.DescriptorObject(
-#                id=self.reader.get_name(od['variable_field_name']),
-#                text=localized_string_object(
-#                    self.localization,
-#                    od['field_label']
-#                ),
-#            )
-#        )
-#
-#    def current_matrix_question_processor(self, od, field, question, field_type):
-#        # Append row to existing matrix
-#        # -- to instrument
-#        field_type.add_row(
-#            Rios.RowObject(
-#                id=self.reader.get_name(od['variable_field_name']),
-#                description=od['field_label'],
-#                required=bool(od['required_field']),
-#            )
-#        )
-#        # Reset field so field['id'] is None to prevent insertion of field
-#        # into instrument definition
-#        field = Rios.FieldObject()
-#        # -- to form
-#        matrix.add_row(
-#            Rios.DescriptorObject(
-#                id=self.reader.get_name(od['variable_field_name']),
-#                text=localized_string_object(
-#                    self.localization,
-#                    od['field_label']
-#                ),
-#            )
-#        )
-#
 class Processor(ProcessorBase):
     """ Processor class for modern REDCap data dictionaries """
 
@@ -465,14 +377,18 @@ class Processor(ProcessorBase):
         try:
             self.page_processor(page, row)
         except ConversionValueError as exc:
+            # Reset storage if conversion of current line fails
+            self._storage.clear()
             raise exc
 
-        # If successful, move storage into containers
-        return (self._storage['i'], self._storage['c'],)
-
-    def page_processor(self, page, row):
+        fields = self._storage['i']
+        calcs = self._storage['c']
 
         self._storage.clear()
+
+        return (fields, calcs,)
+
+    def page_processor(self, page, row):
 
         section_header = row['section_header']
         if section_header:
@@ -512,415 +428,385 @@ class Processor(ProcessorBase):
 
         # Now that we have a header only OR question and maybe a header, we
         # either add the header by itself as a section header, or we add a new
-        # question containing a possible sub-header
+        # question containing a possible sub-header. If no header or question,
+        # then we have a calculation, which is handled when instrument fields
+        # are constructed in the qestion_processor function.
         if header and not question:
             # Add non-questions to form (e.g., headers)
             page.add_element(header)
-        elif question:
+        if question:
             # Process existing questions or process and add new questions to
-            # the form
+            # the form 
             self.question_processor(row, page, question)
             page.add_element(question)
-        else:
-            error = RedcapFormatError(
-                'Internal error attempting to generate header and/or question'
-                ' in page (Form Name):',
-                page['id']
-            )
-            raise error
-            
 
-#    def question_processor(self, od, page, question):
-#
-#        # Add branching logic event
-#        if od['branching_logic']:
-#            question.add_event(
-#                Rios.EventObject(
-#                    trigger=self.convert_trigger(
-#                            od['branching_logic']
-#                    ),
-#                    action='disable',
-#                )
-#            )
-#
-#        # Check for a matrix question
-#        matrix_group_name = self.reader.get_name(
-#            od.get('matrix_group_name', None)
-#        )
-#
-#        if matrix_group_name:
-#            # Question is a matrix question
-#            # assessment[m][r][c]
-#            # m = matrix_group_name
-#            # r = variable_field_name
-#            # c = field_type
-#
-#            try:
-#                if self.current_matrix_group_name != matrix_group_name:
-#                    # New matrix question
-#                    print "NEW MATRIX QUESTION"
-#
-#                    self.current_matrix_group_name = matrix_group_name
-#
-#                    # Add the new matrix question to form
-#                    page.add_element(question)
-#
-#                    # Start a new matrix (question) for the form
-#                    question['fieldId'] = matrix_group_name
-#
-#                    # Create a new matrix question for the instrument
-#                    ###field = self.make_matrix_field(od)
-#                    field = Rios.FieldObject()
-#                    field['id'] = self.reader.get_name(od['matrix_group_name'])
-#                    field['description'] = od.get('section_header', '')
-#                    field['type'] = Rios.TypeObject(base='matrix', )
-#
-#                    field_type = field['type']
-#
-#                    # Process matrix
-#                    ####self.new_matrix_question_processor(od, page, question, field_type)
-#
-#                    # Append the only column(to instrument).
-#                    # Use the field_type (checkbox or radiobutton) as the id.
-#                    field_type.add_column(
-#                        Rios.ColumnObject(
-#                            id=self.reader.get_name(od['field_type']),
-#                            description=od['field_type'],
-#                            type=self.get_type(od, side_effects=False),
-#                            required=bool(od['required_field']),
-#                            identifiable=bool(od['identifier']),
-#                        )
-#                    )
-#                    # add the column to the form
-#                    question.add_question(
-#                        Rios.QuestionObject(
-#                            fieldId=self.reader.get_name(od['field_type']),
-#                            text=localized_string_object(
-#                                self.localization,
-#                                od['field_label']
-#                            ),
-#                            enumerations=self.get_choices_form(od),
-#                        )
-#                    )
-#                    # Append the first row (to instrument).
-#                    field_type.add_row(
-#                        Rios.RowObject(
-#                            id=self.reader.get_name(od['variable_field_name']),
-#                            description=od['field_label'],
-#                            required=bool(od['required_field']),
-#                        )
-#                    )
-#                    # add the row to the form.
-#                    question.add_row(
-#                        Rios.DescriptorObject(
-#                            id=self.reader.get_name(od['variable_field_name']),
-#                            text=localized_string_object(
-#                                self.localization,
-#                                od['field_label']
-#                            ),
-#                        )
-#                    )
-#                else:
-#                    # Current matrix question
-#                    print "CURRENT MATRIX QUESTION"
-#                    ###self.current_matrix_question_processor(od, field, question, field_type)
-#                    # Append row to existing matrix
-#                    # -- to instrument
-#                    field_type.add_row(
-#                        Rios.RowObject(
-#                            id=self.reader.get_name(od['variable_field_name']),
-#                            description=od['field_label'],
-#                            required=bool(od['required_field']),
-#                        )
-#                    )
-#                    # Reset field so field['id'] is None to prevent insertion of field
-#                    # into instrument definition
-#                    field = Rios.FieldObject()
-#                    # -- to form
-#                    matrix.add_row(
-#                        Rios.DescriptorObject(
-#                            id=self.reader.get_name(od['variable_field_name']),
-#                            text=localized_string_object(
-#                                self.localization,
-#                                od['field_label']
-#                            ),
-#                        )
-#                    )
-#            except Exception as exc:
-#                print repr(exc)
-#        else:
-#            # Not a matrix question
-#            self.matrix_group_name = None
-#            self.matrix = None
-#            field_type = None
-#
-#            # Add the question to the form
-#            page.add_element(question)
-#
-#            # Make instrument field
-#            field = self.make_instrument_field(od)
-#            #    field = Rios.FieldObject()
-#            #    field_type = self.get_type(od)
-#            #    if field_type:
-#            #        field_name = self.reader.get_name(od['variable_field_name'])
-#            #        if od['section_header']:
-#            #            field_name = '%s_%s' % (
-#            #                field_name,
-#            #                self.reader.get_name(od['section_header']),
-#            #            )
-#            #        field['id'] = field_name
-#            #        field['description'] = od['field_label']
-#            #        field['type'] = field_type
-#            #        field['required'] = bool(od['required_field'])
-#            #        field['identifiable'] = bool(od['identifier'])
-#
-#        # Store instrument question field
-#        if field['id']:
-#            self._storage['i'].append(field)
-#
-#    def get_type(self, od, side_effects=True):
-#        """
-#        Returns the computed instrument field type.
-#
-#        Also has side effects when side_effects is True.
-#        - can initialize calculations.
-#        - can append a calculation.
-#        - updates self.question:
-#            enumerations, questions, rows, widget, events
-#        """
-#        def get_widget(type):
-#            return Rios.WidgetConfigurationObject(type=type)
-#
-#        def get_widget_type(text_type):
-#            if text_type == 'text':
-#                return 'inputText'
-#            elif text_type in ['integer', 'float']:
-#                return 'inputNumber'
-#            elif text_type == 'dateTime':
-#                return 'dateTimePicker'
-#            else:
-#                raise ConversionValueError(
-#                    'Unexpected text type. Got:', str(text_type)
-#                )
-#
-#        def process_calculation():
-#            if side_effects:
-#                field_name = self.reader.get_name(od['variable_field_name'])
-#                calc = self.convert_calc(od['choices_or_calculations'])
-#                self._storage['c'].append(
-#                    Rios.CalculationObject(
-#                        id=field_name,
-#                        description=od['field_label'],
-#                        type='float',
-#                        method='python',
-#                        options={'expression': calc},
-#                    )
-#                )
-#                assert field_name not in self.calculation_variables
-#                self.calculation_variables.add(field_name)
-#            return None     # not an instrument field
-#
-#        def process_checkbox():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='checkGroup'))
-#                self.question['enumerations'] = self.get_choices_form(od)
-#            return Rios.TypeObject(
-#                    base='enumerationSet',
-#                    enumerations=self.get_choices_instrument(od), )
-#
-#        def process_dropdown():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='dropDown'))
-#                self.question['enumerations'] = self.get_choices_form(od)
-#            return Rios.TypeObject(
-#                    base='enumeration',
-#                    enumerations=self.get_choices_instrument(od), )
-#
-#        def process_notes():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='textArea'))
-#            return 'text'
-#
-#        def process_radio():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='radioGroup'))
-#                self.question['enumerations'] = self.get_choices_form(od)
-#            return Rios.TypeObject(
-#                    base='enumeration',
-#                    enumerations=self.get_choices_instrument(od), )
-#
-#        def process_slider():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='inputNumber'))
-#            return Rios.TypeObject(
-#                    base='float',
-#                    range=Rios.BoundConstraintObject(
-#                            min=0.0,
-#                            max=100.0), )
-#
-#        def process_text():
-#            val_min = od['text_validation_min']
-#            val_max = od['text_validation_max']
-#            text_type = self.convert_text_type(
-#                    od['text_validation'])
-#            if side_effects:
-#                self.question.set_widget(get_widget(
-#                        type=get_widget_type(text_type)))
-#            if val_min or val_max:
-#                bound_constraint = Rios.BoundConstraintObject()
-#                if val_min:
-#                    bound_constraint['min'] = self.convert_value(
-#                            val_min,
-#                            text_type)
-#                if val_max:
-#                    bound_constraint['max'] = self.convert_value(
-#                            val_max,
-#                            text_type)
-#                return Rios.TypeObject(
-#                        base=text_type,
-#                        range=bound_constraint)
-#            else:
-#                return text_type
-#
-#        def process_truefalse():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='radioGroup'))
-#                self.question.add_enumeration(
-#                    Rios.DescriptorObject(
-#                        id="true",
-#                        text=localized_string_object(
-#                            self.localization,
-#                            "True"
-#                        ),
-#                    )
-#                )
-#                self.question.add_enumeration(
-#                    Rios.DescriptorObject(
-#                        id="false",
-#                        text=localized_string_object(
-#                            self.localization,
-#                            "False"
-#                        ),
-#                    )
-#                )
-#            type_object = Rios.TypeObject(base='enumeration', )
-#            type_object.add_enumeration('true', description='True')
-#            type_object.add_enumeration('false', description='False')
-#            return type_object
-#
-#        def process_yesno():
-#            if side_effects:
-#                self.question.set_widget(get_widget(type='radioGroup'))
-#                self.question.add_enumeration(
-#                    Rios.DescriptorObject(
-#                        id="yes",
-#                        text=localized_string_object(
-#                            self.localization,
-#                            "Yes"
-#                        ),
-#                    )
-#                )
-#                self.question.add_enumeration(
-#                    Rios.DescriptorObject(
-#                        id="no",
-#                        text=localized_string_object(
-#                            self.localization,
-#                            "No"
-#                        ),
-#                    )
-#                )
-#            type_object = Rios.TypeObject(base='enumeration', )
-#            type_object.add_enumeration('yes', description='Yes')
-#            type_object.add_enumeration('no', description='No')
-#            return type_object
-#
-#        field_type = od['field_type']
-#        if field_type == 'text':
-#            return process_text()
-#        elif field_type == 'notes':
-#            return process_notes()
-#        elif field_type == 'dropdown':
-#            return process_dropdown()
-#        elif field_type == 'radio':
-#            return process_radio()
-#        elif field_type == 'checkbox':
-#            return process_checkbox()
-#        elif field_type == 'calc':
-#            return process_calculation()
-#        elif field_type == 'slider':
-#            return process_slider()
-#        elif field_type == 'truefalse':
-#            return process_truefalse()
-#        elif field_type == 'yesno':
-#            return process_yesno()
-#        else:
-#            raise ConversionValueError(
-#                'Unknown Field Type value. Got:', str(field_type)
-#            )
-#
-#    def make_elements(self, od):
-#        element = Rios.ElementObject()
-#        elements = [element]
-#        section_header = od['section_header']
-#        if section_header:
-#            element['type'] = 'header'
-#            element['options'] = {
-#                'text': localized_string_object(
-#                    self.localization,
-#                    section_header
-#                )
-#            }
-#            # Create new element for questions
-#            element = Rios.ElementObject()
-#            elements.append(element)
-#        if od['field_type'] == 'calc':
-#            del elements[-1]    # not a form field.
-#        else:
-#            element['type'] = 'question'
-#            field_name = self.reader.get_name(od['variable_field_name'])
-#            if section_header:
-#                field_name = '%s_%s' % (
-#                    field_name,
-#                    self.reader.get_name(section_header),
-#                )
-#            element['options'] = Rios.QuestionObject(
-#                fieldId=field_name,
-#                text=localized_string_object(
-#                    self.localization,
-#                    od['field_label']
-#                ),
-#                help=localized_string_object(
-#                    self.localization,
-#                    od['field_note']
-#                ),
-#            )
-#        return elements
-#
-#    def make_instrument_field(self, od):
-#        field = Rios.FieldObject()
-#        field_type = self.get_type(od)
-#        if field_type:
-#            field_name = self.reader.get_name(od['variable_field_name'])
-#            if od['section_header']:
-#                field_name = '%s_%s' % (
-#                    field_name,
-#                    self.reader.get_name(od['section_header']),
-#                )
-#            field['id'] = field_name
-#            field['description'] = od['field_label']
-#            field['type'] = field_type
-#            field['required'] = bool(od['required_field'])
-#            field['identifiable'] = bool(od['identifier'])
-#        return field
-#
-#    def make_matrix_field(self, od):
-#        field = Rios.FieldObject()
-#        field['id'] = self.reader.get_name(od['matrix_group_name'])
-#        field['description'] = od.get('section_header', '')
-#        field['type'] = Rios.TypeObject(base='matrix', )
-#        return field
-#
-#
+    def question_processor(self, row, page, question):
+
+        # Use question object in question['options']
+        question_obj = question['options']
+
+        # If row involves branching logic, add to question
+        if row['branching_logic']:
+            question_obj.add_event(
+                Rios.EventObject(
+                    trigger=self.convert_trigger(
+                            row['branching_logic']
+                    ),
+                    action='disable',
+                )
+            )
+
+        # Check for a matrix question
+        matrix_group_name = self.reader.get_name(
+            row.get('matrix_group_name', '')
+        )
+
+        if matrix_group_name:
+            print "WE HAVE A MATRIX QUESTION"
+            # Question is a matrix question
+            #
+            # assessment[m][r][c]
+            # m = matrix_group_name
+            # r = variable_field_name
+            # c = field_type
+
+            # Ranme for code clarity
+            matrix = question_obj
+
+            try:
+                if self._current_matrix_group_name != matrix_group_name:
+                    # New matrix question
+                    print "NEW MATRIX QUESTION"
+
+                    self._current_matrix_group_name = matrix_group_name
+
+                    # Add the new matrix question to form (not the questio_obj
+                    # which is the question['options'] object)
+                    page.add_element(question)
+
+                    # Start a new matrix question field for the form
+                    matrix['fieldId'] = matrix_group_name
+
+                    # Create a new matrix question field for the instrument
+                    field = Rios.FieldObject()
+                    field['id'] = self.reader.get_name(
+                            row['matrix_group_name']
+                    )
+                    field['description'] = row.get('section_header', '')
+                    field['type'] = Rios.TypeObject(base='matrix', )
+
+                    field_type = field['type']
+
+                    # Process matrix
+                    # Append the only column(to instrument).
+                    # Use the field_type (checkbox or radiobutton) as the id.
+                    field_type.add_column(
+                        Rios.ColumnObject(
+                            id=self.reader.get_name(row['field_type']),
+                            description=row['field_type'],
+                            type=self.get_type(
+                                matrix,
+                                row,
+                                side_effects=False
+                            ),
+                            required=bool(row['required_field']),
+                            identifiable=bool(row['identifier']),
+                        )
+                    )
+                    # add the column to the form
+                    matrix.add_question(
+                        Rios.QuestionObject(
+                            fieldId=self.reader.get_name(row['field_type']),
+                            text=localized_string_object(
+                                self.localization,
+                                row['field_label']
+                            ),
+                            enumerations=self.get_choices_form(row),
+                        )
+                    )
+                    # Append the first row (to instrument).
+                    field_type.add_row(
+                        Rios.RowObject(
+                            id=self.reader.get_name(
+                                row['variable_field_name']
+                            ),
+                            description=row['field_label'],
+                            required=bool(row['required_field']),
+                        )
+                    )
+                    # add the row to the form.
+                    matrix.add_row(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(
+                                row['variable_field_name']
+                            ),
+                            text=localized_string_object(
+                                self.localization,
+                                row['field_label']
+                            ),
+                        )
+                    )
+
+                    # Assign pointers to matrix construction objects, so
+                    # matrix questions have modifiable instrument and form 
+                    # definitions if next question is  an existing matrix
+                    # question
+                    self._matrix = matrix
+                    self._field = field
+                    self._field_type = field_type
+
+                    # Store field if it's an instrument field
+                    self.store_field(field)
+                else:
+                    # Current matrix question
+                    print "CURRENT MATRIX QUESTION"
+                    # Append row to existing matrix
+                    # -- to instrument
+                    self._field_type.add_row(
+                        Rios.RowObject(
+                            id=self.reader.get_name(
+                                row['variable_field_name']
+                            ),
+                            description=row['field_label'],
+                            required=bool(row['required_field']),
+                        )
+                    )
+                    self._field = Rios.FieldObject()
+                    # -- to form
+                    self._matrix.add_row(
+                        Rios.DescriptorObject(
+                            id=self.reader.get_name(
+                                row['variable_field_name']
+                            ),
+                            text=localized_string_object(
+                                self.localization,
+                                row['field_label']
+                            ),
+                        )
+                    )
+            except Exception as exc:
+                print repr(exc)
+        else:
+            # Not a matrix question
+            self.matrix_group_name = None
+            self.matrix = None
+            field_type = None
+
+            # Add the question to the form
+            page.add_element(question)
+
+            # Make instrument field
+            field = Rios.FieldObject()
+            field_type = self.get_type(question_obj, row)
+            if field_type:
+                field_name = self.reader.get_name(row['variable_field_name'])
+                if row['section_header']:
+                    field_name = '%s_%s' % (
+                        field_name,
+                        self.reader.get_name(row['section_header']),
+                    )
+                field['id'] = field_name
+                field['description'] = row['field_label']
+                field['type'] = field_type
+                field['required'] = bool(row['required_field'])
+                field['identifiable'] = bool(row['identifier'])
+
+            # Store field if it's an instrument field
+            self.store_field(field)
+
+    def store_field(self, field):
+        # Store instrument question field
+        if field['id']:
+            self._storage['i'] = field
+
+    def get_type(self, question_obj, row, side_effects=True):
+        """
+        Returns the computed instrument field type.
+
+        Also has side effects when side_effects is True.
+        - can initialize calculations.
+        - can append a calculation.
+        - updates question_obj (renamed to "question" for code clarity):
+            enumerations, questions, rows, widget, events
+        """
+
+        # Rename for code clarity
+        question = question_obj
+
+        def get_widget(type):
+            return Rios.WidgetConfigurationObject(type=type)
+
+        def get_widget_type(text_type):
+            if text_type == 'text':
+                return 'inputText'
+            elif text_type in ['integer', 'float']:
+                return 'inputNumber'
+            elif text_type == 'dateTime':
+                return 'dateTimePicker'
+            else:
+                raise ConversionValueError(
+                    'Unexpected text type. Got:', str(text_type)
+                )
+
+        def process_calculation():
+            if side_effects:
+                field_name = self.reader.get_name(row['variable_field_name'])
+                calc = self.convert_calc(row['choices_or_calculations'])
+                calculation = Rios.CalculationObject(
+                    id=field_name,
+                    description=row['field_label'],
+                    type='float',
+                    method='python',
+                    options={'expression': calc},
+                )
+                self._storage['c'] = calculation
+                    
+                assert field_name not in self.calculation_variables
+                self.calculation_variables.add(field_name)
+            return None     # not an instrument field
+
+        def process_checkbox():
+            if side_effects:
+                question.set_widget(get_widget(type='checkGroup'))
+                question['enumerations'] = self.get_choices_form(row)
+            return Rios.TypeObject(
+                    base='enumerationSet',
+                    enumerations=self.get_choices_instrument(row), )
+
+        def process_dropdown():
+            if side_effects:
+                question.set_widget(get_widget(type='dropDown'))
+                question['enumerations'] = self.get_choices_form(row)
+            return Rios.TypeObject(
+                    base='enumeration',
+                    enumerations=self.get_choices_instrument(row), )
+
+        def process_notes():
+            if side_effects:
+                question.set_widget(get_widget(type='textArea'))
+            return 'text'
+
+        def process_radio():
+            if side_effects:
+                question.set_widget(get_widget(type='radioGroup'))
+                question['enumerations'] = self.get_choices_form(row)
+            return Rios.TypeObject(
+                    base='enumeration',
+                    enumerations=self.get_choices_instrument(row), )
+
+        def process_slider():
+            if side_effects:
+                question.set_widget(get_widget(type='inputNumber'))
+            return Rios.TypeObject(
+                    base='float',
+                    range=Rios.BoundConstraintObject(
+                            min=0.0,
+                            max=100.0), )
+
+        def process_text():
+            val_min = row['text_validation_min']
+            val_max = row['text_validation_max']
+            text_type = self.convert_text_type(
+                    row['text_validation'])
+            if side_effects:
+                question.set_widget(get_widget(
+                        type=get_widget_type(text_type)))
+            if val_min or val_max:
+                bound_constraint = Rios.BoundConstraintObject()
+                if val_min:
+                    bound_constraint['min'] = self.convert_value(
+                            val_min,
+                            text_type)
+                if val_max:
+                    bound_constraint['max'] = self.convert_value(
+                            val_max,
+                            text_type)
+                return Rios.TypeObject(
+                        base=text_type,
+                        range=bound_constraint)
+            else:
+                return text_type
+
+        def process_truefalse():
+            if side_effects:
+                question.set_widget(get_widget(type='radioGroup'))
+                question.add_enumeration(
+                    Rios.DescriptorObject(
+                        id="true",
+                        text=localized_string_object(
+                            self.localization,
+                            "True"
+                        ),
+                    )
+                )
+                question.add_enumeration(
+                    Rios.DescriptorObject(
+                        id="false",
+                        text=localized_string_object(
+                            self.localization,
+                            "False"
+                        ),
+                    )
+                )
+            type_object = Rios.TypeObject(base='enumeration', )
+            type_object.add_enumeration('true', description='True')
+            type_object.add_enumeration('false', description='False')
+            return type_object
+
+        def process_yesno():
+            if side_effects:
+                question.set_widget(get_widget(type='radioGroup'))
+                question.add_enumeration(
+                    Rios.DescriptorObject(
+                        id="yes",
+                        text=localized_string_object(
+                            self.localization,
+                            "Yes"
+                        ),
+                    )
+                )
+                question.add_enumeration(
+                    Rios.DescriptorObject(
+                        id="no",
+                        text=localized_string_object(
+                            self.localization,
+                            "No"
+                        ),
+                    )
+                )
+            type_object = Rios.TypeObject(base='enumeration', )
+            type_object.add_enumeration('yes', description='Yes')
+            type_object.add_enumeration('no', description='No')
+            return type_object
+
+        # Process question according to its field type
+        field_type = row['field_type']
+        print "INSIDE GET TYPE"
+        print field_type
+        if field_type == 'text':
+            return process_text()
+        elif field_type == 'notes':
+            return process_notes()
+        elif field_type == 'dropdown':
+            return process_dropdown()
+        elif field_type == 'radio':
+            return process_radio()
+        elif field_type == 'checkbox':
+            return process_checkbox()
+        elif field_type == 'calc':
+            return process_calculation()
+        elif field_type == 'slider':
+            return process_slider()
+        elif field_type == 'truefalse':
+            return process_truefalse()
+        elif field_type == 'yesno':
+            return process_yesno()
+        else:
+            raise ConversionValueError(
+                'Unknown Field Type value. Got:', str(field_type)
+            )
+
+
 #class LegacyProcessor(ProcessorBase):
 #    """ Processor class for REDCap data dictionaries """
 #

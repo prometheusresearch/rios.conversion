@@ -4,6 +4,7 @@
 
 
 import collections
+import six
 
 
 from rios.conversion import structures
@@ -21,28 +22,34 @@ class InstrumentCalcStorage(collections.MutableMapping):
     in __keys.
     """
 
-    __keys = ('i', 'c',)
-    __default = {}.fromkeys(__keys, list())
+    __keys = {
+        'i': structures.FieldObject,
+        'c': structures.CalculationObject,
+    }
 
     def __init__(self):
-        self.__dict__.update(self.__default)
+        self.__dict__ = {}.fromkeys(six.iterkeys(self.__keys), [])
 
     def __setitem__(self, key, value):
+        print "MAYBE EMPTY????"
+        print "key: ", key
+        print "value: ", value
+        print self.__dict__
         if key not in self.__keys:
             raise KeyError('Invalid key value')
-        if key is 'i' and not issubclass(value, structures.Instrument):
+        if not isinstance(value, self.__keys[key]):
             raise ValueError(
-                'Value must be a subclass of Instrument'
+                'Value must be a subclass of ' + str(self.__keys[key])
             )
-        if key is 'c' and not issubclass(value, structures.CalculationObject):
-            raise ValueError(
-                'Value must be a subclass of CalculationObject'
-            )
-        self.__dict__[key].append(value)
+        self.__getitem__(key).append(value)
+        print "MAYBE HERE????"
+        print self.__dict__
 
     def __getitem__(self, key):
+        print "getitem key: ", key
         if key not in self.__keys:
             raise KeyError('Invalid key value')
+        print "getitem print: ", self.__dict__[key]
         return self.__dict__[key]
 
     def __delitem__(self, key):
@@ -57,4 +64,4 @@ class InstrumentCalcStorage(collections.MutableMapping):
         return len(self.__dict__)
 
     def clear(self):
-        self.__dict__.fromkeys(self.__keys, list())
+        self.__dict__ = {}.fromkeys(six.iterkeys(self.__keys), [])

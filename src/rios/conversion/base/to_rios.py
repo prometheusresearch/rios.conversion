@@ -35,8 +35,9 @@ class ToRios(object):
         self.page_container = dict()
         # Inserted into self._instrument
         self.field_container = list()
-        # Inserted into self._calculations
-        #self.calc_container = dict()
+        # Inserted into self._calculationset
+        self.calc_container = dict()
+
         ######
         self.id = id
         self.instrument_version = instrument_version or DEFAULT_VERSION
@@ -52,7 +53,7 @@ class ToRios(object):
             title=self.title,
             description=self.description
         )
-        self._calculations = structures.CalculationSetObject(
+        self._calculationset = structures.CalculationSetObject(
             instrument=structures.InstrumentReferenceObject(self._instrument),
         )
         self._form = structures.WebForm(
@@ -85,9 +86,9 @@ class ToRios(object):
 
     @property
     def calculationset(self):
-        if self._calculations.get('calculations', False):
-            self._calculations.clean()
-            return self._calculations.as_dict()
+        if self._calculationset.get('calculations', False):
+            self._calculationset.clean()
+            return self._calculationset.as_dict()
         else:
             return dict()
 
@@ -109,7 +110,7 @@ class ToRios(object):
             'instrument': self.instrument.as_dict(),
             'form': self.form.as_dict(),
         }
-        if self._calculations.get('calculations', False):
+        if self._calculationset.get('calculations', False):
             calculations = self.calculations.as_dict()
             return dict(payload, **{'calculationset': calculations})
         else:
