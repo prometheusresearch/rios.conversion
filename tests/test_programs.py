@@ -1,7 +1,5 @@
 import glob
 import os
-import traceback
-import sys
 
 
 from rios.conversion.redcap.to_rios import RedcapToRios as RedcapRios
@@ -111,7 +109,6 @@ def tst_class(cls, tests):
             program = cls(**test)
             program()
         except Exception as exc:
-            traceback.print_exc(sys.exc_info()[0])
             print str(exc)
 
 csv_names = [

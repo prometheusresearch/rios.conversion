@@ -59,4 +59,4 @@ class InstrumentCalcStorage(collections.MutableMapping):
         self.__dict__ = self.__new_dict()
 
     def __new_dict(self):
-        return dict([(k, list(),) for k in six.iterkeys(self.__keys)])
+        return dict((k, list(),) for k in six.iterkeys(self.__keys))
