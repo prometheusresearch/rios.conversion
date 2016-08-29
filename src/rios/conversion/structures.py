@@ -74,9 +74,6 @@ class DefinitionSpecification(collections.OrderedDict):
                 for k, v in kwargs.items()
                 if not self.props or k in self.props})
 
-    def __deepcopy__(self, memo):
-        return self.__class__(copy.deepcopy(dict(self)))
-
     def clean(self):
         """Removes "empty" items from self.
         items whose values are empty arrays, dicts, and strings

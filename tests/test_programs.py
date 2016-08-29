@@ -1,5 +1,7 @@
 import glob
 import os
+
+
 from rios.conversion.redcap.to_rios import RedcapToRios as RedcapRios
 from rios.conversion.redcap.from_rios import RedcapFromRios as RiosRedcap
 from rios.conversion.qualtrics.to_rios import QualtricsToRios as QualtricsRios
@@ -108,7 +110,6 @@ def tst_class(cls, tests):
             program()
         except Exception as exc:
             print str(exc)
-            #raise exc
 
 csv_names = [
     os.path.basename(name)[:-4] 

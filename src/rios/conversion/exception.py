@@ -21,7 +21,7 @@ class Paragraph(object):
     def __str__(self):
         if self.payload is None:
             return self.message
-        block = "\n".join("    "+line if line else ""
+        block = "\n".join("    " + line if line else ""
                           for line in str(self.payload).splitlines())
         return "%s\n%s" % (self.message, block)
 
@@ -89,7 +89,7 @@ class Error(Exception):
         return output
 
 
-class guard(object):
+class guard(object):  # noqa:F401
     """
     Adds a paragraph to exceptions leaving the wrapped ``with`` block.
     """
@@ -119,7 +119,7 @@ class ConversionValueError(BaseConversionError):
 
 
 class ConversionValidationError(BaseConversionError):
-    """ Thrown for ValidationError exceptions in a conversion implementation """
+    """ Thrown for ValidationError exceptions in conversion implementations """
 
     pass
 
