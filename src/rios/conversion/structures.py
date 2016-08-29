@@ -18,7 +18,6 @@
 
 
 import collections
-import copy
 
 
 __all__ = (
