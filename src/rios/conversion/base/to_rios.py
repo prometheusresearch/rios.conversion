@@ -84,11 +84,6 @@ class ToRios(object):
         )
 
     @property
-    def log(self):
-        # TODO: Return logged data here
-        pass
-
-    @property
     def instrument(self):
         self._instrument.clean()
         return self._instrument.as_dict()
