@@ -69,6 +69,8 @@ class ToRios(object):
                 clearall=True,
                 logger=logger,
             )
+        else:
+            self.logger = list()
 
     def __call__(self):
         """
