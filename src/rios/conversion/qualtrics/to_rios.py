@@ -12,23 +12,10 @@ from rios.conversion.base import ToRios
 
 
 class QualtricsToRios(ToRios):
-    """
-    Converts a Qualtrics qsf file into a series of output files
-
-        <OUTFILE_PREFIX> _c.<format> RIOS calculation
-        <OUTFILE_PREFIX>_i.<format> RIOS instrument
-        <OUTFILE_PREFIX>_f.<format> RIOS web form
-
-    The RIOS calculation file is only created when there are
-    calculation fields in the input.
-    """
+    """ Converts a Qualtrics *.qsf file to the RIOS specification format """
 
     def __init__(self, infile, instrument_version, format):
         self.page_name = PageName()
-
-        self.instrument_version = instrument_version
-        self.format = format
-        self.infile = infile
 
     def __call__(self, argv=None, stdout=None, stderr=None):
         """ Process the qsf input, and create output files """
@@ -218,7 +205,3 @@ class PageName(object):
     def next(self):
         self.page_id += 1
         return 'page_%02d' % self.page_id
-
-
-def main(argv=None, stdout=None, stderr=None):
-    sys.exit(QualtricsToRios()(argv, stdout, stderr))    # pragma: no cover

@@ -38,7 +38,6 @@ class ToRios(object):
         self.description = description
         self.stream = stream
         self.data = collections.OrderedDict()
-        self.page_names = set()
 
         # Inserted into self._form
         self.page_container = dict()
