@@ -128,7 +128,11 @@ class RedcapToRios(ToRios):
                 "Unknown input CSV header format. Got value:",
                 ", ".join(self.reader.attributes)
             )
-            self.critical_error = True
+            error.wrap(
+                "REDCap data dictionary conversion failure:",
+                "Unable to parse REDCap data dictionary CSV"
+            )
+            self.logger.error(str(error))
             raise error
 
         # MAIN PROCESSING
@@ -152,8 +156,13 @@ class RedcapToRios(ToRios):
             else:
                 error = RedcapFormatError(
                     'REDCap data dictionaries must contain'
-                    ' the Form Name column'
+                    ' the \"Form Name\" column'
                 )
+                error.wrap(
+                    "REDCap data dictionary conversion failure:",
+                    "Unable to parse REDCap data dictionary CSV"
+                )
+                self.logger.error(str(error))
                 raise error
 
             # Need unique list of page names to create one page instance
@@ -198,8 +207,8 @@ class RedcapToRios(ToRios):
                         str(exc)
                     )
                     error.wrap(
-                        "    REDCap data dictionary conversion failure:",
-                        "    Unable to parse REDCap data dictionary CSV"
+                        "REDCap data dictionary conversion failure:",
+                        "Unable to parse REDCap data dictionary CSV"
                     )
                     self.logger.error(str(error))
                     raise error
@@ -209,8 +218,8 @@ class RedcapToRios(ToRios):
                         str(exc)
                     )
                     error.wrap(
-                        "    REDCap data dictionary conversion failure:",
-                        "    Unable to parse REDCap data dictionary CSV"
+                        "REDCap data dictionary conversion failure:",
+                        "Unable to parse REDCap data dictionary CSV"
                     )
                     self.logger.error(str(error))
                     raise exc
