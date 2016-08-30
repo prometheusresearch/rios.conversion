@@ -42,29 +42,30 @@ RE_variable_ref = re.compile(r'''\[([\w_]+)\]''')
 
 # dict: each item => REDCap name: rios.conversion name
 FUNCTION_TO_PYTHON = {
-        'min': 'min',
-        'max': 'max',
-        'mean': 'rios.conversion.redcap.functions.mean',
-        'median': 'rios.conversion.redcap.function.median',
-        'sum': 'rios.conversion.redcap.functions.sum_',
-        'stdev': 'rios.conversion.redcap.functions.stdev',
-        'round': 'rios.conversion.redcap.functions.round_',
-        'roundup': 'rios.conversion.redcap.functions.roundup',
-        'rounddown': 'rios.conversion.redcap.functions.rounddown',
-        'sqrt': 'math.sqrt',
-        'abs': 'abs',
-        'datediff': 'rios.conversion.redcap.functions.datediff',
-        }
+    'min': 'min',
+    'max': 'max',
+    'mean': 'rios.conversion.redcap.functions.mean',
+    'median': 'rios.conversion.redcap.function.median',
+    'sum': 'rios.conversion.redcap.functions.sum_',
+    'stdev': 'rios.conversion.redcap.functions.stdev',
+    'round': 'rios.conversion.redcap.functions.round_',
+    'roundup': 'rios.conversion.redcap.functions.roundup',
+    'rounddown': 'rios.conversion.redcap.functions.rounddown',
+    'sqrt': 'math.sqrt',
+    'abs': 'abs',
+    'datediff': 'rios.conversion.redcap.functions.datediff',
+}
 
 # dict of function name: pattern which finds "name("
 RE_funcs = {
-        k: re.compile(r'\b%s\(' % k)
-        for k in FUNCTION_TO_PYTHON.keys()}
+    k: re.compile(r'\b%s\(' % k)
+    for k in FUNCTION_TO_PYTHON.keys()
+}
 
 # Array of tuples: (REDCap operator, rios.conversion operator)
 OPERATOR_TO_REXL = [
-        (r'<>', r'!='),
-        ]
+    (r'<>', r'!='),
+]
 
 # array of (regex pattern, replacement)
 RE_ops = [(re.compile(redcap), rexl) for redcap, rexl in OPERATOR_TO_REXL]
@@ -110,120 +111,139 @@ class RedcapToRios(ToRios):
     """ Converts a REDCap CSV file to the RIOS specification format """
 
     def __call__(self):
-        with guard("REDCap instrument conversion failure:",
-                    "Unable to parse REDCap data dictionary CSV"):
-            # Pre-processing
-            self.reader = CsvReaderWithGetName(self.stream)  # noqa: F821
-            self.reader.load_attributes()
+        # Pre-processing
+        self.reader = CsvReaderWithGetName(self.stream)  # noqa: F821
+        self.reader.load_attributes()
 
-            # Determine processor
-            first_field = self.reader.attributes[0]
-            if first_field == 'variable_field_name':
-                # Process new CSV format
-                process = Processor(self.reader, self.localization)
-            elif first_field == 'fieldid':
-                # Process legacy CSV format
-                process = LegacyProcessor(self.reader, self.localization)
+        # Determine processor
+        first_field = self.reader.attributes[0]
+        if first_field == 'variable_field_name':
+            # Process new CSV format
+            process = Processor(self.reader, self.localization)
+        elif first_field == 'fieldid':
+            # Process legacy CSV format
+            process = LegacyProcessor(self.reader, self.localization)
+        else:
+            error = RedcapFormatError(
+                "Unknown input CSV header format. Got value:",
+                ", ".join(self.reader.attributes)
+            )
+            error.wrap(
+                "REDCap data dictionary conversion failure:",
+                "Unable to parse REDCap data dictionary CSV"
+            )
+            self.logger.error(str(error))
+            raise error
+
+        # MAIN PROCESSING
+        # Occures in two steps:
+        #   1) Process data and page names into containers
+        #   2) Iterate over containers to construct RIOS definitions
+        # NOTE:
+        #   1) Each row is an ordered dict
+        #   2) Start=2, because spread sheet programs set header row to 1
+        #       and first data row to 2 (strictly for user friendly errors)
+        for line, row in enumerate(self.reader, start=2):
+            if 'page' in row:
+                # Page name for legacy REDCap data dictionary format
+                if row['page']:
+                    page_name = self.reader.get_name(row['page'])
+                else:
+                    page_name = 'page_0'
+            elif 'form_name' in row:
+                # Page name for current REDCap data dictionary format
+                page_name = self.reader.get_name(row['form_name'])
             else:
                 error = RedcapFormatError(
-                    "Unknown input CSV header format. Got:",
-                    ", ".join(self.reader.attributes)
+                    'REDCap data dictionaries must contain'
+                    ' the \"Form Name\" column'
                 )
-                self.critical_error = True
+                error.wrap(
+                    "REDCap data dictionary conversion failure:",
+                    "Unable to parse REDCap data dictionary CSV"
+                )
+                self.logger.error(str(error))
                 raise error
 
-            # MAIN PROCESSING
-            # Occures in two steps:
-            #   1) Process data and page names into containers
-            #   2) Iterate over containers to construct RIOS definitions
-            # NOTE:
-            #   1) Each row is an ordered dict
-            #   2) Start=2, because spread sheet programs set header row to 1
-            #       and first data row to 2 (strictly for user friendly errors)
-            for line, row in enumerate(self.reader, start=2):
-                if 'page' in row:
-                    # Page name for legacy REDCap data dictionary format
-                    if row['page']:
-                        page_name = self.reader.get_name(row['page'])
-                    else:
-                        page_name = 'page_0'
-                elif 'form_name' in row:
-                    # Page name for current REDCap data dictionary format
-                    page_name = self.reader.get_name(row['form_name'])
-                else:
-                    raise RedcapFormatError(
-                        'REDCap data dictionaries must contain'
-                        ' the Form Name column'
-                    )
+            # Need unique list of page names to create one page instance
+            # per page name
+            self.page_names.add(page_name)
 
-                # Need unique list of page names to create one page instance
-                # per page name
-                self.page_names.add(page_name)
+            # Insert into data container
+            self.data[line] = {'page_name': page_name, 'row': row}
 
-                # Insert into data container
-                self.data[line] = {'page_name': page_name, 'row': row}
+        # Created pages for the data dictionary instrument
+        for page_name in self.page_names:
+            self.page_container.update(
+                {page_name: Rios.PageObject(id=page_name)}
+            )
 
-            # Created pages for the data dictionary instrument
-            for page_name in self.page_names:
-                self.page_container.update(
-                    {page_name: Rios.PageObject(id=page_name)}
-                )
-
-            # Process the row
-            for line, row_pkg in six.iteritems(self.data):
-                page = self.page_container[row_pkg['page_name']]
-                row = row_pkg['row']
-                try:
-                    # WHERE THE MAGIC HAPPENS
-                    fields, calcs = process(page, row)
-
-                    # Clear processor's internal storage for next line
-                    process.clear_storage()
-
-                    for field in fields:
-                        self.field_container.append(field)
-                    for calc in calcs:
-                        self.calc_container.update(calc)
-
-                except Exception as exc:
-                    if isinstance(exc, ConversionValueError):
-                        # TODO: Log line failures
-                        error = Error(
-                            "Warning on line: " + str(line) + ". Got:",
-                            str(exc)
-                        )
-                        error.wrap('Skipping line...')
-                        print error
-                    elif isinstance(exc, RedcapFormatError):
-                        error = Error(
-                            "Error on line: " + str(line) + ". Got:",
-                            str(exc)
-                        )
-                        raise error
-                    else:
-                        raise exc
-
-            # Construct insrument and calculationset objects
-            for field in self.field_container:
-                self._instrument.add_field(field)
-            for calc in self.calc_container:
-                self._calculationset.add(calc)
-            # Page container is a dict instead of a list, so iterate over vals
-            for page in six.itervalues(self.page_container):
-                self._form.add_page(page)
-
-            # Post-processing
+        # Process the row
+        for line, row_pkg in six.iteritems(self.data):
+            page = self.page_container[row_pkg['page_name']]
+            row = row_pkg['row']
             try:
-                self.validate()
-            except ValidationError as exc:
-                error = ConversionValidationError(
-                    'Validation error. Got:',
-                    str(exc)
-                )
-                raise error
-            else:
-                # TODO: Log validation success
-                print "Validation successful"
+                # WHERE THE MAGIC HAPPENS
+                fields, calcs = process(page, row)
+
+                # Clear processor's internal storage for next line
+                process.clear_storage()
+
+                for field in fields:
+                    self.field_container.append(field)
+                for calc in calcs:
+                    self.calc_container.update(calc)
+
+            except Exception as exc:
+                if isinstance(exc, ConversionValueError):
+                    error = Error(
+                        "Skipping line: " + str(line) + ". Error:",
+                        str(exc)
+                    )
+                    self.logger.warning(str(error))
+                elif isinstance(exc, RedcapFormatError):
+                    error = Error(
+                        "Error on line: " + str(line) + ". Error:",
+                        str(exc)
+                    )
+                    error.wrap(
+                        "REDCap data dictionary conversion failure:",
+                        "Unable to parse REDCap data dictionary CSV"
+                    )
+                    self.logger.error(str(error))
+                    raise error
+                else:
+                    error = Error(
+                        "An unknown error occured:",
+                        str(exc)
+                    )
+                    error.wrap(
+                        "REDCap data dictionary conversion failure:",
+                        "Unable to parse REDCap data dictionary CSV"
+                    )
+                    self.logger.error(str(error))
+                    raise exc
+
+        # Construct insrument and calculationset objects
+        for field in self.field_container:
+            self._instrument.add_field(field)
+        for calc in self.calc_container:
+            self._calculationset.add(calc)
+        # Page container is a dict instead of a list, so iterate over vals
+        for page in six.itervalues(self.page_container):
+            self._form.add_page(page)
+
+        # Post-processing/validation
+        try:
+            self.validate()
+        except ValidationError as exc:
+            error = ConversionValidationError(
+                'Validation error. Error:',
+                str(exc)
+            )
+            raise error
+        else:
+            self.logger.info('Validation successful')
 
 
 class ProcessorBase(object):
@@ -898,9 +918,9 @@ class LegacyProcessor(ProcessorBase):
                         data_type.get('Choices', False)
                         or data_type.get('choices', False)
                         or None )
-            except Exception as exc:
+            except:
                 error = RedcapFormatError(
-                    "Unable to parse \"data_type\" field",
+                    "Unable to parse \"data_type\" field:",
                     "Expected valid JSON formatted text"
                 )
                 raise error

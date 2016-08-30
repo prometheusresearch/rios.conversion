@@ -7,10 +7,18 @@ import collections
 
 
 from rios.conversion import structures
+from rios.conversion.utils import get_conversion_logger
 from rios.core.validation import (
     validate_instrument,
     validate_form,
     validate_calculationset,
+)
+
+
+__all__ = (
+    'ToRios',
+    'DEFAULT_LOCALIZATION',
+    'DEFAULT_VERSION',
 )
 
 
@@ -19,14 +27,17 @@ DEFAULT_VERSION = '1.0'
 
 
 class ToRios(object):
-    """
-    Converts a foreign instrument file into a valid RIOS specifications.
-    """
+    """ Converts a foreign instrument file into a valid RIOS specification """
 
     def __init__(self, id, instrument_version, title,
-                    localization, description, stream):
+                    localization, description, stream, logger=None):
+        self.id = id
+        self.instrument_version = instrument_version or DEFAULT_VERSION
+        self.title = title
+        self.localization = localization or DEFAULT_LOCALIZATION
+        self.description = description
+        self.stream = stream
         self.data = collections.OrderedDict()
-        self.page_names = set()
 
         # Inserted into self._form
         self.page_container = dict()
@@ -34,13 +45,6 @@ class ToRios(object):
         self.field_container = list()
         # Inserted into self._calculationset
         self.calc_container = dict()
-
-        self.id = id
-        self.instrument_version = instrument_version or DEFAULT_VERSION
-        self.title = title
-        self.localization = localization or DEFAULT_LOCALIZATION
-        self.description = description
-        self.stream = stream
 
         # Generate yet-to-be-configured RIOS definitions
         self._instrument = structures.Instrument(
@@ -57,6 +61,16 @@ class ToRios(object):
             defaultLocalization=self.localization,
             title=localized_string_object(self.localization, self.title),
         )
+
+        # Initialize logging
+        if isinstance(logger, list):
+            self.logger = get_conversion_logger(
+                name=self.__class__.__name__,
+                clearall=True,
+                logger=logger,
+            )
+        else:
+            self.logger = list()
 
     def __call__(self):
         """

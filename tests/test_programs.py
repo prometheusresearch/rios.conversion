@@ -99,17 +99,23 @@ def rios_qualtrics_tst(name):
     return [test_json, test_yaml]
 
 def show_tst(cls, test):
-    name = repr(cls)
-    print('\n%s\n\t%s' % (name, str(test)))
+    name = "=TEST CLASS: " + str(cls.__name__)
+    filename = "=TEST FILENAME: " + str(test['stream'].name)
+    print('\n%s\n%s' % (name, filename))
 
 def tst_class(cls, tests):
     for test in tests:
         show_tst(cls, test)
+        logs = list()
+        test['logger'] = logs
+        print "=LOGS:"
         try:
             program = cls(**test)
             program()
+            print "\n".join(logs)
         except Exception as exc:
-            print str(exc)
+            #print repr(exc)
+            pass
 
 csv_names = [
     os.path.basename(name)[:-4] 
