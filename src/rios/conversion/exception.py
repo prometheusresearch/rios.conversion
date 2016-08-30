@@ -118,12 +118,6 @@ class ConversionValueError(BaseConversionError):
     pass
 
 
-class ConversionValidationError(BaseConversionError):
-    """ Thrown for ValidationError exceptions in conversion implementations """
-
-    pass
-
-
 class ConversionFailureError(Error):
     """
     Thrown for complete failure of instrument conversion process.

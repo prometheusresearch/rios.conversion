@@ -143,6 +143,7 @@ class RedcapToRios(ToRios):
         #   1) Each row is an ordered dict
         #   2) Start=2, because spread sheet programs set header row to 1
         #       and first data row to 2 (strictly for user friendly errors)
+        data = collections.OrderedDict()
         for line, row in enumerate(self.reader, start=2):
             if 'page' in row:
                 # Page name for legacy REDCap data dictionary format
@@ -170,7 +171,7 @@ class RedcapToRios(ToRios):
             self.page_names.add(page_name)
 
             # Insert into data container
-            self.data[line] = {'page_name': page_name, 'row': row}
+            data[line] = {'page_name': page_name, 'row': row}
 
         # Created pages for the data dictionary instrument
         for page_name in self.page_names:
@@ -179,7 +180,7 @@ class RedcapToRios(ToRios):
             )
 
         # Process the row
-        for line, row_pkg in six.iteritems(self.data):
+        for line, row_pkg in six.iteritems(data):
             page = self.page_container[row_pkg['page_name']]
             row = row_pkg['row']
             try:
