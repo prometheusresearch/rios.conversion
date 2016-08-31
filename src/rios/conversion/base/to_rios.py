@@ -3,9 +3,6 @@
 #
 
 
-import collections
-
-
 from rios.conversion import structures
 from rios.conversion.utils import get_conversion_logger
 from rios.core.validation import (
@@ -37,7 +34,6 @@ class ToRios(object):
         self.localization = localization or DEFAULT_LOCALIZATION
         self.description = description
         self.stream = stream
-        self.data = collections.OrderedDict()
 
         # Inserted into self._form
         self.page_container = dict()

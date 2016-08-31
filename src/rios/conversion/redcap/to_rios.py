@@ -6,6 +6,7 @@
 import re
 import json
 import six
+import collections
 import rios.conversion.structures as Rios
 
 
@@ -144,6 +145,7 @@ class RedcapToRios(ToRios):
         #   2) Start=2, because spread sheet programs set header row to 1
         #       and first data row to 2 (strictly for user friendly errors)
         data = collections.OrderedDict()
+        page_names = set()
         for line, row in enumerate(self.reader, start=2):
             if 'page' in row:
                 # Page name for legacy REDCap data dictionary format
@@ -168,13 +170,13 @@ class RedcapToRios(ToRios):
 
             # Need unique list of page names to create one page instance
             # per page name
-            self.page_names.add(page_name)
+            page_names.add(page_name)
 
             # Insert into data container
             data[line] = {'page_name': page_name, 'row': row}
 
         # Created pages for the data dictionary instrument
-        for page_name in self.page_names:
+        for page_name in page_names:
             self.page_container.update(
                 {page_name: Rios.PageObject(id=page_name)}
             )
@@ -244,7 +246,7 @@ class RedcapToRios(ToRios):
             )
             raise error
         else:
-            self.logger.info('Validation successful')
+            self.logger.info('Successful conversion')
 
 
 class ProcessorBase(object):

@@ -114,8 +114,7 @@ def tst_class(cls, tests):
             program()
             print "\n".join(logs)
         except Exception as exc:
-            #print repr(exc)
-            pass
+            print repr(exc)
 
 csv_names = [
     os.path.basename(name)[:-4] 
