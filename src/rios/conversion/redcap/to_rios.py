@@ -223,7 +223,7 @@ class RedcapToRios(ToRios):
                 else:
                     error = Error(
                         "An unknown error occured:",
-                        str(exc)
+                        repr(exc)
                     )
                     error.wrap(
                         "REDCap data dictionary conversion failure:",

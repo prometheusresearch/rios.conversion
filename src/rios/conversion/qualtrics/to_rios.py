@@ -9,6 +9,8 @@ import collections
 import six
 import rios.conversion.structures as Rios
 
+import traceback
+
 
 from rios.core import ValidationError
 from rios.conversion.base import ToRios, localized_string_object
@@ -52,7 +54,7 @@ class JsonReaderMetaDataProcessor(JsonReader):
             }
         except Exception as exc:
             error = QualtricsFormatError(
-                'Unable to parse Qualtrics data dictionary. Error:',
+                'Processor read error:',
                 str(exc)
             )
         else:
@@ -90,9 +92,10 @@ class JsonReaderMainProcessor(JsonReader):
                     qualtrics['questions'][payload['QuestionID']] = payload
         except Exception as exc:
             error = QualtricsFormatError(
-                'Unable to parse Qualtrics data dictionary. Error:',
-                str(exc)
+                'Processor read error:',
+                repr(exc)
             )
+            raise error
         else:
             return qualtrics
 
@@ -117,8 +120,20 @@ class QualtricsToRios(ToRios):
         """ Process the qsf input, and create output files """
 
         # Preprocessing
-        self.reader = JsonReaderMainProcessor(self.stream)
-        self.reader.process()
+        try:
+            self.reader = JsonReaderMainProcessor(self.stream)
+            self.reader.process()
+        except Exception as exc:
+            error = Error(
+                "Unable to parse Qualtrics data dictionary:",
+                "Invalid JSON formatted text"
+            )
+            error.wrap(
+                "Parse error:",
+                str(exc)
+            )
+            self.logger.error(str(error))
+            raise error
 
         # Initialize processor
         process = Processor(self.reader, self.localization)
@@ -145,11 +160,20 @@ class QualtricsToRios(ToRios):
                 page_names.add(page_name)
             elif element_type == 'Question':
                 question_id = form_element.get('QuestionID', None)
-                if question_id == None:
-                    raise ConversionValueError(
+                if question_id == None :
+                    error = QualtricsFormatError(
                         "Block element QuestionID value not found in:",
                         str(form_element)
                     )
+                    self.logger.error(str(error))
+                    raise error
+                elif question_id not in question_data:
+                    error = QualtricsFormatError(
+                        "QuestionID value not found in question data. Got ID:",
+                        str(question_id)
+                    )
+                    self.logger.error(str(error))
+                    raise error
                 elif page_name not in page_question_map:
                     page_question_map[page_name] = {
                         question_id: question_data[question_id],
@@ -164,6 +188,7 @@ class QualtricsToRios(ToRios):
                     "\"Page Break\" or \"Question\""
                 )
                 error.wrap("Got invalid type value:", str(element_type))
+                self.logger.error(str(error))
                 raise error
 
         for page_name in page_names:
@@ -206,7 +231,7 @@ class QualtricsToRios(ToRios):
                     else:
                         error = Error(
                             "An unknown error occured:",
-                            str(exc)
+                            repr(exc)
                         )
                         error.wrap(
                             "REDCap data dictionary conversion failure:",
@@ -260,10 +285,14 @@ class Processor(object):
 
         try:
             self.question_field_processor(question_data, question)
-        except ConversionValueError as exc:
+        except Exception as exc:
             # Reset storage if conversion of current page/question fails
             self.clear_storage()
-            raise exc
+            error = ConversionValueError(
+                "Invalid questions data. Got error:",
+                repr(exc)
+            )
+            raise error
 
         # Add the configured question to the page
         page.add_element(question)
