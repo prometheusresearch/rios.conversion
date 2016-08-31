@@ -3,6 +3,9 @@
 #
 
 
+import json
+
+
 class JsonReader(object):
     """
     This object reads `fname`, a JSON formatted text file, and can pre-process
@@ -21,7 +24,7 @@ class JsonReader(object):
     def __init__(self, fname):
         self.fname = fname
         self.reader = None
-        self.json = {}
+        self.data = {}
 
     @staticmethod
     def get_reader(fname):
@@ -34,7 +37,7 @@ class JsonReader(object):
     def process(self):
         if not self.reader:
             self.load_reader()
-        self.json = processor(self.reader)
+        self.data = self.processor(self.reader)
 
     def processor(self, data):
         return data

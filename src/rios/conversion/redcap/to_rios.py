@@ -26,6 +26,11 @@ from rios.conversion.exception import (
 )
 
 
+__all__ = (
+    'RedcapToRios',
+)
+
+
 # Consecutive non-alpha chars.
 RE_non_alphanumeric = re.compile(r'\W+')
 
@@ -116,7 +121,7 @@ class RedcapToRios(ToRios):
         self.reader = CsvReaderWithGetName(self.stream)  # noqa: F821
         self.reader.load_attributes()
 
-        # Determine processor
+        # Determine and initializeprocessor
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
             # Process new CSV format
@@ -141,9 +146,9 @@ class RedcapToRios(ToRios):
         #   1) Process data and page names into containers
         #   2) Iterate over containers to construct RIOS definitions
         # NOTE:
-        #   1) Each row is an ordered dict
+        #   1) Each CSV row is an ordered dict (see CsvReader in utils/)
         #   2) Start=2, because spread sheet programs set header row to 1
-        #       and first data row to 2 (strictly for user friendly errors)
+        #       and first data row to 2 (for user friendly errors)
         data = collections.OrderedDict()
         page_names = set()
         for line, row in enumerate(self.reader, start=2):
@@ -178,7 +183,7 @@ class RedcapToRios(ToRios):
         # Created pages for the data dictionary instrument
         for page_name in page_names:
             self.page_container.update(
-                {page_name: Rios.PageObject(id=page_name)}
+                {page_name: Rios.PageObject(id=page_name),}
             )
 
         # Process the row
@@ -273,7 +278,7 @@ class ProcessorBase(object):
         # Object to store pointers to question choices
         self._choices = None
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, page, row):
         """
         Processes REDCap data dictionary rows into corresponding RIOS
         specfication formatted data objects.

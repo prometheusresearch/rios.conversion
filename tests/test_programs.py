@@ -24,6 +24,17 @@ def redcap_rios_tst(name):
             'localization': 'en',
     }
     return [test_base,]
+
+def qualtrics_rios_tst(name):
+    test_base = {
+            'title': name,
+            'id': 'urn:%s' % name,
+            'instrument_version': '1.0',
+            'stream': open('./tests/qualtrics/%s.qsf' % name, 'r'),
+            'description': '',
+            'localization': 'en',
+    }
+    return [test_base,]
     
 def rios_redcap_tst(name):
     calc_filename = './tests/redcap/%s_c.yaml' % name
@@ -65,20 +76,6 @@ rios_redcap_mismatch_tests = [
         'format': 'yaml',
     },
 ]
-      
-def qualtrics_rios_tst(name):
-    test = {
-        'instrument_version': '1.0',
-        'infile': './tests/qualtrics/%s.qsf' % name,
-        'outfile_prefix': './tests/sandbox/qualtrics/%s' % name,
-    }
-    if name.startswith('bad_'):
-        test_without_format = dict(test, **{'format': None})
-        return [test_without_format]
-    else:
-        test_json = dict({'format': 'json'}, **test)
-        test_yaml = dict({'format': 'yaml'}, **test)
-        return [test_json, test_yaml]
 
 def rios_qualtrics_tst(name):
     calc_filename = './tests/qualtrics/%s_c.yaml' % name
@@ -114,6 +111,7 @@ def tst_class(cls, tests):
             program()
             print "\n".join(logs)
         except Exception as exc:
+            print "=EXCEPTIONS:"
             print repr(exc)
 
 csv_names = [
@@ -135,15 +133,15 @@ qsf_names = [
 
 print('%s: testing ...' % __file__)
 
-redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
-#rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
-#qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
-#rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
+#redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
+qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
+###rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
+###rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
 
 
-tst_class(RedcapRios, redcap_rios_tests)
-#tst_class(RiosRedcap, rios_redcap_tests + rios_redcap_mismatch_tests)
-#tst_class(QualtricsRios, qualtrics_rios_tests)
-#tst_class(RiosQualtrics, rios_qualtrics_tests)
+#tst_class(RedcapRios, redcap_rios_tests)
+tst_class(QualtricsRios, qualtrics_rios_tests)
+###tst_class(RiosRedcap, rios_redcap_tests + rios_redcap_mismatch_tests)
+###tst_class(RiosQualtrics, rios_qualtrics_tests)
 
 print('%s: OK' % __file__)
