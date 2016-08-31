@@ -17,14 +17,14 @@ class CsvReader(object):
     """
     This object reads `fname`, a csv file, and can iterate over the rows.
 
-    usage:
+    Usage:
 
         for row in CsvReader(fname):
             assert isinstance(row, OrderedDict)
             ... process the row
 
-    fname is either the filename, or an open file object, or any object
-    suitable for csv.reader.
+    `fname` is either a filename, an open file object, or any object suitable
+    for `csv.reader`.
 
     The first row is expected to be a list of column names.
     These are converted to "canonical" form by get_name()

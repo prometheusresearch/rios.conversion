@@ -6,6 +6,7 @@
 import re
 import json
 import six
+import collections
 import rios.conversion.structures as Rios
 
 
@@ -21,7 +22,11 @@ from rios.conversion.exception import (
     ConversionValidationError,
     ConversionValueError,
     Error,
-    guard,
+)
+
+
+__all__ = (
+    'RedcapToRios',
 )
 
 
@@ -115,7 +120,7 @@ class RedcapToRios(ToRios):
         self.reader = CsvReaderWithGetName(self.stream)  # noqa: F821
         self.reader.load_attributes()
 
-        # Determine processor
+        # Determine and initializeprocessor
         first_field = self.reader.attributes[0]
         if first_field == 'variable_field_name':
             # Process new CSV format
@@ -140,9 +145,11 @@ class RedcapToRios(ToRios):
         #   1) Process data and page names into containers
         #   2) Iterate over containers to construct RIOS definitions
         # NOTE:
-        #   1) Each row is an ordered dict
+        #   1) Each CSV row is an ordered dict (see CsvReader in utils/)
         #   2) Start=2, because spread sheet programs set header row to 1
-        #       and first data row to 2 (strictly for user friendly errors)
+        #       and first data row to 2 (for user friendly errors)
+        data = collections.OrderedDict()
+        page_names = set()
         for line, row in enumerate(self.reader, start=2):
             if 'page' in row:
                 # Page name for legacy REDCap data dictionary format
@@ -167,19 +174,19 @@ class RedcapToRios(ToRios):
 
             # Need unique list of page names to create one page instance
             # per page name
-            self.page_names.add(page_name)
+            page_names.add(page_name)
 
             # Insert into data container
-            self.data[line] = {'page_name': page_name, 'row': row}
+            data[line] = {'page_name': page_name, 'row': row}
 
         # Created pages for the data dictionary instrument
-        for page_name in self.page_names:
+        for page_name in page_names:
             self.page_container.update(
-                {page_name: Rios.PageObject(id=page_name)}
+                {page_name: Rios.PageObject(id=page_name), }
             )
 
         # Process the row
-        for line, row_pkg in six.iteritems(self.data):
+        for line, row_pkg in six.iteritems(data):
             page = self.page_container[row_pkg['page_name']]
             row = row_pkg['row']
             try:
@@ -215,7 +222,7 @@ class RedcapToRios(ToRios):
                 else:
                     error = Error(
                         "An unknown error occured:",
-                        str(exc)
+                        repr(exc)
                     )
                     error.wrap(
                         "REDCap data dictionary conversion failure:",
@@ -243,7 +250,7 @@ class RedcapToRios(ToRios):
             )
             raise error
         else:
-            self.logger.info('Validation successful')
+            self.logger.info('Successful conversion')
 
 
 class ProcessorBase(object):
@@ -270,7 +277,7 @@ class ProcessorBase(object):
         # Object to store pointers to question choices
         self._choices = None
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, page, row):
         """
         Processes REDCap data dictionary rows into corresponding RIOS
         specfication formatted data objects.

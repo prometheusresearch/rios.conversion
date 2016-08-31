@@ -112,14 +112,18 @@ class BaseConversionError(Error):
     pass
 
 
-class ConversionValueError(BaseConversionError):
-    """ Thrown for ValueError exceptions in a conversion implementation """
+class ConversionValidationError(BaseConversionError):
+    """
+    Thrown when a conversion fails validation.
+
+    See :class:ValidationError in ``rios.core``.
+    """
 
     pass
 
 
-class ConversionValidationError(BaseConversionError):
-    """ Thrown for ValidationError exceptions in conversion implementations """
+class ConversionValueError(BaseConversionError):
+    """ Thrown for ValueError exceptions in a conversion implementation """
 
     pass
 
