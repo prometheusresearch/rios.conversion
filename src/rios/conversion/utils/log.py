@@ -9,7 +9,7 @@ import six
 
 
 __all__ = (
-    'get_logger',
+    'get_conversion_logger',
 )
 
 

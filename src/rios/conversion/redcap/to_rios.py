@@ -22,7 +22,6 @@ from rios.conversion.exception import (
     ConversionValidationError,
     ConversionValueError,
     Error,
-    guard,
 )
 
 
@@ -183,7 +182,7 @@ class RedcapToRios(ToRios):
         # Created pages for the data dictionary instrument
         for page_name in page_names:
             self.page_container.update(
-                {page_name: Rios.PageObject(id=page_name),}
+                {page_name: Rios.PageObject(id=page_name), }
             )
 
         # Process the row

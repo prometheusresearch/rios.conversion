@@ -3,18 +3,14 @@
 #
 
 
-import json
-import sys
 import collections
 import six
 import rios.conversion.structures as Rios
 
-import traceback
-
 
 from rios.core import ValidationError
 from rios.conversion.base import ToRios, localized_string_object
-from rios.conversion.utils import JsonReader, InstrumentCalcStorage
+from rios.conversion.utils import JsonReader
 from rios.conversion.exception import (
     Error,
     ConversionValidationError,
@@ -57,6 +53,7 @@ class JsonReaderMetaDataProcessor(JsonReader):
                 'Processor read error:',
                 str(exc)
             )
+            raise error
         else:
             return metadata
 
@@ -67,7 +64,6 @@ class JsonReaderMainProcessor(JsonReader):
     def processor(self, data):
         """ Extract instrument data into a dict. """
         try:
-            survey_entry = data['SurveyEntry']
             qualtrics = {
                 'block_elements': [],
                 'questions':      {},   # QuestionID: payload (dict)
@@ -108,6 +104,7 @@ class QualtricsToRios(ToRios):
         # data dictionary and insert/overwrite them into the kwargs that are
         # passed to the super class __init__.
         if filemetadata:
+            stream = kwargs['stream']
             reader = JsonReaderMetaDataProcessor(stream).process()
             kwargs['id'] = reader.data['id']
             kwargs['description'] = reader.data['description']
@@ -160,7 +157,7 @@ class QualtricsToRios(ToRios):
                 page_names.add(page_name)
             elif element_type == 'Question':
                 question_id = form_element.get('QuestionID', None)
-                if question_id == None :
+                if question_id is None:
                     error = QualtricsFormatError(
                         "Block element QuestionID value not found in:",
                         str(form_element)
@@ -193,7 +190,7 @@ class QualtricsToRios(ToRios):
 
         for page_name in page_names:
             self.page_container.update(
-                {page_name: Rios.PageObject(id=page_name),}
+                {page_name: Rios.PageObject(id=page_name), }
             )
 
         for page_name, page in six.iteritems(self.page_container):
@@ -217,17 +214,6 @@ class QualtricsToRios(ToRios):
                             str(exc)
                         )
                         self.logger.warning(str(error))
-                    elif isinstance(exc, QualtricsFormatError):
-                        error = Error(
-                            "Error on line: " + str(line) + ". Error:",
-                            str(exc)
-                        )
-                        error.wrap(
-                            "REDCap data dictionary conversion failure:",
-                            "Unable to parse REDCap data dictionary CSV"
-                        )
-                        self.logger.error(str(error))
-                        raise error
                     else:
                         error = Error(
                             "An unknown error occured:",
@@ -329,7 +315,7 @@ class Processor(object):
                     self.clean_question(
                         question_data['QuestionText']
                     )
-                ), 
+                ),
             )
 
             # Choices are generated, where "choices" is an array of
