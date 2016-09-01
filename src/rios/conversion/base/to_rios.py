@@ -3,76 +3,125 @@
 #
 
 
-import json
-import os
-import rios.conversion.structures as Rios
-import yaml
+from rios.conversion import structures
+from rios.conversion.utils import get_conversion_logger
+from rios.core.validation import (
+    validate_instrument,
+    validate_form,
+    validate_calculationset,
+)
 
 
-from rios.core import validation
+__all__ = (
+    'ToRios',
+    'DEFAULT_LOCALIZATION',
+    'DEFAULT_VERSION',
+)
+
+
+DEFAULT_LOCALIZATION = 'en'
+DEFAULT_VERSION = '1.0'
 
 
 class ToRios(object):
-    """
-    Converts a foreign instrument file into a series of RIOS output files
+    """ Converts a foreign instrument file into a valid RIOS specification """
 
-        <OUTFILE_PREFIX>_c.<format> RIOS calculation
-        <OUTFILE_PREFIX>_i.<format> RIOS instrument
-        <OUTFILE_PREFIX>_f.<format> RIOS web form
+    def __init__(self, id, instrument_version, title,
+                    localization, description, stream, logger=None):
+        self.id = id
+        self.instrument_version = instrument_version or DEFAULT_VERSION
+        self.title = title
+        self.localization = localization or DEFAULT_LOCALIZATION
+        self.description = description
+        self.stream = stream
 
-    The RIOS calculation file is only created when there are calculation fields
-    in the input. However if there are no calculation fields and the
-    calculation file already exists, it will be deleted.
-    """
+        # Inserted into self._form
+        self.page_container = dict()
+        # Inserted into self._instrument
+        self.field_container = list()
+        # Inserted into self._calculationset
+        self.calc_container = dict()
 
-    def create__file(self, kind, obj):
-        with open(self.filename(kind), 'w') as fo:
-            if obj:
-                obj.clean()
-                if self.format == 'json':
-                    json.dump(obj, fo, indent=1)
-                elif self.format == 'yaml':
-                    yaml.safe_dump(
-                            json.loads(json.dumps(obj)),
-                            fo,
-                            default_flow_style=False)
-
-    def create_calculation_file(self):
-        if self.calculations.get('calculations', False):
-            self.create__file('c', self.calculations)
-        else:
-            filename = self.filename('c')
-            if os.access(filename, os.F_OK):
-                os.remove(filename)   # pragma: no cover
-
-    def create_instrument_file(self):
-        self.create__file('i', self.instrument)
-
-    def create_form_file(self):
-        self.create__file('f', self.form)
-
-    def validate_results(self):
-        self.instrument.clean()
-        validation.validate_instrument(self.instrument.as_dict())
-
-        self.form.clean()
-        validation.validate_form(
-            self.form.as_dict(),
-            instrument=self.instrument.as_dict(),
+        # Generate yet-to-be-configured RIOS definitions
+        self._instrument = structures.Instrument(
+            id=self.id,
+            version=self.instrument_version,
+            title=self.title,
+            description=self.description
+        )
+        self._calculationset = structures.CalculationSetObject(
+            instrument=structures.InstrumentReferenceObject(self._instrument),
+        )
+        self._form = structures.WebForm(
+            instrument=structures.InstrumentReferenceObject(self._instrument),
+            defaultLocalization=self.localization,
+            title=localized_string_object(self.localization, self.title),
         )
 
-        if self.calculations.get('calculations', False):
-            self.calculations.clean()
-            validation.validate_calculationset(
-                self.calculations.as_dict(),
-                instrument=self.instrument.as_dict(),
+        # Initialize logging
+        if isinstance(logger, list):
+            self.logger = get_conversion_logger(
+                name=self.__class__.__name__,
+                clearall=True,
+                logger=logger,
+            )
+        else:
+            self.logger = list()
+
+    def __call__(self):
+        """
+        Converts the given foreign instrument file into corresponding RIOS
+        specfication formatted data objects.
+
+        Implementations must override this method.
+        """
+
+        raise NotImplementedError(
+            '{}.__call__'.format(self.__class__.__name__)
+        )
+
+    @property
+    def instrument(self):
+        self._instrument.clean()
+        return self._instrument.as_dict()
+
+    @property
+    def form(self):
+        self._form.clean()
+        return self._form.as_dict()
+
+    @property
+    def calculationset(self):
+        if self._calculationset.get('calculations', False):
+            self._calculationset.clean()
+            return self._calculationset.as_dict()
+        else:
+            return dict()
+
+    def validate(self):
+        validate_instrument(self.instrument)
+        validate_form(
+            self.form,
+            instrument=self.instrument,
+        )
+        if self.calculationset.get('calculations', False):
+            validate_calculationset(
+                self.calculationset,
+                instrument=self.instrument
             )
 
-    def filename(self, kind):
-        return '%(outfile_prefix)s_%(kind)s.%(extension)s' % {
-                'outfile_prefix': self.outfile_prefix,
-                'kind': kind,
-                'extension': self.format, }
+    @property
+    def package(self):
+        payload = {
+            'instrument': self.instrument.as_dict(),
+            'form': self.form.as_dict(),
+        }
+        if self._calculationset.get('calculations', False):
+            calculations = self.calculations.as_dict()
+            return dict(payload, **{'calculationset': calculations})
+        else:
+            return payload
 
-    def localized_string_object(self, string):
-        return Rios.LocalizedStringObject({self.localization: string})
+
+def localized_string_object(localization, string):
+    return structures.LocalizedStringObject({localization: string})

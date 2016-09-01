@@ -33,8 +33,8 @@ def redcap_to_rios(instrument, **kwargs):
     :rtype: dictionary
     """
 
-    converter = RedcapToRios(instrument, **kwargs)
-    converter()
+    converter = RedcapToRios(instrument, **kwargs)()
+    return converter.package
 
 
 def qualtrics_to_rios(instrument, **kwargs):
@@ -50,8 +50,8 @@ def qualtrics_to_rios(instrument, **kwargs):
     :rtype: dictionary
     """
 
-    converter = QualtricsToRios(instrument, **kwargs)
-    converter()
+    converter = QualtricsToRios(instrument, **kwargs)()
+    return converter.payload
 
 
 def rios_to_redcap(instrument, **kwargs):
