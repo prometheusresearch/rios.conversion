@@ -8,12 +8,10 @@ import six
 import rios.conversion.structures as Rios
 
 
-from rios.core import ValidationError
 from rios.conversion.base import ToRios, localized_string_object
 from rios.conversion.utils import JsonReader
 from rios.conversion.exception import (
     Error,
-    ConversionValidationError,
     ConversionValueError,
     QualtricsFormatError,
 )
@@ -201,17 +199,8 @@ class QualtricsToRios(ToRios):
             self._form.add_page(page)
 
         # Post-processing/validation
-        try:
-            self.validate()
-        except ValidationError as exc:
-            error = ConversionValidationError(
-                'Validation error:',
-                str(exc)
-            )
-            self.logger.error(str(error))
-            raise error
-        else:
-            self.logger.info('Successful conversion')
+        self.validate()
+        self.logger.info('Conversion process was successful')
 
 
 class Processor(object):

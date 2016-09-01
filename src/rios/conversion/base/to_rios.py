@@ -3,8 +3,10 @@
 #
 
 
+from rios.core import ValidationError
 from rios.conversion import structures
 from rios.conversion.utils import InMemoryLogger
+from rios.conversion.exception import ConversionValidationError
 from rios.core.validation import (
     validate_instrument,
     validate_form,
@@ -102,16 +104,24 @@ class ToRios(object):
             return dict()
 
     def validate(self):
-        validate_instrument(self.instrument)
-        validate_form(
-            self.form,
-            instrument=self.instrument,
-        )
-        if self.calculationset.get('calculations', False):
-            validate_calculationset(
-                self.calculationset,
-                instrument=self.instrument
+        try:
+            validate_instrument(self.instrument)
+            validate_form(
+                self.form,
+                instrument=self.instrument,
             )
+            if self.calculationset.get('calculations', False):
+                validate_calculationset(
+                    self.calculationset,
+                    instrument=self.instrument
+                )
+        except ValidationError as exc:
+            error = ConversionValidationError(
+                'Validation error:',
+                str(exc)
+            )
+            self.logger.error(str(error))
+            raise error
 
     @property
     def package(self):

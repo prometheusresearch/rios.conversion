@@ -5,7 +5,7 @@
 
 from rios.conversion.redcap import RedcapToRios, RedcapFromRios
 from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
-from rios.conversion.exception import QualtricsFormatError
+from rios.conversion.exception import Error, QualtricsFormatError
 from rios.conversion.utils import JsonReader
 
 
@@ -14,11 +14,6 @@ __all__ = (
     'qualtrics_to_rios',
     'rios_to_redcap',
     'rios_to_qualtrics',
-
-    'RedcapToRios',
-    'RedcapFromRios',
-    'QualtricsToRios',
-    'QualtricsFromRios',
 )
 
 
@@ -46,7 +41,7 @@ class JsonReaderMetaDataProcessor(JsonReader):
 
 
 def redcap_to_rios(id, title, description, stream, localization=None,
-                    instrument_version=None, logger=None):
+                        instrument_version=None, suppress=False):
     """
     Converts a REDCap configuration into a RIOS configuration.
 
@@ -68,8 +63,6 @@ def redcap_to_rios(id, title, description, stream, localization=None,
         Version of the instrument. Defaults to '1.0' if none supplied. Must be
         in a decimal format with precision to one decimal place.
     :type instrument_version: str or None
-    :param logger: Logging instance to store logs.
-    :type logger: list
     :returns:
         The RIOS instrument, form, and calculationset configuration. Includes
         logging data if a logger is suplied.
@@ -82,19 +75,30 @@ def redcap_to_rios(id, title, description, stream, localization=None,
         title=title,
         localization=localization,
         description=description,
-        stream=stream,
-        logger=None
+        stream=stream
     )
-    converter()
-    if logger:
-        return dict(converter.package, **{'logs': logger})
+
+    payload = dict()
+    try:
+        converter()
+    except Exception as exc:
+        error = Error(
+            'Unable to convert REDCap data dictionary. Error:',
+            (str(exc) if isinstance(exc, Error) else repr(exc))
+        )
+        if suppress:
+            payload['error'] = str(error)
+        else:
+            raise error
     else:
-        return converter.package
+        payload.update(converter.package)
+
+    return payload
 
 
 def qualtrics_to_rios(stream, instrument_version=None, title=None,
                         localization=None, description=None, id=None,
-                            logger=None, filemetadata=False):
+                            filemetadata=False, suppress=False):
     """
     Converts a Qualtrics configuration into a RIOS configuration.
 
@@ -116,8 +120,6 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
         Version of the instrument. Defaults to '1.0' if none supplied. Must be
         in a decimal format with precision to one decimal place.
     :type instrument_version: str or None
-    :param logger: Logging instance to store logs.
-    :type logger: list
     :param filemetadata:
         Flag to tell converter API to pull meta data from the stream file.
     :type filemetadata: bool
@@ -128,20 +130,38 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     """
 
     if filemetadata:
-        kwargs = dict()
-        kwargs['stream'] = stream
-        kwargs['instrument_version'] = instrument_version
         # Process properties from the stream
         reader = JsonReaderMetaDataProcessor(stream).process()
-        kwargs['id'] = reader.data['id']
-        kwargs['description'] = reader.data['description']
-        kwargs['title'] = reader.data['title']
-        kwargs['localization'] = reader.data['localization']
-    converter = QualtricsToRios(**kwargs)()
-    if logger:
-        return dict(converter.package, **{'logs': logger})
+        _id = reader.data['id']
+        _description = reader.data['description']
+        _title = reader.data['title']
+        _localization = reader.data['localization']
+
+    converter = QualtricsToRios(
+        id=(id or _id),
+        instrument_version=instrument_version,
+        title=(title or _title),
+        localization=(localization or _localization),
+        description=(description or _description),
+        stream=stream
+    )
+
+    payload = dict()
+    try:
+        converter()
+    except Exception as exc:
+        error = Error(
+            'Unable to convert Qualtrics data dictionary. Error:',
+            (str(exc) if isinstance(exc, Error) else repr(exc))
+        )
+        if suppress:
+            payload['error'] = str(error)
+        else:
+            raise error
     else:
-        return converter.package
+        payload.update(converter.package)
+
+    return payload
 
 
 def rios_to_redcap(instrument, **kwargs):

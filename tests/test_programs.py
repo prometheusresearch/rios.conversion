@@ -104,6 +104,8 @@ def show_tst(cls, test):
 
 def tst_class(cls, tests):
     for test in tests:
+        tb = None
+        exc = None
         show_tst(cls, test)
         program = cls(**test)
         try:
@@ -135,17 +137,14 @@ qsf_names = [
     for name in glob.glob('./tests/qualtrics/*.qsf')
 ]
 
-print('%s: testing ...' % __file__)
 
-#redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
+redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
 qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
 ###rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
 ###rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
 
 
-#tst_class(RedcapRios, redcap_rios_tests)
+tst_class(RedcapRios, redcap_rios_tests)
 tst_class(QualtricsRios, qualtrics_rios_tests)
 ###tst_class(RiosRedcap, rios_redcap_tests + rios_redcap_mismatch_tests)
 ###tst_class(RiosQualtrics, rios_qualtrics_tests)
-
-print('%s: OK' % __file__)
