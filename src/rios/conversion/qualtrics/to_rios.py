@@ -35,29 +35,6 @@ class PageName(object):
         return "page_{0:0=2d}".format(self.page_id)
 
 
-class JsonReaderMetaDataProcessor(JsonReader):
-    """ Process Qualtrics data dictionary/instrument metadata """
-
-    def processor(self, data):
-        """ Extract metadata into a dict """
-        try:
-            survey_entry = data['SurveyEntry']
-            metadata = {
-                'id':             survey_entry['SurveyID'],
-                'title':          survey_entry['SurveyName'],
-                'localization':   survey_entry['SurveyLanguage'].lower(),
-                'description':    survey_entry['SurveyDescription'],
-            }
-        except Exception as exc:
-            error = QualtricsFormatError(
-                'Processor read error:',
-                str(exc)
-            )
-            raise error
-        else:
-            return metadata
-
-
 class JsonReaderMainProcessor(JsonReader):
     """ Process Qualtrics JSON data """
 
@@ -100,20 +77,10 @@ class QualtricsToRios(ToRios):
     """ Converts a Qualtrics *.qsf file to the RIOS specification format """
 
     def __init__(self, filemetadata=False, *args, **kwargs):
-        # If desired, pull id, descriptions, title, and localization from the
-        # data dictionary and insert/overwrite them into the kwargs that are
-        # passed to the super class __init__.
-        if filemetadata:
-            stream = kwargs['stream']
-            reader = JsonReaderMetaDataProcessor(stream).process()
-            kwargs['id'] = reader.data['id']
-            kwargs['description'] = reader.data['description']
-            kwargs['title'] = reader.data['title']
-            kwargs['localization'] = reader.data['localization']
         super(QualtricsToRios, self).__init__(*args, **kwargs)
         self.page_name = PageName()
 
-    def __call__(self):
+    def __call__(self, logs):
         """ Process the qsf input, and create output files """
 
         # Preprocessing
@@ -244,6 +211,8 @@ class QualtricsToRios(ToRios):
             raise error
         else:
             self.logger.info('Successful conversion')
+            print "LOGGER AT END: ", logs
+
 
 
 class Processor(object):

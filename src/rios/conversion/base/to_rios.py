@@ -26,8 +26,8 @@ DEFAULT_VERSION = '1.0'
 class ToRios(object):
     """ Converts a foreign instrument file into a valid RIOS specification """
 
-    def __init__(self, id, instrument_version, title,
-                    localization, description, stream, logger=None):
+    def __init__(self, id, title, description, stream,
+                    localization=None, instrument_version=None, logger=None):
         self.id = id
         self.instrument_version = instrument_version or DEFAULT_VERSION
         self.title = title
@@ -66,7 +66,7 @@ class ToRios(object):
                 logger=logger,
             )
         else:
-            self.logger = list()
+            raise TypeError("Logger must be of type list")
 
     def __call__(self):
         """

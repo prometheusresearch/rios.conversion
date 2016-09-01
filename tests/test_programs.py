@@ -1,6 +1,7 @@
 import glob
 import os
-import sys, traceback
+import sys
+import traceback
 
 
 from rios.conversion.redcap.to_rios import RedcapToRios as RedcapRios
@@ -97,8 +98,8 @@ def rios_qualtrics_tst(name):
     return [test_json, test_yaml]
 
 def show_tst(cls, test):
-    name = "=TEST CLASS: " + str(cls.__name__)
-    filename = "=TEST FILENAME: " + str(test['stream'].name)
+    name = "= TEST CLASS: " + str(cls.__name__)
+    filename = "= TEST FILENAME: " + str(test['stream'].name)
     print('\n%s\n%s' % (name, filename))
 
 def tst_class(cls, tests):
@@ -106,13 +107,14 @@ def tst_class(cls, tests):
         show_tst(cls, test)
         logs = list()
         test['logger'] = logs
-        print "=LOGS:"
+        print "= LOGS:"
         try:
             program = cls(**test)
-            program()
-            print "\n".join(logs)
+            program(logs)
         except Exception as exc:
-            print "=EXCEPTIONS:"
+            print "TEST: ", test['logger']
+            print logs
+            print "= EXCEPTIONS:"
             print repr(exc)
             ex_type, ex, tb = sys.exc_info()
             traceback.print_tb(tb)

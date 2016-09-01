@@ -17,6 +17,7 @@ __CONFIG = {
     'version': 1,
     'incremental': False,
     'disable_existing_loggers': True,
+    'propogate': False,
     'formatters': {
         'brief': {
             'format': '%(message)s'
@@ -27,17 +28,17 @@ __CONFIG = {
     },
     'filters': {},
     'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+        'memory': {
+            'class': 'rios.conversion.utils.log.InternalLoggingHandler',
             'formatter': 'basic',
-            'stream': 'ext://sys.stdout',
+            'logger': None,
         },
     },
     'loggers': {},
     'root': {
         'level': 'INFO',
         'handlers': [
-            'console',
+            'memory',
         ]
     },
 }
@@ -62,14 +63,7 @@ def get_conversion_logger(name=None, clearall=False, logger=None):
         pass
 
     # Load logging config
-    internal_logging_handler = {
-        'memory': {
-            'class': 'rios.conversion.utils.log.InternalLoggingHandler',
-            'formatter': 'basic',
-            'logger': logger,
-        },
-    }
-    __CONFIG['handlers'].update(internal_logging_handler)
+    __CONFIG['handlers']['memory']['logger'] = logger
     logging.config.dictConfig(__CONFIG)
 
     if name and not isinstance(name, six.string_types):
