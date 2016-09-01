@@ -105,19 +105,18 @@ def show_tst(cls, test):
 def tst_class(cls, tests):
     for test in tests:
         show_tst(cls, test)
-        logs = list()
-        test['logger'] = logs
-        print "= LOGS:"
+        program = cls(**test)
         try:
-            program = cls(**test)
-            program(logs)
+            program()
         except Exception as exc:
-            print "TEST: ", test['logger']
-            print logs
-            print "= EXCEPTIONS:"
-            print repr(exc)
             ex_type, ex, tb = sys.exc_info()
-            traceback.print_tb(tb)
+        finally:
+            print "= LOGS:"
+            print program.pplogs
+            if tb and exc:
+                print "= EXCEPTIONS:"
+                print repr(exc)
+                traceback.print_tb(tb)
 
 csv_names = [
     os.path.basename(name)[:-4] 

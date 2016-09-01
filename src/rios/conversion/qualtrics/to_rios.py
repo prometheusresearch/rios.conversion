@@ -80,7 +80,7 @@ class QualtricsToRios(ToRios):
         super(QualtricsToRios, self).__init__(*args, **kwargs)
         self.page_name = PageName()
 
-    def __call__(self, logs):
+    def __call__(self):
         """ Process the qsf input, and create output files """
 
         # Preprocessing
@@ -151,7 +151,7 @@ class QualtricsToRios(ToRios):
                     "Invalid type for block element. Expected types:",
                     "\"Page Break\" or \"Question\""
                 )
-                error.wrap("Got invalid type value:", str(element_type))
+                error.wrap("But got invalid type value:", str(element_type))
                 self.logger.error(str(error))
                 raise error
 
@@ -208,11 +208,10 @@ class QualtricsToRios(ToRios):
                 'Validation error:',
                 str(exc)
             )
+            self.logger.error(str(error))
             raise error
         else:
             self.logger.info('Successful conversion')
-            print "LOGGER AT END: ", logs
-
 
 
 class Processor(object):

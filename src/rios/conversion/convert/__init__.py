@@ -5,6 +5,7 @@
 
 from rios.conversion.redcap import RedcapToRios, RedcapFromRios
 from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
+from rios.conversion.exception import QualtricsFormatError
 from rios.conversion.utils import JsonReader
 
 
@@ -92,8 +93,8 @@ def redcap_to_rios(id, title, description, stream, localization=None,
 
 
 def qualtrics_to_rios(stream, instrument_version=None, title=None,
-                    localization=None, description=None, id=None,
-                    logger=None, filemetadata=False):
+                        localization=None, description=None, id=None,
+                            logger=None, filemetadata=False):
     """
     Converts a Qualtrics configuration into a RIOS configuration.
 
@@ -127,6 +128,7 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     """
 
     if filemetadata:
+        kwargs = dict()
         kwargs['stream'] = stream
         kwargs['instrument_version'] = instrument_version
         # Process properties from the stream

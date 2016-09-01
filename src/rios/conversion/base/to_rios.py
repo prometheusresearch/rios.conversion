@@ -4,7 +4,7 @@
 
 
 from rios.conversion import structures
-from rios.conversion.utils import get_conversion_logger
+from rios.conversion.utils import InMemoryLogger
 from rios.core.validation import (
     validate_instrument,
     validate_form,
@@ -27,7 +27,12 @@ class ToRios(object):
     """ Converts a foreign instrument file into a valid RIOS specification """
 
     def __init__(self, id, title, description, stream,
-                    localization=None, instrument_version=None, logger=None):
+                    localization=None, instrument_version=None):
+
+        # Initialize logging
+        self.logger = InMemoryLogger()
+
+        # Set attributes
         self.id = id
         self.instrument_version = instrument_version or DEFAULT_VERSION
         self.title = title
@@ -58,16 +63,6 @@ class ToRios(object):
             title=localized_string_object(self.localization, self.title),
         )
 
-        # Initialize logging
-        if isinstance(logger, list):
-            self.logger = get_conversion_logger(
-                name=self.__class__.__name__,
-                clearall=True,
-                logger=logger,
-            )
-        else:
-            raise TypeError("Logger must be of type list")
-
     def __call__(self):
         """
         Converts the given foreign instrument file into corresponding RIOS
@@ -79,6 +74,14 @@ class ToRios(object):
         raise NotImplementedError(
             '{}.__call__'.format(self.__class__.__name__)
         )
+
+    @property
+    def pplogs(self):
+        return self.logger.pplogs
+
+    @property
+    def logs(self):
+        return self.logger.logs
 
     @property
     def instrument(self):
@@ -117,10 +120,14 @@ class ToRios(object):
             'form': self.form.as_dict(),
         }
         if self._calculationset.get('calculations', False):
-            calculations = self.calculations.as_dict()
-            return dict(payload, **{'calculationset': calculations})
-        else:
-            return payload
+            payload.update(
+                {'calculationset': self.calculations.as_dict()}
+            )
+        if self.logger.check:
+            payload.update(
+                {'logs': self.log_container }
+            )
+        return payload
 
 
 def localized_string_object(localization, string):
