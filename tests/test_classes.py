@@ -4,10 +4,12 @@ import sys
 import traceback
 
 
-from rios.conversion.redcap.to_rios import RedcapToRios as RedcapRios
-from rios.conversion.redcap.from_rios import RedcapFromRios as RiosRedcap
-from rios.conversion.qualtrics.to_rios import QualtricsToRios as QualtricsRios
-from rios.conversion.qualtrics.from_rios import QualtricsFromRios as RiosQualtrics
+from rios.conversion.exception import Error
+from rios.conversion.base import SUCCESS_MESSAGE
+from rios.conversion.redcap.to_rios import RedcapToRios
+from rios.conversion.redcap.from_rios import RedcapFromRios
+from rios.conversion.qualtrics.to_rios import QualtricsToRios
+from rios.conversion.qualtrics.from_rios import QualtricsFromRios
 
 
 def flatten(array):
@@ -98,27 +100,34 @@ def rios_qualtrics_tst(name):
     return [test_json, test_yaml]
 
 def show_tst(cls, test):
-    name = "= TEST CLASS: " + str(cls.__name__)
+    class_name = "= TEST CLASS: " + str(cls.__name__)
     filename = "= TEST FILENAME: " + str(test['stream'].name)
-    print('\n%s\n%s' % (name, filename))
+    print('\n%s\n%s' % (class_name, filename))
 
 def tst_class(cls, tests):
     for test in tests:
         tb = None
         exc = None
         show_tst(cls, test)
-        program = cls(**test)
+        converter = cls(**test)
         try:
-            program()
+            converter()
         except Exception as exc:
             ex_type, ex, tb = sys.exc_info()
-        finally:
-            print "= LOGS:"
-            print program.pplogs
-            if tb and exc:
-                print "= EXCEPTIONS:"
-                print repr(exc)
+            if isinstance(exc, Error):
+                print "Successful error handling (exception)"
+            else:
+                print "= EXCEPTION:"
                 traceback.print_tb(tb)
+                print repr(exc)
+                raise exc
+        else:
+            if SUCCESS_MESSAGE in converter.pplogs:
+                print "Successful conversion test"
+            else:
+                raise ValueError(
+                    "Logged extraneous messages for a successful conversion"
+                )
 
 csv_names = [
     os.path.basename(name)[:-4] 
@@ -144,7 +153,9 @@ qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
 ###rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
 
 
-tst_class(RedcapRios, redcap_rios_tests)
-tst_class(QualtricsRios, qualtrics_rios_tests)
-###tst_class(RiosRedcap, rios_redcap_tests + rios_redcap_mismatch_tests)
-###tst_class(RiosQualtrics, rios_qualtrics_tests)
+def test_classes():
+    print "\n====== CLASS TESTS ======"
+    tst_class(RedcapToRios, redcap_rios_tests)
+    tst_class(QualtricsToRios, qualtrics_rios_tests)
+    ###tst_class(RedcapFromRios, rios_redcap_tests + rios_redcap_mismatch_tests)
+    ###tst_class(QualtricsFromRios, rios_qualtrics_tests)

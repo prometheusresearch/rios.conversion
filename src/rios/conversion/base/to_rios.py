@@ -18,11 +18,13 @@ __all__ = (
     'ToRios',
     'DEFAULT_LOCALIZATION',
     'DEFAULT_VERSION',
+    'SUCCESS_MESSAGE',
 )
 
 
 DEFAULT_LOCALIZATION = 'en'
 DEFAULT_VERSION = '1.0'
+SUCCESS_MESSAGE = 'Conversion process was successful'
 
 
 class ToRios(object):
@@ -79,6 +81,10 @@ class ToRios(object):
 
     @property
     def pplogs(self):
+        """
+        Pretty print logs by joining into a single, formatted string for use
+        in displaying informative error messages to users.
+        """
         return self.logger.pplogs
 
     @property
@@ -122,20 +128,23 @@ class ToRios(object):
             )
             self.logger.error(str(error))
             raise error
+        else: 
+            if SUCCESS_MESSAGE:
+                self.logger.info(SUCCESS_MESSAGE)
 
     @property
     def package(self):
         payload = {
-            'instrument': self.instrument.as_dict(),
-            'form': self.form.as_dict(),
+            'instrument': self.instrument,
+            'form': self.form,
         }
         if self._calculationset.get('calculations', False):
             payload.update(
-                {'calculationset': self.calculations.as_dict()}
+                {'calculationset': self.calculations}
             )
         if self.logger.check:
             payload.update(
-                {'logs': self.log_container }
+                {'logs': self.logs}
             )
         return payload
 

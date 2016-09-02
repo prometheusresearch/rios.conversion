@@ -200,7 +200,6 @@ class QualtricsToRios(ToRios):
 
         # Post-processing/validation
         self.validate()
-        self.logger.info('Conversion process was successful')
 
 
 class Processor(object):

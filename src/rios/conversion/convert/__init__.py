@@ -129,24 +129,50 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     :rtype: dictionary
     """
 
+    # Make sure function parameters are passed proper values if not getting
+    # metadata from the data dictionary file
+    if filemetadata is False and (id is None or description is None
+                or title is None):
+        raise ValueError(
+            'Missing id, description, and/or title attributes'
+        )
+
+    payload = dict()
+
     if filemetadata:
         # Process properties from the stream
-        reader = JsonReaderMetaDataProcessor(stream).process()
-        _id = reader.data['id']
-        _description = reader.data['description']
-        _title = reader.data['title']
-        _localization = reader.data['localization']
+        try:
+            reader = JsonReaderMetaDataProcessor(stream)
+            reader.process()
+        except Exception as exc:
+            error = Error(
+                "Unable to parse Qualtrics data dictionary:",
+                "Invalid JSON formatted text"
+            )
+            error.wrap(
+                "Parse error:",
+                str(exc)
+            )
+            if suppress:
+                payload['error'] = str(error)
+                return payload
+            else:
+                raise error
+        else:
+            id = reader.data['id']
+            description = reader.data['description']
+            title = reader.data['title']
+            localization = reader.data['localization']
 
     converter = QualtricsToRios(
-        id=(id or _id),
+        id=id,
         instrument_version=instrument_version,
-        title=(title or _title),
-        localization=(localization or _localization),
-        description=(description or _description),
+        title=title,
+        localization=localization,
+        description=description,
         stream=stream
     )
 
-    payload = dict()
     try:
         converter()
     except Exception as exc:

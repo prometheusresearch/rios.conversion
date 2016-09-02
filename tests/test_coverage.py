@@ -9,6 +9,9 @@ import collections
 import json, yaml, os
 
 
+print "\n====== COVERAGE TESTS ======"
+
+
 DUMMY_ARGS = {
     'outfile': os.path.abspath('./tests/sandbox/dummy_outfile.txt'),
     'localization': None,
@@ -19,8 +22,6 @@ DUMMY_ARGS = {
     'calculationset': None,
 }
 
-
-print('%s: testing ...' % __file__)
 
 def test_add_field():
     type_object = TypeObject()
@@ -71,5 +72,3 @@ def test_loader():
     assert from_rios.get_loader(yaml_file) == yaml
     assert from_rios.get_loader(json_file) == json
     assert from_rios.get_loader(other_file) == json
-
-print('%s: OK' % __file__)

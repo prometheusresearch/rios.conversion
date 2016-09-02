@@ -1,8 +1,8 @@
 import rios.conversion.redcap.functions as M
 
-print('%s: testing ...' % __file__)
 
 def test_math():
+    print "\n====== MATH TESTS ======"
     a = [i for i in range(1, 1 + 100)]
     print('sum', M.sum_(*a))
     print('mean', M.mean(*a))
@@ -30,5 +30,3 @@ def test_math():
         assert u > d
     print('median []', M.median())
     print('stdev []', M.stdev())
-
-print('%s: OK' % __file__)
