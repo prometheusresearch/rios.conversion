@@ -150,7 +150,7 @@ qsf_names = [
 redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
 qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
 ###rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
-###rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
+rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
 
 
 def test_classes():
@@ -158,4 +158,4 @@ def test_classes():
     tst_class(RedcapToRios, redcap_rios_tests)
     tst_class(QualtricsToRios, qualtrics_rios_tests)
     ###tst_class(RedcapFromRios, rios_redcap_tests + rios_redcap_mismatch_tests)
-    ###tst_class(QualtricsFromRios, rios_qualtrics_tests)
+    tst_class(QualtricsFromRios, rios_qualtrics_tests)

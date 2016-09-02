@@ -87,7 +87,7 @@ def redcap_to_rios(id, title, description, stream, localization=None,
             (str(exc) if isinstance(exc, Error) else repr(exc))
         )
         if suppress:
-            payload['error'] = str(error)
+            payload['failure'] = str(error)
         else:
             raise error
     else:
@@ -154,7 +154,7 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
                 str(exc)
             )
             if suppress:
-                payload['error'] = str(error)
+                payload['failure'] = str(error)
                 return payload
             else:
                 raise error
@@ -181,13 +181,28 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
             (str(exc) if isinstance(exc, Error) else repr(exc))
         )
         if suppress:
-            payload['error'] = str(error)
+            payload['failure'] = str(error)
         else:
             raise error
     else:
         payload.update(converter.package)
 
     return payload
+
+
+#def check_relationship(self):
+#    instrument = structures.InstrumentReferenceObject(self.instrument)
+#    if self.form['instrument'] != instrument:
+#                'FATAL: Form and Instrument do not match: '
+#                '%s != %s.\n' % (self.form['instrument'], instrument))
+#
+#    if (self.calculationset
+#                and self.calculationset['instrument'] != instrument):
+#        self.stderr.write(
+#                'FATAL: Calculationset and Instrument do not match: '
+#                '%s != %s.\n' % (
+#                        self.calculationset['instrument'],
+#                        instrument))
 
 
 def rios_to_redcap(instrument, **kwargs):

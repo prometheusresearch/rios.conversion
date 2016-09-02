@@ -148,3 +148,9 @@ class QualtricsFormatError(ConversionFailureError):
     """ Thrown for a malformed REDCap data dictionary instrument """
 
     pass
+
+
+class RiosFormatError(ConversionFailureError):
+    """ Thrown for a malformed REDCap data dictionary instrument """
+
+    pass

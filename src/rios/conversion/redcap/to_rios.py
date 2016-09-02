@@ -213,18 +213,18 @@ class RedcapToRios(ToRios):
                     )
                     error.wrap(
                         "REDCap data dictionary conversion failure:",
-                        "Unable to parse REDCap data dictionary CSV"
+                        "Unable to parse the data dictionary"
                     )
                     self.logger.error(str(error))
                     raise error
                 else:
                     error = Error(
-                        "An unknown error occured:",
+                        "An unknown or unexpected error occured:",
                         repr(exc)
                     )
                     error.wrap(
                         "REDCap data dictionary conversion failure:",
-                        "Unable to parse REDCap data dictionary CSV"
+                        "Unable to parse the data dictionary"
                     )
                     self.logger.error(str(error))
                     raise exc

@@ -3,15 +3,20 @@
 #
 
 
-import csv
 import re
-import rios.core.validation.instrument as RI
-import sys
+import collections
 
 
+from rios.core.validation.instrument import get_full_type_definition
 from rios.conversion.base import FromRios
-from rios.conversion.redcap.to_rios import FUNCTION_TO_PYTHON
-from rios.conversion.redcap.to_rios import OPERATOR_TO_REXL
+from rios.conversion.exception import (
+    ConversionValueError,
+    RiosFormatError,
+)
+from rios.conversion.redcap.to_rios import (
+    FUNCTION_TO_PYTHON,
+    OPERATOR_TO_REXL,
+)
 
 
 COLUMNS = [
@@ -60,25 +65,106 @@ RE_variable_reference = re.compile(
 
 
 class RedcapFromRios(FromRios):
-    """
-    Converts RIOS form (and calculationset) files into a REDCap csv file.
-    """
-
-    description = __doc__
+    """ Converts a RIOS configuration into a REDCap configuration """
 
     def call(self):
-        """ Process the csv input, and create output files """
-        self.rows = [COLUMNS]
+        self._rows = collections.deque()
+        self._rows.append(COLUMNS)
         self.section_header = ''
+
+        if 'pages' not in self.form or not self.form['pages']:
+            raise RiosFormatError(
+                "RIOS data dictionary conversion failure. Error:"
+                "RIOS form configuration does not contain page data"
+            )
+
+        # Process form and instrument configurations
         for page in self.form['pages']:
-            self.start_page(page)
-            for element in self.elements:
-                self.process_element(element)
+            try:
+                self.page_processor(page)
+            except Exception as exc:
+                if isinstance(exc, ConversionValueError):
+                    # Don't need to create a new error instance, b/c
+                    # ConversionValueErrors caught here already contain
+                    # identifying information.
+                    self.logger.warning(str(exc))
+                elif isinstance(exc, RiosFormatError):
+                    error = Error(
+                        "Error parsing the data dictionary:",
+                        str(exc)
+                    )
+                    error.wrap(
+                        "RIOS data dictionary conversion failure:",
+                        "Unable to parse the data dictionary"
+                    )
+                    self.logger.error(str(error))
+                    raise error
+                else:
+                    error = Error(
+                        "An unknown or unexpected error occured:",
+                        repr(exc)
+                    )
+                    error.wrap(
+                        "RIOS data dictionary conversion failure:",
+                        "Unable to parse the data dictionary"
+                    )
+                    self.logger.error(str(error))
+                    raise exc
+                
+
+        # Process calulcations
         if self.calculationset:
             for calculation in self.calculationset['calculations']:
-                self.process_calculation(calculation)
-        self.create_csv_file()
-        return 0
+                try:
+                    calc_id = calulcation.get(
+                        'id',
+                        'Unknown calculation ID'
+                    )
+                    self.process_calculation(calculation)
+                except Exception as exc:
+                    if isinstance(exc, ConversionValueError):
+                        error = Error(
+                            "Skipping calculation element with ID:",
+                            str(calc_id)
+                        )
+                        error.wrap("Error:", str(exc))
+                        self.logger.warning(str(exc))
+                    else:
+                        raise exc
+
+        self._definition.append(list(self._rows))
+
+    def page_processor(self, page):
+        self.form_name = page.get('id', None)
+        self.elements = page.get'elements', None)
+        if not self.form_name or not self.elements:
+            raise RiosFormatError(
+                "Error:",
+                "RIOS form does not contain valid page data"
+            )
+
+        # Iterate over form elements and process them accordingly
+        for element in self.elements:
+            try:
+                # Get question/form element "fieldId" value for error messages
+                field_id = element['options'].get('fieldId', None)
+                if not field_id:
+                    raise RiosFormatError(
+                        "Error:",
+                        "RIOS form is missing a \"fieldId\" value"
+                    )
+
+                self.process_element(element)
+
+            except Exception as exc:
+                if isinstance(exc, ConversionValueError):
+                    error = Error(
+                        "Skipping form element with ID:",
+                        str(field_id)
+                    )
+                    error.wrap('Error:', str(exc))
+                else:
+                        raise exc
 
     def convert_rexl_expression(self, rexl):
         """
@@ -121,10 +207,6 @@ class RedcapFromRios(FromRios):
         answer += s[start:]
         return answer
 
-    def create_csv_file(self):
-        csv_writer = csv.writer(self.outfile)
-        csv_writer.writerows(self.rows)
-
     def get_choices(self, array):
         return ' | '.join(['%s, %s' % (
                 d['id'],
@@ -155,22 +237,31 @@ class RedcapFromRios(FromRios):
                 expression = self.convert_rexl_expression(expression)
             return expression
 
-        self.rows.append([
+        self._rows.append(
+            [
                 calculation['id'],
                 'calculations',
                 '',
                 'calc',
                 calculation['description'],
                 get_expression(),
-                '', '', '', '', '', '', '', '', '', '', '', '', ])
+                '', '', '', '', '', '', '', '', '', '', '', '', 
+            ]
+        )
 
     def process_element(self, element):
-        type_ = element['type']
+        _type = element['type']
         options = element['options']
-        if type_ in ['header', 'text']:
+        if _type in ['header', 'text']:
             self.process_header(options)
-        elif type_ == 'question':
+        elif _type == 'question':
             self.process_question(options)
+        else:
+            error = ConversionValueError(
+                "Invalid form element type. Got:",
+                str(_type)
+            error.wrap("Expected values:", "header, text, question")
+            raise error
 
     def process_header(self, header):
         self.section_header = self.get_local_text(header['text'])
@@ -179,29 +270,37 @@ class RedcapFromRios(FromRios):
         questions = question['questions']
         if isinstance(questions, list):
             if len(questions) > 1:
-                self.warning(
-                        'REDCap matrices support only one question.'
-                        ' Question ignored: %s' % question['fieldId'])
-                return
+                error = ConversionValueError(
+                    'REDCap matrices support only one question. Got:',
+                    ", ".join(questions)
+                )
+                raise exc
             column = questions[0]
         else:
             column = questions
         if 'enumerations' not in column:
-            self.warning(
-                    'REDCap matrix column must be an enumeration.'
-                    '  Question ignored: %s' % question['fieldId'])
-            return
+            error = ConversionValueError(
+                'Form element skipped with ID:',
+                str(question.get('fieldId', 'Unknown field ID'))
+            )
+            error.wrap(
+                'REDCap matrix column must be an enumeration. Got column:',
+                str(column)
+            )
+            raise exc
         choices = self.get_choices(column['enumerations'])
         section_header = self.section_header
         matrix_group_name = question['fieldId']
         field = self.fields[matrix_group_name]
-        type_object = RI.get_full_type_definition(
-                self.instrument,
-                field['type'])
+        type_object = get_full_type_definition(
+            self.instrument,
+            field['type']
+        )
         base = type_object['base']
         field_type, valid_type = self.get_type_tuple(base, question)
         for row in question['rows']:
-            self.rows.append([
+            self._rows.append(
+                [
                     row['id'],
                     self.form_name,
                     section_header,
@@ -219,15 +318,18 @@ class RedcapFromRios(FromRios):
                     '',
                     matrix_group_name,
                     'y',
-                    '', ])
+                    '',
+                ]
+            )
             section_header = ''
 
     def process_question(self, question):
         def get_choices():
             return (
-                    self.get_choices(question['enumerations'])
-                    if 'enumerations' in question
-                    else '')
+                self.get_choices(question['enumerations'])
+                if 'enumerations' in question
+                else ''
+            )
 
         def get_range(type_object):
             r = type_object.get('range', {})
@@ -237,9 +339,10 @@ class RedcapFromRios(FromRios):
 
         def get_trigger():
             return (
-                    question['events'][0]['trigger']
-                    if 'events' in question and question['events']
-                    else '' )
+                question['events'][0]['trigger']
+                if 'events' in question and question['events']
+                else ''
+            )
 
         branching = self.convert_rexl_expression(get_trigger())
         if 'rows' in question and 'questions' in question:
@@ -247,13 +350,14 @@ class RedcapFromRios(FromRios):
         else:
             field_id = question['fieldId']
             field = self.fields[field_id]
-            type_object = RI.get_full_type_definition(
+            type_object = get_full_type_definition(
                     self.instrument,
                     field['type'])
             base = type_object['base']
             field_type, valid_type = self.get_type_tuple(base, question)
             min_value, max_value = get_range(type_object)
-            self.rows.append([
+            self._rows.append(
+                [
                     field_id,
                     self.form_name,
                     self.section_header,
@@ -271,13 +375,7 @@ class RedcapFromRios(FromRios):
                     '',
                     '',
                     '',
-                    '', ])
+                    '',
+                ]
+            )
         self.section_header = ''
-
-    def start_page(self, page):
-        self.form_name = page['id']
-        self.elements = page['elements']
-
-
-def main(argv=None, stdout=None, stderr=None):
-    sys.exit(RedcapFromRios()(argv, stdout, stderr))    # pragma: no cover
