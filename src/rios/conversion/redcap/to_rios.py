@@ -10,7 +10,6 @@ import collections
 import rios.conversion.structures as Rios
 
 
-from rios.core import ValidationError
 from rios.conversion.utils import (
     InstrumentCalcStorage,
     CsvReader,
@@ -19,7 +18,6 @@ from rios.conversion.utils import (
 from rios.conversion.base import ToRios, localized_string_object
 from rios.conversion.exception import (
     RedcapFormatError,
-    ConversionValidationError,
     ConversionValueError,
     Error,
 )
@@ -241,16 +239,7 @@ class RedcapToRios(ToRios):
             self._form.add_page(page)
 
         # Post-processing/validation
-        try:
-            self.validate()
-        except ValidationError as exc:
-            error = ConversionValidationError(
-                'Validation error. Error:',
-                str(exc)
-            )
-            raise error
-        else:
-            self.logger.info('Successful conversion')
+        self.validate()
 
 
 class ProcessorBase(object):

@@ -3,92 +3,70 @@
 #
 
 
-import logging
-import logging.config
 import six
 
 
 __all__ = (
-    'get_conversion_logger',
+    'InMemoryLogger',
 )
 
 
-__CONFIG = {
-    'version': 1,
-    'incremental': False,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'brief': {
-            'format': '%(message)s'
-        },
-        'basic': {
-            'format': '%(levelname)s: %(message)s'
-        },
-    },
-    'filters': {},
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'basic',
-            'stream': 'ext://sys.stdout',
-        },
-    },
-    'loggers': {},
-    'root': {
-        'level': 'INFO',
-        'handlers': [
-            'console',
-        ]
-    },
-}
+_ERROR_PREFIX = 'ERROR: '
+_WARNING_PREFIX = 'WARNING: '
+_INFO_PREFIX = 'INFO: '
 
 
-def get_conversion_logger(name=None, clearall=False, logger=None):
+class InMemoryLogger(object):
     """
-    A convenience wrapper around the ``logging.getLogger()`` function. This
-    function may take a string as the name for the logging instance, and a
-    boolean requesting whether or not to clear cached loggers.
+    Simple logging container for logging messages.
 
-    :param name: the name of the logger
-    :type name: str
-    :param clearall: should logging cache be cleared
-    :type clearall: bool
-    :rtype: logging.Logger
+    This class allows logging of messages in an internal list. The messages
+    are available for output. Output may be a string with newline characters
+    separating each log. All messages may be cleared.
+
+    Make sure logs are cleared in each logging instance when the logging
+    instance is no longer needed or needs to be reset. There is no automatic
+    dumping of logs if the internal list becomes huge, so plan accordingly or
+    use the logging module instead.
     """
 
-    if clearall:
-        # Clear cached loggers
-        logging.Logger.manager.loggerDict = {}
-        pass
+    __slots__ = ('_logs',)
 
-    # Load logging config
-    internal_logging_handler = {
-        'memory': {
-            'class': 'rios.conversion.utils.log.InternalLoggingHandler',
-            'formatter': 'basic',
-            'logger': logger,
-        },
-    }
-    __CONFIG['handlers'].update(internal_logging_handler)
-    logging.config.dictConfig(__CONFIG)
+    def __init__(self):
+        self._logs = []
 
-    if name and not isinstance(name, six.string_types):
-        raise TypeError('Name parameter must be a string')
-    else:
-        name = str(name)
+    def clear(self):
+        del(self._logs[:])
 
-    return logging.getLogger(name)
+    @property
+    def pplogs(self):
+        return "\n".join(self._logs)
 
+    @property
+    def logs(self):
+        return self._logs
 
-class InternalLoggingHandler(logging.Handler):
-    """ Custom logging handler to allow retrieval of internal log state """
+    def info(self, msg):
+        self.log(msg, _INFO_PREFIX)
 
-    def __init__(self, logger=None, *args, **kwargs):
-        if not isinstance(logger, list):
-            raise TypeError('Logger object must be of type list')
-        super(InternalLoggingHandler, self).__init__(*args, **kwargs)
-        self._logger = logger
+    def error(self, msg):
+        self.log(msg, _ERROR_PREFIX)
 
-    def emit(self, record):
-        msg = self.format(record)
-        self._logger.append(msg)
+    def warning(self, msg):
+        self.log(msg, _WARNING_PREFIX)
+
+    def log(self, msg, pfx=None):
+        if not isinstance(msg, six.string_types):
+            raise ValueError('Loggable objects must be of type string')
+        if pfx:
+            self._logs.append(pfx + msg)
+        else:
+            self._logs.append(msg)
+
+    @property
+    def check(self):
+        """ Checks if any logs have been registered. """
+        if len(self._logs) == 0:
+            return False
+        else:
+            return True

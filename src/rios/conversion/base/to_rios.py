@@ -3,8 +3,10 @@
 #
 
 
+from rios.core import ValidationError
 from rios.conversion import structures
-from rios.conversion.utils import get_conversion_logger
+from rios.conversion.utils import InMemoryLogger
+from rios.conversion.exception import ConversionValidationError
 from rios.core.validation import (
     validate_instrument,
     validate_form,
@@ -16,18 +18,25 @@ __all__ = (
     'ToRios',
     'DEFAULT_LOCALIZATION',
     'DEFAULT_VERSION',
+    'SUCCESS_MESSAGE',
 )
 
 
 DEFAULT_LOCALIZATION = 'en'
 DEFAULT_VERSION = '1.0'
+SUCCESS_MESSAGE = 'Conversion process was successful'
 
 
 class ToRios(object):
     """ Converts a foreign instrument file into a valid RIOS specification """
 
-    def __init__(self, id, instrument_version, title,
-                    localization, description, stream, logger=None):
+    def __init__(self, id, title, description, stream,
+                    localization=None, instrument_version=None):
+
+        # Initialize logging
+        self.logger = InMemoryLogger()
+
+        # Set attributes
         self.id = id
         self.instrument_version = instrument_version or DEFAULT_VERSION
         self.title = title
@@ -58,16 +67,6 @@ class ToRios(object):
             title=localized_string_object(self.localization, self.title),
         )
 
-        # Initialize logging
-        if isinstance(logger, list):
-            self.logger = get_conversion_logger(
-                name=self.__class__.__name__,
-                clearall=True,
-                logger=logger,
-            )
-        else:
-            self.logger = list()
-
     def __call__(self):
         """
         Converts the given foreign instrument file into corresponding RIOS
@@ -79,6 +78,18 @@ class ToRios(object):
         raise NotImplementedError(
             '{}.__call__'.format(self.__class__.__name__)
         )
+
+    @property
+    def pplogs(self):
+        """
+        Pretty print logs by joining into a single, formatted string for use
+        in displaying informative error messages to users.
+        """
+        return self.logger.pplogs
+
+    @property
+    def logs(self):
+        return self.logger.logs
 
     @property
     def instrument(self):
@@ -99,28 +110,43 @@ class ToRios(object):
             return dict()
 
     def validate(self):
-        validate_instrument(self.instrument)
-        validate_form(
-            self.form,
-            instrument=self.instrument,
-        )
-        if self.calculationset.get('calculations', False):
-            validate_calculationset(
-                self.calculationset,
-                instrument=self.instrument
+        try:
+            validate_instrument(self.instrument)
+            validate_form(
+                self.form,
+                instrument=self.instrument,
             )
+            if self.calculationset.get('calculations', False):
+                validate_calculationset(
+                    self.calculationset,
+                    instrument=self.instrument
+                )
+        except ValidationError as exc:
+            error = ConversionValidationError(
+                'Validation error:',
+                str(exc)
+            )
+            self.logger.error(str(error))
+            raise error
+        else:
+            if SUCCESS_MESSAGE:
+                self.logger.info(SUCCESS_MESSAGE)
 
     @property
     def package(self):
         payload = {
-            'instrument': self.instrument.as_dict(),
-            'form': self.form.as_dict(),
+            'instrument': self.instrument,
+            'form': self.form,
         }
         if self._calculationset.get('calculations', False):
-            calculations = self.calculations.as_dict()
-            return dict(payload, **{'calculationset': calculations})
-        else:
-            return payload
+            payload.update(
+                {'calculationset': self.calculations}
+            )
+        if self.logger.check:
+            payload.update(
+                {'logs': self.logs}
+            )
+        return payload
 
 
 def localized_string_object(localization, string):

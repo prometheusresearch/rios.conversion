@@ -3,7 +3,8 @@
 #
 
 
-import json
+import simplejson
+import six
 
 
 class JsonReader(object):
@@ -28,8 +29,11 @@ class JsonReader(object):
 
     @staticmethod
     def get_reader(fname):
-        fi = open(fname, 'rU') if isinstance(fname, str) else fname
-        return json.load(fi)
+        fi = open(fname, 'rU') \
+                if isinstance(fname, six.string_types) else fname
+        if hasattr(fi, 'seek'):
+            fi.seek(0)
+        return simplejson.load(fi)
 
     def load_reader(self):
         self.reader = self.get_reader(self.fname)
@@ -40,4 +44,5 @@ class JsonReader(object):
         self.data = self.processor(self.reader)
 
     def processor(self, data):
+        """ Implementations may override this method """
         return data

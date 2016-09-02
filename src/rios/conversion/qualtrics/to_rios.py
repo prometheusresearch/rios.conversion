@@ -8,12 +8,10 @@ import six
 import rios.conversion.structures as Rios
 
 
-from rios.core import ValidationError
 from rios.conversion.base import ToRios, localized_string_object
 from rios.conversion.utils import JsonReader
 from rios.conversion.exception import (
     Error,
-    ConversionValidationError,
     ConversionValueError,
     QualtricsFormatError,
 )
@@ -33,29 +31,6 @@ class PageName(object):
     def next(self):
         self.page_id += 1
         return "page_{0:0=2d}".format(self.page_id)
-
-
-class JsonReaderMetaDataProcessor(JsonReader):
-    """ Process Qualtrics data dictionary/instrument metadata """
-
-    def processor(self, data):
-        """ Extract metadata into a dict """
-        try:
-            survey_entry = data['SurveyEntry']
-            metadata = {
-                'id':             survey_entry['SurveyID'],
-                'title':          survey_entry['SurveyName'],
-                'localization':   survey_entry['SurveyLanguage'].lower(),
-                'description':    survey_entry['SurveyDescription'],
-            }
-        except Exception as exc:
-            error = QualtricsFormatError(
-                'Processor read error:',
-                str(exc)
-            )
-            raise error
-        else:
-            return metadata
 
 
 class JsonReaderMainProcessor(JsonReader):
@@ -100,16 +75,6 @@ class QualtricsToRios(ToRios):
     """ Converts a Qualtrics *.qsf file to the RIOS specification format """
 
     def __init__(self, filemetadata=False, *args, **kwargs):
-        # If desired, pull id, descriptions, title, and localization from the
-        # data dictionary and insert/overwrite them into the kwargs that are
-        # passed to the super class __init__.
-        if filemetadata:
-            stream = kwargs['stream']
-            reader = JsonReaderMetaDataProcessor(stream).process()
-            kwargs['id'] = reader.data['id']
-            kwargs['description'] = reader.data['description']
-            kwargs['title'] = reader.data['title']
-            kwargs['localization'] = reader.data['localization']
         super(QualtricsToRios, self).__init__(*args, **kwargs)
         self.page_name = PageName()
 
@@ -184,7 +149,7 @@ class QualtricsToRios(ToRios):
                     "Invalid type for block element. Expected types:",
                     "\"Page Break\" or \"Question\""
                 )
-                error.wrap("Got invalid type value:", str(element_type))
+                error.wrap("But got invalid type value:", str(element_type))
                 self.logger.error(str(error))
                 raise error
 
@@ -234,16 +199,7 @@ class QualtricsToRios(ToRios):
             self._form.add_page(page)
 
         # Post-processing/validation
-        try:
-            self.validate()
-        except ValidationError as exc:
-            error = ConversionValidationError(
-                'Validation error:',
-                str(exc)
-            )
-            raise error
-        else:
-            self.logger.info('Successful conversion')
+        self.validate()
 
 
 class Processor(object):
