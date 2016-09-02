@@ -74,8 +74,16 @@ rios_redcap_mismatch_tests = [
 
 def show_tst(api_func, test):
     func_name = "= TEST FUNCTION: " + str(api_func.__name__)
-    filename = "= TEST FILENAME: " + str(test['stream'].name)
-    print '\n%s\n%s' % (func_name, filename)
+    if 'stream' in test:
+        filenames = "= TEST FILENAME: " + str(test['stream'].name)
+    else:
+        filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
+            test['instrument'].name,
+            test['form'].name,
+            (test['calculationset'].name if 'calculationset' in test \
+                        else "No calculationset file"),
+        ])
+    print('\n%s\n%s' % (func_name, filenames))
 
 
 def api_tst(api_func, tests):

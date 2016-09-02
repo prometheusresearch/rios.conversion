@@ -31,8 +31,6 @@ class QualtricsFromRios(FromRios):
     """
 
     def __call__(self):
-        self.preprocessing()
-
         self.lines = []
         self.question_number = QuestionNumber()
         for page in self.form['pages']:
