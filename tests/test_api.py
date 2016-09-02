@@ -56,6 +56,21 @@ def qualtrics_to_rios_tsts(name):
         dict(test_base, **test_combined)
     ]
 
+rios_redcap_mismatch_tests = [
+    {
+        'calculationset': open('./tests/rios/format_1_c.yaml', 'r'),
+        'instrument': open('./tests/rios/matrix_1_i.yaml', 'r'),
+        'form': open('./tests/rios/matrix_1_f.yaml', 'r'),
+        'localization': None,
+    },
+    {
+        'calculationset': open('./tests/rios/format_1_c.yaml', 'r'),
+        'instrument': open('./tests/rios/matrix_1_i.yaml', 'r'),
+        'form': open('./tests/rios/format_1_f.yaml', 'r'),
+        'localization': None,
+    },
+]
+
 
 def show_tst(api_func, test):
     func_name = "= TEST FUNCTION: " + str(api_func.__name__)
@@ -80,14 +95,14 @@ def api_tst(api_func, tests):
         else:
             if 'suppress' in test and test['suppress']:
                 # Error output is suppressed
-                if 'error' in package:
+                if 'failure' in package:
                     # We have an error situation
-                    if not package['error']:
-                        ValueError('Error output is empty')
+                    if not package['failure']:
+                        raise ValueError('Error output is empty')
                     elif ('instrument' in package
                                 or 'form' in package
                                 or 'calculationset' in package):
-                        ValueError(
+                        raise ValueError(
                             'Error output should not contain references'
                             ' to instrument, form, or calculationset'
                             ' configuration definitions')
@@ -98,7 +113,7 @@ def api_tst(api_func, tests):
                     no_error_tst(package)
             else:
                 # Error output is NOT suppressed
-                if 'error' in package:
+                if 'failure' in package:
                     raise ValueError(
                         'Errors should only be logged if error suppression'
                         ' is set'

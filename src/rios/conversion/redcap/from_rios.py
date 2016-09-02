@@ -116,10 +116,17 @@ class RedcapFromRios(FromRios):
         if self.calculationset:
             for calculation in self.calculationset['calculations']:
                 try:
-                    calc_id = calulcation.get(
-                        'id',
-                        'Unknown calculation ID'
-                    )
+                    calc_id = calulcation.get('id', None)
+                    calc_description = calculation.get('id', None)
+                    if not calc_id or not calc_description:
+                        raise RiosFormatError(
+                            "Missing ID or description for a calculation:",
+                            str(
+                                calc_id 
+                                or calc_description 
+                                or "Calculation is not identifiable"
+                            )
+                        )
                     self.process_calculation(calculation)
                 except Exception as exc:
                     if isinstance(exc, ConversionValueError):
@@ -136,7 +143,7 @@ class RedcapFromRios(FromRios):
 
     def page_processor(self, page):
         self.form_name = page.get('id', None)
-        self.elements = page.get'elements', None)
+        self.elements = page.get('elements', None)
         if not self.form_name or not self.elements:
             raise RiosFormatError(
                 "Error:",
@@ -260,6 +267,7 @@ class RedcapFromRios(FromRios):
             error = ConversionValueError(
                 "Invalid form element type. Got:",
                 str(_type)
+            )
             error.wrap("Expected values:", "header, text, question")
             raise error
 

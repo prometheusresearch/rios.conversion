@@ -41,63 +41,37 @@ def qualtrics_rios_tst(name):
     return [test_base,]
     
 def rios_redcap_tst(name):
-    calc_filename = './tests/redcap/%s_c.yaml' % name
+    calc_filename = './tests/rios/%s_c.yaml' % name
     test_base = {
-            'instrument': './tests/redcap/%s_i.yaml' % name,
-            'form': './tests/redcap/%s_f.yaml' % name,
-            'outfile': './tests/sandbox/redcap/%s.csv' % name,
-            'verbose': True,
+            'instrument': open('./tests/redcap/%s_i.yaml' % name, 'r'),
+            'form': open('./tests/redcap/%s_f.yaml' % name, 'r'),
             'localization': None,
             
     }
     if os.access(calc_filename, os.F_OK):
-        test_base = dict({'calculationset': calc_filename}, **test_base)
+        test = dict(
+            test_base,
+            **{'calculationset': open(calc_filename, 'r')}
+        )
     else:
-        test_base = dict({'calculationset': None}, **test_base)
+        test = dict(test_base, **{'calculationset': None})
         
+    return [test,]
 
-    test_json = dict({'format': 'json'}, **test_base)
-    test_yaml = dict({'format': 'yaml'}, **test_base)
-    return [test_json, test_yaml]
 
-rios_redcap_mismatch_tests = [
-    {
-        'calculationset': './tests/redcap/format_1_c.yaml',
-        'instrument': './tests/redcap/matrix_1_i.yaml',
-        'form': './tests/redcap/matrix_1_f.yaml',
-        'outfile': './tests/sandbox/redcap/mismatch_tests.csv',
-        'verbose': True,
-        'localization': None,
-        'format': 'yaml',
-    },
-    {
-        'calculationset': './tests/redcap/format_1_c.yaml',
-        'instrument': './tests/redcap/matrix_1_i.yaml',
-        'form': './tests/redcap/format_1_f.yaml',
-        'outfile': './tests/sandbox/redcap/mismatch_tests.csv',
-        'verbose': True,
-        'localization': None,
-        'format': 'yaml',
-    },
-]
-
-def rios_qualtrics_tst(name):
-    calc_filename = './tests/qualtrics/%s_c.yaml' % name
+def rios_tst(name):
+    calc_filename = './tests/rios/%s_c.yaml' % name
     test_base = {
-        'instrument': './tests/qualtrics/%s_i.yaml' % name,
-        'form': './tests/qualtrics/%s_f.yaml' % name,
-        'outfile': './tests/sandbox/qualtrics/%s.txt' % name,
-        'verbose': True,
-        'localization': True,
+        'instrument': open('./tests/rios/%s_i.yaml' % name, 'r'),
+        'form': open('./tests/rios/%s_f.yaml' % name, 'r'),
+        'localization': None,
     }
     if os.access(calc_filename, os.F_OK):
-        test_base = dict({'calculationset': calc_filename}, **test_base)
+        test = dict(test_base, **{'calculationset': open(calc_filename, 'r')})
     else:
-        test_base = dict({'calculationset': None}, **test_base)
+        test = dict(test_base, **{'calculationset': None})
 
-    test_json = dict({'format': 'json'}, **test_base)
-    test_yaml = dict({'format': 'yaml'}, **test_base)
-    return [test_json, test_yaml]
+    return [test,]
 
 def show_tst(cls, test):
     class_name = "= TEST CLASS: " + str(cls.__name__)
@@ -133,29 +107,25 @@ csv_names = [
     os.path.basename(name)[:-4] 
     for name in glob.glob('./tests/redcap/*.csv')
 ]
-rios_qualtrics_names = [
-    os.path.basename(name)[:-7] 
-    for name in glob.glob('./tests/qualtrics/*_i.yaml')
-]
-rios_redcap_names = [
-    os.path.basename(name)[:-7] 
-    for name in glob.glob('./tests/redcap/*_i.yaml')
-]
 qsf_names = [
     os.path.basename(name)[:-4] 
     for name in glob.glob('./tests/qualtrics/*.qsf')
+]
+rios_names = [
+    os.path.basename(name)[:-7] 
+    for name in glob.glob('./tests/rios/*_i.yaml')
 ]
 
 
 redcap_rios_tests = flatten([redcap_rios_tst(n) for n in csv_names])
 qualtrics_rios_tests = flatten([qualtrics_rios_tst(n) for n in qsf_names])
-###rios_redcap_tests = flatten([rios_redcap_tst(n) for n in rios_redcap_names])
-rios_qualtrics_tests = flatten([rios_qualtrics_tst(n) for n in rios_qualtrics_names])
+###rios_redcap_tests = flatten([rios_tst(n) for n in rios_names])
+rios_qualtrics_tests = flatten([rios_tst(n) for n in rios_names])
 
 
 def test_classes():
     print "\n====== CLASS TESTS ======"
     tst_class(RedcapToRios, redcap_rios_tests)
     tst_class(QualtricsToRios, qualtrics_rios_tests)
-    ###tst_class(RedcapFromRios, rios_redcap_tests + rios_redcap_mismatch_tests)
+    ###tst_class(RedcapFromRios, rios_redcap_tests)
     tst_class(QualtricsFromRios, rios_qualtrics_tests)

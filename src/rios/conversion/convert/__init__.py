@@ -205,6 +205,35 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
 #                        instrument))
 
 
+#    def validate_rios(self):
+#        """
+#        This function is run in the __call__ method first before anything else
+#        to validate the ``instrument``, ``form``, and potentially the 
+#        ``calculationset`` instance properties. This function should raise an
+#        exception of type :class:ConversionValidationError if the validation
+#        fails. The __call__ method should likewise raise an exception to halt
+#        the conversion process.
+#        """
+#
+#        try:
+#            validate_instrument(self._instrument)
+#            validate_form(
+#                self._form,
+#                instrument=self._instrument,
+#            )
+#            if self.calculationset.get('calculations', False):
+#                validate_calculationset(
+#                    self._calculationset,
+#                    instrument=self._instrument
+#                )
+#        except ValidationError as exc:
+#            error = ConversionValidationError(
+#                'The supplied RIOS configurations are invalid. Error:',
+#                str(exc)
+#            )
+#            self.logger.error(str(error))
+#            raise error
+
 def rios_to_redcap(instrument, **kwargs):
     """
     Converts a RIOS configuration into a REDCap configuration.

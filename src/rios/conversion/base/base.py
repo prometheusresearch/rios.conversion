@@ -60,6 +60,7 @@ class ConversionBase(object):
             '{}.__call__'.format(self.__class__.__name__)
         )
 
+    @property
     def logger(self):
         """
         Logger interface. Builds a new logging instance if one doesn't
@@ -67,9 +68,11 @@ class ConversionBase(object):
         within a subclass implementation's __call__ method.
         """
 
-        if not hasattr(self, '_logger'):
+        try:
+            return self._logger
+        except AttributeError:
             self._logger = InMemoryLogger()
-        return self._logger
+            return self._logger
 
     @property
     def pplogs(self):

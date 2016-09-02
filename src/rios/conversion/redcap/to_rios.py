@@ -227,7 +227,7 @@ class RedcapToRios(ToRios):
                         "Unable to parse the data dictionary"
                     )
                     self.logger.error(str(error))
-                    raise exc
+                    raise error
 
         # Construct insrument and calculationset objects
         for field in self.field_container:
