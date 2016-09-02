@@ -132,7 +132,7 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     # Make sure function parameters are passed proper values if not getting
     # metadata from the data dictionary file
     if filemetadata is False and (id is None or description is None
-                or title is None):
+                                    or title is None):
         raise ValueError(
             'Missing id, description, and/or title attributes'
         )

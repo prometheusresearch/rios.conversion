@@ -128,7 +128,7 @@ class ToRios(object):
             )
             self.logger.error(str(error))
             raise error
-        else: 
+        else:
             if SUCCESS_MESSAGE:
                 self.logger.info(SUCCESS_MESSAGE)
 
