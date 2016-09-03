@@ -7,6 +7,9 @@ import simplejson
 import six
 
 
+__all__ = ('JsonReader',)
+
+
 class JsonReader(object):
     """
     This object reads `fname`, a JSON formatted text file, and can pre-process

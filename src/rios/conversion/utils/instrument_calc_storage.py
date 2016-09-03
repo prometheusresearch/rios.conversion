@@ -7,7 +7,10 @@ import collections
 import six
 
 
-from rios.conversion import structures
+from rios.conversion.base import structures
+
+
+__all__ = ('InstrumentCalcStorage',)
 
 
 class InstrumentCalcStorage(collections.MutableMapping):

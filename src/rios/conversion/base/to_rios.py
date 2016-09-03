@@ -4,9 +4,17 @@
 
 
 from rios.core import ValidationError
-from rios.conversion import structures
-from rios.conversion.utils import InMemoryLogger
-from rios.conversion.exception import ConversionValidationError
+from rios.conversion.exception import (
+    ConversionValidationError,
+)
+from rios.conversion.base import structures
+from rios.conversion.base import (
+    ConversionBase,
+    localized_string_object,
+    DEFAULT_VERSION,
+    DEFAULT_LOCALIZATION,
+    SUCCESS_MESSAGE,
+)
 from rios.core.validation import (
     validate_instrument,
     validate_form,
@@ -16,25 +24,18 @@ from rios.core.validation import (
 
 __all__ = (
     'ToRios',
-    'DEFAULT_LOCALIZATION',
-    'DEFAULT_VERSION',
-    'SUCCESS_MESSAGE',
 )
 
 
-DEFAULT_LOCALIZATION = 'en'
-DEFAULT_VERSION = '1.0'
-SUCCESS_MESSAGE = 'Conversion process was successful'
+class ToRios(ConversionBase):
+    """ Converts a foreign instrument into a valid RIOS specification """
 
-
-class ToRios(object):
-    """ Converts a foreign instrument file into a valid RIOS specification """
-
-    def __init__(self, id, title, description, stream,
-                    localization=None, instrument_version=None):
-
-        # Initialize logging
-        self.logger = InMemoryLogger()
+    def __init__(self, id, title, description, stream, localization=None,
+                                    instrument_version=None, *args, **kwargs):
+        """
+        Expects `stream` to be a file-like object. Implementations must process
+        the data dictionary first before passing to this class.
+        """
 
         # Set attributes
         self.id = id
@@ -67,30 +68,6 @@ class ToRios(object):
             title=localized_string_object(self.localization, self.title),
         )
 
-    def __call__(self):
-        """
-        Converts the given foreign instrument file into corresponding RIOS
-        specfication formatted data objects.
-
-        Implementations must override this method.
-        """
-
-        raise NotImplementedError(
-            '{}.__call__'.format(self.__class__.__name__)
-        )
-
-    @property
-    def pplogs(self):
-        """
-        Pretty print logs by joining into a single, formatted string for use
-        in displaying informative error messages to users.
-        """
-        return self.logger.pplogs
-
-    @property
-    def logs(self):
-        return self.logger.logs
-
     @property
     def instrument(self):
         self._instrument.clean()
@@ -110,6 +87,11 @@ class ToRios(object):
             return dict()
 
     def validate(self):
+        """
+        Validation interface. Must be called at the end of all subclass
+        implementations of the __call__ method.
+        """
+
         try:
             validate_instrument(self.instrument)
             validate_form(
@@ -134,6 +116,12 @@ class ToRios(object):
 
     @property
     def package(self):
+        """
+        Returns a dictionary with ``instrument``, ``form``, and possibly
+        ``calculationset`` keys containing their corresponding, converted
+        definitions. May also add a ``logger`` key if logs exist.
+        """
+
         payload = {
             'instrument': self.instrument,
             'form': self.form,
@@ -147,7 +135,3 @@ class ToRios(object):
                 {'logs': self.logs}
             )
         return payload
-
-
-def localized_string_object(localization, string):
-    return structures.LocalizedStringObject({localization: string})

@@ -106,13 +106,13 @@ class guard(object):  # noqa:F401
             exc_value.wrap(self.message, self.payload)
 
 
-class BaseConversionError(Error):
-    """ Base class for rios.conversion exceptions """
+class ConversionFailureError(Error):
+    """ Thrown for complete conversion failures """
 
     pass
 
 
-class ConversionValidationError(BaseConversionError):
+class ConversionValidationError(Error):
     """
     Thrown when a conversion fails validation.
 
@@ -122,29 +122,31 @@ class ConversionValidationError(BaseConversionError):
     pass
 
 
-class ConversionValueError(BaseConversionError):
+class ConversionValueError(Error):
     """ Thrown for ValueError exceptions in a conversion implementation """
 
     pass
 
 
-class ConversionFailureError(Error):
-    """
-    Thrown for complete failure of instrument conversion process.
-
-    Use when a foreign instrument/data dictionary cannot be converted at all.
-    """
-
-    pass
-
-
-class RedcapFormatError(ConversionFailureError):
+class RedcapFormatError(Error):
     """ Thrown for malformed REDCap data dictionary instrument """
 
     pass
 
 
-class QualtricsFormatError(ConversionFailureError):
+class QualtricsFormatError(Error):
     """ Thrown for a malformed REDCap data dictionary instrument """
+
+    pass
+
+
+class RiosFormatError(Error):
+    """ Thrown for a malformed REDCap data dictionary instrument """
+
+    pass
+
+
+class RiosRelationshipError(Error):
+    """ Thrown for non-matching instrument, form, and calculationsets """
 
     pass

@@ -7,9 +7,9 @@ import re
 import json
 import six
 import collections
-import rios.conversion.structures as Rios
 
 
+from rios.conversion.base import structures
 from rios.conversion.utils import (
     InstrumentCalcStorage,
     CsvReader,
@@ -180,7 +180,7 @@ class RedcapToRios(ToRios):
         # Created pages for the data dictionary instrument
         for page_name in page_names:
             self.page_container.update(
-                {page_name: Rios.PageObject(id=page_name), }
+                {page_name: structures.PageObject(id=page_name), }
             )
 
         # Process the row
@@ -213,21 +213,21 @@ class RedcapToRios(ToRios):
                     )
                     error.wrap(
                         "REDCap data dictionary conversion failure:",
-                        "Unable to parse REDCap data dictionary CSV"
+                        "Unable to parse the data dictionary"
                     )
                     self.logger.error(str(error))
                     raise error
                 else:
                     error = Error(
-                        "An unknown error occured:",
+                        "An unknown or unexpected error occured:",
                         repr(exc)
                     )
                     error.wrap(
                         "REDCap data dictionary conversion failure:",
-                        "Unable to parse REDCap data dictionary CSV"
+                        "Unable to parse the data dictionary"
                     )
                     self.logger.error(str(error))
-                    raise exc
+                    raise error
 
         # Construct insrument and calculationset objects
         for field in self.field_container:
@@ -357,7 +357,7 @@ class ProcessorBase(object):
         of (comma delimited) tuples: internal, external
         """
         return [
-                Rios.DescriptorObject(
+                structures.DescriptorObject(
                     id=self.reader.get_name(x.strip().split(',')[0]),
                     text=localized_string_object(
                             self.localization,
@@ -373,7 +373,7 @@ class ProcessorBase(object):
         Expecting: choices_or_calculations to be pipe separated list
         of (comma delimited) tuples: internal, external
         """
-        choices_instrument = Rios.EnumerationCollectionObject()
+        choices_instrument = structures.EnumerationCollectionObject()
         for x in row['choices_or_calculations'].split('|'):
             choices_instrument.add(
                     self.reader.get_name(x.strip().split(',')[0]))
@@ -402,7 +402,7 @@ class Processor(ProcessorBase):
 
         section_header = row['section_header']
         if section_header:
-            header = Rios.ElementObject()
+            header = structures.ElementObject()
             header['type'] = 'header'
             header['options'] = {
                 'text': localized_string_object(
@@ -417,14 +417,14 @@ class Processor(ProcessorBase):
         if row['field_type'] == 'calc':
             question = None
         else:
-            question = Rios.ElementObject(type='question')
+            question = structures.ElementObject(type='question')
             field_name = self.reader.get_name(row['variable_field_name'])
             if section_header:
                 field_name = '%s_%s' % (
                     field_name,
                     self.reader.get_name(section_header),
                 )
-            question['options'] = Rios.QuestionObject(
+            question['options'] = structures.QuestionObject(
                 fieldId=field_name,
                 text=localized_string_object(
                     self.localization,
@@ -485,7 +485,7 @@ class Processor(ProcessorBase):
         # If row involves branching logic, add to question
         if row['branching_logic']:
             question_obj.add_event(
-                Rios.EventObject(
+                structures.EventObject(
                     trigger=self.convert_trigger(
                             row['branching_logic']
                     ),
@@ -518,12 +518,12 @@ class Processor(ProcessorBase):
                 matrix['fieldId'] = matrix_group_name
 
                 # Create a new matrix question field for the instrument
-                field = Rios.FieldObject()
+                field = structures.FieldObject()
                 field['id'] = self.reader.get_name(
                         row['matrix_group_name']
                 )
                 field['description'] = row.get('section_header', '')
-                field['type'] = Rios.TypeObject(base='matrix', )
+                field['type'] = structures.TypeObject(base='matrix', )
 
                 field_type = field['type']
 
@@ -531,7 +531,7 @@ class Processor(ProcessorBase):
                 # Append the only column(to instrument).
                 # Use the field_type (checkbox or radiobutton) as the id.
                 field_type.add_column(
-                    Rios.ColumnObject(
+                    structures.ColumnObject(
                         id=self.reader.get_name(row['field_type']),
                         description=row['field_type'],
                         type=self.get_type(
@@ -545,7 +545,7 @@ class Processor(ProcessorBase):
                 )
                 # add the column to the form
                 matrix.add_question(
-                    Rios.QuestionObject(
+                    structures.QuestionObject(
                         fieldId=self.reader.get_name(row['field_type']),
                         text=localized_string_object(
                             self.localization,
@@ -556,7 +556,7 @@ class Processor(ProcessorBase):
                 )
                 # Append the first row (to instrument).
                 field_type.add_row(
-                    Rios.RowObject(
+                    structures.RowObject(
                         id=self.reader.get_name(
                             row['variable_field_name']
                         ),
@@ -566,7 +566,7 @@ class Processor(ProcessorBase):
                 )
                 # add the row to the form.
                 matrix.add_row(
-                    Rios.DescriptorObject(
+                    structures.DescriptorObject(
                         id=self.reader.get_name(
                             row['variable_field_name']
                         ),
@@ -589,7 +589,7 @@ class Processor(ProcessorBase):
                 # Current matrix question
                 # Modify existing matrix question for instrument definition
                 self._field_type.add_row(
-                    Rios.RowObject(
+                    structures.RowObject(
                         id=self.reader.get_name(
                             row['variable_field_name']
                         ),
@@ -599,11 +599,11 @@ class Processor(ProcessorBase):
                 )
 
                 # Field already exists, so prevent adding it to form
-                self._field = Rios.FieldObject()
+                self._field = structures.FieldObject()
 
                 # Modify existing matrix question for form definition
                 self._matrix.add_row(
-                    Rios.DescriptorObject(
+                    structures.DescriptorObject(
                         id=self.reader.get_name(
                             row['variable_field_name']
                         ),
@@ -622,7 +622,7 @@ class Processor(ProcessorBase):
             self._field_type = None
 
             # Make instrument field
-            field = Rios.FieldObject()
+            field = structures.FieldObject()
             field_type = self.get_type(question_obj, row)
             if field_type:
                 field_name = self.reader.get_name(row['variable_field_name'])
@@ -656,7 +656,7 @@ class Processor(ProcessorBase):
         question = question_obj
 
         def get_widget(type):
-            return Rios.WidgetConfigurationObject(type=type)
+            return structures.WidgetConfigurationObject(type=type)
 
         def get_widget_type(text_type):
             if text_type == 'text':
@@ -674,7 +674,7 @@ class Processor(ProcessorBase):
             if side_effects:
                 field_name = self.reader.get_name(row['variable_field_name'])
                 calc = self.convert_calc(row['choices_or_calculations'])
-                calculation = Rios.CalculationObject(
+                calculation = structures.CalculationObject(
                     id=field_name,
                     description=row['field_label'],
                     type='float',
@@ -690,7 +690,7 @@ class Processor(ProcessorBase):
             if side_effects:
                 question.set_widget(get_widget(type='checkGroup'))
                 question['enumerations'] = self.get_choices_form(row)
-            return Rios.TypeObject(
+            return structures.TypeObject(
                     base='enumerationSet',
                     enumerations=self.get_choices_instrument(row), )
 
@@ -698,7 +698,7 @@ class Processor(ProcessorBase):
             if side_effects:
                 question.set_widget(get_widget(type='dropDown'))
                 question['enumerations'] = self.get_choices_form(row)
-            return Rios.TypeObject(
+            return structures.TypeObject(
                     base='enumeration',
                     enumerations=self.get_choices_instrument(row), )
 
@@ -711,16 +711,16 @@ class Processor(ProcessorBase):
             if side_effects:
                 question.set_widget(get_widget(type='radioGroup'))
                 question['enumerations'] = self.get_choices_form(row)
-            return Rios.TypeObject(
+            return structures.TypeObject(
                     base='enumeration',
                     enumerations=self.get_choices_instrument(row), )
 
         def process_slider():
             if side_effects:
                 question.set_widget(get_widget(type='inputNumber'))
-            return Rios.TypeObject(
+            return structures.TypeObject(
                     base='float',
-                    range=Rios.BoundConstraintObject(
+                    range=structures.BoundConstraintObject(
                             min=0.0,
                             max=100.0), )
 
@@ -733,7 +733,7 @@ class Processor(ProcessorBase):
                 question.set_widget(get_widget(
                         type=get_widget_type(text_type)))
             if val_min or val_max:
-                bound_constraint = Rios.BoundConstraintObject()
+                bound_constraint = structures.BoundConstraintObject()
                 if val_min:
                     bound_constraint['min'] = self.convert_value(
                             val_min,
@@ -742,7 +742,7 @@ class Processor(ProcessorBase):
                     bound_constraint['max'] = self.convert_value(
                             val_max,
                             text_type)
-                return Rios.TypeObject(
+                return structures.TypeObject(
                         base=text_type,
                         range=bound_constraint)
             else:
@@ -752,7 +752,7 @@ class Processor(ProcessorBase):
             if side_effects:
                 question.set_widget(get_widget(type='radioGroup'))
                 question.add_enumeration(
-                    Rios.DescriptorObject(
+                    structures.DescriptorObject(
                         id="true",
                         text=localized_string_object(
                             self.localization,
@@ -761,7 +761,7 @@ class Processor(ProcessorBase):
                     )
                 )
                 question.add_enumeration(
-                    Rios.DescriptorObject(
+                    structures.DescriptorObject(
                         id="false",
                         text=localized_string_object(
                             self.localization,
@@ -769,7 +769,7 @@ class Processor(ProcessorBase):
                         ),
                     )
                 )
-            type_object = Rios.TypeObject(base='enumeration', )
+            type_object = structures.TypeObject(base='enumeration', )
             type_object.add_enumeration('true', description='True')
             type_object.add_enumeration('false', description='False')
             return type_object
@@ -778,7 +778,7 @@ class Processor(ProcessorBase):
             if side_effects:
                 question.set_widget(get_widget(type='radioGroup'))
                 question.add_enumeration(
-                    Rios.DescriptorObject(
+                    structures.DescriptorObject(
                         id="yes",
                         text=localized_string_object(
                             self.localization,
@@ -787,7 +787,7 @@ class Processor(ProcessorBase):
                     )
                 )
                 question.add_enumeration(
-                    Rios.DescriptorObject(
+                    structures.DescriptorObject(
                         id="no",
                         text=localized_string_object(
                             self.localization,
@@ -795,7 +795,7 @@ class Processor(ProcessorBase):
                         ),
                     )
                 )
-            type_object = Rios.TypeObject(base='enumeration', )
+            type_object = structures.TypeObject(base='enumeration', )
             type_object.add_enumeration('yes', description='Yes')
             type_object.add_enumeration('no', description='No')
             return type_object
@@ -851,7 +851,7 @@ class LegacyProcessor(ProcessorBase):
 
     def page_processor(self, page, row):
 
-        question = Rios.ElementObject()
+        question = structures.ElementObject()
 
         # Check if an instruction or a question. Instrument fields not added
         # if a row's data_type is 'instruction'
@@ -865,7 +865,7 @@ class LegacyProcessor(ProcessorBase):
             }
         else:
             question['type'] = 'question'
-            question['options'] = Rios.QuestionObject(
+            question['options'] = structures.QuestionObject(
                 fieldId=self.reader.get_name(row['fieldid']),
                 text=localized_string_object(
                     self.localization,
@@ -877,7 +877,7 @@ class LegacyProcessor(ProcessorBase):
                 ),
             )
             # Build field object
-            field = Rios.FieldObject(
+            field = structures.FieldObject(
                     id=self.reader.get_name(row['fieldid']),
                     description=row['text'],
                     type=self._field_type,
@@ -923,7 +923,7 @@ class LegacyProcessor(ProcessorBase):
 
             # Sort the array on key order not array order
             if choices:
-                field['type'] = Rios.TypeObject(
+                field['type'] = structures.TypeObject(
                     base=row['enumeration_type'],
                 )
 
@@ -938,7 +938,7 @@ class LegacyProcessor(ProcessorBase):
                     field['type'].add_enumeration(choice.keys()[0])
                     name, description = choice.items()[0]
                     question_obj.add_enumeration(
-                        Rios.DescriptorObject(
+                        structures.DescriptorObject(
                             id=self.reader.get_name(name),
                             text=localized_string_object(
                                 self.localization,
@@ -948,7 +948,7 @@ class LegacyProcessor(ProcessorBase):
                     )
 
                 question_obj.set_widget(
-                    Rios.WidgetConfigurationObject(
+                    structures.WidgetConfigurationObject(
                         type='checkGroup'
                         if row['enumeration_type'] == 'enumerationSet'
                         else 'radioGroup'

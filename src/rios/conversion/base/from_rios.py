@@ -3,88 +3,51 @@
 #
 
 
-import json
-import sys
-import yaml
-import rios.conversion.structures as Rios
+from rios.conversion.base import ConversionBase, DEFAULT_LOCALIZATION
 
 
-class FromRios(object):
+__all__ = (
+    'FromRios',
+)
 
-    description = __doc__
 
-    def __init__(self, outfile, localization, format,
-                 verbose, form, instrument, calculationset):
+class FromRios(ConversionBase):
+    """ Converts a valid RIOS specification into a foreign instrument """
 
-        self.outfile = open(outfile, 'w')
-        self.localization = localization
-        self.format = format
-        self.verbose = verbose
-        self.form = form
-        self.instrument = instrument
-        self.calculationset = calculationset
-
-    def __call__(self, argv=None, stdout=None, stderr=None):
-        """ Process the csv input, and create output files """
-
-        self.stdout = stdout or sys.stdout
-        self.stderr = stderr or sys.stderr
-
-        self.load_input_files(self.form, self.instrument, self.calculationset)
-        self.types = self.instrument.get('types', {})
-
-        instrument = Rios.InstrumentReferenceObject(self.instrument)
-        if self.form['instrument'] != instrument:
-            self.stderr.write(
-                    'FATAL: Form and Instrument do not match: '
-                    '%s != %s.\n' % (self.form['instrument'], instrument))
-            return 1
-
-        if (self.calculationset
-                    and self.calculationset['instrument'] != instrument):
-            self.stderr.write(
-                    'FATAL: Calculationset and Instrument do not match: '
-                    '%s != %s.\n' % (
-                            self.calculationset['instrument'],
-                            instrument))
-            return 1
-        return self.call()
-
-    def call(self):
-        """ must implement in the subclass.
-        return 0 for success, > 0 for error.
+    def __init__(self, form, instrument, calculationset=None,
+                                localization=None, *args, **kwargs):
         """
-        raise NotImplementedError   # pragma: no cover
+        Expects `form`, `instrument`, and `calculationset` to be dictionary
+        objects. Implementations must process the data dictionary first before
+        passing to this class.
+        """
 
-    def get_loader(self, file_object):
-        name = file_object
-        if name.endswith('.json'):
-            loader = json
-        elif name.endswith('.yaml') or name.endswith('.yml'):
-            loader = yaml
-        else:
-            loader = {'yaml': yaml, 'json': json}[self.format]
-        return loader
+        self.localization = localization or DEFAULT_LOCALIZATION
+        self._form = form
+        self._instrument = instrument
+        self._calculationset = (calculationset if calculationset else {})
 
-    def get_local_text(self, localized_string_object):
-        return localized_string_object.get(self.localization, '')
+        self._definition = list()
 
-    def load_file(self, file_obj):
-        loader = self.get_loader(file_obj)
-        try:
-            return loader.load(open(file_obj, 'r'))
-        except Exception as exc:
-            raise exc
+        self.fields = {f['id']: f for f in self._instrument['record']}
 
-    def load_input_files(self, form, instrument, calculationset):
-        self.form = self.load_file(form)
-        self.instrument = self.load_file(instrument)
-        self.fields = {f['id']: f for f in self.instrument['record']}
-        self.calculationset = (
-                self.load_file(calculationset)
-                if calculationset
-                else {})
+    @staticmethod
+    def get_local_text(localization, localized_str_obj):
+        return localized_str_obj.get(localization, '')
 
-    def warning(self, message):
-        if self.verbose:
-            self.stderr.write('WARNING: %s\n' % message)
+    @property
+    def instrument(self):
+        return self._definition
+
+    @property
+    def package(self):
+        """
+        Returns a dictionary with an ``instrument`` key matched to a value
+        that is a list of lines of the foriegn instrument file. May also add
+        a ``logger`` key if logs exist.
+        """
+
+        payload = {'instrument': self.instrument}
+        if self.logger.check:
+            payload.update({'logs': self.logs})
+        return payload

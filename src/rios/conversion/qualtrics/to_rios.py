@@ -5,10 +5,9 @@
 
 import collections
 import six
-import rios.conversion.structures as Rios
 
 
-from rios.conversion.base import ToRios, localized_string_object
+from rios.conversion.base import ToRios, localized_string_object, structures
 from rios.conversion.utils import JsonReader
 from rios.conversion.exception import (
     Error,
@@ -44,8 +43,22 @@ class JsonReaderMainProcessor(JsonReader):
                 'questions':      {},   # QuestionID: payload (dict)
             }
             for survey_element in data['SurveyElements']:
-                element = survey_element['Element']
-                payload = survey_element['Payload']
+                element = (
+                    survey_element.get('Element', None)
+                    if isinstance(survey_element, dict)
+                    else None
+                )
+                # Payload may be a "null" value in *.qsf files
+                payload = (
+                    survey_element.get('Payload', None)
+                    if isinstance(survey_element, dict)
+                    else None
+                )
+                if not element:
+                    raise QualtricsFormatError(
+                        'Missing \"Element\" field in \"SurveyElements\":',
+                        repr(survey_element)
+                    )
                 if element == 'BL':
                     # Element: BL
                     # Payload is either a list of Block or a dict of Block.
@@ -60,12 +73,23 @@ class JsonReaderMainProcessor(JsonReader):
                             )
                             break
                 elif element == 'SQ':
+                    if not payload:
+                        raise QualtricsFormatError(
+                            'Missing \"Payload\" field in \"SurveyElements\":',
+                            repr(survey_element)
+                        )
                     qualtrics['questions'][payload['QuestionID']] = payload
         except Exception as exc:
-            error = QualtricsFormatError(
-                'Processor read error:',
-                repr(exc)
-            )
+            if isinstance(exc, QualtricsFormatError):
+                error = QualtricsFormatError(
+                    'Processor read error:',
+                    str(exc)
+                )
+            else:
+                error = QualtricsFormatError(
+                    'Processor read error:',
+                    repr(exc)
+                )
             raise error
         else:
             return qualtrics
@@ -149,13 +173,17 @@ class QualtricsToRios(ToRios):
                     "Invalid type for block element. Expected types:",
                     "\"Page Break\" or \"Question\""
                 )
-                error.wrap("But got invalid type value:", str(element_type))
+                if element_type:
+                    error.wrap("But got invalid type value:",
+                               str(element_type))
+                else:
+                    error.wrap("Missing type value")
                 self.logger.error(str(error))
                 raise error
 
         for page_name in page_names:
             self.page_container.update(
-                {page_name: Rios.PageObject(id=page_name), }
+                {page_name: structures.PageObject(id=page_name), }
             )
 
         for page_name, page in six.iteritems(self.page_container):
@@ -223,7 +251,7 @@ class Processor(object):
         """ Processes a Qualtrics data dictionary question per form page """
 
         # Generate question element object
-        question = Rios.ElementObject()
+        question = structures.ElementObject()
 
         try:
             self.question_field_processor(question_data, question)
@@ -264,7 +292,7 @@ class Processor(object):
         else:
             # Question is an interactive form element
             question['type'] = 'question'
-            question['options'] = Rios.QuestionObject(
+            question['options'] = structures.QuestionObject(
                 fieldId=question_data['DataExportTag'].lower(),
                 text=localized_string_object(
                     self.localization,
@@ -301,10 +329,10 @@ class Processor(object):
                 ]
                 # Process question object and field type object
                 question_obj = question['options']
-                field_type = Rios.TypeObject(base='enumeration', )
+                field_type = structures.TypeObject(base='enumeration', )
                 for _id, choice in self._choices:
                     question_obj.add_enumeration(
-                        Rios.DescriptorObject(
+                        structures.DescriptorObject(
                             id=_id,
                             text=localized_string_object(
                                 self.localization,
@@ -317,7 +345,7 @@ class Processor(object):
                 field_type = 'text'
 
             # Consruct field for instrument definition
-            field = Rios.FieldObject(
+            field = structures.FieldObject(
                 id=question_data['DataExportTag'].lower(),
                 description=question_data['QuestionDescription'],
                 type=field_type,
