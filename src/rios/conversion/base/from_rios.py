@@ -3,20 +3,7 @@
 #
 
 
-import simplejson
-import sys
-import yaml
-
-
-from rios.core import (
-    ValidationError,
-    validate_instrument,
-    validate_form,
-    validate_calculationset,
-)
 from rios.conversion.base import ConversionBase, DEFAULT_LOCALIZATION
-from ..utils import InMemoryLogger
-from ..exception import ConversionValidationError
 
 
 __all__ = (
@@ -44,6 +31,7 @@ class FromRios(ConversionBase):
 
         self.fields = {f['id']: f for f in self._instrument['record']}
 
+    @staticmethod
     def get_local_text(localization, localized_str_obj):
         return localized_str_obj.get(localization, '')
 

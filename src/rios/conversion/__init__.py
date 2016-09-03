@@ -3,7 +3,12 @@
 #
 
 
-from rios.core import ValidationError
+from rios.core import (
+    ValidationError,
+    validate_instrument,
+    validate_form,
+    validate_calculationset,
+)
 from rios.conversion.redcap import RedcapToRios, RedcapFromRios
 from rios.conversion.base import structures
 from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
@@ -28,7 +33,7 @@ __all__ = (
 class _JsonReaderMetaDataProcessor(JsonReader):
     """ Process Qualtrics data dictionary/instrument metadata """
 
-    def processor(self, data):
+    def processor(self, data):  # noqa:F821
         """ Extract metadata into a dict """
         try:
             survey_entry = data['SurveyEntry']
@@ -66,7 +71,7 @@ def _validate_rios(instrument, form, calculationset=None):
     try:
         validate_instrument(instrument)
         validate_form(form, instrument=instrument)
-        if self.calculationset.get('calculations', False):
+        if calculationset.get('calculations', False):
             validate_calculationset(calculationset, instrument=instrument)
     except ValidationError as exc:
         raise ConversionValidationError(
@@ -304,6 +309,7 @@ def rios_to_redcap(instrument, form, calculationset=None,
         payload.update(converter.package)
 
     return payload
+
 
 def rios_to_qualtrics(instrument, form, calculationset=None,
                                     localization=None, suppress=False):

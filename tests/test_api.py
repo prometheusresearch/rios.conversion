@@ -4,7 +4,7 @@ import sys
 
 from rios.conversion.exception import Error
 from rios.conversion.base import SUCCESS_MESSAGE
-from rios.conversion.convert import (
+from rios.conversion import (
     redcap_to_rios,
     qualtrics_to_rios,
     rios_to_redcap,
@@ -63,7 +63,7 @@ def api_tst(api_func, tests):
                     # We do NOT have an error situation
                     no_error_tst(package)
 
-    print "\n====== API TESTS ======"
+print "\n====== API TESTS ======"
 
 def test_redcap_to_rios_api():
     api_tst(redcap_to_rios, redcap_to_rios_tsts)

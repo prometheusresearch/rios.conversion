@@ -5,7 +5,6 @@
 
 from rios.core import ValidationError
 from rios.conversion.exception import (
-    ConversionValueError,
     ConversionValidationError,
 )
 from rios.conversion.base import structures
@@ -16,7 +15,7 @@ from rios.conversion.base import (
     DEFAULT_LOCALIZATION,
     SUCCESS_MESSAGE,
 )
-from rios.core.validation import(
+from rios.core.validation import (
     validate_instrument,
     validate_form,
     validate_calculationset,

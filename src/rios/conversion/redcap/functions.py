@@ -16,9 +16,8 @@ __all__ = (
     'rounddown',
     'roundup',
     'stdev',
-    'sum',
+    'sum_',
 )
-
 
 
 def datediff(date1, date2, units, date_fmt="ymd"):

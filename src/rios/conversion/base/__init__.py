@@ -12,4 +12,4 @@ from .base import (  # noqa:F401
 )
 from .from_rios import FromRios  # noqa:F401
 from .to_rios import ToRios  # noqa:F401
-from .structures import *
+from .structures import *  # noqa:F401,F403

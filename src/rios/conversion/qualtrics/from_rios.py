@@ -3,9 +3,6 @@
 #
 
 
-import sys
-
-
 from rios.core.validation.instrument import get_full_type_definition
 from rios.conversion.base import FromRios
 from rios.conversion.exception import (
@@ -100,7 +97,7 @@ class QualtricsFromRios(FromRios):
                 # Qualtrics only handles form questions
                 error = ConversionValueError(
                     'Skipping form field with ID:',
-                    str(fieldId)
+                    str(field_id)
                 )
                 error.wrap(
                     'Form element type is not \"question\". Got:',
