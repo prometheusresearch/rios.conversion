@@ -10,7 +10,7 @@ from rios.core.validation.instrument import get_full_type_definition
 from rios.conversion.base import FromRios
 from rios.conversion.exception import (
     ConversionValueError,
-    RiosFormatError,
+    QualtricsFormatError,
     Error,
 )
 
@@ -33,7 +33,7 @@ class QualtricsFromRios(FromRios):
     def __call__(self):
         self.lines = []
         self.question_number = QuestionNumber()
-        for page in self.form['pages']:
+        for page in self._form['pages']:
             try:
                 self.page_processor(page)
             except Exception as exc:
@@ -41,7 +41,7 @@ class QualtricsFromRios(FromRios):
                     # Don't need to specify what's being skipped here, because
                     # deeper level exceptions access that data.
                     self.logger.warning(str(exc))
-                elif isinstance(exc, RedcapFormatError):
+                elif isinstance(exc, QualtricsFormatError):
                     error = Error(
                         "RIOS data dictionary conversion failure:",
                         "Unable to parse the data dictionary"
@@ -107,7 +107,7 @@ class QualtricsFromRios(FromRios):
         field_id = question_options['fieldId']
         field = self.fields[field_id]
         type_object = get_full_type_definition(
-            self.instrument,
+            self._instrument,
             field['type']
         )
         base = type_object['base']

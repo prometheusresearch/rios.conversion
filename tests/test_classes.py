@@ -5,6 +5,7 @@ import traceback
 import re
 import simplejson
 import yaml
+import six
 
 
 from rios.conversion.exception import Error
@@ -87,22 +88,29 @@ def rios_tst(name):
 
 def show_tst(cls, test):
     class_name = "= TEST CLASS: " + str(cls.__name__)
-    if 'stream' in test and isinstance(test['stream'], dict):
-        filenames = "= TEST INSTRUMENT TITLE: " + str(test['title'])
-    elif 'stream' in test and not isinstance(test['stream'], dict):
-        print "TEST: ", test
-        filenames = "= TEST FILENAME: " + str(test['stream'].name)
-    elif 'stream' not in test and isinstance(test['instrument'], dict):
-        filenames = "= TEST INSTRUMENT TITLE: " + str(test['title'])
-    elif 'stream' not in test and not isinstance(test['instrument'], dict):
-        filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
-            test['instrument'].name,
-            test['form'].name,
-            (test['calculationset'].name if 'calculationset' in test \
-                        else "No calculationset file"),
-        ])
+    if 'stream' in test:
+        if isinstance(test['stream'], dict):
+            filenames = "= TEST INSTRUMENT TITLE: " + str(test['title'])
+        elif isinstance(test['stream'], file):
+            filenames = "= TEST FILENAME: " + str(test['stream'].name)
+        else:
+            filenames = None
+    else:
+        if isinstance(test['instrument'], dict):
+            filenames = "= TEST INSTRUMENT TITLE: " \
+                + str(test.get('title', 'Now title available'))
+        elif isinstance(test['instrument'], file):
+            filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
+                test['instrument'].get('name', 'No instrument name'),
+                test['form'].get('name', 'No form name'),
+                (test['calculationset'].name if 'calculationset' in test \
+                            else "No calculationset file"),
+            ])
+        else:
+            filenmes = None
         
-    print('\n%s\n%s' % (class_name, filenames))
+    print '\n{}'.format(class_name) \
+        + ('\n{}'.format(filenames) if filenames else "")
 
 def tst_class(cls, tests):
     for test in tests:
@@ -142,7 +150,6 @@ rios_names = [
     os.path.basename(name)[:-7] 
     for name in glob.glob('./tests/rios/*_i.yaml')
 ]
-print "RIOS NAMES: ", rios_names
 
 
 redcap_rios_tsts = flatten([redcap_rios_tst(n) for n in csv_names])

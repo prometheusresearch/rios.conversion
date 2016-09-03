@@ -67,17 +67,30 @@ def rios_tst(name):
     return [test,]
 
 def show_tst(cls, test):
-    name = "= TEST CLASS: " + str(cls.__name__)
+    class_name = "= TEST CLASS: " + str(cls.__name__)
     if 'stream' in test:
-        filenames = "= TEST FILENAME: " + str(test['stream'].name)
+        if isinstance(test['stream'], dict):
+            filenames = "= TEST INSTRUMENT TITLE: " + str(test['title'])
+        elif isinstance(test['stream'], file):
+            filenames = "= TEST FILENAME: " + str(test['stream'].name)
+        else:
+            filenames = None
     else:
-        filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
-            test['instrument'].name,
-            test['form'].name,
-            (test['calculationset'].name if 'calculationset' in test \
-                        else "No calculationset file"),
-        ])
-    print('\n%s\n%s' % (name, filenames))
+        if isinstance(test['instrument'], dict):
+            filenames = "= TEST INSTRUMENT TITLE: " \
+                + str(test.get('title', 'No title available'))
+        elif isinstance(test['instrument'], file):
+            filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
+                test['instrument'].get('name', 'No instrument name'),
+                test['form'].get('name', 'No form name'),
+                (test['calculationset'].name if 'calculationset' in test \
+                            else "No calculationset file"),
+            ])
+        else:
+            filenmes = None
+
+    print '\n{}'.format(class_name) \
+        + ('\n{}'.format(filenames) if filenames else "")
 
 def tst_class(cls, tests):
     for test in tests:
@@ -125,6 +138,8 @@ rios_tsts = flatten([rios_tst(n) for n in rios_names])
 
 
 print "\n====== TEST PROGRAMS ======"
+
+
 def test_redcap_to_rios():
     tst_class(RedcapToRios, redcap_to_rios_tsts)
 def test_qualtrics_to_rios():
