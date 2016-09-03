@@ -64,14 +64,15 @@ class QualtricsFromRios(FromRios):
 
         # Skip the first line ([[PageBreak]]) and the last 2 lines (blank)
         def rmv_extra_strings(lst):
-            if lst[0] == '[[PageBreak]]':
-                rmv_extra_strings(lst[1:])
-            if lst[-1] == "":
-                rmv_extra_strings(lst[:-1])
-            else:
-                return lst[:]
+            if len(lst) > 0:
+                if lst[0] == '[[PageBreak]]':
+                    rmv_extra_strings(lst[1:])
+                elif lst[-1] == "":
+                    rmv_extra_strings(lst[:-1])
+            return lst[:]
+
         for line in rmv_extra_strings(self.lines):
-            self._defintion.append(line)
+            self._definition.append(line)
 
     def page_processor(self, page):
         # Start the page
@@ -81,23 +82,36 @@ class QualtricsFromRios(FromRios):
         for question in elements:
             question_options = question['options']
             # Get question ID for exception/error messages
-            field_id = question_options['fieldId']
+            # Get question/form element ID value for error messages
+            try:
+                identifier = question['options']['fieldId']
+            except:
+                identifier = question['options']['text'].get(
+                    self.localization,
+                    None
+                )
+            if not identifier:
+                raise ConversionValueError(
+                    'Form element has no identifier.'
+                    ' Invalid element data:',
+                    str(question)
+                )
             # Handle form element if a question
             if question['type'] == 'question':
                 try:
                     self.question_processor(question_options)
                 except Exception as exc:
                     error = ConversionValueError(
-                        ("Skipping form field with ID: " + str(field_id)
+                        ("Skipping form field with ID: " + str(identifier)
                                 + ". Error:"),
-                        (str(exc) if issubclass(exc, Error) else repr(exc))
+                        (str(exc) if isinstance(exc, Error) else repr(exc))
                     )
                     raise error
             else:
                 # Qualtrics only handles form questions
                 error = ConversionValueError(
                     'Skipping form field with ID:',
-                    str(field_id)
+                    str(identifier)
                 )
                 error.wrap(
                     'Form element type is not \"question\". Got:',

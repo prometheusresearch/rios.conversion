@@ -43,8 +43,22 @@ class JsonReaderMainProcessor(JsonReader):
                 'questions':      {},   # QuestionID: payload (dict)
             }
             for survey_element in data['SurveyElements']:
-                element = survey_element['Element']
-                payload = survey_element['Payload']
+                element = (
+                    survey_element.get('Element', None)
+                    if isinstance(survey_element, dict)
+                    else None
+                )
+                # Payload may be a "null" value in *.qsf files
+                payload = (
+                    survey_element.get('Payload', None)
+                    if isinstance(survey_element, dict)
+                    else None
+                )
+                if not element:
+                    raise QualtricsFormatError(
+                        'Missing \"Element\" field in \"SurveyElements\":',
+                        repr(survey_element)
+                    )
                 if element == 'BL':
                     # Element: BL
                     # Payload is either a list of Block or a dict of Block.
@@ -59,12 +73,23 @@ class JsonReaderMainProcessor(JsonReader):
                             )
                             break
                 elif element == 'SQ':
+                    if not payload:
+                        raise QualtricsFormatError(
+                            'Missing \"Payload\" field in \"SurveyElements\":',
+                            repr(survey_element)
+                        )
                     qualtrics['questions'][payload['QuestionID']] = payload
         except Exception as exc:
-            error = QualtricsFormatError(
-                'Processor read error:',
-                repr(exc)
-            )
+            if isinstance(exc, QualtricsFormatError):
+                error = QualtricsFormatError(
+                    'Processor read error:',
+                    str(exc)
+                )
+            else:
+                error = QualtricsFormatError(
+                    'Processor read error:',
+                    repr(exc)
+                )
             raise error
         else:
             return qualtrics
@@ -148,7 +173,11 @@ class QualtricsToRios(ToRios):
                     "Invalid type for block element. Expected types:",
                     "\"Page Break\" or \"Question\""
                 )
-                error.wrap("But got invalid type value:", str(element_type))
+                if element_type:
+                    error.wrap("But got invalid type value:",
+                               str(element_type))
+                else:
+                    error.wrap("Missing type value")
                 self.logger.error(str(error))
                 raise error
 

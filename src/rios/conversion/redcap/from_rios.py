@@ -12,6 +12,7 @@ from rios.conversion.base import FromRios
 from rios.conversion.exception import (
     ConversionValueError,
     RiosFormatError,
+    Error,
 )
 from rios.conversion.redcap.to_rios import (
     FUNCTION_TO_PYTHON,
@@ -77,14 +78,14 @@ class RedcapFromRios(FromRios):
         self._rows.append(COLUMNS)
         self.section_header = ''
 
-        if 'pages' not in self.form or not self.form['pages']:
+        if 'pages' not in self._form or not self._form['pages']:
             raise RiosFormatError(
                 "RIOS data dictionary conversion failure. Error:"
                 "RIOS form configuration does not contain page data"
             )
 
         # Process form and instrument configurations
-        for page in self.form['pages']:
+        for page in self._form['pages']:
             try:
                 self.page_processor(page)
             except Exception as exc:
@@ -105,6 +106,12 @@ class RedcapFromRios(FromRios):
                     self.logger.error(str(error))
                     raise error
                 else:
+                    print "IN EXCEPTION!"
+                    print "IN EXCEPTION!"
+                    print "IN EXCEPTION!"
+                    print "IN EXCEPTION!"
+                    print "IN EXCEPTION!"
+                    print "IN EXCEPTION!"
                     error = Error(
                         "An unknown or unexpected error occured:",
                         repr(exc)
@@ -113,22 +120,21 @@ class RedcapFromRios(FromRios):
                         "RIOS data dictionary conversion failure:",
                         "Unable to parse the data dictionary"
                     )
-                    self.logger.error(str(error))
+                    self.logger.error(repr(error))
                     raise exc
-                
 
-        # Process calulcations
-        if self.calculationset:
-            for calculation in self.calculationset['calculations']:
+        # Process calculations
+        if self._calculationset:
+            for calculation in self._calculationset['calculations']:
                 try:
-                    calc_id = calulcation.get('id', None)
+                    calc_id = calculation.get('id', None)
                     calc_description = calculation.get('id', None)
                     if not calc_id or not calc_description:
                         raise RiosFormatError(
                             "Missing ID or description for a calculation:",
                             str(
-                                calc_id 
-                                or calc_description 
+                                calc_id
+                                or calc_description
                                 or "Calculation is not identifiable"
                             )
                         )
@@ -157,14 +163,21 @@ class RedcapFromRios(FromRios):
 
         # Iterate over form elements and process them accordingly
         for element in self.elements:
+            # Get question/form element ID value for error messages
             try:
-                # Get question/form element "fieldId" value for error messages
-                field_id = element['options'].get('fieldId', None)
-                if not field_id:
-                    raise RiosFormatError(
-                        "Error:",
-                        "RIOS form is missing a \"fieldId\" value"
-                    )
+                identifier = element['options']['fieldId']
+            except:
+                identifier = element['options']['text'].get(
+                    self.localization,
+                    None
+                )
+            if not identifier:
+                raise ConversionValueError(
+                    'Form element has no identifier.'
+                    ' Invalid element data:',
+                    str(element)
+                )
+            try:
 
                 self.process_element(element)
 
@@ -172,11 +185,11 @@ class RedcapFromRios(FromRios):
                 if isinstance(exc, ConversionValueError):
                     error = Error(
                         "Skipping form element with ID:",
-                        str(field_id)
+                        str(identifier)
                     )
                     error.wrap('Error:', str(exc))
                 else:
-                        raise exc
+                    raise exc
 
     def convert_rexl_expression(self, rexl):
         """
@@ -221,8 +234,9 @@ class RedcapFromRios(FromRios):
 
     def get_choices(self, array):
         return ' | '.join(['%s, %s' % (
-                d['id'],
-                self.get_local_text(d['text'])) for d in array])
+                str(d['id']),
+                self.get_local_text(self.localization, d['text']))
+                for d in array])
 
     def get_type_tuple(self, base, question):
         widget_type = question.get('widget', {}).get('type', '')
@@ -257,7 +271,7 @@ class RedcapFromRios(FromRios):
                 'calc',
                 calculation['description'],
                 get_expression(),
-                '', '', '', '', '', '', '', '', '', '', '', '', 
+                '', '', '', '', '', '', '', '', '', '', '', '',
             ]
         )
 
@@ -277,7 +291,10 @@ class RedcapFromRios(FromRios):
             raise error
 
     def process_header(self, header):
-        self.section_header = self.get_local_text(header['text'])
+        self.section_header = self.get_local_text(
+            self.localization,
+            header['text']
+        )
 
     def process_matrix(self, question):
         questions = question['questions']
@@ -285,9 +302,9 @@ class RedcapFromRios(FromRios):
             if len(questions) > 1:
                 error = ConversionValueError(
                     'REDCap matrices support only one question. Got:',
-                    ", ".join(questions)
+                    ", ".join([str(q) for q in questions])
                 )
-                raise exc
+                raise error
             column = questions[0]
         else:
             column = questions
@@ -300,13 +317,13 @@ class RedcapFromRios(FromRios):
                 'REDCap matrix column must be an enumeration. Got column:',
                 str(column)
             )
-            raise exc
+            raise error
         choices = self.get_choices(column['enumerations'])
         section_header = self.section_header
         matrix_group_name = question['fieldId']
         field = self.fields[matrix_group_name]
         type_object = get_full_type_definition(
-            self.instrument,
+            self._instrument,
             field['type']
         )
         base = type_object['base']
@@ -318,9 +335,10 @@ class RedcapFromRios(FromRios):
                     self.form_name,
                     section_header,
                     field_type,
-                    self.get_local_text(row['text']),
+                    self.get_local_text(self.localization, row['text']),
                     choices,
-                    self.get_local_text(row.get('help', {})),
+                    self.get_local_text(self.localization,
+                                        row.get('help', {})),
                     valid_type,
                     '',
                     '',
@@ -364,7 +382,7 @@ class RedcapFromRios(FromRios):
             field_id = question['fieldId']
             field = self.fields[field_id]
             type_object = get_full_type_definition(
-                    self.instrument,
+                    self._instrument,
                     field['type'])
             base = type_object['base']
             field_type, valid_type = self.get_type_tuple(base, question)
@@ -375,9 +393,10 @@ class RedcapFromRios(FromRios):
                     self.form_name,
                     self.section_header,
                     field_type,
-                    self.get_local_text(question['text']),
+                    self.get_local_text(self.localization, question['text']),
                     get_choices(),
-                    self.get_local_text(question.get('help', {})),
+                    self.get_local_text(self.localization,
+                                        question.get('help', {})),
                     valid_type,
                     min_value,
                     max_value,

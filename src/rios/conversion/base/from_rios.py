@@ -40,7 +40,7 @@ class FromRios(ConversionBase):
         return self._definition
 
     @property
-    def payload(self):
+    def package(self):
         """
         Returns a dictionary with an ``instrument`` key matched to a value
         that is a list of lines of the foriegn instrument file. May also add

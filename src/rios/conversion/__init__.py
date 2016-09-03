@@ -69,13 +69,17 @@ def _check_rios_relationship(instrument, form, calculationset=None):
 
 def _validate_rios(instrument, form, calculationset=None):
     try:
+        exc_type = "instrument"
         validate_instrument(instrument)
+        exc_type = "form"
         validate_form(form, instrument=instrument)
-        if calculationset.get('calculations', False):
+        exc_type = "calculationset"
+        if calculationset and calculationset.get('calculations', False):
             validate_calculationset(calculationset, instrument=instrument)
     except ValidationError as exc:
         raise ConversionValidationError(
-            'The supplied RIOS configurations are invalid. Error:',
+            'The supplied RIOS ' + exc_type + ' configuration'
+            ' is invalid. Error:',
             str(exc)
         )
 

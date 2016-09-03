@@ -92,7 +92,7 @@ def show_tst(cls, test):
     else:
         if isinstance(test['instrument'], dict):
             filenames = "= TEST INSTRUMENT TITLE: " \
-                + str(test.get('title', 'Now title available'))
+                + str(test.get('title', 'No title available'))
         elif isinstance(test['instrument'], file):
             filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
                 test['instrument'].get('name', 'No instrument name'),
@@ -106,7 +106,7 @@ def show_tst(cls, test):
     print '\n{}'.format(class_name) \
         + ('\n{}'.format(filenames) if filenames else "")
 
-def no_error_tst(package):
+def no_error_tst_to_rios(package):
     if 'instrument' not in package or not package['instrument']:
         raise ValueError('Missing instrument definition')
     elif 'form' not in package or not package['form']:
@@ -115,6 +115,13 @@ def no_error_tst(package):
         raise ValueError('Calculationset is missing definition data')
     elif 'logs' in package and not package['logs']:
         raise ValueError('Logs are missing logging data')
+    else:
+        print "Successful conversion test"
+
+
+def no_error_tst_from_rios(package):
+    if 'instrument' not in package or not package['instrument']:
+        raise ValueError('Missing instrument definition')
     else:
         print "Successful conversion test"
 
