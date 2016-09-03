@@ -1,116 +1,20 @@
-import glob
-import os
 import sys
 import traceback
-import re
-import simplejson
-import yaml
-import six
 
 
-from rios.conversion.exception import Error
-from rios.conversion.base import SUCCESS_MESSAGE
 from rios.conversion.redcap.to_rios import RedcapToRios
 from rios.conversion.redcap.from_rios import RedcapFromRios
 from rios.conversion.qualtrics.to_rios import QualtricsToRios
 from rios.conversion.qualtrics.from_rios import QualtricsFromRios
+from rios.conversion.exception import Error
+from rios.conversion.base import SUCCESS_MESSAGE
+from utils import (
+    show_tst, 
+    redcap_to_rios_tsts,
+    qualtrics_to_rios_tsts,
+    rios_tsts,
+)
 
-
-def flatten(array):
-    result = []
-    for x in array:
-        (result.append if isinstance(x, dict) else result.extend)(x)
-    return result
-
-def redcap_rios_tst(name):
-    test_base = {
-            'title': name,
-            'id': 'urn:%s' % name,
-            'instrument_version': '1.0',
-            'stream': open('./tests/redcap/%s.csv' % name, 'r'),
-            'description': '',
-            'localization': 'en',
-    }
-    return [test_base,]
-
-def qualtrics_rios_tst(name):
-    test_base = {
-            'title': name,
-            'id': 'urn:%s' % name,
-            'instrument_version': '1.0',
-            'stream': simplejson.load(
-                open('./tests/qualtrics/%s.qsf' % name, 'r')
-            ),
-            'description': '',
-            'localization': 'en',
-    }
-    return [test_base,]
-    
-def rios_redcap_tst(name):
-    calc_filename = './tests/rios/%s_c.yaml' % name
-    test_base = {
-        'instrument': yaml.load(open('./tests/redcap/%s_i.yaml' % name, 'r')),
-        'form': yaml.load(open('./tests/redcap/%s_f.yaml' % name, 'r')),
-        'localization': None,
-            
-    }
-    if os.access(calc_filename, os.F_OK):
-        test = dict(
-            test_base,
-            **{'calculationset': yaml.load(open(calc_filename, 'r'))}
-        )
-    else:
-        test = dict(test_base, **{'calculationset': None})
-        
-    return [test,]
-
-
-def rios_tst(name):
-    calc_filename = './tests/rios/%s_c.yaml' % name
-    test_base = {
-        'instrument': yaml.load(open('./tests/rios/%s_i.yaml' % name, 'r')),
-        'form': yaml.load(open('./tests/rios/%s_f.yaml' % name, 'r')),
-        'localization': None,
-    }
-
-    if os.access(calc_filename, os.F_OK):
-        test = dict(
-            {'calculationset': yaml.load(open(calc_filename, 'r'))},
-            **test_base
-        )
-    else:
-        test = dict(
-            {'calculationset': None},
-            **test_base
-        )
-
-    return [test,]
-
-def show_tst(cls, test):
-    class_name = "= TEST CLASS: " + str(cls.__name__)
-    if 'stream' in test:
-        if isinstance(test['stream'], dict):
-            filenames = "= TEST INSTRUMENT TITLE: " + str(test['title'])
-        elif isinstance(test['stream'], file):
-            filenames = "= TEST FILENAME: " + str(test['stream'].name)
-        else:
-            filenames = None
-    else:
-        if isinstance(test['instrument'], dict):
-            filenames = "= TEST INSTRUMENT TITLE: " \
-                + str(test.get('title', 'Now title available'))
-        elif isinstance(test['instrument'], file):
-            filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
-                test['instrument'].get('name', 'No instrument name'),
-                test['form'].get('name', 'No form name'),
-                (test['calculationset'].name if 'calculationset' in test \
-                            else "No calculationset file"),
-            ])
-        else:
-            filenmes = None
-        
-    print '\n{}'.format(class_name) \
-        + ('\n{}'.format(filenames) if filenames else "")
 
 def tst_class(cls, tests):
     for test in tests:
@@ -137,35 +41,16 @@ def tst_class(cls, tests):
                     "Logged extraneous messages for a successful conversion"
                 )
 
-csv_names = [
-    os.path.basename(name)[:-4] 
-    for name in glob.glob('./tests/redcap/*.csv')
-]
-qsf_names = [
-    os.path.basename(name)[:-4] 
-    for name in glob.glob('./tests/qualtrics/*.qsf')
-    if not re.match('bad_json', os.path.basename(name)[:-4])
-]
-rios_names = [
-    os.path.basename(name)[:-7] 
-    for name in glob.glob('./tests/rios/*_i.yaml')
-]
-
-
-redcap_rios_tsts = flatten([redcap_rios_tst(n) for n in csv_names])
-qualtrics_rios_tsts = flatten([qualtrics_rios_tst(n) for n in qsf_names])
-###rios_redcap_tsts = flatten([rios_tst(n) for n in rios_names])
-rios_tsts = flatten([rios_tst(n) for n in rios_names])
-
-
 print "\n====== CLASS TESTS ======"
 
-
 def test_redcap_to_rios_tsts():
-    tst_class(RedcapToRios, redcap_rios_tsts)
+    tst_class(RedcapToRios, redcap_to_rios_tsts)
+
 def test_qualtrics_to_rios_tsts():
-    tst_class(QualtricsToRios, qualtrics_rios_tsts)
-###def test_redcap_to_rios_tsts():
-    ###tst_class(RedcapFromRios, rios_tsts)
+    tst_class(QualtricsToRios, qualtrics_to_rios_tsts)
+
+#def test_redcap_to_rios_tsts():
+#    tst_class(RedcapFromRios, rios_tsts)
+
 def test_rios_to_qualtrics_tsts():
     tst_class(QualtricsFromRios, rios_tsts)

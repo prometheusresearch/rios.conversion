@@ -3,6 +3,11 @@
 #
 
 
+from rios.core import ValidationError
+from rios.conversion.exception import (
+    ConversionValueError,
+    ConversionValidationError,
+)
 from rios.conversion import structures
 from rios.conversion.base import (
     ConversionBase,
@@ -26,8 +31,8 @@ __all__ = (
 class ToRios(ConversionBase):
     """ Converts a foreign instrument into a valid RIOS specification """
 
-    def __init__(self, id, title, description, stream,
-                    localization=None, instrument_version=None):
+    def __init__(self, id, title, description, stream, localization=None,
+                                    instrument_version=None, *args, **kwargs):
         """
         Expects `stream` to be a file-like object. Implementations must process
         the data dictionary first before passing to this class.

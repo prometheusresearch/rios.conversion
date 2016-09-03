@@ -67,7 +67,7 @@ RE_variable_reference = re.compile(
 class RedcapFromRios(FromRios):
     """ Converts a RIOS configuration into a REDCap configuration """
 
-    def call(self):
+    def __call__(self):
         self._rows = collections.deque()
         self._rows.append(COLUMNS)
         self.section_header = ''

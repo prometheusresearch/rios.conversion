@@ -55,6 +55,8 @@ class CsvReader(object):
     def get_reader(fname):
         fi = open(fname, 'rU') if isinstance(fname, str) else fname
         filtered = (re.sub(r'(\r\n)|(\r)', r'', line) for line in fi)
+        if hasattr(fname, 'seek'):
+            fname.seek(0)
         return csv.reader(filtered)
 
     def get_row(self, row):

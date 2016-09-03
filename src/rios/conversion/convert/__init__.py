@@ -3,9 +3,17 @@
 #
 
 
+from rios.core import ValidationError
 from rios.conversion.redcap import RedcapToRios, RedcapFromRios
+from rios.conversion import structures
 from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
-from rios.conversion.exception import Error, QualtricsFormatError
+from rios.conversion.exception import (
+    Error,
+    ConversionFailureError,
+    QualtricsFormatError,
+    ConversionValidationError,
+    RiosRelationshipError,
+)
 from rios.conversion.utils import JsonReader
 
 
@@ -14,6 +22,8 @@ __all__ = (
     'qualtrics_to_rios',
     'rios_to_redcap',
     'rios_to_qualtrics',
+    'check_rios_relationship',
+    'validate_rios',
 )
 
 
@@ -63,6 +73,13 @@ def redcap_to_rios(id, title, description, stream, localization=None,
         Version of the instrument. Defaults to '1.0' if none supplied. Must be
         in a decimal format with precision to one decimal place.
     :type instrument_version: str or None
+    :param suppress:
+        Supress exceptions and log return as a dict with a single 'failure'
+        key that contains the exception message. Implementations should check
+        for this key to make sure a conversion completed sucessfully, because
+        the returned dict will not contain key-value pairs with conversion
+        data if exception suppression is set.
+    :type suppress: bool
     :returns:
         The RIOS instrument, form, and calculationset configuration. Includes
         logging data if a logger is suplied.
@@ -82,7 +99,7 @@ def redcap_to_rios(id, title, description, stream, localization=None,
     try:
         converter()
     except Exception as exc:
-        error = Error(
+        error = ConversionFailureError(
             'Unable to convert REDCap data dictionary. Error:',
             (str(exc) if isinstance(exc, Error) else repr(exc))
         )
@@ -123,6 +140,13 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     :param filemetadata:
         Flag to tell converter API to pull meta data from the stream file.
     :type filemetadata: bool
+    :param suppress:
+        Supress exceptions and log return as a dict with a single 'failure'
+        key that contains the exception message. Implementations should check
+        for this key to make sure a conversion completed sucessfully, because
+        the returned dict will not contain key-value pairs with conversion
+        data if exception suppression is set.
+    :type suppress: bool
     :returns:
         The RIOS instrument, form, and calculationset configuration. Includes
         logging data if a logger is suplied.
@@ -145,7 +169,7 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
             reader = JsonReaderMetaDataProcessor(stream)
             reader.process()
         except Exception as exc:
-            error = Error(
+            error = ConversionFailureError(
                 "Unable to parse Qualtrics data dictionary:",
                 "Invalid JSON formatted text"
             )
@@ -176,7 +200,7 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     try:
         converter()
     except Exception as exc:
-        error = Error(
+        error = ConversionFailureError(
             'Unable to convert Qualtrics data dictionary. Error:',
             (str(exc) if isinstance(exc, Error) else repr(exc))
         )
@@ -190,83 +214,159 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     return payload
 
 
-#def check_relationship(self):
-#    instrument = structures.InstrumentReferenceObject(self.instrument)
-#    if self.form['instrument'] != instrument:
-#                'FATAL: Form and Instrument do not match: '
-#                '%s != %s.\n' % (self.form['instrument'], instrument))
-#
-#    if (self.calculationset
-#                and self.calculationset['instrument'] != instrument):
-#        self.stderr.write(
-#                'FATAL: Calculationset and Instrument do not match: '
-#                '%s != %s.\n' % (
-#                        self.calculationset['instrument'],
-#                        instrument))
+def check_rios_relationship(instrument, form, calculationset=None):
+    instrument = structures.InstrumentReferenceObject(instrument)
+    if form['instrument'] != instrument:
+        raise RiosRelationshipError(
+            'Form and Instrument do not match:',
+            '{} is not {}'.format(form['instrument'], instrument)
+        )
+    if (calculationset and calculationset['instrument'] != instrument):
+        raise RiosRelationshipError(
+            'Calculationset and Instrument do not match:',
+            '{} is not {}'.format(calculationset['instrument'], instrument)
+        )
 
 
-#    def validate_rios(self):
-#        """
-#        This function is run in the __call__ method first before anything else
-#        to validate the ``instrument``, ``form``, and potentially the 
-#        ``calculationset`` instance properties. This function should raise an
-#        exception of type :class:ConversionValidationError if the validation
-#        fails. The __call__ method should likewise raise an exception to halt
-#        the conversion process.
-#        """
-#
-#        try:
-#            validate_instrument(self._instrument)
-#            validate_form(
-#                self._form,
-#                instrument=self._instrument,
-#            )
-#            if self.calculationset.get('calculations', False):
-#                validate_calculationset(
-#                    self._calculationset,
-#                    instrument=self._instrument
-#                )
-#        except ValidationError as exc:
-#            error = ConversionValidationError(
-#                'The supplied RIOS configurations are invalid. Error:',
-#                str(exc)
-#            )
-#            self.logger.error(str(error))
-#            raise error
+def validate_rios(instrument, form, calculationset=None):
+    try:
+        validate_instrument(instrument)
+        validate_form(form, instrument=instrument)
+        if self.calculationset.get('calculations', False):
+            validate_calculationset(calculationset, instrument=instrument)
+    except ValidationError as exc:
+        raise ConversionValidationError(
+            'The supplied RIOS configurations are invalid. Error:',
+            str(exc)
+        )
 
-def rios_to_redcap(instrument, **kwargs):
+def rios_to_redcap(instrument, form, calculationset=None,
+                                    localization=None, suppress=False):
     """
     Converts a RIOS configuration into a REDCap configuration.
 
     :param instrument: The RIOS instrument definition
-    :type instrument: Dictionary
+    :type instrument: dict
     :param form: The RIOS form definition
-    :type form: Dictionary
+    :type form: dict
     :param calculationset: The RIOS calculationset instrument definition
-    :type calculationset: Dictionary
-    :param kwargs:
-        Extra keyword arguments are passed to the underlying
-        converter class instantiation.
-    :returns: The RIOS instrument, form, and calculationset configuration.
-    :rtype: dictionary
+    :type calculationset: dict
+    :param localization:
+        Localization must be in the form of an RFC5646 Language Tag. Defaults
+        to 'en' if not supplied.
+    :type localization: str or None
+    :param suppress:
+        Supress exceptions and log return as a dict with a single 'failure'
+        key that contains the exception message. Implementations should check
+        for this key to make sure a conversion completed sucessfully, because
+        the returned dict will not contain key-value pairs with conversion
+        data if exception suppression is set.
+    :type suppress: bool
+    :returns:
+        A list where each element is a row. The first row is the header row.
+    :rtype: list
     """
 
-    converter = RedcapFromRios(instrument, **kwargs)
-    converter()
+    payload = dict()
 
+    try:
+        validate_rios(instrument, form, calculationset)
+        check_rios_relationship(instrument, form, calculationset)
+    except Exception as exc:
+        error = ConversionFailureError(
+            'The supplied RIOS configurations are invalid:',
+            str(exc)
+        )
+        if suppress:
+            payload['failure'] = str(error)
+            return payload
+        else:
+            raise error
 
-def rios_to_qualtrics(instrument, form, calculationset, **kwargs):
+    converter = RedcapFromRios(
+        instrument=instrument,
+        form=form,
+        calculationset=calculationset,
+        localization=localization,
+    )
+
+    try:
+        converter()
+    except Exception as exc:
+        error = ConversionFailureError(
+            'Unable to convert RIOS data dictionary. Error:',
+            (str(exc) if isinstance(exc, Error) else repr(exc))
+        )
+        if suppress:
+            payload['failure'] = str(error)
+        else:
+            raise error
+    else:
+        payload.update(converter.package)
+
+    return payload
+
+def rios_to_qualtrics(instrument, form, calculationset=None,
+                                    localization=None, suppress=False):
     """
     Converts a RIOS configuration into a Qualtrics configuration.
 
-    :param instrument: The Qualtrics instrument definition
-    :type instrument: File-like object
-    :param kwargs:
-        Extra keyword arguments are passed to the underlying
-        converter class instantiation.
+    :param instrument: The RIOS instrument definition
+    :type instrument: dict
+    :param form: The RIOS form definition
+    :type form: dict
+    :param calculationset: The RIOS calculationset instrument definition
+    :type calculationset: dict
+    :param localization:
+        Localization must be in the form of an RFC5646 Language Tag. Defaults
+        to 'en' if not supplied.
+    :type localization: str or None
+    :param suppress:
+        Supress exceptions and log return as a dict with a single 'failure'
+        key that contains the exception message. Implementations should check
+        for this key to make sure a conversion completed sucessfully, because
+        the returned dict will not contain key-value pairs with conversion
+        data if exception suppression is set.
+    :type suppress: bool
     :returns: The RIOS instrument, form, and calculationset configuration.
     :rtype: dictionary
     """
 
-    converter = QualtricsFromRios(instrument, **kwargs)
-    converter()
+    payload = dict()
+
+    try:
+        validate_rios(instrument, form, calculationset)
+        check_rios_relationship(instrument, form, calculationset)
+    except Exception as exc:
+        error = ConversionFailureError(
+            'The supplied RIOS configurations are invalid:',
+            str(exc)
+        )
+        if suppress:
+            payload['failure'] = str(error)
+            return payload
+        else:
+            raise error
+
+    converter = QualtricsFromRios(
+        instrument=instrument,
+        form=form,
+        calculationset=calculationset,
+        localization=localization,
+    )
+
+    try:
+        converter()
+    except Exception as exc:
+        error = ConversionFailureError(
+            'Unable to convert RIOS data dictionary. Error:',
+            (str(exc) if isinstance(exc, Error) else repr(exc))
+        )
+        if suppress:
+            payload['failure'] = str(error)
+        else:
+            raise error
+    else:
+        payload.update(converter.package)
+
+    return payload

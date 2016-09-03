@@ -23,8 +23,8 @@ from rios.core.validation import (
 class FromRios(ConversionBase):
     """ Converts a valid RIOS specification into a foreign instrument """
 
-    def __init__(self, form, instrument,
-                    calculationset=None, localization=None):
+    def __init__(self, form, instrument, calculationset=None,
+                                localization=None, *args, **kwargs):
         """
         Expects `form`, `instrument`, and `calculationset` to be dictionary
         objects. Implementations must process the data dictionary first before
