@@ -3,8 +3,10 @@
 #
 
 
+import structures
+
+
 from rios.core import ValidationError
-from rios.conversion import structures
 from rios.conversion.utils import InMemoryLogger
 from rios.conversion.exception import ConversionValidationError
 from rios.core.validation import (

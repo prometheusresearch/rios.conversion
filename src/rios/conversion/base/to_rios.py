@@ -8,7 +8,7 @@ from rios.conversion.exception import (
     ConversionValueError,
     ConversionValidationError,
 )
-from rios.conversion import structures
+from rios.conversion.base import structures
 from rios.conversion.base import (
     ConversionBase,
     localized_string_object,

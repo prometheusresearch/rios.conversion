@@ -19,6 +19,11 @@ from rios.conversion.redcap.to_rios import (
 )
 
 
+__all__ = (
+    'RedcapFromRios',
+)
+
+
 COLUMNS = [
         "Variable / Field Name",
         "Form Name",

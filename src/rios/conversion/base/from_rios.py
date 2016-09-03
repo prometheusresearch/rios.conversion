@@ -8,15 +8,19 @@ import sys
 import yaml
 
 
-from rios.core import ValidationError
-from rios.conversion.base import ConversionBase, DEFAULT_LOCALIZATION
-from rios.conversion import structures
-from rios.conversion.utils import InMemoryLogger
-from rios.conversion.exception import ConversionValidationError
-from rios.core.validation import (
+from rios.core import (
+    ValidationError,
     validate_instrument,
     validate_form,
     validate_calculationset,
+)
+from rios.conversion.base import ConversionBase, DEFAULT_LOCALIZATION
+from ..utils import InMemoryLogger
+from ..exception import ConversionValidationError
+
+
+__all__ = (
+    'FromRios',
 )
 
 

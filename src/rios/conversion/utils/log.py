@@ -11,9 +11,9 @@ __all__ = (
 )
 
 
-_ERROR_PREFIX = 'ERROR: '
-_WARNING_PREFIX = 'WARNING: '
-_INFO_PREFIX = 'INFO: '
+ERROR_PREFIX = 'ERROR: '
+WARNING_PREFIX = 'WARNING: '
+INFO_PREFIX = 'INFO: '
 
 
 class InMemoryLogger(object):
@@ -47,13 +47,13 @@ class InMemoryLogger(object):
         return self._logs
 
     def info(self, msg):
-        self.log(msg, _INFO_PREFIX)
+        self.log(msg, INFO_PREFIX)
 
     def error(self, msg):
-        self.log(msg, _ERROR_PREFIX)
+        self.log(msg, ERROR_PREFIX)
 
     def warning(self, msg):
-        self.log(msg, _WARNING_PREFIX)
+        self.log(msg, WARNING_PREFIX)
 
     def log(self, msg, pfx=None):
         if not isinstance(msg, six.string_types):

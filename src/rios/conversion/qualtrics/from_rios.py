@@ -15,6 +15,11 @@ from rios.conversion.exception import (
 )
 
 
+__all__ = (
+    'QualtricsFromRios',
+)
+
+
 class QuestionNumber:
     def __init__(self):
         self.number = 0

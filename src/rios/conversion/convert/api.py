@@ -5,7 +5,7 @@
 
 from rios.core import ValidationError
 from rios.conversion.redcap import RedcapToRios, RedcapFromRios
-from rios.conversion.base import structures
+from rios.conversion import structures
 from rios.conversion.qualtrics import QualtricsToRios, QualtricsFromRios
 from rios.conversion.exception import (
     Error,
@@ -22,10 +22,12 @@ __all__ = (
     'qualtrics_to_rios',
     'rios_to_redcap',
     'rios_to_qualtrics',
+    'check_rios_relationship',
+    'validate_rios',
 )
 
 
-class _JsonReaderMetaDataProcessor(JsonReader):
+class JsonReaderMetaDataProcessor(JsonReader):
     """ Process Qualtrics data dictionary/instrument metadata """
 
     def processor(self, data):
@@ -46,33 +48,6 @@ class _JsonReaderMetaDataProcessor(JsonReader):
             raise error
         else:
             return metadata
-
-
-def _check_rios_relationship(instrument, form, calculationset=None):
-    instrument = structures.InstrumentReferenceObject(instrument)
-    if form['instrument'] != instrument:
-        raise RiosRelationshipError(
-            'Form and Instrument do not match:',
-            '{} is not {}'.format(form['instrument'], instrument)
-        )
-    if (calculationset and calculationset['instrument'] != instrument):
-        raise RiosRelationshipError(
-            'Calculationset and Instrument do not match:',
-            '{} is not {}'.format(calculationset['instrument'], instrument)
-        )
-
-
-def _validate_rios(instrument, form, calculationset=None):
-    try:
-        validate_instrument(instrument)
-        validate_form(form, instrument=instrument)
-        if self.calculationset.get('calculations', False):
-            validate_calculationset(calculationset, instrument=instrument)
-    except ValidationError as exc:
-        raise ConversionValidationError(
-            'The supplied RIOS configurations are invalid. Error:',
-            str(exc)
-        )
 
 
 def redcap_to_rios(id, title, description, stream, localization=None,
@@ -191,7 +166,7 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     if filemetadata:
         # Process properties from the stream
         try:
-            reader = _JsonReaderMetaDataProcessor(stream)
+            reader = JsonReaderMetaDataProcessor(stream)
             reader.process()
         except Exception as exc:
             error = ConversionFailureError(
@@ -239,6 +214,32 @@ def qualtrics_to_rios(stream, instrument_version=None, title=None,
     return payload
 
 
+def check_rios_relationship(instrument, form, calculationset=None):
+    instrument = structures.InstrumentReferenceObject(instrument)
+    if form['instrument'] != instrument:
+        raise RiosRelationshipError(
+            'Form and Instrument do not match:',
+            '{} is not {}'.format(form['instrument'], instrument)
+        )
+    if (calculationset and calculationset['instrument'] != instrument):
+        raise RiosRelationshipError(
+            'Calculationset and Instrument do not match:',
+            '{} is not {}'.format(calculationset['instrument'], instrument)
+        )
+
+
+def validate_rios(instrument, form, calculationset=None):
+    try:
+        validate_instrument(instrument)
+        validate_form(form, instrument=instrument)
+        if self.calculationset.get('calculations', False):
+            validate_calculationset(calculationset, instrument=instrument)
+    except ValidationError as exc:
+        raise ConversionValidationError(
+            'The supplied RIOS configurations are invalid. Error:',
+            str(exc)
+        )
+
 def rios_to_redcap(instrument, form, calculationset=None,
                                     localization=None, suppress=False):
     """
@@ -269,8 +270,8 @@ def rios_to_redcap(instrument, form, calculationset=None,
     payload = dict()
 
     try:
-        _validate_rios(instrument, form, calculationset)
-        _check_rios_relationship(instrument, form, calculationset)
+        validate_rios(instrument, form, calculationset)
+        check_rios_relationship(instrument, form, calculationset)
     except Exception as exc:
         error = ConversionFailureError(
             'The supplied RIOS configurations are invalid:',
@@ -334,8 +335,8 @@ def rios_to_qualtrics(instrument, form, calculationset=None,
     payload = dict()
 
     try:
-        _validate_rios(instrument, form, calculationset)
-        _check_rios_relationship(instrument, form, calculationset)
+        validate_rios(instrument, form, calculationset)
+        check_rios_relationship(instrument, form, calculationset)
     except Exception as exc:
         error = ConversionFailureError(
             'The supplied RIOS configurations are invalid:',
