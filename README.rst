@@ -6,33 +6,39 @@ RIOS.CONVERSION is a `Python`_ package that supports
 converting research instruments in various formats 
 to and from `RIOS`_ data structures.
 
-The following command line programs have been implemented.
+The following APIs have been implemented:
 
-- redcap-rios
+- redcap_to_rios
 
-  Converts a REDCap Data Dictionary in csv format to 
-  a RIOS Instrument, Form, and CalculationSet 
-  in JSON or YAML format.
+  Converts a REDCap Data Dictionary format to 
+  the RIOS Instrument, Form, and CalculationSet 
+  format.
 
-- rios-redcap
-
-  Converts a RIOS Instrument, Form, and CalculationSet 
-  to a REDCap Data Dictionary in csv format.
-  
-- qualtrics-rios
-
-  Converts a Qualtrics qsf file to a RIOS Instrument and Form
-  in JSON or YAML format.
-
-- rios-qualtrics
+- rios_to_redcap
 
   Converts a RIOS Instrument, Form, and CalculationSet 
-  to a Qualtrics text file in Simple .TXT format.
+  to the REDCap Data Dictionary format.
   
-Run each program's help to see its 
-required arguments and available options::
+- qualtrics_to_rios
 
-  <program> --help
+  Converts a Qualtrics data dictionary to the RIOS
+  Instrument and Form format.
+
+- rios_to_qualtrics
+
+  Converts a RIOS Instrument, Form, and CalculationSet 
+  to the Qualtrics format.
+  
+Import these functions for use::
+
+  >>> from rios.conversion import (
+  >>>     redcap_to_rios,
+  >>>     qualtrics_to_rios,
+  >>>     rios_to_redcap,
+  >>>     rios_to_qualtrics,
+  >>> )
+
+Notes:
 
 The question order, text, and associated enumerations, 
 are all converted correctly; however the converted expressions

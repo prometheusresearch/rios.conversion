@@ -1,23 +1,30 @@
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+
+
 import collections
 import csv
 import re
 
+
 __all__ = (
     "CsvReader",
-    )
+)
 
 
 class CsvReader(object):
-    """This object reads `fname`, a csv file, and can iterate over the rows.
+    """
+    This object reads `fname`, a csv file, and can iterate over the rows.
 
-    usage:
+    Usage:
 
         for row in CsvReader(fname):
             assert isinstance(row, OrderedDict)
             ... process the row
 
-    fname is either the filename, or an open file object, or any object
-    suitable for csv.reader.
+    `fname` is either a filename, an open file object, or any object suitable
+    for `csv.reader`.
 
     The first row is expected to be a list of column names.
     These are converted to "canonical" form by get_name()
@@ -26,9 +33,10 @@ class CsvReader(object):
     Subsequent rows are converted by get_row()
     into OrderedDicts based on the keys in self.attributes.
 
-    - get_name(name): returns the "canonical" name.
+    - get_name(name): returns the "canonical" name (if overriden)
       The default returns name unchanged.
     """
+
     def __init__(self, fname):
         self.fname = fname
         self.attributes = []
@@ -47,6 +55,8 @@ class CsvReader(object):
     def get_reader(fname):
         fi = open(fname, 'rU') if isinstance(fname, str) else fname
         filtered = (re.sub(r'(\r\n)|(\r)', r'', line) for line in fi)
+        if hasattr(fname, 'seek'):
+            fname.seek(0)
         return csv.reader(filtered)
 
     def get_row(self, row):

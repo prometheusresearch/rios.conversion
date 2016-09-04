@@ -1,3 +1,11 @@
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
+
+
+__all__ = ('balanced_match',)
+
+
 PAIRS = ['()', ]
 LEFTS = {p[0]: p[1] for p in PAIRS}
 RIGHTS = {p[1]: p[0] for p in PAIRS}

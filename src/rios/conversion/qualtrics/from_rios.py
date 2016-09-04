@@ -1,12 +1,20 @@
-"""
-Converts RIOS instrument, form, and optional calculationset files
-into a text file in Qualtrics Simple .TXT format.
-"""
+#
+# Copyright (c) 2016, Prometheus Research, LLC
+#
 
-import rios.core.validation.instrument as RI
-import sys
 
-from rios.conversion.from_rios import FromRios
+from rios.core.validation.instrument import get_full_type_definition
+from rios.conversion.base import FromRios
+from rios.conversion.exception import (
+    ConversionValueError,
+    QualtricsFormatError,
+    Error,
+)
+
+
+__all__ = (
+    'QualtricsFromRios',
+)
 
 
 class QuestionNumber:
@@ -19,66 +27,127 @@ class QuestionNumber:
 
 
 class QualtricsFromRios(FromRios):
-    description = __doc__
+    """
+    Converts RIOS instrument and form definitions into a Qualtrics data
+    dictionary.
+    """
 
-    def call(self):
+    def __call__(self):
         self.lines = []
         self.question_number = QuestionNumber()
-        for page in self.form['pages']:
-            self.start_page(page)
-            for element in self.elements:
-                self.process_element(element)
-        self.create_txt_file()
-        return 0
+        for page in self._form['pages']:
+            try:
+                self.page_processor(page)
+            except Exception as exc:
+                if isinstance(exc, ConversionValueError):
+                    # Don't need to specify what's being skipped here, because
+                    # deeper level exceptions access that data.
+                    self.logger.warning(str(exc))
+                elif isinstance(exc, QualtricsFormatError):
+                    error = Error(
+                        "RIOS data dictionary conversion failure:",
+                        "Unable to parse the data dictionary"
+                    )
+                    self.logger.error(str(error))
+                    raise error
+                else:
+                    error = Error(
+                        "An unknown or unexpected error occured:",
+                        repr(exc)
+                    )
+                    error.wrap(
+                        "RIOS data dictionary conversion failure:",
+                        "Unable to parse the data dictionary"
+                    )
+                    self.logger.error(str(error))
+                    raise error
 
-    def create_txt_file(self):
-        # skip the first line ([[PageBreak]])
-        # skip the last 2 lines (blank)
-        for line in self.lines[1: -2]:
-            self.outfile.write(line + '\n')
+        # Skip the first line ([[PageBreak]]) and the last 2 lines (blank)
+        def rmv_extra_strings(lst):
+            if len(lst) > 0:
+                if lst[0] == '[[PageBreak]]':
+                    rmv_extra_strings(lst[1:])
+                elif lst[-1] == "":
+                    rmv_extra_strings(lst[:-1])
+            return lst[:]
 
-    def process_element(self, element):
-        type_ = element['type']
-        options = element['options']
-        if type_ == 'question':
-            self.process_question(options)
-        else:
-            self.warning('element type is not "question": %s' % type_)
+        for line in rmv_extra_strings(self.lines):
+            self._definition.append(line)
 
-    def process_question(self, question):
-        field_id = question['fieldId']
-        field = self.fields[field_id]
-        type_object = RI.get_full_type_definition(
-                self.instrument,
-                field['type'])
-        base = type_object['base']
-        if base == 'enumeration':
-            multiple_answer = False
-        elif base == 'enumerationSet':
-            multiple_answer = True
-        else:
-            self.skip_field_warning(
-                    field_id,
-                    'base not "enumeration" or "enumerationSet": %s' % base, )
-            return
-        self.lines.append('%d. %s' % (
-                self.question_number.next(),
-                self.get_local_text(question['text']), ))
-        if multiple_answer:
-            self.lines.append('[[MultipleAnswer]]')
-        self.lines.append('')   # blank line separates question from choices.
-        for enumeration in question['enumerations']:
-            self.lines.append(self.get_local_text(enumeration['text']))
-        self.lines.append('')   # 2 blank lines between questions
-        self.lines.append('')   # 2 blank lines between questions
-
-    def skip_field_warning(self, field_id, message):
-        self.warning('field skipped: %s, %s' % (field_id, message))
-
-    def start_page(self, page):
+    def page_processor(self, page):
+        # Start the page
         self.lines.append('[[PageBreak]]')
-        self.elements = page['elements']
+        elements = page['elements']
+        # Process question elements
+        for question in elements:
+            question_options = question['options']
+            # Get question ID for exception/error messages
+            # Get question/form element ID value for error messages
+            try:
+                identifier = question['options']['fieldId']
+            except:
+                identifier = question['options']['text'].get(
+                    self.localization,
+                    None
+                )
+            if not identifier:
+                raise ConversionValueError(
+                    'Form element has no identifier.'
+                    ' Invalid element data:',
+                    str(question)
+                )
+            # Handle form element if a question
+            if question['type'] == 'question':
+                try:
+                    self.question_processor(question_options)
+                except Exception as exc:
+                    error = ConversionValueError(
+                        ("Skipping form field with ID: " + str(identifier)
+                                + ". Error:"),
+                        (str(exc) if isinstance(exc, Error) else repr(exc))
+                    )
+                    raise error
+            else:
+                # Qualtrics only handles form questions
+                error = ConversionValueError(
+                    'Skipping form field with ID:',
+                    str(identifier)
+                )
+                error.wrap(
+                    'Form element type is not \"question\". Got:',
+                    str(question['type'])
+                )
+                raise error
 
-
-def main(argv=None, stdout=None, stderr=None):
-    sys.exit(QualtricsFromRios()(argv, stdout, stderr))   # pragma: no cover
+    def question_processor(self, question_options):
+        field_id = question_options['fieldId']
+        field = self.fields[field_id]
+        type_object = get_full_type_definition(
+            self._instrument,
+            field['type']
+        )
+        base = type_object['base']
+        if base not in ('enumeration', 'enumerationSet',):
+            error = ConversionValueError(
+                "Invalid question type:",
+                "Type is not \"enumeration\" or \"enumerationSet\""
+            )
+            error.wrap("Got invalid value for type:", str(base))
+            raise error
+        self.lines.append(
+            '%d. %s' % (
+                self.question_number.next(),
+                self.get_local_text(question_options['text']),
+            )
+        )
+        if base == 'enumerationSet':
+            self.lines.append('[[MultipleAnswer]]')
+        # Blank line separates question from choices.
+        self.lines.append('')
+        for enumeration in question_options['enumerations']:
+            self.lines.append(
+                self.get_local_text(enumeration['text'])
+            )
+        # Two blank lines between questions
+        self.lines.append('')
+        self.lines.append('')

@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='rios.conversion',
-    version='0.5.0',
+    version='0.6.0',
     description='Module for converting Instruments to and from RIOS',
     long_description=open('README.rst', 'r').read(),
     keywords='rios instrument assessment conversion',
@@ -28,17 +28,11 @@ setup(
     zip_safe=True,
     include_package_data=True,
     namespace_packages=['rios'],
-    entry_points={
-        'console_scripts': [
-            'redcap-rios = rios.conversion.redcap.to_rios:main',
-            'rios-redcap = rios.conversion.redcap.from_rios:main',
-            'qualtrics-rios = rios.conversion.qualtrics.to_rios:main',
-            'rios-qualtrics = rios.conversion.qualtrics.from_rios:main',
-        ]
-    },
+    entry_points={},
     install_requires=[
         'pyyaml',
         'rios.core>=0.6.0,<1',
+        'simplejson==3.8.2',
     ],
     extras_require={
         'dev': [

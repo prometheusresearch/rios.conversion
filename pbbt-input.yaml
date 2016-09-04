@@ -10,27 +10,5 @@ tests:
   - sh: pip install --quiet coverage nose
     ignore: true
 
-  - rmdir: ./tests/sandbox
-  - mkdir: ./tests/sandbox/redcap
-  - mkdir: ./tests/sandbox/qualtrics
-
   - sh: nosetests --quiet
     ignore: true
-
-  # validate .json output files with rios-validate.
-  - sh: |
-      sh -c \
-      "for INSTRUMENT in ./tests/sandbox/*/*_i.json; 
-      do 
-          echo $INSTRUMENT
-          rios-validate instrument $INSTRUMENT
-          NAME=$(basename $INSTRUMENT i.json)
-          DIR=$(dirname $INSTRUMENT)
-          FORM=$DIR/${NAME}f.json
-          echo $FORM
-          rios-validate -i $INSTRUMENT form $FORM
-          CALC=$DIR/${NAME}c.json
-          ! test -f $CALC || echo $CALC
-          ! test -f $CALC || rios-validate -i $INSTRUMENT calculationset $CALC
-      done"
-

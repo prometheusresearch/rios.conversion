@@ -1,14 +1,24 @@
 """ Specialized tests to insure complete coverage.
 """
-from rios.conversion.balanced_match import *
-from rios.conversion.classes import *
-from rios.conversion.csv_reader import *
-from rios.conversion.from_rios import FromRios
+from rios.conversion.utils.balanced_match import *
+from rios.conversion.base.structures import *
+from rios.conversion.utils.csv_reader import *
+from rios.conversion.base.from_rios import FromRios
 from rios.conversion.redcap.from_rios import RedcapFromRios
 import collections
-import json, yaml
+import json, yaml, os
 
-print('%s: testing ...' % __file__)
+
+print "\n====== COVERAGE TESTS ======"
+
+
+DUMMY_ARGS = {
+    'localization': None,
+    'form': None,
+    'instrument': None,
+    'calculationset': None,
+}
+
 
 def test_add_field():
     type_object = TypeObject()
@@ -37,7 +47,7 @@ def test_balanced_match():
     assert (b, e) == (0, 5)
 
 def test_convert_variables():
-    rfr = RedcapFromRios()
+    rfr = RedcapFromRios
     answer = '[assessment_var] + [calculations_var] + [table][field]'
     assert answer == rfr.convert_variables(
             'assessment["assessment_var"] '
@@ -49,16 +59,3 @@ def test_csv_reader():
     csv_reader.load_reader()
     rows = [od for od in csv_reader]
     assert len(rows) == 24, len(rows)
- 
-def test_loader():
-    from_rios = FromRios()
-    TestFile = collections.namedtuple('TestFile', ['name',])
-    yaml_file = TestFile(name='test.yaml')
-    json_file = TestFile(name='test.json')
-    other_file = TestFile(name='test')
-    from_rios.format = 'json'
-    assert from_rios.get_loader(yaml_file) == yaml
-    assert from_rios.get_loader(json_file) == json
-    assert from_rios.get_loader(other_file) == json
-
-print('%s: OK' % __file__)

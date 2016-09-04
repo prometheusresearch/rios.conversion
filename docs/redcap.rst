@@ -2,20 +2,17 @@
 REDCap Converter
 ****************
 
-redcap-rios
-===========
+redcap_to_rios
+==============
 
 Converts a REDCap Data Dictionary in csv format to 
-a RIOS Instrument, Form, and CalculationSet 
-in JSON or YAML format.
+a RIOS Instrument, Form, and CalculationSet into a dictionary.
 
 The instrument id, version, and title must be provided as 
-arguments on the command line as they are not in the csv file.
+arguments on the command line as they are not in the CSV file.
 
-The program creates or overwrites its output files.
 As for CalculationSet, if there are no calculations in the input, 
-no CalculationSet file will be created, 
-and if it already existed it will be deleted.
+no CalculationSet data will be created. 
  
 Since there are restrictions on `RIOS Identifiers`_,
 the program converts all internal values to valid identifiers.
@@ -130,11 +127,11 @@ Entries with the same **page** must appear consecutively.
       {'c999': 'N/A'}
 
  
-rios-redcap
-===========
+rios_to_redcap
+==============
 
 Converts a RIOS Instrument, Form, and optional CalculationSet 
-to a REDCap Data Dictionary in csv format.
+to a REDCap Data Dictionary.
 
 The first format is used for output because it supports calculations,
 branching logic, and matrices, as well as the "required" and "identifiable"
@@ -149,11 +146,11 @@ Cavaets
   This must be done manually.
  
 * RIOS calculations are associated with an assessment and are not 
-  directly connected to a form.  Consequently all of the calculations 
+  directly connected to a form. Consequently all of the calculations 
   are appended to the last page of the REDCap Data Dictionary.
 
 * The only RIOS matrices which can be converted to REDCap have exactly
-  one question column.  This column must be an enumeration or enumerationSet.
+  one question column. This column must be an enumeration or enumerationSet.
 
 Expressions
 ===========
@@ -191,8 +188,7 @@ rios.conversion as a dependency for your project.
 Matrices
 ========
 
-REDCap matrices of R rows by C columns 
-become a RIOS matrix of R rows by 1 column.
+REDCap matrices of R rows by C columns become a RIOS matrix of R rows by 1 column.
 The single column is an enumeration (or enumeration set) of C values.
 
 .. _PEXL: https://bitbucket.org/rexdb/rex.expression-provisional#rst-header-features-supported

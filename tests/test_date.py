@@ -1,4 +1,6 @@
-import rios.conversion.redcap.date as D
+import rios.conversion.redcap.functions as D
+
+print "\n====== DATE TESTS ======"
 
 def ndays(year):
     d = ['%02d-01-%04d' % (m, year) for m in range(1,1 + 12)]
@@ -8,7 +10,6 @@ def ndays(year):
 leap = [31.0, 29.0, 31.0, 30.0, 31.0, 30.0, 31.0, 31.0, 30.0, 31.0, 30.0, 31.0]
 year = [31.0, 28.0, 31.0, 30.0, 31.0, 30.0, 31.0, 31.0, 30.0, 31.0, 30.0, 31.0]
 
-print('%s: testing ...' % __file__)
 
 def test_ndays():
     assert ndays(2000) == leap
@@ -25,5 +26,3 @@ def test_datediff():
         assert False, "'x' is not supposed to be a valid unit."
     except ValueError:
         pass
-
-print('%s: OK' % __file__)
