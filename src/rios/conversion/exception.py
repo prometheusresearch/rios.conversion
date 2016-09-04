@@ -6,6 +6,20 @@
 import textwrap
 
 
+__all__ = (
+    'Error',
+    'guard',
+
+    'ConversionFailureError',
+    'ConversionValueError',
+    'RedcapFormatError',
+    'QualtricsFormatError',
+    'RiosFormatError',
+    'RiosRelationshipError',
+)
+    
+
+
 class Paragraph(object):
     """
      Represents error context as a text message with an optional payload.
