@@ -32,35 +32,46 @@ Convert to RIOS
 
 ::
 
-  $ qualtrics-rios \
-          --instrument-version 1.0 \
-          --infile my-qualtrics-instrument.qsf \
-          --outfile-prefix /tmp/example_1 \
-          --format yaml
-  $ redcap-rios \
-          --title 'REDCap Example' \
-          --id urn:redcap1 \
-          --instrument-version 1.0 \
-          --infile my-redcap-instrument.csv \
-          --outfile-prefix /tmp/example_2 \
-          --format json
+  >>> from rios.conversion import (
+  >>>     rios_to_redcap,
+  >>>     rios_to_qualtrics,
+  >>> )
+  >>>
+  >>> ...open instrument, form, calculationset files into streams/buffers...
+  >>>
+  >>> instrument = rios_to_redcap(
+  >>>     instrument=instrument,
+  >>>     form=form,
+  >>>     calculationset=calculationset,
+  >>>     localization='en',
+  >>>     suppress=False
+  >>> )
+  >>>
+  >>> ...use instrument object...
 
 Convert from RIOS
 
 ::
 
-  $ rios-qualtrics \
-          --verbose \
-          -i my-rios-instrument_i.yaml \
-          -f my-rios-instrument_f.yaml \
-          -c my-rios-instrument_c.yaml \
-          -o /tmp/example_3.txt
-  $ rios-redcap \
-          --verbose \
-          -i my-rios-instrument_i.yaml \
-          -f my-rios-instrument_f.yaml \
-          -c my-rios-instrument_c.yaml \
-          -o /tmp/example_3.csv
+  >>> from rios.conversion import (
+  >>>     redcap_to_rios,
+  >>>     qualtrics_to_rios,
+  >>> )
+  >>>
+  >>> ...open data dictionary into a stream/buffer...
+  >>> ...generate instrument id, title, description...
+  >>>
+  >>> rios_definition = rios_to_redcap(
+  >>>     id=id,
+  >>>     title=title,
+  >>>     description=description,
+  >>>     stream=stream,
+  >>>     localization='en',
+  >>>     instrument_version='1.0',
+  >>>     suppress=False
+  >>> )
+  >>>
+  >>> ...use rios definition...
 
 Overview
 ========
