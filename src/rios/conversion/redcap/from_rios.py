@@ -106,12 +106,6 @@ class RedcapFromRios(FromRios):
                     self.logger.error(str(error))
                     raise error
                 else:
-                    print "IN EXCEPTION!"
-                    print "IN EXCEPTION!"
-                    print "IN EXCEPTION!"
-                    print "IN EXCEPTION!"
-                    print "IN EXCEPTION!"
-                    print "IN EXCEPTION!"
                     error = Error(
                         "An unknown or unexpected error occured:",
                         repr(exc)
