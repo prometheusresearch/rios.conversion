@@ -17,7 +17,6 @@ __all__ = (
     'RiosFormatError',
     'RiosRelationshipError',
 )
-    
 
 
 class Paragraph(object):
