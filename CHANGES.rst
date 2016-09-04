@@ -3,13 +3,24 @@ Change History
 **************
 
 
-0.6.0 (2016-xx-xx)
+0.6.0 (2016-09-xx)
 ==================
 
-* Major code refactor and reorganization
-* Stripped out CLI/argparse command-like interface to conversion classes
-* CLI interface reduced to the single command "rios-convert"
-* Proper implementation of test suite
+* New API implemented with corresponding documentation
+* Top level API exposes four functions for conversion: redcap_to_rios, qualtrics_to_rios, rios_to_redcap, rios_to_qualtrics
+* Complete code refactor and reorganization
+* Completely stripped out CLI/argparse command-like interface to conversion classes
+* Proper implementation of a complete test suite
+* Test files reorganized into a proper directory structure
+* Implemented user friendly error output messages that make sense
+* Implemented logging system to log errors, warnings, and information
+* JSON reader class implemented with subclasses for the Qualtrics to RIOS converter and API
+* Package simplejson added as a dependency for better JSON error output
+* Instrument and calculation storage mechanism implemented
+* Exception class suite added to the package with specific, package-based exceptions
+* Base Error class implemented for friendly error output
+* TODO: Implement new command line interface with some sort of relevant output format
+
 
 0.5.0 (2016-08-17)
 ==================

@@ -28,11 +28,7 @@ setup(
     zip_safe=True,
     include_package_data=True,
     namespace_packages=['rios'],
-    entry_points={
-        'console_scripts': [
-            'rios-convert = rios.conversion.scripts:convert',
-        ]
-    },
+    entry_points={},
     install_requires=[
         'pyyaml',
         'rios.core>=0.6.0,<1',
