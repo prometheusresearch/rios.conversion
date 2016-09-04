@@ -103,5 +103,5 @@ class ConversionBase(object):
         """
 
         raise NotImplementedError(
-            "{}.instrument".format(self.__class__.__name__)
+            "{}.package".format(self.__class__.__name__)
         )
