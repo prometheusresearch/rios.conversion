@@ -743,7 +743,7 @@ class Processor(ProcessorBase):
                 if val_min_is_int and val_max_is_int:
                     text_type = 'integer'
                 else:
-                    # One of the values may be a float, so castto float
+                    # One of the values may be a float, so cast to float
                     text_type = 'float'
                     if val_min_is_int:
                         val_min = val_min + '.0'
