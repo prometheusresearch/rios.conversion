@@ -38,7 +38,7 @@ class ToRios(ConversionBase):
         """
 
         # Set attributes
-        self.id = id
+        self.id = (id if 'urn:' in str(id) else ('urn:' + str(id)))
         self.instrument_version = instrument_version or DEFAULT_VERSION
         self.title = title
         self.localization = localization or DEFAULT_LOCALIZATION

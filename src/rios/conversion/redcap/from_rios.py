@@ -144,7 +144,7 @@ class RedcapFromRios(FromRios):
                     else:
                         raise exc
 
-        self._definition.append(list(self._rows))
+        self._definition.append(self._rows)
 
     def page_processor(self, page):
         self.form_name = page.get('id', None)
