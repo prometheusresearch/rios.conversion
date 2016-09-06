@@ -93,19 +93,22 @@ class ToRios(ConversionBase):
         """
 
         try:
+            val_type = "Instrument"
             validate_instrument(self.instrument)
+            val_type = "Form"
             validate_form(
                 self.form,
                 instrument=self.instrument,
             )
             if self.calculationset.get('calculations', False):
+                val_type = "Calculationset"
                 validate_calculationset(
                     self.calculationset,
                     instrument=self.instrument
                 )
         except ValidationError as exc:
             error = ConversionValidationError(
-                'Validation error:',
+                (val_type + ' validation error:'),
                 str(exc)
             )
             self.logger.error(str(error))

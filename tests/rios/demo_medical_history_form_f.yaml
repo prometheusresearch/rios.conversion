@@ -1,0 +1,546 @@
+title:
+  en: Demo Medical History Form
+defaultLocalization: en
+instrument:
+  id: "urn:demo-medical-history-form"
+  version: '1.0'
+pages:
+- id: page1
+  elements:
+  - type: header
+    options:
+      text:
+        en: General Information
+  - type: question
+    options:
+      fieldId: name
+      text:
+        en: Name
+  - type: question
+    options:
+      fieldId: address
+      text:
+        en: Address
+  - type: question
+    options:
+      fieldId: phone_number
+      text:
+        en: Phone number
+  - type: question
+    options:
+      fieldId: email_address
+      text:
+        en: Email Address
+  - type: question
+    options:
+      fieldId: birth_date
+      text:
+        en: Birth Date
+  - type: question
+    options:
+      fieldId: marital_status
+      text:
+        en: Marital Status
+      enumerations:
+      - id: single
+        text:
+          en: Single
+      - id: married
+        text:
+          en: Married
+      - id: divorced
+        text:
+          en: Divorced
+      - id: widowed
+        text:
+          en: Widowed
+  - type: question
+    options:
+      fieldId: gender
+      text:
+        en: What is your gender?
+      enumerations:
+      - id: male
+        text:
+          en: Male
+      - id: female
+        text:
+          en: Female
+  - type: question
+    options:
+      fieldId: age
+      text:
+        en: What is your age?
+      enumerations:
+      - id: age18-29
+        text:
+          en: 18-29 years old
+      - id: age30-49
+        text:
+          en: 30-49 years old
+      - id: age50-64
+        text:
+          en: 50-64 years old
+      - id: age65-and-over
+        text:
+          en: 65 years and over
+  - type: question
+    options:
+      fieldId: height
+      text:
+        en: Height
+  - type: question
+    options:
+      fieldId: weight
+      text:
+        en: Weight
+  - type: question
+    options:
+      fieldId: iq
+      text:
+        en: IQ
+- id: page2
+  elements:
+  - type: question
+    options:
+      fieldId: >-
+        please_indicate_if_you_currently_have_or_have
+      text:
+        en: >-
+          Please indicate if you currently have or have had in the past, conditions
+          related to any of the following:
+      enumerations:
+      - id: ears_eyes_throat
+        text:
+          en: Ears/Eyes/Throat/Nose
+      - id: neurological
+        text:
+          en: Neurological
+      - id: endocrine
+        text:
+          en: Endocrine
+      - id: circulatory
+        text:
+          en: Cardiovascular
+      - id: respiratory
+        text:
+          en: Respiratory
+      - id: gastrointestinal
+        text:
+          en: Gastrointestinal
+      - id: other
+        text:
+          en: Other
+      events:
+      - action: hide
+        targets:
+        - page3
+        trigger: please_indicate_if_you_currently_have_or_have.ears_eyes_throat!=true()
+      - action: hide
+        targets:
+        - please_list_other_condition
+        trigger: please_indicate_if_you_currently_have_or_have.other!=true()
+      - action: hide
+        targets:
+        - page4
+        trigger: please_indicate_if_you_currently_have_or_have.neurological!=true()
+      - action: hide
+        targets:
+        - page5
+        trigger: please_indicate_if_you_currently_have_or_have.endocrine!=true()
+      - action: hide
+        targets:
+        - page6
+        trigger: please_indicate_if_you_currently_have_or_have.respiratory!=true()
+      - action: hide
+        targets:
+        - page7
+        trigger: please_indicate_if_you_currently_have_or_have.circulatory!=true()
+      - action: hide
+        targets:
+        - page8
+        trigger: please_indicate_if_you_currently_have_or_have.gastrointestinal!=true()
+  - type: question
+    options:
+      fieldId: please_list_other_condition
+      text:
+        en: Please list other condition
+- id: page3
+  elements:
+  - type: question
+    options:
+      fieldId: please_provide_desc_ears_eyes
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each illness
+          related to eyes, ears, nose, or throat.
+      help:
+        en: >-
+          Related illnesses may include any of the following: hearing loss, ringing
+          in ears, dizziness, cataract, glaucoma, blurred vision, double vision, nose
+          bleeds/discharge, sinus, trouble breathing through nose, mouth sores, trouble
+          swallowing, etc.
+      questions:
+      - fieldId: brief_desc_illness
+        text:
+          en: Brief description of illness
+      - fieldId: approximate_start_date
+        text:
+          en: Approximate Start Date
+      - fieldId: illness_still_persisting
+        text:
+          en: Is the illness still persisting?
+        enumerations:
+        - id: yes
+          text:
+            en: Yes
+        - id: no
+          text:
+            en: No
+        events:
+        - action: hide
+          targets:
+          - approximate_end_date
+          trigger: >-
+            illness_still_persisting==null() | illness_still_persisting='yes'
+      - fieldId: approximate_end_date
+        text:
+          en: Approximate End Date
+- id: page4
+  elements:
+  - type: question
+    options:
+      fieldId: >-
+        please_provide_desc_illness_related_ears_eyes
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each neurological
+          illness.
+      help:
+        en: >-
+          Related illnesses may include any of the following: weakness, concussion,
+          loss of consciousness, headaches, seizures, memory loss, trouble walking,
+          trouble with balance, numbness, tingling, falls, vertigo, etc.
+      questions:
+      - fieldId: brief_desc_illness2
+        text:
+          en: Brief description of illness
+      - fieldId: approximate_start_date2
+        text:
+          en: Approximate Start Date
+      - fieldId: illness_still_persisting2
+        text:
+          en: Is the illness still persisting?
+        enumerations:
+        - id: yes
+          text:
+            en: Yes
+        - id: no
+          text:
+            en: No
+        events:
+        - action: hide
+          targets:
+          - approximate_end_date2
+          trigger: >-
+            illness_still_persisting2==null() | illness_still_persisting2='yes'
+      - fieldId: approximate_end_date2
+        text:
+          en: Approximate End Date
+- id: page5
+  elements:
+  - type: question
+    options:
+      fieldId: endocrine_illness
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each endocrine
+          illness.
+      help:
+        en: >-
+          Related illnesses may include any of the following: thyroid, diabetes, low
+          blood sugar, etc.
+      questions:
+      - fieldId: brief_desc_illness3
+        text:
+          en: Brief description of illness
+      - fieldId: approximate_start_date3
+        text:
+          en: Approximate Start Date
+      - fieldId: illness_still_persisting3
+        text:
+          en: Is the illness still persisting?
+        enumerations:
+        - id: yes
+          text:
+            en: Yes
+        - id: no
+          text:
+            en: No
+        events:
+        - action: hide
+          targets:
+          - approximate_end_date3
+          trigger: >-
+            illness_still_persisting3==null() | illness_still_persisting3='yes'
+      - fieldId: approximate_end_date3
+        text:
+          en: Approximate End Date
+- id: page6
+  elements:
+  - type: question
+    options:
+      fieldId: respiratory
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each respiratory
+          illness.
+      help:
+        en: >-
+          Related illnesses may include any of the following: Bronchitis, pneumonia,
+          tuberculosis, asthma, chronic cough, shortness of breath, etc.
+      questions:
+      - fieldId: brief_desc_illness4
+        text:
+          en: Brief description of illness
+      - fieldId: approximate_start_date4
+        text:
+          en: Approximate Start Date
+      - fieldId: illness_still_persisting4
+        text:
+          en: Is the illness still persisting?
+        enumerations:
+        - id: yes
+          text:
+            en: Yes
+        - id: no
+          text:
+            en: No
+        events:
+        - action: hide
+          targets:
+          - approximate_end_date4
+          trigger: >-
+            illness_still_persisting4==null() | illness_still_persisting4='yes'
+      - fieldId: approximate_end_date4
+        text:
+          en: Approximate End Date
+- id: page7
+  elements:
+  - type: question
+    options:
+      fieldId: cardio
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each cardiovascular
+          illness.
+      help:
+        en: >-
+          Related illnesses may include any of the following: chest pain, chest pressure,
+          angina, fainting, leg swelling, high blood pressure, low blood pressure,
+          heart murmur, heart failure, etc.
+      questions:
+      - fieldId: brief_desc_illness5
+        text:
+          en: Brief description of illness
+      - fieldId: approximate_start_date5
+        text:
+          en: Approximate Start Date
+      - fieldId: illness_still_persisting5
+        text:
+          en: Is the illness still persisting?
+        enumerations:
+        - id: yes
+          text:
+            en: Yes
+        - id: no
+          text:
+            en: No
+        events:
+        - action: hide
+          targets:
+          - approximate_end_date5
+          trigger: >-
+            illness_still_persisting5==null() | illness_still_persisting5='yes'
+      - fieldId: approximate_end_date5
+        text:
+          en: Approximate End Date
+- id: page8
+  elements:
+  - type: question
+    options:
+      fieldId: gastrointestinal
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each gastrointestinal
+          illness.
+      help:
+        en: >-
+          Related illnesses may include any of the following: nausea, vomiting, diarrhea,
+          abdominal pain, bloody stools, ulcers, hernias, indigestion, constipation,
+          cirrhosis, hepatitis, etc.
+      questions:
+      - fieldId: brief_desc_illness6
+        text:
+          en: Brief description of illness
+      - fieldId: approximate_start_date6
+        text:
+          en: Approximate Start Date
+      - fieldId: illness_still_persisting6
+        text:
+          en: Is the illness still persisting?
+        enumerations:
+        - id: yes
+          text:
+            en: Yes
+        - id: no
+          text:
+            en: No
+        events:
+        - action: hide
+          targets:
+          - approximate_end_date6
+          trigger: >-
+            illness_still_persisting6==null() | illness_still_persisting6='yes'
+      - fieldId: approximate_end_date6
+        text:
+          en: Approximate End Date
+- id: page9
+  elements:
+  - type: question
+    options:
+      fieldId: do_you_have_any_drug_allergies
+      text:
+        en: Do you have any drug allergies?
+      enumerations:
+      - id: yes
+        text:
+          en: Yes
+      - id: no
+        text:
+          en: No
+      events:
+      - action: disable
+        targets:
+        - >-
+          please_click_on_add_drug_enter_information_ea
+        trigger: >-
+          do_you_have_any_drug_allergies==null() | do_you_have_any_drug_allergies='no'
+  - type: question
+    options:
+      fieldId: >-
+        please_click_on_add_drug_enter_information_ea
+      text:
+        en: >-
+          Please click on Add Illness button to provide description for each gastrointestinal
+          illness.
+      questions:
+      - fieldId: drug_name
+        text:
+          en: Drug Name
+      - fieldId: what_was_predominant_reaction
+        text:
+          en: >-
+            What was the predominant reaction?
+        enumerations:
+        - id: hives
+          text:
+            en: Hives
+        - id: rash
+          text:
+            en: Rash
+        - id: itching
+          text:
+            en: Itching
+        - id: asthma
+          text:
+            en: Asthma
+        - id: shock
+          text:
+            en: Shock
+        - id: other
+          text:
+            en: Other
+        events:
+        - action: hide
+          targets:
+          - please_list_other_reaction
+          trigger: >-
+            what_was_predominant_reaction==null() | what_was_predominant_reaction!='other'
+      - fieldId: please_list_other_reaction
+        text:
+          en: Please list other reaction
+- id: page10
+  elements:
+  - type: question
+    options:
+      fieldId: physician_information
+      text:
+        en: >-
+          Enter your current physician(s) information.
+      questions:
+      - fieldId: physician_name
+        text:
+          en: Physician's Name
+      - fieldId: physicians_address
+        text:
+          en: Physician's address
+      - fieldId: physicians_phone_number
+        text:
+          en: Physician's phone number
+  - type: question
+    options:
+      fieldId: list_current_past_medications
+      text:
+        en: List current/past medications
+      questions:
+      - fieldId: name_med
+        text:
+          en: Name of the medication
+      - fieldId: dosage
+        text:
+          en: Dosage
+      - fieldId: frequency
+        text:
+          en: Frequency
+      - fieldId: starting_date
+        text:
+          en: Starting Date
+      - fieldId: ending_date
+        text:
+          en: Ending Date
+      - fieldId: purpose
+        text:
+          en: Purpose
+  - type: question
+    options:
+      fieldId: >-
+        have_you_had_any_surgical_procedures
+      text:
+        en: >-
+          Have you had any surgical procedures?
+      enumerations:
+      - id: yes
+        text:
+          en: Yes
+      - id: no
+        text:
+          en: No
+      events:
+      - action: hide
+        targets:
+        - list_your_surgical_procedures
+        trigger: >-
+          have_you_had_any_surgical_procedures==null() | have_you_had_any_surgical_procedures='no'
+  - type: question
+    options:
+      fieldId: list_your_surgical_procedures
+      text:
+        en: List your surgical procedures.
+      questions:
+      - fieldId: date_surgical_procedure
+        text:
+          en: Date of surgical procedure
+      - fieldId: procedure_name
+        text:
+          en: Procedure name
