@@ -7,6 +7,7 @@ import re
 import json
 import six
 import collections
+import ast
 
 
 from rios.conversion.base import structures
@@ -72,6 +73,13 @@ OPERATOR_TO_REXL = [
 
 # array of (regex pattern, replacement)
 RE_ops = [(re.compile(redcap), rexl) for redcap, rexl in OPERATOR_TO_REXL]
+
+
+def isint(s):
+    """ Checks if a numerical string value is an integer """
+    val = ast.literal_eval(s)
+    chk = isinstance(val, int) or (isinstance(val, float) and val.is_integer())
+    return chk
 
 
 class CsvReaderWithGetName(CsvReader):
@@ -727,11 +735,40 @@ class Processor(ProcessorBase):
         def process_text():
             val_min = row['text_validation_min']
             val_max = row['text_validation_max']
-            text_type = self.convert_text_type(
-                    row['text_validation'])
+
+            # Determine text type
+            val_min_is_int = False if not val_min else isint(val_min)
+            val_max_is_int = False if not val_max else isint(val_max)
+            if val_min and val_max:
+                if val_min_is_int and val_max_is_int:
+                    text_type = 'integer'
+                else:
+                    # One of the values may be a float, so cast to float
+                    text_type = 'float'
+                    if val_min_is_int:
+                        val_min = val_min + '.0'
+                    if val_max_is_int:
+                        val_max = val_max + '.0'
+            elif val_min and not val_max:
+                if val_min_is_int:
+                    text_type = 'integer'
+                else:
+                    text_type = 'float'
+            elif not val_min and val_max:
+                if val_max_is_int:
+                    text_type = 'integer'
+                else:
+                    text_type = 'float'
+            else:
+                # val_min and val_max are empty
+                text_type = self.convert_text_type(row['text_validation'])
+
+            # Get widget for text_type
             if side_effects:
                 question.set_widget(get_widget(
                         type=get_widget_type(text_type)))
+
+            # Created bounded constraint object
             if val_min or val_max:
                 bound_constraint = structures.BoundConstraintObject()
                 if val_min:

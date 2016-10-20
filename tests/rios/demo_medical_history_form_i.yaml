@@ -1,0 +1,223 @@
+id: "urn:demo-medical-history-form"
+version: '1.0'
+title: Demo Medical History Form
+record:
+- id: name
+  type: text
+  required: true
+- id: address
+  type: text
+- id: phone_number
+  type: text
+- id: email_address
+  type: text
+  required: true
+- id: birth_date
+  type: date
+  required: true
+- id: marital_status
+  type:
+    enumerations:
+      divorced: {}
+      married: {}
+      separated: {}
+      single: {}
+      widowed: {}
+    base: enumeration
+- id: gender
+  type:
+    enumerations:
+      female: {}
+      male: {}
+    base: enumeration
+- id: age
+  type:
+    enumerations:
+      age18-29: {}
+      age30-49: {}
+      age50-64: {}
+      age65-and-over: {}
+    base: enumeration
+- id: height
+  type: float
+- id: weight
+  type: float
+- id: iq
+  type: integer
+- id: >-
+    please_indicate_if_you_currently_have_or_have
+  type:
+    enumerations:
+      circulatory: {}
+      ears_eyes_throat: {}
+      endocrine: {}
+      gastrointestinal: {}
+      neurological: {}
+      other: {}
+      respiratory: {}
+    base: enumerationSet
+- id: please_list_other_condition
+  type: text
+- id: please_provide_desc_ears_eyes
+  type:
+    record:
+    - id: brief_desc_illness
+      type: text
+    - id: approximate_start_date
+      type: date
+    - id: illness_still_persisting
+      type:
+        enumerations:
+          no: {}
+          yes: {}
+        base: enumeration
+    - id: approximate_end_date
+      type: date
+    base: recordList
+- id: >-
+    please_provide_desc_illness_related_ears_eyes
+  type:
+    record:
+    - id: brief_desc_illness2
+      type: text
+    - id: approximate_start_date2
+      type: date
+    - id: illness_still_persisting2
+      type:
+        enumerations:
+          no: {}
+          yes: {}
+        base: enumeration
+    - id: approximate_end_date2
+      type: date
+    base: recordList
+- id: endocrine_illness
+  type:
+    record:
+    - id: brief_desc_illness3
+      type: text
+    - id: approximate_start_date3
+      type: date
+    - id: illness_still_persisting3
+      type:
+        enumerations:
+          no: {}
+          yes: {}
+        base: enumeration
+    - id: approximate_end_date3
+      type: date
+    base: recordList
+- id: respiratory
+  type:
+    record:
+    - id: brief_desc_illness4
+      type: text
+    - id: approximate_start_date4
+      type: date
+    - id: illness_still_persisting4
+      type:
+        enumerations:
+          no: {}
+          yes: {}
+        base: enumeration
+    - id: approximate_end_date4
+      type: date
+    base: recordList
+- id: cardio
+  type:
+    record:
+    - id: brief_desc_illness5
+      type: text
+    - id: approximate_start_date5
+      type: date
+    - id: illness_still_persisting5
+      type:
+        enumerations:
+          no: {}
+          yes: {}
+        base: enumeration
+    - id: approximate_end_date5
+      type: date
+    base: recordList
+- id: gastrointestinal
+  type:
+    record:
+    - id: brief_desc_illness6
+      type: text
+    - id: approximate_start_date6
+      type: date
+    - id: illness_still_persisting6
+      type:
+        enumerations:
+          no: {}
+          yes: {}
+        base: enumeration
+    - id: approximate_end_date6
+      type: date
+    base: recordList
+- id: do_you_have_any_drug_allergies
+  type:
+    enumerations:
+      no: {}
+      yes: {}
+    base: enumeration
+- id: >-
+    please_click_on_add_drug_enter_information_ea
+  type:
+    record:
+    - id: drug_name
+      type: text
+    - id: what_was_predominant_reaction
+      type:
+        enumerations:
+          asthma: {}
+          hives: {}
+          itching: {}
+          other: {}
+          rash: {}
+          shock: {}
+        base: enumeration
+    - id: please_list_other_reaction
+      type: text
+    base: recordList
+- id: physician_information
+  type:
+    record:
+    - id: physician_name
+      type: text
+    - id: physicians_address
+      type: text
+    - id: physicians_phone_number
+      type: text
+    base: recordList
+- id: list_current_past_medications
+  type:
+    record:
+    - id: name_med
+      type: text
+    - id: dosage
+      type: text
+    - id: frequency
+      type: text
+    - id: starting_date
+      type: date
+    - id: ending_date
+      type: date
+    - id: purpose
+      type: text
+    base: recordList
+- id: >-
+    have_you_had_any_surgical_procedures
+  type:
+    enumerations:
+      no: {}
+      yes: {}
+    base: enumeration
+- id: list_your_surgical_procedures
+  type:
+    record:
+    - id: date_surgical_procedure
+      type: date
+    - id: procedure_name
+      type: text
+    base: recordList

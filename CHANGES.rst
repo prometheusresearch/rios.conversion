@@ -3,7 +3,20 @@ Change History
 **************
 
 
-0.6.0 (2016-09-xx)
+0.6.1 (2016-09-05)
+==================
+
+* Fixed bug where REDCap text fields with bounded/ranged value retrictions were
+  generated as invalid RIOS text fields (RIOS text fields may not have bounded
+  constraints, so these REDCap fields are now converted to RIOS ``integer`` or
+  ``float`` fields corresponding to the type of their bounded values)
+* Fixed bug where Qualtrics/REDCap to RIOS conversions were missing the ``urn:``
+  string was missing from the instrument ID
+* Fixed bug where REDCap to RIOS conversion data was nested an extra,
+  unnecessary list deep
+
+
+0.6.0 (2016-09-04)
 ==================
 
 * New API implemented with corresponding documentation
