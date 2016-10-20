@@ -13,7 +13,6 @@ __all__ = (
     'ConversionFailureError',
     'ConversionValueError',
     'RedcapFormatError',
-    'QualtricsFormatError',
     'RiosFormatError',
     'RiosRelationshipError',
 )
@@ -143,12 +142,6 @@ class ConversionValueError(Error):
 
 class RedcapFormatError(Error):
     """ Thrown for malformed REDCap data dictionary instrument """
-
-    pass
-
-
-class QualtricsFormatError(Error):
-    """ Thrown for a malformed REDCap data dictionary instrument """
 
     pass
 

@@ -6,14 +6,11 @@ from rios.conversion.exception import Error, ConversionFailureError
 from rios.conversion.base import SUCCESS_MESSAGE
 from rios.conversion import (
     redcap_to_rios,
-    qualtrics_to_rios,
     rios_to_redcap,
-    rios_to_qualtrics,
 )
 from utils import (
     show_tst, 
     redcap_to_rios_tsts,
-    qualtrics_to_rios_tsts,
     rios_tsts,
     no_error_tst_to_rios,
     no_error_tst_from_rios,
@@ -122,11 +119,5 @@ print "\n====== API TESTS ======"
 def test_redcap_to_rios_api():
     to_rios_api_tst(redcap_to_rios, redcap_to_rios_tsts)
 
-def test_qualtrics_to_rios_api():
-    to_rios_api_tst(qualtrics_to_rios, qualtrics_to_rios_tsts)
-
 def test_rios_to_redcap_api():
     from_rios_api_tst(rios_to_redcap, rios_tsts)
-
-def test_rios_to_qualtrics_api():
-    from_rios_api_tst(rios_to_qualtrics, rios_tsts)

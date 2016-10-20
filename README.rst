@@ -19,16 +19,6 @@ The following APIs have been implemented:
   Converts a RIOS Instrument, Form, and CalculationSet 
   to the REDCap Data Dictionary format.
   
-- qualtrics_to_rios
-
-  Converts a Qualtrics data dictionary to the RIOS
-  Instrument and Form format.
-
-- rios_to_qualtrics
-
-  Converts a RIOS Instrument, Form, and CalculationSet 
-  to the Qualtrics format.
-  
 Import these functions for use::
 
   >>> from rios.conversion import (

@@ -3,6 +3,12 @@ Change History
 **************
 
 
+0.7.0 (2016-xx-xx)
+==================
+
+* Removed Qualtrics conversion code
+
+
 0.6.1 (2016-09-05)
 ==================
 
