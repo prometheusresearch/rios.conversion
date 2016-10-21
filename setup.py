@@ -35,6 +35,7 @@ setup(
     ],
     extras_require={
         'dev': [
+            'pbbt',
             'coverage>=3.7,<4',
             'nose>=1.3,<2',
             'nosy>=1.1,<2',
