@@ -25,25 +25,6 @@ def redcap_to_rios_tsts(name):
     test_suppress = dict(test_base, **{'suppress': True})
     return [test_base, test_suppress]
 
-def qualtrics_to_rios_tsts(name):
-    test_base = {
-            'title': name,
-            'id': 'urn:%s' % name,
-            'instrument_version': '1.0',
-            'stream': open('./tests/qualtrics/%s.qsf' % name, 'r'),
-            'description': '',
-            'localization': 'en',
-    }
-    test_suppress = dict(test_base, **{'suppress': True})
-    test_filemetadata = dict(test_base, **{'filemetadata': True})
-    test_combined = dict(test_suppress, **test_filemetadata)
-    return [
-        test_base,
-        dict(test_base, **test_suppress),
-        dict(test_base, **test_filemetadata),
-        dict(test_base, **test_combined)
-    ]
-
 rios_redcap_mismatch_tests = [
     {
         'calculationset': open('./tests/rios/format_1_c.yaml', 'r'),
@@ -130,10 +111,6 @@ csv_names = [
     os.path.basename(name)[:-4] 
     for name in glob.glob('./tests/redcap/*.csv')
 ]
-qsf_names = [
-    os.path.basename(name)[:-4] 
-    for name in glob.glob('./tests/qualtrics/*.qsf')
-]
 rios_names = [
     os.path.basename(name)[:-7] 
     for name in glob.glob('./tests/rios/*_i.yaml')
@@ -142,9 +119,6 @@ rios_names = [
 
 redcap_to_rios_tsts = flatten(
     [redcap_to_rios_tsts(name) for name in csv_names]
-)
-qualtrics_to_rios_tsts = flatten(
-    [qualtrics_to_rios_tsts(name) for name in qsf_names]
 )
 rios_tsts = flatten(
     [rios_tst(name) for name in rios_names]

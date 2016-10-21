@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 setup(
     name='rios.conversion',
     version='0.7.0',
-    description='Module for converting Instruments to and from RIOS',
+    description='Module for converting instruments to and from RIOS',
     long_description=open('README.rst', 'r').read(),
     keywords='rios instrument assessment conversion',
     author='Prometheus Research, LLC',
@@ -30,12 +30,12 @@ setup(
     namespace_packages=['rios'],
     entry_points={},
     install_requires=[
-        'pyyaml',
         'rios.core>=0.6.0,<1',
-        'simplejson==3.8.2',
+        'pyyaml',
     ],
     extras_require={
         'dev': [
+            'pbbt',
             'coverage>=3.7,<4',
             'nose>=1.3,<2',
             'nosy>=1.1,<2',

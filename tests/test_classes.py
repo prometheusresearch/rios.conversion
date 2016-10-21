@@ -4,14 +4,11 @@ import traceback
 
 from rios.conversion.redcap.to_rios import RedcapToRios
 from rios.conversion.redcap.from_rios import RedcapFromRios
-from rios.conversion.qualtrics.to_rios import QualtricsToRios
-from rios.conversion.qualtrics.from_rios import QualtricsFromRios
 from rios.conversion.exception import Error, ConversionFailureError
 from rios.conversion.base import SUCCESS_MESSAGE
 from utils import (
     show_tst, 
     redcap_to_rios_tsts,
-    qualtrics_to_rios_tsts,
     rios_tsts,
 )
 
@@ -79,11 +76,5 @@ print "\n====== CLASS TESTS ======"
 def test_redcap_to_rios_tsts():
     to_rios_tst_class(RedcapToRios, redcap_to_rios_tsts)
 
-def test_qualtrics_to_rios_tsts():
-    to_rios_tst_class(QualtricsToRios, qualtrics_to_rios_tsts)
-
 def test_redcap_from_rios_tsts():
     from_rios_tst_class(RedcapFromRios, rios_tsts)
-
-def test_rios_from_qualtrics_tsts():
-    from_rios_tst_class(QualtricsFromRios, rios_tsts)
