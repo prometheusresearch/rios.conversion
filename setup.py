@@ -12,7 +12,7 @@ setup(
     keywords='rios instrument assessment conversion',
     author='Prometheus Research, LLC',
     author_email='contact@prometheusresearch.com',
-    license='Apache Software License 2.0',
+    license='Apache-2.0',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
