@@ -155,7 +155,7 @@ Cavaets
 Expressions
 ===========
 
-Expressions are converted to lowercase and to `PEXL`_.
+Expressions are converted to lowercase and to REXL.
 
 So for example in REDCap 
 suppose A and B are form fields 
@@ -191,6 +191,5 @@ Matrices
 REDCap matrices of R rows by C columns become a RIOS matrix of R rows by 1 column.
 The single column is an enumeration (or enumeration set) of C values.
 
-.. _PEXL: https://bitbucket.org/rexdb/rex.expression-provisional#rst-header-features-supported
 .. _RIOS Identifiers: https://rios.readthedocs.org/en/latest/instrument_specification.html#identifier
 

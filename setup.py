@@ -22,7 +22,7 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
-    url='https://bitbucket.org/prometheus/rios.conversion',
+    url='https://github.com/prometheusresearch/rios.conversion',
     package_dir={'': 'src'},
     packages=find_packages('src'),
     zip_safe=True,

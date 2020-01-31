@@ -23,7 +23,7 @@ Supported formats:
 .. _`RexDB-based Applications`: http://www.prometheusresearch.com
 .. _`REDCap`: http://project-redcap.org
 .. _`RIOS`: https://rios.readthedocs.org
-.. _`RIOS.CONVERSION`: https://bitbucket.org/prometheus/rios.conversion
+.. _`RIOS.CONVERSION`: https://github.com/prometheusresearch/rios.conversion
 
 Examples
 ========
@@ -94,7 +94,7 @@ We ask that you please include unit tests and
 any appropriate documentation updates along with your code changes.
 
 The project uses `pbbt`_, `prospector`_, and `nose`_ for testing.  
-Add new tests to `tests/`_.
+Add new tests to tests/.
 
 This project will adhere to the 
 Semantic Versioning methodology as much as possible, 
@@ -108,7 +108,7 @@ by doing the following::
     $ cd rios.conversion
     $ . bin/activate
     $ pip install pbbt
-    $ hg clone ssh://hg@bitbucket.org/prometheus/rios.conversion
+    $ git clone git@github.com:prometheusresearch/rios.converter.git
     $ pip install -e ./rios.conversion[dev]
 
 
@@ -142,4 +142,3 @@ Indices and tables
 .. _nose: https://nose.readthedocs.org/en/latest/
 .. _pbbt: https://pypi.python.org/pypi/pbbt
 .. _prospector: https://prospector.readthedocs.org/en/master/
-.. _tests/: https://bitbucket.org/prometheus/rios.conversion/src/tip/tests/
