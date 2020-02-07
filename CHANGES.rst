@@ -3,10 +3,11 @@ Change History
 **************
 
 
-0.6.2 (TBD)
-===========
+0.6.2 (2020-02-07)
+==================
 
 * Fixes to better support Python 3.
+* Changed license to Apache v2.
 
 
 0.6.1 (2016-09-05)
