@@ -1,8 +1,10 @@
+from __future__ import print_function
+
 import rios.conversion.redcap.functions as M
 
 
 def test_math():
-    print "\n====== MATH TESTS ======"
+    print("\n====== MATH TESTS ======")
     a = [i for i in range(1, 1 + 100)]
     print('sum', M.sum_(*a))
     print('mean', M.mean(*a))

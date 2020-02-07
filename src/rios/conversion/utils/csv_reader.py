@@ -67,7 +67,7 @@ class CsvReader(object):
     def load_attributes(self):
         if not self.reader:
             self.load_reader()
-        self.attributes = [self.get_name(c) for c in self.reader.next()]
+        self.attributes = [self.get_name(c) for c in next(self.reader)]
 
     def load_reader(self):
         self.reader = self.get_reader(self.fname)

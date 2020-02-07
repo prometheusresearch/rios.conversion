@@ -1,6 +1,8 @@
+from __future__ import print_function
+
 import rios.conversion.redcap.functions as D
 
-print "\n====== DATE TESTS ======"
+print("\n====== DATE TESTS ======")
 
 def ndays(year):
     d = ['%02d-01-%04d' % (m, year) for m in range(1,1 + 12)]

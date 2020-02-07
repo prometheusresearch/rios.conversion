@@ -3,7 +3,7 @@
 #
 
 
-import structures
+from . import structures
 
 
 from rios.conversion.utils import InMemoryLogger

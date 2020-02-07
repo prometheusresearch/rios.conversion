@@ -80,7 +80,8 @@ class DefinitionSpecification(collections.OrderedDict):
 
         All arrays are assumed to be arrays of DefinitionSpecification.
         """
-        for k, v in self.items():
+        items = list(self.items())
+        for k, v in items:
             if v not in [False, 0, 0.0, None]:
                 if bool(v):
                     if isinstance(v, DefinitionSpecification):

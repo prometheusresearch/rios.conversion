@@ -1,5 +1,7 @@
 """ Specialized tests to insure complete coverage.
 """
+from __future__ import print_function
+
 from rios.conversion.utils.balanced_match import *
 from rios.conversion.base.structures import *
 from rios.conversion.utils.csv_reader import *
@@ -9,7 +11,7 @@ import collections
 import json, yaml, os
 
 
-print "\n====== COVERAGE TESTS ======"
+print("\n====== COVERAGE TESTS ======")
 
 
 DUMMY_ARGS = {
@@ -41,7 +43,7 @@ def test_add_type():
 def test_balanced_match():
     try:
         balanced_match('x', 0)
-    except ValueError, e:
+    except ValueError as e:
         assert True
     b, e = balanced_match('((a))+1', 0)
     assert (b, e) == (0, 5)

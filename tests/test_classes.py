@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import sys
 import traceback
 
@@ -28,17 +30,16 @@ def to_rios_tst_class(cls, tests):
             ex_type, ex, tb = sys.exc_info()
             if isinstance(exc, Error):
                 traceback.print_tb(tb)
-                print repr(exc)
-                print exc
-                print "Successful error handling (exception)"
+                print(repr(exc))
+                print("Successful error handling (exception)")
             else:
-                print "= EXCEPTION:"
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print repr(exc)
+                print(repr(exc))
                 raise exc
         else:
             if SUCCESS_MESSAGE in converter.pplogs:
-                print "Successful conversion test"
+                print("Successful conversion test")
             else:
                 raise ValueError(
                     "Logged extraneous messages for a successful conversion"
@@ -57,23 +58,23 @@ def from_rios_tst_class(cls, tests):
             ex_type, ex, tb = sys.exc_info()
             if isinstance(exc, Error) \
                         or isinstance(exc, ConversionFailureError):
-                print "= EXCEPTION:"
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print str(exc)
-                print "Successful error handling (exception)"
+                print(str(exc))
+                print("Successful error handling (exception)")
             else:
-                print "= EXCEPTION:"
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print repr(exc)
+                print(repr(exc))
                 raise exc
         else:
             if SUCCESS_MESSAGE in converter.pplogs:
-                print SUCCESS_MESSAGE
+                print(SUCCESS_MESSAGE)
             else:
-                print "Successful conversion test"
+                print("Successful conversion test")
 
 
-print "\n====== CLASS TESTS ======"
+print("\n====== CLASS TESTS ======")
 
 
 def test_redcap_to_rios_tsts():

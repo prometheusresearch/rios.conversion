@@ -3,6 +3,12 @@ Change History
 **************
 
 
+0.6.2 (TBD)
+===========
+
+* Fixes to better support Python 3.
+
+
 0.6.1 (2016-09-05)
 ==================
 

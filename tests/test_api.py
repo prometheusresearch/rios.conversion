@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import traceback
 import sys
 
@@ -29,14 +31,14 @@ def to_rios_api_tst(api_func, tests):
             ex_type, ex, tb = sys.exc_info()
             if isinstance(exc, Error) \
                         or isinstance(exc, ConversionFailureError):
-                print "Successful error handling (exception)"
-                print "= EXCEPTION:"
+                print("Successful error handling (exception)")
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print str(exc)
+                print(str(exc))
             else:
-                print "= EXCEPTION:"
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print repr(exc)
+                print(repr(exc))
                 raise exc
         else:
             if 'suppress' in test and test['suppress']:
@@ -53,7 +55,7 @@ def to_rios_api_tst(api_func, tests):
                             ' to instrument, form, or calculationset'
                             ' configuration definitions')
                     else:
-                        print "Successful error handling (logged)"
+                        print("Successful error handling (logged)")
                 else:
                     # We do NOT have an error situation
                     no_error_tst_to_rios(package)
@@ -78,14 +80,14 @@ def from_rios_api_tst(api_func, tests):
             ex_type, ex, tb = sys.exc_info()
             if isinstance(exc, Error) \
                         or isinstance(exc, ConversionFailureError):
-                print "Successful error handling (exception)"
-                print "= EXCEPTION:"
+                print("Successful error handling (exception)")
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print str(exc)
+                print(str(exc))
             else:
-                print "= EXCEPTION:"
+                print("= EXCEPTION:")
                 traceback.print_tb(tb)
-                print repr(exc)
+                print(repr(exc))
                 raise exc
         else:
             if 'suppress' in test and test['suppress']:
@@ -102,7 +104,7 @@ def from_rios_api_tst(api_func, tests):
                             ' to instrument, form, or calculationset'
                             ' configuration definitions')
                     else:
-                        print "Successful error handling (logged)"
+                        print("Successful error handling (logged)")
                 else:
                     # We do NOT have an error situation
                     no_error_tst_from_rios(package)
@@ -117,7 +119,7 @@ def from_rios_api_tst(api_func, tests):
                     # We do NOT have an error situation
                     no_error_tst_from_rios(package)
 
-print "\n====== API TESTS ======"
+print("\n====== API TESTS ======")
 
 def test_redcap_to_rios_api():
     to_rios_api_tst(redcap_to_rios, redcap_to_rios_tsts)

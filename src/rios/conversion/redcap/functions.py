@@ -4,6 +4,8 @@
 # REDCap Function Routines
 #
 
+from __future__ import division
+
 
 import datetime
 
@@ -63,9 +65,9 @@ def median(*data):
         sorted_data = sorted(data)
         n = len(sorted_data)
         if n % 2 == 1:
-            return float(sorted_data[n / 2])
+            return float(sorted_data[n // 2])
         else:
-            m = n / 2
+            m = n // 2
             return (sorted_data[m - 1] + sorted_data[m]) / 2.0
     else:
         return None

@@ -1,0 +1,7 @@
+twine
+wheel
+coverage
+nose
+Sphinx
+sphinx-autobuild
+tidypy; python_version>'3'

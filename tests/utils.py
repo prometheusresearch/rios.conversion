@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import glob
 import os
 import re
@@ -62,14 +64,14 @@ rios_redcap_mismatch_tests = [
 def rios_tst(name):
     calc_filename = './tests/rios/%s_c.yaml' % name
     test_base = {
-        'instrument': yaml.load(open('./tests/rios/%s_i.yaml' % name, 'r')),
-        'form': yaml.load(open('./tests/rios/%s_f.yaml' % name, 'r')),
+        'instrument': yaml.safe_load(open('./tests/rios/%s_i.yaml' % name, 'r')),
+        'form': yaml.safe_load(open('./tests/rios/%s_f.yaml' % name, 'r')),
         'localization': None,
     }
 
     if os.access(calc_filename, os.F_OK):
         test = dict(
-            {'calculationset': yaml.load(open(calc_filename, 'r'))},
+            {'calculationset': yaml.safe_load(open(calc_filename, 'r'))},
             **test_base
         )
     else:
@@ -85,7 +87,7 @@ def show_tst(cls, test):
     if 'stream' in test:
         if isinstance(test['stream'], dict):
             filenames = "= TEST INSTRUMENT TITLE: " + str(test['title'])
-        elif isinstance(test['stream'], file):
+        elif hasattr(test['stream'], 'name'):
             filenames = "= TEST FILENAME: " + str(test['stream'].name)
         else:
             filenames = None
@@ -93,18 +95,16 @@ def show_tst(cls, test):
         if isinstance(test['instrument'], dict):
             filenames = "= TEST INSTRUMENT TITLE: " \
                 + str(test.get('title', 'No title available'))
-        elif isinstance(test['instrument'], file):
+        else:
             filenames = "= TEST FILENAMES:\n    " + "\n    ".join([
                 test['instrument'].get('name', 'No instrument name'),
                 test['form'].get('name', 'No form name'),
                 (test['calculationset'].name if 'calculationset' in test \
                             else "No calculationset file"),
             ])
-        else:
-            filenmes = None
         
-    print '\n{}'.format(class_name) \
-        + ('\n{}'.format(filenames) if filenames else "")
+    print('\n{}'.format(class_name) \
+        + ('\n{}'.format(filenames) if filenames else ""))
 
 def no_error_tst_to_rios(package):
     if 'instrument' not in package or not package['instrument']:
@@ -116,14 +116,14 @@ def no_error_tst_to_rios(package):
     elif 'logs' in package and not package['logs']:
         raise ValueError('Logs are missing logging data')
     else:
-        print "Successful conversion test"
+        print("Successful conversion test")
 
 
 def no_error_tst_from_rios(package):
     if 'instrument' not in package or not package['instrument']:
         raise ValueError('Missing instrument definition')
     else:
-        print "Successful conversion test"
+        print("Successful conversion test")
 
 
 csv_names = [
